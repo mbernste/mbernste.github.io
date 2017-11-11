@@ -12,6 +12,7 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 ## Miscellaneous topics
 
 [The binomial theorem](http://mbernste.github.io/files/notes/BinomialTheorem.pdf)
+
 [Sigmoid functions](http://mbernste.github.io/files/notes/SigmoidFunction.pdf)
 
 ## Logistic regression
