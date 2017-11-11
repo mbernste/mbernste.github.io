@@ -15,7 +15,24 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Sigmoid functions](http://mbernste.github.io/files/notes/SigmoidFunction.pdf)
 
-## Logistic regression
+## Probabilistic modeling
+
+**Probability**
+
+**Common distributions**
+
+[Poisson](http://mbernste.github.io/files/notes/Poisson.pdf)
+
+**Inference**
+
+[Psuedocounts](http://mbernste.github.io/files/notes/Psuedocounts.pdf)
+
+[Variational inference](http://mbernste.github.io/files/notes/VariationalInference.pdf)
+
+
+## Binary classification
+
+**Logistic regression**	
 
 [The logistic regression model](http://mbernste.github.io/files/notes/LogisticRegression.pdf)
 
