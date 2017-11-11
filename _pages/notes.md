@@ -2,8 +2,6 @@
 title: "Notes"
 permalink: /notes/
 author_profile: true
-redirect_from: 
-  - /notes.html
 ---
 
 I did not come into graduate school with a deep background in the mathematical topics used in computational biology. 
