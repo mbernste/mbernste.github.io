@@ -19,6 +19,8 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 **Probability**
 
+[Intuition into covariance](http://mbernste.github.io/files/notes/VisualizingVarianceCovariance.pdf)
+
 **Common distributions**
 
 [Poisson](http://mbernste.github.io/files/notes/Poisson.pdf)
