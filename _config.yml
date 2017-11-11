@@ -238,6 +238,15 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # TODO I'm not sure what this does...
+  # _notes
+  - scope:
+      path: ""
+      type: notes
+    values:
+      layout: notes
+      author_profile: true
+      share: true
 
 # Sass/SCSS
 sass:
