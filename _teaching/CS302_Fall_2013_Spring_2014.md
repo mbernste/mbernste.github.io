@@ -8,5 +8,4 @@ date: 2013-08-01
 location: "Madison, WI"
 ---
 
-A Java-based introduction to computer programming class taught in the Fall 2013 and Spring 2014 semesters. Course slides can be found below:
-
+A Java-based introduction to computer programming class taught in the Fall 2013 and Spring 2014 semesters.
