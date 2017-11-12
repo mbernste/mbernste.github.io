@@ -3,7 +3,7 @@ title: "MetaSRA - Normalized Sample-Specific Metadata for the Sequence Read Arch
 collection: talks
 type: "Talk"
 permalink: /talks/NLM_training_conference_2017
-venue: "UC San Diego"
+venue: "National Library of Medicine Training Conference"
 date: 2017-06-06
 location: "San Diego, California"
 ---
