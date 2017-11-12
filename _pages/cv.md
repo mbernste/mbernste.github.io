@@ -24,7 +24,7 @@ Work experience
 
 * Summer 2014: Software Development Engineering Intern
   * Amazon Inc., Seattle, WA
-  * Designed, implemented, and launced in-line search suggestions for the Amazon Local website
+  * Designed, implemented, and launched in-line search suggestions for the Amazon Local website
   
 * Summer 2013: Software Development Engineering Intern
   * Amazon Inc., New York, NY
