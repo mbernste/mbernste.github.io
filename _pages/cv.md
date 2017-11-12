@@ -18,7 +18,7 @@ Education
 Work experience
 ======
 * August 2014 - present: Research Assistant
-  * University of Wisconsin - Madision
+  * University of Wisconsin - Madison
   * Research methods for leveraging public RNA-seq data to derive new knowledge in biology
   * Supervisor: Colin Dewey
 
