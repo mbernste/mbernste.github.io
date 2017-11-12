@@ -28,7 +28,7 @@ Work experience
   
 * Summer 2013: Software Development Engineering Intern
   * Amazon Inc., New York, NY
-  * Re-designed and revamped the Amazon Posts for brand pages
+  * Re-designed and revamped the Amazon Posts product for brand web pages
   
 * Summer 2012: Research Intern
   * SPAWAR, San Diego, CA
