@@ -21,6 +21,6 @@ We present MetaSRA, a database of normalized SRA human sample-specific metadata 
 
 **Availability and implementation**
 
-The MetaSRA is available at [http://metasra.biostat.wisc.edu](metasra.biostat.wisc.edu) via both a searchable web interface and bulk downloads. Software implementing our computational pipeline is available at [http://github.com/deweylab/metasra-pipeline](http://github.com/deweylab/metasra-pipeline).
+The MetaSRA is available at [metasra.biostat.wisc.edu](http://metasra.biostat.wisc.edu) via both a searchable web interface and bulk downloads. Software implementing our computational pipeline is available at [http://github.com/deweylab/metasra-pipeline](http://github.com/deweylab/metasra-pipeline).
 
 The paper can be found at [here](https://academic.oup.com/bioinformatics/article/3848915/MetaSRA-normalized-human-sample-specific-metadata)
