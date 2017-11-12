@@ -2,9 +2,9 @@
 title: "Talk 1 on Relevant Topic in Your Field"
 collection: talks
 type: "Talk"
-permalink: /talks/2012-03-01-talk-1
+permalink: /talks/CPCP_retreat_2017
 venue: "Center for Predictive Computational Phenotyping"
-date: 2012-03-01
+date: 2017-06-01
 location: "Madison, Wisconsin"
 ---
 
