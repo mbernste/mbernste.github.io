@@ -1,5 +1,5 @@
 ---
-title: "Talk 1 on Relevant Topic in Your Field"
+title: "MetaSRA - Normalized Sample-Specific Metadata for the Sequence Read Archive"
 collection: talks
 type: "Talk"
 permalink: /talks/CPCP_retreat_2017
