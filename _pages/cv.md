@@ -11,31 +11,35 @@ redirect_from:
 
 Education
 ======
-* B.S. in Github, Github University, 2012
-* M.S. in Jekyll, Github University, 2014
-* Ph.D in Version Control Theory, Github University, 2018 (expected)
+* B.S. in Computer Science *magna cum laude*, University of Notre Dame, 2013
+* M.S. in Computer Sciences, University of Wisconsin - Madison, 2015
+* Ph.D in Computer Sciences, University of Wisconsin - Madison, 2019 (expected)
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* August 2014 - present: Research Assistant
+  * University of Wisconsin - Madision
+  * Research methods for leveraging public RNA-seq data to derive new knowledge in biology
+  * Supervisor: Colin Dewey
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Summer 2014: Software Development Engineering Intern
+  * Amazon Inc., Seattle, WA
+  * Designed, implemented, and launced in-line search suggestions for the Amazon Local website
   
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
+* Summer 2013: Software Development Engineering Intern
+  * Amazon Inc., New York, NY
+  * Re-designed and revamped the Amazon Posts for brand pages
+  
+* Summer 2012: Research Intern
+  * SPAWAR, San Diego, CA
+  * Research internship through The Naval Research Enterprise Internship Program (NREIP)
+  * Applied machine learning methods for predicting group affiliation of anonymous internet authors
+  
+Academic societies
+======  
+* Tau Beta Pi
+* Upsilon Pi Epsilon
+  
 Publications
 ======
   <ul>{% for post in site.publications %}
@@ -56,4 +60,6 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* Computer Sciences Graduate Student Welcome Weekend, Committee Member, 2014-2016
+* Computer Sciences Graduate Student Welcome Weekend, Committee Chair, 2015
+* Scratch computer programming club at Stephens Point Elementary, Club Leader, Spring 2015
