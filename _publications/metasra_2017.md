@@ -11,6 +11,6 @@ paperurl: 'https://academic.oup.com/bioinformatics/article/3848915/MetaSRA-norma
 citation: #'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
 
-#[Download paper here](https://academic.oup.com/bioinformatics/article/3848915/MetaSRA-normalized-human-sample-specific-metadata)
+The paper can be found at [Bioinformatics](https://academic.oup.com/bioinformatics/article/3848915/MetaSRA-normalized-human-sample-specific-metadata)
 
-#Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+The MetaSRA website can be found [Here](metasra.biostat.wisc.edu)
