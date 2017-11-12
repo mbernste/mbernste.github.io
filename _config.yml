@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Matthew N. Bernstein"
 title_separator          : "-"
-name                     : &name "Matthew N. Bernstein"
+name                     : &name "Matthew Bernstein"
 description              : &description "Personal website"
 url                      : https://mbernste.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
