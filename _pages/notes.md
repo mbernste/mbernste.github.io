@@ -15,6 +15,17 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Sigmoid functions](http://mbernste.github.io/files/notes/SigmoidFunction.pdf)
 
+## Linear algebra
+
+[Vector spaces](http://mbernste.github.io/files/notes/VectorSpaces.pdf)
+
+[Normed vector spaces](http://mbernste.github.io/files/notes/NormedVectorSpaces.pdf)
+
+[Linear transformations](http://mbernste.github.io/files/notes/LinearTransformations.pdf)
+
+[Matrices](http://mbernste.github.io/files/notes/Matrices.pdf)
+
+
 ## Probabilistic modeling
 
 **Probability**
