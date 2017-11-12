@@ -1,7 +1,7 @@
 ---
 title: "CS302 - Introduction to Programming"
 collection: teaching
-type: "Workshop"
+type: "Course"
 permalink: /teaching/2015-spring-teaching-1
 venue: "University of Wisconsin - Madison, Department of Computer Sciences"
 date: 2013-08-01
