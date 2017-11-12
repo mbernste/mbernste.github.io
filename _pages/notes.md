@@ -49,3 +49,7 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [The logistic regression model](http://mbernste.github.io/files/notes/LogisticRegression.pdf)
 
+**Ensemble methods**
+
+[AdaBoost](http://mbernste.github.io/files/notes/AdaBoost.pdf)
+
