@@ -42,6 +42,9 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Variational inference](http://mbernste.github.io/files/notes/VariationalInference.pdf)
 
+[Expectation maximization](http://mbernste.github.io/files/notes/EM.pdf)
+
+
 
 ## Binary classification
 
