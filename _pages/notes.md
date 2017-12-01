@@ -27,6 +27,8 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 ## Loss functions
 
+**Loss functions for regression**
+
 [Squared loss](http://mbernste.github.io/files/notes/SquaredLoss.pdf)
 
 ## Probabilistic modeling
