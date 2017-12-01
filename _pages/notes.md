@@ -25,6 +25,9 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Matrices](http://mbernste.github.io/files/notes/Matrices.pdf)
 
+## Loss functions
+
+[Squared loss](http://mbernste.github.io/files/notes/SquaredLoss.pdf)
 
 ## Probabilistic modeling
 
@@ -44,8 +47,6 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Expectation-maximization](http://mbernste.github.io/files/notes/EM.pdf)
 
-
-
 ## Binary classification
 
 **Logistic regression**	
@@ -55,4 +56,11 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 **Ensemble methods**
 
 [AdaBoost](http://mbernste.github.io/files/notes/AdaBoost.pdf)
+
+## Regression
+
+**Linear regression**
+
+[Ordinary least squares](http://mbernste.github.io/files/notes/OrdinaryLeastSquares.pdf)
+
 
