@@ -11,16 +11,16 @@ redirect_from:
 
 Education
 ======
-* B.S. in Computer Science *magna cum laude*, University of Notre Dame, 2013
-* M.S. in Computer Sciences, University of Wisconsin - Madison, 2015
 * Ph.D in Computer Sciences, University of Wisconsin - Madison, 2019 (expected)
+* M.S. in Computer Sciences, University of Wisconsin - Madison, 2015
+* B.S. in Computer Science *magna cum laude*, University of Notre Dame, 2013
 
 Work experience
 ======
 * August 2014 - present: Research Assistant
   * University of Wisconsin - Madison
   * Research methods for leveraging public RNA-seq data to derive new knowledge in biology
-  * Supervisor: Colin Dewey
+  * Advisor: Colin Dewey
 
 * Summer 2014: Software Development Engineering Intern
   * Amazon Inc., Seattle, WA
@@ -31,9 +31,15 @@ Work experience
   * Re-designed and revamped the Amazon Posts product for brand web pages
   
 * Summer 2012: Research Intern
-  * SPAWAR, San Diego, CA
-  * Research internship through The Naval Research Enterprise Internship Program (NREIP)
+  * [SPAWAR](http://www.public.navy.mil/spawar/Pages/default.aspx), San Diego, CA
+  * Research internship through The Naval Research Enterprise Internship Program ([NREIP](https://nreip.asee.org/))
   * Applied machine learning methods for predicting group affiliation of anonymous internet authors
+  
+Honors/awards
+======
+* Awarded a [Computation and Informatics in Biology and Medicine](http://www.cibm.wisc.edu/) traineeship
+* Best Plenary Presentation, National Libarary of Medicine Informatics Training Conference, June 6, 2017, San Diego, CA
+* University Housing Honored Instructor, Fall 2013, Madison, WI
   
 Academic societies
 ======  
