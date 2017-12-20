@@ -27,6 +27,8 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Matrices](http://mbernste.github.io/files/notes/Matrices.pdf)
 
+[Matrix-vector multiplication](http://mbernste.github.io/files/notes/MatrixVectorMultiplication.pdf)
+
 ## Loss functions
 
 **Loss functions for regression**
