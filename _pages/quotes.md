@@ -4,8 +4,6 @@ permalink: /quotes/
 author_profile: true
 ---
 
-Here are some quotes on a range of topics that inspire me:
-
 "You can know the name of a bird in all the languages of the world, but when you’re finished, you’ll know absolutely nothing whatever about the bird… So let’s look at the bird and see what it’s doing — that’s what counts. I learned very early the difference between knowing the name of something and knowing something." **\~ Richard Feynman**
 
 "A great idea…is like a phantom ocean beating upon the shores of human life in successive waves of specialization" **\~ Alfred North Whitehead**
