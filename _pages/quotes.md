@@ -12,7 +12,7 @@ Here are some quotes on a range of topics that inspire me:
 
 "Sometimes it's difficult. You know, you always have this image of the perfect thing which you can never achieve, but which you never stop trying to achieve. I think at the core there’s this interior image you have that’s absolutely perfect. That's your signpost and your guide. You'll never get there, but without it you won't get anywhere." **\~ Cormac McCarthy**
 
-"There is but one kind of unity possible in a world as diverse as ours. It is unity of method, rather than aim; the unity of disciplined experiment." **~ Walter Lippman**
+"There is but one kind of unity possible in a world as diverse as ours. It is unity of method, rather than aim; the unity of disciplined experiment." **\~ Walter Lippman**
 
 "If you want to build a ship, don't drum up people to collect wood and don't assign them tasks and work, but rather teach them to long for the endless immensity of the sea." **\~ Antoine de Saint-Exupery**
 
