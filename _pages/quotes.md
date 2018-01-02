@@ -10,7 +10,7 @@ Here are some quotes on a range of topics that inspire me:
 
 "A great idea…is like a phantom ocean beating upon the shores of human life in successive waves of specialization" **\~ Alfred North Whitehead**
 
-"I like what I do. Some writers have said in print that they hated writing and it was just a chore and a burden. I certainly don't feel that way about it. Sometimes it's difficult. You know, you always have this image of the perfect thing which you can never achieve, but which you never stop trying to achieve. I think at the core there’s this interior image you have that’s absolutely perfect. That's your signpost and your guide. You'll never get there, but without it you won't get anywhere." **\~ Cormac McCarthy**
+"Sometimes it's difficult. You know, you always have this image of the perfect thing which you can never achieve, but which you never stop trying to achieve. I think at the core there’s this interior image you have that’s absolutely perfect. That's your signpost and your guide. You'll never get there, but without it you won't get anywhere." **\~ Cormac McCarthy**
 
 "There is but one kind of unity possible in a world as diverse as ours. It is unity of method, rather than aim; the unity of disciplined experiment." **~ Walter Lippman**
 
