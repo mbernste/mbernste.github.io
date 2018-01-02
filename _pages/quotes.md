@@ -18,6 +18,8 @@ author_profile: true
 
 "Everything I’ve ever let go of has claw marks on it." **\~ David Foster Wallace**
 
+"This is what fools people: a man is always a teller of tales, he sees everything that happens to him through them; and he tries to live his own life as if he were telling a story.  But you have to choose: live or tell."**\~ Jean Paul Sartre**
+
 "Let us dedicate ourselves to what the Greeks wrote so many years ago: to tame the savageness of man and make gentle the life of this world." **\~ Bobby Kennedy**
 
 
