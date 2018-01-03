@@ -22,7 +22,6 @@ Work experience
 * August 2014 - present: Research Assistant
   * University of Wisconsin - Madison
   * Research methods for leveraging public RNA-seq data to derive new knowledge in biology
-  * Advisor: Colin Dewey
 
 * Summer 2014: Software Development Engineering Intern
   * Amazon Inc., Seattle, WA
