@@ -12,6 +12,8 @@ redirect_from:
 Education
 ======
 * Ph.D in Computer Sciences, University of Wisconsin - Madison, 2019 (expected)
+  * Thesis: Computational methods for transcriptome-based cellular phenotyping
+  * Advisor: Dr. Colin Dewey
 * M.S. in Computer Sciences, University of Wisconsin - Madison, 2015
 * B.S. in Computer Science *magna cum laude*, University of Notre Dame, 2013
 
