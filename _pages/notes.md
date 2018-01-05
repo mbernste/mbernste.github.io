@@ -31,6 +31,8 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Matrices as linear transformations](http://mbernste.github.io/files/notes/MatricesAsLinearTransformations.pdf)
 
+[Matrix multiplication](http://mbernste.github.io/files/notes/MatrixMultiplication.pdf)
+
 
 ## Loss functions
 
