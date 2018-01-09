@@ -33,18 +33,13 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Matrix multiplication](http://mbernste.github.io/files/notes/MatrixMultiplication.pdf)
 
+## Probability
 
-## Loss functions
-
-**Loss functions for regression**
-
-[Squared loss](http://mbernste.github.io/files/notes/SquaredLoss.pdf)
-
-## Probabilistic modeling
-
-**Probability**
+[Sigma-algebras](http://mbernste.github.io/files/notes/SigmaAlgebras.pdf)
 
 [Intuition into covariance](http://mbernste.github.io/files/notes/VisualizingVarianceCovariance.pdf)
+
+## Probabilistic modeling
 
 **Common distributions**
 
@@ -70,8 +65,10 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 ## Regression
 
-**Linear regression**
+[Squared loss](http://mbernste.github.io/files/notes/SquaredLoss.pdf)
 
 [Ordinary least squares](http://mbernste.github.io/files/notes/OrdinaryLeastSquares.pdf)
+
+
 
 
