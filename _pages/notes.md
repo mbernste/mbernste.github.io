@@ -37,6 +37,8 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Sigma-algebras](http://mbernste.github.io/files/notes/SigmaAlgebras.pdf)
 
+[Measure](http://mbernste.github.io/files/notes/Measure.pdf)
+
 [Intuition into covariance](http://mbernste.github.io/files/notes/VisualizingVarianceCovariance.pdf)
 
 ## Probabilistic modeling
