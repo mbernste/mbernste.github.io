@@ -39,6 +39,8 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Measure](http://mbernste.github.io/files/notes/Measure.pdf)
 
+[Measurable functions](http://mbernste.github.io/files/notes/MeasurableFunctions.pdf)
+
 [Intuition into covariance](http://mbernste.github.io/files/notes/VisualizingVarianceCovariance.pdf)
 
 ## Probabilistic modeling
