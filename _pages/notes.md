@@ -41,6 +41,8 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 
 [Measurable functions](http://mbernste.github.io/files/notes/MeasurableFunctions.pdf)
 
+[Probability spaces](http://mbernste.github.io/files/notes/ProbabilitySpace.pdf)
+
 [Intuition into covariance](http://mbernste.github.io/files/notes/VisualizingVarianceCovariance.pdf)
 
 ## Probabilistic modeling
