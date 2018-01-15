@@ -6,8 +6,6 @@ author_profile: true
 
 ## MetaSRA: Normalized sample-specific metadata for the Sequence Read Archive
 
-The NCBI’s Sequence Read Archive (SRA) promises great biological insight if one could analyze the data in the aggregate; however, the data remain largely underutilized, in part, due to the poor structure of the metadata associated with each sample. The rules governing submissions to the SRA do not dictate a standardized set of terms that should be used to describe the biological samples from which the sequencing data are derived. As a result, the metadata include many synonyms, spelling variants and references to outside sources of information.
-
 The NCBI’s Sequence Read Archive (SRA) promises great biological insight if one could analyze the data in the aggregate; 
 however, the data remain largely underutilized, in part, due to the poor structure of the metadata associated with each sample. We present MetaSRA, a database of normalized SRA human sample-specific metadata following a schema inspired by the 
 metadata organization of the ENCODE project.
