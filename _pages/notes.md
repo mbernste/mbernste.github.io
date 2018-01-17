@@ -18,7 +18,8 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 ## Linear algebra
 
 [Vector spaces](http://mbernste.github.io/files/notes/VectorSpaces.pdf)  
-[Normed vector spaces](http://mbernste.github.io/files/notes/NormedVectorSpaces.pdf)  
+[Normed vector spaces](http://mbernste.github.io/files/notes/NormedVectorSpaces.pdf)
+[Dot product](http://mbernste.github.io/files/notes/DotProduct.pdf)  
 [Linear transformations](http://mbernste.github.io/files/notes/LinearTransformations.pdf)  
 [Matrices](http://mbernste.github.io/files/notes/Matrices.pdf)  
 [Matrix-vector multiplication](http://mbernste.github.io/files/notes/MatrixVectorMultiplication.pdf)  
