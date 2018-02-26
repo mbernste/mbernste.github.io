@@ -45,9 +45,8 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 [Evidence lower bound](http://mbernste.github.io/files/notes/EvidenceLowerBound.pdf)  
 [Variational inference](http://mbernste.github.io/files/notes/VariationalInference.pdf)  
 [Mean field variational inference](http://mbernste.github.io/files/notes/MeanFieldVariationalInference.pdf)  
-[Expectation-maximization](http://mbernste.github.io/files/notes/EM.pdf)
-[Psuedocounts](http://mbernste.github.io/files/notes/Psuedocounts.pdf)  
-
+[Expectation-maximization](http://mbernste.github.io/files/notes/EM.pdf)  
+[Psuedocounts](http://mbernste.github.io/files/notes/Psuedocounts.pdf)  
 
 
 ## Binary classification
