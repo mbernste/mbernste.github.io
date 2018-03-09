@@ -22,7 +22,7 @@ main:
     url: /notes/
     
   - title: "CV"
-    url: /cv/
+    url: http://mbernste.github.io/files/CV.pdf
     
   - title: "Quotes"
     url: /quotes/
