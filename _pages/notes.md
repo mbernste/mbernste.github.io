@@ -34,6 +34,10 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 [Probability spaces](http://mbernste.github.io/files/notes/ProbabilitySpace.pdf)  
 [Intuition into covariance](http://mbernste.github.io/files/notes/VisualizingVarianceCovariance.pdf)
 
+## Information theory
+
+[Self-information](http://mbernste.github.io/files/notes/SelfInformtion.pdf)  
+
 ## Probabilistic modeling
 
 **Common distributions**
