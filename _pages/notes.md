@@ -37,6 +37,7 @@ These notes may contain minor mistakes or totally wrong information. Let me know
 ## Information theory
 
 [Self-information](http://mbernste.github.io/files/notes/SelfInformation.pdf)  
+[Perplexity](http://mbernste.github.io/files/notes/Perplexity.pdf)  
 
 ## Probabilistic modeling
 
