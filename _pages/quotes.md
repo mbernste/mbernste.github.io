@@ -16,8 +16,6 @@ author_profile: true
 
 "The places in-between places they are little countries themselves with their own holidays." **\~ Alberto Rios**
 
-"Everything I’ve ever let go of has claw marks on it." **\~ David Foster Wallace**
-
 "Let us dedicate ourselves to what the Greeks wrote so many years ago: to tame the savageness of man and make gentle the life of this world." **\~ Bobby Kennedy**
 
 
