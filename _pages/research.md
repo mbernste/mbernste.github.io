@@ -15,7 +15,7 @@ The MetaSRA is available at [metasra.biostat.wisc.edu](metasra.biostat.wisc.edu)
 See [my talk](https://www.youtube.com/watch?v=pVHMq9SdUtc) describing the MetaSRA from ISMB 2018.
 
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
-![My helpful screenshot]({{ " https://mbernste.github.io/images/MetaSRA_overview.png" |  https://mbernste.github.io/images/MetaSRA_overview.png }})
+![My helpful screenshot]({{ " https://mbernste.github.io/images/MetaSRA_overview.png" |  https://mbernste.github.io/images/MetaSRA_web.png }})
 
 **Publication**
 
