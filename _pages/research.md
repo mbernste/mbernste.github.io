@@ -6,10 +6,10 @@ author_profile: true
 
 ## Hierarchical cell type classification 
 
-Gene expression-based classification of a biological sample’s cell type is an important step in many transcriptomic analyses, including that of annotating cell types in single-cell RNA-seq datasets. We explore the novel application of hierarchical classification algorithms that take into account the graph structure of the Cell Ontology to this task.
+Gene expression-based classification of a biological sample’s cell type is an important step in many transcriptomic analyses, including that of annotating cell types in single-cell RNA-seq datasets. We explore the novel application of hierarchical classification algorithms that take into account the graph structure of the Cell Ontology to this task. 
 
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
-![My helpful screenshot]({{ " https://mbernste.github.io/images/cell_type_classification.png" |  https://mbernste.github.io/images/cell_type_classification.png }}
+![My helpful screenshot]({{ "  https://mbernste.github.io/images/cell_type_classification.png" |   https://mbernste.github.io/images/cell_type_classification.png }})
 
 **Paper:**
 
