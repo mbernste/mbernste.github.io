@@ -4,7 +4,7 @@ permalink: /notes/
 author_profile: true
 ---
 
-I do not have a formal background in the mathematical topics used in computational biology and I have found it helpful to create clean, organized notes in order to solidify 
+I do not have a deep formal background in the mathematical topics used in computational biology and I have found it helpful to create clean, organized notes in order to solidify 
 my understanding. It occurred to me that these notes may be useful to others, so I will periodically post them here. 
 There may be errors in these notes. Let me know if you find anything that can be improved.
 
