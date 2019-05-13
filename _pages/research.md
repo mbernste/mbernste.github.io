@@ -27,7 +27,7 @@ See [my talk](https://www.youtube.com/watch?v=pVHMq9SdUtc) describing the MetaSR
 
 **Paper:**
 
-Bernstein,M.N., Doan,A., and C.N.Dewey (2017). [Normalized human sample-specific metadata for the Sequence Read Archive](https://doi.org/10.1093/bioinformatics/btx334). _Bioinformatics_, 33(18), 2914–2923. 
+Bernstein,M.N., Doan,A., and C.N.Dewey (2017). [MetaSRA: Normalized human sample-specific metadata for the Sequence Read Archive](https://doi.org/10.1093/bioinformatics/btx334). _Bioinformatics_, 33(18), 2914–2923. 
 
 
 
