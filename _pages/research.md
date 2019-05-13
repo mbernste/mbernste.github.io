@@ -11,7 +11,7 @@ Gene expression-based classification of a biological sample’s cell type is an 
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
 ![My helpful screenshot]({{ " https://mbernste.github.io/images/cell_type_classification.png" |  https://mbernste.github.io/images/cell_type_classification.png }}
 
-**Paper**
+**Paper:**
 
 Bernstein,M.N. and C.N. Dewey (2019). [Hierarchical cell type classification using mass, heterogeneous RNA-seq data from human primary cells](https://www.biorxiv.org/content/10.1101/634097v1). _bioRxiv.
 
@@ -27,7 +27,7 @@ See [my talk](https://www.youtube.com/watch?v=pVHMq9SdUtc) describing the MetaSR
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
 ![My helpful screenshot]({{ " https://mbernste.github.io/images/MetaSRA_web.png" |  https://mbernste.github.io/images/MetaSRA_web.png }})
 
-**Publication**
+**Paper:**
 
 Bernstein,M.N., Doan,A., and C.N.Dewey (2017). [Normalized human sample-specific metadata for the Sequence Read Archive](https://doi.org/10.1093/bioinformatics/btx334). _Bioinformatics_, 33(18), 2914–2923. 
 
