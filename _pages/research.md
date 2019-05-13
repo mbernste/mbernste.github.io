@@ -13,7 +13,7 @@ Gene expression-based classification of a biological sample’s cell type is an 
 
 **Paper:**
 
-Bernstein,M.N. and C.N. Dewey (2019). [Hierarchical cell type classification using mass, heterogeneous RNA-seq data from human primary cells](https://www.biorxiv.org/content/10.1101/634097v1). _bioRxiv.
+Bernstein,M.N. and C.N. Dewey (2019). [Hierarchical cell type classification using mass, heterogeneous RNA-seq data from human primary cells](https://www.biorxiv.org/content/10.1101/634097v1). _bioRxiv_.
 
 ## MetaSRA: Normalized sample-specific metadata for the Sequence Read Archive
 
