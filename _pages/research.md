@@ -15,7 +15,7 @@ Gene expression-based classification of a biological sample’s cell type is an 
 
 Bernstein,M.N. and C.N. Dewey (2019). [Hierarchical cell type classification using mass, heterogeneous RNA-seq data from human primary cells](https://www.biorxiv.org/content/10.1101/634097v1). _bioRxiv_.
 
-## MetaSRA: Normalized sample-specific metadata for the Sequence Read Archive
+## MetaSRA: Normalized metadata for the Sequence Read Archive
 
 The NCBI’s Sequence Read Archive (SRA) promises great biological insight if one could analyze the data in the aggregate; 
 however, the data remain largely underutilized, in part, due to the poor structure of the metadata associated with each sample. We present MetaSRA, a database of normalized SRA human sample-specific metadata.  The MetaSRA is available at [metasra.biostat.wisc.edu](metasra.biostat.wisc.edu).
