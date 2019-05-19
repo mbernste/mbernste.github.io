@@ -8,4 +8,4 @@ redirect_from:
   - /about.html
 ---
 
-I'm a graduate student at the University of Wisconsin - Madison studying computer science. My research area is in bioinformatics. Broadly, I am interested in applications of algorithms and machine learning for extracting knowledge from large, publicly available repositories of biological sequencing data. 
+I'm a graduate student at the University of Wisconsin - Madison studying computer science. My research area is in bioinformatics. Specifically, I develop computational methods for mining large, publicly available genomics databases. 
