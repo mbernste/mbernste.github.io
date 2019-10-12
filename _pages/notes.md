@@ -23,7 +23,9 @@ There may be errors in these notes. Let me know if you find anything that can be
 [Matrices](http://mbernste.github.io/files/notes/Matrices.pdf)  
 [Matrix-vector multiplication](http://mbernste.github.io/files/notes/MatrixVectorMultiplication.pdf)  
 [Matrices as linear transformations](http://mbernste.github.io/files/notes/MatricesAsLinearTransformations.pdf)  
-[Matrix multiplication](http://mbernste.github.io/files/notes/MatrixMultiplication.pdf)
+[Matrix multiplication](http://mbernste.github.io/files/notes/MatrixMultiplication.pdf)  
+[Inverse Matrices](http://mbernste.github.io/files/notes/MatrixInverse.pdf)
+
 
 ## Probability
 
