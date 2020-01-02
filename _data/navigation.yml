@@ -21,8 +21,11 @@ main:
   - title: "Notes"
     url: /notes/
     
+  - title: "Blog"
+    url: /notes/
+    
   - title: "CV"
-    url: http://mbernste.github.io/files/CV.pdf
+    url: http://mattscaffeinatedramblings.blogspot.com
     
   - title: "Quotes"
     url: /quotes/
