@@ -22,10 +22,10 @@ main:
     url: /notes/
     
   - title: "Blog"
-    url: /notes/
+    url: http://mattscaffeinatedramblings.blogspot.com
     
   - title: "CV"
-    url: http://mattscaffeinatedramblings.blogspot.com
+    url: http://mbernste.github.io/files/CV.pdf
     
   - title: "Quotes"
     url: /quotes/
