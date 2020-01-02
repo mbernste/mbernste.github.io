@@ -247,6 +247,13 @@ defaults:
       layout: notes
       author_profile: true
       share: false
+  - scope:
+      path: ""
+      type: blog
+    values:
+      layout: blog
+      author_profile: true
+      share: false
 
 # Sass/SCSS
 sass:
