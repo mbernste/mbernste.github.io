@@ -8,4 +8,4 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Postdoctoral Fellow at the Morgridge Institute for Research in Madison, Wisconsin and conduct research in the area of biomedical data science.  I research novel statistical and computational methods for mining large, publicly available genomics databases. 
+I'm a Postdoctoral Fellow at the Morgridge Institute for Research with a background in computer science. I work in the area of computational biology and biomedical data science. More specifically, I research new computational and statistical methods for mining large, heterogeneous biomedical datasets. My goal is to develop new models, databases, and tools that will enable biomedical researchers to make better utilization of the massive genomic datasets that lie in the public domain. I use machine learning and statistical techniques extensively in my work. 
