@@ -14,6 +14,8 @@ author_profile: true
 
 "If you want to build a ship, don't drum up people to collect wood and don't assign them tasks and work, but rather teach them to long for the endless immensity of the sea." **\~ Antoine de Saint-Exupery**
 
+“Once there were brook trout in the streams in the mountains. You could see them standing in the amber current where the white edges of their fins wimpled softly in the flow. They smelled of moss in your hand. Polished and muscular and torsional. On their backs were vermiculate patterns that were maps of the world in its becoming. Maps and mazes. Of a thing which could not be put back. Not be made right again. In the deep glens where they lived all things were older than man and they hummed of mystery.” **\~ Cormac McCarthy**
+
 "The places in-between places they are little countries themselves with their own holidays." **\~ Alberto Rios**
 
 "Let us dedicate ourselves to what the Greeks wrote so many years ago: to tame the savageness of man and make gentle the life of this world." **\~ Bobby Kennedy**
