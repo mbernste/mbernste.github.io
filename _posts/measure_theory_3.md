@@ -42,7 +42,7 @@ Intuitively, for a given function $f$ whose codomain is numeric (i.e. the real n
 
 When $f$ is smooth (i.e. both continuous and differentiable), we can approximate the area under $f$ within a given interval $(a,b)$ by summing the areas of rectangles of even width that span $(a,b)$. If we keep shrinking the rectangles then, in the limit, this becomes the Reimann integral, which is taught in advanced high school and introductory undergraduate calculus courses.  The figure below demonstrates this process:
 
-[!img](https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Reimann.png)
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Reimann.png" alt="drawing" width="600"/></center>
 
 The Lebesgue integral also forms rectangles, but it does so in a different manner as that of the Reimann integral.  In contrast to the Reimann integral, where rectangles of even width span the domain, for the Lebesgue integral, a rectangle is formed for each value in the function's codomain. For each such value, the rectangle's height is the codomain's value and the base of the rectangle is the length of the interval such that the values in this interval all map to the same value of the function.  The figure below displays these contrasting strategies:
 
