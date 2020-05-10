@@ -37,7 +37,7 @@ A **random variable** is usually first introduced as a variable (like those used
 
 This definition, though not all that rigorous, tends to work fine for basic applications. Now let's look at its measure-theoretic definition:
 
-**Definition 6:** A **random variable** $X$ is a measurable function from a probability space $(\Omega, E, P)$ to a meausrable space $(H, \mathcal{H})$ where $H$ is a set, $\mathcal{H}$ is a $\sigma$-algebra over $H$, and $X$ maps elements from $\Omega$ to $H$.
+<span style="color:#0060C6">**Definition 6:** A **random variable** $X$ is a measurable function from a probability space $(\Omega, E, P)$ to a meausrable space $(H, \mathcal{H})$ where $H$ is a set, $\mathcal{H}$ is a $\sigma$-algebra over $H$, and $X$ maps elements from $\Omega$ to $H$.</span>
 
 Wait what? A random variable is really a function?  And what on earth is a measurable function? 
 
@@ -48,9 +48,11 @@ Measurable functions
 
 A measurable function is defined as follows:
 
-**Definition 7:** Given measure spaces $(F, \mathcal{F})$ and $(H, \mathcal{H})$, a function
-$$f : F \rightarrow H$$
-is a **measurable function** if for all $A \in \mathcal{H}$, $f^{-1}(A) \in \mathcal{F}$.
+<span style="color:#0060C6">**Definition 7:** Given measure spaces $(F, \mathcal{F})$ and $(H, \mathcal{H})$, a function</span>
+
+<center><span style="color:#0060C6">$$f : F \rightarrow H$$</span></center>
+
+<span style="color:#0060C6">is a **measurable function** if for all $A \in \mathcal{H}$, $f^{-1}(A) \in \mathcal{F}$.</span>
 
 Now let's parse this definition. 
 
