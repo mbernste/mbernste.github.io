@@ -50,5 +50,5 @@ The Lebesgue integral also forms rectangles, but it does so in a different way t
 
 Note in the figure above, $\mu$ denotes a measure over the Borel $\sigma$-algebra -- we'll get to this in a bit. The general idea, is that the Lebesgue integral forms rectangles according to values in $f$'s codomain. 
 
-A crucial difference between the Reimann integral and the Lebesgue integral is that the Lebesgue integral works for functions whose domain is non-numeric. For such functions, the "rectangle explanation" somewhat breaks apart, but if we're to stretch this explanation, the "width" of each rectangle is the *measure* assigned to the preimage of each unique height of the function.
+A crucial difference between the Reimann integral and the Lebesgue integral is that the Lebesgue integral works for functions whose domain is non-numeric. For such functions, the "rectangle explanation" somewhat breaks apart, but if we're to stretch this explanation anayway, each rectangle's "width" is the *measure* assigned to the preimage of each "unique" height of the function (when the codomain of $f$ is uncountable, then we take a limit similar to the limit of shrinking rectangles in the Reimann integra).
 
