@@ -1,7 +1,7 @@
 ---
 title: 'Demystifying measure-theoretic probability theory (part 1: probability spaces)'
 date: 2019-12-30
-permalink: /posts/post1/
+permalink: /posts/measure_theory_1/
 tags:
   - mathematics
   - measure theory
