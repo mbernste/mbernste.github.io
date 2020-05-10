@@ -60,7 +60,7 @@ First off, a measurable function, like any function, maps elements in one set to
 
 A measurable function has a few more layers to it than a plain old function. First, the domain and codomain of $f$ are both measurable spaces equipped with $\sigma$-algebras $\mathcal{F}$ and $\mathcal{H}$ respectively. Lastly, and most importantly, **a measurable function has the ability to "transport" a measure defined for the domain's measurable space $(F, \mathcal{F})$ over to the codomain's measurable space $(H, \mathcal{H})$.** 
 
-What do I mean by this? Say we have a measure μ defined over $(F, \mathcal{F})$ -- that is, $(F, \mathcal{F}, \mu)$ forms a complete measure space. Then we can use f to construct a measure for $(H, \mathcal{H})$ as follows: For any set $A \in \mathcal{H}$, we give it the measure $\mu(f^{-1}(A))$. By the definition of a measurable function, $A$ is guaranteed to be in the $\sigma$-algebra $\mathcal{F}$ and thus, it can be assigned a measure by $\mu$!
+What do I mean by this? Say we have a measure μ defined over $(F, \mathcal{F})$ -- that is, $(F, \mathcal{F}, \mu)$ forms a complete measure space. Then we can use $f$ to construct a measure for $(H, \mathcal{H})$ as follows: For any set $A \in \mathcal{H}$, we give it the measure $\mu(f^{-1}(A))$. By the definition of a measurable function, $A$ is guaranteed to be in the $\sigma$-algebra $\mathcal{F}$ and thus, it can be assigned a measure by $\mu$!
 
 An illustration of a measurable function is depicted in part B of the figure below:
 
@@ -97,10 +97,39 @@ For example, the element $\{1\}$ contains only the outcome of the coin landing a
 
 Importantly, the preimage under $X$ for each of these sets is an event in the original probability space (i.e. a member of $E$). Thus, we can assign each set in $\mathcal{H}$ a probability according to the measure of it's preimage under $X$ according to $P$!  For example, the probability that the coin lands as heads is given by:
 
-$$P(X^{-1}(\{1\})) = P({\omega \mid X(\omega) = 1})$$
+$$P\left(X^{-1}(\{1\})\right) = P({\omega \mid X(\omega) = 1})$$
 
 Generally, we use the familiar notation 
 
 $$P(X=1)$$ 
 
 as shorthand for the above statements. For a fair coin-toss, we would likely say that $P(X=1) = 1/2$ and $P(X=0) = 1/2$.
+
+
+Continuous random variables
+-----
+
+Above, we described how the measure theoretic definition for probability encompasses discrete random variables. how does it encompass continuous random variables? 
+
+A continuous random variable $X$, maps elements from $\Omega$ to the full set of real number $\mathbb{R}$  That is, $H := \mathbb{R}$. The trick now is figuring how to construct a sigma-algebra $\mathcal{H}$ over $\mathbb{R}$ such that the preimage of any element of $\mathcal{H}$ is an event in $E$. Sadly, we cannot assign non-zero probability to every real-number due to the fact that the real numbers are [uncountable](https://en.wikipedia.org/wiki/Uncountable_set) -- that is, they are infinitely dense -- and therefore any attempt to assign each real number's element in $\mathcal{H}$a non-zero probability would cause $P\left(X^{-1}($\mathcal{H}$)\right)$ to blow up to infinity, which contradicts the definition for a probability space!  
+
+To get around this issue, the [Borel $\sigma$-algebra](https://en.wikipedia.org/wiki/Borel_set) is usually used, which we won't discuss in depth here, but intuitively it is formed by considering all *intervals* of real numbers.  That is, a set of real numbers given by the interval $(a, b)$ is an element of $\mathcal{H}$and therefore has a measurable preimage under $X$. We assign all intervals of length zero (i.e. singleton-sets that contain only one real number) a probability of zero.  That is, the probability assigned to any specific real number is zero; however, the probability assigned to an *interval* of rea numbers may be non-zero.  
+
+Now the question becomes, how do we determine the probability measure assigned to the preimage of an interval under $X$? 
+
+Most commonly, we consider continuous random variables that admit an easy and "algorithmic" way for computing this probability -- specifically, we consider random variable that admit a **probability density function**.
+
+A random variable $X$ admits a density function $f$, if the probability measure assigned to the preimage of each interval $(a,b)$ under $X$ can be computed with the following integral:
+
+$$P\left(X^{-1}((a,b))\right) := \int_a^b \ f(x) \ dx$$
+
+Generally, we use the familiar notation $P(a < X < b)$ to describe $P\left(X^{-1}((a,b))\right)$.
+
+And there you have it, both discrete and continuous random variables can be described by one common definition.
+
+Beyond discrete and continuous random variables
+-----
+
+Not only does the measure-theoretic definition for a random variable unify discrete and continuous random variables, as they are usually taught in introductory courses, it also provides the machinery for discussing random outcomes that are non-numeric. The reason for this is that the measure-theoretic definition for a random variable is constructed via sets and functions rather than numbers.
+
+For example, we may wish to discuss a random variable whose values are such things as [vectors](https://en.wikipedia.org/wiki/Multivariate_random_variable), [matrices](https://en.wikipedia.org/wiki/Random_matrix), [functions](https://en.wikipedia.org/wiki/Stochastic_process), or [graphs](https://en.wikipedia.org/wiki/Random_graph)!  
