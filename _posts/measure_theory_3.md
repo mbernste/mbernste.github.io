@@ -44,10 +44,9 @@ When $f$ is smooth (i.e. both continuous and differentiable), we can approximate
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Reimann.png" alt="drawing" width="600"/></center>
 
-The Lebesgue integral also forms rectangles, but it does so in a different manner as that of the Reimann integral.  In contrast to the Reimann integral, where rectangles of even width span the domain, for the Lebesgue integral, a rectangle is formed for each value in the function's codomain. For each such value, the rectangle's height is the codomain's value and the base of the rectangle is the length of the interval such that the values in this interval all map to the same value of the function.  The figure below displays this alternate stratagy:
+The Lebesgue integral also forms rectangles, but it does so in a different way than the Reimann integral. For the Lebesgue integral, a rectangle is formed *for each value* in the function's codomain (i.e., each unique height that the function ever reaches). For each value, a recangle is formed with a height equal to this value and a width equal to the length of all intervals along $\mathbb{R}$ where the function reaches this height.  The figure below displays this alternate stratagy:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue.png" alt="drawing" width="600"/></center>
 
-For functions that have numeric
-
+Note in the figure above, $\mu$ denotes a measure over the Borel $\sigma$-algebra -- we'll get to this in a bit. The general idea, is that the Lebesgue integral forms rectangles according to values in $f$'s codomain. 
 
