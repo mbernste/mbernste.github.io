@@ -22,7 +22,7 @@ main:
     url: /notes/
     
   - title: "Blog"
-    url: http://mattscaffeinatedramblings.blogspot.com
+    url: /year-archive/
     
   - title: "CV"
     url: http://mbernste.github.io/files/CV.pdf
