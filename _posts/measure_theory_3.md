@@ -50,5 +50,23 @@ The Lebesgue integral also forms rectangles, but it does so in a different way t
 
 Note in the figure above, for completeness $\mu$ denotes a measure over the Borel $\sigma$-algebra -- we'll get to this in a bit, but for now, the general idea is that the Lebesgue integral forms rectangles according to values in $f$'s codomain. 
 
-A crucial difference between the Reimann integral and the Lebesgue integral is that the Lebesgue integral works for functions whose domain is non-numeric. For such functions, the "rectangle explanation" somewhat breaks apart, but if we're to stretch this explanation anayway, each rectangle's "width" becomse the *measure* assigned to the preimage of each unique height that the function reaches (i.e., each value in the codomain -- though, when the codomain of $f$ is uncountable, then we take a limit similar to the limit of shrinking rectangles in the Reimann integral -- we'll get to this soon).
+A crucial difference between the Reimann integral and the Lebesgue integral is that the Lebesgue integral works for functions whose domain is non-numeric. We'll see how this works as we define the Lebesgue integral more rigorously.
 
+Defining the Lebesgue integral through a sequence of definitions
+---------
+
+The rigorous definition of the Lebesgue integral can be constructed through a sequence of definitions:
+1. Simple functions
+2. The Lebesgue integral of a simple function
+3. The Lebesgue integral of a positive function
+4. The Lebesgue integral
+
+We will now define each of these concepts.
+
+**1. Simple functions**
+
+A **simple function** is a measure-theoretic generalization of a [step-function](https://en.wikipedia.org/wiki/Step_function). 
+
+More rigorously, given a measure space $(F, \mathcal{F}, \mu)$, a simple-function $f$ is any function that can be expressed as a linear combination:
+
+$$f(x) := h_1(x)$$
