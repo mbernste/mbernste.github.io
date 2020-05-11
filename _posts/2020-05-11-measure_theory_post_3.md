@@ -122,7 +122,7 @@ Let's parse this definition. First, notice we are considering a *measurable* sim
 
 More importantly, the pre-image of each singleton-set $\{h_i\}$, $A_i$, has a measure $\mu_i$.  If $H$ is the real numbers $\mathbb{R}$, in which case $A_i$ is an interval of numbers, and $\mu(A_i)$ is simply the length of this interval, then the definition for the Lebesgue integral can be interpreted as computing the sums of areas of rectangles!  See the figure below for this depiction:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_simple_function.png" alt="drawing" width="400"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_simple_function.png" alt="drawing" width="600"/></center>
 
  
 
