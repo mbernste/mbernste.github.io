@@ -118,12 +118,13 @@ with corresponding  pre-images</span>
 
 <center><span style="color:#0060C6">$$\int_F f \ d\mu := \sum_{i=1}h_i \mu(A_i)$$</span></center>
 
-Let's parse this definition. First, notice we are considering a *measurable* simple function $g$ -- that is, the codomain of $g$, $H$, has a $\sigma$-algebra, $\mathcal{H}$ defined for it. This $\sigma$-algebra is somewhat trivial since, $H$ is finite and countable (by the definition of a simple function) and each element of $H$ gets its own singleton-set in $\mathcal{H}$.
+Let's parse this definition. First, notice we are considering a *measurable* simple function $g$ -- that is, the codomain of $g$, $H$, has a $\sigma$-algebra, $\mathcal{H}$ defined for it. This $\sigma$-algebra is somewhat trivial since, $H$ is finite and countable (by the definition of a simple function) and each element of $H$ gets its own singleton-set in $\mathcal{H}$.  The pre-image of each of these singleton-set $\{h_i\}$, $A_i$, has a measure $\mu(A_i)$.  
 
-More importantly, the pre-image of each singleton-set $\{h_i\}$, $A_i$, has a measure $\mu_i$.  If $H$ is the real numbers $\mathbb{R}$, in which case $A_i$ is an interval of numbers, and $\mu(A_i)$ is simply the length of this interval, then the definition for the Lebesgue integral can be interpreted as computing the sums of areas of rectangles!  See the figure below for this depiction:
+Notably, if $H$ is the real numbers $\mathbb{R}$ (in which case each $A_i$ would be an interval of numbers) and $\mu(A_i)$ is equal to the length of the interval containing $A_i$, then the Lebesgue integral for the simple function can be interpreted as computing the sums of areas of rectangles!  See the figure below for this depiction:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_simple_function.png" alt="drawing" width="600"/></center>
 
+**3. The Lebesgue integral of positive function**
  
 
 <span style="red">THIS POST IS UNDER CONSTRUCTION</span>
