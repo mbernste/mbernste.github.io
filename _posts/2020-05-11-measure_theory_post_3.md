@@ -70,7 +70,7 @@ I find the full, rigorous definition of the Lebesgue integral to be quite comple
 
 **1. Simple functions**
 
-A **simple function** is a measure-theoretic generalization of a [step-function](https://en.wikipedia.org/wiki/Step_function).   Given a measurable space $(F, \mathcal{F})$, a simple function $g$ is any function that can be expressed as a finite, linear combination of indicator functions on sets in $\mathcal{F}$:
+A **simple function** is a measure-theoretic generalization of a [step-function](https://en.wikipedia.org/wiki/Step_function).   Given a measurable space $(F, \mathcal{F})$, a simple function $g$ is any function that can be expressed as a finite, [linear combination](https://en.wikipedia.org/wiki/Linear_combination) of [indicator functions](https://en.wikipedia.org/wiki/Indicator_function) on sets in $\mathcal{F}$:
 
 <span style="color:#0060C6">**Definition 8**: Given a measurable space $(F, \mathcal{F})$, a function $g$</span>
 
