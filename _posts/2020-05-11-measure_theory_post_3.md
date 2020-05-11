@@ -82,9 +82,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$
-  
-  if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
+<span style="color:#0060C6"> where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
 
 When the domain of a simple function is $\mathbb{R}$, then a simple function is simply a step function:
 
@@ -122,10 +120,13 @@ Let's parse this definition. First, notice we are considering a *measurable* sim
 
 Notably, if $H$ is the real numbers $\mathbb{R}$ (in which case each $A_i$ would be an interval of numbers) and $\mu(A_i)$ is equal to the length of the interval containing $A_i$, then the Lebesgue integral for the simple function can be interpreted as computing the sums of areas of rectangles!  See the figure below for this depiction:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_simple_function.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_simple_function.png" alt="drawing" width="700"/></center>
 
 **3. The Lebesgue integral of positive function**
- 
+
+So far we have defined the Lebesgue integral for simple functions, now we will begin to define it more generally; however, we won't go all the way and define the final Lebesgue integral -- rather, we will only define the Lebesgue integral for positive-valued functions.  For this definition, we will use the Lebesgue integral of simple functions:
+
+
 
 <span style="red">THIS POST IS UNDER CONSTRUCTION</span>
 
