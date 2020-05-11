@@ -53,19 +53,15 @@ A crucial difference between the Reimann integral and the Lebesgue integral is t
 Defining the Lebesgue integral through a sequence of definitions
 ---------
 
-The rigorous definition of the Lebesgue integral can be constructed through a sequence of definitions:
+I find the full, rigorous definition of the Lebesgue integral to be quite complex. It helped me to break this definition down in a sequence of simpler definitions, each building on the next:
 1. Simple functions
 2. The Lebesgue integral of a simple function
 3. The Lebesgue integral of a positive function
 4. The Lebesgue integral
 
-We will now define each of these concepts.
-
 **1. Simple functions**
 
-A **simple function** is a measure-theoretic generalization of a [step-function](https://en.wikipedia.org/wiki/Step_function). 
-
-More rigorously, given a measurable space $(F, \mathcal{F})$, a [simple-function](https://en.wikipedia.org/wiki/Simple_function) $f$ is any function that can be expressed as a finite linear combination of indicator functions on these sets:
+A **simple function** is a measure-theoretic generalization of a [step-function](https://en.wikipedia.org/wiki/Step_function).   Given a measurable space $(F, \mathcal{F})$, a simple function $g$ is any function that can be expressed as a finite, linear combination of indicator functions on these sets:
 
 **Definition 8: Given a measurable space $(F, \mathcal{F})$, a function $g$
 
