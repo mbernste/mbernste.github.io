@@ -47,7 +47,7 @@ This may look pretty strange -- nothing like the Reimann integral that is usuall
 Intuition behind Lebesgue integration
 ---------
 
-Intuitively, for a given function $f$ whose codomain is numeric (i.e. the real numbers or a subset thereof), an integral measures the area under the function's surface.
+For a given function $f$ whose domain and codomain are both numeric, an integral measures the area under the function's surface.
 
 When $f$ is smooth (i.e. both continuous and differentiable), we can approximate the area under $f$ within a given interval $(a,b)$ by summing the areas of rectangles of even width that span $(a,b)$. If we keep shrinking the rectangles then, in the limit, this becomes the Reimann integral, which is taught in advanced high school and introductory undergraduate calculus courses.  The figure below demonstrates this process:
 
