@@ -40,7 +40,7 @@ Expectation
 
 Recall, that measure-theoretic probability defines a random variable $X$ as a measurable function from some probability space $(\Omega, E, P)$ to a measurable space $(H,\mathcal{H})$.  The measure-theoretic treatment of probability then defines its expectation $E(X)$ as the following **Lebesgue integral**:
 
- $$E(X) := \int_{\omega \in \Omega} X(\omega) dP(\omega)$$
+ $$E(X) := \int_{\omega \in \Omega} X(\omega) dP$$
  
 This may look pretty strange -- nothing like the Reimann integral that is usually taught in introductory calculus classes. Let's dig in.
 
