@@ -48,8 +48,6 @@ The Lebesgue integral also forms rectangles, but it does so in a different way t
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue.png" alt="drawing" width="600"/></center>
 
-Note in the figure above, for completeness $\mu$ denotes a measure over the Borel $\sigma$-algebra -- we'll get to this in a bit, but for now, the general idea is that the Lebesgue integral forms rectangles according to values in $f$'s codomain. 
-
 A crucial difference between the Reimann integral and the Lebesgue integral is that the Lebesgue integral works for functions whose domain is non-numeric. We'll see how this works as we define the Lebesgue integral more rigorously.
 
 Defining the Lebesgue integral through a sequence of definitions
@@ -67,6 +65,16 @@ We will now define each of these concepts.
 
 A **simple function** is a measure-theoretic generalization of a [step-function](https://en.wikipedia.org/wiki/Step_function). 
 
-More rigorously, given a measure space $(F, \mathcal{F}, \mu)$, a simple-function $f$ is any function that can be expressed as a linear combination:
+More rigorously, given a measurable space $(F, \mathcal{F})$, a [simple-function](https://en.wikipedia.org/wiki/Simple_function) $f$ is any function that can be expressed as a finite linear combination of indicator functions on these sets:
 
-$$f(x) := h_1(x)$$
+**Definition 8: Given a measurable space $(F, \mathcal{F})$, a function $g$
+
+$$g : F \rightarrow \mathbb{R}$$
+
+is a **simple function** if there exists a finite sequence of sets $A_1, A_2, \dots, A_n \in \mathcal{F}$ and a finite sequence of numbers $h_1, h_2, \dots, h_n \in \mathbb{R}$ such that $g$ can be expressed as 
+
+$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$
+
+where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.
+
+
