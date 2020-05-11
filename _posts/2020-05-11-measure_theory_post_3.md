@@ -138,7 +138,7 @@ $$\left\{ \int_F g \ d\mu \mid 0 \leq g \leq f, g \ \text{is simple} \right\}$$
 
 This is a set of integrals of simple functions. Moreover, these simple functions that are bounded from above by $f$.  Let's take a look at one of the simple functions in the set. In the figure below, we depict an example positive function $f$ and a simple function $g$ that is bounded above by $f$:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_simple_function_approx.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/simple_function_approx.png" alt="drawing" width="500"/></center>
 
 
 
