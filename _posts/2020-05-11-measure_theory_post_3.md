@@ -82,7 +82,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ hmm</span> 
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ hmm $\mathbb{I}$</span> 
   
   is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
 
@@ -136,8 +136,9 @@ Okay this is bit dense so let's break it down. First, we notice that this defini
 
 $$\left\{ \int_F g \ d\mu \mid 0 \leq g \leq f, g \ \text{is simple} \right\}$$
 
-This is a set of integrals of simple functions. Moreover, these simple functions are always smaller than $f$.  Let's take a look at one of the simple functions in the set:
+This is a set of integrals of simple functions. Moreover, these simple functions that are bounded from above by $f$.  Let's take a look at one of the simple functions in the set. In the figure below, we depict an example positive function $f$ and a simple function $g$ that is bounded above by $f$:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_simple_function_approx.png" alt="drawing" width="500"/></center>
 
 
 
