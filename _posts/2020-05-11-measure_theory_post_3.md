@@ -82,7 +82,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-<span style="color:#0060C6"> where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
+<span style="color:#0060C6">where $$\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
 
 When the domain of a simple function is $\mathbb{R}$, then a simple function is simply a step function:
 
@@ -126,7 +126,9 @@ Notably, if $H$ is the real numbers $\mathbb{R}$ (in which case each $A_i$ would
 
 So far we have defined the Lebesgue integral for simple functions, now we will begin to define it more generally; however, we won't go all the way and define the final Lebesgue integral -- rather, we will only define the Lebesgue integral for positive-valued functions.  For this definition, we will use the Lebesgue integral of simple functions:
 
+<span style="color:#0060C6">**Definition 10:** Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$ and a positive measurable function $f : F \righarrow H$, the **Lebesgue integral of this positive function** is defined as</span>
 
+<center><span style="color:#0060C6">$$\int_F f(x) \ d\mu := \text{sup}\left\{ \int_F g \ d\mu \mid 0 \leq g \leq f, g \ \text{is simple} \right\} $$</span></center>
 
 <span style="red">THIS POST IS UNDER CONSTRUCTION</span>
 
