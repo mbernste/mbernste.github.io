@@ -82,7 +82,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that  $\mathbb{I}_{A_i}(x) := 1$
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$
   
   if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
 
@@ -118,7 +118,12 @@ with corresponding  pre-images</span>
 
 <center><span style="color:#0060C6">$$\int_F f \ d\mu := \sum_{i=1}h_i \mu(A_i)$$</span></center>
 
-Let's parse this definition. First, notice we are considering a *measurable* simple function $g$ -- that is, the codomain of $g$, $H$, has a $\sigma$-algebra, $\mathcal{H}$ defined for it. This $\sigma$-algebra is somewhat trivial since, $H$ is finite and countable (by the definition of a simple function). 
+Let's parse this definition. First, notice we are considering a *measurable* simple function $g$ -- that is, the codomain of $g$, $H$, has a $\sigma$-algebra, $\mathcal{H}$ defined for it. This $\sigma$-algebra is somewhat trivial since, $H$ is finite and countable (by the definition of a simple function) and each element of $H$ gets its own singleton-set in $\mathcal{H}$.
+
+More importantly, the pre-image of each singleton-set $\{h_i\}$, $A_i$, has a measure $\mu_i$.  If $H$ is the real numbers $\mathbb{R}$, in which case $A_i$ is an interval of numbers, and $\mu(A_i)$ is simply the length of this interval, then the definition for the Lebesgue integral can be interpreted as computing the sums of areas of rectangles!  See the figure below for this depiction:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_simple_function.png" alt="drawing" width="400"/></center>
+
  
 
 <span style="red">THIS POST IS UNDER CONSTRUCTION</span>
