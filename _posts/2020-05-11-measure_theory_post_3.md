@@ -62,7 +62,7 @@ A crucial difference between the Reimann integral and the Lebesgue integral is t
 Defining the Lebesgue integral through a sequence of definitions
 ---------
 
-I find the full, rigorous definition of the Lebesgue integral to be quite complex. It helped me to break this definition down in a sequence of simpler definitions, each building on the next:
+I find the full, rigorous definition of the Lebesgue integral to be quite complex. It helped me to break this definition down into a sequence of simpler definitions, each building on the next:
 1. Simple functions
 2. The Lebesgue integral of a measurable simple function
 3. The Lebesgue integral of a measurable positive function
