@@ -75,7 +75,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 When the domain of a simple function is $\mathbb{R}$, then a simple function is simply a step function:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/simple_function.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/simple_function.png" alt="drawing" width="400"/></center>
 
 Simple functions generalize step functions because the domain need not be numeric -- rather, it simply must have a $\sigma$-algebra defined for it.  
 
