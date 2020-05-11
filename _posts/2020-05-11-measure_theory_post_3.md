@@ -102,7 +102,7 @@ Before defining the general Lebesgue integral, we first create a more narrow def
 
 <center><span style="color:#0060C6">$$H := \{h_1, h_2, \dots, h_n\}$$</span></center>
 
-<span style="color:#0060C6">for some integer $n$</span>, where 
+<span style="color:#0060C6">for some integer $n$, where </span>
 
 <center><span style="color:#0060C6">$$\{h_1\}, \{h_2\}, \dots, \{h_n\} \in \mathcal{H}$$</span></center>
 
