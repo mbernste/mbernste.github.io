@@ -166,11 +166,11 @@ Finally, coming back to probability theory, the expectation of a random variable
 
 <center><span style="color:#0060C6">$$E(X) := \int_{\Omega} X \ dP$$</span></center>
 
-When $X$ is discrete the Lebesgue integral becomes the familiar 
+When $X$ is discrete, the Lebesgue integral becomes the familiar 
 
 $$E(X) = \sum_x xP(X = x)$$
 
-This follows from $X$ in and of itself being a simple-function from $\Omega$ to the interval $[0,1]$! Though not proven here, when $X$ is continuous with density function $f$, the expectation reduces to the familiar
+This follows from $X$ already being a simple-function from $\Omega$ to the interval $[0,1]$ (the supremum is also the maximum in the definition for the Lebesgue integral)! Though not proven here, when $X$ is continuous with density function $f$, the expectation reduces to the familiar
 
 $$E(X) := \int_x xf(x) \ dx$$
 
