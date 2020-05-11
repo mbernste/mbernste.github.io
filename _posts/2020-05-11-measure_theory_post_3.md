@@ -136,11 +136,13 @@ Okay this is bit dense so let's break it down. First, we notice that this defini
 
 $$\left\{ \int_F g \ d\mu \mid 0 \leq g \leq f, g \ \text{is simple} \right\}$$
 
-This is a set of integrals of simple functions. Moreover, these simple functions that are bounded from above by $f$.  Let's take a look at one of the simple functions in the set. In the figure below, we depict an example positive function $f$ and a simple function $g$ that is bounded above by $f$:
+This is a set of integrals of simple functions. Moreover, these simple functions that are bounded from above by $f$. In the figure below, we depict an example positive function $f$ and a simple function $g$ that is bounded above by $f$:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/simple_function_approx.png" alt="drawing" width="500"/></center>
 
+Since $g$ is always bounded above by $f$, we can arbitrarly make $g$ more fine-grained to better approximate $f$. This is akin to shrinking rectangles!  Moreover, as $g$ becomes more fine-grained, and better approximates $f$, the integral of $g$ will better approximate the area under $f$.  The supremum used in the above definition performs this very task of computing the area under ever-more fine-grained simple-functions!  
 
+We also notice here that $f$ *has* to be positive for this all to work out. If $f$ can be negative, than it is difficult to find a limit of $g$'s that approach $f$.  We need $f$ to be positive so that we can bound ever-fine-grained $g$'s from above by $f$. 
 
 
 <span style="red">THIS POST IS UNDER CONSTRUCTION</span>
