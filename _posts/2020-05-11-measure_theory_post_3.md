@@ -82,7 +82,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x)$
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x)$</span>
   
   hmm $\mathbb{I}_{A_i}(x)$</span> 
   
@@ -154,7 +154,7 @@ At last we come to finally defining the Lebesgue integral. If you have followed 
 
 <center><span style="color:#0060C6">$$\int_F f \ d\mu := \int_F f^{+} \ d\mu - \int_F f^{-} \ d\mu $$</span></center>
 
-<span style="color:#0060C6">where $f^{+}(x)$ := f(x)$ if $f(x) \geq 0$ and $f^{+}(x) := 0$ otherwise, and where $f^{-}(x)$ := -f(x)$ if $f(x) < 0$ and $f^{-}(x) := 0$ otherwise</span>
+<span style="color:#0060C6">where $f^{+}(x) := f(x)$ if $f(x) \geq 0$ and $f^{+}(x) := 0$ otherwise, and where $f^{-}(x) := -f(x)$ if $f(x) < 0$ and $f^{-}(x) := 0$ otherwise</span>
 
 In the figure below, we depict $f^{+}$ and $f^{-}$ for some function $f$:
 
