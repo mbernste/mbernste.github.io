@@ -10,6 +10,8 @@ tags:
   - tutorial
 ---
 
+<span style="red">**THIS POST IS CURRENTLY UNDER CONSTRUCTION**</span>
+
 *In this series of posts, I present my understanding of some basic concepts in measure theory — the mathematical study of objects with “size”— that have enabled me to gain a deeper understanding into the foundations of probability theory.*
 
 *In part 3, we will build from the measure-theoretic definitions for probability and random variables towards the measure-theoretic definition for the expectation of a random variable.*
