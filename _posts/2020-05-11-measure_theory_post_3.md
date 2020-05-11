@@ -42,7 +42,7 @@ Expectation
 
 Recall, that measure-theoretic probability defines a random variable $X$ as a measurable function from some probability space $(\Omega, E, P)$ to a measurable space $(H,\mathcal{H})$.  The measure-theoretic treatment of probability then defines its expectation $E(X)$ as the following **Lebesgue integral**:
 
- $$E(X) := \int_{\Omega} X(\omega) \ dP$$
+ $$E(X) := \int_{\Omega} X \ dP$$
  
 This may look pretty strange -- nothing like the Reimann integral that is usually taught in introductory calculus classes. Let's dig in.
 
@@ -82,7 +82,9 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-<span style="color:#0060C6">where $$\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ hmm</span> 
+  
+  is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
 
 When the domain of a simple function is $\mathbb{R}$, then a simple function is simply a step function:
 
