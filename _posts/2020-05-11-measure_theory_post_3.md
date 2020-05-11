@@ -1,6 +1,6 @@
 ---
 title: 'Demystifying measure-theoretic probability theory (part 3: expectation)'
-date: 2020-01-04
+date: 2020-05-11
 permalink: /posts/measure_theory_3/
 tags:
   - mathematics
@@ -80,9 +80,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-<span style="color:#0060C6">where  is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
-
-$\mathbb{I}_{A_i}(x)$
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
 
 When the domain of a simple function is $\mathbb{R}$, then a simple function is simply a step function:
 
@@ -112,9 +110,10 @@ Before defining the general Lebesgue integral, we first create a more narrow def
 
 <center><span style="color:#0060C6">$$\int_F f \ d\mu := \sum_{i=1}h_i \mu(A_i)$$</span></center>
 
+Let's parse this definition. First, notice we are considering a *measurable* simple function $g$ -- that is, the codomain of $g$, $H$, has a $\sigma$-algebra, $\mathcal{H}$ defined for it. This $\sigma$-algebra is somewhat trivial since, $H$ is finite and countable (by the definition of a simple function). 
+ 
 
-
-THIS POST IS UNDER CONSTRUCTION
+<span style="red">THIS POST IS UNDER CONSTRUCTION</span>
 
 
 
