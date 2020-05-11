@@ -66,8 +66,8 @@ Defining the Lebesgue integral through a sequence of definitions
 
 I find the full, rigorous definition of the Lebesgue integral to be quite complex. It helped me to break this definition down in a sequence of simpler definitions, each building on the next:
 1. Simple functions
-2. The Lebesgue integral of a simple function
-3. The Lebesgue integral of a positive function
+2. The Lebesgue integral of a measurable simple function
+3. The Lebesgue integral of a measurable positive function
 4. The Lebesgue integral
 
 **1. Simple functions**
@@ -92,7 +92,7 @@ Simple functions generalize step functions because the domain need not be numeri
 
 As we'll soon see, simple-functions are the basis on which the Lebesgue integral will be constructed. simple functions are used to generalize the rectangles used in the definition of the Reimann integral!
 
-**2. The Lebesgue integral of a simple function**
+**2. The Lebesgue integral of a measurable simple measurable function**
 
 Before defining the general Lebesgue integral, we first create a more narrow definition for a Lebesgue integral only over *measurable simple functions*:
 
@@ -122,7 +122,7 @@ Notably, if $H$ is the real numbers $\mathbb{R}$ (in which case each $A_i$ would
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_simple_function.png" alt="drawing" width="700"/></center>
 
-**3. The Lebesgue integral of positive function**
+**3. The Lebesgue integral of a measurable positive function**
 
 So far we have defined the Lebesgue integral for simple functions, now we will begin to define it more generally; however, we won't go all the way and define the final Lebesgue integral -- rather, we will only define the Lebesgue integral for positive-valued functions.  For this definition, we will use the Lebesgue integral of simple functions:
 
