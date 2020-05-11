@@ -142,7 +142,12 @@ This is a set of integrals of simple functions. Moreover, these simple functions
 
 Since $g$ is always bounded above by $f$, we can arbitrarly make $g$ more fine-grained to better approximate $f$. This is akin to shrinking rectangles!  Moreover, as $g$ becomes more fine-grained, and better approximates $f$, the integral of $g$ will better approximate the area under $f$.  The supremum used in the above definition performs this very task of computing the area under ever-more fine-grained simple-functions!  
 
-We also notice here that $f$ *has* to be positive for this all to work out. If $f$ can be negative, than it is difficult to find a limit of $g$'s that approach $f$.  We need $f$ to be positive so that we can bound ever-fine-grained $g$'s from above by $f$. 
+We also notice here that $f$ *has* to be positive for this all to work out. If $f$ can be negative, then it would be difficult to find a limit of simple-functions that approach $f$.  We need $f$ to be positive so that we can bound ever-fine-grained simple-functions from above by $f$. 
+
+**3. The Lebesgue**
+
+At last we come to finally defining the Lebesgue integral. If you have followed along so far, then this last step is relatively easy.  Given that we have a definition for a Lebesgue integral over positive measurable functions, it's not too difficult to concoct a definition for functions that can be negative too -- we simply need to consider the positive and negative parts of the function separately:
+
 
 
 <span style="red">THIS POST IS UNDER CONSTRUCTION</span>
