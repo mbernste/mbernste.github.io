@@ -82,7 +82,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ 
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that
   
   hmm $\mathbb{I}_{A_i}(x)$</span> 
   
@@ -150,7 +150,12 @@ We also notice here that $f$ *has* to be positive for this all to work out. If $
 
 At last we come to finally defining the Lebesgue integral. If you have followed along so far, then this last step is relatively easy.  Given that we have a definition for a Lebesgue integral over positive measurable functions, it's not too difficult to concoct a definition for functions that can be negative too -- we simply need to consider the positive and negative parts of the function separately:
 
+<span style="color:#0060C6">**Definition 11:** Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$ and a positive measurable function $f : F \rightarrow H$, the **Lebesgue integral** is defined as</span>
 
+<center><span style="color:#0060C6">$$\int_F f(x) \ d\mu := \int_F f_{+}(x) \ d\mu - \int_F f_{-}(x) \ d\mu $$</span></center>
+
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_positive_negative.png" alt="drawing" width="500"/></center>
 
 <span style="red">THIS POST IS UNDER CONSTRUCTION</span>
 
