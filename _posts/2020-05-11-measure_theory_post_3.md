@@ -82,7 +82,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that equals one if $x \in A_i$ and equals zero otherwise.</span>
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function that equals one if $x \in A_i$ and equals zero otherwise.</span>
 
 When the domain of a simple function is $\mathbb{R}$, then a simple function is simply a step function:
 
@@ -94,7 +94,7 @@ As we'll soon see, simple-functions are the basis on which the Lebesgue integral
 
 **2. The Lebesgue integral of a measurable simple measurable function**
 
-Before defining the general Lebesgue integral, we first create a more narrow definition for a Lebesgue integral only over *measurable simple functions*:
+Before defining the general Lebesgue integral, we first create a more narrow definition for a Lebesgue integral that is defined only over *measurable simple functions*:
 
 <span style="color:#0060C6">**Definition 9:** Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$, and a measurable simple function</span>
 
@@ -124,7 +124,7 @@ Notably, if $H$ is the real numbers $\mathbb{R}$ (in which case each $A_i$ would
 
 **3. The Lebesgue integral of a measurable positive function**
 
-So far we have defined the Lebesgue integral for simple functions, now we will begin to define it more generally; however, we won't go all the way and define the final Lebesgue integral -- rather, we will only define the Lebesgue integral for positive-valued functions.  For this definition, we will use the Lebesgue integral of simple functions:
+So far we have defined the Lebesgue integral for simple functions, now we will begin to define it more generally; however, we won't go all the way and define the final, general Lebesgue integral -- rather, we will only define the Lebesgue integral for positive-valued functions.  For this definition, we will use the Lebesgue integral of simple functions:
 
 <span style="color:#0060C6">**Definition 10:** Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$ and a positive measurable function $f : F \rightarrow H$, the **Lebesgue integral of this positive function** is defined as</span>
 
