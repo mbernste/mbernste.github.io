@@ -160,7 +160,22 @@ In the figure below, we depict $f^{+}$ and $f^{-}$ for some function $f$:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_positive_negative.png" alt="drawing" width="500"/></center>
 
-<span style="red">THIS POST IS UNDER CONSTRUCTION</span>
 
+Back to expectation
+---------
+
+Finally, coming back to probability theory, the expectation of a random variable $X$ is the Lebesgue integral of $X$ over the sample space $\Omega$ with respect to the probability measure $P$:
+
+<span style="color:#0060C6">**Definition 12:** Given a probability space $(\Omega, E, P)$ and random variable $X$ mapping from this probability space, expectation of $X$ is given by</span>
+
+<center><span style="color:#0060C6">$$E(X) := \int_{\Omega} X \ dP$$</span></center>
+
+When $X$ is discrete the Lebesgue integral becomes the familiar 
+
+$$E(X) = \sum_x xP(X = x)$$
+
+This follows from $X$ in and of itself being a simple-function from $\Omega$ to the interval $[0,1]$! Though not proven here, when $X$ is continuous with density function $f$, the expectation reduces to the familiar
+
+$$E(X) := \int xf(x) \ dx$$
 
 
