@@ -63,14 +63,22 @@ I find the full, rigorous definition of the Lebesgue integral to be quite comple
 
 A **simple function** is a measure-theoretic generalization of a [step-function](https://en.wikipedia.org/wiki/Step_function).   Given a measurable space $(F, \mathcal{F})$, a simple function $g$ is any function that can be expressed as a finite, linear combination of indicator functions on these sets:
 
-**Definition 8: Given a measurable space $(F, \mathcal{F})$, a function $g$
+<span style="color:#0060C6">**Definition 8: Given a measurable space $(F, \mathcal{F})$, a function $g$</span>
 
-$$g : F \rightarrow \mathbb{R}$$
+<center><span style="color:#0060C6">$$g : F \rightarrow \mathbb{R}$$</span></center>
 
-is a **simple function** if there exists a finite sequence of sets $A_1, A_2, \dots, A_n \in \mathcal{F}$ and a finite sequence of numbers $h_1, h_2, \dots, h_n \in \mathbb{R}$ such that $g$ can be expressed as 
+<span style="color:#0060C6">is a **simple function** if there exists a finite sequence of sets $A_1, A_2, \dots, A_n \in \mathcal{F}$ and a finite sequence of numbers $h_1, h_2, \dots, h_n \in \mathbb{R}$ such that $g$ can be expressed as</span>
 
-$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$
+<center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
+
+When the domain of a simple function is $\mathbb{R}$, then a simple function is simply a step function:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/simple_function.png" alt="drawing" width="600"/></center>
+
+Simple functions generalize step functions because the domain need not be numeric -- rather, it simply must have a $\sigma$-algebra defined for it.  
+
+As we'll soon see, simple-functions are the basis on which the Lebesgue integral will be constructed. simple functions are used to generalize the rectangles used in the definition of the Reimann integral!
 
 
