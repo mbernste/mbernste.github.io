@@ -81,4 +81,31 @@ Simple functions generalize step functions because the domain need not be numeri
 
 As we'll soon see, simple-functions are the basis on which the Lebesgue integral will be constructed. simple functions are used to generalize the rectangles used in the definition of the Reimann integral!
 
+**2. The Lebesgue integral of a simple function**
+
+Before defining the general Lebesgue integral, we first create a more narrow definition for a Lebesgue integral only over *measurable simple functions*:
+
+**Definition 9:**
+
+<span style="color:#0060C6">Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$, and a measurable simple function</span>
+
+<center><span style="color:#0060C6">$$g : F \rightarrow H$$</span></center>
+
+<span style="color:#0060C6">with codomain</span>
+
+<center><span style="color:#0060C6">$$H := \{h_1, h_2, \dots, h_n\}$$</span></center>
+
+<span style="color:#0060C6">for some integer $n$, and corresponding preimagnes</span>
+
+<center><span style="color:#0060C6">$$A_1, A_2, \dots, A_n \in \mathcal{F}$$</span></center>
+
+<span style="color:#0060C6">where $A_i := g^{-1}(\{h_1\})$, the **Lebesgue integral of this simple function** is defined as</span> 
+
+<center><span style="color:#0060C6">$$\int_F f \ d\mu := \sum_{i=1}h_i \mu(A_i)$$</span></center>
+
+
+
+THIS POST IS UNDER CONSTRUCTION
+
+
 
