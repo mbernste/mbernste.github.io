@@ -146,14 +146,17 @@ Since $g$ is always bounded above by $f$, we can arbitrarly make $g$ more fine-g
 
 We also notice here that $f$ *has* to be positive for this all to work out. If $f$ can be negative, then it would be difficult to find a limit of simple-functions that approach $f$.  We need $f$ to be positive so that we can bound ever-fine-grained simple-functions from above by $f$. 
 
-**3. The Lebesgue**
+**3. The Lebesgue integral**
 
 At last we come to finally defining the Lebesgue integral. If you have followed along so far, then this last step is relatively easy.  Given that we have a definition for a Lebesgue integral over positive measurable functions, it's not too difficult to concoct a definition for functions that can be negative too -- we simply need to consider the positive and negative parts of the function separately:
 
 <span style="color:#0060C6">**Definition 11:** Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$ and a positive measurable function $f : F \rightarrow H$, the **Lebesgue integral** is defined as</span>
 
-<center><span style="color:#0060C6">$$\int_F f(x) \ d\mu := \int_F f_{+}(x) \ d\mu - \int_F f_{-}(x) \ d\mu $$</span></center>
+<center><span style="color:#0060C6">$$\int_F f(x) \ d\mu := \int_F f^{+}(x) \ d\mu - \int_F f^{-}(x) \ d\mu $$</span></center>
 
+<span style="color:#0060C6">where $f^{+}(x)$ := f(x)$ if $f(x) \geq 0$ and $f^{+}(x) := 0$ otherwise, and where $f^{-}(x)$ := -f(x)$ if $f(x) < 0$ and $f^{-}(x) := 0$ otherwise</span>
+
+In the figure below, we depict $f^{+}$ and $f^{-}$ for some function $f$:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Lebesgue_positive_negative.png" alt="drawing" width="500"/></center>
 
