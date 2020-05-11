@@ -132,7 +132,7 @@ So far we have defined the Lebesgue integral for simple functions, now we will b
 
 <span style="color:#0060C6">**Definition 10:** Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$ and a positive measurable function $f : F \rightarrow H$, the **Lebesgue integral of this positive function** is defined as</span>
 
-<center><span style="color:#0060C6">$$\int_F f(x) \ d\mu := \text{sup}\left\{ \int_F g \ d\mu \mid 0 \leq g \leq f, g \ \text{is simple} \right\} $$</span></center>
+<center><span style="color:#0060C6">$$\int_F f \ d\mu := \text{sup}\left\{ \int_F g \ d\mu \mid 0 \leq g \leq f, g \ \text{is simple} \right\} $$</span></center>
 
 Okay this is bit dense so let's break it down. First, we notice that this definition uses a [supremum](https://en.wikipedia.org/wiki/Infimum_and_supremum) over a set. Before examining the supremum, let's just take a look at the set itself:
 
@@ -152,7 +152,7 @@ At last we come to finally defining the Lebesgue integral. If you have followed 
 
 <span style="color:#0060C6">**Definition 11:** Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$ and a positive measurable function $f : F \rightarrow H$, the **Lebesgue integral** is defined as</span>
 
-<center><span style="color:#0060C6">$$\int_F f(x) \ d\mu := \int_F f^{+}(x) \ d\mu - \int_F f^{-}(x) \ d\mu $$</span></center>
+<center><span style="color:#0060C6">$$\int_F f \ d\mu := \int_F f^{+} \ d\mu - \int_F f^{-} \ d\mu $$</span></center>
 
 <span style="color:#0060C6">where $f^{+}(x)$ := f(x)$ if $f(x) \geq 0$ and $f^{+}(x) := 0$ otherwise, and where $f^{-}(x)$ := -f(x)$ if $f(x) < 0$ and $f^{-}(x) := 0$ otherwise</span>
 
