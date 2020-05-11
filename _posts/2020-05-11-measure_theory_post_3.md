@@ -162,7 +162,7 @@ Back to expectation
 
 Finally, coming back to probability theory, the expectation of a random variable $X$ is the Lebesgue integral of $X$ over the sample space $\Omega$ with respect to the probability measure $P$:
 
-<span style="color:#0060C6">**Definition 12:** Given a probability space $(\Omega, E, P)$ and random variable $X$ mapping from this probability space, expectation of $X$ is given by</span>
+<span style="color:#0060C6">**Definition 12:** Given a probability space $(\Omega, E, P)$ and random variable $X$ mapping from this probability space, the expectation of $X$ is given by</span>
 
 <center><span style="color:#0060C6">$$E(X) := \int_{\Omega} X \ dP$$</span></center>
 
