@@ -1,5 +1,14 @@
-
-
+---
+title: 'Demystifying measure-theoretic probability theory (part 3: expectation)'
+date: 2020-01-04
+permalink: /posts/measure_theory_3/
+tags:
+  - mathematics
+  - measure theory
+  - probability
+  - statistics
+  - tutorial
+---
 
 *In this series of posts, I present my understanding of some basic concepts in measure theory — the mathematical study of objects with “size”— that have enabled me to gain a deeper understanding into the foundations of probability theory.*
 
