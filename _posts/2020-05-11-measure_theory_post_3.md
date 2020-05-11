@@ -82,11 +82,7 @@ A **simple function** is a measure-theoretic generalization of a [step-function]
 
 <center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
 
-where $\mathbb{I}$ is an indicator function such that $\mathbb{I}$
-  
-  hmm $\mathbb{I}_{A_i}(x)$</span> 
-  
-  is an indicator function such that $\mathbb{I}_{A_i}(x) := 1$ if $x \in A_i$ and $\mathbb{I}_{A_i}(x) := 0$ otherwise.</span>
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function such that equals one if $x \in A_i$ and equals zero otherwise.</span>
 
 When the domain of a simple function is $\mathbb{R}$, then a simple function is simply a step function:
 
@@ -176,6 +172,6 @@ $$E(X) = \sum_x xP(X = x)$$
 
 This follows from $X$ in and of itself being a simple-function from $\Omega$ to the interval $[0,1]$! Though not proven here, when $X$ is continuous with density function $f$, the expectation reduces to the familiar
 
-$$E(X) := \int xf(x) \ dx$$
+$$E(X) := \int_x xf(x) \ dx$$
 
 
