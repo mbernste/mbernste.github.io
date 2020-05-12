@@ -17,7 +17,7 @@ Introduction
 
 As a computer science undergraduate student, I was taught the basic and incomplete version of probability theory in which discrete outcomes (e.g. a dice roll) are treated quite differently from continuous outcomes (e.g. the temperature outside).  For example, the expectation of a discrete random variable $X$ is given by. 
 
-$$E(X) := \sum_x P(X=x)$$  
+$$E(X) := \sum_x xP(X=x)$$  
 
 whereas if $X$ is continuous its expectation is given by    
 
