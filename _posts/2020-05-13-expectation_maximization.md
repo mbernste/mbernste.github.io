@@ -66,21 +66,34 @@ EM is coordinate ascent on the evidence lower bound
 
 Now, let's dig into what the EM algorithm is really doing.  Specifically, we will show that EM is a [coordinate ascent](https://en.wikipedia.org/wiki/Coordinate_descent) algorithm on a quantity called the [evidence lower bound](https://en.wikipedia.org/wiki/Evidence_lower_bound) (ELBO).
 
-What on earth is the ELBO? Before talking about EM, let's first dig into the ELBO.
+Coordinate ascent? ELBO? Before talking about EM, let's first dig into the these concepts:
 
 **The evidence lower bound**
 
-To understand the evidence lower bound, we must first understand what we mean by "evidence".  The **evidence** is quite a simple definition -- it's a name given to the likelihood function evaluated at a fixed $\theta$:
+To understand the evidence lower bound, we must first understand what we mean by "evidence".  The **evidence**, quite a simply, just a name given to the likelihood function evaluated at a fixed $\theta$:
 
-$$\text{evidence} := \log p(x ; \theta) = \log \int p(x, z; \theta) \ dz$$
+$$\text{evidence} := \log p(x ; \theta)$$
 
-Why is this quantity often called the "evidence"? Intuitively, if we have chosen the right model $p$ and $\theta$, then we would expect that the marginal probability of our observed data $x$, would be high. Thus, a higher value of $\log p(x)$ indicates, in some sense, that we may be on the right track with the model that we have chosen.
+Why is this quantity often called the "evidence"? Intuitively, if we have chosen the right model $p$ and $\theta$, then we would expect that the marginal probability of our observed data $x$, would be high. Thus, a higher value of $\log p(x ; \theta)$ indicates, in some sense, that we may be on the right track with the model $p$ and parameters $\theta$ that we have chosen.
 
-If we happen to also know (or posit) that $Z$ follows some distribution given by $q$ (and hence $p(x, z) := p(x \mid z)q(z)$), then the evidence lower bound is, well, a lower bound on the evidence that makes use of $q$.  Specifically, 
+If we happen to also know (or posit) that $Z$ follows some distribution given by $q$ (and that $p(x, z; \theta) := p(x \mid z ; \theta)q(z)$), then the evidence lower bound is, well, a lower bound on the evidence that makes use of $q$.  Specifically, 
 
-$$\log p(x) \geq E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+$$\log p(x ; \theta) \geq E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
 
 where the ELBO is simply the right-hand side of the above equation:
 
 $${ELBO} := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
 
+See the [Wikipedia entry](https://en.wikipedia.org/wiki/Evidence_lower_bound) for the derivation.
+
+**Coordinate ascent**
+
+Coordinate ascent is a relatively simple and iterative strategy for maximizing a function. Given a function $f(a, b)$ that takes two arguments $a$ and $b$, the idea of coordinate ascent is that we will iteratively fix $a$, then choose $b$ that maximizes a new function formed by fixing $a$ . Given this new value for $b$, we then fix $b$ and choose $a$ that maximizes the function. These two steps are repeated until convergence.
+
+**Coordinate ascent on the evidence lower bound**
+
+In our setting, we don't yet know which value to use for $\theta$, nor do we know the distribution $q$ for $Z$. Thus, the ELBO becomes a function of both $\theta$ and $q$:
+
+$${ELBO}(\theta, q) := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+
+EM is just coordinate ascent on this function. In the E-Step, we fix $\theta$ and solve for $q$. In the M-Step, we fix $q$ and solve for $\theta$.
