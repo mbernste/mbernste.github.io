@@ -86,7 +86,7 @@ $${ELBO} := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log
 
 **Coordinate ascent**
 
-Coordinate ascent is a relatively simple and iterative strategy for maximizing a function. Given a function $f(a, b)$ that takes two arguments $a$ and $b$, the idea of coordinate ascent is that we will iteratively fix $a$, then choose $b$ that maximizes a new function formed by fixing $a$ . Given this new value for $b$, we then fix $b$ and choose $a$ that maximizes the function. These two steps are repeated until convergence.
+Coordinate ascent is a relatively simple and iterative strategy for maximizing a function. Given a function $f(a, b)$ that takes two arguments $a$ and $b$, the idea of coordinate ascent is that we will iteratively fix $a$ to some value $\hat{a}$ and then choose for $b$ the value $\hat{b}$ that maximizes $f(\hat{a}, b)$ . Given $\hat{b}$, we then re-assign to $a$ the value that maximizes $f(a, \hat{b})$. This procedure is repeated until convergence.
 
 **Coordinate ascent on the evidence lower bound**
 
@@ -94,4 +94,6 @@ In our setting, we don't yet know which value to use for $\theta$, nor do we kno
 
 $${ELBO}(\theta, q) := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
 
-EM is just coordinate ascent on this function. In the E-Step, we fix $\theta$ and solve for $q$. In the M-Step, we fix $q$ and solve for $\theta$.
+EM is just coordinate ascent on this function. In the E-Step, we fix $\theta$ and solve for $q$. In the M-Step, we fix $q$ and solve for $\theta$.  Let's take another look at the E-Step and M-Step:
+
+
