@@ -9,9 +9,12 @@ tags:
   - tutorial
 ---
 
-**THIS POST IS CURRENTLY UNDER CONSTRUCTION**
+*Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation for the parameters in a latent variable model. In this post, I discuss some theory behind, and intuition into, this algorithm.*
 
-Expectation Maximization (EM) is a popular algorithm for performing maximum-likelihood estimation for the parameters in a latent variable model. Introductory machine learning and bioinformatics courses often teach the Expectation Maximization algorithms for estimating parameters in important models such as [Guassian Mixture Models](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model) and [Hidden Markov Models](https://en.wikipedia.org/wiki/Baum–Welch_algorithm).
+Introduction
+--------
+
+Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation for the parameters in a latent variable model. Introductory machine learning and bioinformatics courses often teach the Expectation Maximization algorithms for estimating parameters in important models such as [Guassian Mixture Models](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model) and [Hidden Markov Models](https://en.wikipedia.org/wiki/Baum–Welch_algorithm).
 
 After learning about this algorithm in introductory graduate school courses, the intuition was clear, but I still had several remaining questions.  When is EM preferred over some other method for estimating parameters?  What is EM really doing? Why is EM guaranteed to converge?
 
