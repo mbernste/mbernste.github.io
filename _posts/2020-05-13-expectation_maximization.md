@@ -47,5 +47,7 @@ Moe specifically, the E-Step and M-Step work as follows:
 
 Compute the conditional probability $p(z \mid x ; \theta_t)$. From this calculation, formulate the Q-function:
 
-$\begin{align*}Q_t(\theta) &:= E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right] \\ &= \int p(z \mid x ; \theta_t) \log p(x,z ; \theta) dz\end{align*}$
+$$Q_t(\theta) := E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right]$$ 
+
+$$= \int p(z \mid x ; \theta_t) \log p(x,z ; \theta) dz$$
 
