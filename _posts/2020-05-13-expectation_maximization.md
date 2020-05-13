@@ -176,7 +176,7 @@ Now, recall the Q-function:
 
 $$Q_t(\theta) := \sum_{z'} p(z' \mid x ; \theta) \log p(x, z' ; \theta)$$
 
-We note that the difference between these two functions is that the indicator variable in the complete data likelihood \mathbb{I}(z=z') is replaced by the probability $p(z \mid x ;\theta)$. This leads us to viewing the Q-function as a sort of generalization of the complete data likelihood. That is, $p(z \mid x ; \theta)$ acts as a weight for its corresponding term in the summation, and measures our current certainty that the hidden data is equal to $z′$. When we know $Z = z$, all of the weight is assigned to the term in which $z′ = z$ and no weight is assigned to the terms in which $z′ \neq z$ -- that is, it reduces the data likelihood.
+We note that the difference between these two functions is that the indicator variable in the complete data likelihood $\mathbb{I}(z=z')$ is replaced by the probability $p(z \mid x ;\theta)$. This leads us to viewing the Q-function as a sort of generalization of the complete data likelihood. That is, $p(z \mid x ; \theta)$ acts as a weight for its corresponding term in the summation, and measures our current certainty that the hidden data is equal to $z′$. When we know $Z = z$, all of the weight is assigned to the term in which $z′ = z$ and no weight is assigned to the terms in which $z′ \neq z$ -- that is, $p(z \mid x ;\theta)$ reduces to the indicator function.
 
 Intuition behind the Q-function: a likelihood function over a hypothetical dataset
 -------------
@@ -189,7 +189,7 @@ $$z'_1, z'_2, \dots, z'_n \sim p(z \mid x ; \theta_t)$$
 
 For each $z'_i$, we create a new "sub"-dataset $(x, z'_i)$. Note that the observed data $x$ is duplicated in each of these sub-datasets. We then merge all of the datasets $(x, z'_1), . . . , (x, z'_n)$ to form our new hypothetical dataset. Then, the likelihood over these data is
 
-$$l'(\theta) := \prod_{i=1}^n p(x, \z'_i ; \theta)$$ 
+$$l'(\theta) := \prod_{i=1}^n p(x, z'_i ; \theta)$$ 
 
 Now we will show that maximizing the Q-function is equivalent to maximizing this likelihood function over the hypothetical data. Let 
 
