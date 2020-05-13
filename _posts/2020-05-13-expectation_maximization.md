@@ -114,7 +114,7 @@ $$= \text{argmax}_q \ \ E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right
 
 The last line in the above derivation is simply maximzing the Q-function -- exactly the M-Step!
 
-Visual intuition
+Visualizing EM
 -----------
 
 To build up a visual depiction of how the EM algorithm works, we'll first lay out some relationships between $F$ and $l$:
