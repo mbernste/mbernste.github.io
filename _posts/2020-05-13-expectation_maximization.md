@@ -109,7 +109,7 @@ $$= p(z \mid x ; \theta_t)$$
 
 I skipped over several steps in the derivation, but the idea is that maximizing the ELBO with respect to $q$ is equivalent to finding a $q$ that minimizes the [KL-divergence](https://en.wikipedia.org/wiki/Kullback–Leibler_divergence) (a measure of dissimilarity between two distributions, but not discussed here) between $q(z)$ and $p(z \mid x ; \theta_t)$. The $q$ to do this, is simply $p(z \mid x ; \theta_t)$ itself.  Notably, computing $p(z \mid x ; \theta_t)$ is exactly what is needed to formulate the Q-function in the E-Step!
 
-Next, if we hold $q$ fixed to $q_t := p(z \mid x ; \theta_t)$, we see that maximizing $\text{ELBO}(q_t, \theta)$ with respect to $\theta$ is equivalent to maximizing the Q-function:
+Next, if we hold $q$ fixed to $q_t := p(z \mid x ; \theta_t)$, we see that maximizing $F(q_t, \theta)$ with respect to $\theta$ is equivalent to maximizing the Q-function:
 
 $$\text{argmax}_q \ F(q_t, \theta) = \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{p(z \mid x ; \theta_t)} \right]$$
 
