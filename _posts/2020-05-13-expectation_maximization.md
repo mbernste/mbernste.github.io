@@ -68,19 +68,19 @@ Now, let's dig into what the EM algorithm is really doing.  Specifically, we wil
 
 What on earth is the ELBO? Before talking about EM, let's first dig into the ELBO.
 
-The evidence lower bound
------------
+**The evidence lower bound**
 
-To understand the evidence lower bound, we must first understand what we mean by "evidence".  The **evidence** is quite a simple definition -- it's just the marginal probability of the observed data:
+To understand the evidence lower bound, we must first understand what we mean by "evidence".  The **evidence** is quite a simple definition -- it's a name given to the likelihood function evaluated at a fixed $\theta$:
 
-$$\text{evidence} := \log p(x) = \log \int p(x, z) \ dz$$
+$$\text{evidence} := \log p(x ; \theta) = \log \int p(x, z; \theta) \ dz$$
 
-Why do we give this quantity the term "evidence"? Intuitively, if we have chosen the right model $p$, then we would expect that the marginal probability of our observed data $x$, would be high. Thus, a higher value of $\log p(x)$ indicates, in some sense, that we may be on the right track with the model that we have chosen.
+Why is this quantity often called the "evidence"? Intuitively, if we have chosen the right model $p$ and $\theta$, then we would expect that the marginal probability of our observed data $x$, would be high. Thus, a higher value of $\log p(x)$ indicates, in some sense, that we may be on the right track with the model that we have chosen.
 
-If we assert that $Z$ follows some distribution given by $q$ (and hence $p(x, z) := p(x \mid z)q(z)$, then the evidence lower bound is, well, a lower bound for this quantity that makes use of $q$.  Specifically, 
+If we happen to also know (or posit) that $Z$ follows some distribution given by $q$ (and hence $p(x, z) := p(x \mid z)q(z)$), then the evidence lower bound is, well, a lower bound on the evidence that makes use of $q$.  Specifically, 
 
-$$\log p(x) \geq E_{Z \sim q}\left[\log p(x,Z)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+$$\log p(x) \geq E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
 
-where the elbow is simply the right-hand side of the above equation:
+where the ELBO is simply the right-hand side of the above equation:
 
-$${ELBO} := E_{Z \sim q}\left[\log p(x,Z)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+$${ELBO} := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+
