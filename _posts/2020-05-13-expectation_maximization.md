@@ -129,7 +129,7 @@ $$F(q_t, \theta_{t+1}) \geq F(q_t, \theta_t)$$
 
 This follows simply from the fact that $\theta_{t+1}$ maximizes $F(q_t, \theta)$ by design.
 
-With $q$ fixed at $q_t$, $F$ is bounded from above $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
+With $q$ fixed at $q_t$, $F$ is bounded from above by $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
 
 $$F(q_t, \theta) \leq l(\theta)$$
 
