@@ -1,4 +1,15 @@
-Perspectives on Expectation Maximization
+---
+title: 'Expectation Maximization: Theory and Intuition'
+date: 2020-05-11
+permalink: /posts/em/
+tags:
+  - machine learning
+  - probability
+  - statistics
+  - tutorial
+---
+
+**THIS POST IS CURRENTLY UNDER CONSTRUCTION**
 
 Expectation Maximization (EM) is a popular algorithm for performing maximum-likelihood estimation for the parameters in a latent variable model. Introductory machine learning and bioinformatics courses often teach the Expectation Maximization algorithms for estimating parameters in important models such as [Guassian Mixture Models](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model) and [Hidden Markov Models](https://en.wikipedia.org/wiki/Baum–Welch_algorithm).
 
