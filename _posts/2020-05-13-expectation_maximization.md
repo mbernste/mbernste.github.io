@@ -39,13 +39,13 @@ The EM algorithm alternates between two steps: an expectation-step (E-step) and 
 
 Each step works as follows: On the $t$th E-step, the algorithm formulates a function of $\theta$ called the Q-function, denoted $Q_t(\theta)$. Then, on the next M-step, the algorithm assigns $\theta_{t+1}$ to be the value that maximizes $Q_t(\theta)$. 
 
-This alternation between formulating a Q-function and maximizing that Q-function are repeated until the estimate of θ con- verges. As we will prove later, not only is this process guaranteed to converge, but it will converge to a local maximum of l(θ).
+This alternation between formulating a Q-function and maximizing that Q-function are repeated until the estimate of $\theta$ converges. As we will prove later, not only is this process guaranteed to converge, but it will converge to a local maximum of $l(\theta)$.
 
-The details of the algorithm are as follows: We begin by initializing our iteration-counter to $t := 0$ and refer to our current estimate of $\theta$ as $θ_t$. We set $θ_0$ to an arbitrary value (oftentimes this is randomly chosen). EM then iterates between the following two steps until the difference between $\theta_t$ and $\theta_{t+1}$ is small (indicating convergence):
+Moe specifically, the E-Step and M-Step work as follows:
 
 **E-Step**
 
 Compute the condition probability $p(z \mid x ; \theta_t)$. From this calculation, formulate the Q-function:
 
-$\begin{algin*}Q_t(\theta) &:= E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right] \\ &= \int p(z \mid x ; \theta_t) \log p(x,z ; \theta) dz\end{\align*}$
+$$\begin{align*}Q_t(\theta) &:= E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right] \\ &= \int p(z \mid x ; \theta_t) \log p(x,z ; \theta) dz\end{\align*}$$
 
