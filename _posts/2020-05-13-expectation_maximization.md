@@ -118,21 +118,15 @@ Visualizing EM
 -----------
 
 To build up a visual depiction of how the EM algorithm works, we'll first lay out some relationships between $F$ and $l$:
- 1. Though not proven here, at iteration $t$, the function $F$ touches the likelihood function $l$ at precisely $\theta_t$.  That is,
-
-$$F(q_t, \theta_t) = l(\theta_t)$$
-
- 2. With $q$ fixed at some distribution $q_t$ (i.e., its value at the $t$th step of the algorithm), the function $F$ at $\theta_{t+1}$ will be greater than at $\theta_t$.  That is, 
-
+1. Though not proven here, at iteration $t$, the function $F$ touches the likelihood function $l$ at precisely $\theta_t$. That is,
+<center>$$F(q_t, \theta_t) = l(\theta_t)$$</center>
+2. With $q$ fixed at some distribution $q_t$ (i.e., its value at the $t$th step of the algorithm), the function $F$ at $\theta_{t+1}$ will be greater than at $\theta_t$.  That is, 
 $$F(q_t, \theta_{t+1}) \geq F(q_t, \theta_t)$$
-
 This follows simply from the fact that $\theta_{t+1}$ maximizes $F(q_t, \theta)$ by design.
-
- 3. With $q$ fixed at $q_t$, $F$ is bounded from above $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
-
+3. With $q$ fixed at $q_t$, $F$ is bounded from above $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
 $$F(q_t, \theta) \leq l(\theta)$$
-
 These properties are depicted below:
 
+F_function.png
 
 Furthermore, with these facts we can reason that EM converges on a local maximum of $l(\theta)$ by “crawling” up the likelihood surface. That is, on each iteration $t$, $F(q_t,\theta)$ lies at or below the likelihood surface, but touches it at $\theta_t$. That is, $F(q_t, \theta_t) = l(\theta_t)$. Then, since $F(q_t, \theta_{t+1}) > F(q_t, \theta_t)$, it follows that $\theta_{t+1}$ increases the likelihood function. Furthermore, on the next iteration, we can evaluate the likelihood function at $\theta_{t+1}$ via $F(q_{t+1}, \theta_{t+1})$. Thus, each proceeding iteration’s value of $F(q_{t+1}, \theta_{t+1}) is a new, higher value on the likelihood surface than the current value. This process is depicted below:
