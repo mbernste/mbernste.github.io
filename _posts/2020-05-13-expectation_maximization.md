@@ -183,10 +183,23 @@ Intuition behind the Q-function: a likelihood function over a hypothetical datas
 
 Another way to view the Q-function is as a complete data likelihood function over a hypothetical dataset where this hypothetical dataset is generated from a distribution that depends on our current best guess of $\theta$ (i.e. $\theta_t$ at the $t$th iteration). 
 
-That is, let us assume that we generate a very large set of values for $Z$ drawn i.i.d. from the distribution specified by $p(z | x ; \theta_t)$:
+That is, let us assume that we generate a very large set of values for $Z$ drawn i.i.d. from the distribution specified by $p(z \mid x ; \theta_t)$:
 
 $$z'_1, z'_2, \dots, z'_n \sim p(z \mid x ; \theta_t)$$
 
 For each $z'_i$, we create a new "sub"-dataset $(x, z'_i)$. Note that the observed data $x$ is duplicated in each of these sub-datasets. We then merge all of the datasets $(x, z'_1), . . . , (x, z'_n)$ to form our new hypothetical dataset. Then, the likelihood over these data is
 
 $$l'(\theta) := \prod_{i=1}^n p(x, \z'_i ; \theta)$$ 
+
+Now we will show that maximizing the Q-function is equivalent to maximizing this likelihood function over the hypothetical data. Let 
+
+$$Z' := \{z'_1, z'_2, \dots, z'_n\}$$
+
+For each $z'_i \in Z', we form a complete dataset $(z'_i, x)$. Now let $c_{Z'}(z)$ be the cardinality of 
+$$\{ z'_i \in Z' \mid \z'_i = z \}$$
+
+That is, $c_{Z'}(z)$ is the number of items in $Z'$ that equal $z$. If $n$ is very large, we would expect 
+
+$$\frac{c_{Z'}(z)}{\sum_{z^*}c_{Z'}(z^*)} = p(z \mid x ; \theta_t)$$
+
+Then we can formulate our optimziation problem as 
