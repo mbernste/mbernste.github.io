@@ -178,7 +178,7 @@ $$Q_t(\theta) := \sum_{z'} p(z' \mid x ; \theta) \log p(x, z' ; \theta)$$
 
 We note that the difference between these two functions is that the indicator variable in the complete data likelihood \mathbb{I}(z=z') is replaced by the probability $p(z \mid x ;\theta)$. This leads us to viewing the Q-function as a sort of generalization of the complete data likelihood. That is, $p(z | x ; \theta)$ acts as a weight for its corresponding term in the summation, and measures our current certainty that the hidden data is equal to $z′$. When we know $Z = z$, all of the weight is assigned to the term in which $z′ = z$ and no weight is assigned to the terms in which $z′ \neq 􏰑 z$ -- that is, it reduces the data likelihood.
 
-Intuition behind the Q-function: a likelihood function over a hypothetical dataste
+Intuition behind the Q-function: a likelihood function over a hypothetical dataset
 -------------
 
 Another way to view the Q-function is as a complete data likelihood function over a hypothetical dataset where this hypothetical dataset is generated from a distribution that depends on our current best guess of $\theta$ (i.e. $\theta_t$ at the $t$th iteration). 
