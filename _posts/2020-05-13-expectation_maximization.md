@@ -92,15 +92,15 @@ Coordinate ascent is a relatively simple and iterative strategy for maximizing a
 
 In our setting, we don't yet know which value to use for $\theta$, nor do we know the distribution $q$ for $Z$. Thus, the ELBO becomes a function of both $\theta$ and $q$:
 
-$${ELBO}(\theta, q) := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+$$F(\theta, q) := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
 
 EM is just coordinate ascent on this function. In the E-Step, we fix $\theta$ and solve for $q$. In the M-Step, we fix $q$ and solve for $\theta$. 
 
 First, let's fix $\theta$ to $\theta_t$ (our current value for $\theta$) and solve for $q$:
 
-$$\text{argmax}_q \ \ \text{ELBO}(q, \theta_t) = \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{q(Z)} \right]$$
+$$\text{argmax}_q \ F(q, \theta_t) = \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{q(Z)} \right]$$
 
-$$= \text{argmin}_q \ \ \text{KL}( q(z) \ || \ p(z \mid x ; \theta_t))$$
+$$= \text{argmin}_q  \ \text{KL}( q(z) \ || \ p(z \mid x ; \theta_t))$$
 
 $$= p(z \mid x ; \theta_t)$$
 
@@ -108,10 +108,31 @@ I skipped over several steps in the derivation, but the idea is that maximizing 
 
 Next, if we hold $q$ fixed to $q_t := p(z \mid x ; \theta_t)$, we see that maximizing $\text{ELBO}(q_t, \theta)$ with respect to $\theta$ is equivalent to maximizing the Q-function:
 
-$$\text{argmax}_q \ \ \text{ELBO}(p(z \mid x ; \theta_t), \theta) = $\text{argmax}_q \ \ = \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{p(z \mid x ; \theta_t)} \right]$$
+$$\text{argmax}_q \ F(q_t, \theta) = \text{argmax}_q \ \ = \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{p(z \mid x ; \theta_t)} \right]$$
 
 $$= \text{argmax}_q \ \ E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right]$$
 
 The last line in the above derivation is simply maximzing the Q-function -- exactly the M-Step!
 
+Visual intuition
+-----------
 
+To build up a visual depiction of how the EM algorithm works, we'll first lay out some relationships between $F$ and $l$:
+1. Though not proven here, at iteration $t$, the function $F$ touches the likelihood function $l$ at precisely $\theta_t$.  That is,
+
+$$F(q_t, \theta) = l(\theta_t)$$
+
+2. With $q$ fixed at some distribution $q_t$ (i.e., its value at the $t$th step of the algorithm), the function $F$ at $\theta_{t+1}$ will be greater than at $\theta_t$.  That is, 
+
+$$F(\q_t, \theta_{t+1}) \geq F(q_t, \theta_t)$$
+
+This follows simply from the fact that $\theta_{t+1}$ maximizes $F(q_t, \theta)$ by design.
+
+3. With $q$ fixed at $q_t$, $F$ is bounded from above $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
+
+$$F(q_t, \theta) \leq l(\theta)$$
+
+These properties are depicted below:
+
+
+Furthermore, with these facts we can reason that EM converges on a local maximum of $l(\theta)$ by “crawling” up the likelihood surface. That is, on each iteration $t$, $F(q_t,\theta)$ lies at or below the likelihood surface, but touches it at $\theta_t$. That is, $F(q_t, \theta_t) = l(\theta_t)$. Then, since $F(q_t, \theta_{t+1}) > F(q_t, \theta_t)$, it follows that $\theta_{t+1}$ increases the likelihood function. Furthermore, on the next iteration, we can evaluate the likelihood function at $\theta_{t+1}$ via $F(q_{t+1}, \theta_{t+1})$. Thus, each proceeding iteration’s value of $F(q_{t+1}, \theta_{t+1}) is a new, higher value on the likelihood surface than the current value. This process is depicted below:
