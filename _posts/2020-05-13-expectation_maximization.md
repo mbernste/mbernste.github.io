@@ -9,12 +9,12 @@ tags:
   - tutorial
 ---
 
-*Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation for the parameters in a latent variable model. In this post, I discuss some theory behind, and intuition into, this algorithm.*
+*Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation of the parameters in a latent variable model. In this post, I discuss some theory behind, and intuition into, this algorithm.*
 
 Introduction
 --------
 
-Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation for the parameters in a latent variable model. Introductory machine learning courses often teach the variants of EM used for estimating parameters in important models such as [Guassian Mixture Models](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model) and [Hidden Markov Models](https://en.wikipedia.org/wiki/Baum–Welch_algorithm).  EM also features heavily in bioinformatics, where it is used for [quantifying gene expression from RNA-sequencing data](https://academic.oup.com/bioinformatics/article/26/4/493/243395).
+Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation of the parameters in a latent variable model. Introductory machine learning courses often teach the variants of EM used for estimating parameters in important models such as [Guassian Mixture Models](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model) and [Hidden Markov Models](https://en.wikipedia.org/wiki/Baum–Welch_algorithm).  EM also features heavily in bioinformatics, where it is used for [quantifying gene expression from RNA-sequencing data](https://academic.oup.com/bioinformatics/article/26/4/493/243395).
 
 After learning about this algorithm in introductory graduate school courses, the intuition was clear, but I still had several remaining questions.  When is EM preferred over some other method for estimating parameters?  What is EM really doing? Why is EM guaranteed to converge?
 
