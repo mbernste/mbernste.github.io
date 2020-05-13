@@ -78,11 +78,11 @@ Why is this quantity often called the "evidence"? Intuitively, if we have chosen
 
 If we happen to also know (or posit) that $Z$ follows some distribution given by $q$ (and that $p(x, z; \theta) := p(x \mid z ; \theta)q(z)$), then the evidence lower bound is, well, a lower bound on the evidence that makes use of $q$.  Specifically, 
 
-$$\log p(x ; \theta) \geq E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+$$\log p(x ; \theta) \geq E_{Z \sim q}\left[\log \frac{p(x,Z; \theta)}{q(Z)} \right]$$
 
 where the ELBO is simply the right-hand side of the above equation:
 
-$${ELBO} := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+$${ELBO} := E_{Z \sim q}\left[\log \frac{p(x,Z; \theta)}{q(Z)} \right]$$
 
 **Coordinate ascent**
 
@@ -94,6 +94,12 @@ In our setting, we don't yet know which value to use for $\theta$, nor do we kno
 
 $${ELBO}(\theta, q) := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
 
-EM is just coordinate ascent on this function. In the E-Step, we fix $\theta$ and solve for $q$. In the M-Step, we fix $q$ and solve for $\theta$.  Let's take another look at the E-Step and M-Step:
+EM is just coordinate ascent on this function. In the E-Step, we fix $\theta$ and solve for $q$. In the M-Step, we fix $q$ and solve for $\theta$. 
+
+First, let's fix $\theta$ to $\theta_t$ (our current value for $\theta$) and solve for $q$:
+
+$$\text{arg max}_q \text{ELBO}(q, \theta_t) = \text{arg max}_q E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{q(Z)} \right]$$
+
+
 
 
