@@ -49,7 +49,7 @@ Compute the conditional probability $p(z \mid x ; \theta_t)$. From this calculat
 
 $$Q_t(\theta) := E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right]$$ 
 
-$$\ \ \ \ = \int p(z \mid x ; \theta_t) \log p(x,z ; \theta) \ dz$$
+$$\ \ \ \ \ \ \ \ = \int p(z \mid x ; \theta_t) \log p(x,z ; \theta) \ dz$$
 
 The "core" of formulating an EM algorithm for a particular model is calculating $p(z \mid x ; \theta_t)$. If the model admits an easy calculation of this function, then the EM algorithm may be a good a choice!
 
@@ -60,3 +60,27 @@ Assign $\theta_{t+1}$ to be the value that maximizes the Q-function that was for
 $$\theta_{t+1} := \text{arg max}_\theta Q_t(\theta)$$
 
 We repeat the E-Step and M-Step until the difference between $\theta_t$ and $\theta_{t+1}$ is small, indicating convergence. We also note that $\theta_0$ can be set to an arbitrary value -- usually set randomly.  Since EM finds a *local* maximum of $l(\theta)$, it is often wise to try many different $\theta_{0}$'s! 
+
+EM is coordinate ascent on the evidence lower bound
+-----------
+
+Now, let's dig into what the EM algorithm is really doing.  Specifically, we will show that EM is a [coordinate ascent](https://en.wikipedia.org/wiki/Coordinate_descent) algorithm on a quantity called the [evidence lower bound](https://en.wikipedia.org/wiki/Evidence_lower_bound) (ELBO).
+
+What on earth is the ELBO? Before talking about EM, let's first dig into the ELBO.
+
+The evidence lower bound
+-----------
+
+To understand the evidence lower bound, we must first understand what we mean by "evidence".  The evidence is quite a simple definition -- it's just the marginal probability of the observed data:
+
+$$\text{evidence} := \log p(x) = \log \int p(x, z) \ dz$$
+
+Why do we give this quantity the term "evidence"? Intuitively, if we have chosen the right model $p$, then we would expect that the marginal probability of our observed data $x$, would be high. Thus, a higher value of $\log p(x)$ indicates, in some sense, that we may be on the right track with the model that we have chosen.
+
+If we assert that $Z$ follows some distribution given by $q$ (and hence $p(x, z) := p(x \mid z)q(z)$, then the evidence lower bound is, well, a lower bound for this quantity that makes use of $q$.  Specifically, 
+
+$$\log p(x) \geq E_{Z \sim q}\left[\log p(x,Z)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+
+where the elbow is simply the right-hand side of the above equation:
+
+$${ELBO} := E_{Z \sim q}\left[\log p(x,Z)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
