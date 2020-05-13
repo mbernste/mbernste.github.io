@@ -168,9 +168,9 @@ Intuition behind the Q-function: a generalization of the likelihood function
 
 In the case in which $Z$ is a discrete random variable, the Q-function can be interpreted as a “generalized” version of the complete data likelihood function. First, let’s say that both $X$ and $Z$ are observed where $X = x$ and $Z = z$. Then, we could write the complete data likelihood as
 
-$$\log p(x, z; \theta) := \sum_{z'} \mathbb{I}(z=z') \log p(x, z' ; \theta)$$
+$$\log p(x, z; \theta) := \sum_{z' \in \mathcal{Z}} \mathbb{I}(z=z') \log p(x, z' ; \theta)$$
 
-where $\mathbb{I}(z=z')$ is an indicator function that equals one when $z' = z$ and equals zero otherwise.
+where $\mathcal{Z}$ is the [support](https://en.wikipedia.org/wiki/Support_(mathematics)) of $Z$'s probability mass function and $\mathbb{I}(z=z')$ is an indicator function that equals one when $z' = z$ and equals zero otherwise.
 
 Now, recall the Q-function:
 
@@ -195,11 +195,24 @@ Now we will show that maximizing the Q-function is equivalent to maximizing this
 
 $$Z' := \{z'_1, z'_2, \dots, z'_n\}$$
 
-For each $z'_i \in Z', we form a complete dataset $(z'_i, x)$. Now let $c_{Z'}(z)$ be the cardinality of 
-$$\{ z'_i \in Z' \mid z'_i = z \}$$
+Now let $c(z)$ be the cardinality of 
 
-That is, $c_{Z'}(z)$ is the number of items in $Z'$ that equal $z$. If $n$ is very large, we would expect 
+$$\{ z' \in Z' \mid z' = z \}$$
 
-$$\frac{c_{Z'}(z)}{\sum_{z^*}c_{Z'}(z^*)} = p(z \mid x ; \theta_t)$$
+That is, $c(z)$ is the number of items in $Z'$ that equal $z$. As $n$ approaches infinity then 
 
-Then we can formulate our optimziation problem as 
+$$\frac{c(z)}{\sum_{z^*}c(z^*)} = p(z \mid x ; \theta_t)$$
+
+Finally we can formulate our maximum likelihood problem on this hypothetical data:
+
+$$\text{argmax}_\theta \ l'(\theta) := \text{argmax}_\theta \ \prod_{i=1}^n p(x, z'_i ; \theta)$$
+
+$$= \text{argmax}_\theta \ \prod_{z \in \mathcal{Z}} p(x, z ; \theta)^{c(z)}$$
+
+$$= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  \frac{c(z)}{\sum_{z^*}c(z^*)} \log p(x, z ; \theta)$$
+
+$$= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  p(x, z'_i ; \theta) \log p(x, z ; \theta)$$
+
+The final line in the above calculation is the Q-function!
+
+In this light, we can view the EM algorithm as an iterative process, in which we posit a distribution over the hidden data $p(z \mid x ; \theta_t)$, then generate a hypothetical data set on which we perform maximum likelihood estimation. This new estimate of the parameters, as estimated from the hypothetical dataset, is then used in the next iteration to generate another data set. This process is repeated until the estimates of the parameters converge.
