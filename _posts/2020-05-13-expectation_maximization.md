@@ -1,6 +1,6 @@
 ---
 title: 'Expectation-maximization: theory and intuition'
-date: 2020-05-11
+date: 2020-05-13
 permalink: /posts/em/
 tags:
   - machine learning
