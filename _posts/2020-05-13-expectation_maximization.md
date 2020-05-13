@@ -176,7 +176,7 @@ Now, recall the Q-function:
 
 $$Q_t(\theta) := \sum_{z'} p(z' \mid x ; \theta) \log p(x, z' ; \theta)$$
 
-We note that the difference between these two functions is that the indicator variable in the complete data likelihood \mathbb{I}(z=z') is replaced by the probability $p(z \mid x ;\theta)$. This leads us to viewing the Q-function as a sort of generalization of the complete data likelihood. That is, $p(z | x ; \theta)$ acts as a weight for its corresponding term in the summation, and measures our current certainty that the hidden data is equal to $z′$. When we know $Z = z$, all of the weight is assigned to the term in which $z′ = z$ and no weight is assigned to the terms in which $z′ \neq 􏰑 z$ -- that is, it reduces the data likelihood.
+We note that the difference between these two functions is that the indicator variable in the complete data likelihood \mathbb{I}(z=z') is replaced by the probability $p(z \mid x ;\theta)$. This leads us to viewing the Q-function as a sort of generalization of the complete data likelihood. That is, $p(z \mid x ; \theta)$ acts as a weight for its corresponding term in the summation, and measures our current certainty that the hidden data is equal to $z′$. When we know $Z = z$, all of the weight is assigned to the term in which $z′ = z$ and no weight is assigned to the terms in which $z′ \neq z$ -- that is, it reduces the data likelihood.
 
 Intuition behind the Q-function: a likelihood function over a hypothetical dataset
 -------------
@@ -196,7 +196,7 @@ Now we will show that maximizing the Q-function is equivalent to maximizing this
 $$Z' := \{z'_1, z'_2, \dots, z'_n\}$$
 
 For each $z'_i \in Z', we form a complete dataset $(z'_i, x)$. Now let $c_{Z'}(z)$ be the cardinality of 
-$$\{ z'_i \in Z' \mid \z'_i = z \}$$
+$$\{ z'_i \in Z' \mid z'_i = z \}$$
 
 That is, $c_{Z'}(z)$ is the number of items in $Z'$ that equal $z$. If $n$ is very large, we would expect 
 
