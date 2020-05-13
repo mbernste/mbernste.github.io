@@ -84,8 +84,6 @@ where the ELBO is simply the right-hand side of the above equation:
 
 $${ELBO} := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
 
-See the [Wikipedia entry](https://en.wikipedia.org/wiki/Evidence_lower_bound) for the derivation.
-
 **Coordinate ascent**
 
 Coordinate ascent is a relatively simple and iterative strategy for maximizing a function. Given a function $f(a, b)$ that takes two arguments $a$ and $b$, the idea of coordinate ascent is that we will iteratively fix $a$, then choose $b$ that maximizes a new function formed by fixing $a$ . Given this new value for $b$, we then fix $b$ and choose $a$ that maximizes the function. These two steps are repeated until convergence.
