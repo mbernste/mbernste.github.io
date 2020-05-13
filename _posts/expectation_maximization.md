@@ -11,6 +11,30 @@ The Setting
 
 As mentioned previously, EM is used for performing maximum likelihood estimation on the parameters of a latent variable model. To review this task, let's say we have two sets of random variables $X$ and $Z$ and some parameterized joint distribution over these random variables:
 
-$$P(X, Z; \theta)$$
+$$p(x, z; \theta)$$
 
-Where $\theta$ parameterizes the distribution.
+where $p$ is the probability mass/density function, $x$ and $z$ are values for $X$ and $Z$, and $\theta$ parameterizes the distribution.
+
+Further, we assume that we have observed $x$, the value of $X$, but have not observed $z$, the value of $Z$. Despite not observing $z$, we wish to find the value for $\theta$ that makes $x$ most likely under our model. Since we have not observed z, our likelihood function must marginalize over z:
+
+$$l(\theta) := \log p(x ; \theta) = \log \int_z p(x, z ; \theta)$$
+
+In practice, maximizing this function over θ may be difficult to do analytically due to this integral. For such situations, the EM algorithm may provide a method for computing a local maximum of this function with respect to θ.
+
+Description of EM
+---------
+
+The EM algorithm alternates between two steps: an expectation-step (E-step) and a maximization-step (M-step). Throughout execution, the algorithm maintains an estimate of the parameters $\theta$ that is updated on each iteration. As the algorithm progresses, this estimate of $\theta$ converges to a local maximum of $l(\theta)$. Let $t$ denote a given step of the algorithm. On the $t$th step, we’ll denote $\theta_t$ as the $t$th estimate of $\theta$.
+
+Each step works as follows: On the $t$th E-step, the algorithm formulates a function of $\theta$ called the Q-function, denoted $Q_t(\theta)$. Then, on the next M-step, the algorithm assigns $\theta_{t+1}$ to be the value that maximizes $Q_t(\theta)$. 
+
+This alternation between formulating a Q-function and maximizing that Q-function are repeated until the estimate of θ con- verges. As we will prove later, not only is this process guaranteed to converge, but it will converge to a local maximum of l(θ).
+
+The details of the algorithm are as follows: We begin by initializing our iteration-counter to $t := 0$ and refer to our current estimate of $\theta$ as $θ_t$. We set $θ_0$ to an arbitrary value (oftentimes this is randomly chosen). EM then iterates between the following two steps until the difference between $\theta_t$ and $\theta_{t+1}$ is small (indicating convergence):
+
+**E-Step**
+
+Compute the condition probability $p(z \mid x ; \theta_t)$. From this calculation, formulate the Q-function:
+
+$\begin{algin*}Q_t(\theta) &:= E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right] \\ &= \int p(z \mid x ; \theta_t) \log p(x,z ; \theta) dz\end{\align*}$
+
