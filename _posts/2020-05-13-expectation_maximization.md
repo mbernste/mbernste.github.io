@@ -98,7 +98,14 @@ EM is just coordinate ascent on this function. In the E-Step, we fix $\theta$ an
 
 First, let's fix $\theta$ to $\theta_t$ (our current value for $\theta$) and solve for $q$:
 
-$$\text{arg max}_q \text{ELBO}(q, \theta_t) = \text{arg max}_q E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{q(Z)} \right]$$
+$$\text{argmax}_q \ \ \text{ELBO}(q, \theta_t) = \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{q(Z)} \right]$$
+
+$$=\text{argmin}_q \ \ \text{KL}( q(z) || p(z \mid x ; \theta_t))$$
+
+$$p(z \mid x ; \theta_t)$$
+
+I skipped over several steps in the derivation, but the idea is that maximizing the ELBO with respect to $q$ is equivalent to finding a $q$ that minimizes the [KL-divergence](https://en.wikipedia.org/wiki/Kullback–Leibler_divergence) (a measure of dissimilarity between two distributions, but not discussed here) between $q(z)$ and $p(z \mid x ; \theta_t)$. The $q$ to do this, is simply $p(z \mid x ; \theta_t)$ itself.  Notably, computing $p(z \mid x ; \theta_t)$ is exactly what is needed to formulate the Q-function in the E-Step!
+
 
 
 
