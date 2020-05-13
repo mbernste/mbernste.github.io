@@ -71,7 +71,7 @@ What on earth is the ELBO? Before talking about EM, let's first dig into the ELB
 The evidence lower bound
 -----------
 
-To understand the evidence lower bound, we must first understand what we mean by "evidence".  The evidence is quite a simple definition -- it's just the marginal probability of the observed data:
+To understand the evidence lower bound, we must first understand what we mean by "evidence".  The **evidence** is quite a simple definition -- it's just the marginal probability of the observed data:
 
 $$\text{evidence} := \log p(x) = \log \int p(x, z) \ dz$$
 
