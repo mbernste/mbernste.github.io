@@ -108,7 +108,7 @@ I skipped over several steps in the derivation, but the idea is that maximizing 
 
 Next, if we hold $q$ fixed to $q_t := p(z \mid x ; \theta_t)$, we see that maximizing $\text{ELBO}(q_t, \theta)$ with respect to $\theta$ is equivalent to maximizing the Q-function:
 
-$$\text{argmax}_q \ F(q_t, \theta) = \text{argmax}_q \ \ = \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{p(z \mid x ; \theta_t)} \right]$$
+$$\text{argmax}_q \ F(q_t, \theta) = \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{p(z \mid x ; \theta_t)} \right]$$
 
 $$= \text{argmax}_q \ \ E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right]$$
 
@@ -118,13 +118,21 @@ Visualizing EM
 -----------
 
 To build up a visual depiction of how the EM algorithm works, we'll first lay out some relationships between $F$ and $l$:
-1. Though not proven here, at iteration $t$, the function $F$ touches the likelihood function $l$ at precisely $\theta_t$. That is,
-<center>$$F(q_t, \theta_t) = l(\theta_t)$$</center>
-2. With $q$ fixed at some distribution $q_t$ (i.e., its value at the $t$th step of the algorithm), the function $F$ at $\theta_{t+1}$ will be greater than at $\theta_t$.  That is, 
+
+First, though not proven here, at iteration $t$, the function $F$ touches the likelihood function $l$ at precisely $\theta_t$. That is,
+
+$$F(q_t, \theta_t) = l(\theta_t)$$</center>
+
+Second, with $q$ fixed at $q_t$, the function $F$ at $\theta_{t+1}$ will be greater than at $\theta_t$.  That is, 
+
 $$F(q_t, \theta_{t+1}) \geq F(q_t, \theta_t)$$
+
 This follows simply from the fact that $\theta_{t+1}$ maximizes $F(q_t, \theta)$ by design.
-3. With $q$ fixed at $q_t$, $F$ is bounded from above $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
+
+With $q$ fixed at $q_t$, $F$ is bounded from above $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
+
 $$F(q_t, \theta) \leq l(\theta)$$
+
 These properties are depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/F_function.png" alt="drawing" width="600"/></center>
@@ -133,3 +141,52 @@ These properties are depicted below:
 Furthermore, with these facts we can reason that EM converges on a local maximum of $l(\theta)$ by “crawling” up the likelihood surface. That is, on each iteration $t$, $F(q_t,\theta)$ lies at or below the likelihood surface, but touches it at $\theta_t$. That is, $F(q_t, \theta_t) = l(\theta_t)$. Then, since $F(q_t, \theta_{t+1}) > F(q_t, \theta_t)$, it follows that $\theta_{t+1}$ increases the likelihood function. Furthermore, on the next iteration, we can evaluate the likelihood function at $\theta_{t+1}$ via $F(q_{t+1}, \theta_{t+1})$. Thus, each proceeding iteration’s value of $F(q_{t+1}, \theta_{t+1}) is a new, higher value on the likelihood surface than the current value. This process is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/EM_convergence.png" alt="drawing" width="600"/></center>
+
+When to use the EM algorithm
+-------------
+
+The EM algorithm is just one choice of many for tackling the following optimization problem:
+
+$$\text{argmax}_\theta \log(px)$$
+
+When would EM be preferred over other optimization algorithms out there?  First, the EM algorithm might be a good choice when $l(\theta)$ is challenging to optimize, but the Q-function is easier.  The likelihood function is often difficult to optimize due to the presence of the log of an integral:
+
+$$l(\theta) := log \int p(x, z ; \theta) \ dz$$
+
+Taking the derivative/gradient of this function with respect to $\theta$, setting it to zero, and then solving for $\theta$ is often very difficult to do analytically.
+
+On the otherhand, if the integral and logarithm were flipped, then function might be much easier to optimize analytically. The Q-function is just such a function:
+
+$$Q_t(\theta) := \int f(z) \log p(x,z ; \theta) \ dz$$
+
+where $f(z) := p(z \mid x ; \theta_t)$. 
+
+Thus, we see that EM converts a difficult optimiziation problem into a series of easier optimization problems where each sub-problem is made easier by flipping the integral and log within the objective function!
+
+Intuition behind the Q-function: a generalization of the likelihood function
+-------------
+
+In the case in which $Z$ is a discrete random variable, the Q-function can be interpreted as a “generalized” version of the complete data likelihood function. First, let’s say that both $X$ and $Z$ are observed where $X = x$ and $Z = z$. Then, we could write the complete data likelihood as
+
+$$\log p(x, z; \theta) := \sum_{z'} \mathbb{I}(z=z') \log p(x, z' ; \theta)$$
+
+where $\mathbb{I}(z=z')$ is an indicator function that equals one when $z' = z$ and equals zero otherwise.
+
+Now, recall the Q-function:
+
+$$Q_t(\theta) := \sum_{z'} p(z' \mid x ; \theta) \log p(x, z' ; \theta)$$
+
+We note that the difference between these two functions is that the indicator variable in the complete data likelihood \mathbb{I}(z=z') is replaced by the probability $p(z \mid x ;\theta)$. This leads us to viewing the Q-function as a sort of generalization of the complete data likelihood. That is, $p(z | x ; \theta)$ acts as a weight for its corresponding term in the summation, and measures our current certainty that the hidden data is equal to $z′$. When we know $Z = z$, all of the weight is assigned to the term in which $z′ = z$ and no weight is assigned to the terms in which $z′ \neq 􏰑 z$ -- that is, it reduces the data likelihood.
+
+Intuition behind the Q-function: a likelihood function over a hypothetical dataste
+-------------
+
+Another way to view the Q-function is as a complete data likelihood function over a hypothetical dataset where this hypothetical dataset is generated from a distribution that depends on our current best guess of $\theta$ (i.e. $\theta_t$ at the $t$th iteration). 
+
+That is, let us assume that we generate a very large set of values for $Z$ drawn i.i.d. from the distribution specified by $p(z | x ; \theta_t)$:
+
+$$z'_1, z'_2, \dots, z'_n \sim p(z \mid x ; \theta_t)$$
+
+For each $z'_i$, we create a new "sub"-dataset $(x, z'_i)$. Note that the observed data $x$ is duplicated in each of these sub-datasets. We then merge all of the datasets $(x, z'_1), . . . , (x, z'_n)$ to form our new hypothetical dataset. Then, the likelihood over these data is
+
+$$l'(\theta) := \prod_{i=1}^n p(x, \z'_i ; \theta)$$ 
