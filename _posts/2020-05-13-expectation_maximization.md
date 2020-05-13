@@ -118,17 +118,17 @@ Visualizing EM
 -----------
 
 To build up a visual depiction of how the EM algorithm works, we'll first lay out some relationships between $F$ and $l$:
-1. Though not proven here, at iteration $t$, the function $F$ touches the likelihood function $l$ at precisely $\theta_t$.  That is,
+ 1. Though not proven here, at iteration $t$, the function $F$ touches the likelihood function $l$ at precisely $\theta_t$.  That is,
 
-$$F(q_t, \theta) = l(\theta_t)$$
+$$F(q_t, \theta_t) = l(\theta_t)$$
 
-2. With $q$ fixed at some distribution $q_t$ (i.e., its value at the $t$th step of the algorithm), the function $F$ at $\theta_{t+1}$ will be greater than at $\theta_t$.  That is, 
+ 2. With $q$ fixed at some distribution $q_t$ (i.e., its value at the $t$th step of the algorithm), the function $F$ at $\theta_{t+1}$ will be greater than at $\theta_t$.  That is, 
 
-$$F(\q_t, \theta_{t+1}) \geq F(q_t, \theta_t)$$
+$$F(q_t, \theta_{t+1}) \geq F(q_t, \theta_t)$$
 
 This follows simply from the fact that $\theta_{t+1}$ maximizes $F(q_t, \theta)$ by design.
 
-3. With $q$ fixed at $q_t$, $F$ is bounded from above $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
+ 3. With $q$ fixed at $q_t$, $F$ is bounded from above $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
 
 $$F(q_t, \theta) \leq l(\theta)$$
 
