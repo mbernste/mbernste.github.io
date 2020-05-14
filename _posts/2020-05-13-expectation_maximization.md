@@ -95,7 +95,7 @@ Coordinate ascent is a relatively simple and iterative strategy for maximizing a
 
 In our setting, we don't yet know which value to use for $\theta$, nor do we know the distribution $q$ for $Z$. Thus, the ELBO becomes a function of both $\theta$ and $q$:
 
-$$F(\theta, q) := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
+$$F(q, \theta) := E_{Z \sim q}\left[\log p(x,Z; \theta)\right] - E_{Z\sim q}\left[\log q(Z)\right]$$
 
 EM is just coordinate ascent on this function. In the E-Step, we fix $\theta$ and solve for $q$. In the M-Step, we fix $q$ and solve for $\theta$. 
 
