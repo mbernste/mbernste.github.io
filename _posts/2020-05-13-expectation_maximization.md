@@ -124,13 +124,13 @@ To build up a visual depiction of how the EM algorithm works, we'll first lay ou
 
 First, though not proven here, at iteration $t$, the function $F$ touches the likelihood function $l$ at precisely $\theta_t$. That is,
 
-$$F(q_t, \theta_t) = l(\theta_t)$$</center>
+$$F(q_t, \theta_t) = l(\theta_t)$$
 
 Second, with $q$ fixed at $q_t$, the function $F$ at $\theta_{t+1}$ will be greater than at $\theta_t$.  That is, 
 
 $$F(q_t, \theta_{t+1}) \geq F(q_t, \theta_t)$$
 
-This follows simply from the fact that $\theta_{t+1}$ maximizes $F(q_t, \theta)$ by design.
+This follows from the fact that $\theta_{t+1}$ maximizes $F(q_t, \theta)$, by design of the algorithm.
 
 With $q$ fixed at $q_t$, $F$ is bounded from above by $l$.  This follows from the fact that $F$ is the the evidence **lower bound** -- that is, it is a lower bound for $l$:
 
