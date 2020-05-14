@@ -141,7 +141,7 @@ These properties are depicted below:
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/F_function.png" alt="drawing" width="600"/></center>
 
 
-Given these properties, we can reason that EM converges on a local maximum of $l(\theta)$ by “crawling” up the likelihood surface. That is, on each iteration $t$, $F(q_t,\theta)$ lies at or below the likelihood surface, but touches it at $\theta_t$. That is, $F(q_t, \theta_t) = l(\theta_t)$. Then, since $F(q_t, \theta_{t+1}) > F(q_t, \theta_t)$, it follows that $\theta_{t+1}$ increases the likelihood function. Furthermore, on the next iteration, we can evaluate the likelihood function at $\theta_{t+1}$ via $F(q_{t+1}, \theta_{t+1})$. Thus, each proceeding iteration’s value of $F(q_{t+1}, \theta_{t+1}) is a new, higher value on the likelihood surface than the current value. This process is depicted below:
+Given these properties, we can reason that EM converges on a local maximum of $l(\theta)$ by “crawling” up the likelihood surface. That is, on each iteration $t$, $F(q_t,\theta)$ lies at or below the likelihood surface, but touches it at $\theta_t$. That is, $F(q_t, \theta_t) = l(\theta_t)$. Then, since $F(q_t, \theta_{t+1}) > F(q_t, \theta_t)$, it follows that $\theta_{t+1}$ increases the likelihood function. Furthermore, on the next iteration, we can evaluate the likelihood function at $\theta_{t+1}$ via $F(q_{t+1}, \theta_{t+1})$. Thus, each proceeding iteration’s value of $F(q_{t+1}, \theta_{t+1})$ is a new, higher value on the likelihood surface than the current value. This process is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/EM_convergence.png" alt="drawing" width="600"/></center>
 
