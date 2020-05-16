@@ -13,5 +13,6 @@ author_profile: true
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/eye.jpg" alt="drawing" width="700"/></center>
 <br>
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/avrimidis.jpg" alt="drawing" width="700"/></center>
-Artist copy by [Vasilis Avrimidis](https://curiator.com/art/vasilis-avramidis/2)
-
+<center>Artist copy by [Vasilis Avrimidis](https://curiator.com/art/vasilis-avramidis/2)</center>
+<br>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Thistlewood.jpg" alt="drawing" width="700"/></center>
