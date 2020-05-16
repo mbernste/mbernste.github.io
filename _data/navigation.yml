@@ -18,11 +18,14 @@ main:
 #  - title: "Blog Posts"
 #    url: /year-archive/
 
-  - title: "Notes"
-    url: /notes/
+#  - title: "Notes"
+#    url: /notes/
     
   - title: "Blog"
     url: /year-archive/
+ 
+ - title: "Art"
+    url: /art/
     
   - title: "CV"
     url: http://mbernste.github.io/files/CV.pdf
