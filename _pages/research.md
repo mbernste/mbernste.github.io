@@ -15,12 +15,10 @@ Gene expression-based classification of a biological sample’s cell type is an 
 
 Bernstein,M.N. and Dewey,C.N. (2019). [Hierarchical cell type classification using mass, heterogeneous RNA-seq data from human primary cells](https://www.biorxiv.org/content/10.1101/634097v1). _bioRxiv_.
 
-## MetaSRA: Normalized metadata for the Sequence Read Archive
+## Normalizing metadata for large, public genomics databases
 
-The NCBI’s Sequence Read Archive (SRA) promises great biological insight if one could analyze the data in the aggregate; 
-however, the data remain largely underutilized, in part, due to the poor structure of the metadata associated with each sample. We present MetaSRA, a database of normalized SRA human sample-specific metadata.  The MetaSRA is available at [metasra.biostat.wisc.edu](metasra.biostat.wisc.edu).
-
-See [my talk](https://www.youtube.com/watch?v=pVHMq9SdUtc) describing the MetaSRA from ISMB 2018.
+The NCBI’s [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA) promises great biological insight if one could analyze the data in the aggregate; 
+however, the data remain largely underutilized, in part, due to the [poor structure](https://www.nature.com/articles/sdata201921) of the metadata associated with each sample. We developed the [MetaSRA](http://metasra.biostat.wisc.edu), a novel computational pipeline and associated database for standardizing the metadata associated with samples in the SRA by mapping each sample to biomedical [ontologies](https://en.wikipedia.org/wiki/Ontology_(information_science)).  See [my talk](https://www.youtube.com/watch?v=pVHMq9SdUtc) describing the MetaSRA from ISMB 2018.
 
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
 ![My helpful screenshot]({{ " https://mbernste.github.io/images/MetaSRA_web.png" |  https://mbernste.github.io/images/MetaSRA_web.png }})
