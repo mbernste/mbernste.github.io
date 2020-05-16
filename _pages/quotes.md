@@ -16,6 +16,9 @@ author_profile: true
 
 “Once there were brook trout in the streams in the mountains. You could see them standing in the amber current where the white edges of their fins wimpled softly in the flow. They smelled of moss in your hand. Polished and muscular and torsional. On their backs were vermiculate patterns that were maps of the world in its becoming. Maps and mazes. Of a thing which could not be put back. Not be made right again. In the deep glens where they lived all things were older than man and they hummed of mystery.” **\~ Cormac McCarthy**
 
+"I should like to paint portraits which appear after a century to people living then as apparitions. By which I mean that I do not endeavor to achieve this through photographic resemblance, but by means of our impassioned emotions—that is to say using our knowledge and our modern taste for color as a means of arriving at the expression and the intensification of the character." **\~ Van Gogh**
+
+
 "The places in-between places they are little countries themselves with their own holidays." **\~ Alberto Rios**
 
 "Let us dedicate ourselves to what the Greeks wrote so many years ago: to tame the savageness of man and make gentle the life of this world." **\~ Bobby Kennedy**
