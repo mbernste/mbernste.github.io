@@ -1,5 +1,5 @@
 ---
-title: 'Expectation-maximization: theory and intuition'
+title: 'Visualizing Covariance'
 date: 2020-05-21
 permalink: /posts/viz_cov/
 tags:
