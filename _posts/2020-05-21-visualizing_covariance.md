@@ -32,7 +32,7 @@ Thus, variance can be visualized using the same paradigm:
 
 In Part A of this figure, we depict samples from $X$. In part $B$, we draw a scatterplot plot of each $(x,x)$ with squares of sides length $x - E(x)$.
 
-From this visualization, we can see why variance is always positive: the sample from $X$, when plotted on two axes, will always sit on the line $f(x) = x$. 
+From this visualization, we can see why variance is always positive: the samples from $X$, when plotted on two axes, will always sit on the line $f(x) = x$. 
 
 We also note that the rectangles will always be squares because the sides are equal. Furthermore, when the values of $X$ are more spread out, the areas of the rectangles will be larger and thus, the average size of the rectangles will be a larger number. 
 
