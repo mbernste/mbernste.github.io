@@ -8,7 +8,7 @@ $$\text{Cov}(X, Y) := E[(X-E(X))(Y-E(Y)]$$
 
 When $X$ and $Y$ take on values $x$ and $y$ respectively, we can form a rectangle with sides of length $x − E(X)$ and $y − E(Y)$. The covariance of $X$ and $Y$ is then the expected area of the rectangle:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/VisualizingCovariance.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/VisualizeCovariance.png" alt="drawing" width="600"/></center>
 
 In part A of the figure above, we depict random samples from the joint distribution $P(X, Y)$. In Part B, we draw rectangles, with sides corresponding to $x − E(X)$ and $y − E(Y)$.
 
