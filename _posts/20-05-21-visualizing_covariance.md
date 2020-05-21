@@ -1,4 +1,12 @@
-
+---
+title: 'Expectation-maximization: theory and intuition'
+date: 2020-05-21
+permalink: /posts/viz_cov/
+tags:
+  - probability
+  - statistics
+  - tutorial
+---
 
 *Covariance quantifies to what extent two random variables are linearly correlated. In this post, I will outline a visualization of covariance that helped me better intuit this concept.*
 
