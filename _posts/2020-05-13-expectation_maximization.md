@@ -148,7 +148,11 @@ Given these properties, we can reason that EM converges on a local maximum of $l
 When to use the EM algorithm
 -------------
 
-The EM algorithm is just one choice of many for tackling the optimization problem $\text{argmax}_\theta \log(px)$.  When would EM be preferred over other optimization algorithms out there?  
+The EM algorithm is just one choice of many for tackling the optimization problem:
+
+$$\text{argmax}_\theta \log p(x)$$
+
+When would EM be preferred over other optimization algorithms out there?  
 
 First, the EM algorithm might be a good choice when $l(\theta)$ is challenging to optimize, but the Q-function is easier.  The likelihood function is often difficult to optimize due to the presence of the log of an integral:
 
