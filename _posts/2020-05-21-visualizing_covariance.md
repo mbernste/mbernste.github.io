@@ -14,7 +14,7 @@ Recall that the covariance between two random variables $X$ and $Y$ is defined a
 
 $$\text{Cov}(X, Y) := E[(X-E(X))(Y-E(Y)]$$
 
-When $X$ and $Y$ take on values $x$ and $y$ respectively, we can form a rectangle with sides of length $x − E(X)$ and $y − E(Y)$. The covariance of $X$ and $Y$ is then the expected area of the rectangle:
+When $X$ and $Y$ take on values $x$ and $y$ respectively, we can form a rectangle with sides of length $x − E(X)$ and $y − E(Y)$. The covariance of $X$ and $Y$ is then the expected area of the rectangle with these lengths of sides:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/VisualizeCovariance.png" alt="drawing" width="600"/></center>
 
