@@ -6,7 +6,11 @@ Recall that the covariance between two random variables $X$ and $Y$ is defined a
 
 $$\text{Cov}(X, Y) := E[(X-E(X))(Y-E(Y)]$$
 
-When $X$ and $Y$ take on values $x$ and $y$ respectively, we can form a rectangle with sides of length $x − E(X)$ and $y − E(Y)$. The covariance of $X$ and $Y$ is then the expected area of the rectangle. 
+When $X$ and $Y$ take on values $x$ and $y$ respectively, we can form a rectangle with sides of length $x − E(X)$ and $y − E(Y)$. The covariance of $X$ and $Y$ is then the expected area of the rectangle:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/EM_convergence.png" alt="drawing" width="600"/></center>
+
+In part A of the figure above, we depict random samples from the joint distribution $P(X, Y)$. In Part B, we draw rectangles, with sides corresponding to $x − E(X)$ and $y − E(Y)$.
 
 Note, however, that in our discussion, a “length” can have a negative value and thus some rectangles have a "negative area”. Positive-area rectangles correspond to points in which the values of the random variables are either both above or both below their respective means (they “agree”) and negative area rectangles correspond to the situation in which one variable is above it’s mean and the other is below (they “disagree”).
 
