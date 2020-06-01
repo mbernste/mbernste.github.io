@@ -73,19 +73,10 @@ Coordinate ascent? ELBO? Before talking about EM, let's first dig into the these
 
 **The evidence lower bound**
 
-To understand the evidence lower bound, we must first understand what we mean by "evidence".  The **evidence**, quite a simply, just a name given to the likelihood function evaluated at a fixed $\theta$:
+For a thorough discussion regarding the evidence lower bound, see my [blog post](https://mbernste.github.io/posts/elbo/).  To review this discussion, if we happen to know (or posit) that $Z$ follows some distribution $q(z)$ (and that $p(x, z; \theta) := p(x \mid z ; \theta)q(z)$), then the evidence lower bound (ELBO) is a lower bound on the likelihood function:
 
-$$\text{evidence} := \log p(x ; \theta)$$
+$$\log p(x ; \theta) \leq \text{ELBO} := E_{Z \sim q}\left[\log \frac{p(x,Z; \theta)}{q(Z)} \right]$$
 
-Why is this quantity often called the "evidence"? Intuitively, if we have chosen the right model $p$ and $\theta$, then we would expect that the marginal probability of our observed data $x$, would be high. Thus, a higher value of $\log p(x ; \theta)$ indicates, in some sense, that we may be on the right track with the model $p$ and parameters $\theta$ that we have chosen.
-
-If we happen to also know (or posit) that $Z$ follows some distribution given by $q$ (and that $p(x, z; \theta) := p(x \mid z ; \theta)q(z)$), then the evidence lower bound is, well, a lower bound on the evidence that makes use of $q$.  Specifically, 
-
-$$\log p(x ; \theta) \geq E_{Z \sim q}\left[\log \frac{p(x,Z; \theta)}{q(Z)} \right]$$
-
-where the ELBO is simply the right-hand side of the above equation:
-
-$${ELBO} := E_{Z \sim q}\left[\log \frac{p(x,Z; \theta)}{q(Z)} \right]$$
 
 **Coordinate ascent**
 
