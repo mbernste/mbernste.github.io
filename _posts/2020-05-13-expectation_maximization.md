@@ -75,7 +75,7 @@ Coordinate ascent? ELBO? Before talking about EM, let's first dig into the these
 
 For a thorough discussion regarding the evidence lower bound, see my [blog post](https://mbernste.github.io/posts/elbo/).  To review this discussion, if we happen to know (or posit) that $Z$ follows some distribution $q(z)$ (and that $p(x, z; \theta) := p(x \mid z ; \theta)q(z)$), then the evidence lower bound (ELBO) is a lower bound on the likelihood function:
 
-$$\log p(x ; \theta) \leq \text{ELBO} := E_{Z \sim q}\left[\log \frac{p(x,Z; \theta)}{q(Z)} \right]$$
+$$\log p(x ; \theta) \geq \text{ELBO} := E_{Z \sim q}\left[\log \frac{p(x,Z; \theta)}{q(Z)} \right]$$
 
 
 **Coordinate ascent**
