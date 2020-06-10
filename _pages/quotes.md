@@ -14,6 +14,8 @@ author_profile: true
 
 “Once there were brook trout in the streams in the mountains. You could see them standing in the amber current where the white edges of their fins wimpled softly in the flow. They smelled of moss in your hand. Polished and muscular and torsional. On their backs were vermiculate patterns that were maps of the world in its becoming. Maps and mazes. Of a thing which could not be put back. Not be made right again. In the deep glens where they lived all things were older than man and they hummed of mystery.” **\~ Cormac McCarthy**
 
+"We can not have free government without elections; and if the rebellion could force us to forego, or postpone a national election it might fairly claim to have already conquered and ruined us. The strife of the election is but human-nature practically applied to the facts of the case. What has occurred in this case, must ever recur in similar cases. Human-nature will not change. In any future great national trial, compared with the men of this, we shall have as weak, and as strong; as silly and as wise; as bad and good. Let us, therefore, study the incidents of this, as philosophy to learn wisdom from, and none of them as wrongs to be revenged." **\~ Abraham Lincoln after the Election of 1864**
+
 "I should like to paint portraits which appear after a century to people living then as apparitions. By which I mean that I do not endeavor to achieve this through photographic resemblance, but by means of our impassioned emotions—that is to say using our knowledge and our modern taste for color as a means of arriving at the expression and the intensification of the character." **\~ Van Gogh**
 
 
