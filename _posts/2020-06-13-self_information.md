@@ -51,7 +51,7 @@ $$I\left(\prod_{i=1}^n p_i\right) = \sum_{i=1}^n I(p_i)$$
 The self-information function
 -----------------
 
-It turns out that the five properties outlined above can only be satisfied by one function! That is function is simply:
+It turns out that the five properties outlined above can only be satisfied by one function! This function is simply:
 
 $$I(p) := -\log p$$
 
