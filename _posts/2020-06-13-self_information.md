@@ -29,7 +29,7 @@ From this description, we can think of information as a positive function $I$, o
 
 $$I : [0,1] \rightarrow [0,\infty)$$
 
-Following are intuition that $I$ should describe "surprise", there are five properties that we would like $I$ to have:
+Following our intuition that $I$ should describe "surprise", there are five properties that we would like $I$ to have:
 1. $I$ should be a continuous function. That is since $p \in [0, 1]$, we would like $I$'s domain to be continuous in the interval $[0,1]$. That is, a small change in the probability of an event should have a corresponding small change in the surprise that we experience from that event.
 2. $I$ should be non-negative. Intuitively, the idea of "negative surprise" does not make much sense. Either we aren't surprised at all, and $I(p) = 0$, or we are surprised and thus $I(p) > 0$.
 3. Self-information should be monotonic. If we have two probabilities $p_1$ and $p_2$ for which $p_1 < p_2$, then the event associated with $p_1$ would be more surprising than the event associated with $p_2$ and thus:
