@@ -30,12 +30,12 @@ From this description, we can think of information as a positive function $I$, o
 $$I : [0,1] \rightarrow [0,\infty)$$
 
 Following our intuition that $I$ should describe "surprise", there are five properties that we would like $I$ to have:
-1. $I$ should be a continuous function. That is since $p \in [0, 1]$, we would like $I$'s domain to be continuous in the interval $[0,1]$. That is, a small change in the probability of an event should lead to a corresponding small change in the surprise that we experience.
-2. $I$ should be non-negative. Intuitively, the idea of "negative surprise" does not make much sense. Either we aren't surprised at all, and $I(p) = 0$, or we are surprised and thus $I(p) > 0$.
+1. **Surprise is continuous.** We would like $I$'s domain to be continuous in the interval $[0,1]$. That is, a small change in the probability of an event should lead to a corresponding small change in the surprise that we experience.
+2. **Surprise is non-negative.** Intuitively, the idea of "negative surprise" does not make much sense. Either we aren't surprised at all, and $I(p) = 0$, or we are surprised and thus $I(p) > 0$.
 3. Self-information should be monotonic. If we have two probabilities $p_1$ and $p_2$ for which $p_1 < p_2$, then the event associated with $p_1$ would be more surprising than the event associated with $p_2$ and thus, $p_1 < p_2 \implies I(p_1) > I(p_2)$
-4. If an event has probability 1, then the event is certain to occur and we aren't surprised at all of its occurance. Thus, 
+4. **The surprise of a certain event is zero.** If an event has probability 1, then the event is certain to occur and we aren't surprised at all of its occurance. Thus, 
  $$I(1) = 0$$
-5. The suprise elicited from two independent events should be the sum of the two surprises. Intuitively, if one event occurs, it should not affect the surprise from the other event occuring because, after all, the two events are statistically independent. Thus, given two independent events with probabilities $p_1$ and $p_2$, it should follow that $I(p_1p_2) = I(p_1) + I(p_2)$. 
+5. **Surprise is additive**. The suprise elicited from two independent events should be the sum of the two surprises. Intuitively, if one event occurs, it should not affect the surprise from the other event occuring because, after all, the two events are statistically independent. Thus, given two independent events with probabilities $p_1$ and $p_2$, it should follow that $I(p_1p_2) = I(p_1) + I(p_2)$. 
  Generalizing to $n$ events: 
  $$I\left(\prod_{i=1}^n p_i\right) = \sum_{i=1}^n I(p_i)$$
 
