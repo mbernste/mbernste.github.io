@@ -41,7 +41,10 @@ One last way to think about entropy is that entropy tells you how uniformly dist
 
 **Entropy measures the efficiency of communication**
 
-Information
+ 
 
+Shannon's Source Coding Theorem
+-----------------
 
+Let's dig a bit more into understanding Shannon's Source Coding theorem.  To do so, we'll need to introduce a few definitions for mathematically describing the task of communicating the outcomes of $X$ over an information channel.
 
