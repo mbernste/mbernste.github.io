@@ -46,7 +46,7 @@ It turns out that the five properties outlined above can only be satisfied by on
 
 $$I(p) := -\log p$$
 
-If, given an event $A$ with probability $P(A)$, the self-information function of $A$ looks like this:
+This function looks like this:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/selfinfo.png" alt="drawing" width="600"/></center>
 
