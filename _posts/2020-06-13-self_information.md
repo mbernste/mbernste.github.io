@@ -35,7 +35,7 @@ Following our intuition that $I$ should describe "surprise", there are five prop
 3. Self-information should be monotonic. If we have two probabilities $p_1$ and $p_2$ for which $p_1 < p_2$, then the event associated with $p_1$ would be more surprising than the event associated with $p_2$ and thus,
 
 $$p_1 < p_2 \implies I(p_1) > I(p_2)$$
-  
+
 4. If an event has probability 1, then the event is certain to occur and we aren't surprised at all of its occurance. Thus, 
 
 $$I(1) = 0$$
