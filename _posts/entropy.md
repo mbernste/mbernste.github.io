@@ -23,8 +23,10 @@ where $P$ is the probability mass function of $X$ and $\mathcal{X}$ is the codom
 
 Said differently, the entropy of $X$ is simply the average self-information over all of the possible outcomes of $X$.  Intuitively, since self-information describes the degree of surprise of an event, the entropy of a random variable tells us, on average, how surprised we are going to be by the outcome of the random variable.
 
-Entropy measures uniformity
------------
+In the next two subsections we'll discuss two angles from which to view information entropy. The first angle views entropy as a degree of uniformness of a random variable. The second angle views entropy as a limit to how efficiently we can communicate the outcome of this random variable. This latter angle will provide some insight into how to understand the logarithm in the self-information function. 
+
+Entropy measures uniformness
+=======================
 
 A discrete random variable that is certain to be only one value (e.g., with probability 1 $X = a$), the outcome of this random variable would not be surprising at all -- we already know its outcome! Therefore, it's entropy should be zero.
 
@@ -39,7 +41,7 @@ One last way to think about entropy is that entropy tells you how uniformly dist
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_levels.png" alt="drawing" width="600"/></center>
 
 Entropy measures the efficiency of communication
------------
+===============
 
 
 
