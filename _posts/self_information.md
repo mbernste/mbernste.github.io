@@ -36,5 +36,16 @@ $$I(1) = 0$$
 
 $$I(p_1p_2) = I(p_1) + I(p_2)$$
 
+Generalizing to $n$ events:
 
+$$I(\prod_i p_i) = \sum_i I(p_i)$$
+
+The self-information function
+-----------------
+
+It turns out that the five properties outlined above can only be satisfied by one function! That is function is simply:
+
+$$I(p) := -\log p$$
+
+If we plot this function it looks like this:
 
