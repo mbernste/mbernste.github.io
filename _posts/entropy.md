@@ -27,21 +27,21 @@ In the next two subsections we'll discuss two angles from which to view informat
 
 **Entropy measures uniformness** 
 
-A discrete random variable that is certain to be only one value (e.g., with probability 1 $X = a$), the outcome of this random variable would not be surprising at all -- we already know its outcome! Therefore, it's entropy should be zero.
-
-In contrast, a uniform discrete random variable (such as one describing a fair-coin), will always surprise us because we have no idea which of the outcomes will occur -- they are all equally likely!  Intuitively, a uniform random variable should have a high entropy.  In fact, the entropy of a discrete random variable $X$ is maximal when probabilities is uniformly distributed over its outcomes.
+Intuitively, the degree of surprise that we expect to experience from the outcome of a random variable should correspond to how uniform the random variable is.  That is, we should be more surprised by the outcome of a fair sided coin than we should a biased coin. Let's look at two extreme scenarios:
+- A discrete random variable that is certain to be only one value (e.g., with probability 1 $X = a$), the outcome of this random variable would not be surprising at all -- we already know its outcome! Therefore, it's entropy should be zero.
+- In contrast, a uniform discrete random variable (such as one describing a fair-coin), will always surprise us because we have no idea which of the outcomes will occur -- they are all equally likely!  Intuitively, a uniform random variable should have a high entropy.  In fact, the entropy of a discrete random variable $X$ is maximal when probabilities is uniformly distributed over its outcomes.
 
 In the figure below, we plot the entropy of a Bernoulli random variable $X$ (i.e. a coin flip) over all probabilities of $P(X=1)$:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_bernoulli.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_bernoulli.png" alt="drawing" width="500"/></center>
 
 One last way to think about entropy is that entropy tells you how uniformly distributed a discrete random variable is.  A random variable with high entropy is closer to uniform whereas a random variable with low entropy is less uniform (i.e. there is a high probability associated with only a few of its outcomes).  This is depicted in the schematic below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_levels.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_levels.png" alt="drawing" width="800"/></center>
 
 **Entropy measures the efficiency of communication**
 
-
+Information
 
 
 
