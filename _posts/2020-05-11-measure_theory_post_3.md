@@ -90,7 +90,7 @@ Simple functions generalize step functions because the domain need not be numeri
 
 As we'll soon see, simple-functions are the basis on which the Lebesgue integral will be constructed. simple functions are used to generalize the rectangles used in the definition of the Reimann integral!
 
-**2. The Lebesgue integral of a measurable simple measurable function**
+**2. The Lebesgue integral of a measurable simple function**
 
 Before defining the general Lebesgue integral, we first create a more narrow definition for a Lebesgue integral that is defined only over *measurable simple functions*:
 
