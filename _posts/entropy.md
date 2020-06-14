@@ -23,6 +23,9 @@ where $P$ is the probability mass function of $X$ and $\mathcal{X}$ is the codom
 
 Said differently, the entropy of $X$ is simply the average self-information over all of the possible outcomes of $X$.  Intuitively, since self-information describes the degree of surprise of an event, the entropy of a random variable tells us, on average, how surprised we are going to be by the outcome of the random variable.
 
+Entropy measures uniformity
+-----------
+
 A discrete random variable that is certain to be only one value (e.g., with probability 1 $X = a$), the outcome of this random variable would not be surprising at all -- we already know its outcome! Therefore, it's entropy should be zero.
 
 In contrast, a uniform discrete random variable (such as one describing a fair-coin), will always surprise us because we have no idea which of the outcomes will occur -- they are all equally likely!  Intuitively, a uniform random variable should have a high entropy.  In fact, the entropy of a discrete random variable $X$ is maximal when probabilities is uniformly distributed over its outcomes.
