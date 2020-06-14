@@ -18,7 +18,7 @@ Strikingly, I found that whenever information theory was taught to me in these c
 
 One reason I think this question is avoided is because we don't really have a good definition for "information." This is evidenced by the fact that there is an [entire field of philosophy](https://plato.stanford.edu/entries/information/) dedicated to the construction of such a definition.
 
-However, despite the fact that we don't really know what we humans can't quite figure out what we mean when we use the word "information", information does indeed have a rigorous definition within the mathematical field of information theory. Not only is this definition practically useful, I also find it intellectually satisfying.
+However, despite the fact that humans can't quite figure out what we mean when we use the word "information", information does indeed have a rigorous definition within the mathematical field of information theory. Not only is this definition practically useful, I also find it intellectually satisfying.
 
 Information as a measure of surprise
 -----------------
