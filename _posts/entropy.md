@@ -31,6 +31,10 @@ In the figure below, we plot the entropy of a Bernoulli random variable $X$ (i.e
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_bernoulli.png" alt="drawing" width="600"/></center>
 
+One last way to think about entropy is that entropy tells you how uniformly distributed a discrete random variable is.  A random variable with high entropy is closer to uniform whereas a random variable with low entropy is less uniform (i.e. there is a high probability associated with only a few of its outcomes).  This is depicted in the schematic below:
+
+
+
 
 
 
