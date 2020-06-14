@@ -55,8 +55,8 @@ It turns out that the five properties outlined above can only be satisfied by on
 
 $$I(p) := -\log p$$
 
-If we plot this function it looks like this:
+If, given an event $A$ with probability $P(A)$, the self-information function of $A$ looks like this:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/selfinfo.png" alt="drawing" width="600"/></center>
 
-And there you have it: defining information as a degree of surprise with a nice mathematical formula that matches our intuition for such a definition. 
+Note that the base of the logarithm will alter the value of the self-information.  As we will discuss in the next post, there is an alternative angle from which one can view the concept of information within information theory: as how efficiently one can communicate the occurance of the event.  As we'll see, the base of the logarithm of the self-information function can be understood to be the number of symbols we are utilizing to communicate the occurance of the event.
