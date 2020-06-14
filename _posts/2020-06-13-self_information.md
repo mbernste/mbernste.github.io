@@ -57,6 +57,6 @@ $$I(p) := -\log p$$
 
 If we plot this function it looks like this:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/selfInfo.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/selfinfo.png" alt="drawing" width="600"/></center>
 
 And there you have it: defining information as a degree of surprise with a nice mathematical formula that matches our intuition for such a definition. 
