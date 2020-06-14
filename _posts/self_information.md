@@ -1,13 +1,11 @@
 ---
-title: 'What is the evidence lower bound?'
+title: 'Foundations of information theory: what is information? (part 1)'
 date: 2020-06-13
-permalink: /posts/elbo/
+permalink: /posts/self_info/
 tags:
   - information theory
   - tutorial
 ---
-
-Foundations of information theory: what is information? (part 1)
 
 *The mathematical field of information theory attempts to mathematically describe the concept of "information". In this series of posts, I will attempt to describe my understanding of how, both philosophically and mathematically, information theory defines the polymorphic, and often amorphous, concept of information. In this first post, I will describe Shannon's self-information.*
 
