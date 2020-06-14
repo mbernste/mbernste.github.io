@@ -33,7 +33,7 @@ $$E(X) := \int_x x f(x) \ dx$$
 
 where $f(x)$ is $X$'s density function (see [part 2](https://mbernste.github.io/posts/measure_theory_2/) of this series for a description of a density function).  
 
-Both of these definitions carry the same intuition -- that is, to compute the expectation of $X$ we take a weighted-average of all of the values of the random variable where the weights correspond to how likely that value is. Can we unify these two definitions using our new measure-theoretic definition for a random variable?
+Both of these definitions carry the same intuition -- that is, to compute the expectation of $X$ we take a weighted-average of all of the values of the random variable where the weights correspond to how likely each value is. Can we unify these two definitions using our new measure-theoretic definition for a random variable?
 
 Expectation
 ---------
