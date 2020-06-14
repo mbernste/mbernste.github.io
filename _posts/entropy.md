@@ -13,7 +13,7 @@ $$I(p) := -\log p$$
 One strange thing about this equation is that it seems to change with respect to the base of the logarithm. Why is that? In this post, we will connect this idea of "information as surprise" to another angle from which we can view information: "information as an efficiency of communication".  This perspective starts to take more shape when we introduce the concept of information **entropy**.  After introducing this concept, it will become clear that the base of the logarithm used in $I$ corresponds to the number of symbols that we assume we are utilizing to communicate the outcome of the event.
 
 Introducing information entropy
------------
+-----------------
 
 Given an event within a [probability space](), self-information describes the information content inherent in that event occuring. The concept of **information entropy** extends this idea to discrete random variables.  Given a random variable $X$, the entropy of $X$, denoted $H(X)$ is simply the expected self-information over its outcomes:
 
@@ -25,8 +25,7 @@ Said differently, the entropy of $X$ is simply the average self-information over
 
 In the next two subsections we'll discuss two angles from which to view information entropy. The first angle views entropy as a degree of uniformness of a random variable. The second angle views entropy as a limit to how efficiently we can communicate the outcome of this random variable. This latter angle will provide some insight into how to understand the logarithm in the self-information function. 
 
-Entropy measures uniformness
-=======================
+**Entropy measures uniformness** 
 
 A discrete random variable that is certain to be only one value (e.g., with probability 1 $X = a$), the outcome of this random variable would not be surprising at all -- we already know its outcome! Therefore, it's entropy should be zero.
 
@@ -40,8 +39,8 @@ One last way to think about entropy is that entropy tells you how uniformly dist
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_levels.png" alt="drawing" width="600"/></center>
 
-Entropy measures the efficiency of communication
-===============
+**Entropy measures the efficiency of communication**
+
 
 
 
