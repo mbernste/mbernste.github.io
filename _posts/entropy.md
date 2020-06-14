@@ -27,7 +27,7 @@ A discrete random variable that is certain to be only one value (e.g., with prob
 
 In contrast, a uniform discrete random variable (such as one describing a fair-coin), will always surprise us because we have no idea which of the outcomes will occur -- they are all equally likely!  Intuitively, a uniform random variable should have a high entropy.  In fact, the entropy of a discrete random variable $X$ is maximal when probabilities is uniformly distributed over its outcomes.
 
-In the figure below, we plot the entropy of a Bernoulli random variable (i.e. a coin flip) over its parameter $\theta$ (i.e. the probability that the coin comes up heads):
+In the figure below, we plot the entropy of a Bernoulli random variable $X$ (i.e. a coin flip) over all probabilities of $P(X=1)$:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_bernoulli.png" alt="drawing" width="600"/></center>
 
