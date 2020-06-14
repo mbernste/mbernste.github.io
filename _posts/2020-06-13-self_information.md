@@ -12,7 +12,7 @@ tags:
 Introduction
 ---------------
 
-Information theory is a mathematical theory for describing "information" invented by the late [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon). Information theory is a fundamental mathematical theory that touches many fields, from statistics to physics. Thus, it is introduced in many introductory college courses. 
+Information theory is a mathematical theory for describing "information" invented by the late [Claude Shannon](https://en.wikipedia.org/wiki/Claude_Shannon). Information theory is a fundamental mathematical theory that touches many fields, from [statistics](https://en.wikipedia.org/wiki/Fisher_information#Relation_to_relative_entropy) to [physics](https://en.wikipedia.org/wiki/Entropy#Information_theory). Thus, it is introduced in many introductory college courses. 
 
 Strikingly, I found that whenever information theory was taught to me in these courses, the teacher always skipped over what to me seemed to be the most fundamental question of all: what exactly is "information"?  It seemed quite strange to learn a theory without knowing the nature of the subject of that theory!
 
