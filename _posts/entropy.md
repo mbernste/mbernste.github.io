@@ -29,6 +29,7 @@ In contrast, a uniform discrete random variable (such as one describing a fair-c
 
 In the figure below, we plot the entropy of a Bernoulli random variable (i.e. a coin flip) over its parameter $\theta$ (i.e. the probability that the coin comes up heads):
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_bernoulli.png" alt="drawing" width="600"/></center>
 
 
 
