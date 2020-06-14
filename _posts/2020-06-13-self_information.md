@@ -46,7 +46,7 @@ $$I(p_1p_2) = I(p_1) + I(p_2)$$
 
 Generalizing to $n$ events:
 
-$$I(\prod_i p_i) = \sum_i I(p_i)$$
+$$I\left(\prod_i p_i\right) = \sum_i I(p_i)$$
 
 The self-information function
 -----------------
