@@ -36,11 +36,11 @@ Following our intuition that $I$ should describe "surprise", there are five prop
 
 $$p_1 < p_2 \implies I(p_1) > I(p_2)$$
 
-4. If an event has probability 1, then the event is certain to occur and we aren't surprised at all of its occurance. Thus, 
+ 4. If an event has probability 1, then the event is certain to occur and we aren't surprised at all of its occurance. Thus, 
 
 $$I(1) = 0$$
 
-5. The suprise elicited from two independent events should be the sum of the two surprises. Intuitively, if one event occurs, it should not affect the surprise from the other event occuring because, after all, the two events are statistically independent. Thus, given two independent events with probabilities $p_1$ and $p_2$, it should follow that
+ 5. The suprise elicited from two independent events should be the sum of the two surprises. Intuitively, if one event occurs, it should not affect the surprise from the other event occuring because, after all, the two events are statistically independent. Thus, given two independent events with probabilities $p_1$ and $p_2$, it should follow that
 
 $$I(p_1p_2) = I(p_1) + I(p_2)$$
 
