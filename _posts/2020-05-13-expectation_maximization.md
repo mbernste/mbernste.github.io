@@ -14,7 +14,7 @@ tags:
 Introduction
 --------
 
-Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation of the parameters in a latent variable model. Introductory machine learning courses often teach the variants of EM used for estimating parameters in important models such as [Guassian Mixture Models](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model) and [Hidden Markov Models](https://en.wikipedia.org/wiki/Baum–Welch_algorithm).  EM also features heavily in bioinformatics, where it is used for [quantifying gene expression from RNA-sequencing data](https://academic.oup.com/bioinformatics/article/26/4/493/243395).
+Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation of the parameters in a latent variable model. Introductory machine learning courses often teach the variants of EM used for estimating parameters in important models such as [Guassian Mixture Models](https://en.wikipedia.org/wiki/Mixture_model#Gaussian_mixture_model) and [Hidden Markov Models](https://en.wikipedia.org/wiki/Baum–Welch_algorithm).  EM also features heavily in bioinformatics where, for example, it is used for [quantifying gene expression](https://academic.oup.com/bioinformatics/article/26/4/493/243395) from RNA-sequencing data and for [finding sequence-motifs](http://compbio.berkeley.edu/class/c246/Reading/bailey-1994-ismb.pdf) in genomes..
 
 After learning about this algorithm in introductory graduate school courses, the intuition was clear, but I still had several remaining questions.  When is EM preferred over some other method for estimating parameters?  What is EM really doing? Why is EM guaranteed to converge?
 
@@ -31,7 +31,7 @@ where $p$ is the probability mass/density function, $x$ and $z$ are values for $
 
 Further, we assume that we have observed $x$, the value of $X$, but have not observed $z$, the value of $Z$. Despite not observing $z$, we wish to find the value for $\theta$ that makes $x$ most likely under our model. Since we have not observed z, our likelihood function must marginalize over z:
 
-$$l(\theta) := \log p(x ; \theta) = \log \int_z p(x, z ; \theta)$$
+$$l(\theta) := \log p(x ; \theta) = \log \int p(x, z ; \theta) \ dz$$
 
 In practice, maximizing this function over θ may be difficult to do analytically due to this integral. For such situations, the EM algorithm may provide a method for computing a local maximum of this function with respect to θ.
 
