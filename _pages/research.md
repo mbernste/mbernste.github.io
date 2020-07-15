@@ -6,7 +6,7 @@ author_profile: true
 
 ## Hierarchical cell type classification against the Cell Ontology
 
-Gene expression-based classification of a biological sample’s cell type is an important step in many transcriptomic analyses, including that of annotating cell types in single-cell RNA-seq datasets. We explore the novel application of hierarchical classification algorithms that take into account the graph structure of the Cell Ontology to this task. 
+Gene expression-based classification of a biological sample’s cell type is an important step in many transcriptomic analyses, including that of annotating cell types in single-cell RNA-seq datasets. We explore the novel application of hierarchical classification algorithms that take into account the graph structure of the [Cell Ontology](http://www.obofoundry.org/ontology/cl.html) to this task. 
 
 * Bernstein,M.N., Ma,J., Gleicher,M., and Dewey,C.N. (2019). [CellO: Comprehensive and hierarchical cell type classification of human cells with the Cell Ontology](https://www.biorxiv.org/content/10.1101/634097). _bioRxiv_.
 
