@@ -16,8 +16,6 @@ author_profile: true
 
 "The dogmas of the quiet past are inadequate to the stormy present. The occasion is piled high with difficulty and we must rise with the occasion. As our case is new, we must think anew and act anew. We must disenthrall ourselves, and then we shall save our country." **\~ Abraham Lincoln**
 
-"You may be 38 years old, as I happen to be. And one day, some great opportunity stands before you and calls you to stand up for some great principle, some great issue, some great cause. And you refuse to do it because you are afraid…. You refuse to do it because you want to live longer…. You’re afraid that you will lose your job, or you are afraid that you will be criticized or that you will lose your popularity, or you’re afraid that somebody will stab you, or shoot at you or bomb your house; so you refuse to take the stand.  Well, you may go on and live until you are 90, but you’re just as dead at 38 as you would be at 90. And the cessation of breathing in your life is but the belated announcement of an earlier death of the spirit." **\~ Martin Luther King Jr.**
-
 "I should like to paint portraits which appear after a century to people living then as apparitions. By which I mean that I do not endeavor to achieve this through photographic resemblance, but by means of our impassioned emotions—that is to say using our knowledge and our modern taste for color as a means of arriving at the expression and the intensification of the character." **\~ Van Gogh**
 
 "The places in-between places they are little countries themselves with their own holidays." **\~ Alberto Rios**
