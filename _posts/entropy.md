@@ -10,10 +10,7 @@ In the [first post](https://mbernste.github.io/posts/self_info/) of this series,
 
 $$I(p) := -\log p$$
 
-One strange thing about this equation is that it seems to change with respect to the base of the logarithm. Why is that? In this post, we will connect this idea of "information as surprise" to another angle from which we can view information: "information as an efficiency of communication".  This perspective starts to take more shape when we introduce the concept of information **entropy**.  After introducing this concept, it will become clear that the base of the logarithm used in $I$ corresponds to the number of symbols that we assume we are utilizing to communicate the outcome of the event.
-
-Introducing information entropy
------------------
+One strange thing about this equation is that it seems to change with respect to the base of the logarithm. Why is that? In this post, we will connect this idea of "information as surprise" to another angle from which we can view information: "information as an efficiency of communication".  This perspective starts to take more shape when we introduce the concept of information **entropy**.  After introducing this concept, it will become clear that the base of the logarithm used in $I$ corresponds to the number of symbols that we assume we are utilizing to communicate the outcome of the event in question.
 
 Given an event within a [probability space](), self-information describes the information content inherent in that event occuring. The concept of **information entropy** extends this idea to discrete random variables.  Given a random variable $X$, the entropy of $X$, denoted $H(X)$ is simply the expected self-information over its outcomes:
 
@@ -25,7 +22,8 @@ Said differently, the entropy of $X$ is simply the average self-information over
 
 In the next two subsections we'll discuss two angles from which to view information entropy. The first angle views entropy as a degree of uniformness of a random variable. The second angle views entropy as a limit to how efficiently we can communicate the outcome of this random variable. This latter angle will provide some insight into how to understand the logarithm in the self-information function. 
 
-**Entropy measures uniformness** 
+Entropy measures uniformness
+-----------------------
 
 Intuitively, the degree of surprise that we expect to experience from the outcome of a random variable should correspond to how uniform the random variable is.  That is, we should be more surprised by the outcome of a fair sided coin than we should a biased coin. Let's look at two extreme scenarios:
 - A discrete random variable that is certain to be only one value (e.g., with probability 1 $X = a$), the outcome of this random variable would not be surprising at all -- we already know its outcome! Therefore, it's entropy should be zero.
@@ -39,12 +37,21 @@ One last way to think about entropy is that entropy tells you how uniformly dist
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/entropy_levels.png" alt="drawing" width="800"/></center>
 
-**Entropy measures the efficiency of communication**
+Entropy measures maximal efficiency communication
+---------------------
 
- 
+I think the most interesting way of viewing entropy is through a lense that involves communication.  More specifically, the information entropy tells you, on average, the minimum number of symbols that you will need to use to communicate the outcome of a random variable. In fact, it was through this lense that Claude Shannon [originally presented the idea](http://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf).  
 
-Shannon's Source Coding Theorem
------------------
+Let us say we have two people, Person A and Person B, who are trying to communicate with one another. Specifically, Person A is observing samples, drawn one at a time, from some distribution $$X$$.  Person A then wishes to communicate each sample to Person B.  For example, $$X$$ might be a coin and Person A wishes to communicate to Person B the outcomes of repeated coin flips. 
 
-Let's dig a bit more into understanding Shannon's Source Coding theorem.  To do so, we'll need to introduce a few definitions for mathematically describing the task of communicating the outcomes of $X$ over an information channel.
+The catch is that Person A must use a sequence of symbols from some alphabet to communicate these outcomes.  For example, Person A may be restricted to communicate using only two symbols, say "1" and "0" (e.g. [Morse Code](https://en.wikipedia.org/wiki/Morse_code) messages are transmitted as using two symobls: dots and dashes). Using these symbols, Person A must construct a code made from these symbols to communicate these outcomes.  
 
+Interestingly, according to [Shannon's Source Coding Theorem](https://en.wikipedia.org/wiki/Shannon%27s_source_coding_theorem), no matter how Person A construct's their code, in expectation, Person A will need use at least $$H(X)$$ symbols to communicate each outcome.  No matter how clever, Person A will never be able to construct a code such that Person A's average message will be smaller than $$H(X)$$.  Said differently, entropy provides a lower bound on the average size of each message that Person A transmits to Person B. 
+
+As it turns out in the Source Coding Theorem leads us to interpret the base of the logarithm used in the definition of $$I$$ as the number of symbols in the alphabet that Person A is using to construct their messages.  Said differently, the base of the logarithm in the definition for $$I$$ can be understood as the size of a hypothetical alphabet that we are using to communicate the result of a surprising event.  
+
+I like to think about it this way: Information quantifies the **surprise** of an event and is measured in units of **alphabet size**.
+
+This is somewhat analagous to money.  Money is used to quantify **value** and is measured in units of a **demonination** (e.g. dollars).
+
+In a future post, I hope to make this connection more clear by rigorously outlining the Source Coding Thoerem. Until then, I hope this series of posts helped provide a broad, and somewhat philosophical, explanation of what "information" is according to Shannon's Theory! 
