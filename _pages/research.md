@@ -25,7 +25,7 @@ however, the data remain largely underutilized, in part, due to the [poor struct
 
 ## Developing tools for querying public datasets
 
-We've built [Jupyter-notebook based tools](https://github.com/mbernste/hypothesis-driven-SRA-queries) atop the MetaSRA for constructing structured datasets from the SRA. The Case-Control Finder finds matches samples of a given condition/disease from the SRA to control samples. The Series Finder finds ordered sets of samples where samples are ordered by a continuous property such as age.
+We've built [Jupyter-notebook based tools](https://github.com/mbernste/hypothesis-driven-SRA-queries) atop the [MetaSRA](http://metasra.biostat.wisc.edu) for constructing structured datasets from the [SRA](https://www.ncbi.nlm.nih.gov/sra). The [Case-Control Finder](https://colab.research.google.com/drive/1HX8V5yFRCh-AdkC-XHnfo6thg6VHwplC?usp=sharing) finds matches samples of a given condition/disease from the SRA to control samples. The [Series Finder](https://colab.research.google.com/drive/1BNmBokHi41ODCWeS3G_WY8OfZ54RVXf3?usp=sharing) finds ordered sets of samples where samples are ordered by a continuous property such as age.
 
 * Bernstein, M.N., et al. (2020). [Jupyter notebook-based tools for building structured datasets from the Sequence Read Archive](https://f1000research.com/articles/9-376). _F1000 Research_, 9:376.
 
