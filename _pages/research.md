@@ -4,6 +4,8 @@ permalink: /research/
 author_profile: true
 ---
 
+Within the last decades, scientists have deposited vast amounts of raw genomics data into publicly accessible domains.  My goal is to develop new models, databases, and tools that will enable researchers to unleash the untapped potential of these data. I am eager to discover and apply new techniques to tackle this challenge. To this end, my interests touch upon a number of areas within the data sciences including statistical modeling, natural language processing, knowledge representation, and the design of novel user interfaces.  See a sample of my research outputs below.
+
 ## Hierarchical cell type classification against the Cell Ontology
 
 Cell type annotation is a fundamental task in the analysis of single-cell RNA-sequencing data. We present [CellO](https://github.com/deweylab/CellO), a machine learning-based tool for annotating human RNA-seq data with the [Cell Ontology](http://www.obofoundry.org/ontology/cl.html). CellO enables accurate and standardized cell type classification by considering the rich hierarchical structure of known cell types. Furthemore, CellO comes pre-trained on a novel, comprehensive dataset of human, healthy, untreated primary samples in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA), which to the best of our knowledge, is the most diverse curated collection of primary cell data to date. 
@@ -23,7 +25,7 @@ however, the data remain largely underutilized, in part, due to the [poor struct
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
 ![My helpful screenshot]({{ " https://mbernste.github.io/images/MetaSRA_web.png" |  https://mbernste.github.io/images/MetaSRA_web.png }})
 
-## Developing tools for querying public datasets
+## Developing tools for querying large, public genomics databases
 
 We've built [Jupyter-notebook based tools](https://github.com/mbernste/hypothesis-driven-SRA-queries) atop the [MetaSRA](http://metasra.biostat.wisc.edu) for constructing structured datasets from the [SRA](https://www.ncbi.nlm.nih.gov/sra). The [Case-Control Finder](https://colab.research.google.com/drive/1HX8V5yFRCh-AdkC-XHnfo6thg6VHwplC?usp=sharing) finds matches samples of a given condition/disease from the SRA to control samples. The [Series Finder](https://colab.research.google.com/drive/1BNmBokHi41ODCWeS3G_WY8OfZ54RVXf3?usp=sharing) finds ordered sets of samples where samples are ordered by a continuous property such as age.
 
