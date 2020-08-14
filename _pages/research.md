@@ -4,7 +4,7 @@ permalink: /research/
 author_profile: true
 ---
 
-Within the last decades, scientists have deposited vast amounts of raw genomics data into publicly accessible domains.  My goal is to develop new models, databases, and tools that will enable researchers to unleash the untapped potential of these data. I am eager to discover and apply new techniques to tackle this challenge. To this end, my interests touch upon a number of areas within the data sciences including statistical modeling, natural language processing, knowledge representation, and the design of novel user interfaces.  See a sample of my research outputs below.
+Within the last decades, scientists have deposited vast amounts of raw genomics data into publicly accessible domains.  My goal is to develop new models, databases, and tools that will enable researchers to unleash the untapped potential of these data. I am eager to discover new techniques and to combine ideas in novel ways in order to tackle this challenge. See a sample of my research outputs below.
 
 ## Hierarchical cell type classification against the Cell Ontology
 
