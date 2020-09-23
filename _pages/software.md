@@ -12,8 +12,8 @@ Search for public RNA-seq data within the Sequence Read Archive using biomedical
 
 * Website: [http://metasra.biostat.wisc.edu](http://metasra.biostat.wisc.edu)
 * GitHub: 
-    *[https://github.com/deweylab/MetaSRA-website-frontend](https://github.com/deweylab/MetaSRA-website-frontend)
-    *[https://github.com/deweylab/MetaSRA-API-backend](https://github.com/deweylab/MetaSRA-API-backend)
+  * [https://github.com/deweylab/MetaSRA-website-frontend](https://github.com/deweylab/MetaSRA-website-frontend)
+  * [https://github.com/deweylab/MetaSRA-API-backend](https://github.com/deweylab/MetaSRA-API-backend)
  
 ### MetaSRA Pipeline
 
