@@ -4,6 +4,8 @@ permalink: /art/
 author_profile: true
 ---
 
+A sample of art I've made over the years.
+
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/adventure.jpg" alt="drawing" width="700"/></center>
 <br>
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/morocco.jpg" alt="drawing" width="700"/></center>
