@@ -25,6 +25,16 @@ however, the data remain largely underutilized, in part, due to the [poor struct
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
 ![My helpful screenshot]({{ " https://mbernste.github.io/images/MetaSRA_web.png" |  https://mbernste.github.io/images/MetaSRA_web.png }})
 
+## Webtools for exploring public single-cell cancer data
+
+Single-cell RNA-seq (scRNA-seq) enables the profiling of genome-wide gene expression at the single-cell level and in so doing facilitates insight into and information about cellular heterogeneity within a tissue. Perhaps nowhere is this more important than in cancer, where tumor and tumor microenvironment heterogeneity directly impact development, maintenance, and progression of disease. While publicly available scRNA-seq cancer datasets offer unprecedented opportunity to better understand the mechanisms underlying tumor progression, metastasis, drug resistance, and immune evasion, much of the available information has been underutilized, in part, due to the lack of tools available for aggregating and analysing these data. We present CHARacterizing Tumor Subpopulations (CHARTS), a computational pipeline and web application for analyzing, characterizing, and integrating publicly available scRNA-seq cancer datasets. CHARTS is freely available at [charts.morgridge.org](charts.morgridge.org).
+
+* Bernstein, M.N., Ni, Z., Collins, M., Burkard, M.E., Kendziorski, C., and Stewart, R. (2020). [CHARTS: A web application for characterizing and comparing tumor subpopulations in publicly available single-cell RNA-seq datasets](https://www.biorxiv.org/content/10.1101/2020.09.23.310441v1). _bioRxiv_.
+
+
+![My helpful screenshot]({{ " https://mbernste.github.io/images/CHARTS_schematic.png" |  https://mbernste.github.io/images/CHARTS_schematic.png }})
+
+
 ## Developing tools for querying large, public genomics databases
 
 We've built [Jupyter-notebook based tools](https://github.com/mbernste/hypothesis-driven-SRA-queries) atop the [MetaSRA](http://metasra.biostat.wisc.edu) for constructing structured datasets from the [SRA](https://www.ncbi.nlm.nih.gov/sra). The [Case-Control Finder](https://colab.research.google.com/drive/1HX8V5yFRCh-AdkC-XHnfo6thg6VHwplC?usp=sharing) finds matches samples of a given condition/disease from the SRA to control samples. The [Series Finder](https://colab.research.google.com/drive/1BNmBokHi41ODCWeS3G_WY8OfZ54RVXf3?usp=sharing) finds ordered sets of samples where samples are ordered by a continuous property such as age.
