@@ -32,7 +32,7 @@ Single-cell RNA-seq (scRNA-seq) enables the profiling of genome-wide gene expres
 * Bernstein, M.N., Ni, Z., Collins, M., Burkard, M.E., Kendziorski, C., and Stewart, R. (2020). [CHARTS: A web application for characterizing and comparing tumor subpopulations in publicly available single-cell RNA-seq datasets](https://www.biorxiv.org/content/10.1101/2020.09.23.310441v1). _bioRxiv_.
 
 
-![My helpful screenshot]({{ " https://mbernste.github.io/images/CHARTS_schematic.png" |  https://mbernste.github.io/images/CHARTS_schematic.png }})
+![My helpful screenshot]({{ " https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png" |  https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png }})
 
 
 ## Developing tools for querying large, public genomics databases
