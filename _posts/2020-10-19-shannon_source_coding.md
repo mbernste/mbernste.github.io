@@ -36,7 +36,9 @@ where $$m := \vert\mathcal{X}\vert$$ and $$p_i$$ denotes the probability that $$
 
 Person A will then *encode* each $$X_i$$ using a particular sequence of symbols from a **code alphabet**.  The coding alphabet is used by Person A to encode each source symbol $$X_i$$.  For example, in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) the code alphabet consists of just two symbols: a dot and a dash.  That is, $$\mathcal{A} := \{\cdot, -\}.$$
 
-More specifically, each symbol in the source alphabet will be encoded using a *sequence* of symbols from the code alphabet. For example, the letter "b" in Morse Code is encoded using the sequence "$$-\cdot\cdot\codt$$".
+More specifically, each symbol in the source alphabet will be encoded using a *sequence* of symbols from the code alphabet. For example, the letter "b" in Morse Code is encoded using the sequence "$$-\cdot\cdot\cdot$$".  We denote the set of all sequences of code symbols as $$\mathcal{A}*$$
+
+$$\mathcal{A}* := \{a_1a_2\dots a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
 
 
 **code function** $$C$$.  Specifically, the code function $$C$$ takes as input an element from $$\mathcal{X}$$ and outputs an element from a set $$\mathcal{A}$$:
