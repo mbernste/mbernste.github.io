@@ -32,7 +32,7 @@ Each source symbol $$X_i$$ is distributed according to a categorical random vari
 
 $$X_i \sim \text{Cat}(p_1, \dots, p_m)$$
 
-where $$m := |\mathcal{X}|$$ and $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. For example, in the die toss example where $$\mathcal{X} := \{1, 2, 3, 4, 5, 6\}$$, we may have be dealing with a biased die where $$X_i \sim \text{Cat}(0.1, 0.2, 0.1, 0.4, 0.05, 0.05)$$.
+where $$m := \pipe\mathcal{X}\pipe$$ and $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. For example, in the die toss example where $$\mathcal{X} := \{1, 2, 3, 4, 5, 6\}$$, we may have be dealing with a biased die where $$X_i \sim \text{Cat}(0.1, 0.2, 0.1, 0.4, 0.05, 0.05)$$.
 
 Now, Person A will *encode* each $$X_i$$ using a **code** function $$C$$.  Specifically, $$C$$ takes as input an element from $$\mathcal{X}$$ and outputs an element from a set $$\mathcal{A}$$:
 
