@@ -32,13 +32,13 @@ Each source symbol $$X_i$$ is distributed according to a categorical random vari
 
 $$X_i \sim \text{Cat}(p_1, \dots, p_m)$$
 
-where $$m := \pipe\mathcal{X}\pipe$$ and $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. For example, in the die toss example where $$\mathcal{X} := \{1, 2, 3, 4, 5, 6\}$$, we may have be dealing with a biased die where $$X_i \sim \text{Cat}(0.1, 0.2, 0.1, 0.4, 0.05, 0.05)$$.
+where $$m := \vert\mathcal{X}\vert$$ and $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. For example, in the die toss example where $$\mathcal{X} := \{1, 2, 3, 4, 5, 6\}$$, we may have be dealing with a biased die where $$X_i \sim \text{Cat}(0.1, 0.2, 0.1, 0.4, 0.05, 0.05)$$.
 
 Now, Person A will *encode* each $$X_i$$ using a **code** function $$C$$.  Specifically, $$C$$ takes as input an element from $$\mathcal{X}$$ and outputs an element from a set $$\mathcal{A}$$:
 
 $$C: \mathcal{X} \rightarrow \mathcal{A}$$
 
-This set $$\mathcal{A}$$ is called the **coding alphabet**. It stores all of the symbols used to construct encodings of elements from $$\mathcal{X}$$.  For example, in messages in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) are encoded using dots and dashes.  
+This set $$\mathcal{A}$$ is called the **coding alphabet**. It stores all of the symbols used to construct encodings of elements from $$\mathcal{X}$$.  For example, in messages in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) are encoded using dots and dashes -- that is, in Morse Code $$\mathcal{A} := \{-, \dot \}$$.  
 
 For example, if Person A is encoding the outcome of a die toss using a binary coding alphabet $$\mathcal{A} := \{1,0\}$$, they may use a code like the following:
 
