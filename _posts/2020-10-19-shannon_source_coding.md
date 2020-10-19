@@ -6,7 +6,6 @@ tags:
   - information theory
   - tutorial
 ---
-
 THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
 *The mathematical field of information theory attempts to mathematically describe the concept of “information”. In the first two posts, we discussed the concepts of self-information and information entropy.  In this post, we step through Shannon's Source Coding Theorem to see how information entropy of a probability distribution describes the best-achievable efficiency required to communicate samples from the distribution.  My understanding of this material came, in part, from watching this excellent series of videos by [mathematicalmong on YouTube](https://www.youtube.com/watch?v=UrefKMSEuAI&t=8s)*
