@@ -27,7 +27,7 @@ As we previously described, Person A is tasked with communicating the outcomes f
 
 $$X_1, X_2, X_3, \dots \in \mathcal{X}$$
 
-where $$\mathcal{X}$$ is called the **source alphabet**. For example, $$\mathcal{X}$$ might simply be the standard English alphabet, or it may be the results of a coin flip $$\{H, T\}$$ where $$H$$ indicates heads and $$T$$ indicates tails.
+where $$\mathcal{X}$$ is a finite set called the **source alphabet**. For example, $$\mathcal{X}$$ might simply be the standard English alphabet, or it may be the results of a coin flip $$\{H, T\}$$ where $$H$$ indicates heads and $$T$$ indicates tails.
 
 Each source symbol $$X_i$$ is distributed according to a categorical random variable:
 
