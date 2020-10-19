@@ -8,7 +8,7 @@ tags:
 ---
 THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
-*The mathematical field of information theory attempts to mathematically describe the concept of “information”. In the first two posts, we discussed the concepts of self-information and information entropy.  In this post, we step through Shannon's Source Coding Theorem to see how information entropy of a probability distribution describes the best-achievable efficiency required to communicate samples from the distribution.  My understanding of this material came, in part, from watching this excellent series of videos by [mathematicalmong on YouTube](https://www.youtube.com/watch?v=UrefKMSEuAI&t=8s)*
+*The mathematical field of information theory attempts to mathematically describe the concept of “information”. In the first two posts, we discussed the concepts of self-information and information entropy.  In this post, we step through Shannon's Source Coding Theorem to see how information entropy of a probability distribution describes the best-achievable efficiency required to communicate samples from the distribution.  My understanding of this material came, in part, from watching this excellent series of videos by [mathematicalmonk on YouTube](https://www.youtube.com/watch?v=UrefKMSEuAI&t=8s)*
 
 Introduction
 -----------
@@ -26,11 +26,23 @@ As we previously described, Person A is tasked with communicating the outcomes f
 
 $$X_1, X_2, X_3, \dots \in \mathcal{X}$$
 
-where $$\mathcal{X}$$ is a finite set called the **source alphabet**. For example, $$\mathcal{X}$$ might simply be the standard English alphabet, or it may be the results of a coin flip $$\{H, T\}$$ where $$H$$ indicates heads and $$T$$ indicates tails.
+where $$\mathcal{X}$$ is a finite set called the **source alphabet**. For example, $$\mathcal{X}$$ might simply be the standard English alphabet, or it may be the results of a six-sided die toss $$\{1, 2, 3, 4, 5, 6\}$$ where $$H$$ indicates heads and $$T$$ indicates tails.
 
 Each source symbol $$X_i$$ is distributed according to a categorical random variable:
 
 $$X_i \sim \text{Cat}(p_1, \dots, p_m)$$
 
-where $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. For example, in the coin flip example where $$\mathcal{X} := \{H, T\}$$, we may have be dealing with a biased coin where $$X_i \sim \text{Cat}(0.7, 0.3)$$ such that there is a 0.7 probability that $$X_i$$ comes up heads and a 0.3 probability that $$X_i$$ comes up tails.
+where $$m := |\mathcal{X}|$$ and $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. For example, in the die toss example where $$\mathcal{X} := \{1, 2, 3, 4, 5, 6\}$$, we may have be dealing with a biased die where $$X_i \sim \text{Cat}(0.1, 0.2, 0.1, 0.4, 0.05, 0.05)$$.
+
+Now, Person A will *encode* each $$X_i$$ using a **code** function $$C$$.  Specifically, $$C$$ takes as input an element from $$\mathcal{X}$$ and outputs an element from a set $$\mathcal{A}$$:
+
+$$C: \mathcal{X} \rightarrow \mathcal{A}$$
+
+This set $$\mathcal{A}$$ is called the **coding alphabet**. It stores all of the symbols used to construct encodings of elements from $$\mathcal{X}$$.  For example, in messages in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) are encoded using dots and dashes.  
+
+For example, if Person A is encoding the outcome of a die toss using a binary coding alphabet $$\mathcal{A} := \{1,0\}$$, they may use a code like the following:
+
+$$C(x) = 001$$
+
+
 
