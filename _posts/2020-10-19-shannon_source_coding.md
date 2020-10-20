@@ -29,9 +29,7 @@ and
 $$\forall i \ X_i \in \mathcal{X}$$
 where $$\mathcal{X}$$ is a finite set called the **source alphabet** and $$\boldsymbol{p}$$ is a vector describing the probabilities that a given $$X_i$$ will take on a given value in $$\mathcal{X}$$.   
 
-Person A will then *encode* each $$X_i$$ using a particular sequence of symbols from a **code alphabet**, denoted $$\mathcal{A}$$.  The coding alphabet is used by Person A to encode each source symbol $$X_i$$.  
-
-Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of code symbols from the code alphabet. Specifically, if we denote $$\mathcal{A}*$$ to be the set of sequences of source symbols 
+Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of code symbols from a different set of symbols called the **code alphabet**, denoted $$\mathcal{A}$$. Specifically, if we denote $$\mathcal{A}*$$ to be the set of sequences of code symbols 
 
 $$\mathcal{A}* := \{a_1a_2\dots a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
 
