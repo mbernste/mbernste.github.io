@@ -34,11 +34,19 @@ where $$\mathcal{X}$$ is a finite set called the **source alphabet** and $$\bold
 
 Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of symbols from a new set of symbols called the **code alphabet**, denoted $$\mathcal{A}$$. Specifically, if we denote $$\mathcal{A}^*$$ to be the *set of sequences* of code symbols 
 
-$$\mathcal{A}^* := \{a_1a_2\dots a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
+$$\mathcal{A}^* := \{a_1, a_2, \dots, a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
 
 then $$C$$ is a function
 
 $$C: \mathcal{X} \rightarrow \mathcal{A}^*$$
+
+We can also describe another function, $$C^*$$ called the **extension** of $$C$$, which simply maps *sequences* of source symbols rather than individual source symbols.  That is, 
+
+$$C^* : \mathcal{X}^* \rightarrow \mathcal{A}^*$$
+
+where
+
+$$C^*(X_1, X_2, \dots, X_m) := C(X_1), C(X_2), \dots, C(X_m)$$
 
 Example: Morse Code
 ------------
