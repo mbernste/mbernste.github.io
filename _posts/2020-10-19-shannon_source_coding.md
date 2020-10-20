@@ -22,15 +22,11 @@ Let us more rigorously prove this idea.
 Encoding and communicating samples from a distribution
 -----------
 
-As we previously described, Person A is tasked with communicating the outcomes from some distribution $$X$$ to Person B.  We will call these samples the **sequence of source symbols**: 
+As we previously described, Person A is tasked with communicating the outcomes from some [categorical distribution](https://en.wikipedia.org/wiki/Categorical_distribution) $$X$$ to Person B.  We will call these samples the **sequence of source symbols**: 
 
-$$X_1, X_2, X_3, \dots \in \mathcal{X}$$
+$$X_1, X_2, X_3, \dots \sim \text{Cat}(\bold{p}) \in \mathcal{X}$$
 
-where $$\mathcal{X}$$ is a finite set called the **source alphabet**. For example, $$\mathcal{X}$$ might simply be the standard English alphabet, or it may be the results of a six-sided die toss $$\{1, 2, 3, 4, 5, 6\}$$.  Each source symbol $$X_i$$ is distributed according to a categorical random variable:
-
-$$X_i \sim \text{Cat}(p_1, \dots, p_m)$$
-
-where $$m := \vert\mathcal{X}\vert$$ and $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. 
+where $$\mathcal{X}$$ is a finite set called the **source alphabet** and $$\bold{p}$$ is a vector describing the probabilities that a given $$X_i$$ will take on a given value in $$\mathcal{X}$$.   
 
 Person A will then *encode* each $$X_i$$ using a particular sequence of symbols from a **code alphabet**, denoted $$\mathcal{A}$$.  The coding alphabet is used by Person A to encode each source symbol $$X_i$$.  
 
