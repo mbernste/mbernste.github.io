@@ -32,22 +32,18 @@ $$X_i \sim \text{Cat}(p_1, \dots, p_m)$$
 
 where $$m := \vert\mathcal{X}\vert$$ and $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. 
 
-Person A will then *encode* each $$X_i$$ using a particular sequence of symbols from a **code alphabet**.  The coding alphabet is used by Person A to encode each source symbol $$X_i$$.  
+Person A will then *encode* each $$X_i$$ using a particular sequence of symbols from a **code alphabet**, denoted $$\mathcal{A}$$.  The coding alphabet is used by Person A to encode each source symbol $$X_i$$.  
 
 More specifically, each symbol in the source alphabet will be encoded using a *sequence* of symbols from the code alphabet. We denote the set of all sequences of code symbols as $$\mathcal{A}*$$
 
+
+Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of code symbols from the code alphabet. Specifically, if we denote $$\mathcal{A}*$$ to be the set of sequences of source symbols 
+
 $$\mathcal{A}* := \{a_1a_2\dots a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
 
+then $$C$$ is a function
 
-**code function** $$C$$.  Specifically, the code function $$C$$ takes as input an element from $$\mathcal{X}$$ and outputs an element from a set $$\mathcal{A}$$:
-
-$$C: \mathcal{X} \rightarrow \mathcal{A}$$
-
-This set $$\mathcal{A}$$ is called the **coding alphabet**. It stores all of the symbols used to construct encodings of elements from $$\mathcal{X}$$.  For example, in messages in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) are encoded using dots and dashes -- that is, in Morse Code $$\mathcal{A} := \{-, the letter "b" is encoded using \cdot \}$$.  The code function in Morse Code is simply the mapping from each English letter to a particular sequence of dots and dashes (e.g., 
-
-For example, if Person A is encoding the outcome of a die toss using a binary coding alphabet $$\mathcal{A} := \{1,0\}$$, they may use a code like the following:
-
-$$C(x) = 001$$
+$$C: \mathcal{X} \rightarrow \mathcal{A}*$$
 
 Example: Morse Code
 ------------
@@ -55,5 +51,7 @@ Example: Morse Code
 For example, in the die toss example where $$\mathcal{X} := \{1, 2, 3, 4, 5, 6\}$$, we may have be dealing with a biased die where $$X_i \sim \text{Cat}(0.1, 0.2, 0.1, 0.4, 0.1, 0.1)$$.
 
 For example, in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) the code alphabet consists of just two symbols: a dot and a dash.  That is, $$\mathcal{A} := \{\cdot, -\}.$$
+
+For example, in messages in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) are encoded using dots and dashes -- that is, in Morse Code $$\mathcal{A} := \{-, the letter "b" is encoded using \cdot \}$$.  The code function in Morse Code is simply the mapping from each English letter to a particular sequence of dots and dashes (e.g., 
 
 For example, the letter "b" in Morse Code is encoded using the sequence "$$-\cdot\cdot\cdot$$".  
