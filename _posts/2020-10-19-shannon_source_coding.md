@@ -26,17 +26,15 @@ As we previously described, Person A is tasked with communicating the outcomes f
 
 $$X_1, X_2, X_3, \dots \in \mathcal{X}$$
 
-where $$\mathcal{X}$$ is a finite set called the **source alphabet**. For example, $$\mathcal{X}$$ might simply be the standard English alphabet, or it may be the results of a six-sided die toss $$\{1, 2, 3, 4, 5, 6\}$$ where $$H$$ indicates heads and $$T$$ indicates tails.
-
-Each source symbol $$X_i$$ is distributed according to a categorical random variable:
+where $$\mathcal{X}$$ is a finite set called the **source alphabet**. For example, $$\mathcal{X}$$ might simply be the standard English alphabet, or it may be the results of a six-sided die toss $$\{1, 2, 3, 4, 5, 6\}$$.  Each source symbol $$X_i$$ is distributed according to a categorical random variable:
 
 $$X_i \sim \text{Cat}(p_1, \dots, p_m)$$
 
-where $$m := \vert\mathcal{X}\vert$$ and $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. For example, in the die toss example where $$\mathcal{X} := \{1, 2, 3, 4, 5, 6\}$$, we may have be dealing with a biased die where $$X_i \sim \text{Cat}(0.1, 0.2, 0.1, 0.4, 0.1, 0.1)$$.
+where $$m := \vert\mathcal{X}\vert$$ and $$p_i$$ denotes the probability that $$X_i$$ will take on the $$i$$th symbol in $$\mathcal{X}$$. 
 
-Person A will then *encode* each $$X_i$$ using a particular sequence of symbols from a **code alphabet**.  The coding alphabet is used by Person A to encode each source symbol $$X_i$$.  For example, in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) the code alphabet consists of just two symbols: a dot and a dash.  That is, $$\mathcal{A} := \{\cdot, -\}.$$
+Person A will then *encode* each $$X_i$$ using a particular sequence of symbols from a **code alphabet**.  The coding alphabet is used by Person A to encode each source symbol $$X_i$$.  
 
-More specifically, each symbol in the source alphabet will be encoded using a *sequence* of symbols from the code alphabet. For example, the letter "b" in Morse Code is encoded using the sequence "$$-\cdot\cdot\cdot$$".  We denote the set of all sequences of code symbols as $$\mathcal{A}*$$
+More specifically, each symbol in the source alphabet will be encoded using a *sequence* of symbols from the code alphabet. We denote the set of all sequences of code symbols as $$\mathcal{A}*$$
 
 $$\mathcal{A}* := \{a_1a_2\dots a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
 
@@ -51,5 +49,11 @@ For example, if Person A is encoding the outcome of a die toss using a binary co
 
 $$C(x) = 001$$
 
+Example: Morse Code
+------------
 
+For example, in the die toss example where $$\mathcal{X} := \{1, 2, 3, 4, 5, 6\}$$, we may have be dealing with a biased die where $$X_i \sim \text{Cat}(0.1, 0.2, 0.1, 0.4, 0.1, 0.1)$$.
 
+For example, in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) the code alphabet consists of just two symbols: a dot and a dash.  That is, $$\mathcal{A} := \{\cdot, -\}.$$
+
+For example, the letter "b" in Morse Code is encoded using the sequence "$$-\cdot\cdot\cdot$$".  
