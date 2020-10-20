@@ -44,7 +44,7 @@ We can also describe another function, $$C^*$$ called the **extension** of $$C$$
 
 $$C^* : \mathcal{X}^* \rightarrow \mathcal{A}^*$$
 
-where
+defined as
 
 $$C^*(X_1, X_2, \dots, X_m) := C(X_1), C(X_2), \dots, C(X_m)$$
 
