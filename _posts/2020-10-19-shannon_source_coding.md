@@ -32,13 +32,13 @@ $$\forall i \ X_i \in \mathcal{X}$$
 
 where $$\mathcal{X}$$ is a finite set called the **source alphabet** and $$\boldsymbol{p}$$ is a vector describing the probabilities that a given $$X_i$$ will take on a given value in $$\mathcal{X}$$.   
 
-Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of symbols from a new set of symbols called the **code alphabet**, denoted $$\mathcal{A}$$. Specifically, if we denote $$\mathcal{A}*$$ to be the *set of sequences* of code symbols 
+Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of symbols from a new set of symbols called the **code alphabet**, denoted $$\mathcal{A}$$. Specifically, if we denote $$\mathcal{A}^*$$ to be the *set of sequences* of code symbols 
 
-$$\mathcal{A}* := \{a_1a_2\dots a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
+$$\mathcal{A}^* := \{a_1a_2\dots a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
 
 then $$C$$ is a function
 
-$$C: \mathcal{X} \rightarrow \mathcal{A}*$$
+$$C: \mathcal{X} \rightarrow \mathcal{A}^*$$
 
 Example: Morse Code
 ------------
