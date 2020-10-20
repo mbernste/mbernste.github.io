@@ -30,9 +30,6 @@ where $$\mathcal{X}$$ is a finite set called the **source alphabet** and $$\bold
 
 Person A will then *encode* each $$X_i$$ using a particular sequence of symbols from a **code alphabet**, denoted $$\mathcal{A}$$.  The coding alphabet is used by Person A to encode each source symbol $$X_i$$.  
 
-More specifically, each symbol in the source alphabet will be encoded using a *sequence* of symbols from the code alphabet. We denote the set of all sequences of code symbols as $$\mathcal{A}*$$
-
-
 Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of code symbols from the code alphabet. Specifically, if we denote $$\mathcal{A}*$$ to be the set of sequences of source symbols 
 
 $$\mathcal{A}* := \{a_1a_2\dots a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
