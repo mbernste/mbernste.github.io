@@ -24,7 +24,7 @@ Encoding and communicating samples from a distribution
 
 As we previously described, Person A is tasked with communicating the outcomes from some [categorical distribution](https://en.wikipedia.org/wiki/Categorical_distribution) $$X$$ to Person B.  We will call these samples the **sequence of source symbols**: 
 
-$$X_1, X_2, X_3, \dots \sim \text{Cat}(\boldsymbol{p}) \in \mathcal{X}$$
+$$X_1, X_2, X_3, \dots, X_m \sim \text{Cat}(\boldsymbol{p}) \in \mathcal{X}$$
 
 where $$\mathcal{X}$$ is a finite set called the **source alphabet** and $$\boldsymbol{p}$$ is a vector describing the probabilities that a given $$X_i$$ will take on a given value in $$\mathcal{X}$$.   
 
