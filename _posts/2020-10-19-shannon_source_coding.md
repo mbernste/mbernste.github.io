@@ -51,10 +51,12 @@ $$C^*(X_1, X_2, \dots, X_m) := C(X_1), C(X_2), \dots, C(X_m)$$
 Example: Morse Code
 ------------
 
-For example, in the die toss example where $$\mathcal{X} := \{1, 2, 3, 4, 5, 6\}$$, we may have be dealing with a biased die where $$X_i \sim \text{Cat}(0.1, 0.2, 0.1, 0.4, 0.1, 0.1)$$.
+[Morse Code](https://en.wikipedia.org/wiki/Morse_code) is a code for the English alphanumeric symbols that has been used in a variety of contexts such as for communicating over telegraph. In Morse Code, the definitions of the source alphabet, $$\mathcal{X}$$, code alphabet $$\mathcal{A}$$, and code function $$C$$ are as follows:
 
-For example, in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) the code alphabet consists of just two symbols: a dot and a dash.  That is, $$\mathcal{A} := \{\cdot, -\}.$$
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/MorseCode.png" alt="drawing" width="500"/></center>
 
-For example, in messages in [Morse Code](https://en.wikipedia.org/wiki/Morse_code) are encoded using dots and dashes -- that is, in Morse Code $$\mathcal{A} := \{-, the letter "b" is encoded using \cdot \}$$.  The code function in Morse Code is simply the mapping from each English letter to a particular sequence of dots and dashes (e.g., 
+For example, the name "Morse" would be encoded as follows:
 
-For example, the letter "b" in Morse Code is encoded using the sequence "$$-\cdot\cdot\cdot$$".  
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/morse_code_example.png" alt="drawing" width="500"/></center>
+
+
