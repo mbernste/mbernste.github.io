@@ -51,12 +51,12 @@ $$C^*(X_1, X_2, \dots, X_m) := C(X_1), C(X_2), \dots, C(X_m)$$
 Example: Morse Code
 ------------
 
-[Morse Code](https://en.wikipedia.org/wiki/Morse_code) is a code for the English alphanumeric symbols that has been used in a variety of contexts such as for communicating over telegraph. In Morse Code, the definitions of the source alphabet, $$\mathcal{X}$$, code alphabet $$\mathcal{A}$$, and code function $$C$$ are as follows:
+[Morse Code](https://en.wikipedia.org/wiki/Morse_code) is a code for encoding the English alphanumeric symbols into "dots" and "dashes" that has been used in a variety of contexts such as in the early days of telecommunication when messages were sent by telegraph. In Morse Code, the source alphabet, $$\mathcal{X}$$, code alphabet $$\mathcal{A}$$, and code function $$C$$ are as defined as follows:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/MorseCode.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/MorseCode.png" alt="drawing" width="400"/></center>
 
 For example, the name "Morse" would be encoded as follows:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/morse_code_example.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/morse_code_example.png" alt="drawing" width="400"/></center>
 
 
