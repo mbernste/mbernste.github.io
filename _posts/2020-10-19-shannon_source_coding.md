@@ -61,21 +61,23 @@ The Kraft-McMillan inequality
 
 The Kraft-McMillan inequality is a fundamental result on which Shannon's Source Coding Theorem is based.  Before stating this theorem, we will first introduce a few more concepts related to code functions.
 
-First, we call a code function $$C$$ a **prefix codes** if no code word in $$C(\mathcal{X})$$ is the prefix to another code word.  Stated more rigorously, $$C$$ is a prefix code if there does not exist any two code words $$\alpha, \beta \in C(\mathcal{X})$$. For example, let's say we have the following code for encoding the first four letters of the alphabet using the dots and dashes from Morse Code:
+First, we call a code function $$C$$ a **prefix codes** if no code word in $$C(\mathcal{X})$$ is the prefix to another code word.  Stated more rigorously, $$C$$ is a prefix code if there does not exist any two code words $$\alpha, \beta \in C(\mathcal{X})$$. 
 
-$$C("A") := -$$
+To make this concrete let's look at a couple of codes for encoding the first three letters of the alphabet using the code alphabet $$\mathcal{A} := \{1, 0\}$$. The following code is **not** a prefix code:
 
-$$C("B") := \cdot$$
+$$C("A") := 0$$
 
-$$C("C") := -\cdot$$
+$$C("B") := 1$$
 
-This code would **not** be a prefix code because the code word $$C("A")$$ is a prefix of $$C("C")$$. On the other hand, the following code is a valid prefix code:
+$$C("C") := 01$$
 
-$$C("A") := \cdot\cdot$$
+The reason being that $$C("A")$$ is a prefix of $$C("C")$$. On the other hand, the following code *is* a valid prefix code:
 
-$$C("B") := -\cdot$$
+$$C("A") := 11$$
 
-$$C("C") := \cdot-\cdot$$
+$$C("B") := 00$$
+
+$$C("C") := 10$$
 
 
 
