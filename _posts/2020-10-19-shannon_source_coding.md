@@ -22,7 +22,9 @@ Let us more rigorously prove this idea.
 Encoding and communicating samples from a distribution
 -----------
 
-As we previously described, Person A is tasked with communicating the outcomes from some [categorical distribution](https://en.wikipedia.org/wiki/Categorical_distribution) $$X$$ to Person B.  We will call these samples the **sequence of source symbols**: 
+Before we dig into Shannon's Source Codig Theroem, let us first rigorously describe the mathematical framework in which Person A is communicating messages to Person B.  To do so, we will introduce a bunch of fundamental concepts in [Coding Theory](https://en.wikipedia.org/wiki/Coding_theory). 
+
+As we previously described, Person A is tasked with communicating the outcomes from some distribution to Person B.  We'll first assert that this distribution is a [categorical distribution](https://en.wikipedia.org/wiki/Categorical_distribution) $$X$$.  Furthermore, instead of calling each outcome a "sample", we will instead call them "symbols".  The idea here is that Person A is going to come up with some random sequence of symbols, each drawn from a categorical distribution, and attempt to communicate this random message, composed of the random sequence of symbols, to Person B.  We'll call this message the **sequence of source symbols**: 
 
 $$X_1, X_2, X_3, \dots, X_m \overset{\text{i.i.d.}}{\sim} \text{Cat}(\boldsymbol{\theta})$$
 
