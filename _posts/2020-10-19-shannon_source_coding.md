@@ -52,10 +52,12 @@ We call each element $$\alpha$$ in the image of $$C$$ (i.e. $$C(\mathcal{X})$$) 
 
 For the purposes of our discussion, we will focus only on **uniquely decodable** code functions. A code function is uniquely decodable if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.  Most codes used in practice are uniquely decodable. A non-uniquely decodable code would not be very useful since Person B who receives the encoded message from Person A would be unable to unambiguously decode Person A's message.
 
+Lastly, we a code is a **$$b$-ary code** if the size of the code alphabet is $$b$$.  That is, if $$\vert\mathcal{A}\vert = b$$.
+
 Example: Morse Code
 ------------
 
-[Morse Code](https://en.wikipedia.org/wiki/Morse_code) is a code for encoding the English alphanumeric symbols into "dots" and "dashes" that has been used in a variety of contexts such as in the early days of telecommunication when messages were sent by telegraph. In Morse Code, the source alphabet, $$\mathcal{X}$$, code alphabet $$\mathcal{A}$$, and code function $$C$$ are as defined as follows:
+[Morse Code](https://en.wikipedia.org/wiki/Morse_code) is a 2-ary code (also called *binary code*) for encoding the English alphanumeric symbols into "dots" and "dashes" that has been used in a variety of contexts such as in the early days of telecommunication when messages were sent by telegraph. In Morse Code, the source alphabet, $$\mathcal{X}$$, code alphabet $$\mathcal{A}$$, and code function $$C$$ are as defined as follows:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/MorseCode.png" alt="drawing" width="400"/></center>
 
