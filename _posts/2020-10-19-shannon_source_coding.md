@@ -63,5 +63,10 @@ For example, the name "Morse" would be encoded as follows:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/morse_code_example.png" alt="drawing" width="400"/></center>
 
-Prefix codes and the Kraft-McMillan inequality
+The Kraft-McMillan inequality
 ------------
+
+The Kraft-McMillan inequality is a fundamental result on which Shannon's Source Coding Theorem is based.  Before stating this theorem, we will first introduce a few more concepts related to code functions.
+
+First, we call a code function **uniquely decodable** if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.
+
