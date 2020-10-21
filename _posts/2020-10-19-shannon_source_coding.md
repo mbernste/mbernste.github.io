@@ -34,32 +34,9 @@ $$\forall i \ X_i \in \mathcal{X}$$
 
 where $$\mathcal{X}$$ is a finite set called the **source alphabet** and $$\boldsymbol{\theta}$$ is a vector describing the probabilities that a given $$X_i$$ will take on a given value in $$\mathcal{X}$$.   
 
-Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of symbols from a new set of symbols called the **code alphabet**, denoted $$\mathcal{A}$$. Specifically, if we denote $$\mathcal{A}^*$$ to be the *set of sequences* of code symbols 
+Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of symbols from a new set of symbols called the **code alphabet**, denoted $$\mathcal{A}$$. The code is called a **$$b$$-ary code** if the size of the code alphabet is $$b$$.  That is, if $$\vert\mathcal{A}\vert = b$$.  For example, if $$\mathcal{A}$$ consists of two symbols, we call the code 2-ary (a.k.a. binary).
 
-$$\mathcal{A}^* := \{a_1, a_2, \dots, a_k \mid k \geq 0, \forall i a_i \in \mathcal{A}\}$$
-
-then $$C$$ is a function
-
-$$C: \mathcal{X} \rightarrow \mathcal{A}^*$$
-
-We can also describe another function, $$C^*$$ called the **extension** of $$C$$, which simply maps *sequences* of source symbols rather than individual source symbols.  That is, 
-
-$$C^* : \mathcal{X}^* \rightarrow \mathcal{A}^*$$
-
-defined as
-
-$$C^*(X_1, X_2, \dots, X_m) := C(X_1), C(X_2), \dots, C(X_m)$$
-
-We call each element $$\alpha$$ in the image of $$C$$ (i.e. $$C(\mathcal{X})$$) a **code word**. We denote the length of a code word $$\alpha \in C(\mathcal{X})$$ as $$\vert\alpha\vert$$. 
-
-For the purposes of our discussion, we will focus only on **uniquely decodable** code functions. A code function is uniquely decodable if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.  Most codes used in practice are uniquely decodable. A non-uniquely decodable code would not be very useful since Person B who receives the encoded message from Person A would be unable to unambiguously decode Person A's message.
-
-Lastly, a code is called a **$$b$$-ary code** if the size of the code alphabet is $$b$$.  That is, if $$\vert\mathcal{A}\vert = b$$.
-
-Example: Morse Code
-------------
-
-[Morse Code](https://en.wikipedia.org/wiki/Morse_code) is a 2-ary code (also called *binary code*) for encoding the English alphanumeric symbols into "dots" and "dashes" that has been used in a variety of contexts such as in the early days of telecommunication when messages were sent by telegraph. In Morse Code, the source alphabet, $$\mathcal{X}$$, code alphabet $$\mathcal{A}$$, and code function $$C$$ are as defined as follows:
+To make this concrete, let's look at a simplified, 2-ary version of [Morse Code](https://en.wikipedia.org/wiki/Morse_code) for encoding the English alphanumeric symbols into two symbols: "dots" and "dashes".  In Morse Code, the source alphabet, $$\mathcal{X}$$, code alphabet $$\mathcal{A}$$, and code function $$C$$ are as defined as follows:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/MorseCode.png" alt="drawing" width="400"/></center>
 
@@ -67,7 +44,15 @@ For example, the name "Morse" would be encoded as follows:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/morse_code_example.png" alt="drawing" width="400"/></center>
 
-In the above example, the length of code word "$$\cdot$$ - $$\cdot$$" (i.e. $$C(X_3)$$) is simply 3.  
+Stated more rigorously, if we denote $$\mathcal{A}^*$$ to be the *set of sequences* of code symbols 
+
+$$\mathcal{A}^* := \{a_1, a_2, \dots, a_k \mid k \geq 0, \forall i \ a_i \in \mathcal{A}\}$$
+
+then $$C$$ is a function
+
+$$C: \mathcal{X} \rightarrow \mathcal{A}^*$$.  We call each element $$\alpha$$ in the [image](https://en.wikipedia.org/wiki/Image_(mathematics)) of $$C$$, denoted $$C(\mathcal{X})$$, a **code word**. We denote the length of a code word $$\alpha \in C(\mathcal{X})$$ as $$\vert\alpha\vert$$. In the above example, the length of code word "$$\cdot$$ - $$\cdot$$" (i.e. $$C(X_3)$$) is simply 3.
+
+For the purposes of our discussion, we will focus only on **uniquely decodable** code functions. A code function is uniquely decodable if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.  Most codes used in practice are uniquely decodable. A non-uniquely decodable code would not be very useful since Person B who receives the encoded message from Person A would be unable to unambiguously decode Person A's message.
 
 The Kraft-McMillan inequality
 ------------
