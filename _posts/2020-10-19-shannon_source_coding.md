@@ -61,10 +61,14 @@ For example, the name "Morse" would be encoded as follows:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/morse_code_example.png" alt="drawing" width="400"/></center>
 
+In the above example, the length of code word "\cdot - \cdot" (i.e. $$C(X_3)$$) is simply 3.  
+
 The Kraft-McMillan inequality
 ------------
 
 The Kraft-McMillan inequality is a fundamental result on which Shannon's Source Coding Theorem is based.  Before stating this theorem, we will first introduce a few more concepts related to code functions.
 
-First, we call a code function **uniquely decodable** if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.
+First, we call a code function **uniquely decodable** if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.  Most codes used in practice are uniquely decodable. A non-uniquely decodable code would not be very useful since Person B who receives the encoded message from Person A would be unable to unambiguously decode Person A's message.
+
+More often, we are interested in a specific subset of uniquely decodable codes called **prefix codes**.
 
