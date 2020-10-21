@@ -71,13 +71,13 @@ $$C(\text{B}) := 1$$
 
 $$C(\text{C}) := 01$$
 
-The reason being that $$C("A")$$ is a prefix of $$C("C")$$. On the other hand, the following code *is* a valid prefix code:
+This is not a valid prefix code because $$C(\text{A})$$ is a prefix of $$C(\text{C})$$. On the other hand, the following code *is* a valid prefix code:
 
-$$C("A") := 11$$
+$$C(\text{A}) := 11$$
 
-$$C("B") := 00$$
+$$C(\text{B}) := 00$$
 
-$$C("C") := 10$$
+$$C(\text{C}) := 10$$
 
 
 
