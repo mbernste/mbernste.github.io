@@ -13,26 +13,28 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 -----------
 
-Recall from the previous post, we discussed how the information entropy of a random variable tells you, on average, the minimum number of symbols that you will need to use to communicate the outcome of a random variable. That is, let us say we have two people, Person A and Person B, who are trying to communicate with one another. Specifically, Person A is observing samples, drawn one at a time, from some distribution X. Person A then wishes to communicate each sample to Person B. For example, $$X$$ might be a coin and Person A wishes to communicate to Person B the outcomes of repeated coin flips.
+On our quest to understand what "information" really means in the context of the mathematical Information Theory, we discussed how intuitvely "information" is regarded as the amount of surprise experienced when we learn the outcome of a random event.  Moreover, we measure this "surprise" by the number of symbols that are required to communicate the outcome of this random event to another person or agent. This connection, from "surprise" to "symbols", is made concrete by [Shannon's Source Coding Theorem](https://en.wikipedia.org/wiki/Shannon%27s_source_coding_theorem), which proves that the information entropy, described in the [previous post](https://mbernste.github.io/posts/entropy/), defines the minimal number of symbols we would need to communicate the outcome of a random event to another person or agent. 
 
-The catch is that Person A must use a sequence of symbols from some alphabet to communicate these outcomes. For example, Person A may be restricted to communicate using only two symbols, say “1” and “0” (called bits). Using these symbols, Person A must construct a code made from these symbols to communicate these outcomes to Person B (we assume that Person B always understands how to decode the encoding). Interestingly, according to Shannon’s Source Coding Theorem, no matter how Person A construct’s their code, in expectation, Person A will need to use at least the entropy of $$X$$ number of symbols, denoted $$H(X)$$, to communicate each outcome. No matter how clever, Person A will never be able to construct a code such that their average message will be smaller than $$H(X)$$. Said differently, entropy provides a lower bound on the average size of each message that Person A transmits to Person B.
-
-Let us more rigorously prove this idea.
+Let us more rigorously dig into Shannon's theorem.
 
 Encoding and communicating samples from a distribution
 -----------
 
-Before we dig into Shannon's Source Codig Theroem, let us first rigorously describe the mathematical framework in which Person A is communicating messages to Person B.  To do so, we will introduce a bunch of fundamental concepts in [Coding Theory](https://en.wikipedia.org/wiki/Coding_theory). 
+Recall from the [previous post](https://mbernste.github.io/posts/entropy/), we discussed how the information entropy of a random variable tells you, on average, the minimum number of symbols that you will need to use to communicate the outcome of a random variable. That is, let us say we have two people, Person A and Person B, who are trying to communicate with one another. Specifically, Person A is observing samples, drawn one at a time, from some distribution X. Person A then wishes to communicate each sample to Person B. For example, $$X$$ might be a coin and Person A wishes to communicate to Person B the outcomes of repeated coin flips.  Let us first rigorously describe the mathematical framework in which Person A is communicating messages to Person B.  To do so, we will introduce a bunch of fundamental concepts from [Coding Theory](https://en.wikipedia.org/wiki/Coding_theory). 
 
-As we previously described, Person A is tasked with communicating a series of samples from some distribution to Person B.  We'll first assert that this distribution be a [categorical distribution](https://en.wikipedia.org/wiki/Categorical_distribution) $$X$$.  Furthermore, instead of calling each outcome a "sample", we will instead call it a "symbol".  The idea here is that Person A is going to come up with some random sequence of symbols, each drawn from a categorical distribution, and attempt to communicate this random message, composed of the random sequence of symbols, to Person B.  We'll call this random message the **sequence of source symbols**: 
+First, instead of calling each draw from $$X$$ a "sample", we will instead call each draw a **symbol**.  The idea here is that Person A is going to come up with some random sequence of symbols, each drawn from a distribution $$X$$, and attempt to communicate this random message, composed of the random sequence of symbols, to Person B.  We'll call this random message the **sequence of source symbols**: 
+
+$$X_1, X_2, X_3, \dots, X_m \overset{\text{i.i.d.}}{\sim} X$$
+
+The idea of each $$X_i$$ being a "symbol", intuitively implies that the number of outcomes that each $$X_i$$ can take on is finite. To make this concrete, we will assert that $$X$$ is a categorical distribution.  That is,
 
 $$X_1, X_2, X_3, \dots, X_m \overset{\text{i.i.d.}}{\sim} \text{Cat}(\boldsymbol{\theta})$$
 
-and
+such that
 
 $$\forall i \ X_i \in \mathcal{X}$$
 
-where $$\mathcal{X}$$ is a finite set called the **source alphabet** and $$\boldsymbol{\theta}$$ is a vector describing the probabilities that a given $$X_i$$ will take on a given value in $$\mathcal{X}$$.   
+where $$\mathcal{X}$$ is a finite set of symbols called the **source alphabet** and $$\boldsymbol{\theta}$$ is a vector describing the probabilities that a given $$X_i$$ will take on a given symbol in $$\mathcal{X}$$.   
 
 Before communicating each source symbol $X_i$ to Person B, Person A will first *encode* each symbol using a **code function** $$C$$.  The code function $$C$$ takes as input a source symbol and outputs a sequence of symbols from a new set of symbols called the **code alphabet**, denoted $$\mathcal{A}$$. The code is called a **$$b$$-ary code** if the size of the code alphabet is $$b$$.  That is, if $$\vert\mathcal{A}\vert = b$$.  For example, if $$\mathcal{A}$$ consists of two symbols, we call the code 2-ary (a.k.a. binary).
 
