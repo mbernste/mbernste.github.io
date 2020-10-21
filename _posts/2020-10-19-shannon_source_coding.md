@@ -48,9 +48,7 @@ defined as
 
 $$C^*(X_1, X_2, \dots, X_m) := C(X_1), C(X_2), \dots, C(X_m)$$
 
-We call each element $$\alpha$$ in the image of $$C$$ (i.e. $$C(\mathcal{X})$$) a **code word**. We denote the length of a code word $$\alpha \in C(\mathcal{X})$$ as $$\vert\alpha\vert$$. For brevity, we'll denote the length of the code word for source symbol $$X_i$$ as
-
-$$l(X_i) := \vertC(X_i)\vert$$
+We call each element $$\alpha$$ in the image of $$C$$ (i.e. $$C(\mathcal{X})$$) a **code word**. We denote the length of a code word $$\alpha \in C(\mathcal{X})$$ as $$\vert\alpha\vert$$. 
 
 Example: Morse Code
 ------------
