@@ -65,11 +65,11 @@ First, we call a code function $$C$$ a **prefix codes** if no code word in $$C(\
 
 To make this concrete let's look at a couple of codes for encoding the first three letters of the alphabet using the code alphabet $$\mathcal{A} := \{1, 0\}$$. The following code is **not** a prefix code:
 
-$$C("A") := 0$$
+$$C(\text{A}) := 0$$
 
-$$C("B") := 1$$
+$$C(\text{B}) := 1$$
 
-$$C("C") := 01$$
+$$C(\text{C}) := 01$$
 
 The reason being that $$C("A")$$ is a prefix of $$C("C")$$. On the other hand, the following code *is* a valid prefix code:
 
