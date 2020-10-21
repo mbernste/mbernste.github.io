@@ -61,9 +61,7 @@ The Kraft-McMillan inequality
 
 The Kraft-McMillan inequality is a fundamental result on which Shannon's Source Coding Theorem is based.  Before stating this theorem, we will first introduce a few more concepts related to code functions.
 
-First, we call a code function $$C$$ a **prefix codes** if no code word in $$C(\mathcal{X})$$ is the prefix to another code word.  Stated more rigorously, $$C$$ is a prefix code if there does not exist any two code words $$\alpha, \beta \in C(\mathcal{X})$$. 
-
-To make this concrete let's look at a couple of codes for encoding the first three letters of the alphabet using the code alphabet $$\mathcal{A} := \{1, 0\}$$. The following code is **not** a prefix code:
+First, we call a code function $$C$$ a **prefix codes** if no code word in $$C(\mathcal{X})$$ is the prefix to another code word.  To make this concrete let's look at a couple of codes for encoding the first three letters of the alphabet using the code alphabet $$\mathcal{A} := \{1, 0\}$$. The following code is **not** a prefix code:
 
 $$C(\text{A}) := 0$$
 
