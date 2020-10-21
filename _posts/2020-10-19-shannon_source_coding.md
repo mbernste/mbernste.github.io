@@ -63,7 +63,7 @@ For example, the name "Morse" would be encoded as follows:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/morse_code_example.png" alt="drawing" width="400"/></center>
 
-In the above example, the length of code word "\cdot - \cdot" (i.e. $$C(X_3)$$) is simply 3.  
+In the above example, the length of code word "$$\cdot$$ - $$\cdot$$" (i.e. $$C(X_3)$$) is simply 3.  
 
 The Kraft-McMillan inequality
 ------------
