@@ -52,7 +52,7 @@ We call each element $$\alpha$$ in the image of $$C$$ (i.e. $$C(\mathcal{X})$$) 
 
 For the purposes of our discussion, we will focus only on **uniquely decodable** code functions. A code function is uniquely decodable if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.  Most codes used in practice are uniquely decodable. A non-uniquely decodable code would not be very useful since Person B who receives the encoded message from Person A would be unable to unambiguously decode Person A's message.
 
-Lastly, we a code is a **$$b$-ary code** if the size of the code alphabet is $$b$$.  That is, if $$\vert\mathcal{A}\vert = b$$.
+Lastly, a code is called a **$$b$-ary code** if the size of the code alphabet is $$b$$.  That is, if $$\vert\mathcal{A}\vert = b$$.
 
 Example: Morse Code
 ------------
@@ -72,5 +72,16 @@ The Kraft-McMillan inequality
 
 The Kraft-McMillan inequality is a fundamental result on which Shannon's Source Coding Theorem is based.  Before stating this theorem, we will first introduce a few more concepts related to code functions.
 
-First, we call a code function a **prefix codes**.
+First, we call a code function $$C$$ a **prefix codes** if no code word in $$C(\mathcal{X})$$ is the prefix to another code word.  That is, there does not exist any two code words $$\alpha, \beta \in C(\mathcal{X})$$ where $$n < m$$
+
+$$\alpha := a_1, a_2, \dots, a_n$$,
+
+$$\beta := b_1, b_2, \dots, b_m$$,
+
+and $$\forall i \ a_i \in \mathcal{A}$$ and $$\forall i \ b_i \in \mathcal{A}$$, such that 
+
+$$a_1, a_2, \dots, a_n = b_1, b_2, \dots b_n$$
+
+
+
 
