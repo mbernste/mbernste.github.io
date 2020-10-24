@@ -56,21 +56,26 @@ $$C: \mathcal{X} \rightarrow \mathcal{A}^*$$
 
 We refer call each element $$\alpha \in C(\mathcal{X}$$ a **code word** where $$C(\mathcal(X))$$ is the [image](https://en.wikipedia.org/wiki/Image_(mathematics)) of $$C$$. We denote the length of a code word $$\alpha \in C(\mathcal{X})$$ as $$\vert\alpha\vert$$. In the above example, the length of code word "$$\cdot$$ - $$\cdot$$" (i.e. $$C(X_3)$$) is simply 3.
 
+We also note that the code word length $$\vertC(X)\vert$$ is a random variable whose expectation is
+
+$$E\left[\vertC(X)\vert\right] := \sum_{x \in \mathcal{X}} \vert C(x) \vert P(X = x)$$
+
 For the purposes of our discussion, we will focus only on **uniquely decodable** code functions. A code function is uniquely decodable if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.  Most codes used in practice are uniquely decodable. A non-uniquely decodable code would not be very useful since Person B who receives the encoded message from Person A would be unable to unambiguously decode Person A's message.
 
 
 Shannon's Source Code Theorem
 --------
 
-The Shannon Source Code Theorem is a statement about the smallest possible expected code word length for some categorical distribution $$X$$. First, let's review what we mean by *expected code word length*. First, let us assume we have some categorical distribution $$X$$ over source alphabet $$\mathcal{X}$$, a code function $$C$$ that utilizes a code alphabet $$\mathcal{A}$$.  Then, we see that the code word length $$\vertC(X)\vert$$ is a random variable whose expectation is
+The Shannon Source Code Theorem is a statement about the smallest achievable expected code word length, $$E\left[\vertC(X)\vert\right]$$,  for some categorical distribution $$X$$ no matter what uniquely decodable $$C$$ you choose. Specifically, Shannon's Source Code Thoerem says that no matter what uniquely decodable $$C$$ you choose, the expected code word length will never be smaller than the the entropy of $$X$$, denote $$H(X)$$.  That is,
 
-$$E\left[\vertC(X)\vert\right] := \sum_{x \in \mathcal{X}} \vert C(x) \vert P(X = x)$$
+$$E\left[\vertC(X)\vert\right\ \geq H(X)$$
 
-Shannon's Source Code Theorem is a statement about how small we can make this expectation by choosing an appropriate code function $$C$$.  More specifically, Shannon's Source Code Thoerem says that no matter what $$C$$ you choose, the expected code word length will never be smaller than the the entropy of $$X$$:
+More rigorously, Shannon's Source Coding Thoerem goes as follows:
 
-$$H(X) := - \sum_{x \in \mathcal{X}) P(X = x) \log P(X = x)
+Theorem: Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E\left[\vertC(X)\vert\right\ \geq H(X)$$.
 
-Stated more rigorously, Shannon's Source Coding Theorem goes as follows:
+Ideally, in order to prove this theorem, we may naively attempt to formulate an optimization problem where our goal is to minimize the expected code word length over all possible uniquely decodable codes.  select a code function $$C$$ to minimize 
+
 
 
 
