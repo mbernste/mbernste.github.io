@@ -66,7 +66,7 @@ The Shannon Source Code Theorem is a statement about the smallest achievable *ex
 
 Specifically, Shannon's Source Code Thoerem says that no matter what uniquely decodable $$C$$ you choose, the expected code word length will never be smaller than the the entropy of $$X$$, denote $$H(X)$$.  That is,
 
-$$E\left[\vertC(X)\vert\right\] \geq H(X)$$
+$$E\left[\vert C(X)\vert\right\] \geq H(X)$$
 
 More rigorously, Shannon's Source Coding Thoerem goes as follows:
 
