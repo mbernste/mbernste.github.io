@@ -72,35 +72,11 @@ $$E\left[\vertC(X)\vert\right\ \geq H(X)$$
 
 More rigorously, Shannon's Source Coding Thoerem goes as follows:
 
-Theorem: Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E\left[\vertC(X)\vert\right\ \geq H(X)$$.
+<span style="color:#0060C6">**Theorem 1 (Shannon's Source Coding Thoerem):** Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E\left[\vertC(X)\vert\right\ \geq H(X)$$.</span>
 
-Ideally, in order to prove this theorem, we may naively attempt to formulate an optimization problem where our goal is to minimize the expected code word length over all possible uniquely decodable codes.  select a code function $$C$$ to minimize 
-
-
+To prove this Theorem, we will utilize another thoerem, called the [Kraft-McMillan Inequality].  
 
 
-The Kraft-McMillan inequality
-------------
-
-The Kraft-McMillan inequality is a fundamental result on which Shannon's Source Coding Theorem is based.  Before stating this theorem, we will first introduce a few more concepts related to code functions.
-
-First, we call a code function $$C$$ a **prefix codes** if no code word in $$C(\mathcal{X})$$ is the prefix to another code word.  To make this concrete let's look at a couple of codes for encoding the first three letters of the alphabet using the code alphabet $$\mathcal{A} := \{1, 0\}$$. The following code is **not** a prefix code:
-
-$$C(\text{A}) := 0$$
-
-$$C(\text{B}) := 1$$
-
-$$C(\text{C}) := 01$$
-
-This is not a valid prefix code because $$C(\text{A})$$ is a prefix of $$C(\text{C})$$. On the other hand, the following code *is* a valid prefix code:
-
-$$C(\text{A}) := 11$$
-
-$$C(\text{B}) := 00$$
-
-$$C(\text{C}) := 10$$
-
-First, it is easy to see that any prefix code is also uniquely decodable.  You can map each code word unambigously back to a source symbol because the prefix for each codeword is unique. 
 
 
 
