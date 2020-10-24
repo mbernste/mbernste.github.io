@@ -100,6 +100,16 @@ $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
 That is, instead of optimizing over code functions $$C$$, we instead optimize over sets of integers $$\ell_1, ell_2, \dots, \ell_m \in \mathcal{Z}$$. According to the Kraft-McMillan inequality, as long as these integers satisfy the above constraint, then there exists a uniquely decodable code that will each symbol $$x \in \mathcal{X}$$ to code words with lengths given by $$\ell_1, \ell_2, \dots, \ell_m$$!
 
+As we will now show, the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve this optimization problem, which we will denote as $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ will be such that 
+
+\sum_{i = 1}^m \ell_i^* P(X = x_i) = - \sum_{i=1}^m P(X = x_i) \log{P(X = x_i)} = H(X)
+
+To show the above problem, we will need to find an analytical solution to the optimization problem; however, there is still a problem standing in our way: we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers.  This type of problem is more formally called an [integer programming](https://en.wikipedia.org/wiki/Integer_programming) problem and they are notoriously challenging to solve.  
+
+We will thus *relax* this optimization problem an enable the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number and proceed. 
+
+
+
 
 
 
