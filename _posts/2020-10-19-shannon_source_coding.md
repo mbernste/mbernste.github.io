@@ -72,9 +72,9 @@ More rigorously, Shannon's Source Coding Thoerem goes as follows:
 
 <span style="color:#0060C6">**Theorem 1 (Shannon's Source Coding Thoerem):** Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E[\vert C(X)\vert] \geq H(X)$$.</span>
 
-To prove this theorem, we will utilize another result: the converse of the [Kraft-McMillan Inequalities](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
+To prove this theorem, we will utilize another result: the converse of the [Kraft-McMillan Inequality](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
 
-<span style="color:#0060C6">**Theorem 2:** Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a set of integers $$\mathcal{L} := \ell_1, \ell_2, \dots, \ell_m$$ where>
+<span style="color:#0060C6">**Theorem 2 (Converse of Kraft-McMillan Inequality):** Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a set of integers $$\mathcal{L} := \ell_1, \ell_2, \dots, \ell_m$$ where>
 
 <span style="color:#0060C6"><center>$$\sum_{i = 1}^{m} \frac{1}{B^{\ell_i}} \leq 1$$</center>
   
@@ -92,7 +92,7 @@ $$\text{min}_{C | C : \mathcal{X} \rightarrow \mathcal{A}^*} \vert C(X)\vert P(X
 
 This optimization problem is challenging to solve because it requires reasoning about *all possible* coding functions.  The Kraft-McMillan Inequality will enable us to reformulate this optimization problem while circumventing a search over all possible code functions. Instead, we will solve:
 
-$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}} \sum_{i = 1}^m \ell_i \vert P(X = x_i)$$
+$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}} \sum_{i = 1}^m \ell_i P(X = x_i)$$
 
 subject to 
 
