@@ -58,6 +58,22 @@ We refer call each element $$\alpha \in C(\mathcal{X}$$ a **code word** where $$
 
 For the purposes of our discussion, we will focus only on **uniquely decodable** code functions. A code function is uniquely decodable if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.  Most codes used in practice are uniquely decodable. A non-uniquely decodable code would not be very useful since Person B who receives the encoded message from Person A would be unable to unambiguously decode Person A's message.
 
+
+Shannon's Source Code Theorem
+--------
+
+The Shannon Source Code Theorem is a statement about the smallest possible expected code word length for some categorical distribution $$X$$. First, let's review what we mean by *expected code word length*. First, let us assume we have some categorical distribution $$X$$ over source alphabet $$\mathcal{X}$$, a code function $$C$$ that utilizes a code alphabet $$\mathcal{A}$$.  Then, we see that the code word length $$\vertC(X)\vert$$ is a random variable whose expectation is
+
+$$E\left[\vertC(X)\vert\right] := \sum_{x \in \mathcal{X}} \vert C(x) \vert P(X = x)$$
+
+Shannon's Source Code Theorem is a statement about how small we can make this expectation by choosing an appropriate code function $$C$$.  More specifically, Shannon's Source Code Thoerem says that no matter what $$C$$ you choose, the expected code word length will never be smaller than the the entropy of $$X$$:
+
+$$H(X) := - \sum_{x \in \mathcal{X}) P(X = x) \log P(X = x)
+
+Stated more rigorously, Shannon's Source Coding Theorem goes as follows:
+
+
+
 The Kraft-McMillan inequality
 ------------
 
@@ -79,6 +95,7 @@ $$C(\text{B}) := 00$$
 
 $$C(\text{C}) := 10$$
 
+First, it is easy to see that any prefix code is also uniquely decodable.  You can map each code word unambigously back to a source symbol because the prefix for each codeword is unique. 
 
 
 
