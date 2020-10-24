@@ -66,15 +66,39 @@ For the purposes of our discussion, we will focus only on **uniquely decodable**
 Shannon's Source Code Theorem
 --------
 
-The Shannon Source Code Theorem is a statement about the smallest achievable expected code word length, $$E\left[\vertC(X)\vert\right]$$,  for some categorical distribution $$X$$ no matter what uniquely decodable $$C$$ you choose. Specifically, Shannon's Source Code Thoerem says that no matter what uniquely decodable $$C$$ you choose, the expected code word length will never be smaller than the the entropy of $$X$$, denote $$H(X)$$.  That is,
+The Shannon Source Code Theorem is a statement about the smallest achievable expected code word length, $$E\left[\vert C(X)\vert\right]$$,  for some categorical distribution $$X$$ no matter what uniquely decodable $$C$$ you choose. Specifically, Shannon's Source Code Thoerem says that no matter what uniquely decodable $$C$$ you choose, the expected code word length will never be smaller than the the entropy of $$X$$, denote $$H(X)$$.  That is,
 
-$$E\left[\vertC(X)\vert\right\ \geq H(X)$$
+$$E\left[\vertC(X)\vert\right\] \geq H(X)$$
 
 More rigorously, Shannon's Source Coding Thoerem goes as follows:
 
 <span style="color:#0060C6">**Theorem 1 (Shannon's Source Coding Thoerem):** Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E\left[\vertC(X)\vert\right\ \geq H(X)$$.</span>
 
-To prove this Theorem, we will utilize another thoerem, called the [Kraft-McMillan Inequality].  
+We will attempt to this theorem by forming an optimization problem: 
+
+$$\text{min}_{C | C : \mathcal{X} \rightarrow \mathcal{A}^*} \vertC(X)\vert P(X = x)$$
+
+This optimization problem is pretty unwieldy because it requires that we find a code function $$C$$ over *all possible* code functions in order to minimize the expected code word length.  Where do we go from here?   
+
+To proceed, we will utilize another result: the converse of the [Kraft-McMillan Inequalities](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
+
+<span style="color:#0060C6">**Theorem 2:**Given a finite source alphabet $$\mathcal{X}$$, an integer $$B$$, and a set of integers $$\mathcal{L} := \ell_1, \ell_2, \dots, \ell_m$$ where</span>
+
+<span style="color:#0060C6">$$\sum_{i = 1}^{m} \frac{1}{B^{\ell_i}} \leq 1$$<\span>
+  
+<span style="color:#0060C6">then there exists a $$B$$-ary uniquely decodable code $$C$$, a one-to-one, onto function 
+  
+$$\ell: \mathcal{X} \rightarrow \mathcal{L}$$ 
+
+such that $$\vert C(x) \vert = ell(x)$$.
+ 
+Basically, this says that if you give me some set of lengths of code words $$\mathcal{L}$$ that satisfiy a certain inequality, then there exists a uniquely decodable $$C$$ that will map each source symbol $$x \in \mathcal{X}$$ to a code word with length $$\vert C(x) \vert \in \mathcal{L}$$. 
+
+This thoerem will enable us to reformulate the aforementioned optimziation problem in a way that will be more straightforward. That is, our reformulation will enable us to avoid talking about specific code functions $$C$$, and will instead enable us to talk about code word lengths, given by $$\ell$$.  That is, we will no longer be burdened with reasoning about specific codes, but can simply talk about code word lengths given by some hypothetical code. Specifically, we will attempt to optimize the following:
+
+$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m} \sum_{i = 1}^m \ell_i \vert P(X = x_i)$$
+
+
 
 
 
