@@ -74,13 +74,13 @@ More rigorously, Shannon's Source Coding Thoerem goes as follows:
 
 To prove this theorem, we will utilize another result: the converse of the [Kraft-McMillan Inequalities](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
 
-<span style="color:#0060C6">**Theorem 2:**Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a set of integers $$\mathcal{L} := \ell_1, \ell_2, \dots, \ell_m$$ where>
+<span style="color:#0060C6">**Theorem 2:** Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a set of integers $$\mathcal{L} := \ell_1, \ell_2, \dots, \ell_m$$ where>
 
 <span style="color:#0060C6"><center>$$\sum_{i = 1}^{m} \frac{1}{B^{\ell_i}} \leq 1$$</center>
   
 <span style="color:#0060C6">then there exists a $$B$$-ary uniquely decodable code $$C$$, a one-to-one, onto function<\span> 
   
-<span style="color:#0060C6">$$\ell: \mathcal{X} \rightarrow \mathcal{L}$$ 
+<span style="color:#0060C6"><center>$$\ell: \mathcal{X} \rightarrow \mathcal{L}$$</center> 
 
 <span style="color:#0060C6">such that $$\vert C(x) \vert = \ell(x)$$.
  
