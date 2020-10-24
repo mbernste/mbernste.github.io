@@ -72,13 +72,7 @@ More rigorously, Shannon's Source Coding Thoerem goes as follows:
 
 <span style="color:#0060C6">**Theorem 1 (Shannon's Source Coding Thoerem):** Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E[\vert C(X)\vert] \geq H(X)$$.</span>
 
-We will attempt to this theorem by forming an optimization problem: 
-
-$$\text{min}_{C | C : \mathcal{X} \rightarrow \mathcal{A}^*} \vertC(X)\vert P(X = x)$$
-
-This optimization problem is pretty unwieldy because it requires that we find a code function $$C$$ over *all possible* code functions in order to minimize the expected code word length.  Where do we go from here?   
-
-To proceed, we will utilize another result: the converse of the [Kraft-McMillan Inequalities](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
+To prove this theorem, we will utilize another result: the converse of the [Kraft-McMillan Inequalities](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
 
 <span style="color:#0060C6">**Theorem 2:**Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a set of integers $$\mathcal{L} := \ell_1, \ell_2, \dots, \ell_m$$ where>
 
@@ -92,7 +86,11 @@ To proceed, we will utilize another result: the converse of the [Kraft-McMillan 
  
 Basically, this says that if you give me some set of lengths of code words $$\mathcal{L}$$ that satisfiy a certain inequality, then there exists a uniquely decodable $$C$$ that will map each source symbol $$x \in \mathcal{X}$$ to a code word with length $$\vert C(x) \vert \in \mathcal{L}$$. 
 
-This thoerem will enable us to reformulate the former optimziation problem into a new optimization problem that will be much more straightforward to reason about:
+Now, putting the Kraft-McMillan Theorem aside, naively, we may wish to pursue a proof of Shannon's Coding Theorem by setting up the following  optimization problem in which we seek to minimize the expected coding length over all possible codes: 
+
+$$\text{min}_{C | C : \mathcal{X} \rightarrow \mathcal{A}^*} \vertC(X)\vert P(X = x)$$
+
+This optimization problem is challenging to solve because it requires reasoning about *all possible* coding functions.  The Kraft-McMillan Inequality will enable us to reformulate this optimization problem while circumventing a search over all possible code functions. Instead, we will solve:
 
 $$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}} \sum_{i = 1}^m \ell_i \vert P(X = x_i)$$
 
@@ -100,7 +98,7 @@ subject to
 
 $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
-Instead of optimizing over code functions $$C$$, we instead optimize over sets of integers $$\ell_1, ell_2, \dots, \ell_m \in \mathcal{Z}$$. According to the Kraft-McMillan inequality, as long as these integers satisfy the above constraint, then there exists a uniquely decodable code that will each symbol $$x \in \mathcal{X}$$ to code words with lengths given by $$\ell_1, \ell_2, \dots, \ell_m$$.  
+That is, instead of optimizing over code functions $$C$$, we instead optimize over sets of integers $$\ell_1, ell_2, \dots, \ell_m \in \mathcal{Z}$$. According to the Kraft-McMillan inequality, as long as these integers satisfy the above constraint, then there exists a uniquely decodable code that will each symbol $$x \in \mathcal{X}$$ to code words with lengths given by $$\ell_1, \ell_2, \dots, \ell_m$$!
 
 
 
