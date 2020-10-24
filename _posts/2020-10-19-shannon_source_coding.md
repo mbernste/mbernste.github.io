@@ -88,7 +88,7 @@ Basically, this says that if you give me some set of lengths of code words $$\ma
 
 Now, putting the Kraft-McMillan Theorem aside, naively, we may wish to pursue a proof of Shannon's Coding Theorem by setting up the following  optimization problem in which we seek to minimize the expected coding length over all possible codes: 
 
-$$\text{min}_{C | C : \mathcal{X} \rightarrow \mathcal{A}^*} \vertC(X)\vert P(X = x)$$
+$$\text{min}_{C | C : \mathcal{X} \rightarrow \mathcal{A}^*} \vert C(X)\vert P(X = x)$$
 
 This optimization problem is challenging to solve because it requires reasoning about *all possible* coding functions.  The Kraft-McMillan Inequality will enable us to reformulate this optimization problem while circumventing a search over all possible code functions. Instead, we will solve:
 
