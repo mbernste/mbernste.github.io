@@ -82,15 +82,15 @@ This optimization problem is pretty unwieldy because it requires that we find a 
 
 To proceed, we will utilize another result: the converse of the [Kraft-McMillan Inequalities](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
 
-<span style="color:#0060C6">**Theorem 2:**Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a set of integers $$\mathcal{L} := \ell_1, \ell_2, \dots, \ell_m$$ where</span>
+<span style="color:#0060C6">**Theorem 2:**Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a set of integers $$\mathcal{L} := \ell_1, \ell_2, \dots, \ell_m$$ where>
 
-<span style="color:#0060C6">$$\sum_{i = 1}^{m} \frac{1}{B^{\ell_i}} \leq 1$$<\span>
+<span style="color:#0060C6">$$\sum_{i = 1}^{m} \frac{1}{B^{\ell_i}} \leq 1$$
   
 <span style="color:#0060C6">then there exists a $$B$$-ary uniquely decodable code $$C$$, a one-to-one, onto function<\span> 
   
-<span style="color:#0060C6">$$\ell: \mathcal{X} \rightarrow \mathcal{L}$$ <\span>
+<span style="color:#0060C6">$$\ell: \mathcal{X} \rightarrow \mathcal{L}$$ 
 
-<span style="color:#0060C6">such that $$\vert C(x) \vert = \ell(x)$$.<\span>
+<span style="color:#0060C6">such that $$\vert C(x) \vert = \ell(x)$$.
  
 Basically, this says that if you give me some set of lengths of code words $$\mathcal{L}$$ that satisfiy a certain inequality, then there exists a uniquely decodable $$C$$ that will map each source symbol $$x \in \mathcal{X}$$ to a code word with length $$\vert C(x) \vert \in \mathcal{L}$$. 
 
