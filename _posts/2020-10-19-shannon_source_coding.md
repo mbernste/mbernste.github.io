@@ -103,7 +103,7 @@ $$\sum_{i=1}^m \ell_i^* p_i = - \sum_{i=1}^m p_i \log p_i$$
 
 where the right-hand side of the above inequality is simply the entropy of $$X$$!  Let's prove this step-by-step.
 
-First and foremost, before we prove the aforementioned optimization problem, we note that because we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers, this optimization problem is called an [integer programming](https://en.wikipedia.org/wiki/Integer_programming), and is therefore challenging to solve due to the disrete nature of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region#:~:text=In%20mathematical%20optimization%2C%20a%20feasible,%2C%20equalities%2C%20and%20integer%20constraints).  
+First and foremost, before we prove the aforementioned optimization problem, we note that because we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers, this optimization problem is called an [integer programm](https://en.wikipedia.org/wiki/Integer_programming), and is therefore challenging to solve due to the disrete nature of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region#:~:text=In%20mathematical%20optimization%2C%20a%20feasible,%2C%20equalities%2C%20and%20integer%20constraints).  
 
 We will thus *relax* this optimization problem by enabling the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number instead of requiring them to be integers. Thus, the optimization problem becomes:
 
