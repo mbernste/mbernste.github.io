@@ -165,10 +165,9 @@ To do so, we form the Lagrangian:
 
 $$\mathcal{L}(q_1, \dots, q_m, \lambda) :=  \sum_{i=1}^m p_i \log_B \frac{1}{q_i} + \lambda\left(\sum_i q_i - 1\right)$$
 
-We now compute the partial derivative with respect to each $$q_i$$:
+We now compute the partial derivative with respect to each $$q_i$$ and set it to 0:
 
-$$here$$
+$$\frac{\partial}{\partial q_i} \sum_{i=1}^m p_i \log_B \frac{1}{q_i} + \lambda\left(\sum_i q_i - 1\right) = 0$$ 
 
-And with respect to $$\lambda$$:
+$$\implies -\frac{p_i}{q_i \log B} + \lambda = 0$$
 
-$$here$$
