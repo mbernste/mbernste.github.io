@@ -59,7 +59,7 @@ We refer call each element $$\alpha \in C(\mathcal{X}$$ a **code word** where $$
 For the purposes of our discussion, we will focus only on **uniquely decodable** code functions. A code function is uniquely decodable if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.  Most codes used in practice are uniquely decodable. A non-uniquely decodable code would not be very useful since Person B who receives the encoded message from Person A would be unable to unambiguously decode Person A's message.
 
 
-Shannon's Source Code Theorem
+Shannon's Source Coding Theorem
 --------
 
 Shannon's Source Code Theorem that given some categorical distribution $$X$$, the smallest possible *expected code word length* is the entropy of $$X$$, no matter what $$C$$ you choose. That is, 
@@ -99,7 +99,7 @@ subject to
 
 The constraint in this optimization problem ensures that for any set of code word lengths we consider, according to the Kraft-McMillan inequality there will exist such a valid uniquely decodable code!
 
-To make the notation a bit easier to deal with, let us order the elements of $$\mathcal{X}$$ and let $$x_1, x_2, \dots, x_m$$ denote each element of $$\mathcal{X}$$. Then, let $$\ell_i := \ell(x_i)$$.  Finally let, $$p_i := P(X = x_i)$$.  Now the optimization problem becomes:
+To make the notation a bit easier to deal with, let us order the elements of $$\mathcal{X}$$ and let $$x_1, x_2, \dots, x_m$$ denote each element of $$\mathcal{X}$$. Let $$\ell_i := \ell(x_i)$$.  Finally, let $$p_i := P(X = x_i)$$.  Now the optimization problem becomes:
 
 $$\underset{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}+}{\text{min}} \sum_{i=1}^m \ell_i p_i$$ 
 
@@ -135,7 +135,7 @@ $$\ell_i \leq 0 \implies \frac{1}{B^{\ell_i}} \geq 1 \implies \sum_{i=1}^m \frac
 
 which breaks our assumption.  So under this assumption, each $$\ell_i$$ is strictly positive. 
 
-Now, let's look at the objective function.  Because we assume that $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ is a solution, it thus minimizes the objective function $$\sum_{i=1}^m \ell_i p_i$$.  However, under this setup, there is nothing stopping us from choosing new values for each $$\ell_i$$, which we denote $$\ell_i^\dag$$ such that $$0 > \ell_i^\dag < \ell_i^*$$. That is,
+Now, let's look at the objective function.  Because we assume that $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ is a solution, it thus minimizes the objective function $$\sum_{i=1}^m \ell_i p_i$$.  However, under this setup, there is nothing stopping us from choosing new values for each $$\ell_i$$, which we denote $$\ell_i^#$$ such that $$0 > \ell_i^\dag < \ell_i^*$$. If we do so, then it follows that
 
 $$0 < \ell_i^\dag < \ell_i^* \implies \sum_{i=1}^m \ell_i^\dag p_i <  \sum_{i=1}^m \ell_i^* p_i$$
 
