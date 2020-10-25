@@ -66,41 +66,53 @@ Shannon's Source Code Theorem tells us that no matter what $$C$$ you choose, the
 
 <span style="color:#0060C6">**Theorem 1 (Shannon's Source Coding Thoerem):** Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E[\vert C(X)\vert] \geq H(X)$$.</span>
 
-To prove this theorem, we will utilize another result: the converse of the [Kraft-McMillan Inequality](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
+To prove this theorem, we will utilize another result (which we will prove in another blog post): the converse of the [Kraft-McMillan Inequality](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
 
-<span style="color:#0060C6">**Theorem 2 (Converse of Kraft-McMillan Inequality):** Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a set of integers $$\mathcal{L} := \ell_1, \ell_2, \dots, \ell_m$$ where>
-
-<span style="color:#0060C6"><center>$$\sum_{i = 1}^{m} \frac{1}{B^{\ell_i}} \leq 1$$</center>
+<span style="color:#0060C6">**Theorem 2 (Converse of Kraft-McMillan Inequality):** Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a function $$\ell$$ where
   
-<span style="color:#0060C6">then there exists a $$B$$-ary uniquely decodable code $$C$$, a one-to-one, onto function<\span> 
+<center><span style="color:#0060C6">\ell: \mathcal{X} \rightarrow \mathbb{Z}+</span></center>
+
+(where $$\mathbb{Z}+$$ is the set of strictly positive integers) such that
+
+<span style="color:#0060C6"><center>$$\sum_{x \in \mathcal{X}} \frac{1}{B^{\ell)(x)}} \leq 1$$</center>
   
-<span style="color:#0060C6"><center>$$\ell: \mathcal{X} \rightarrow \mathcal{L}$$</center> 
+<span style="color:#0060C6">then there exists a $$B$$-ary uniquely decodable code $$C$$.
 
-<span style="color:#0060C6">such that $$\vert C(x) \vert = \ell(x)$$.
- 
-Basically, this says that if you give me some set of lengths of code words $$\mathcal{L}$$ that satisfiy a certain inequality, then there exists a uniquely decodable $$C$$ that will map each source symbol $$x \in \mathcal{X}$$ to a code word with length $$\vert C(x) \vert \in \mathcal{L}$$. 
+Basically, this says that if you have some set of integers $$\{\ell(x) \mid x \in \mathcal{X}\}$$ that satisfiy a certain inequality, then there exists a uniquely decodable $$C$$ that will map each source symbol $$x \in \mathcal{X}$$ to a code words with lengths $$\ell(x)$$. 
 
-Now, putting the Kraft-McMillan Theorem aside, naively, we may wish to pursue a proof of Shannon's Coding Theorem by setting up the following  optimization problem in which we seek to minimize the expected coding length over all possible codes: 
+The Kraft-McMillan Inequality will enable us to formulate an optimization problem that attempts to minimize the expected code word length under some hypothetical code function $$C$$ that produces code words of length $$\ell(x)$$.   That is, where $$\ell(x) = \vert C(x) \vert$$. This optimization problem is as follows:
 
-$$\text{min}_{C | C : \mathcal{X} \rightarrow \mathcal{A}^*} \vert C(X)\vert P(X = x)$$
+$$\text{min}_{\ell : \mathcal{X} \rightarrow \mathbb{Z}+} \sum_{x \in \mathcal{X}} \ell(x) P(X = x)$$
 
-This optimization problem is challenging to solve because it requires reasoning about *all possible* coding functions.  The Kraft-McMillan Inequality will enable us to reformulate this optimization problem while circumventing a search over all possible code functions. Instead, we will solve:
+subject to 
 
-$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}} \sum_{i = 1}^m \ell_i P(X = x_i)$$
+$$\sum_{x \in \mathcal{X}} \frac{1}{B^{\ell(x)}} \leq 1$$
+
+The constraint in this optimization problem ensures that for any set of code word lengths we consider, according to the Kraft-McMillan inequality there will exist such a valid uniquely decodable code!
+
+To make the notation a bit easier to deal with, let us order the elements of $$\mathcal{X}$$ and let $$x_1, x_2, \dots, x_m$$ denote each element of $$\mathcal{X}$$. Then, let $$\ell_i := \ell(x_i)$$.  Finally let, $$p_i := P(X = x_i)$$.  Now the optimization problem becomes:
+
+$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}+} \sum_{i=1}^m \ell_i p_i$$
 
 subject to 
 
 $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
-That is, instead of optimizing over code functions $$C$$, we instead optimize over sets of integers $$\ell_1, ell_2, \dots, \ell_m \in \mathcal{Z}$$. According to the Kraft-McMillan inequality, as long as these integers satisfy the above constraint, then there exists a uniquely decodable code that will each symbol $$x \in \mathcal{X}$$ to code words with lengths given by $$\ell_1, \ell_2, \dots, \ell_m$$!
+To preview where we are going with this, we will show that the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve this optimization problem, which we will denote as $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$, will be such that 
 
-As we will now show, the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve this optimization problem, which we will denote as $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ will be such that 
+$$\sum_{i=1}^m \ell_i^* p_i = - \sum_{i=1}^m p_i \log p_i$$
 
-\sum_{i = 1}^m \ell_i^* P(X = x_i) = - \sum_{i=1}^m P(X = x_i) \log{P(X = x_i)} = H(X)
+where the right-hand side of the above inequality is simply the entropy of $$X$$!  Let's prove this step-by-step.
 
-To show the above problem, we will need to find an analytical solution to the optimization problem; however, there is still a problem standing in our way: we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers.  This type of problem is more formally called an [integer programming](https://en.wikipedia.org/wiki/Integer_programming) problem and they are notoriously challenging to solve.  
+First and foremost, before we prove the aforementioned optimization problem, we note that because we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers, this optimization problem is called an [integer programming](https://en.wikipedia.org/wiki/Integer_programming), and is therefore challenging to solve due to the disrete nature of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region#:~:text=In%20mathematical%20optimization%2C%20a%20feasible,%2C%20equalities%2C%20and%20integer%20constraints).  
 
-We will thus *relax* this optimization problem an enable the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number and proceed. 
+We will thus *relax* this optimization problem by enabling the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number instead of requiring them to be integers. Thus, the optimization problem becomes:
+
+$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{R}} \sum_{i=1}^m \ell_i p_i$$
+
+subject to 
+
+$$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
 
 
