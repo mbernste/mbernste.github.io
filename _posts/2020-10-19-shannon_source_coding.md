@@ -59,14 +59,17 @@ We refer call each element $$\alpha \in C(\mathcal{X}$$ a **code word** where $$
 For the purposes of our discussion, we will focus only on **uniquely decodable** code functions. A code function is uniquely decodable if it is an invertible function. Stated plainly, if a code $$C$$ is uniquely decodable, then we can always decode the code words unambiguously into the original sequence of source symbols using the inverse of $$C$$.  Most codes used in practice are uniquely decodable. A non-uniquely decodable code would not be very useful since Person B who receives the encoded message from Person A would be unable to unambiguously decode Person A's message.
 
 
-Shannon's Source Code Theorem
+Stating Shannon's Source Code Theorem
 --------
 
 Shannon's Source Code Theorem tells us that no matter what $$C$$ you choose, there exists a lower bound on the achievable *expected code word length* $$E\left[\vert C(X)\vert\right]$$  for some categorical distribution $$X$$.  That lower bound is the entropy of $$X$$, denoted $$H(X)$$. Said differenently, no matter what uniquely decodable $$C$$ you choose, the expected code word length will never be smaller than $$X$$'s entropy:
 
 <span style="color:#0060C6">**Theorem 1 (Shannon's Source Coding Thoerem):** Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E[\vert C(X)\vert] \geq H(X)$$.</span>
 
-To prove this theorem, we will utilize another result (which we will prove in another blog post): the converse of the [Kraft-McMillan Inequality](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
+Proof
+--------
+
+To prove the theorem, we will utilize another result (which we will prove in another blog post): the converse of the [Kraft-McMillan Inequality](https://en.wikipedia.org/wiki/Kraft–McMillan_inequality). This theorem goes as follows:
 
 <span style="color:#0060C6">**Theorem 2 (Converse of Kraft-McMillan Inequality):** Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a function $$\ell$$ where
   
