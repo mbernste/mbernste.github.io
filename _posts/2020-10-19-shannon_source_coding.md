@@ -163,6 +163,6 @@ where $$mathbb{R}+$$ is the set of strictly positive real numbers. This optimiza
 
 To do so, we form the Lagrangian:
 
-$$\mathcal{L}(q_1, \dots, q_m, \lambda) :=  \sum_{i=1}^m p_i \log_B \frac{1}{q_i} + \lambda\left(\sum_i q_i - 1\left)$$
+$$\mathcal{L}(q_1, \dots, q_m, \lambda) :=  \sum_{i=1}^m p_i \log_B \frac{1}{q_i} + \lambda\left(\sum_i q_i - 1\right)$$
 
 
