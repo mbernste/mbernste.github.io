@@ -135,7 +135,7 @@ $$\ell_i \leq 0 \implies \frac{1}{B^{\ell_i}} \geq 1 \implies \sum_{i=1}^m \frac
 
 which breaks our assumption.  So under this assumption, each $$\ell_i$$ is strictly positive. 
 
-Now, let's look at the objective function.  Because we assume that $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ is a solution, it thus minimizes the objective function $$\sum_{i=1}^m \ell_i p_i$$.  However, under this setup, there is nothing stopping us from choosing new values for each $$\ell_i$$, which we denote $$\ell_i^**$$ such that $$0 > \ell_i^\dag < \ell_i^*$$. If we do so, then it follows that
+Now, let's look at the objective function.  Because we assume that $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ is a solution, it thus minimizes the objective function $$\sum_{i=1}^m \ell_i p_i$$.  However, under this setup, there is nothing stopping us from choosing new values for each $$\ell_i$$, which we denote $$\ell_i^{**}$$ such that $$0 > \ell_i^\dag < \ell_i^*$$. If we do so, then it follows that
 
 $$0 < \ell_i^\dag < \ell_i^* \implies \sum_{i=1}^m \ell_i^\dag p_i <  \sum_{i=1}^m \ell_i^* p_i$$
 
