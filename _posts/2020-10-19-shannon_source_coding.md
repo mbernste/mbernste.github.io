@@ -62,13 +62,7 @@ For the purposes of our discussion, we will focus only on **uniquely decodable**
 Shannon's Source Code Theorem
 --------
 
-The Shannon Source Code Theorem is a statement about the smallest achievable *expected code word length* $$E\left[\vert C(X)\vert\right]$$  for some categorical distribution $$X$$ no matter what uniquely decodable $$C$$ you choose. 
-
-Specifically, Shannon's Source Code Thoerem says that no matter what uniquely decodable $$C$$ you choose, the expected code word length will never be smaller than the the entropy of $$X$$, denote $$H(X)$$.  That is,
-
-$$E[\vert C(X)\vert]\geq H(X)$$
-
-More rigorously, Shannon's Source Coding Thoerem goes as follows:
+Shannon's Source Code Theorem tells us that no matter what $$C$$ you choose, there exists a lower bound on the achievable *expected code word length* $$E\left[\vert C(X)\vert\right]$$  for some categorical distribution $$X$$.  That lower bound is the entropy of $$X$$, denoted $$H(X)$$. Said differenently, no matter what uniquely decodable $$C$$ you choose, the expected code word length will never be smaller than $$X$$'s entropy:
 
 <span style="color:#0060C6">**Theorem 1 (Shannon's Source Coding Thoerem):** Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E[\vert C(X)\vert] \geq H(X)$$.</span>
 
