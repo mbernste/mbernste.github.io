@@ -73,7 +73,7 @@ To prove the theorem, we will utilize another result (which we will prove in ano
 
 <span style="color:#0060C6">**Theorem 2 (Converse of Kraft-McMillan Inequality):** Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a function $$\ell$$ where
   
-<center><span style="color:#0060C6">\ell: \mathcal{X} \rightarrow \mathbb{Z}+</span></center>
+<center><span style="color:#0060C6">$$\ell: \mathcal{X} \rightarrow \mathbb{Z}+$$</span></center>
 
 (where $$\mathbb{Z}+$$ is the set of strictly positive integers) such that
 
@@ -85,7 +85,7 @@ Basically, this says that if you have some set of integers $$\{\ell(x) \mid x \i
 
 The Kraft-McMillan Inequality will enable us to formulate an optimization problem that attempts to minimize the expected code word length under some hypothetical code function $$C$$ that produces code words of length $$\ell(x)$$.   That is, where $$\ell(x) = \vert C(x) \vert$$. This optimization problem is as follows:
 
-$$\text{min}_{\ell : \mathcal{X} \rightarrow \mathbb{Z}+} \sum_{x \in \mathcal{X}} \ell(x) P(X = x)$$
+$$\underset{\text{min}}{\ell : \mathcal{X} \rightarrow \mathbb{Z}+} \sum_{x \in \mathcal{X}} \ell(x) P(X = x)$$
 
 subject to 
 
