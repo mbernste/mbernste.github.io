@@ -107,7 +107,7 @@ subject to
 
 $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
-Before we solve this optimization problem, we note that because we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers, this optimization problem is called an [integer program](https://en.wikipedia.org/wiki/Integer_programming), and is therefore challenging to solve due to the disrete nature of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region#:~:text=In%20mathematical%20optimization%2C%20a%20feasible,%2C%20equalities%2C%20and%20integer%20constraints).  We will thus *relax* this optimization problem by enabling the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number instead of requiring them to be integers. Thus, the optimization problem becomes:
+Before we solve this optimization problem, we note that because we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers, this optimization problem, called an [integer program](https://en.wikipedia.org/wiki/Integer_programming), and is challenging to solve due to the disrete nature of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region#:~:text=In%20mathematical%20optimization%2C%20a%20feasible,%2C%20equalities%2C%20and%20integer%20constraints).  We will thus *relax* this optimization problem by enabling the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number instead of requiring them to be integers. Thus, the optimization problem becomes:
 
 $$\underset{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{R}}{\text{min}} \sum_{i=1}^m \ell_i p_i$$
 
@@ -159,10 +159,16 @@ subject to
 
 $$\sum_{i=1}^m q_i = 1$$
 
-where $$mathbb{R}+$$ is the set of strictly positive real numbers. This optimization problem can now easily be solved using [Lagrange Multipliers](https://www.google.com/search?client=safari&rls=en&q=lagrange+multipliers&ie=UTF-8&oe=UTF-8)!
+where $$\mathbb{R}+$$ is the set of strictly positive real numbers. This optimization problem can now easily be solved using [Lagrange Multipliers](https://www.google.com/search?client=safari&rls=en&q=lagrange+multipliers&ie=UTF-8&oe=UTF-8)!
 
 To do so, we form the Lagrangian:
 
 $$\mathcal{L}(q_1, \dots, q_m, \lambda) :=  \sum_{i=1}^m p_i \log_B \frac{1}{q_i} + \lambda\left(\sum_i q_i - 1\right)$$
 
+We now compute the partial derivative with respect to each $$q_i$$:
 
+$$here$$
+
+And with respect to $$\lambda$$:
+
+$$here$$
