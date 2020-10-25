@@ -95,11 +95,7 @@ The constraint in this optimization problem ensures that for any set of code wor
 
 To make the notation a bit easier to deal with, let us order the elements of $$\mathcal{X}$$ and let $$x_1, x_2, \dots, x_m$$ denote each element of $$\mathcal{X}$$. Then, let $$\ell_i := \ell(x_i)$$.  Finally let, $$p_i := P(X = x_i)$$.  Now the optimization problem becomes:
 
-$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}+} \sum_{i=1}^m \ell_i p_i$$
-
-subject to 
-
-$$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
+$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}+} \sum_{i=1}^m \ell_i p_i$$ subject to $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
 To preview where we are going with this, we will show that the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve this optimization problem, which we will denote as $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$, will be such that 
 
@@ -111,11 +107,7 @@ First and foremost, before we prove the aforementioned optimization problem, we 
 
 We will thus *relax* this optimization problem by enabling the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number instead of requiring them to be integers. Thus, the optimization problem becomes:
 
-$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{R}} \sum_{i=1}^m \ell_i p_i$$
-
-subject to 
-
-$$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
+$$\text{min}_{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{R}} \sum_{i=1}^m \ell_i p_i$$ subject to $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
 
 
