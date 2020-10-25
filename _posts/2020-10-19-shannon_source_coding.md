@@ -62,9 +62,15 @@ For the purposes of our discussion, we will focus only on **uniquely decodable**
 Stating Shannon's Source Code Theorem
 --------
 
-Shannon's Source Code Theorem tells us that no matter what $$C$$ you choose, there exists a lower bound on the achievable *expected code word length* $$E\left[\vert C(X)\vert\right]$$  for some categorical distribution $$X$$.  That lower bound is the entropy of $$X$$, denoted $$H(X)$$. Said differenently, no matter what uniquely decodable $$C$$ you choose, the expected code word length will never be smaller than $$X$$'s entropy:
+Shannon's Source Code Theorem that given some categorical distribution $$X$$, the smallest possible *expected code word length* is the entropy of $$X$$, no matter what $$C$$ you choose. That is, 
+
+$$E\left[\vert C(X)\vert\right] = \sum_{x \in \mathcal{X}} \vert C(X) \vert P(X = x) \leq = - \sum_{x \in \mathcal{X}) P(X = x)\log P(X = x) = H(X)$$  
+
+More formally:
 
 <span style="color:#0060C6">**Theorem 1 (Shannon's Source Coding Thoerem):** Given a categorical random variable $$X$$ over a finite source alphabet $$\mathcal{X}$$ and a code alphabet $$\mathcal{A}$$, then for all uniquely decodable $$C : \mathcal{X} \rightarrow \mathcal{A}^*$$, it holds that $$E[\vert C(X)\vert] \geq H(X)$$.</span>
+
+The expected code word length of $$X$$ under some code $$C$$ tells us how efficiently one can "compress" the information in $$X$$. If on average, $$C$$ is able to produce small code words for each symbol drawn from $$X$$, then we are able to more efficiently communicate these symbols.  Shannon's Source Coding Theorem tells us that the entropy of $$X$$ is, in some sense, the true "information content" of the random variable because there is no $$C$$ that will enable you to compress $$X$$ past $$X$$'s entropy.  
 
 Proof
 --------
@@ -85,7 +91,7 @@ Basically, this says that if you have some set of integers $$\{\ell(x) \mid x \i
 
 The Kraft-McMillan Inequality will enable us to formulate an optimization problem that attempts to minimize the expected code word length under some hypothetical code function $$C$$ that produces code words of length $$\ell(x)$$.   That is, where $$\ell(x) = \vert C(x) \vert$$. This optimization problem is as follows:
 
-<center>$$\underset{\text{min}}{\ell : \mathcal{X} \rightarrow \mathbb{Z}+} \sum_{x \in \mathcal{X}} \ell(x) P(X = x)$$</center>
+<center>$$\underset{\ell : \mathcal{X} \rightarrow \mathbb{Z}+}{\text{min}} \sum_{x \in \mathcal{X}} \ell(x) P(X = x)$$</center>
 
 subject to 
 
@@ -95,7 +101,7 @@ The constraint in this optimization problem ensures that for any set of code wor
 
 To make the notation a bit easier to deal with, let us order the elements of $$\mathcal{X}$$ and let $$x_1, x_2, \dots, x_m$$ denote each element of $$\mathcal{X}$$. Then, let $$\ell_i := \ell(x_i)$$.  Finally let, $$p_i := P(X = x_i)$$.  Now the optimization problem becomes:
 
-$$\underset{\text{min}}{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}+} \sum_{i=1}^m \ell_i p_i$$ subject to $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
+$$\underset{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{Z}+}{\text{min}} \sum_{i=1}^m \ell_i p_i$$ subject to $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
 To preview where we are going with this, we will show that the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve this optimization problem, which we will denote as $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$, will be such that 
 
@@ -103,7 +109,7 @@ $$\sum_{i=1}^m \ell_i^* p_i = - \sum_{i=1}^m p_i \log p_i$$
 
 where the right-hand side of the above inequality is simply the entropy of $$X$$!  Let's prove this step-by-step.
 
-First and foremost, before we prove the aforementioned optimization problem, we note that because we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers, this optimization problem is called an [integer programm](https://en.wikipedia.org/wiki/Integer_programming), and is therefore challenging to solve due to the disrete nature of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region#:~:text=In%20mathematical%20optimization%2C%20a%20feasible,%2C%20equalities%2C%20and%20integer%20constraints).  
+Before we prove the aforementioned optimization problem, we note that because we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers, this optimization problem is called an [integer programm](https://en.wikipedia.org/wiki/Integer_programming), and is therefore challenging to solve due to the disrete nature of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region#:~:text=In%20mathematical%20optimization%2C%20a%20feasible,%2C%20equalities%2C%20and%20integer%20constraints).  
 
 We will thus *relax* this optimization problem by enabling the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number instead of requiring them to be integers. Thus, the optimization problem becomes:
 
