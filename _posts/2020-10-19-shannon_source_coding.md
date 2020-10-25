@@ -115,19 +115,31 @@ subject to
 
 $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
-You may notice a problem with this relaxation.  What if the solution to this problem has fractional or negative values for any of the $$\ell_1, \ell_2, \dots, \ell_m$$? For now, let's hold this concern aside and come back to it later. For now, let's simply solve this optimization problem and see where it takes us. 
+You may notice a problem with this relaxation.  What if the solution to this problem has fractional or negative values for any of the $$\ell_1, \ell_2, \dots, \ell_m$$?  What does it mean to have a negative code word length? Indeed, this is concerning; however, let's hold this concern aside and come back to it later. For now, let's simply solve this optimization problem and see where it takes us. 
 
+Okay, so are goal right now is to solve this relaxed optimization problem.  How do we do it?  We're now going to show that this optimization problem can be re-formulated to an equivalent optimization problem in which the inequality in the constraint becomes an equality:
 
+$$\underset{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{R}}{\text{min}} \sum_{i=1}^m \ell_i p_i$$
 
+subject to 
 
+$$\sum_{i=1}^m \frac{1}{B^{\ell_i}} = 1$$
 
+To show that this is truly equivalent, we will use a quick proof by contradiction.  Let's let $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ be the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve the optimization problem.  Now, let's assume, for the sake of contradiction, that this solution is such the summation in the constraint is strictly less than one:
 
+$$\sum_{i=1}^m \frac{1}{B^{\ell_i}} < 1$$
 
-To preview where we are going with this, we will show that the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve this optimization problem, which we will denote as $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$, will be such that 
+What would this assumption imply?  First, it implies that every $$\ell_i$$ *must* be strictly greater than 0.  Too see why, assume that for some $$i$$, $$\ell_i \leq 0$$. Under this scenario
 
-$$\sum_{i=1}^m \ell_i^* p_i = - \sum_{i=1}^m p_i \log p_i$$
+$$\ell_i \leq 0 \implies \frac{1}{B^{\ell_i}} \geq 1 \implies \sum_{i=1}^m \frac{1}{B^{\ell_i}} \geq 1$$$
 
-where the right-hand side of the above inequality is simply the entropy of $$X$$. This explicitly says that the best achievable expected code word length is the entropy! 
+which breaks the constraint and thus, is not a valid solution.  So each $$\ell_i$$ must be strictly positive. 
+
+Now, let's look at the objective function.  Because we assume that $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ is a solution, it thus minimizes the objective function $$\sum_{i=1}^m \ell_i p_i$$.  However, under this setup, there is nothing stopping us from choosing new values for each $$\ell_i$$, which we denote $$\ell_i^'$$ such that $$0 > \ell_i^' < \ell_i^*$$. That is,
+
+$$0 < \ell_i^' < \ell_i^* \implies \sum_{i=1}^m \ell_i^' p_i <  \sum_{i=1}^m \ell_i^* p_i$$
+
+Because $$\ell_i^'$$ further minimizes the objective function, it must be the case that $$\ell_i^* is not the true solution! Thus, our original assumption that the solution leads to $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} < 1$$ must be wrong!  Indeed, it must be the case that
 
 
 
