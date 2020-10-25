@@ -135,11 +135,32 @@ $$\ell_i \leq 0 \implies \frac{1}{B^{\ell_i}} \geq 1 \implies \sum_{i=1}^m \frac
 
 which breaks the constraint and thus, is not a valid solution.  So each $$\ell_i$$ must be strictly positive. 
 
-Now, let's look at the objective function.  Because we assume that $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ is a solution, it thus minimizes the objective function $$\sum_{i=1}^m \ell_i p_i$$.  However, under this setup, there is nothing stopping us from choosing new values for each $$\ell_i$$, which we denote $$\ell_i^'$$ such that $$0 > \ell_i^' < \ell_i^*$$. That is,
+Now, let's look at the objective function.  Because we assume that $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ is a solution, it thus minimizes the objective function $$\sum_{i=1}^m \ell_i p_i$$.  However, under this setup, there is nothing stopping us from choosing new values for each $$\ell_i$$, which we denote $$\ell_i^\dag$$ such that $$0 > \ell_i^\dag < \ell_i^*$$. That is,
 
-$$0 < \ell_i^' < \ell_i^* \implies \sum_{i=1}^m \ell_i^' p_i <  \sum_{i=1}^m \ell_i^* p_i$$
+$$0 < \ell_i^\dag < \ell_i^* \implies \sum_{i=1}^m \ell_i^\dag p_i <  \sum_{i=1}^m \ell_i^* p_i$$
 
-Because $$\ell_i^'$$ further minimizes the objective function, it must be the case that $$\ell_i^* is not the true solution! Thus, our original assumption that the solution leads to $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} < 1$$ must be wrong!  Indeed, it must be the case that
+Because $$\ell_i^\dag$$ further minimizes the objective function, it must be the case that $$\ell_i^* is not the true solution! Thus, our original assumption that the solution leads to $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} < 1$$ must be wrong!  Indeed, it must be the case that
+
+$$\sum_{i=1}^m \frac{1}{B^{\ell_i}} = 1$$
+
+So far, we've made a bunch of changes to this optimization problem to make it ever more straightforward to solve. Can we go further?  Let's do a quick change of variables and set 
+
+$$q_i := \frac{1}{B^\ell_i}$$
+
+This then implies that 
+
+$$\ell_i = \log_B \frac{1}{q_i}$$
+
+which leads to the new optimziation problem:
+
+$$\underset{\q_1, \q_2, \dots, \q_m \in \mathbb{R}+}{\text{min}} \sum_{i=1}^m \ell_i p_i$$ 
+
+subject to 
+
+$$\sum_{i=1}^m q_i = 1$$
+
+This optimization problem can now easily be solved using [Lagrange Multipliers](https://www.google.com/search?client=safari&rls=en&q=lagrange+multipliers&ie=UTF-8&oe=UTF-8)!
+
 
 
 
