@@ -131,9 +131,9 @@ $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} < 1$$
 
 What would this assumption imply?  First, it implies that every $$\ell_i$$ *must* be strictly greater than 0.  Too see why, assume that for some $$i$$, $$\ell_i \leq 0$$. Under this scenario
 
-$$\ell_i \leq 0 \implies \frac{1}{B^{\ell_i}} \geq 1 \implies \sum_{i=1}^m \frac{1}{B^{\ell_i}} \geq 1$$$
+$$\ell_i \leq 0 \implies \frac{1}{B^{\ell_i}} \geq 1 \implies \sum_{i=1}^m \frac{1}{B^{\ell_i}} \geq 1$$
 
-which breaks the constraint and thus, is not a valid solution.  So each $$\ell_i$$ must be strictly positive. 
+which breaks our assumption.  So under this assumption, each $$\ell_i$$ is strictly positive. 
 
 Now, let's look at the objective function.  Because we assume that $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ is a solution, it thus minimizes the objective function $$\sum_{i=1}^m \ell_i p_i$$.  However, under this setup, there is nothing stopping us from choosing new values for each $$\ell_i$$, which we denote $$\ell_i^\dag$$ such that $$0 > \ell_i^\dag < \ell_i^*$$. That is,
 
