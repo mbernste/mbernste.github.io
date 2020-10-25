@@ -87,7 +87,7 @@ To prove the theorem, we will utilize another result (which we will prove in ano
   
 <span style="color:#0060C6">then there exists a $$B$$-ary uniquely decodable code $$C$$.
 
-Basically, this says that if you have some set of integers $$\{\ell(x) \mid x \in \mathcal{X}\}$$ that satisfiy a certain inequality, then there exists a uniquely decodable $$C$$ that will map each source symbol $$x \in \mathcal{X}$$ to a code words with lengths $$\ell(x)$$. 
+Basically, this says that if you have some set of integers $$\{\ell(x) \mid x \in \mathcal{X}\}$$ that satisfiy a certain inequality, then there exists a uniquely decodable $$C$$ that will map each source symbol $$x \in \mathcal{X}$$ to a code word with length $$\ell(x)$$. 
 
 The Kraft-McMillan Inequality will enable us to formulate an optimization problem that attempts to minimize the expected code word length under some hypothetical code function $$C$$ that produces code words of length $$\ell(x)$$.   That is, where $$\ell(x) = \vert C(x) \vert$$. This optimization problem is as follows:
 
