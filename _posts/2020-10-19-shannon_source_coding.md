@@ -85,11 +85,11 @@ Basically, this says that if you have some set of integers $$\{\ell(x) \mid x \i
 
 The Kraft-McMillan Inequality will enable us to formulate an optimization problem that attempts to minimize the expected code word length under some hypothetical code function $$C$$ that produces code words of length $$\ell(x)$$.   That is, where $$\ell(x) = \vert C(x) \vert$$. This optimization problem is as follows:
 
-$$\underset{\text{min}}{\ell : \mathcal{X} \rightarrow \mathbb{Z}+} \sum_{x \in \mathcal{X}} \ell(x) P(X = x)$$
+<center>$$\underset{\text{min}}{\ell : \mathcal{X} \rightarrow \mathbb{Z}+} \sum_{x \in \mathcal{X}} \ell(x) P(X = x)$$</center>
 
 subject to 
 
-$$\sum_{x \in \mathcal{X}} \frac{1}{B^{\ell(x)}} \leq 1$$
+<center>$$\sum_{x \in \mathcal{X}} \frac{1}{B^{\ell(x)}} \leq 1$$</center>
 
 The constraint in this optimization problem ensures that for any set of code word lengths we consider, according to the Kraft-McMillan inequality there will exist such a valid uniquely decodable code!
 
