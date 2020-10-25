@@ -107,15 +107,7 @@ subject to
 
 $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
-To preview where we are going with this, we will show that the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve this optimization problem, which we will denote as $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$, will be such that 
-
-$$\sum_{i=1}^m \ell_i^* p_i = - \sum_{i=1}^m p_i \log p_i$$
-
-where the right-hand side of the above inequality is simply the entropy of $$X$$!  Let's prove this step-by-step.
-
-Before we prove the aforementioned optimization problem, we note that because we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers, this optimization problem is called an [integer program](https://en.wikipedia.org/wiki/Integer_programming), and is therefore challenging to solve due to the disrete nature of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region#:~:text=In%20mathematical%20optimization%2C%20a%20feasible,%2C%20equalities%2C%20and%20integer%20constraints).  
-
-We will thus *relax* this optimization problem by enabling the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number instead of requiring them to be integers. Thus, the optimization problem becomes:
+Before we solve this optimization problem, we note that because we are requiring that $$\ell_1, \ell_2, \dots, \ell_m$$ be integers, this optimization problem is called an [integer program](https://en.wikipedia.org/wiki/Integer_programming), and is therefore challenging to solve due to the disrete nature of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region#:~:text=In%20mathematical%20optimization%2C%20a%20feasible,%2C%20equalities%2C%20and%20integer%20constraints).  We will thus *relax* this optimization problem by enabling the $$\ell_1, \ell_2, \dots, \ell_m$$ values to be any real number instead of requiring them to be integers. Thus, the optimization problem becomes:
 
 $$\underset{\ell_1, \ell_2, \dots, \ell_m \in \mathbb{R}}{\text{min}} \sum_{i=1}^m \ell_i p_i$$
 
@@ -123,9 +115,19 @@ subject to
 
 $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
+You may notice a problem with this relaxation.  What if the solution to this problem has fractional or negative values for any of the $$\ell_1, \ell_2, \dots, \ell_m$$? For now, let's hold this concern aside and come back to it later. For now, let's simply solve this optimization problem and see where it takes us. 
 
 
 
+
+
+
+
+To preview where we are going with this, we will show that the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve this optimization problem, which we will denote as $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$, will be such that 
+
+$$\sum_{i=1}^m \ell_i^* p_i = - \sum_{i=1}^m p_i \log p_i$$
+
+where the right-hand side of the above inequality is simply the entropy of $$X$$. This explicitly says that the best achievable expected code word length is the entropy! 
 
 
 
