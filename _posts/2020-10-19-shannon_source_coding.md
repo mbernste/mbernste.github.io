@@ -98,7 +98,7 @@ subject to
 
 <center>$$\sum_{x \in \mathcal{X}} \frac{1}{B^{\ell(x)}} \leq 1$$</center>
 
-The constraint in this optimization problem ensures that for any set of code word lengths we consider, according to the Kraft-McMillan inequality there will exist such a valid uniquely decodable code!
+The constraint in this optimization problem ensures that for any set of code word lengths we consider, according to the Kraft-McMillan inequality there will exist a valid uniquely decodable code!
 
 To make the notation a bit easier to deal with, let us order the elements of $$\mathcal{X}$$ and let $$x_1, x_2, \dots, x_m$$ denote each element of $$\mathcal{X}$$. Let $$\ell_i := \ell(x_i)$$.  Finally, let $$p_i := P(X = x_i)$$.  Now the optimization problem becomes:
 
