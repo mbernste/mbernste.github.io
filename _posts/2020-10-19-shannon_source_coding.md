@@ -146,7 +146,7 @@ $$\sum_{i=1}^m \frac{1}{B^{\ell_i^*}} = 1$$
 
 So far, we've made a bunch of changes to this optimization problem to make it ever more straightforward to solve. Can we go further?  Let's do a quick change of variables and let 
 
-$$q_i := \frac{1}{B^\ell_i}$$
+$$q_i := \frac{1}{B^{\ell_i}}$$
 
 This then implies that 
 
