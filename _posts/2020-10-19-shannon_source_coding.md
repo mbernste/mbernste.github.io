@@ -83,7 +83,7 @@ To prove the theorem, we will utilize another result (which we will prove in ano
 
 <span style="color:#0060C6">(where $$\mathbb{Z}+$$ is the set of strictly positive integers) such that
 
-<center><span style="color:#0060C6">$$\sum_{x \in \mathcal{X}} \frac{1}{B^{\ell)(x)}} \leq 1$$</span></center>
+<center><span style="color:#0060C6">$$\sum_{x \in \mathcal{X}} \frac{1}{B^{\ell)(x)}} \leq 1$$</center>
   
 <span style="color:#0060C6">then there exists a $$B$$-ary uniquely decodable code $$C$$.
 
