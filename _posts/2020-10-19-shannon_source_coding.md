@@ -79,7 +79,7 @@ To prove the theorem, we will utilize another result (which we will prove in ano
 
 <span style="color:#0060C6">**Theorem 2 (Converse of Kraft-McMillan Inequality):** Given a finite source alphabet $$\mathcal{X} := \{x_1, x_2, \dots, x_m\}$$, an integer $$B$$, and a function $$\ell$$ where
   
-<center><span style="color:#0060C6">$$\ell: \mathcal{X} \rightarrow \mathbb{Z}+$$</span></center>
+<center><span style="color:#0060C6">$$\ell: \mathcal{X} \rightarrow \mathbb{Z}+$$</center>
 
 <span style="color:#0060C6">(where $$\mathbb{Z}+$$ is the set of strictly positive integers) such that
 
