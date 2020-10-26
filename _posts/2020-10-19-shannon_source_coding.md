@@ -142,7 +142,7 @@ $$0 < \ell_i^{**} < \ell_i^* \implies \sum_{i=1}^m \ell_i^{**} p_i <  \sum_{i=1}
 
 Because $$\ell_i^{**}$$ further minimizes the objective function, it must be the case that $$\ell_i^*$$ is not the true solution! Thus, our original assumption that the solution leads to $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} < 1$$ must be wrong!  Indeed, it must be the case that
 
-$$\sum_{i=1}^m \frac{1}{B^{\ell_i}} = 1$$
+$$\sum_{i=1}^m \frac{1}{B^{\ell_i^*}} = 1$$
 
 So far, we've made a bunch of changes to this optimization problem to make it ever more straightforward to solve. Can we go further?  Let's do a quick change of variables and let 
 
