@@ -81,9 +81,9 @@ To prove the theorem, we will utilize another result (which we will prove in ano
   
 <center><span style="color:#0060C6">$$\ell: \mathcal{X} \rightarrow \mathbb{Z}+$$</span></center>
 
-(where $$\mathbb{Z}+$$ is the set of strictly positive integers) such that
+<span style="color:#0060C6">(where $$\mathbb{Z}+$$ is the set of strictly positive integers) such that
 
-<span style="color:#0060C6"><center>$$\sum_{x \in \mathcal{X}} \frac{1}{B^{\ell)(x)}} \leq 1$$</center>
+<center><span style="color:#0060C6">$$\sum_{x \in \mathcal{X}} \frac{1}{B^{\ell)(x)}} \leq 1$$</center>
   
 <span style="color:#0060C6">then there exists a $$B$$-ary uniquely decodable code $$C$$.
 
