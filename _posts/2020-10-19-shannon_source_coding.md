@@ -126,7 +126,7 @@ subject to
 
 $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} = 1$$
 
-To show that this is truly equivalent, we will use a quick proof by contradiction.  Let's let $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ be the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve the optimization problem.  Now, let's assume, for the sake of contradiction, that this solution is such the summation in the constraint is strictly less than one:
+To show that this is truly equivalent, we will use a quick proof by contradiction.  Let's let $$\ell_1^*, \ell_2^*, \dots, \ell_m^*$$ be the values for $$\ell_1, \ell_2, \dots, \ell_m$$ that solve the optimization problem.  Now, let's assume, for the sake of contradiction, that this solution is such that the summation in the constraint is strictly less than one:
 
 $$\sum_{i=1}^m \frac{1}{B^{\ell_i^*}} < 1$$
 
