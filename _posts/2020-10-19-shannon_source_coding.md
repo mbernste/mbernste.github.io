@@ -174,7 +174,7 @@ $$\implies -\frac{p_i}{q_i \log B} + \lambda = 0$$
 
 $$\implies q_i = \frac{p_i}{\lambda \log B}$$
 
-Plugging this result into our other equation $$\sum_{i=1}^m q_i = 1$$, we get 
+Now, with the the equation $$\sum_{i=1}^m q_i = 1$$ and each partial derivative set to zero, we solve for $$q_i$$ and $$\lambda$$. Plugging $$q_i = \frac{p_i}{\lambda \log B}$$ into the equation $$\sum_{i=1}^m q_i = 1$$, we get 
 
 $$\lambda \log B = \sum_{i=1}^m p_i \implies \lambda \log B = 1 \implies \lambda = \frac{1}{\log B}$$
 
