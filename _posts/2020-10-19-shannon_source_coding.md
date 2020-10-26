@@ -63,7 +63,7 @@ For the purposes of our discussion, we will focus only on **uniquely decodable**
 Shannon's Source Coding Theorem
 --------
 
-Shannon's Source Code Theorem that given some categorical distribution $$X$$, the smallest possible *expected code word length* is the entropy of $$X$$, no matter what $$C$$ you choose. That is, 
+Given some categorical distribution $$X$$, Shannon's Source Code Theorem tells us that no matter what $$C$$ you choose, the smallest possible *expected code word length* is the entropy of $$X$$. That is, 
 
 $$E\left[\vert C(X)\vert \right] = \sum_{x \in \mathcal{X}} \vert C(X) \vert P(X = x) \leq - \sum_{x \in \mathcal{X}} P(X = x)\log P(X = x) = H(X)$$  
 
