@@ -177,7 +177,7 @@ Plugging this result into our other equation $$\sum_{i=1}^m q_i = 1$$, we get
 
 $$\lambda \log B = \sum_{i=1}^m p_i$$
 
-$$\implies \lambda \log B = 1 \ \text(because all the probabilities must sum to 1)$$
+$$\implies \lambda \log B = 1 \ \text{because all the probabilities must sum to 1}$$
 
 $$\implies \lambda = \frac{1}{\log B}$$
 
