@@ -171,3 +171,17 @@ $$\frac{\partial}{\partial q_i} \sum_{i=1}^m p_i \log_B \frac{1}{q_i} + \lambda\
 
 $$\implies -\frac{p_i}{q_i \log B} + \lambda = 0$$
 
+$$\implies q_i = \frac{p_i}{\lambda \log B}$$
+
+Plugging this result into our other equation $$\sum_{i=1}^m q_i = 1$$, we get 
+
+$$\lambda \log B = \sum_{i=1}^m p_i$$
+
+$$\implies \lambda \log B = 1 \ \text(because all the probabilities must sum to 1)$$
+
+$$\implies \lambda = \frac{1}{\log B}$$
+
+Finally we plug this back into each $$\implies q_i = \frac{p_i}{\lambda \log B}$$ and see that
+
+$$\forall i, \ p_i = q_i$$
+
