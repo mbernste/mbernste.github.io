@@ -115,7 +115,7 @@ subject to
 
 $$\sum_{i=1}^m \frac{1}{B^{\ell_i}} \leq 1$$
 
-You may notice a problem with this relaxation.  What if the solution to this problem has fractional or negative values for any of the $$\ell_1, \ell_2, \dots, \ell_m$$?  What does it mean to have a negative code word length? Indeed, this is concerning; however, let's hold this concern aside and come back to it later. For now, let's simply solve this optimization problem and see where it takes us. 
+You may notice a problem with this relaxation.  What if the solution to this problem has fractional or negative values for any of the $$\ell_1, \ell_2, \dots, \ell_m$$?  What does it mean to have a negative code word length? Indeed, this is concerning; however, we note that our relaxation has *expanded* the feasible set from only positive integers to *all* real numbers. Thus, if we evaluate the objective function at the solution to this relaxed optimization problem, the value for the objective function will be *at least as small* as the objective function evaluated at the solution to the non-relaxed problem.  Thus, this solution will still lead us to a lower bound for the expected code word length!
 
 Okay, so are goal right now is to solve this relaxed optimization problem.  How do we do it?  We're now going to show that this optimization problem can be re-formulated to an equivalent optimization problem in which the inequality in the constraint becomes an equality:
 
@@ -175,13 +175,20 @@ $$\implies q_i = \frac{p_i}{\lambda \log B}$$
 
 Plugging this result into our other equation $$\sum_{i=1}^m q_i = 1$$, we get 
 
-$$\lambda \log B = \sum_{i=1}^m p_i$$
-
-$$\implies \lambda \log B = 1 \ \text{because all the probabilities must sum to 1}$$
-
-$$\implies \lambda = \frac{1}{\log B}$$
+$$\lambda \log B = \sum_{i=1}^m p_i \implies \lambda \log B = 1 \implies \lambda = \frac{1}{\log B}$$
 
 Finally we plug this back into each $$\implies q_i = \frac{p_i}{\lambda \log B}$$ and see that
 
 $$\forall i, \ p_i = q_i$$
+
+Recall, each $$q_i$$ is a variable that we substituted for $$\frac{1}{B^{\ell_i}$$, which means that our final solution is given by
+
+$$\ell_i^* = \log_B \frac{1}{p_i}$$
+
+Plugging in this solution to the objective function we arrive at our final lower bound on the expected code word length! It is simply
+
+$$\sum_{i=1}^m p_i \log_B \frac{1}{p_i}$$
+
+This is precisely the entropy of $$H(X)$$!
+
 
