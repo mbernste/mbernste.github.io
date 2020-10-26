@@ -16,7 +16,7 @@ So far, we have discussed how, intuitvely, according to Information Theory, "inf
 
 This idea of measuring "surprise" by some number of "symbols" is made concrete by [Shannon's Source Coding Theorem](https://en.wikipedia.org/wiki/Shannon%27s_source_coding_theorem).  Shannon's Source Coding Theorem tells us that if we wish to communicate  samples drawn from some distribution, then on average, we will require at least as many symbols as the [entropy](https://mbernste.github.io/posts/entropy/) of that distribution to unambiguously communicate the samples.  Said differently, the theorem tells us that the entropy provides a lower bound on the amount that we can compress our description of the samples from the distribution before we inevitably lose information ("information" used in the colloquially sense).  
 
-In this post, we will walk through Shannon's theorem. My understanding of this material came, in part, from watching this excellent series of videos by [mathematicalmonk on YouTube](https://www.youtube.com/watch?v=UrefKMSEuAI&t=8s)*. This post attempts to distill much of the information presented in these videos in my own words, keeping only the parts of the explanation necessary to get through the theorem. 
+In this post, we will walk through Shannon's theorem. My understanding of this material came, in part, from watching this excellent series of videos by [mathematicalmonk on YouTube](https://www.youtube.com/watch?v=UrefKMSEuAI&t=8s). This post attempts to distill much of the information presented in these videos in my own words, keeping only the parts of the explanation necessary to get through the theorem. 
 
 Encoding and communicating samples from a distribution
 -----------
