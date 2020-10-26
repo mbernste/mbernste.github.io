@@ -63,7 +63,7 @@ Shannon's Source Coding Theorem
 
 Shannon's Source Code Theorem that given some categorical distribution $$X$$, the smallest possible *expected code word length* is the entropy of $$X$$, no matter what $$C$$ you choose. That is, 
 
-$$E\left[\vert C(X)\vert\right] = \sum_{x \in \mathcal{X}} \vert C(X) \vert P(X = x) \leq = - \sum_{x \in \mathcal{X}) P(X = x)\log P(X = x) = H(X)$$  
+$$E\left[\vert C(X)\vert \right] = \sum_{x \in \mathcal{X}} \vert C(X) \vert P(X = x) \leq - \sum_{x \in \mathcal{X}} P(X = x)\log P(X = x) = H(X)$$  
 
 More formally:
 
@@ -180,7 +180,7 @@ Finally we plug this back into each $$\implies q_i = \frac{p_i}{\lambda \log B}$
 
 $$\forall i, \ p_i = q_i$$
 
-Recall, each $$q_i$$ is a variable that we substituted for $$\frac{1}{B^{\ell_i}$$, which means that our final solution is given by
+Recall, each $$q_i$$ is a variable that we substituted for $$\frac{1}{B^{\ell_i}}$$, which means that our final solution is given by
 
 $$\ell_i^* = \log_B \frac{1}{p_i}$$
 
