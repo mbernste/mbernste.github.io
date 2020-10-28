@@ -190,6 +190,6 @@ Plugging in this solution to the objective function we arrive at our final lower
 
 $$\sum_{i=1}^m p_i \log_B \frac{1}{p_i}$$
 
-This is precisely the entropy of $$H(X)$$!
+This is precisely the entropy of $$X$$!
 
 
