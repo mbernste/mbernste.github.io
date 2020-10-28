@@ -1,5 +1,5 @@
 ---
-title: 'Foundations of information theory: what is information? (part 1)'
+title: 'Foundations of information theory (part 1: what is information?)'
 date: 2020-06-13
 permalink: /posts/self_info/
 tags:
