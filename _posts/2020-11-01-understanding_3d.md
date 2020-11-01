@@ -25,7 +25,7 @@ As a toy example, I will use the concept of Shannon's information entropy, which
 2. As a measure of "uniformness" or "uncertainty" of the distribution.
 3. As the minimal expected number of bits required to communicated samples drawn from the distribution, as discussed in my post discussing [Shannon's Source Coding Theorem](https://mbernste.github.io/posts/sourcecoding/).
 
-Each of these perspectives are akin to a 2D projections:  
+Each of these perspectives are akin to a 2D projection:  
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Entropy3DConcept.png" alt="drawing" width="500"/></center>
 
