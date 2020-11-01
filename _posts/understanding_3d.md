@@ -14,4 +14,8 @@ As a first what does it mean to truly understand something?  In this post, I’l
 
 The analogy is as follows: An abstract, complex concept is akin to an object that resides in three-dimensional space.  True understanding of the concept is to see the object in its 3D space. One only partially understands the concept if they are only able to see the object as two-dimensional projection. One finally fully understands the concept when they are able to make the leap from viewing the object in 2-dimensions to seeing the object in 3-dimensions.  Making this leap is often accompanied by an “aha” moment.
 
-This analogy is well illustrated by the image on the cover of Godel, Escher, Bach by 
+This analogy is well illustrated by the image on the cover of [Gödel, Escher, Bach by Douglas Hofstadter](https://en.wikipedia.org/wiki/Gödel,_Escher,_Bach):
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GodelEscherBachCover.png" alt="drawing" width="500"/></center>
+
+In this cover, the 3D wooden blocks are akin to some abstract concept.  The various 2D projections are various ways that one can approach or view the concept; however, they are inherently incomplete.  True understanding of the concept is akin to seeing the wooden blocks as they are and to be able to manipulate the wooden blocks in your mind.
