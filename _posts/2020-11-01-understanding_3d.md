@@ -29,7 +29,7 @@ Each of these perspectives are akin to a 2D projections.  Each 2D projection (i.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Entropy3DConcept.png" alt="drawing" width="500"/></center>
 
-When teaching a concept such as this one, it often must be approached through 2D projections first.  Jumping straight to the 3D object is often too challenging. However, through explaining and exploring multiple 2D projections of the concept, the student will begin to construct the 3D object in the mind. When self-learning, I take this same approach; I first try to grasp the various 2D projections. However I am not satisfied I truly undersatnd the concept until those 2D projections begin to integrate into a 3D object.  Once I am able to manipulate that 3D object at will (i.e., rotate it and form new 2D projections onto new hyperplanes), then I know that really grasp the concept.
+When teaching a concept such as this one, it often must be approached through 2D projections first.  Jumping straight to the 3D object is often too challenging. However, through explaining and exploring multiple 2D projections of the concept, the student will begin to construct the 3D object in their mind. When self-learning, I take this same approach; I first try to grasp the various 2D projections. However I am not satisfied I truly undersatnd the concept until those 2D projections begin to integrate into a 3D object.  Once I am able to manipulate that 3D object at will (i.e., rotate it and form new 2D projections onto new hyperplanes), then I know that really grasp the concept.
 
 
 
