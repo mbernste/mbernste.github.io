@@ -30,6 +30,10 @@ As a toy example, I will use the concept of Shannon's information entropy, which
 
 Each of these perspectives are akin to a 2D projections.  Each 2D projection (i.e, perspective) is incomplete.  Truly understanding the concept of entropy is to intuit how all of these perspectives are really just projections of some "higher dimensional" concept that integrates all of these ideas. 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Entropy3DConcept.png" alt="drawing" width="500"/></center>
+
+
+
 
 
 
