@@ -6,7 +6,7 @@ tags:
   - education
   - insight
 ---
-*In this post, I will discuss an analogy that I find useful for thinking about what it means to "understand" something. Specifically, the analogy is that true understanding of a concept is akin to "seeing" the concept in its native 3D space, whereas partial understanding is merely seeing a 2D projection of that inherently 3D concept.*
+*In this post, I will discuss an analogy that I find useful for thinking about what it means to "understand" something: True understanding of a concept is akin to "seeing" the concept in its native 3D space, whereas partial understanding is merely seeing a 2D projection of that inherently 3D concept.*
 
 One of the most important and, in my opinion, overlooked skill sets in academics is that of understanding the state of one’s own knowledge.  That is, to understand what you really truly know versus what you only partially know. Without this skill, it is difficult to address gaps in your understanding. 
 
