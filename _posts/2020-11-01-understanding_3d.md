@@ -21,7 +21,7 @@ This analogy is well illustrated by the image on the cover of [Gödel, Escher, B
 In this image, the 3D wooden blocks ares the abstract concept.  The various 2D projections are various ways that one can approach or view the concept; however, they are inherently incomplete.  True understanding of the concept is akin to seeing the wooden blocks as they are, and being able to mentally manipulate the 3D wooden blocks.
 
 As a toy example, I will use the concept of Shannon's information entropy, which I have discussed in a [previous blog post](https://mbernste.github.io/posts/entropy/).  As I discussed in that post, there are multiple ways to view the concept of information entropy of a [categorical distribution](https://en.wikipedia.org/wiki/Categorical_distribution):
-1. As the expected [self-information] over all of the possible events that may occur when sampling from the distribution.
+1. As the expected [self-information](https://mbernste.github.io/posts/self_info/) over all of the possible events that may occur when sampling from the distribution.
 2. As a measure of "uniformness" or "uncertainty" of the distribution.
 3. As the minimal expected number of bits required to communicated samples drawn from the distribution, as discussed in my post discussing [Shannon's Source Coding Theorem](https://mbernste.github.io/posts/sourcecoding/).
 
