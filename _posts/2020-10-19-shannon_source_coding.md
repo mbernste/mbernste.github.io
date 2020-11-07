@@ -178,7 +178,7 @@ Now, with the the equation $$\sum_{i=1}^m q_i = 1$$ and each partial derivative 
 
 $$\lambda \log B = \sum_{i=1}^m p_i \implies \lambda \log B = 1 \implies \lambda = \frac{1}{\log B}$$
 
-Finally we plug this back into each $$\implies q_i = \frac{p_i}{\lambda \log B}$$ and see that
+Finally we plug this back into each $$q_i = \frac{p_i}{\lambda \log B}$$ and see that
 
 $$\forall i, \ p_i = q_i$$
 
