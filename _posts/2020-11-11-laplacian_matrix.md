@@ -44,7 +44,7 @@ $$\Delta f(\boldsymbol{x}) := \text{\nabla} \cdot \nabla f(\boldsymbol{x})$$
 
 That is, the Laplacian of $$f$$ is the [divergence](https://en.wikipedia.org/wiki/Divergence) of $$f$$'s [gradient](https://en.wikipedia.org/wiki/Gradient).  
 
-Okay, let's break this down. First, let's discuss the gradient. The gradient of a multivariate function $$\nabla f$$ returns a vector field where each vector at each point $$\bold{x}$$, denoted $$\nabla f(\bold{x})$$, points in the direction of $$f$$'s steepest ascent.  This is depicted in the figure below:
+Okay, let's break this down. First, let's discuss the gradient. The gradient of a multivariate function $$\nabla f$$ returns a vector field where each vector at each point $$\bold{x}$$, denoted $$\nabla f(\bold{x})$$, points in the direction of $$f$$'s steepest ascent. Moreover, the magnitude of the gradient vector at point $$x$$ describes how steeply the function changes at $$x$$.  That is, the steeper the function, the larger the gradient vector. This is depicted in the figure below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GradientOperator.png" alt="drawing" width="500"/></center>
 
