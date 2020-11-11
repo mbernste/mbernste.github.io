@@ -53,7 +53,7 @@ One important point to keep in mind is that the gradient is an operator that tak
 
 Now let's discuss divergence.  In contrast to the gradient, the divergence operator takes as input a vector field and produces a multivariate function.  More specifically, the divergence at some point $$x$$ within a vector field intuitively describes how much "flow" is coming into and out of $$x$$ where the flow is described by the vectors in the vector field surrounding $$x$$.
 
-For example, in the following figure we three scenarios of a point $$x$$ within a vector field.  In the left-hand figure, intuitively you can see that there is more "flow" coming out of the point than into the point. The divergence at this point $$x$$ is positive because flow is "diverging" away from $$x$$.  In the center figure, there is more "flow" into $$x$$ than going away from $$x$$ and thus, the divergence at this point is negative.  Finally, in the right-hand figure, there is an equal amount of flow going into and out of $$x$$ and thus, the divergence at this point is zero. 
+For example, in the following figure we depict three scenarios of a point $$x$$ within a vector field.  In the left-hand figure, there is more "flow" coming out of the point than into the point. The divergence at this point $$x$$ is positive because flow is "diverging" away from $$x$$.  In the center figure, there is more "flow" into $$x$$ than going away from $$x$$ and thus, the divergence at this point is negative.  Finally, in the right-hand figure, there is an equal amount of flow going into and out of $$x$$ and thus, the divergence at this point is zero. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DivergenceAtPoint.png" alt="drawing" width="500"/></center>
 
@@ -66,6 +66,8 @@ Intuitively, what does the Laplacian describe?  Well, following our understandin
 Said differently, the Laplacian tells us, in some sense, how close we are to a local maximum/minimum. It's the analogue to the second derivative for a continuous, single-variate function!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianExample.png" alt="drawing" width="500"/></center>
+
+We will save a rigorous definition for the gradient, divergence, and laplacian for another blog post. In the meantime, this high-level intuition will be enough to understand the core ideas behind the graph Laplacian.
 
 Constructing a Laplacian for graphs
 --------------
