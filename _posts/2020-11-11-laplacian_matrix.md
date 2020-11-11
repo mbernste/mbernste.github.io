@@ -19,11 +19,13 @@ In my introductory machine learning course in graduate school, I was introduced 
 
 The first step of spectral is to compute the K-nearest neighbors graph of your data points and then compute the **graph Laplacian matrix**.  Given the graph's adjacency matrix $$A$$, where 
 
-$$A_{i,j} :=  $$
+$$A_{i,j} := \begin{cases} 1,& \text{if there is an edge between $$i$$ and $$j$$} \\ 0, & \text{otherwise}\end{cases}$$
 
 and degree matrix $$D$$, where
 
-$$D_{i,j} := $$ the Laplacian matrix is defined as 
+$$D_{i,j} := $$ 
+
+the Laplacian matrix is defined as 
 
 $$L := D - A$$
 
