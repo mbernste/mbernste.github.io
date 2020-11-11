@@ -61,11 +61,11 @@ Finally, we come back to the Laplacian.  Given a continuous, multivariate functi
 
 In the figure below, we have a 2-variate function $$f$$ (top), with its gradient vector field depicted in the bottom left.  As you can see, the vectors point in the direction where $$f$$ is increasingly most steeply at any given point.
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianExample.png" alt="drawing" width="500"/></center>
+
 Intuitively, what does the Laplacian describe?  Well, following our understanding that $$f$$'s gradient provides vectors that point in $$f$$'s direction of steepest ascent with magnitude proportional to its steepness, we see that the "flow" at any point in this vector field will correspond to how much the gradient vectors of $$f$$ are changing. If the steepness at some point is not changing -- that is, we're at a steady incline or a steady decline -- then the divergence of the vectors in that regime will be zero.  That is, the Laplacian will be zero.  On the other hand, if at some point the gradients are shrinking or growing -- that is, because we're close to a local maximum/minimum -- then the divergence (i.e. Laplacian) will be either large or small (large if we're approaching a minimum and small if we're approaching a maximum).
 
 Said differently, the Laplacian tells us, in some sense, how close we are to a local maximum/minimum. It's the analogue to the second derivative for a continuous, single-variate function!
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianExample.png" alt="drawing" width="500"/></center>
 
 We will save a rigorous definition for the gradient, divergence, and laplacian for another blog post. In the meantime, this high-level intuition will hopefully be sufficient for understanding the core ideas behind the graph Laplacian.
 
