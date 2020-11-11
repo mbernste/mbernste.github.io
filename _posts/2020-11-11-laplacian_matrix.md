@@ -1,6 +1,6 @@
 ---
 title: 'The graph Laplacian'
-date: 2020-11-01
+date: 2020-11-11
 permalink: /posts/laplacian_matrix/
 tags:
   - tutorial
