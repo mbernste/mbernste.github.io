@@ -28,7 +28,7 @@ the Laplacian matrix is defined as
 
 $$L := D - A$$
 
-This definition is super simple, but it describes something quite deep: it's the discrete analogue to the Laplacian operator on multivariate continuous functions.  In the remainder of the post, we will demonstrate why this is.
+This definition is super simple, but it describes something quite deep: it's the discrete analogue to the Laplacian operator on multivariate continuous functions.  In the remainder of this post we will demonstrate why this is.
 
 Review of the Laplacian for continuous multivariate functions
 --------------
