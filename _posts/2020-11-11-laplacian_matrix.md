@@ -17,18 +17,18 @@ Introduction
 
 At the heart of of a number of important machine learning algorithms, such as [spectral clustering](https://en.wikipedia.org/wiki/Spectral_clustering), lies a matrix called the graph Laplacian.  In fact, the first step in spectral clustering is to compute the Laplacian matrix of the data's k-nearest neighbors graph (to be discussed in some future blog post).  The Laplacian matrix is defined as follows: Given a graph's adjacency matrix $$A$$, where 
 
-$$A_{i,j} := \begin{cases} 1,& \text{if there is an edge between} i \text{and} j \\ 0, & \text{otherwise}\end{cases}$$
-
-$$A_{i,j} := \begin{cases} 1,& 1 \\ 0, & 0\end{cases}$$
+$$A_{i,j} := \begin{cases} 1,& \text{if there is an edge between} \ i \ \text{and} \ j \\ 0, & \text{otherwise}\end{cases}$$
 
 
 and degree matrix $$D$$, where
 
-$$D_{i,j} := $$ 
+$$D_{i,j} :=  \begin{cases} \text{degree}(i),& \text{if} \ i = j \\ 0, & \text{otherwise}\end{cases} $$ 
 
 the Laplacian matrix is defined as 
 
 $$L := D - A$$
+
+This definition is super simple, but it describes something quite deep: it's the discrete analogue to the Laplacian operator on multivariate continuous functions.  In the remainder of the post, we will demonstrate why this is.
 
 Review of the Laplacian for continuous multivariate functions
 --------------
