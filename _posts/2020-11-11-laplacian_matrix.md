@@ -67,7 +67,7 @@ Said differently, the Laplacian tells us, in some sense, how close we are to a l
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianExample.png" alt="drawing" width="500"/></center>
 
-We will save a rigorous definition for the gradient, divergence, and laplacian for another blog post. In the meantime, this high-level intuition will be enough to understand the core ideas behind the graph Laplacian.
+We will save a rigorous definition for the gradient, divergence, and laplacian for another blog post. In the meantime, this high-level intuition will hopefully be sufficient for understanding the core ideas behind the graph Laplacian.
 
 Constructing a Laplacian for graphs
 --------------
