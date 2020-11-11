@@ -84,5 +84,5 @@ If we order the vertices in the graph, $$v_1, v_2, \dots, v_m$$, then we can rep
 
 $$\boldsymbol{f} := [f(v_1), f(v_2), \dots, f(v_m)]$$
 
-Now for the gradient. This one is a bit more involved. 
+Now for the gradient. This one is a bit more involved. Intuitively, the gradient of a function tells us how much and in what direction a function is changing. Unlike a multivariate, real-valued function, for a graph function there is not really a notion of "steepest ascent" because a graph function does not represent a surface in the same sense that a continuous real-valued function does.  
 
