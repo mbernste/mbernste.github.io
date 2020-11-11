@@ -71,3 +71,18 @@ We will save a rigorous definition for the gradient, divergence, and laplacian f
 
 Constructing a Laplacian for graphs
 --------------
+
+The Laplacian matrix $$L$$ for a graph captures the same idea as the Laplacian for continuous, multivariate functions. To see how this is, we will need to construct all of the analogous components for graphs that we used to construct the Laplacian for continuous, multivariate functions. Specifically, we need to define points, functions, gradients, and divergences. 
+
+Let's start with points.  This one is easy. Each vertex $$v \in V$$ in our graph will be the analogue to a point $$\bold{x} \in \mathbb{R}^n$$ in a Euclidean space.  
+
+Now let's talk about functions. Again, this one is easy. We can define a function on the graph $$f$$ as simply a mapping from each vertex/point to a real number:
+
+$$f: V \rightarrow \mathbb{R}$$
+
+If we order the vertices in the graph, $$v_1, v_2, \dots, v_m$$, then we can represent the function as a vector:
+
+$$\boldsymbol{f} := [f(v_1), f(v_2), \dots, f(v_m)]$$
+
+Now for the gradient. This one is a bit more involved. 
+
