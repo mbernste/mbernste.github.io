@@ -40,11 +40,11 @@ $$f: \mathbb{R}^n \rightarrow \mathbb{R}$$
 
 the Laplacian of $$f$$ is defined as
 
-$$\Delta f(\boldsymbol{x}) := \text{\nabla} \cdot \nabla f(\boldsymbol{x})$$
+$$\Delta f(\boldsymbol{x}) := \nabla \cdot \nabla f(\boldsymbol{x})$$
 
 That is, the Laplacian of $$f$$ is the [divergence](https://en.wikipedia.org/wiki/Divergence) of $$f$$'s [gradient](https://en.wikipedia.org/wiki/Gradient).  
 
-Okay, let's break this down. First, let's discuss the gradient. The gradient of a multivariate function $$\nabla f$$ returns a vector field where each vector at each point $$\bold{x}$$, denoted $$\nabla f(\bold{x})$$, points in the direction of $$f$$'s steepest ascent. Moreover, the magnitude of the gradient vector at point $$x$$ describes how steeply the function changes at $$x$$.  That is, the steeper the function, the larger the gradient vector. This is depicted in the figure below:
+Okay, let's break this down. First, let's discuss the gradient. The gradient of a multivariate function $$\nabla f$$ returns a vector field where each vector at each point $$\boldsymbol{x}$$, denoted $$\nabla f(\boldsymbol{x})$$, points in the direction of $$f$$'s steepest ascent. Moreover, the magnitude of the gradient vector at point $$x$$ describes how steeply the function changes at $$\boldsymbol{x}$$.  That is, the steeper the function, the larger the gradient vector. This is depicted in the figure below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GradientOperator.png" alt="drawing" width="500"/></center>
 
@@ -53,7 +53,7 @@ One important point to keep in mind is that the gradient is an operator that tak
 
 Now let's discuss divergence.  In contrast to the gradient, the divergence operator takes as input a vector field and produces a multivariate function.  More specifically, the divergence at some point $$x$$ within a vector field intuitively describes how much "flow" is coming into and out of $$x$$ where the flow is described by the vectors in the vector field surrounding $$x$$.
 
-For example, in the following figure we depict three scenarios of a point $$x$$ within a vector field.  In the left-hand figure, there is more "flow" coming out of the point than into the point. The divergence at this point $$x$$ is positive because flow is "diverging" away from $$x$$.  In the center figure, there is more "flow" into $$x$$ than going away from $$x$$ and thus, the divergence at this point is negative.  Finally, in the right-hand figure, there is an equal amount of flow going into and out of $$x$$ and thus, the divergence at this point is zero. 
+For example, in the following figure we depict three scenarios of a point $$\boldsymbol{x}$$ within a vector field.  In the left-hand figure, there is more "flow" coming out of the point than into the point. The divergence at this point $$\boldsymbol{x}$$ is positive because flow is "diverging" away from $$\boldsymbol{x}$$.  In the center figure, there is more "flow" into $$\boldsymbol{x}$$ than going away from $$\boldsymbol{x}$$ and thus, the divergence at this point is negative.  Finally, in the right-hand figure, there is an equal amount of flow going into and out of $$\boldsymbol{x}$$ and thus, the divergence at this point is zero. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DivergenceAtPoint.png" alt="drawing" width="500"/></center>
 
