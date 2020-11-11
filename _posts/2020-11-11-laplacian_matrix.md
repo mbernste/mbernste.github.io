@@ -55,6 +55,8 @@ Now let's discuss divergence.  In contrast to the gradient, the divergence opera
 
 For example, in the following figure we three scenarios of a point $$x$$ within a vector field.  In the left-hand figure, intuitively you can see that there is more "flow" coming out of the point than into the point. The divergence at this point $$x$$ is positive because flow is "diverging" away from $$x$$.  In the center figure, there is more "flow" into $$x$$ than going away from $$x$$ and thus, the divergence at this point is negative.  Finally, in the right-hand figure, there is an equal amount of flow going into and out of $$x$$ and thus, the divergence at this point is zero. 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DivergenceAtPoint.png" alt="drawing" width="500"/></center>
+
 In the figure below, we have a 2-variate function $$f$$ (top), with its gradient vector field depicted in the bottom left.  As you can see, the vectors point in the direction where $$f$$ is increasingly most steeply at any given point.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianExample.png" alt="drawing" width="500"/></center>
