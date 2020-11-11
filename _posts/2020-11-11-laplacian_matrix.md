@@ -1,5 +1,5 @@
 ---
-title: 'The Graph Laplacian'
+title: 'The graph Laplacian'
 date: 2020-11-01
 permalink: /posts/laplacian_matrix/
 tags:
