@@ -72,7 +72,7 @@ We will save a rigorous definition for the gradient, divergence, and laplacian f
 Constructing a Laplacian for graphs
 --------------
 
-The Laplacian matrix $$L$$ for a graph $$G := (V, E)$$ captures the same idea as the Laplacian for continuous, multivariate functions. To see how this is, we will need to construct all of the analogous components for graphs that are required to construct the Laplacian for continuous, multivariate functions. Specifically, we need to define graph analogs for points, functions, gradients, and divergences. For the remainder of this blog post, we'll use the following graph as an illustration.  
+The Laplacian matrix $$L$$ for a graph $$G := (V, E)$$ captures the same idea as the Laplacian for continuous, multivariate functions. To see how this is, we will need to construct all of the analogous components for graphs that are required to construct the Laplacian for continuous, multivariate functions. Specifically, we need to define graph analogs for points, functions, gradients, and divergences. For the remainder of this blog post, we'll use the following graph as an illustration:  
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianPointsAnalog.png" alt="drawing" width="200"/></center>
 
