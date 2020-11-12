@@ -119,7 +119,7 @@ Given our example graph, the incidence matrix would be (we highlight one edge in
 
 Then, given a graph function $$\boldsymbol{g}$$, we compute the "gradient" as 
 
-$$\boldsymbol{g} = K\boldsymbol{f}$$
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientCalculation.png" alt="drawing" width="400"/></center>
 
 **Divergence**
 
