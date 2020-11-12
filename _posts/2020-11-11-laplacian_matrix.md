@@ -108,3 +108,4 @@ $$\boldsymbol{g} := \begin{bmatrix}g(e_1) & g(e_2) & \dots & g(e_{\vert E\vert})
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientAnalog.png" alt="drawing" width="200"/></center>
 
 
+
