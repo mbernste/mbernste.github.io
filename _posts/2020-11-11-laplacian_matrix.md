@@ -101,11 +101,13 @@ Intuitively, the gradient of a function tells us how much and in what direction 
 
 $$g(e_k) := f(v_i) - f(v_j)$$
 
+A depiction of these "edge gradients" are depicted below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientAnalog.png" alt="drawing" width="400"/></center>
+
 Note, the ordering of vertices tells us which vertex's function value is subtracted from the other.  For an undirected, simple graph, this order is arbitrary.  Now, if we order all of the edges in the graph, we can represent the gradient as a vector:
 
 $$\boldsymbol{g} := \begin{bmatrix}g(e_1) & g(e_2) & \dots & g(e_{\vert E\vert})\end{bmatrix}$$
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientAnalog.png" alt="drawing" width="400"/></center>
 
 
 
