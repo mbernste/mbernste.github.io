@@ -160,4 +160,4 @@ $$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0
 
 $$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}f(A) \\ f(B) \\ f(C) \\ f(D)\end{bmatrix} = \begin{bmatrix}f(A)-f(B) \\ f(A) - f(C) \\ f(B) - f(C) \\ f(A) - f(D)\end{bmatrix}$$
 
-$$\begin{bmatrix}1 & 1 & 0 1 \\ -1 & 0 & 1 0 \\ 0 & -1 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}g(e_1) \\ g(e_2) \\ g(e_3) \\ g(e_4)\end{bmatrix} = \begin{bmatrix}g(e_1)+g(e_2)+g(e_4) \\ g(e_1) + g(e_3) \\ g(e_2) + g(e_3) \\ g(e_4)\end{bmatrix}$$
+$$\begin{bmatrix}1 & 1 & 0 & 1 \\ -1 & 0 & 1 & 0 \\ 0 & -1 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}g(e_1) \\ g(e_2) \\ g(e_3) \\ g(e_4)\end{bmatrix} = \begin{bmatrix}g(e_1)+g(e_2)+g(e_4) \\ g(e_1) + g(e_3) \\ g(e_2) + g(e_3) \\ g(e_4)\end{bmatrix}$$
