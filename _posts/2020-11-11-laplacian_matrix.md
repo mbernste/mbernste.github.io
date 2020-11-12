@@ -115,7 +115,7 @@ $$K_{i,j} := \begin{cases} 1,& \text{if} \ i == k \ \text{and} \ i > h \\ 1,& \t
 
 Given our example graph, the incidence matrix would be (we highlight one edge in red and its corresponding entries in the matrix):
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/IncidenceMatrix.png" alt="drawing" width="300"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/IncidenceMatrix.png" alt="drawing" width="600"/></center>
 
 Then, given a graph function $$\boldsymbol{g}$$, we compute the "gradient" as 
 
