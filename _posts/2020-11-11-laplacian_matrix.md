@@ -105,7 +105,7 @@ Note, the ordering of vertices tells us which vertex's function value is subtrac
 
 $$\boldsymbol{g} := \begin{bmatrix}g(e_1) & g(e_2) & \dots & g(e_{\vert E\vert})\end{bmatrix}$$
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientAnalog.png" alt="drawing" width="200"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientAnalog.png" alt="drawing" width="400"/></center>
 
 
 
