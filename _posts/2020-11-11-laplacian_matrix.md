@@ -125,15 +125,31 @@ Then, given a graph function $$\boldsymbol{g}$$, we compute the "gradient" as
 
 Finally, how should we think about a divergence analog for graphs?  Recall that divergence on continuous, multivariate real-valued functions measures the amount of "flow" coming into and out of each point where the flow is determined by the vectors surrounding each point. Since, our analog for points are vertices, and our analog for vectors around each point are simply the edges adjacent to each vertex, it follows that we can calculate the divergence by simply summing the edge values around each vertex. 
 
-For our example graph, let's say we have edge assignments given by
+For our example graph, if we have edge assignments given by $$g(e_1), g(e_2), g(e_3)$$ and  $$g(e_4)$$, then the divergence at node A should simply be the sum of the edge values adjacent to A:
 
-$$\boldsymbol{g} := \begin{bmatrix}2 & 1 & 1 -1\end{bmatrix}$$
+$$\text{divergence}(A) = g(e_1) + g(e_2) + g(e_4)$$
 
-Then, the divergence at node A should simply be the sum of the edge values adjacent to A:
+What matrix will perform this summation?  Precisely the transpose of the incidence matrix $$K^T$$!
 
-$$\text{divergence}(A) = 2 + 1 - 1 = 2$$
 
-What matrix will perform this summation?  Precisely the transpose of the incidence matrix!  
+
+
+Now, putting it all together, the Laplacian on a graph is, like the Laplacian for real-valued functions simply the divergence of the gradient of $$f$$:
+
+$$L := K^TK\boldsymbol{f}$$
+
+The Laplacian operator (i.e. Laplacian matrix) is simply $$K^TK$$. If we inspect $$K^TK$$ more closely we will see that 
+
+$$K^TK = D - A$$
+
+Why is this case? Recall that for matrix multiplication, we can compute element $$i,j$$ of the resultant matrix by taking the dot product of the $$i$$th row of the first matrix with the $$j$$th column of the second. With this in mind, let's look at what the diagonal entries of $$K^TK$$ wuold be.  That is, what would be element $$i,i$$ of $$K^TK$$?  Well, we would simply take the dot product of the $$i$$th row with itself:
+
+Notice that each value of $$-1$$ is multiplied with another $$-1$$ and each $$1$$ is multiplied with a $$1$$.  Taking the final summation, this simply becomes the degree of vertex $$i$$. Thus, the diagonal elements of $$K^T$$ are simply the degrees of each vertex.
+
+What happens when we compute an off-diagonal entry of $$K^TK$$?  That is, what would be entry $$i,j$$ of $$K^TK$$ (where $$i \neq j$$)?  This would be taking the dot product of the $$i$$th row with the $$j$$th row:
+ 
+
+
 
 
 
@@ -144,3 +160,4 @@ $$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0
 
 $$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}f(A) \\ f(B) \\ f(C) \\ f(D)\end{bmatrix} = \begin{bmatrix}f(A)-f(B) \\ f(A) - f(C) \\ f(B) - f(C) \\ f(A) - f(D)\end{bmatrix}$$
 
+$$\begin{bmatrix}1 & 1 & 0 1 \\ -1 & 0 & 1 0 \\ 0 & -1 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}g(e_1) \\ g(e_2) \\ g(e_3) \\ g(e_4)\end{bmatrix} = \begin{bmatrix}g(e_1)+g(e_2)+g(e_4) \\ g(e_1) + g(e_3) \\ g(e_2) + g(e_3) \\ g(e_4)\end{bmatrix}$$
