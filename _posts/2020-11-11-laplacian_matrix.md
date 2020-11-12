@@ -101,13 +101,19 @@ Intuitively, the gradient of a function tells us how much and in what direction 
 
 $$g(e_k) := f(v_i) - f(v_j)$$
 
-A depiction of these "edge gradients" are depicted below:
+These "edge gradients" are depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientAnalog.png" alt="drawing" width="400"/></center>
 
 Note, the ordering of vertices tells us which vertex's function value is subtracted from the other.  For an undirected, simple graph, this order is arbitrary.  Now, if we order all of the edges in the graph, we can represent the gradient as a vector:
 
 $$\boldsymbol{g} := \begin{bmatrix}g(e_1) & g(e_2) & \dots & g(e_{\vert E\vert})\end{bmatrix}$$
+
+Now, a natural question becomes: given a graph-function $$\boldsymbol{f}$$, how do we construct a matrix operator on $$\boldsymbol{f}$$ that returns $$\boldsymbol{g}$$ as described above?  The answer is the **Incidence matrix** $$K \in \{0, 1, -1\}^{\vert V \times E \vert}$$ where the rows of $$K$$ correspond to the sorted vertices and the columns correspond to the sorted edges.  For vertex $$v_i$$ and edge $$e_j := (v_k, v_h)$$, the entry $$K_{i,j}$$ is defined as
+
+$$K_{i,j} := \begin{cases} 1,& \text{if} \ $$i == k$$ and $$i > h$$ \\ -1, \text{if} \ $$i == k$$ and $$i < h$$ \\ 0, & \text{otherwise}\end{cases}$$
+
+Given our example graph, the incidence matrix would be:
 
 
 
