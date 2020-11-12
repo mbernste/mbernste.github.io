@@ -122,6 +122,7 @@ Then, we compute the "gradient" as
 $$\boldsymbol{g} = K\boldsymbol{f}$$
 
 For example, if 
+
 $$\boldsymbol{f} := \begin{bmatrix}0 \\ 3 \\ 1 \\ 0\end{bmatrix}$$
 
 then
