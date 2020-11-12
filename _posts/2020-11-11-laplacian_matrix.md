@@ -123,7 +123,24 @@ $$\boldsymbol{g} = K\boldsymbol{f}$$
 
 **Divergence**
 
+Finally, how should we think about a divergence analog for graphs?  Recall that divergence on continuous, multivariate real-valued functions measures the amount of "flow" coming into and out of each point where the flow is determined by the vectors surrounding each point. Since, our analog for points are vertices, and our analog for vectors around each point are simply the edges adjacent to each vertex, it follows that we can calculate the divergence by simply summing the edge values around each vertex. 
+
+For our example graph, let's say we have edge assignments given by
+
+$$\boldsymbol{g} := \begin{bmatrix}2 & 1 & 1 -1\end{bmatrix}$$
+
+Then, the divergence at node A should simply be the sum of the edge values adjacent to A:
+
+$$\text{divergence}(A) = 2 + 1 - 1 = 2$$
+
+What matrix will perform this summation?  Precisely the transpose of the incidence matrix!  
 
 
 
+First, as we saw with the gradient, it is natural to represent a "vector field" on a graph as simply an assignment of values to each edge.  Thus, a divergence operator should intuitively operate on edge assignments.  Furthermore, r
+
+
+$$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 -1 \end{bmatrix}$$
+
+$$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 -1 \end{bmatrix}\begin{bmatrix}3 \\ 1 \\ 0 \\ 3\end{bmatrix}$$
 
