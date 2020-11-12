@@ -125,7 +125,7 @@ Then, given a graph function $$\boldsymbol{g}$$, we compute the "gradient" as
 
 Finally, how should we think about a divergence analog for graphs?  Recall that divergence on continuous, multivariate real-valued functions measures the amount of "flow" coming into and out of each point where the flow is determined by the vectors surrounding each point. Since, our analog for points are vertices, and our analog for vectors around each point are simply the edges adjacent to each vertex, it follows that we can calculate the divergence by simply summing the edge values around each vertex. 
 
-For our example graph, if we have edge assignments given by $$g(e_1), g(e_2), g(e_3)$$ and  $$g(e_4)$$, then the divergence at node A should simply be the sum of the edge values adjacent to A:
+For our example graph, if we have edge assignments given by $$g(e_1), g(e_2), g(e_3)$$ and  $$g(e_4)$$, then the divergence at node A should simply be the sum of the edge values adjacent to A where each edge value is multiplied by $$-1$$ if the flow is flows "into" A. In the case of node A, all edges flow outward and thus
 
 $$\text{divergence}(A) = g(e_1) + g(e_2) + g(e_4)$$
 
@@ -160,4 +160,4 @@ $$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0
 
 $$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}f(A) \\ f(B) \\ f(C) \\ f(D)\end{bmatrix} = \begin{bmatrix}f(A)-f(B) \\ f(A) - f(C) \\ f(B) - f(C) \\ f(A) - f(D)\end{bmatrix}$$
 
-$$\begin{bmatrix}1 & 1 & 0 & 1 \\ -1 & 0 & 1 & 0 \\ 0 & -1 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}g(e_1) \\ g(e_2) \\ g(e_3) \\ g(e_4)\end{bmatrix} = \begin{bmatrix}g(e_1)+g(e_2)+g(e_4) \\ g(e_1) + g(e_3) \\ g(e_2) + g(e_3) \\ g(e_4)\end{bmatrix}$$
+$$\begin{bmatrix}1 & 1 & 0 & 1 \\ -1 & 0 & 1 & 0 \\ 0 & -1 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}g(e_1) \\ g(e_2) \\ g(e_3) \\ g(e_4)\end{bmatrix} = \begin{bmatrix}g(e_1)+g(e_2)+g(e_4) \\ -g(e_1) + g(e_3) \\ -g(e_2) - g(e_3) \\ -g(e_4)\end{bmatrix}$$
