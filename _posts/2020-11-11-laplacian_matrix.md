@@ -90,6 +90,7 @@ For example, in our example graph, such a function can be visualized as follows:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianFunctionAnalog.png" alt="drawing" width="200"/></center>
 
+
 If we order the vertices in the graph, $$v_1, v_2, \dots, v_m$$, then we can represent the function as a vector:
 
 $$\boldsymbol{f} := \begin{bmatrix}f(v_1) & f(v_2) & \dots & f(v_{\vert V \vert})\end{bmatrix}$$
