@@ -142,5 +142,5 @@ First, as we saw with the gradient, it is natural to represent a "vector field" 
 
 $$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 & -1 \end{bmatrix}$$
 
-$$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}3 \\ 1 \\ 0 \\ 3\end{bmatrix}$$
+$$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}f(A) \\ f(B) \\ f(C) \\ f(D)\end{bmatrix} = \begin{bmatrix}f(A)-f(B) \\ f(A) - f(C) \\ f(B) - f(C) \\ f(A) - f(D)\end{bmatrix}$$
 
