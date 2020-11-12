@@ -115,17 +115,17 @@ $$K_{i,j} := \begin{cases} 1,& \text{if} \ i == k \ \text{and} \ i > h \\ 1,& \t
 
 Given our example graph, the incidence matrix would be:
 
-$$K = \begin{bmatrix}1 & 1 & 0 & -1\\ 0 & -1 & 1 & 0 \\ 0 & 0 & -1 & 1 \\ -1 & 0 & 0 & 0{bmatrix}$$
+$$K = \begin{bmatrix}1 & 1 & 0 & -1\\ 0 & -1 & 1 & 0 \\ 0 & 0 & -1 & 1 \\ -1 & 0 & 0 & 0\end{bmatrix}$$
 
 Then, we compute the "gradient" as 
 
 $$\boldsymbol{g} = K\boldsymbol{f}$$
 
 For example, if 
-$$\boldsymbol{f} := \begin{bmatrix}[0 \\ 3 \\ 1 \\ 0]\end{bmatrix}$$
+$$\boldsymbol{f} := \begin{bmatrix}0 \\ 3 \\ 1 \\ 0\end{bmatrix}$$
 
 then
 
-$$\boldsymbol{g} = = \begin{bmatrix}1 & 1 & 0 & -1\\ 0 & -1 & 1 & 0 \\ 0 & 0 & -1 & 1 \\ -1 & 0 & 0 & 0{bmatrix}\begin{bmatrix}[0 \\ 3 \\ 1 \\ 0]$$
+$$\boldsymbol{g} = = \begin{bmatrix}1 & 1 & 0 & -1 \\ 0 & -1 & 1 & 0 \\ 0 & 0 & -1 & 1 \\ -1 & 0 & 0 & 0\end{bmatrix}\begin{bmatrix}0 \\ 3 \\ 1 \\ 0\end{bmatrix}$$
 
 
