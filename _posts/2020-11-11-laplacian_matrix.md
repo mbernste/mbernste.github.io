@@ -72,11 +72,11 @@ We will save a rigorous definition for the gradient, divergence, and laplacian f
 Constructing a Laplacian for graphs
 --------------
 
-The Laplacian matrix $$L$$ for a graph captures the same idea as the Laplacian for continuous, multivariate functions. To see how this is, we will need to construct all of the analogous components for graphs that we used to construct the Laplacian for continuous, multivariate functions. Specifically, we need to define points, functions, gradients, and divergences.
+The Laplacian matrix $$L$$ for a graph $$G := (V, E)$$ captures the same idea as the Laplacian for continuous, multivariate functions. To see how this is, we will need to construct all of the analogous components for graphs that are required to construct the Laplacian for continuous, multivariate functions. Specifically, we need to define graph analogs for points, functions, gradients, and divergences.
 
 **Points**
 
-This one is easy. Each vertex $$v \in V$$ in our graph will be the analogue to a point $$\bold{x} \in \mathbb{R}^n$$ in a Euclidean space.  
+This one is easy. Each vertex $$v \in V$$ in our graph will be the analog to a point $$\boldsymbol{x} \in \mathbb{R}^n$$ in a Euclidean space.  
 
 **Functions**
 
@@ -86,33 +86,17 @@ $$f: V \rightarrow \mathbb{R}$$
 
 If we order the vertices in the graph, $$v_1, v_2, \dots, v_m$$, then we can represent the function as a vector:
 
-$$\boldsymbol{f} := [f(v_1) f(v_2) \dots f(v_{\vert V \vert})]$$
+$$\boldsymbol{f} := \begin{bmatrix}f(v_1) & f(v_2) & \dots & f(v_{\vert V \vert})\end{bmatrix}$$
 
 **Gradient** 
 
-Intuitively, the gradient of a function tells us how much and in what direction a function is changing. The analog for a graph is are simply the edges between the vertices.  The "magnitude" of a vector corresponds to the difference in the functions values between the two vertices.  That is, for edge $$e_k \in E$$ connecting node $$i$$ to node $$j$$, where $$i < j$$ in the vertices' ordering, its "gradient" can be taken to be
+Intuitively, the gradient of a function tells us how much and in what direction a function is changing. The analog for a graph is are simply the edges between the vertices.  The "magnitude" of a vector corresponds to the difference in the functions values between the two vertices.  That is, for edge $$e_k = (v_i, v_j) \in E$$ connecting node $$v_i$$ to node $$v_j$$ (where $$i < j$$ in the vertices' ordering) its "gradient" can be taken to be
 
 $$g(e_k) := f(v_i) - f(v_j)$$
 
-Again, if we order all of the edges in the graph, we can represent the gradient as a vector:
+Note, the ordering of vertices tells us which vertex's function value is subtracted from the other.  For an undirected, simple graph, this order is arbitrary.  Now, if we order all of the edges in the graph, we can represent the gradient as a vector:
 
-$$\boldsymbol{g} := [g(e_1), g(e_2), \dots, g(e_{\vert E\vert})]$$
-
-
+$$\boldsymbol{g} := \begin{bmatrix}g(e_1) & g(e_2) & \dots & g(e_{\vert E\vert})\end{bmatrix}$$
 
 
-
-
-
-Let's start with points.  This one is easy. Each vertex $$v \in V$$ in our graph will be the analogue to a point $$\bold{x} \in \mathbb{R}^n$$ in a Euclidean space.  
-
-Now let's talk about functions. Again, this one is easy. We can define a function on the graph $$f$$ as simply a mapping from each vertex/point to a real number:
-
-$$f: V \rightarrow \mathbb{R}$$
-
-If we order the vertices in the graph, $$v_1, v_2, \dots, v_m$$, then we can represent the function as a vector:
-
-$$\boldsymbol{f} := [f(v_1), f(v_2), \dots, f(v_m)]$$
-
-Now for the gradient. This one is a bit more involved. Intuitively, the gradient of a function tells us how much and in what direction a function is changing. Unlike a multivariate, real-valued function, for a graph function there is not really a notion of "steepest ascent" because a graph function does not represent a surface in the same sense that a continuous real-valued function does.  
 
