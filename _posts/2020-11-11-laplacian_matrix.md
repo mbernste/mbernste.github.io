@@ -8,8 +8,6 @@ tags:
   - mathematics
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
-
 *At the heart of of a number of important machine learning algorithms, such as spectral clustering, lies a matrix called the graph Laplacian.  In this post, I'll walk through the intuition behind the graph Laplacian and describe how it represents the discrete analogue to the Laplacian operator on continuous multivariate functions.*
 
 Introduction
