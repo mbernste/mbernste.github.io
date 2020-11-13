@@ -55,9 +55,7 @@ For example, in the following figure we depict three scenarios of a point $$\bol
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DivergenceAtPoint.png" alt="drawing" width="500"/></center>
 
-Finally, we come back to the Laplacian.  Given a continuous, multivariate function $$f$$, the Laplacian is now simply the divergence of $$f$$'s gradient.  This is depicted in the figure below:
-
-In the figure below, we have a 2-variate function $$f$$ (top), with its gradient vector field depicted in the bottom left.  As you can see, the vectors point in the direction where $$f$$ is increasingly most steeply at any given point.
+Finally, we come back to the Laplacian.  Given a continuous, multivariate function $$f$$, the Laplacian is now simply the divergence of $$f$$'s gradient.  In the figure below, we have a 2-variate function $$f$$ (top), with its gradient vector field depicted in the bottom left.  As you can see, the vectors point in the direction where $$f$$ is increasingly most steeply at any given point.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianExample.png" alt="drawing" width="500"/></center>
 
