@@ -140,15 +140,15 @@ $$K^TK = D - A$$
 
 Why is this case? Recall that for matrix multiplication $$AB$$, where $$A$$ and $$B$$ are matrices, we can compute element $$i,j$$ of the resultant matrix by taking the dot product of the $$i$$th row of $$A$$ with the $$j$$th column of $$B$$. In our case, $$A$$ is the transpose of $$B$$ and thus, the $$i$$th row of $$A$$ is equivalent to the $$j$$th column of $$B$$.  Thus, computing element $$i,j$$ of $$K^TK$$ is simply taking the dot product between columns $$i$$ and $$j$$ of $$K$$.
 
-What does each column of $$K$$ represent?  Well, first, we know that each column of $$K$$ corresponds to a vector. Each row corresponds to an edge.  Thus, the value of the $$t$$th entry of the $$i$$th column can be understood as an indicator of whether edge $$t$$ is incident upon column $$i$$.  That is, edge $$e_t$$ is incident upon $$v_i$$ if $$K_{t,i} \neq 0$$. 
+What does each column of $$K$$ represent?  Well, first, we know that each column of $$K$$ corresponds to a vector. Each row corresponds to an edge.  Thus, the value of the $$t$$th entry of the $$i$$th column can be understood as an indicator of whether edge $$e_t$$ is incident upon vector $$v_i$$.  That is, edge $$e_t$$ is incident upon $$v_i$$ if $$K_{t,i} \neq 0$$. 
 
-With this in mind, let's look at what the diagonal entries of $$K^TK$$ wuold be.  That is, what would be element $$i,i$$ of $$K^TK$$?  Well, we would simply take the dot product of the $$i$$th column of $$K$$ with itself:
+With this in mind, let's look at what the diagonal entries of $$K^TK$$ would be.  That is, what would be element $$i,i$$ of $$K^TK$$?  Well, we would simply take the dot product of the $$i$$th column of $$K$$ with itself:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianDiagonalCalculation.png" alt="drawing" width="600"/></center>
 
 Notice that each value of $$-1$$ is multiplied with another $$-1$$ and each $$1$$ is multiplied with a $$1$$, which simply ends up summing up the number of edges adjacent to vertex $$v_i$$ -- that is, the degree of vertex $$v_i$$. Thus, the diagonal elements of $$K^T$$ are simply the degrees of each vertex.
 
-What happens when we compute an off-diagonal entry of $$K^TK$$?  That is, what would be entry $$i,j$$ of $$K^TK$$ (where $$i \neq j$$)?  This would be taking the dot product of the $$i$$th row with the $$j$$th row:
+What happens when we compute an off-diagonal entry of $$K^TK$$?  That is, what would be entry $$i,j$$ of $$K^TK$$ (where $$i \neq j$$)?  This would be taking the dot product between the $$i$$th and $$j$$th columns of $$K$$:
  
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianOffDiagonalCalculation.png" alt="drawing" width="600"/></center>
 
