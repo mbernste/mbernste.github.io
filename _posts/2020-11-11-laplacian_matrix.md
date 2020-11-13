@@ -49,17 +49,17 @@ Okay, let's break this down. First, let's discuss the gradient. The gradient of 
 
 One important point to keep in mind is that the gradient is an operator that takes as input a multivariate function and produces a vector field. 
 
-Now let's discuss divergence.  In contrast to the gradient, the divergence operator takes as input a vector field and produces a multivariate function.  That is, given a vector field $$\boldsymbol{v}(\boldsymbol{x})$$, the divergence $$\nabla \cdot \boldsymbol{v}(\boldsymbol{x})$$ produces a scalar field.  More specifically, the divergence at some point $$x$$ within a vector field intuitively describes how much "flow" is coming into and out of $$x$$ where the flow is described by the vectors in the vector field surrounding $$x$$.
+Now let's discuss divergence.  In contrast to the gradient, the divergence operator takes as input a vector field and produces a multivariate function.  That is, given a vector field $$\boldsymbol{v}(\boldsymbol{x})$$, the divergence at point $$\boldsymbol{x}$$, denoted $$\nabla \cdot \boldsymbol{v}(\boldsymbol{x})$$  is a scalar that is computed from the vectors that are nearby $$\boldsymbol{x}$$ in the vector field.  What does the divergence describe?  Intuitively, the divergence at $$\boldsymbol{x}$$ describes how much "flow" is coming into and out of $$\boldsymbol{x}$$ where the flow is described by the vectors in the vector field nearby $$\boldsymbol{x}$$.
 
-For example, in the following figure we depict three scenarios of a point $$\boldsymbol{x}$$ within a vector field.  In the left-hand figure, there is more "flow" coming out of the point than into the point. The divergence at this point $$\boldsymbol{x}$$ is positive because flow is "diverging" away from $$\boldsymbol{x}$$.  In the center figure, there is more "flow" into $$\boldsymbol{x}$$ than going away from $$\boldsymbol{x}$$ and thus, the divergence at this point is negative.  Finally, in the right-hand figure, there is an equal amount of flow going into and out of $$\boldsymbol{x}$$ and thus, the divergence at this point is zero. 
+For example, in the following figure we depict three scenarios of a point $$\boldsymbol{x}$$ within a vector field.  In the left-hand figure, there is more "flow" coming out of the point than into the point and thus, the divergence at this point is positive because flow is "diverging" away from the point.  In the center figure, there is more "flow" into the point than going away from the point and thus, the divergence at this point is negative.  Finally, in the right-hand figure, there is an equal amount of flow going into and out of the point and thus, the divergence is zero. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DivergenceAtPoint.png" alt="drawing" width="500"/></center>
 
-Finally, we come back to the Laplacian.  Given a continuous, multivariate function $$f$$, the Laplacian is now simply the divergence of $$f$$'s gradient.  In the figure below, we have a 2-variate function $$f$$ (top), with its gradient vector field depicted in the bottom left.  As you can see, the vectors point in the direction where $$f$$ is increasingly most steeply at any given point.
+Finally, we come back to the Laplacian.  Given a continuous, multivariate function $$f$$, the Laplacian is simply the divergence of $$f$$'s gradient:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianExample.png" alt="drawing" width="500"/></center>
 
-Intuitively, what does the Laplacian describe?  Well, following our understanding that $$f$$'s gradient provides vectors that point in $$f$$'s direction of steepest ascent with magnitude proportional to its steepness, we see that the "flow" at any point in this vector field will correspond to how much the steepness of $$f$$ is changing. If at some point $$\boldsymbol{x}$$, the steepness is not changing -- that is, we're $$\boldsymbol{x}$$ is located at a steady incline or a steady decline -- then the divergence at $$\boldsymbol{x}$$ will be zero.  That is, the Laplacian will be zero.  On the other hand, if at $$\boldsymbol{x}$$, the steepness is shrinking or growing -- for example, because we're close to a local maximum/minimum -- then the divergence (i.e. Laplacian) will be either large or small (large if we're approaching a minimum and small if we're approaching a maximum).
+Intuitively, what does the Laplacian describe?  Well, following our understanding that $$f$$'s gradient provides vectors that point in $$f$$'s direction of steepest ascent with magnitude proportional to its steepness, we see that the "flow" at any point in this vector field will correspond to how much the steepness of $$f$$ is changing. If at some point, $$\boldsymbol{x}$$, the steepness is not changing -- that is, $$\boldsymbol{x}$$ is located at a steady incline or a steady decline -- then the divergence of the gradient at $$\boldsymbol{x}$$ will be zero.  That is, the Laplacian will be zero.  On the other hand, if at $$\boldsymbol{x}$$, the steepness is shrinking or growing -- for example, because we're close to a local maximum/minimum -- then the divergence (i.e. Laplacian) will be either large or small (large if we're approaching a minimum and small if we're approaching a maximum).
 
 Said succintly, the Laplacian tells us how much the steepness is changing. It's the analogue to the second derivative for a continuous, single-variate function!
 
@@ -74,7 +74,7 @@ The Laplacian matrix $$L$$ for a graph $$G := (V, E)$$ captures the same idea as
 
 **Points**
 
-This one is easy. Each vertex $$v \in V$$ in our graph will be the analog to a point $$\boldsymbol{x} \in \mathbb{R}^n$$ in a Euclidean space. 
+This one is easy. Each vertex $$v \in V$$ in our graph will be analogous to a point $$\boldsymbol{x} \in \mathbb{R}^n$$ in a Euclidean space. 
 
 **Functions**
 
@@ -93,7 +93,7 @@ $$\boldsymbol{f} := \begin{bmatrix}f(v_1) & f(v_2) & \dots & f(v_{\vert V \vert}
 
 **Gradient** 
 
-Intuitively, the gradient of a function tells us how much and in what direction a function is changing. The analog for a graph is simply the set of edges between the vertices.  The "magnitude" of a vector corresponds to the difference in the functions values between the two vertices.  That is, for edge $$e_k = (v_i, v_j) \in E$$ connecting node $$v_i$$ to node $$v_j$$ (where $$i < j$$ in the vertices' ordering) its "gradient" can be taken to be
+Intuitively, the gradient of a function tells us how much and in what direction a function is changing at each point. The analog for a graph is simply the set of edges between the vertices.  The "magnitude" of a gradient vector then simply corresponds to the difference in the functions values between the two vertices.  That is, for edge $$e_k = (v_i, v_j) \in E$$ connecting node $$v_i$$ to node $$v_j$$ (where $$i < j$$ in the vertices' ordering) its "gradient" can be taken to be
 
 $$g(e_k) := f(v_i) - f(v_j)$$
 
@@ -101,11 +101,11 @@ These "edge gradients" are depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientAnalog.png" alt="drawing" width="400"/></center>
 
-Note, the ordering of vertices tells us which vertex's function value is subtracted from the other.  For an undirected, simple graph, this order is arbitrary.  Now, if we order all of the edges in the graph, we can represent the gradient as a vector:
+Note, the ordering of vertices tells us which vertex's function value is subtracted from the other.  For the purpose of cosntructing the Laplacian matrix, this order is arbitrary.  Now, if we order all of the edges in the graph similarly to how we ordered all of the vertices, then we can represent the gradient as a vector:
 
 $$\boldsymbol{g} := \begin{bmatrix}g(e_1) & g(e_2) & \dots & g(e_{\vert E\vert})\end{bmatrix}$$
 
-Now, a natural question becomes: given a graph-function $$\boldsymbol{f}$$, how do we construct a matrix operator on $$\boldsymbol{f}$$ that returns $$\boldsymbol{g}$$ as described above?  The answer is the **Incidence matrix** $$K \in \{0, 1, -1\}^{\vert V \times E \vert}$$ where the rows of $$K$$ correspond to the sorted vertices and the columns correspond to the sorted edges.  For vertex $$v_i$$ and edge $$e_j := (v_k, v_h)$$, the entry $$K_{i,j}$$ is defined as
+Now, a natural question becomes: given a graph-function $$\boldsymbol{f}$$, how do we construct a matrix operator on $$\boldsymbol{f}$$ that returns $$\boldsymbol{g}$$ as described above?  The answer is the **Incidence matrix** $$K$$.  The rows of $$K$$ correspond to the sorted vertices and the columns correspond to the sorted edges.  For vertex $$v_i$$ and edge $$e_j := (v_k, v_h)$$, the entry $$K_{i,j}$$ is defined as
 
 $$K_{i,j} := \begin{cases} 1,& \text{if} \ i == k \ \text{and} \ i > h \\ 1,& \text{if} \ i == h \ \text{and} \ i > k\\ -1,& \text{if} \ i == k \ \text{and} \ i < h \\ -1,& \text{if} \ i == h \ \text{and} \ i < k \\  0, & \text{otherwise}\end{cases}$$
 
@@ -121,12 +121,11 @@ Then, given a graph function $$\boldsymbol{g}$$, we compute the "gradient" as
 
 Finally, how should we think about a divergence analog for graphs?  Recall that divergence on continuous, multivariate real-valued functions measures the amount of "flow" coming into and out of each point where the flow is determined by the vectors surrounding each point. Since, our analog for points are vertices, and our analog for vectors around each point are simply the edges adjacent to each vertex, it follows that we can calculate the divergence by simply summing the edge values around each vertex. 
 
-For our example graph, if we have edge assignments given by $$g(e_1), g(e_2), g(e_3)$$ and  $$g(e_4)$$, then the divergence at node A should simply be the sum of the edge values adjacent to A where each edge value is multiplied by $$-1$$ if the flow is flows "into" A. In the case of node A, all edges flow outward and thus
+For our example graph, if we have edge assignments given by $$g(e_1), g(e_2), g(e_3)$$ and  $$g(e_4)$$, then the divergence at node A should simply be the sum of the edge values adjacent to A where each edge value is multiplied by $$-1$$ if the flow is flowing "into" A. In the case of node A, all edges flow outward and thus
 
 $$\text{divergence}(A) = g(e_1) + g(e_2) + g(e_4)$$
 
 What matrix will perform this summation?  Precisely the transpose of the incidence matrix $$K^T$$!
-
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianDivergenceCalculation.png" alt="drawing" width="600"/></center>
 
