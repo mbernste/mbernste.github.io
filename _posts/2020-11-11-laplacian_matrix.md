@@ -97,7 +97,7 @@ $$\boldsymbol{f} := \begin{bmatrix}f(v_1) & f(v_2) & \dots & f(v_{\vert V \vert}
 
 **Gradient** 
 
-Intuitively, the gradient of a function tells us how much and in what direction a function is changing. The analog for a graph is are simply the edges between the vertices.  The "magnitude" of a vector corresponds to the difference in the functions values between the two vertices.  That is, for edge $$e_k = (v_i, v_j) \in E$$ connecting node $$v_i$$ to node $$v_j$$ (where $$i < j$$ in the vertices' ordering) its "gradient" can be taken to be
+Intuitively, the gradient of a function tells us how much and in what direction a function is changing. The analog for a graph is simply the set of edges between the vertices.  The "magnitude" of a vector corresponds to the difference in the functions values between the two vertices.  That is, for edge $$e_k = (v_i, v_j) \in E$$ connecting node $$v_i$$ to node $$v_j$$ (where $$i < j$$ in the vertices' ordering) its "gradient" can be taken to be
 
 $$g(e_k) := f(v_i) - f(v_j)$$
 
