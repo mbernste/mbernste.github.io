@@ -143,26 +143,20 @@ If we inspect $$K^TK$$ more closely, we can show that this matrix is exactly the
 
 $$K^TK = D - A$$
 
-Why is this case? Recall that for matrix multiplication, we can compute element $$i,j$$ of the resultant matrix by taking the dot product of the $$i$$th row of the first matrix with the $$j$$th column of the second. With this in mind, let's look at what the diagonal entries of $$K^TK$$ wuold be.  That is, what would be element $$i,i$$ of $$K^TK$$?  Well, we would simply take the dot product of the $$i$$th row with itself:
+Why is this case? Recall that for matrix multiplication $$AB$$, where $$A$$ and $$B$$ are matrices, we can compute element $$i,j$$ of the resultant matrix by taking the dot product of the $$i$$th row of $$A$$ with the $$j$$th column of $$B$$. In our case, $$A$$ is the transpose of $$B$$ and thus, the $$i$$th row of $$A$$ is equivalent to the $$j$$th column of $$B$$.  Thus, computing element $$i,j$$ of $$K^TK$$ is simply taking the dot product between columns $$i$$ and $$j$$ of $$K$$.
+
+What does each column of $$K$$ represent?  Well, first, we know that each column of $$K$$ corresponds to a vector. Each row corresponds to an edge.  Thus, the value of the $$t$$th entry of the $$i$$th column can be understood as an indicator of whether edge $$t$$ is incident upon column $$i$$.  That is, edge $$e_t$$ is incident upon $$v_i$$ if $$K_{t,i} \neq 0$$. 
+
+With this in mind, let's look at what the diagonal entries of $$K^TK$$ wuold be.  That is, what would be element $$i,i$$ of $$K^TK$$?  Well, we would simply take the dot product of the $$i$$th column of $$K$$ with itself:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianDiagonalCalculation.png" alt="drawing" width="600"/></center>
 
-Notice that each value of $$-1$$ is multiplied with another $$-1$$ and each $$1$$ is multiplied with a $$1$$.  Taking the final summation, this simply becomes the degree of vertex $$i$$. Thus, the diagonal elements of $$K^T$$ are simply the degrees of each vertex.
+Notice that each value of $$-1$$ is multiplied with another $$-1$$ and each $$1$$ is multiplied with a $$1$$, which simply ends up summing up the number of edges adjacent to vertex $$v_i$$ -- that is, the degree of vertex $$v_i$$. Thus, the diagonal elements of $$K^T$$ are simply the degrees of each vertex.
 
 What happens when we compute an off-diagonal entry of $$K^TK$$?  That is, what would be entry $$i,j$$ of $$K^TK$$ (where $$i \neq j$$)?  This would be taking the dot product of the $$i$$th row with the $$j$$th row:
  
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianOffDiagonalCalculation.png" alt="drawing" width="600"/></center>
 
+Because the $$i$$th column of $$K$$ represents the "edge indicators" of all edges adjacent to $$v_i$$, we see that the dot product filters out all edges that are not adjacent to *both** $$v_i$$ and $$v_j$$.  Thus, if $$v_i$$ is adjacent to $$v_j$$ there will be only one non-zero term in the dot product's summation corresponding to the one edge that connects them!  This term is simply $$-1$$.  Why is it always negative?  By design of the incidence matrix each row has one value of -1 and one value of 1. When multiplied together, this results in -1.
 
-
-
-
-First, as we saw with the gradient, it is natural to represent a "vector field" on a graph as simply an assignment of values to each edge.  Thus, a divergence operator should intuitively operate on edge assignments.  Furthermore, r
-
-
-$$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 & -1 \end{bmatrix}$$
-
-$$\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}f(A) \\ f(B) \\ f(C) \\ f(D)\end{bmatrix} = \begin{bmatrix}f(A)-f(B) \\ f(A) - f(C) \\ f(B) - f(C) \\ f(A) - f(D)\end{bmatrix}$$
-
-$$\begin{bmatrix}1 & 1 & 0 & 1 \\ -1 & 0 & 1 & 0 \\ 0 & -1 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}g(e_1) \\ g(e_2) \\ g(e_3) \\ g(e_4)\end{bmatrix} = \begin{bmatrix}g(e_1)+g(e_2)+g(e_4) \\ -g(e_1) + g(e_3) \\ -g(e_2) - g(e_3) \\ -g(e_4)\end{bmatrix}$$
-
-$$\begin{bmatrix}1 & 1 & 0 & 1 \\ -1 & 0 & 1 & 0 \\ 0 & -1 & -1 & 0 \\ 0 & 0 & 0 & -1 \end{bmatrix}\begin{bmatrix}1 & -1 & 0 & 0 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & -1 & 0 \\ 1 & 0 & 0 & -1 \end{bmatrix} = \begin{bmatrix}3 & -1 & -1 & -1 \\ -1 & 2 & -1 & 0 \\ -1 & -1 & 2 & 0 \\ -1 & 0 & 0 & 1\end{bmatrix}$$
+And there you have it. The Laplacian matrix as the graph analog to the Laplacian operator on multi-variate, continuous functions!
