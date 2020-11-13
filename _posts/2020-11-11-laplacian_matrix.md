@@ -57,7 +57,7 @@ For example, in the following figure we depict three scenarios of a point $$\bol
 
 Finally, we come back to the Laplacian.  Given a continuous, multivariate function $$f$$, the Laplacian is simply the divergence of $$f$$'s gradient:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianExample.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianExample.png" alt="drawing" width="650"/></center>
 
 Intuitively, what does the Laplacian describe?  Well, following our understanding that $$f$$'s gradient provides vectors that point in $$f$$'s direction of steepest ascent with magnitude proportional to its steepness, we see that the "flow" at any point in this vector field will correspond to how much the steepness of $$f$$ is changing. If at some point, $$\boldsymbol{x}$$, the steepness is not changing -- that is, $$\boldsymbol{x}$$ is located at a steady incline or a steady decline -- then the divergence of the gradient at $$\boldsymbol{x}$$ will be zero.  That is, the Laplacian will be zero.  On the other hand, if at $$\boldsymbol{x}$$, the steepness is shrinking or growing -- for example, because we're close to a local maximum/minimum -- then the divergence (i.e. Laplacian) will be either large or small (large if we're approaching a minimum and small if we're approaching a maximum).
 
@@ -132,7 +132,7 @@ What matrix will perform this summation?  Precisely the transpose of the inciden
 
 Now, putting it all together, the Laplacian on a graph is, like the Laplacian for real-valued functions, simply the divergence applied to the gradient of $$f$$. Recall from linear algebra that, the composition of two operators is simply the product of the two matrices representing those operators.  Applying the divergence to the gradient is carried out by the matrix product $$K^TK$$. This is the Laplacian matrix $$L$$. That is, 
 
-$$L := $K^TK$$ 
+$$L := K^TK$$ 
 
 If we inspect $$K^TK$$ more closely, we can show that this matrix is exactly the diagonal matrix minus the adjacency matrix that we introduced at the beginning of this post!
 
