@@ -145,6 +145,8 @@ $$K^TK = D - A$$
 
 Why is this case? Recall that for matrix multiplication, we can compute element $$i,j$$ of the resultant matrix by taking the dot product of the $$i$$th row of the first matrix with the $$j$$th column of the second. With this in mind, let's look at what the diagonal entries of $$K^TK$$ wuold be.  That is, what would be element $$i,i$$ of $$K^TK$$?  Well, we would simply take the dot product of the $$i$$th row with itself:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianDiagonalCalculation.png" alt="drawing" width="600"/></center>
+
 Notice that each value of $$-1$$ is multiplied with another $$-1$$ and each $$1$$ is multiplied with a $$1$$.  Taking the final summation, this simply becomes the degree of vertex $$i$$. Thus, the diagonal elements of $$K^T$$ are simply the degrees of each vertex.
 
 What happens when we compute an off-diagonal entry of $$K^TK$$?  That is, what would be entry $$i,j$$ of $$K^TK$$ (where $$i \neq j$$)?  This would be taking the dot product of the $$i$$th row with the $$j$$th row:
