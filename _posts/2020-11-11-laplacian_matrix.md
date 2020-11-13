@@ -15,19 +15,19 @@ Introduction
 
 At the heart of the field of [spectral graph theory](https://en.wikipedia.org/wiki/Spectral_graph_theory) as well as a number of important machine learning algorithms, such as [spectral clustering](https://en.wikipedia.org/wiki/Spectral_clustering), lies a matrix called the **graph Laplacian**.  (In fact, the first step in spectral clustering is to compute the Laplacian matrix of the data's k-nearest neighbors graph... perhaps to be discussed in some future blog post.)  
 
-The Laplacian matrix is defined as follows: Given a graph $$G := (V, E)$$ where $$V$$ is the set of nodes/vertices and $$E$$ is the set of edges, with an adjacency matrix $$A \in \{0,1\}^{\vert V \vert}$$, where 
+The Laplacian matrix is defined as follows: Given a graph $$G := (V, E)$$ where $$V := \{v_1, v_2, \dots, v_n\}$$ is the set of nodes/vertices and $$E := \{e_1, e_2, \dots, e_m\}$$ is the set of edges, with an adjacency matrix $$A \in \{0,1\}^{\vert V \vert}$$, where 
 
-$$A_{i,j} := \begin{cases} 1,& \text{if there is an edge between} \ i \ \text{and} \ j \\ 0, & \text{otherwise}\end{cases}$$
+$$A_{i,j} := \begin{cases} 1,& \text{if there is an edge between} \ v_i \ \text{and} \ v_j \\ 0, & \text{otherwise}\end{cases}$$
 
 and degree matrix $$D \in \mathbb{Z}^{\vert V \vert}$$, where
 
-$$D_{i,j} :=  \begin{cases} \text{degree}(i),& \text{if} \ i = j \\ 0, & \text{otherwise}\end{cases} $$ 
+$$D_{i,j} :=  \begin{cases} \text{degree}(v_i),& \text{if} \ i = j \\ 0, & \text{otherwise}\end{cases} $$ 
 
 the Laplacian matrix is defined as 
 
 $$L := D - A$$
 
-This definition is super simple, but it describes something quite deep: it's the discrete analogue to the Laplacian operator on multivariate continuous functions.  How does such a simple definition capture such a complex idea?  We will demonstrate this in the remainder of this post.
+This definition is super simple, but it describes something quite deep: it's the discrete analog to the Laplacian operator on multivariate continuous functions.  How does such a simple definition capture such a complex idea?  We will demonstrate this in the remainder of this post.
 
 Review of the Laplacian for continuous, multivariate functions
 --------------
@@ -152,6 +152,6 @@ What happens when we compute an off-diagonal entry of $$K^TK$$?  That is, what w
  
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianOffDiagonalCalculation.png" alt="drawing" width="600"/></center>
 
-Because the $$i$$th column of $$K$$ represents the "edge indicators" of all edges adjacent to $$v_i$$, we see that the dot product filters out all edges that are not adjacent to *both** $$v_i$$ and $$v_j$$.  Thus, if $$v_i$$ is adjacent to $$v_j$$ there will be only one non-zero term in the dot product's summation corresponding to the one edge that connects them!  This term is simply $$-1$$.  Why is it always negative?  By design of the incidence matrix each row has one value of -1 and one value of 1. When multiplied together, this results in -1.
+Because the $$i$$th column of $$K$$ represents the "edge indicators" of all edges adjacent to $$v_i$$, we see that the dot product filters out all edges that are not adjacent to *both* $$v_i$$ and $$v_j$$.  Thus, if $$v_i$$ is adjacent to $$v_j$$ there will be only one non-zero term in the dot product's summation corresponding to the one edge that connects them!  This term is simply $$-1$$.  Why is it always negative?  By design of the incidence matrix each row has one value of -1 and one value of 1. When multiplied together, this results in -1.
 
 And there you have it. The Laplacian matrix as the graph analog to the Laplacian operator on multi-variate, continuous functions!
