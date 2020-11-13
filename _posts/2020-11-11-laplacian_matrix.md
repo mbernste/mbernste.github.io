@@ -119,7 +119,7 @@ Given our example graph, the incidence matrix would be (we highlight one edge in
 
 Then, given a graph function $$\boldsymbol{g}$$, we compute the "gradient" as 
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientCalculation.png" alt="drawing" width="400"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianGradientCalculation.png" alt="drawing" width="600"/></center>
 
 **Divergence**
 
@@ -132,13 +132,14 @@ $$\text{divergence}(A) = g(e_1) + g(e_2) + g(e_4)$$
 What matrix will perform this summation?  Precisely the transpose of the incidence matrix $$K^T$$!
 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianDivergenceCalculation.png" alt="drawing" width="600"/></center>
 
 
-Now, putting it all together, the Laplacian on a graph is, like the Laplacian for real-valued functions simply the divergence of the gradient of $$f$$:
+Now, putting it all together, the Laplacian on a graph is, like the Laplacian for real-valued functions, simply the divergence applied to the gradient of $$f$$. Recall from linear algebra that, the composition of two operators is simply the product of the two matrices representing those operators.  Applying the divergence to the gradient is carried out by the matrix product $$K^TK$$. This is the Laplacian matrix $$L$$. That is, 
 
-$$L := K^TK\boldsymbol{f}$$
+$$L := $K^TK$$ 
 
-The Laplacian operator (i.e. Laplacian matrix) is simply $$K^TK$$. If we inspect $$K^TK$$ more closely we will see that 
+If we inspect $$K^TK$$ more closely, we can show that this matrix is exactly the diagonal matrix minus the adjacency matrix that we introduced at the beginning of this post!
 
 $$K^TK = D - A$$
 
