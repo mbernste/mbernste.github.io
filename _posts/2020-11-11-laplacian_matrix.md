@@ -15,11 +15,11 @@ Introduction
 
 At the heart of the field of [spectral graph theory](https://en.wikipedia.org/wiki/Spectral_graph_theory) as well as a number of important machine learning algorithms, such as [spectral clustering](https://en.wikipedia.org/wiki/Spectral_clustering), lies a matrix called the **graph Laplacian**.  (In fact, the first step in spectral clustering is to compute the Laplacian matrix of the data's k-nearest neighbors graph... perhaps to be discussed in some future blog post.)  
 
-The Laplacian matrix is defined as follows: Given a graph $$G := (V, E)$$ where $$V := \{v_1, v_2, \dots, v_n\}$$ is the set of nodes/vertices and $$E := \{e_1, e_2, \dots, e_m\}$$ is the set of edges, with an adjacency matrix $$A \in \{0,1\}^{\vert V \vert}$$, where 
+The Laplacian matrix is defined as follows: Given a graph $$G := (V, E)$$ where $$V := \{v_1, v_2, \dots, v_n\}$$ is the set of nodes/vertices and $$E := \{e_1, e_2, \dots, e_m\}$$ is the set of edges, with an adjacency matrix $$A \in \{0,1\}^{n \times n}$$, where 
 
 $$A_{i,j} := \begin{cases} 1,& \text{if there is an edge between} \ v_i \ \text{and} \ v_j \\ 0, & \text{otherwise}\end{cases}$$
 
-and degree matrix $$D \in \mathbb{Z}^{\vert V \vert}$$, where
+and degree matrix $$D \in \mathbb{Z}^{n \times n}$$, where
 
 $$D_{i,j} :=  \begin{cases} \text{degree}(v_i),& \text{if} \ i = j \\ 0, & \text{otherwise}\end{cases} $$ 
 
@@ -74,7 +74,7 @@ The Laplacian matrix $$L$$ for a graph $$G := (V, E)$$ captures the same idea as
 
 **Points**
 
-This one is easy. Each vertex $$v \in V$$ in our graph will be analogous to a point $$\boldsymbol{x} \in \mathbb{R}^n$$ in a Euclidean space. 
+This one is easy. Each vertex $$v \in V$$ in our graph will be analogous to a point in a Euclidean space. 
 
 **Functions**
 
@@ -89,7 +89,7 @@ For example, in our example graph, such a function can be visualized as follows:
 
 If we order the vertices in the graph, $$v_1, v_2, \dots, v_m$$, then we can represent the function as a vector:
 
-$$\boldsymbol{f} := \begin{bmatrix}f(v_1) & f(v_2) & \dots & f(v_{\vert V \vert})\end{bmatrix}$$
+$$\boldsymbol{f} := \begin{bmatrix}f(v_1) & f(v_2) & \dots & f(v_n)\end{bmatrix}$$
 
 **Gradient** 
 
@@ -103,7 +103,7 @@ These "edge gradients" are depicted below:
 
 Note, the ordering of vertices tells us which vertex's function value is subtracted from the other.  For the purpose of cosntructing the Laplacian matrix, this order is arbitrary.  Now, if we order all of the edges in the graph similarly to how we ordered all of the vertices, then we can represent the gradient as a vector:
 
-$$\boldsymbol{g} := \begin{bmatrix}g(e_1) & g(e_2) & \dots & g(e_{\vert E\vert})\end{bmatrix}$$
+$$\boldsymbol{g} := \begin{bmatrix}g(e_1) & g(e_2) & \dots & g(e_m)\end{bmatrix}$$
 
 Now, a natural question becomes: given a graph-function $$\boldsymbol{f}$$, how do we construct a matrix operator on $$\boldsymbol{f}$$ that returns $$\boldsymbol{g}$$ as described above?  The answer is the **Incidence matrix** $$K$$.  The rows of $$K$$ correspond to the sorted vertices and the columns correspond to the sorted edges.  For vertex $$v_i$$ and edge $$e_j := (v_k, v_h)$$, the entry $$K_{i,j}$$ is defined as
 
