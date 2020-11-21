@@ -1,5 +1,5 @@
 ---
-title: "Foundations of information theory (part 3: Shannon's Source Coding Theorem)"
+title: "Shannon's Source Coding Theorem (Foundations of information theory: Part 3)"
 date: 2020-10-19
 permalink: /posts/sourcecoding/
 tags:
