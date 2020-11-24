@@ -1,3 +1,13 @@
+---
+title: 'The graph Laplacian'
+date: 2020-11-24
+permalink: /posts/gmm_em/
+tags:
+  - tutorial
+  - machine learning
+  - statistics
+  - probability
+---
 
 Introduction
 --------------
