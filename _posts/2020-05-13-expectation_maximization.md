@@ -100,9 +100,7 @@ I skipped over several steps in the derivation, but the idea is that maximizing 
 
 Next, if we hold $q$ fixed to $q_t := p(z \mid x ; \theta_t)$, we see that maximizing $F(q_t, \theta)$ with respect to $\theta$ is equivalent to maximizing the Q-function:
 
-$$\text{argmax}_q \ F(q_t, \theta) = \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{p(z \mid x ; \theta_t)} \right]$$
-
-$$= \text{argmax}_q \ \ E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right]$$
+$$\begin{align*}\text{argmax}_q \ F(q_t, \theta) &= \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{p(z \mid x ; \theta_t)} \right] \\ &= \text{argmax}_q \ \ E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right]\end{align*}$$
 
 The last line in the above derivation is simply maximzing the Q-function -- exactly the M-Step!
 
@@ -199,13 +197,7 @@ $$\frac{c(z)}{\sum_{z^*}c(z^*)} = p(z \mid x ; \theta_t)$$
 
 Finally we can formulate our maximum likelihood problem on this hypothetical data:
 
-$$\text{argmax}_\theta \ l'(\theta) := \text{argmax}_\theta \ \prod_{i=1}^n p(x, z'_i ; \theta)$$
-
-$$= \text{argmax}_\theta \ \prod_{z \in \mathcal{Z}} p(x, z ; \theta)^{c(z)}$$
-
-$$= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  \frac{c(z)}{\sum_{z^*}c(z^*)} \log p(x, z ; \theta)$$
-
-$$= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  p(x, z'_i ; \theta) \log p(x, z ; \theta)$$
+$$\begin{align*}\text{argmax}_\theta \ l'(\theta) &:= \text{argmax}_\theta \ \prod_{i=1}^n p(x, z'_i ; \theta) \\ &= \text{argmax}_\theta \ \prod_{z \in \mathcal{Z}} p(x, z ; \theta)^{c(z)} \\ &= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  \frac{c(z)}{\sum_{z^*}c(z^*)} \log p(x, z ; \theta) \\ &= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  p(x, z'_i ; \theta) \log p(x, z ; \theta)\end{align*}$$
 
 The final line in the above calculation is the Q-function!
 
