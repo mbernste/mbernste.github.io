@@ -1,5 +1,5 @@
 ---
-title: 'The graph Laplacian'
+title: 'Gaussian Mixture Models'
 date: 2020-11-24
 permalink: /posts/gmm_em/
 tags:
@@ -8,6 +8,8 @@ tags:
   - statistics
   - probability
 ---
+
+THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
 Introduction
 --------------
