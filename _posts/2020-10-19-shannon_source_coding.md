@@ -174,7 +174,7 @@ $$\mathcal{L}(q_1, \dots, q_m, \lambda) :=  \sum_{i=1}^m p_i \log_B \frac{1}{q_i
 
 We now compute the partial derivative with respect to each $$q_i$$ and set it to 0:
 
-$$\begin{align*} & \frac{\partial}{\partial q_i} \sum_{i=1}^m p_i \log_B \frac{1}{q_i} + \lambda\left(\sum_i q_i - 1\right) &= 0 \\ \implies -\frac{p_i}{q_i \log B} + \lambda &= 0 \\ \implies q_i &= \frac{p_i}{\lambda \log B}\end{align*}$$
+$$\begin{align*} \frac{\partial}{\partial q_i} \sum_{i=1}^m p_i \log_B \frac{1}{q_i} + \lambda\left(\sum_i q_i - 1\right) &= 0 \\ \implies -\frac{p_i}{q_i \log B} + \lambda &= 0 \\ \implies q_i &= \frac{p_i}{\lambda \log B}\end{align*}$$
 
 Now, with the the equation $$\sum_{i=1}^m q_i = 1$$ and each partial derivative set to zero, we solve for $$q_i$$ and $$\lambda$$. Plugging $$q_i = \frac{p_i}{\lambda \log B}$$ into the equation $$\sum_{i=1}^m q_i = 1$$, we get 
 
