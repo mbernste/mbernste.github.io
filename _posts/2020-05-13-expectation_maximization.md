@@ -193,7 +193,7 @@ $$\frac{c(z)}{\sum_{z^*}c(z^*)} = p(z \mid x ; \theta_t)$$
 
 Finally we can formulate our maximum likelihood problem on this hypothetical data:
 
-$$\begin{align*}\text{argmax}_\theta \ l'(\theta) &:= \text{argmax}_\theta \ \prod_{i=1}^n p(x, z'_i ; \theta) \\ &= \text{argmax}_\theta \ \prod_{z \in \mathcal{Z}} p(x, z ; \theta)^{c(z)} \\ &= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  \frac{c(z)}{\sum_{z^*}c(z^*)} \log p(x, z ; \theta) \\ &= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  p(z' \mid x ; \theta) \log p(x, z ; \theta)\end{align*}$$
+$$\begin{align*}\text{argmax}_\theta \ l'(\theta) &:= \text{argmax}_\theta \ \prod_{i=1}^n p(x, z'_i ; \theta) \\ &= \text{argmax}_\theta \ \prod_{z \in \mathcal{Z}} p(x, z ; \theta)^{c(z)} \\ &= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  \frac{c(z)}{\sum_{z^*}c(z^*)} \log p(x, z ; \theta) \\ &= \text{argmax}_\theta \  \sum_{z \in \mathcal{Z}}  p(z \mid x ; \theta_t) \log p(x, z ; \theta)\end{align*}$$
 
 The final line in the above calculation is the Q-function!
 
