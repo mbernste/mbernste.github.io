@@ -56,5 +56,5 @@ Notice that the distribution has three modes corresponding to the means of the t
 A model for data clustering
 --------------
 
-GMM's are most often used for data clustering.  The premise is as follows: 
+GMM's are most often used for data clustering.  The premise is as follows: we have some dataset consisting of data points in $$\mathbb{R}^n$$, which we denote as $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$$, and we posit that these data points originate from $$K$$ different clusters. Guassian mixture models are a probabilistic model for such a clustering in that each Guassian "generates" data points that will cluster around the $$K$$ means of the $$K$$ Gaussians.
 
