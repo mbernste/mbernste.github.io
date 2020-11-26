@@ -19,22 +19,23 @@ Gaussian mixture model's are a very popular method for data clustering. They are
 Gaussian Mixture Models
 --------------
 
-The Gaussian mixture model (GMM) is a family of distributions over real-valued vectors in $$\mathbb{R}^n$$. The GMM is defined as follows: First, a we assume that there exist $$K$$ Gaussian distributions, which we will denote as $$\phi_1, \dots, \phi_K$$.  Then, in order to generate a sample $$\bold{x} \in \mathbb{R}^n$$, we first select one of these $$K$$ Guassians according to a Categorical distribution:
+The Gaussian mixture model (GMM) is a family of distributions over real-valued vectors in $$\mathbb{R}^n$$. The GMM is defined as follows: First, a we assume that there exist $$K$$ Gaussian distributions.  Then, in order to generate a sample $$\bold{x} \in \mathbb{R}^n$$, we first select one of these $$K$$ Guassians according to a Categorical distribution:
 
 $$z \sim \text{Cat}(\alpha_1, \dots, \alpha_K)$$
 
 where $$z \in \{1, 2, \dots, K\}$$ tells us which Gaussian to pick (i.e., if $$z = 2$$, then we choose the 2nd Gaussian) and $$\alpha_k$$ is the probability of choosing the $$k$$th Gaussian. Then, we sample $$\boldsymbol{x}$$ from that $$z$$th Gaussian.  That is,
 
-$$\boldsymbol{x} \sim \phi_z$$
+$$\boldsymbol{x} \sim $$\phi_k := N(\boldsymbol{\mu}_k, \boldsymbol{\Epsilon}_k)$$$$
+
+where $$\boldsymbol{\mu}_k$$ is the $$k$$th Gaussian's mean, and $$\boldsymbol{\Epsilon}_k$$ is its covariance matrix.
 
 This model is depicted by the following graphical model:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GMM_graphical_model.png" alt="drawing" width="200"/></center>
 
-Note, that each of the $$K$$ Gaussian distributions, $$\phi_k$$, has it's own set of parameters: $$\boldsymbol{\mu}_k$$, its mean, and $$\boldsymbol{\Epsilon}_k$$, its covariance matrix.  Furthermore, the probabilities of picking the Guassians $$alpha_1, \dots, alpha_k$$ are also parameters to the model.  Thus, the full set of parameters of the GMM are each Guassian's mean, each Guassian's covariance matrix, and the probabilities of picking each Gaussian. We will denote this set of parameters as
+Note, that each of the $$K$$ Gaussian distributions has a separate set of parameters (i.e., a mean vector and a covariance matrix).  Furthermore, the probabilities of picking the Guassians $$alpha_1, \dots, alpha_k$$ are also parameters to the model.  We will denote this full set of model parameters as
 
 $$\Theta = \{\boldsymbol{\mu}_1, \boldsymbol{\Epsilon}_1, \dots, \boldsymbol{\mu}_K, \boldsymbol{\Epsilon}_K, \alpha_1, \dots, \alpha_K \}$$
-
 
 
 A model for data clustering
