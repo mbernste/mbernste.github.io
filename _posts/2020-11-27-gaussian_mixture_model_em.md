@@ -37,7 +37,7 @@ Note, that each of the $$K$$ Gaussian distributions has a separate set of parame
 
 $$\Theta = \{ \boldsymbol{\mu}_1, \boldsymbol{\Sigma}_1, \dots, \boldsymbol{\mu}_K, \boldsymbol{\Sigma}_K, \alpha_1, \dots, \alpha_K \}$$
 
-As we will see in the next section of this blog post, the random variable of interest is $$\bold{X}$$ rather than $$Z$$. Thus, we will be interested in the marginal distribution of $$X$$ whose density function is given by
+As we will see in the next section of this blog post, $$\boldsymbol{X}$$ is usually the primary random variable of interest rather than $$Z$$. Thus, we will be interested in the marginal distribution of $$\boldsymbol{X}$$ whose density function is given by
 
 $$p(\boldsymbol{x}; \Theta) := \sum_{k=1}^K \alpha_k \phi(\boldsymbol{x}; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)$$
 
