@@ -56,5 +56,13 @@ Notice that the distribution has three modes corresponding to the means of the t
 A model for data clustering
 --------------
 
-GMM's are most often used for data clustering.  The premise is as follows: we have some dataset consisting of data points in $$\mathbb{R}^n$$, which we denote as $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$$, and we posit that these data points originate from $$K$$ different clusters. Guassian mixture models are a probabilistic model for such a clustering in that each Guassian "generates" data points that will cluster around the $$K$$ means of the $$K$$ Gaussians.
+GMM's generate datapoints that form clusters.  That is, if we take a set of i.i.d. samples, $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$$ from a GMM, these datapoints will cluster around the $$K$$ means of the $$K$$ Guassian distributions. Moreover, the number of points we sample from each Gaussian will be proportional to the $$\alpha_1, \dots, \alpha_k$$ probabilities.
+
+If we have some dataset $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$ and we posit that these datapoints were generated from a GMM with $$K$$ Gaussians, then if we estimate the parameters $$\Theta$$ that make the data points most likely, we can compute the probability that each $$\boldsymbol{x}_i$$ was generated from each Gaussian. By simply assigning each $$\boldsymbol{x}_i$$ to the Gaussian with the highest probability of generating $$\boldsymbol{x}_i$$, we end up clustering the data. 
+
+This is simply a maximum likelihood 
+
+$$X := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$ 
+
+and our goal is to infer the most likely value for latent data
 
