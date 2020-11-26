@@ -14,7 +14,7 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 --------------
 
-Gaussian mixture model's are a very popular method for data clustering. Furthermore, they also provide an example of where the expectation-maximization algorithm provides an excellent strategy for performing maximum likelihood.  In this post, I will define the GMM and also derive the EM algorithm for performing maximum likelihood estimation of its paramters. This blog post is designed to be a followup to my [previous post](), where I discussed the theory and intuition behind the EM algorithm. 
+Gaussian mixture model's are a very popular method for data clustering. They are also models where the expectation-maximization (EM) algorithm provides an excellent strategy for performing maximum likelihood.  In this post, I will define the Gaussian mixture model and also derive the EM algorithm for performing maximum likelihood estimation of its paramters. This blog post is designed to be a followup to my [previous post](https://mbernste.github.io/posts/em/), where I discussed the theory and intuition behind the EM algorithm. 
 
 Gaussian Mixture Models
 --------------
@@ -23,7 +23,7 @@ The Gaussian mixture model (GMM) is a family of distributions over real-valued v
 
 $$z \sim \text{Cat}(\alpha_1, \dots, \alpha_K)$$
 
-where $$z \in \{1, 2, \dots, K}$$ tells us which Gaussian to pick (i.e., if $$z = 2$$, then we choose the 2nd Gaussian) and $$\alpha_k$$ is the probability of choosing the $$k$$th Gaussian. Then, we sample $$\boldsymbol{x}$$ from that $$z$$th Gaussian.  That is,
+where $$z \in \{1, 2, \dots, K\}$$ tells us which Gaussian to pick (i.e., if $$z = 2$$, then we choose the 2nd Gaussian) and $$\alpha_k$$ is the probability of choosing the $$k$$th Gaussian. Then, we sample $$\boldsymbol{x}$$ from that $$z$$th Gaussian.  That is,
 
 $$\boldsymbol{x} \sim \phi_z$$
 
