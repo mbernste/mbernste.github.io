@@ -41,10 +41,15 @@ As we will see in the next section of this blog post, the random variable of int
 
 $$p(\boldsymbol{x}; \Theta) := \sum_{k=1}^K \alpha_k \phi(\boldsymbol{x}; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)$$
 
+where $$\phi$$ is the probability density function of the multivariate Guassian distribution:
+
+$$\phi(\boldsymbol{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma}) := \frac{1}{(2\pi)^{\frac{n}{2}} \vert \boldsymbol{\Sigma} \vert}^{\frac{1}{2}}}$$
+
 Here's an example density function for a two-dimensional GMM with three Gaussians (i.e. $$K = 3$$):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GMM_example_density.png" alt="drawing" width="600"/></center>
 
+Notice that the distribution has three 
 
 A model for data clustering
 --------------
