@@ -49,7 +49,7 @@ Here's an example density function for a two-dimensional GMM with three Gaussian
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GMM_example_density.png" alt="drawing" width="600"/></center>
 
-Notice that the distribution has three 
+Notice that the distribution has three modes corresponding to the means of the three Gaussians.  Furthermore, the height of each mode is a function of each $$\alpha_k$$ as well as the the covariance matrix $$\boldsymbol{\Sigma}_k$$.
 
 A model for data clustering
 --------------
