@@ -27,7 +27,7 @@ where $$z \in \{1, 2, \dots, K}$$ tells us which Gaussian to pick (i.e., if $$z 
 
 $$\boldsymbol{x} \sim \phi_z$$
 
-This model is depicted by the following [plate notation](https://en.wikipedia.org/wiki/Plate_notation):
+This model is depicted by the following graphical model:
 
 Note, that each of the $$K$$ Gaussian distributions, $$\phi_k$$, has it's own set of parameters: $$\boldsymbol{\mu}_k$$, its mean, and $$\boldsymbol{\Epsilon}_k$$, its covariance matrix.  Furthermore, the probabilities of picking the Guassians $$alpha_1, \dots, alpha_k$$ are also parameters to the model.  Thus, the full set of parameters of the GMM are each Guassian's mean, each Guassian's covariance matrix, and the probabilities of picking each Gaussian. We will denote this set of parameters as
 
