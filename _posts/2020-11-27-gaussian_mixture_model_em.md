@@ -25,9 +25,9 @@ $$z \sim \text{Cat}(\alpha_1, \dots, \alpha_K)$$
 
 where $$z \in \{1, 2, \dots, K\}$$ tells us which Gaussian to pick (i.e., if $$z = 2$$, then we choose the 2nd Gaussian) and $$\alpha_k$$ is the probability of choosing the $$k$$th Gaussian. Then, we sample $$\boldsymbol{x}$$ from that $$z$$th Gaussian.  That is,
 
-$$\boldsymbol{x} \sim N(\boldsymbol{\mu}_k, \boldsymbol{\Epsilon}_k)$$
+$$\boldsymbol{x} \sim N(\boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)$$
 
-where $$\boldsymbol{\mu}_k$$ is the $$k$$th Gaussian's mean, and $$\boldsymbol{\Epsilon}_k$$ is its covariance matrix.
+where $$\boldsymbol{\mu}_k$$ is the $$k$$th Gaussian's mean, and $$\boldsymbol{\Sigma}_k$$ is its covariance matrix.
 
 This model is depicted by the following graphical model:
 
@@ -35,7 +35,7 @@ This model is depicted by the following graphical model:
 
 Note, that each of the $$K$$ Gaussian distributions has a separate set of parameters (i.e., a mean vector and a covariance matrix).  Furthermore, the probabilities of picking the Guassians $$alpha_1, \dots, alpha_k$$ are also parameters to the model.  We will denote this full set of model parameters as
 
-$$\Theta = \{ \boldsymbol{\mu}_1, \boldsymbol{\Epsilon}_1, \dots, \boldsymbol{\mu}_K, \boldsymbol{\Epsilon}_K, \alpha_1, \dots, \alpha_K \}$$
+$$\Theta = \{ \boldsymbol{\mu}_1, \boldsymbol{\Sigma}_1, \dots, \boldsymbol{\mu}_K, \boldsymbol{\Sigma}_K, \alpha_1, \dots, \alpha_K \}$$
 
 
 A model for data clustering
