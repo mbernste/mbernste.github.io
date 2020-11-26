@@ -1,5 +1,5 @@
 ---
-title: 'Gaussian Mixture Models'
+title: 'Gaussian mixture models'
 date: 2020-11-24
 permalink: /posts/gmm_em/
 tags:
