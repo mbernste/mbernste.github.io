@@ -43,7 +43,9 @@ $$\begin{align*}p(\boldsymbol{x}; \Theta) &:= \sum_{k=1}^K P(Z=k ; \Theta)p(\bol
 
 where $$\phi$$ is the probability density function of the multivariate Guassian distribution:
 
-$$\phi(\boldsymbol{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma}) := \frac{1}{ (2\pi)^{\frac{n}{2}} \vert \boldsymbol{\Sigma} \vert}^{\frac{1}{2}} }$$
+$$\phi(\boldsymbol{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma}) := \frac{1}{  \vert \boldsymbol{\Sigma} \vert}^{\frac{1}{2}} }$$
+
+$$(2\pi)^{\frac{n}{2}}$$
 
 Here's an example density function for a two-dimensional GMM with three Gaussians (i.e. $$K = 3$$):
 
