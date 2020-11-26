@@ -29,6 +29,8 @@ $$\boldsymbol{x} \sim \phi_z$$
 
 This model is depicted by the following graphical model:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GMM_graphical_model.png" alt="drawing" width="400"/></center>
+
 Note, that each of the $$K$$ Gaussian distributions, $$\phi_k$$, has it's own set of parameters: $$\boldsymbol{\mu}_k$$, its mean, and $$\boldsymbol{\Epsilon}_k$$, its covariance matrix.  Furthermore, the probabilities of picking the Guassians $$alpha_1, \dots, alpha_k$$ are also parameters to the model.  Thus, the full set of parameters of the GMM are each Guassian's mean, each Guassian's covariance matrix, and the probabilities of picking each Gaussian. We will denote this set of parameters as
 
 $$\Theta = \{\boldsymbol{\mu}_1, \boldsymbol{\Epsilon}_1, \dots, \boldsymbol{\mu}_K, \boldsymbol{\Epsilon}_K, \alpha_1, \dots, \alpha_K \}$$
