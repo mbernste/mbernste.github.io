@@ -45,7 +45,7 @@ $$\begin{align*}p(\boldsymbol{x}; \Theta) &:= \sum_{k=1}^K P(Z=k ; \Theta)p(\bol
 
 where $$\phi$$ is the probability density function of the [multivariate Guassian distribution](https://en.wikipedia.org/wiki/Multivariate_normal_distribution):
 
-$$\phi(\boldsymbol{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma}) := \frac{1}{ (2\pi)^{\frac{n}{2}} \vert \boldsymbol{\Sigma} \vert^{\frac{1}{2}} } \exp \left( -\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x} - \boldsymbol{\mu})} \right)$$
+$$\phi(\boldsymbol{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma}) := \frac{1}{ (2\pi)^{\frac{n}{2}} \vert \boldsymbol{\Sigma} \vert^{\frac{1}{2}} } \exp -\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x} - \boldsymbol{\mu})} $$
 
 Here's an example density function for a two-dimensional GMM with three Gaussians (i.e. $$K = 3$$):
 
@@ -60,17 +60,17 @@ GMM's generate datapoints that form clusters.  That is, if we are given a GMM an
 
 Now let's flip this situation around. Instead of generating points from a known GMM, let's say we are presented with some dataset $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$ and we assume that a GMM generated these points, but we don't know the GMM's parameters. Our clustering task then is to infer the unknown parameters of the GMM in order to figure out which Guassian generated which datapoint.
 
-This situation is depicted in the figure below. On the left-hand side, we have a hypothetical situation in which we have a known GMM and samples  $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$ from that model. Note, that we also know which Guassian generated each data point -- that is, we know the values $$z_1, \dots, z_n$$.  In the right-hand figure, we are only given $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$.  We do not the model's parameters $$\Theta$$ nor do we know $$z_1, \dots, z_n$$.  Said differently, $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$ constitutes the *observed data* and $$z_1, \dots, z_n$$ constitutes the *latent data*.  
+This situation is depicted in the figure below. On the left-hand side, we have a hypothetical situation in which we have a known GMM and samples  $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$ from that model. Note, that we also know which Guassian generated each data point -- that is, we know the values $$z_1, \dots, z_n$$ (these are the colors of each datapoint).  In the right-hand figure, we are only given $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$.  We do not the model's parameters $$\Theta$$ nor do we know $$z_1, \dots, z_n$$.  Said differently, $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$ constitutes the *observed data* and $$z_1, \dots, z_n$$ constitutes the *latent data*.  
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GMM_example_data.png" alt="drawing" width="700"/></center>
 
-In order to perform clustering on $$\bold{x}_1, \dots, \bold{x}_n$$, we need to figure out the values for $$\Theta$$. If we know $$\Theta$$, then we can assign each $$\bold{x}_i$$ to the Guassian that was most likely to generate it:
+In order to perform clustering on $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$, we need to figure out the values for $$\Theta$$. If we know $$\Theta$$, then we can assign each $$\bold{x}_i$$ to the Guassian that was most likely to generate it:
 
-$$\text{argmax}_{k \in \{1, \dots, K\} P(Z_i = k \mid \bold{x}_i ; \Theta)$$
+$$\text{arg max}_{k \in \{1, \dots, K \} P(Z_i = k \mid \boldsymbol{x}_i ; \Theta)$$
 
 where
 
-$$\begin{align*} P(Z_i = k \mid \bold{x}_i ; \Theta) &= p(bold{x}_i \mid Z_i = k ; \Theta)P(Z_i = k) \\ &= \phi(\boldsymbol{x}_i \mid \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \alpha_k$$
+$$\begin{align*} P(Z_i = k \mid \boldsymbol{x}_i ; \Theta) &= p(boldsymbol{x}_i \mid Z_i = k ; \Theta)P(Z_i = k) \\ &= \phi(\boldsymbol{x}_i \mid \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \alpha_k$$
 
 So our task is to infer the values for $$\Theta$$.  We can approach this via the principle of maximum-likelihood:
 
