@@ -64,11 +64,11 @@ This situation is depicted in the figure below. On the left-hand side, we have a
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_data.png" alt="drawing" width="700"/></center>
 
-In order to perform clustering on $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$, we can perform the following steps. First, we need to estimate the values for $$\Theta$$. Once we have our estimate, 
+In order to perform clustering on $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$, we can perform the following steps. First, we need to estimate the values for $$\Theta$$. This estimation task will be the subject of much of this blog post, but for now, let's say we have an estimate which we will denote as 
 
 $$\hat{\Theta} := \{ \hat{\boldsymbol{\mu}_1}, \hat{\boldsymbol{\Sigma}_1}, \dots, \hat{\boldsymbol{\mu}_K}, \hat{\boldsymbol{\Sigma}_K}, \hat{\alpha_1}, \dots, \hat{\alpha_K} \}$$
 
-then we can assign $$\boldsymbol{x}_i$$ to the Gaussain (i.e., cluster) that was most likely to generate $$\boldsymbol{x}_i$$:
+Given this estimate, we can assign $$\boldsymbol{x}_i$$ to the Gaussain (i.e., cluster) that was most likely to generate $$\boldsymbol{x}_i$$:
 
 $$\text{arg max}_{k \in \{1, \dots, K \}} P(Z_i = k \mid \boldsymbol{x}_i ; \hat{\Theta})$$
 
@@ -80,7 +80,7 @@ This is depicted in the figure below. In the left-hand figure, we depict our est
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_clustering.png" alt="drawing" width="700"/></center>
 
-So our task is to infer the values for $$\Theta$$.  We can approach this via the principle of maximum-likelihood:
+Now, let's come back to the task of estimating values for $$\Theta$$.  We can approach this via the principle of maximum-likelihood:
 
 $$\hat{\Theta} := \text{arg max}_{\Theta} \prod_{i=1}^n p(\boldsymbol{x}_i ; \Theta)$$
 
