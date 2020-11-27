@@ -47,7 +47,9 @@ where $$\phi$$ is the probability density function of the [multivariate Guassian
 
 $$\phi(\boldsymbol{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma}) := \frac{1}{ (2\pi)^{\frac{n}{2}} \vert \boldsymbol{\Sigma} \vert^{\frac{1}{2}} }$$
 
-$$\left[ \exp -\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x} - \boldsymbol{\mu})} \right] $$
+$$\exp \left[ HI \right] $$
+
+$$-\frac{1}{2}(\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x} - \boldsymbol{\mu})} $$
 
 Here's an example density function for a two-dimensional GMM with three Gaussians (i.e. $$K = 3$$):
 
