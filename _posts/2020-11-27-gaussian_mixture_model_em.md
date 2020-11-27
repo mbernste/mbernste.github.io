@@ -80,11 +80,11 @@ $$\begin{align*} P(Z_i = k \mid \boldsymbol{x}_i ; \hat{\Theta}) &= p(boldsymbol
 
 This is depicted in the figure below. In the left-hand figure, we depict our estimate for $$\Theta$$. In the right-hand figure, we assign each point to the Gaussian that was most likely to generate that point.
 
-
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GMM_example_clustering.png" alt="drawing" width="700"/></center>
 
 So our task is to infer the values for $$\Theta$$.  We can approach this via the principle of maximum-likelihood:
 
-$$\hat{\Theta} := \text{arg max}_\Theta \prod_{i=1}^n p(\boldsymbol{x}_i ; \Theta)$$
+$$\hat{\Theta} := \text{arg max}_{\Theta} \prod_{i=1}^n p(\boldsymbol{x}_i ; \Theta)$$
 
 And how do we optimize this function? We can do it easily with the EM algorithm!
 
