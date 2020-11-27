@@ -56,15 +56,11 @@ Notice that the distribution has three modes corresponding to the means of the t
 A model for data clustering
 --------------
 
-GMM's generate datapoints that form clusters.  That is, if we take a set of i.i.d. samples, $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$$ from a GMM, these datapoints will cluster around the $$K$$ means of the $$K$$ Guassian distributions. Moreover, the number of points we sample from each Gaussian will be proportional to the $$\alpha_1, \dots, \alpha_k$$ probabilities. This is depicted in the figure below:
+GMM's generate datapoints that form clusters.  That is, if we are given a GMM and we generate a set of i.i.d. samples, $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$$ from the GMM, these datapoints will cluster around the $$K$$ means of the $$K$$ Guassian distributions. Moreover, the number of points we sample from each Gaussian will be proportional to the $$\alpha_1, \dots, \alpha_k$$ probabilities. 
 
+Now let's flip this situation around. Instead of generating points from a known GMM, let's say we are presented with some dataset $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$ and we assume that a GMM generated these points, but we don't know the GMM's parameters. Our clustering task then is to infer the unknown parameters of the GMM in order to figure out which Guassian generated which datapoint.
 
+This situation is depicted in the figure below. On the left-hand side, we have a hypothetical situation in which we have a known GMM and samples $$(\boldsymbol{x}_1, z_1), \dots, (\boldsymbol{x}_n, z_n)$$ from that model ($$z_i$$ is the value of the random variable $$Z_i$$).  On the right-hand figure, we only have observed $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$, but we do not know $$z_1, \dots, z_n$$ nor do we know the model's parameters.  That is, $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$ constitutes the *observed data* and $$z_1, \dots, z_n$$ constitutes the *latent data*.  
 
-Now let's flip this situation on its head. Instead of generating points from a GMM, let's say we are presented with some dataset $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$. If we posit that these datapoints were generated from a GMM with $$K$$ Gaussians and then we estimate the parameters $$\Theta$$ that make the data points most likely, we can compute the probability that each $$\boldsymbol{x}_i$$ was generated from each Gaussian. By simply assigning each $$\boldsymbol{x}_i$$ to the Gaussian with the highest probability of generating $$\boldsymbol{x}_i$$, we end up clustering the data. 
-
-This is simply a maximum likelihood 
-
-$$X := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$ 
-
-and our goal is to infer the most likely value for latent data
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GMM_example_data.png" alt="drawing" width="700"/></center>
 
