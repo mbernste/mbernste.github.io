@@ -84,7 +84,7 @@ So our task is to infer the values for $$\Theta$$.  We can approach this via the
 
 $$\hat{\Theta} := \text{arg max}_{\Theta} \prod_{i=1}^n p(\boldsymbol{x}_i ; \Theta)$$
 
-And how do we optimize this function? We can do it easily with the EM algorithm!
+How do we solve this optimization problem? It turns out that the EM algorithm provides a very straightforward approach!
 
 Maximum-likelihood estimation for GMM's via expectation-maximization
 --------------
