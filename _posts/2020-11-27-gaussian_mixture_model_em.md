@@ -89,3 +89,15 @@ And how do we optimize this function? We can do it easily with the EM algorithm!
 Maximum-likelihood estimation for GMM's via expectation-maximization
 --------------
 
+The EM algorithm is a natural choice for performing maximum likelihood estimation for a GMM's parameters because the algorithm is quite simple to implement.  First, let's state the algorithm and then we will derive it.
+
+**E-Step**
+
+The E-step entails computing the following variables:
+
+**M-Step**
+
+The M-Step then updates the models parameters as follows:
+
+**Derivation**
+
