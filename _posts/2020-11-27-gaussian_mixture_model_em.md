@@ -64,14 +64,28 @@ This situation is depicted in the figure below. On the left-hand side, we have a
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GMM_example_data.png" alt="drawing" width="700"/></center>
 
-In order to perform clustering on $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$, we need to figure out the values for $$\Theta$$. If we know $$\Theta$$, then we can assign each $$\bold{x}_i$$ to the Guassian that was most likely to generate it:
+In order to perform clustering on $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$, we can perform the following steps. First, we need to estimate the values for $$\Theta$$. Once we have our estimate, 
 
-$$\text{arg max}_{k \in \{1, \dots, K \} P(Z_i = k \mid \boldsymbol{x}_i ; \Theta)$$
+$$\hat{\Theta} := \{ \hat{\boldsymbol{\mu}_1}, \hat{\boldsymbol{\Sigma}_1}, \dots, \hat{\boldsymbol{\mu}_K}, \hat{\boldsymbol{\Sigma}_K}, \hat{\alpha_1}, \dots, \hat{\alpha_K} \}$$, 
+
+then we can assign $$\boldsymbol{x}_i$$ to the Gaussain (i.e., cluster) that was most likely to generate $$\boldsymbol{x}_i$$:
+
+$$\text{arg max}_{k \in \{1, \dots, K \} P(Z_i = k \mid \boldsymbol{x}_i ; \hat{\Theta})$$
 
 where
 
-$$\begin{align*} P(Z_i = k \mid \boldsymbol{x}_i ; \Theta) &= p(boldsymbol{x}_i \mid Z_i = k ; \Theta)P(Z_i = k) \\ &= \phi(\boldsymbol{x}_i \mid \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \alpha_k$$
+$$\begin{align*} P(Z_i = k \mid \boldsymbol{x}_i ; \hat{\Theta}) &= p(boldsymbol{x}_i \mid Z_i = k ; \Theta)P(Z_i = k) \\ &= \phi(\boldsymbol{x}_i \mid \hat{\boldsymbol{\mu}_k}, \hat{\boldsymbol{\Sigma}_k}) \alpha_k$$
+
+This is depicted in the figure below. In the left-hand figure, we depict our estimate for $$\Theta$$. In the right-hand figure, we assign each point to the Gaussian that was most likely to generate that point.
+
+
 
 So our task is to infer the values for $$\Theta$$.  We can approach this via the principle of maximum-likelihood:
 
 $$\hat{\Theta} := \text{arg max}_\Theta \prod_{i=1}^n p(\boldsymbol{x}_i ; \Theta)$$
+
+And how do we optimize this function? We can do it easily with the EM algorithm!
+
+Maximum-likelihood estimation for GMM's via expectation-maximization
+--------------
+
