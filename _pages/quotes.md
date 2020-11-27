@@ -8,6 +8,8 @@ author_profile: true
 
 "Sometimes it's difficult. You know, you always have this image of the perfect thing which you can never achieve, but which you never stop trying to achieve. I think at the core there’s this interior image you have that’s absolutely perfect. That's your signpost and your guide. You'll never get there, but without it you won't get anywhere." **\~ Cormac McCarthy**
 
+"...In that Empire, the Art of Cartography attained such Perfection that the map of a single Province occupied the entirety of a City, and the map of the Empire, the entirety of a Province. In time, those Unconscionable Maps no longer satisfied, and the Cartographers Guilds struck a Map of the Empire whose size was that of the Empire, and which coincided point for point with it. The following Generations, who were not so fond of the Study of Cartography as their Forebears had been, saw that that vast Map was Useless, and not without some Pitilessness was it, that they delivered it up to the Inclemencies of Sun and Winters. In the Deserts of the West, still today, there are Tattered Ruins of that Map, inhabited by Animals and Beggars; in all the Land there is no other Relic of the Disciplines of Geography." **\~ Jorge Luis Borges**
+
 "There is but one kind of unity possible in a world as diverse as ours. It is unity of method, rather than aim; the unity of disciplined experiment." **\~ Walter Lippman**
 
 "If you want to build a ship, don't drum up people to collect wood and don't assign them tasks and work, but rather teach them to long for the endless immensity of the sea." **\~ Antoine de Saint-Exupery**
