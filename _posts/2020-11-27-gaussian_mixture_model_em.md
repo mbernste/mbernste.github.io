@@ -97,11 +97,15 @@ The EM algorithm is a natural choice for performing maximum likelihood estimatio
 
 **E-Step**
 
-At the $$t$$th step of the algorithm, E-step entails computing a the value of a variable for each sample, Gaussian pair. Specifically for the $$i$$ sample and $$k$$ Gaussian, we compute
+At the $$t$$th step of the algorithm, E-step entails formulating the $$t$$th Q-function:
+
+$$Q_t(\Theta) := \sum_{i=1}^n\sum_{k=1}^K \gamma_{t,i,k} \log \left[ \alpha_k \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \right]
+
+where 
 
 $$\gamma_{t,i,k} := \frac{\alpha_{t,k} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,k}, \boldsymbol{\Sigma}_{t,k})}{\sum_{h=1}^K \alpha_{t,h} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,h}, \boldsymbol{\Sigma}_{t,h})}$$
 
-where $$\alpha_{t,k}$$, $$\boldsymbol{\mu}_{t,k}$$, and $$\boldsymbol{\Sigma}_{t,k}$$ are the $$t$$ estimates of $$\alpha_k$$, $$\boldsymbol{\mu}_{k}$$, and $$\boldsymbol{\Sigma}_{k}$$ respectively.
+and $$\alpha_{t,k}$$, $$\boldsymbol{\mu}_{t,k}$$, and $$\boldsymbol{\Sigma}_{t,k}$$ are the $$t$$th estimates of $$\alpha_k$$, $$\boldsymbol{\mu}_{k}$$, and $$\boldsymbol{\Sigma}_{k}$$ respectively.
 
 **M-Step**
 
