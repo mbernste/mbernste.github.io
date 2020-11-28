@@ -93,7 +93,7 @@ How do we solve this optimization problem? It turns out that the EM algorithm pr
 Maximum-likelihood estimation for GMM's via expectation-maximization
 --------------
 
-The EM algorithm is a natural choice for performing maximum likelihood estimation for a GMM's parameters because the algorithm is quite simple to implement.  First, let's state the algorithm and then we will derive it.
+The EM algorithm is a natural choice for performing maximum likelihood estimation for a GMM's parameters because the algorithm is quite simple to implement.  For a thorough discussion of the EM algorithm, see my [previous blog post](https://mbernste.github.io/posts/em/). First, let's state the algorithm and then we will derive it.
 
 **E-Step**
 
