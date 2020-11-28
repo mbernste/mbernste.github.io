@@ -157,7 +157,7 @@ $$\frac{\partial L(\Theta, \lambda)}{\partial \alpha_k} = \frac{1}{\alpha_k} \su
 
 Setting to zero and solving for $$\alpha_k$$ we have
 
-$$\alpha_k = -\frac{1}{\lambda} \sum_{i=1}^n \gamma_{t,i,k}$$
+$$\begin{align*} 0 &= \frac{1}{\alpha_k} \sum_{i=1} \gamma_{t,i,k} + \lambda \\ \alpha_k &= -\frac{1}{\lambda} \sum_{i=1}^n \gamma_{t,i,k}\end{align*}$$
 
 Plugging this into the constraint $$\sum_{k=1}^K \alpha_k = 1$$ , we can solve for $$\lambda$$,
 
