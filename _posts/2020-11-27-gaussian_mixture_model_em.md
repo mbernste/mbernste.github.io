@@ -99,7 +99,7 @@ The EM algorithm is a natural choice for performing maximum likelihood estimatio
 
 On the E-step, we must formulate the Q-function. Let $$t$$ be a given iteration of the algorithm. The $$t$$th Q-function is 
 
-$$Q_t(\Theta) := \sum_{i=1}^n\sum_{k=1}^K \gamma_{t,i,k} \log \left[ \alpha_k \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \right]
+$$Q_t(\Theta) := \sum_{i=1}^n \sum_{k=1}^K \gamma_{t,i,k} \log \left[ \alpha_k \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \right]$$
 
 where 
 
