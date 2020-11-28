@@ -9,7 +9,7 @@ tags:
   - tutorial
 ---
 
-*Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation of the parameters in a latent variable model. In this post, I discuss some theory behind, and intuition into, this algorithm.*
+*Expectation-maximization (EM) is a popular algorithm for performing maximum-likelihood estimation of the parameters in a latent variable model. In this post, I discuss the theory behind, and intuition into this algorithm.*
 
 Introduction
 --------
