@@ -197,4 +197,4 @@ and
 
 $$XXXX$$
 
-which are described in Equations 57 and XXXX in [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf).
+which are described in Equations 57 and 61 respectively from the [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf).
