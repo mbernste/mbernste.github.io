@@ -165,4 +165,9 @@ $$\begin{align*} \sum_{k=1}^K -\frac{1}{\lambda} \sum_{i=1}^n \gamma_{t,i,k} &= 
 
 Finally, plugging $$\lambda$$ back into the equation that sets the derivative of the Lagrangian to zero, we can solve for the final value of $$\alpha_k$$:
 
-\begin{align*}0 &= \frac{1}{\alpha_k} \sum_{i=1} \gamma_{t,i,k} - n \\ \implies \alpha_k &= \frac{1}{n} \sum_{i=1} \gamma_{t,i,k} \end{align*}
+$$\begin{align*}0 &= \frac{1}{\alpha_k} \sum_{i=1} \gamma_{t,i,k} - n \\ \implies \alpha_k &= \frac{1}{n} \sum_{i=1} \gamma_{t,i,k} \end{align*}$$
+
+Now, let's compute the derivative of the Lagrangian with respect to $$\boldsymbol{\mu}_k$$ for some $$k$$:
+
+$$\begin{align*}\frac{\partial L(\Theta, \lambda)}{\partial \boldsymbol{\mu}_k} := 
+\end{align*}$$
