@@ -129,17 +129,25 @@ $$Q_t(\Theta) := E_{Z \mid X; \Theta_t}\left[ \log p(X, Z; \Theta) \right]$$
 
 Deriving the Q-function entails calculating an analytical form of this expectation so that we can implement it in a computer program. For GMM's that derivation is:
 
-$$\begin{align*} Q_t(\Theta) &:= E_{Z \mid X; \Theta_t}\left[ \log p(X, Z; \Theta) \right] \\ &= \sum_{i=1}^n E_{z_i \mid \boldsymbol{x}_i; \Theta_t} \left[ \log p(\boldsymbol{x}_i, z_i ; \Theta) \right] \\ &= \sum_{i=1}^n \sum_{k=1}^K P(z_i = k \mid \boldsymbol{x}_i ; \Theta_t) \log p(\boldsymbol{x}_i, z_i ; \Theta) \\ &= \sum_{i=1}^n \sum_{k=1}^K \frac{P(\boldsymbol{x}_i \mid z_i = k ; \Theta_t)P(z_i = k ; \Theta_t)}{\sum_{h=1}^K P(\boldsymbol{x}_i \mid z_i = h ; \Theta_t)P(z_i = h ; \Theta_t)} \log p(\boldsymbol{x}_i, z_i ; \Theta) \\ &= \frac{\alpha_{t,k} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,k}, \boldsymbol{\Sigma}_{t,k})}{\sum_{h=1}^K \alpha_{t,h} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,h}, \boldsymbol{\Sigma}_{t,h})} \log \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \end{align*}$$
+$$\begin{align*} Q_t(\Theta) &:= E_{Z \mid X; \Theta_t}\left[ \log p(X, Z; \Theta) \right] \\ &= \sum_{i=1}^n E_{z_i \mid \boldsymbol{x}_i; \Theta_t} \left[ \log p(\boldsymbol{x}_i, z_i ; \Theta) \right] \\ &= \sum_{i=1}^n \sum_{k=1}^K P(z_i = k \mid \boldsymbol{x}_i ; \Theta_t) \log p(\boldsymbol{x}_i, z_i ; \Theta) \\ &= \sum_{i=1}^n \sum_{k=1}^K \frac{P(\boldsymbol{x}_i \mid z_i = k ; \Theta_t)P(z_i = k ; \Theta_t)}{\sum_{h=1}^K P(\boldsymbol{x}_i \mid z_i = h ; \Theta_t)P(z_i = h ; \Theta_t)} \log p(\boldsymbol{x}_i, z_i ; \Theta) \\ &= \sum_{i=1}^n \sum_{k=1}^K \frac{\alpha_{t,k} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,k}, \boldsymbol{\Sigma}_{t,k})}{\sum_{h=1}^K \alpha_{t,h} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,h}, \boldsymbol{\Sigma}_{t,h})} \log \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \\ &= \sum_{i=1}^n \sum_{k=1}^K \gamma_{t, i, k} \log \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \end{align*}$$
+
+where we let 
+
+$$\gamma_{t,i,k} := \frac{\alpha_{t,k} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,k}, \boldsymbol{\Sigma}_{t,k})}{\sum_{h=1}^K \alpha_{t,h} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,h}, \boldsymbol{\Sigma}_{t,h})}$$
 
 **Derivation of the M-step**
 
 The M-step entails finding $$\Theta_{t+1}$$ that maximizes the Q-function. Note, that the $$\alpha_1, \dots, \alpha_k$$ are the probabilities that a given point is sampled from each Guassian, thus these probabilities must sum to one. Thus, when we optimize the Q-function with respect to these parameters, we must do so under the constraint that they sum to one.  That is, we must solve
 
-$$\Theta_{t+1} := \text{arg max}_\Theta Q_t(\Theta)$$
+$$\Theta_{t+1} := \text{arg max}_\Theta \ Q_t(\Theta)$$
 
 subject to 
 
 $$\sum_{k=1}^K \alpha_k = 1$$
+
+Because of the equality constraint, and because the objective and constraint are continuous, this optimization problem can be solved using Lagrange multipliers. First, we form the Lagrangian:
+
+$$L(\Theta, \lambda) := $$
 
 
 
