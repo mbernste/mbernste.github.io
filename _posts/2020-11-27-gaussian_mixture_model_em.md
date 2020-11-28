@@ -181,7 +181,7 @@ as described in Equation 86 of [The Matrix Cookbook](https://www.math.uwaterloo.
 
 Now, setting the derivative of the Lagrangian, with respect to the mean vector, to the zero vector, we can solve for $$\boldsymbol{\mu}_k$$:
 
-$$\begin{align*}\boldsymbol{0} = \sum_{i=1}^n \gamma_{t,i,k} \left[-2 \boldsymbol{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \right] \\ \implies  \boldsymbol{0} &= \boldsymbol{\Sigma}_k^{-1} \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \\ \implies  \boldsymbol{\Sigma}_k\boldsymbol{0} &= \boldsymbol{\Sigma}_k\boldsymbol{\Sigma}_k^{-1} \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \\ \boldsymbol{0} &= \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \\ \implies \boldsymbol{\mu}_k &= \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k} \boldsymbol{x}_i \end{align*}$$
+$$\begin{align*}\boldsymbol{0} &= \sum_{i=1}^n \gamma_{t,i,k} \left[-2 \boldsymbol{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \right] \\ \implies  \boldsymbol{0} &= \boldsymbol{\Sigma}_k^{-1} \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \\ \implies  \boldsymbol{\Sigma}_k\boldsymbol{0} &= \boldsymbol{\Sigma}_k\boldsymbol{\Sigma}_k^{-1} \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \\ \implies \boldsymbol{0} &= \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \\ \implies \boldsymbol{\mu}_k &= \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k} \boldsymbol{x}_i \end{align*}$$
 
 And there we've solved for the Guassian means that maximize the Q-function. 
 
