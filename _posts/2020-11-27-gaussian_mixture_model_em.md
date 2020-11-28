@@ -111,7 +111,14 @@ We note that the computation that must be done on this step is computing the $$\
 
 **M-Step**
 
-The M-Step then updates the models parameters as follows:
+On the M-step, we find $$\Theta$$ that maximizes $$Q_t(\Theta)$$. That is, we must compute the following:
 
-**Derivation**
+$$\Theta_{t+1} := \text{arg max}_{\Theta} \ Q_t(\Theta)$$
 
+The solution to this optimization problem is given by 
+
+$$\begina{align*}\forall k, \alpha_{t+1, k} &:= \\  \forall k, \alpha_{t+1, k, i} &:= \\ \forall k, \Sigma_{t+1, i, k} &:=\end{align*}$$
+
+**Derivation of the E-step**
+
+**Derivation of the M-step**
