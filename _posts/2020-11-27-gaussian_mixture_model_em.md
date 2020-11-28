@@ -129,7 +129,7 @@ $$Q_t(\Theta) := E_{Z \mid X; \Theta_t}\left[ \log p(X, Z; \Theta) \right]$$
 
 Deriving the Q-function entails calculating an analytical form of this expectation so that we can implement it in a computer program. For GMM's that derivation is:
 
-$$\begin{align*} Q_t(\Theta) &:= E_{Z \mid X; \Theta_t}\left[ \log p(X, Z; \Theta) \right] \\ &= \sum_{i=1}^n E_{z_i \mid \boldsymbol{x}_i; \Theta_t} \log p(\boldsymbol{x}_i, z_i ; \Theta)\end{align*}$$
+$$\begin{align*} Q_t(\Theta) &:= E_{Z \mid X; \Theta_t}\left[ \log p(X, Z; \Theta) \right] \\ &= \sum_{i=1}^n E_{z_i \mid \boldsymbol{x}_i; \Theta_t} \left[ \log p(\boldsymbol{x}_i, z_i ; \Theta) \right] \\ \sum_{i=1}^n \sum_{k=1}^K P(z_i = k \mid \boldsymbol{x}_i ; \Theta_t) \log p(\boldsymbol{x}_i, z_i ; \Theta) \end{align*}$$
 
 **Derivation of the M-step**
 
