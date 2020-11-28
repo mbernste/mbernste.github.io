@@ -179,4 +179,7 @@ $$\frac{\partial}{\partial \boldsymbol{x}} (\boldsymbol{x} - \boldsymbol{s})^T \
 
 as described in Equation 86 of [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf). 
 
+Now, setting the derivative of the Lagrangian, with respect to the mean vector, to the zero vector, we can solve for $$\boldysmbol{\mu}_k$$:
+
+$$\begin{align*}\boldsymbol{0} =  \end{align*}$$
 
