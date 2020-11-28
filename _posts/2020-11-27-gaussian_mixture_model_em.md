@@ -153,7 +153,10 @@ We now solve for $$\Theta$$ that makes the derivative of the Lagrangian equal to
 
 Let's start with $$\alpha_1, \dots, \alpha_K$$. For some $$k$$, 
 
-$$\begin{align*} \frac{\partial L(\Theta, \lambda)}{\partial \alpha_k} \end{align*}$$
+$$\begin{align*} \frac{\partial L(\Theta, \lambda)}{\partial \alpha_k} = \sum_{i=1}^n \sum_{k=1}^K \lambda \end{align*}$$
 
+Setting to zero and solving for $$\lambda$$ we have
+
+$$\begin{align*}0 = \sum_{i=1}^n \sum_{k=1}^K \lambda$$
 
 $$\text{arg max}_{\alpha_1, \dots, \alpha_k} Q_t(\Theta) $$
