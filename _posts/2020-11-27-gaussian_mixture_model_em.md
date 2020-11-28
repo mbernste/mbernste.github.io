@@ -169,5 +169,4 @@ $$\begin{align*}0 &= \frac{1}{\alpha_k} \sum_{i=1} \gamma_{t,i,k} - n \\ \implie
 
 Now, let's compute the derivative of the Lagrangian with respect to $$\boldsymbol{\mu}_k$$ for some $$k$$:
 
-$$\begin{align*}\frac{\partial L(\Theta, \lambda)}{\partial \boldsymbol{\mu}_k} := 
-\end{align*}$$
+$$\begin{align*}\frac{\partial L(\Theta, \lambda)}{\partial \boldsymbol{\mu}_k} := \end{align*}$$
