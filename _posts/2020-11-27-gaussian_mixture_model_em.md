@@ -58,7 +58,7 @@ GMM's generate datapoints that form clusters.  That is, if we are given a GMM an
 A model for data clustering
 --------------
 
-Let's say we are presented with some dataset $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$ and our goal is find [clusters](https://en.wikipedia.org/wiki/Cluster_analysis) such that points within a cluster are more similar to eachother than points in other clusters.  GMM's provide one framework for clustering data.
+Let's say we are presented with some dataset consisting of points $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$ and our goal is to find [clusters](https://en.wikipedia.org/wiki/Cluster_analysis) within these data points such that points within a cluster are more similar to eachother than they are to points outside their cluster.  GMM's provide a framework for finding said clusters.
 
 To cluster the data, we make a very strong assumption: that our datapoints were samples from a GMM with $$K$$ Gaussians ($$K$$ is the number of clusters we assume describe the data). Unfortunately, we don't know the GMM's parameters (i.e., each Gaussian's mean and covariance) nor do we know which Guassian generated each data point (i.e. the $$Z_1, \dots, Z_n$$ random variables). 
 
