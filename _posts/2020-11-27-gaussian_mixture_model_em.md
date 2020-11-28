@@ -171,6 +171,12 @@ And there we go; we've solved for the $$\alpha_1, \dots, \alpha_k$$ parameters t
 
 Now, we'll move on to the Gaussian means. First, we compute the derivative of the Lagrangian with respect to $$\boldsymbol{\mu}_k$$ for some $$k$$:
 
-$$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\mu}_k } := \sum_{i=1}^n \gamma_{t,i,k} \frac{\partial}{\partial \boldsymbol{\mu}_k } \log \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\mu}_k) \\ &= \sum_{i=1}^n \frac{\gamma_{t,i,k}}{\alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\mu}_k)}\frac{\partial}{\partial \boldsymbol{\mu}_k} \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\mu}_k)  \end{align*}$$
+$$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\mu}_k } &:= \sum_{i=1}^n \gamma_{t,i,k} \frac{\partial}{\partial \boldsymbol{\mu}_k } \log \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\mu}_k) \\ &= \sum_{i=1}^n \frac{\gamma_{t,i,k}}{\alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\mu}_k)}\frac{\partial}{\partial \boldsymbol{\mu}_k} \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\mu}_k) \\ &= \sum_{i=1}^n \gamma_{t,i,k} \left[-2 \boldsymbol{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \right] \end{align*}$$
+
+The last step of this derivation follows from the fact that
+
+$$\frac{\partial}{\partial \boldsymbol{x}} (\boldsymbol{x} - \boldsymbol{s})^T \boldsymbol{W} (\boldsymbol{x} - \boldsymbol{s}) = -2\boldsymbol{W}^{-1}(\boldsymbol{x}-\boldsymbol{s})$$
+
+as described in Equation 86 of [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf). 
 
 
