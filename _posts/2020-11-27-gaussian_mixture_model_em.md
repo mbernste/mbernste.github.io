@@ -123,4 +123,12 @@ $$\begin{align*}\forall k, \alpha_{t+1, k} &:= \frac{1}{n} \sum_{i=1}^n \gamma_{
 
 **Derivation of the E-step**
 
+Here we derive the Q-function at the $$t$$th iteration. Let $$X := \{\boldsymbol{x}_1, \dots, \boldsymbol{x}_n\}$$ be the collection of observed data (i.e., the data points) and $$Z := \{z_1, \dots, z_n\}$$ be the collection of latent data (i.e., which Gaussian generated each data point). Recall, the Q-function is defined as
+
+$$Q_t(\Theta)\end{align*} := E_{Z \mid X; \Theta_t}\left[ \log p(X, Z; \Theta) \right]$$
+
+Deriving the Q-function entails calculating an analytical form of this expectation so that we can code it in a computer program. For GMM's that derivation is:
+
+$$\begin{align*}Q_t(\Theta)\end{align*} &:= E_{Z \mid X; \Theta_t}\left[ \log p(X, Z; \Theta) \right] \\ &= \sum_{i=1}^n E_{z_i \mid \boldsymbol{x}_i; \Theta_t} \log p(\boldsymbol{x}_i, z_i ; \Theta)\end{align*}$$
+
 **Derivation of the M-step**
