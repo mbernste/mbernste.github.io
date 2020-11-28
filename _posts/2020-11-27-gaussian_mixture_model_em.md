@@ -53,12 +53,14 @@ Here's an example density function for a two-dimensional GMM with three Gaussian
 
 Notice that the distribution has three modes corresponding to the means of the three Gaussians.  Furthermore, the height of the $$k$$th mode is a function of both $$\alpha_k$$ as well as how "spread" out the Guassian is, which is determined by the the covariance matrix $$\boldsymbol{\Sigma}_k$$.
 
+GMM's generate datapoints that form clusters.  That is, if we are given a GMM and we generate a set of i.i.d. samples, $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$$ from the GMM, these datapoints will cluster around the $$K$$ means of the $$K$$ Guassian distributions. Moreover, the number of points we sample from each Gaussian will be proportional to the $$\alpha_1, \dots, \alpha_k$$ probabilities. 
+
 A model for data clustering
 --------------
 
-GMM's generate datapoints that form clusters.  That is, if we are given a GMM and we generate a set of i.i.d. samples, $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$$ from the GMM, these datapoints will cluster around the $$K$$ means of the $$K$$ Guassian distributions. Moreover, the number of points we sample from each Gaussian will be proportional to the $$\alpha_1, \dots, \alpha_k$$ probabilities. 
+Let's say we are presented with some dataset $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$ and our goal is find [clusters](https://en.wikipedia.org/wiki/Cluster_analysis) such that points within a cluster are more similar to eachother than points in other clusters.  GMM's provide one framework for clustering data.
 
-Now let's flip this situation around. Instead of generating points from a known GMM, let's say we are presented with some dataset $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathbb{R}^n$$ and we assume that a GMM generated these points, but we don't know the GMM's parameters. Our clustering task then is to infer the unknown parameters of the GMM in order to figure out which Guassian generated which datapoint.
+To cluster the data, we make a very strong assumption: that our datapoints were samples from a GMM with $$K$$ Gaussians ($$K$$ is the number of clusters we assume describe the data). Unfortunately, we don't know the GMM's parameters (i.e., each Gaussian's mean and covariance) nor do we know which Guassian generated each data point (i.e. the $$Z_1, \dots, Z_n$ random variables). 
 
 This situation is depicted in the figure below. On the left-hand side, we have a hypothetical situation in which we have a known GMM and samples  $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$ from that model. Note, that we also know which Guassian generated each data point -- that is, we know the values $$z_1, \dots, z_n$$ (these are the colors of each datapoint).  In the right-hand figure, we are only given $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$.  We do not the model's parameters $$\Theta$$ nor do we know $$z_1, \dots, z_n$$.  Said differently, $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$ constitutes the *observed data* and $$z_1, \dots, z_n$$ constitutes the *latent data*.  
 
@@ -79,6 +81,8 @@ $$\begin{align*} P(Z_i = k \mid \boldsymbol{x}_i ; \hat{\Theta}) &= \frac{p(\bol
 This is depicted in the figure below. In the left-hand figure, we depict our estimate for $$\Theta$$. In the right-hand figure, we assign each point to the Gaussian that was most likely to generate that point.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_clustering.png" alt="drawing" width="700"/></center>
+
+Note that we have recovered three clusters in the data that correspond to the three Gaussians. 
 
 Now, let's come back to the task of estimating values for $$\Theta$$.  We can approach this via the principle of maximum-likelihood:
 
