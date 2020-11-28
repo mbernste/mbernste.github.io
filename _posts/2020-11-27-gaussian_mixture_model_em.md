@@ -119,7 +119,7 @@ $$\Theta_{t+1} := \text{arg max}_{\Theta} \ Q_t(\Theta)$$
 
 The solution to this optimization problem is given by 
 
-$$\begin{align*}\forall k, \alpha_{t+1, k} &:= \\  \forall k, \boldsymbol{\mu}_{t+1, k, i} &:= \frac{1}{\gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}\boldsymbol{x}_i \\ \forall k, \boldsymbol{\Sigma}_{t+1, i, k} &:= \end{align*}$$
+$$\begin{align*}\forall k, \alpha_{t+1, k} &:= \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k}\\  \forall k, \boldsymbol{\mu}_{t+1, k, i} &:= \frac{1}{\gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}\boldsymbol{x}_i \\ \forall k, \boldsymbol{\Sigma}_{t+1, i, k} &:= \frac{1}{\gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,i,k})^2 \end{align*}$$
 
 **Derivation of the E-step**
 
