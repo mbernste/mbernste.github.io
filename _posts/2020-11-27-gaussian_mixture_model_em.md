@@ -93,7 +93,9 @@ How do we solve this optimization problem? It turns out that the EM algorithm pr
 Maximum-likelihood estimation for GMM's via expectation-maximization
 --------------
 
-The EM algorithm is a natural choice for performing maximum likelihood estimation for a GMM's parameters because the algorithm is quite simple to implement.  For a thorough discussion of the EM algorithm, see my [previous blog post](https://mbernste.github.io/posts/em/). First, let's state the algorithm and then we will derive it.
+The EM algorithm is a natural choice for performing maximum likelihood estimation for a GMM's parameters because the algorithm is quite simple to implement.  For a thorough discussion of the EM algorithm, see my [previous blog post](https://mbernste.github.io/posts/em/). 
+
+First, we will state the algorithm and then we will derive it.
 
 **E-Step**
 
@@ -117,7 +119,7 @@ $$\Theta_{t+1} := \text{arg max}_{\Theta} \ Q_t(\Theta)$$
 
 The solution to this optimization problem is given by 
 
-$$\begin{align*}\forall k, \alpha_{t+1, k} &:= \\  \forall k, \boldsymbol{\mu}_{t+1, k, i} &:= \\ \forall k, \boldsymbol{\Sigma}_{t+1, i, k} &:= \end{align*}$$
+$$\begin{align*}\forall k, \alpha_{t+1, k} &:= \\  \forall k, \boldsymbol{\mu}_{t+1, k, i} &:= \frac{1}{\gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}\boldsymbol{x}_i \\ \forall k, \boldsymbol{\Sigma}_{t+1, i, k} &:= \end{align*}$$
 
 **Derivation of the E-step**
 
