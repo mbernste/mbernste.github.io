@@ -45,7 +45,7 @@ $$\begin{align*}p(\boldsymbol{x}; \Theta) &:= \sum_{k=1}^K P(Z=k ; \Theta)p(\bol
 
 where $$\phi$$ is the probability density function of the [multivariate Guassian distribution](https://en.wikipedia.org/wiki/Multivariate_normal_distribution):
 
-$$\phi(\boldsymbol{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma}) := \frac{1}{ (2\pi)^{\frac{n}{2}} \vert \boldsymbol{\Sigma} \vert^{\frac{1}{2}} } \exp \left[ -\frac{1}{2} (\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x} - \boldsymbol{\mu})  \right] $$
+$$\phi(\boldsymbol{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma}) := \frac{1}{ (2\pi)^{\frac{n}{2}} \text{det}(\boldsymbol{\Sigma})^{\frac{1}{2}} } \exp \left[ -\frac{1}{2} (\boldsymbol{x} - \boldsymbol{\mu})^T \boldsymbol{\Sigma}^{-1} (\boldsymbol{x} - \boldsymbol{\mu})  \right] $$
 
 Here's an example density function for a two-dimensional GMM with three Gaussians (i.e. $$K = 3$$):
 
@@ -187,4 +187,4 @@ And there we've solved for the Guassian means that maximize the Q-function.
 
 Finally, we solve for the covariance matrices that maximize the Q-function. We first compute the gradient with the respect to the covariance matrix $$\boldsymbol{\Sigma}_k$$ for some $$k$$:
 
-$$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k } &:= \sum_{i=1}^n \gamma_{t,i,k} \frac{\partial}{\partial \boldsymbol{\Sigma}_k } \log \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \\ &= \sum_{i=1}^n \frac{\gamma_{t,i,k}}{\alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)}\frac{\partial}{\partial \boldsymbol{\mu}_k} \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)\end{align*}$$
+$$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k } &:= \sum_{i=1}^n \gamma_{t,i,k} \frac{\partial}{\partial \boldsymbol{\Sigma}_k } \log \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \\ &= \sum_{i=1}^n \frac{\gamma_{t,i,k}}{\alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)}\frac{\partial}{\partial \boldsymbol{\Sigma}_k} \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)\end{align*} \\ \sum_{i=1}^n \gamma_{t,i,k} $$
