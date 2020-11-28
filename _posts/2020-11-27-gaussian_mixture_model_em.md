@@ -179,7 +179,12 @@ $$\frac{\partial}{\partial \boldsymbol{x}} (\boldsymbol{x} - \boldsymbol{s})^T \
 
 as described in Equation 86 of [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf). 
 
-Now, setting the derivative of the Lagrangian, with respect to the mean vector, to the zero vector, we can solve for $$\boldysmbol{\mu}_k$$:
+Now, setting the derivative of the Lagrangian, with respect to the mean vector, to the zero vector, we can solve for $$\boldsymbol{\mu}_k$$:
 
 $$\begin{align*}\boldsymbol{0} = \sum_{i=1}^n \gamma_{t,i,k} \left[-2 \boldsymbol{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \right] \\ \implies  \boldsymbol{0} &= \boldsymbol{\Sigma}_k^{-1} \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \\ \implies  \boldsymbol{\Sigma}_k\boldsymbol{0} &= \boldsymbol{\Sigma}_k\boldsymbol{\Sigma}_k^{-1} \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \\ \boldsymbol{0} &= \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k) \\ \implies \boldsymbol{\mu}_k &= \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k} \boldsymbol{x}_i \end{align*}$$
 
+And there we've solved for the Guassian means that maximize the Q-function. 
+
+Finally, we solve for the covariance matrices that maximize the Q-function. We first compute the gradient with the respect to the covariance matrix $$\boldsymbol{\Sigma}_k$$ for some $$k$$:
+
+$$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k } &:= \sum_{i=1}^n \gamma_{t,i,k} \frac{\partial}{\partial \boldsymbol{\Sigma}_k } \log \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)\end{align*}
