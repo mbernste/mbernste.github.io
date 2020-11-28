@@ -161,7 +161,8 @@ $$\alpha_k = -\frac{1}{\lambda} \sum_{i=1}^n \gamma_{t,i,k}$$
 
 Plugging this into the constraint $$\sum_{k=1}^K \alpha_k = 1$$ , we can solve for $$\lambda$$,
 
-$$\begin{align*} \sum_{k=1}^K -frac{1}{\lambda} \sum_{i=1}^n \gamma_{t,i,k} &= 1 \\ \implies \lambda &= - \sum_{k=1}^K \sum_{i=1}^n \gamma_{t,i,k} \end{align*}$$
+$$\begin{align*} \sum_{k=1}^K -frac{1}{\lambda} \sum_{i=1}^n \gamma_{t,i,k} &= 1 \\ \implies \lambda &= - \sum_{i=1}^n \sum_{k=1}^K \gamma_{t,i,k} \\ \lambda &= -n  \end{align*} \ \ \ \ \text{because } \ \sum_{k=1}^K \gamma_{t,i,k} = 1$$
 
-Finally, plugging $$\lambda$$ back into the derivative of the Lagrangian, we can solve for the final value of $$\alpha_k$$:
+Finally, plugging $$\lambda$$ back into the equation that sets the derivative of the Lagrangian to zero, we can solve for the final value of $$\alpha_k$$:
 
+\begin{align*}0 &= \frac{1}{\alpha_k} \sum_{i=1} \gamma_{t,i,k} - n \\ \implies \alpha_k &= \frac{1}{n} \sum_{i=1} \gamma_{t,i,k} \end{align*}
