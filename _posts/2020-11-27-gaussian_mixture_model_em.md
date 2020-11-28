@@ -133,8 +133,15 @@ $$\begin{align*} Q_t(\Theta) &:= E_{Z \mid X; \Theta_t}\left[ \log p(X, Z; \Thet
 
 **Derivation of the M-step**
 
-The M-step entails finding $$\Theta_{t+1}$$ that maximizes the Q-function. That is, we must solve
+The M-step entails finding $$\Theta_{t+1}$$ that maximizes the Q-function. Note, that the $$\alpha_1, \dots, \alpha_k$$ are the probabilities that a given point is sampled from each Guassian, thus these probabilities must sum to one. Thus, when we optimize the Q-function with respect to these parameters, we must do so under the constraint that they sum to one.  That is, we must solve
 
 $$\Theta_{t+1} := \text{arg max}_\Theta Q_t(\Theta)$$
 
-To do so, we will solve for each group of parameters separately. Let's start with the $$\alpha_1, \dots, alpha_k$$ parameters. 
+subject to 
+
+$$\sum_{k=1}^K \alpha_k = 1$$
+
+
+
+
+$$\text{arg max}_{\alpha_1, \dots, \alpha_k} Q_t(\Theta) $$
