@@ -177,7 +177,7 @@ The last step of this derivation follows from the fact that
 
 $$\frac{\partial}{\partial \boldsymbol{s}} (\boldsymbol{x} - \boldsymbol{s})^T \boldsymbol{W} (\boldsymbol{x} - \boldsymbol{s}) = -2\boldsymbol{W}^{-1}(\boldsymbol{x}-\boldsymbol{s})$$
 
-as described in Equation 86 of [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf). 
+as described in Equation 86 in [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf). 
 
 Now, setting the derivative of the Lagrangian, with respect to the mean vector, to the zero vector, we can solve for $$\boldsymbol{\mu}_k$$:
 
@@ -188,3 +188,13 @@ And there we've solved for the Guassian means that maximize the Q-function.
 Finally, we solve for the covariance matrices that maximize the Q-function. We first compute the gradient with the respect to the covariance matrix $$\boldsymbol{\Sigma}_k$$ for some $$k$$:
 
 $$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k } &:= \sum_{i=1}^n \gamma_{t,i,k} \frac{\partial}{\partial \boldsymbol{\Sigma}_k } \log \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \\ &= \sum_{i=1}^n \frac{\gamma_{t,i,k}}{\alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)}\frac{\partial}{\partial \boldsymbol{\Sigma}_k} \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)\end{align*} \\ &= \sum_{i=1}^n \gamma_{t,i,k} \left[ -\frac{1}{2} \frac{\partial}{\partial \boldsymbl{\Sigma}_k} \log \text{det}(\boldsymbol{\Sigma_k}) \right] - \frac{1}{2} \frac{\partial}{\partial \boldsymbl{\Sigma}_k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k)^T\boldsymbol{\Sigma}_k^{-1}(\boldsymbol{x}_i - \boldsymbol{\mu}_k)$$
+
+We will make use of two identities in matrix calculus:
+
+$$\frac{\partial}{\partial \boldsymbol{X}} \log \vert \text{det}(\boldsymbol{X}) \vert = (\boldsymbol{X}^T)^{-1}$$
+
+and
+
+$$XXXX$$
+
+which are described in Equations 57 and XXXX in [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf).
