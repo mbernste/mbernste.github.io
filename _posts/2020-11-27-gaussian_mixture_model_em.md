@@ -175,7 +175,7 @@ $$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\mu}_k
 
 The last step of this derivation follows from the fact that
 
-$$\frac{\partial}{\partial \boldsymbol{x}} (\boldsymbol{x} - \boldsymbol{s})^T \boldsymbol{W} (\boldsymbol{x} - \boldsymbol{s}) = -2\boldsymbol{W}^{-1}(\boldsymbol{x}-\boldsymbol{s})$$
+$$\frac{\partial}{\partial \boldsymbol{s}} (\boldsymbol{x} - \boldsymbol{s})^T \boldsymbol{W} (\boldsymbol{x} - \boldsymbol{s}) = -2\boldsymbol{W}^{-1}(\boldsymbol{x}-\boldsymbol{s})$$
 
 as described in Equation 86 of [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf). 
 
