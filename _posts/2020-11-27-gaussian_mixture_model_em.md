@@ -125,7 +125,7 @@ $$\begin{align*}\forall k, \alpha_{t+1, k} &:= \frac{1}{n} \sum_{i=1}^n \gamma_{
 
 The full algorithm can implemented with the following pseudocode:
 
-$$\begin{align*}\text{Initialize parameters} \\ \forall k, \ \alpha_{0,k} \leftarrow 1 / K \\ \forall k, \ \boldsymbol{\mu}_{0,k} := \text{Random vector} \\ \boldsymbol{\Sigma}_{0,k} \\ \text{While }  \end{align*}$$
+$$\begin{align*}& \text{#Initialize parameters} \\ &t \leftarrow 0 \\ &\forall k, \ \alpha_{t,k} \leftarrow 1 / K \\ &\forall k, \ \boldsymbol{\mu}_{t,k} \leftarrow \text{Random vector} \\ \boldsymbol{\Sigma}_{t,k} \\ &\text{While } \ p(\boldsymbol{x}_1, \dots, \boldsymbol{x}_n ; \Theta_t) - p(\boldsymbol{x}_1, \dots, \boldsymbol{x}_n ; \Theta_{t-1}) < \epsilon: \\ &\text{# E-step} \\ &\gamma_{t,i,k} \leftarrow \frac{\alpha_{t,k} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,k}, \boldsymbol{\Sigma}_{t,k})}{\sum_{h=1}^K \alpha_{t,h} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,h}, \boldsymbol{\Sigma}_{t,h})} \end{align*}$$
 
 In the figure below we illustrate the EM algorithm for GMM's in action. As you can see, as the iterations increase, the means and covariances of each Gaussian begin to converge such that the Guassians sit atop the three clusters in the data:
 
