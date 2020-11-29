@@ -199,7 +199,7 @@ $$\frac{\partial}{\partial \boldsymbol{\Sigma}_k} \log \text{det}(\boldsymbol{\S
 
 **Note 2:** We make use of Equations 61 from the [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf):
 
-$$\frac{\partial}{\partial \boldsymbol{X}} \boldsymbol{a}^T \boldsymbol{X}^{-1} \boldsymbol{b} = -\left(\boldsymbol{X}^{-1}\right)^T \boldsymbol{ab}^T \left(\boldsymbol{X}^{-1}\right)$$
+$$\frac{\partial}{\partial \boldsymbol{X}} \boldsymbol{a}^T \boldsymbol{X}^{-1} \boldsymbol{b} = -\left(\boldsymbol{X}^{-1}\right)^T \boldsymbol{ab}^T \left(\boldsymbol{X}^{-1}\right)^T$$
 
 We note that the inverse of a symmetric matrix is also symmetric, so the inverse of $$\boldsymbol{\Sigma}_k$$ is symmetric. Thus,
 
