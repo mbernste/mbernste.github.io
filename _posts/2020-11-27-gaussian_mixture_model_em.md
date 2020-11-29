@@ -97,6 +97,18 @@ The EM algorithm is a natural choice for performing maximum likelihood estimatio
 
 The EM algorithm requires iterating between an E-step and M-step until the parameters converge.
 
+The EM algorithm is described by the following pseudocode:
+
+$$\begin{align*}&\text{While } \ p(\boldsymbol{x}_1, \dots, \boldsymbol{x}_n ; \Theta_t) - p(\boldsymbol{x}_1, \dots, \boldsymbol{x}_n ; \Theta_{t-1}) < \epsilon: \\ &\hspace{2cm}\text{E-Step} & \hspace{2cm} \gamma_{t,i,k} \leftarrow \frac{\alpha_{t,k} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,k}, \boldsymbol{\Sigma}_{t,k})}{\sum_{h=1}^K \alpha_{t,h} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,h}, \boldsymbol{\Sigma}_{t,h})} \\\hspace{2cm}\text{M-Step} \\ &\hspace{2cm} \forall k, \alpha_{t+1, k} := \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k} \\  &\hspace{2cm} \forall k, \boldsymbol{\mu}_{t+1, k} := \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}\boldsymbol{x}_i \\ &\hspace{2cm} \forall k, \boldsymbol{\Sigma}_{t+1, k} := \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})^T \\ &\hspace{2cm} t \leftarrow t + 1\end{align*}$$
+
+Note that the initial parameters $$\Theta_0$$ are unimportant and can be set arbitrarily. Recall because the EM algorithm converges to a local maximum, various values of $$\Theta_0$$ should be used. 
+
+In the figure below we illustrate the EM algorithm for GMM's in action. As you can see, as the iterations increase, the means and covariances of each Gaussian begin to converge such that the Guassians sit atop the three clusters in the data:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_em_iterations.png" alt="drawing" width="700"/></center>
+
+Let's break this down into the E-step and the M-step:
+
 **E-Step**
 
 On the E-step, we must formulate the Q-function. Let $$t$$ be a given iteration of the algorithm. The $$t$$th Q-function is 
@@ -120,16 +132,6 @@ $$\Theta_{t+1} := \text{arg max}_{\Theta} \ Q_t(\Theta)$$
 The solution to this optimization problem is given by 
 
 $$\begin{align*}\forall k, \alpha_{t+1, k} &:= \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k}\\  \forall k, \boldsymbol{\mu}_{t+1, k} &:= \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}\boldsymbol{x}_i \\ \forall k, \boldsymbol{\Sigma}_{t+1, k} &:= \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})^T \end{align*}$$
-
-**Putting it together**
-
-The full algorithm can implemented with the following pseudocode:
-
-$$\begin{align*}&t \leftarrow 0 \\ &\forall k, \ \alpha_{t,k} \leftarrow 1 / K \\ &\forall k, \ \boldsymbol{\mu}_{t,k} \leftarrow \text{Random vector} \\ &\boldsymbol{\Sigma}_{t,k} \leftarrow \boldsymbol{I} \\ &\text{While } \ p(\boldsymbol{x}_1, \dots, \boldsymbol{x}_n ; \Theta_t) - p(\boldsymbol{x}_1, \dots, \boldsymbol{x}_n ; \Theta_{t-1}) < \epsilon: \\ & \hspace{1cm} \gamma_{t,i,k} \leftarrow \frac{\alpha_{t,k} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,k}, \boldsymbol{\Sigma}_{t,k})}{\sum_{h=1}^K \alpha_{t,h} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,h}, \boldsymbol{\Sigma}_{t,h})} \end{align*}$$
-
-In the figure below we illustrate the EM algorithm for GMM's in action. As you can see, as the iterations increase, the means and covariances of each Gaussian begin to converge such that the Guassians sit atop the three clusters in the data:
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_em_iterations.png" alt="drawing" width="700"/></center>
 
 
 Deriving the EM algorithm for GMM's
