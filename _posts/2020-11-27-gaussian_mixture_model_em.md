@@ -95,6 +95,8 @@ Maximum-likelihood estimation for GMM's via the EM algorithm
 
 The EM algorithm is a natural choice for performing maximum likelihood estimation for a GMM's parameters because the algorithm is quite simple to implement.  For a thorough discussion of the EM algorithm, see my [previous blog post](https://mbernste.github.io/posts/em/). 
 
+The EM algorithm requires iterating between an E-step and M-step until the parameters converge.
+
 **E-Step**
 
 On the E-step, we must formulate the Q-function. Let $$t$$ be a given iteration of the algorithm. The $$t$$th Q-function is 
@@ -118,6 +120,17 @@ $$\Theta_{t+1} := \text{arg max}_{\Theta} \ Q_t(\Theta)$$
 The solution to this optimization problem is given by 
 
 $$\begin{align*}\forall k, \alpha_{t+1, k} &:= \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k}\\  \forall k, \boldsymbol{\mu}_{t+1, k} &:= \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}\boldsymbol{x}_i \\ \forall k, \boldsymbol{\Sigma}_{t+1, k} &:= \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})^T \end{align*}$$
+
+**Putting it together**
+
+The full algorithm can implemented with the following pseudocode:
+
+$$\begin{align*}\text{Initialize parameters} \\ \forall k, \ \alpha_{0,k} \leftarrow 1 / K \\ \forall k, \ \boldsymbol{\mu}_{0,k} := \text{Random vector} \\ \boldsymbol{\Sigma}_{0,k} \\ \text{While }  \end{align*}$$
+
+In the figure below we illustrate the EM algorithm for GMM's in action. As you can see, as the iterations increase, the means and covariances of each Gaussian begin to converge such that the Guassians sit atop the three clusters in the data:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_em_iterations.png" alt="drawing" width="700"/></center>
+
 
 Deriving the EM algorithm for GMM's
 --------------
