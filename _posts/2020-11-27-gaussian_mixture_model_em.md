@@ -189,7 +189,7 @@ Finally, we solve for the covariance matrices that maximize the Q-function. We f
 
 $$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k } &:= \sum_{i=1}^n \gamma_{t,i,k} \frac{\partial}{\partial \boldsymbol{\Sigma}_k } \log \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \\ &= \sum_{i=1}^n \frac{\gamma_{t,i,k}}{\alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)}\frac{\partial}{\partial \boldsymbol{\Sigma}_k} \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) \\ &= \sum_{i=1}^n \gamma_{t,i,k} \left[ -\frac{1}{2} \frac{\partial}{\partial \boldsymbol{\Sigma}_k} \log \text{det}(\boldsymbol{\Sigma_k}) \right] - \frac{1}{2} \frac{\partial}{\partial \boldsymbol{\Sigma}_k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k)^T\boldsymbol{\Sigma}_k^{-1}(\boldsymbol{x}_i - \boldsymbol{\mu}_k)\end{align*}$$
 
-We will make use of two identities in matrix calculus:
+The last few steps of this derivation make use of two identities in matrix calculus:
 
 $$\frac{\partial}{\partial \boldsymbol{X}} \log \vert \text{det}(\boldsymbol{X}) \vert = (\boldsymbol{X}^T)^{-1}$$
 
@@ -207,6 +207,3 @@ We also note that the inverse of a symmetric matrix is also symmetric, so the in
 
 $$\frac{\partial}{\partial \boldsymbol{\Sigma}_k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T \boldsymbol{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_i) = -{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T \boldsymbol{\Sigma}_k^{-1}$$
 
-Thus, finishing our derivation for $$\frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k }$$, we have
-
-$$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k } &:= &= \sum_{i=1}^n \gamma_{t,i,k} \left[ -\frac{1}{2} \frac{\partial}{\partial \boldsymbol{\Sigma}_k} \log \text{det}(\boldsymbol{\Sigma_k}) \right] - \frac{1}{2} \frac{\partial}{\partial \boldsymbol{\Sigma}_k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k)^T\boldsymbol{\Sigma}_k^{-1}(\boldsymbol{x}_i - \boldsymbol{\mu}_k)\end{align*}$$
