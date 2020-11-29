@@ -90,12 +90,10 @@ $$\hat{\Theta} := \text{arg max}_{\Theta} \prod_{i=1}^n p(\boldsymbol{x}_i ; \Th
 
 How do we solve this optimization problem? It turns out that the EM algorithm provides a very straightforward approach!
 
-Maximum-likelihood estimation for GMM's via expectation-maximization
+Maximum-likelihood estimation for GMM's via the EM algorithm
 --------------
 
 The EM algorithm is a natural choice for performing maximum likelihood estimation for a GMM's parameters because the algorithm is quite simple to implement.  For a thorough discussion of the EM algorithm, see my [previous blog post](https://mbernste.github.io/posts/em/). 
-
-First, we will state the algorithm and then we will derive it.
 
 **E-Step**
 
@@ -120,6 +118,9 @@ $$\Theta_{t+1} := \text{arg max}_{\Theta} \ Q_t(\Theta)$$
 The solution to this optimization problem is given by 
 
 $$\begin{align*}\forall k, \alpha_{t+1, k} &:= \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k}\\  \forall k, \boldsymbol{\mu}_{t+1, k} &:= \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}\boldsymbol{x}_i \\ \forall k, \boldsymbol{\Sigma}_{t+1, k} &:= \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})^T \end{align*}$$
+
+Deriving the EM algorithm for GMM's
+--------------
 
 **Derivation of the E-step**
 
@@ -209,3 +210,5 @@ Now, setting $$\frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_
 
 $$\begin{align*}\boldsymbol{0} &= \frac{1}{2} \left(\sum_{i=1}^n \gamma_{t,i,k}\right)\boldsymbol{\Sigma}_k^{-1} - \boldsymbol{\Sigma}_k^{-1} \left(\sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T\right) \boldsymbol{\Sigma}_k^{-1} \\ \implies \boldsymbol{0} &= \boldsymbol{\Sigma}_k^{-1} \left[\left(\sum_{i=1}^n \gamma_{t,i,k}\right)\boldsymbol{I} - \left(\sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T\right) \boldsymbol{\Sigma}_k^{-1} \right] \ \ \ \ \boldsymbol{I} \ \text{is the identity matrix} \\
 \implies \boldsymbol{0} &= \left(\sum_{i=1}^n \gamma_{t,i,k}\right)\boldsymbol{I} - \left(\sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T\right) \boldsymbol{\Sigma}_k^{-1} \ \ \ \ \text{left multipy both sides by} \ \boldsymbol{\Sigma}_k \\ \implies \left(\sum_{i=1}^n \gamma_{t,i,k}\right)\boldsymbol{I} &= \left(\sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T\right) \boldsymbol{\Sigma}_k^{-1} \\ \implies \left(\sum_{i=1}^n \gamma_{t,i,k}\right)\boldsymbol{\Sigma}_k &= \sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T \\ \boldsymbol{\Sigma}_k &= \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}}\sum_{i=1}^n \gamma_{t,i,k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T    \end{align*}$$
+
+And there we have solved for all of the parameters!
