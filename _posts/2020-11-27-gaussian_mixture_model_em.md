@@ -198,3 +198,15 @@ and
 $$\frac{\partial}{\partial \boldsymbol{X}} \boldsymbol{a}^T \boldsymbol{X}^{-1} \boldsymbol{b} = -\left(\boldsymbol{X}^{-1}\right)^T \boldsymbol{ab}^T \left(\boldsymbol{X}^{-1}\right)$$
 
 which are described in Equations 57 and 61 respectively from the [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf).
+
+Regarding the first equation, we note that we can disregard the absolute value within the logarithm. This is because the covariance matrix is positive semi-definite, and thus, it's determinant is non-negative.  Furthermore, the covariance matrix is symmetric and thus, it's transpose is equal to itself. With this in mind, we see that
+
+$$\frac{\partial}{\partial \boldsymbol{\Sigma}_k} \log \text{det}(\boldsymbol{X}) = \boldsymbol{X}^{-1}$$
+
+We also note that the inverse of a symmetric matrix is also symmetric, so the inverse of $$\boldsymbol{\Sigma}_k$$ is symmetric. Thus,
+
+$$\frac{\partial}{\partial \boldsymbol{\Sigma}_k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T \boldsymbol{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_i) = -{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T \boldsymbol{\Sigma}_k^{-1}$$
+
+Thus, finishing our derivation for $$\frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k }$$, we have
+
+$$\begin{align*} \frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k } &:= &= \sum_{i=1}^n \gamma_{t,i,k} \left[ -\frac{1}{2} \frac{\partial}{\partial \boldsymbol{\Sigma}_k} \log \text{det}(\boldsymbol{\Sigma_k}) \right] - \frac{1}{2} \frac{\partial}{\partial \boldsymbol{\Sigma}_k} (\boldsymbol{x}_i - \boldsymbol{\mu}_k)^T\boldsymbol{\Sigma}_k^{-1}(\boldsymbol{x}_i - \boldsymbol{\mu}_k)\end{align*}$$
