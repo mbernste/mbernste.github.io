@@ -195,6 +195,6 @@ $$\frac{\partial}{\partial \boldsymbol{X}} \log \vert \text{det}(\boldsymbol{X})
 
 and
 
-$$XXXX$$
+$$\frac{\partial}{\partial \boldsymbol{X}} \boldsymbol{a}^T \boldsymbol{X}^{-1} \boldsymbol{b} = -\left(\boldsymbol{X}^{-1}\right)^T \boldsymbol{ab}^T \left(\boldsymbol{X}^{-1}\right)$$
 
 which are described in Equations 57 and 61 respectively from the [The Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf).
