@@ -88,7 +88,15 @@ Now, let's come back to the task of estimating values for $$\Theta$$.  We can ap
 
 $$\hat{\Theta} := \text{arg max}_{\Theta} \prod_{i=1}^n p(\boldsymbol{x}_i ; \Theta)$$
 
-How do we solve this optimization problem? It turns out that the EM algorithm provides a very straightforward approach!
+How do we solve this optimization problem? It turns out that the EM algorithm provides a very straightforward approach as we will see later in the post.
+
+When and how to use GMM's for clustering
+--------------
+
+GMM's are good for finding clusters that are shaped like "blobs" -- that is, datapoints that form ellipsoid-like clusters. When the data forms more complex structures, GMM's may not produce clusters that make intuitive sense. Take for example, the "rings" dataset from [scikit-learn](). This dataset forms two concentric rings. A GMM searching for two "clusters" will not be capable of separating the inner ring from the outer ring as seen below:
+
+
+Moreover, GMM's require the user to posit a number of Gaussians that best describe the data.
 
 Maximum-likelihood estimation for GMM's via the EM algorithm
 --------------
@@ -127,7 +135,7 @@ The EM algorithm is described by the following pseudocode:
 
 $$\begin{align*}&\text{While } \ p(\boldsymbol{x}_1, \dots, \boldsymbol{x}_n ; \Theta_t) - p(\boldsymbol{x}_1, \dots, \boldsymbol{x}_n ; \Theta_{t-1}) < \epsilon: \\ & \hspace{2cm} \forall k, \forall i, \ \gamma_{t,i,k} \leftarrow \frac{\alpha_{t,k} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,k}, \boldsymbol{\Sigma}_{t,k})}{\sum_{h=1}^K \alpha_{t,h} \phi(\boldsymbol{x}_i; \boldsymbol{\mu}_{t,h}, \boldsymbol{\Sigma}_{t,h})}\\ &\hspace{2cm} \forall k, \alpha_{t+1, k} \leftarrow \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k} \\  &\hspace{2cm} \forall k, \boldsymbol{\mu}_{t+1, k} \leftarrow \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}\boldsymbol{x}_i \\ &\hspace{2cm} \forall k, \boldsymbol{\Sigma}_{t+1, k} \leftarrow \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})^T \\ &\hspace{2cm} t \leftarrow t + 1\end{align*}$$
 
-Note that the initial parameters $$\Theta_0$$ are unimportant and can be set arbitrarily. Recall because the EM algorithm converges to a local maximum, it is often a good idea to repeatedly run EM using differing values of $$\Theta_0$$ and choosing the solution that yields the maximum value of the likelihood function. 
+The $$\epsilon$$ controls how convergence is determined.  Also note that the that the initial parameters $$\Theta_0$$ are unimportant and can be set arbitrarily. Recall because the EM algorithm converges to a local maximum, it is often a good idea to repeatedly run EM using differing values of $$\Theta_0$$ and choosing the solution that yields the maximum value of the likelihood function. 
 
 **The EM algorithm in action**
 
