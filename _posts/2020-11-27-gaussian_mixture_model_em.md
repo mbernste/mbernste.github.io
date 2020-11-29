@@ -203,7 +203,7 @@ $$\frac{\partial}{\partial \boldsymbol{X}} \boldsymbol{a}^T \boldsymbol{X}^{-1} 
 
 We note that the inverse of a symmetric matrix is also symmetric, so the inverse of $$\boldsymbol{\Sigma}_k$$ is symmetric. Thus,
 
-$$\frac{\partial}{\partial \boldsymbol{\Sigma}_k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T \boldsymbol{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_i) = -{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T \boldsymbol{\Sigma}_k^{-1}$$
+$$\frac{\partial}{\partial \boldsymbol{\Sigma}_k} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T \boldsymbol{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_i) = -\boldsymbol{\Sigma}_k^{-1} (\boldsymbol{x}_i - \boldsymbol{\mu}_i)(\boldsymbol{x}_i - \boldsymbol{\mu}_i)^T \boldsymbol{\Sigma}_k^{-1}$$
 
 Now, setting $$\frac{\partial L(\Theta, \lambda)}{ \partial \boldsymbol{\Sigma}_k }$$ to the zero matrix in $$\mathbb{R}^{n \times n}$$, we can solve for $$\Sigma_{k,t+1}$$:
 
