@@ -11,7 +11,7 @@ tags:
   - clustering
 ---
 
-*Gaussian mixture model's are a very popular method for data clustering. In this post, I will define the Gaussian mixture model and also derive the EM algorithm for performing maximum likelihood estimation of their paramters.*
+*Gaussian mixture models are a very popular method for data clustering. In this post, I will define the Gaussian mixture model and also derive the EM algorithm for performing maximum likelihood estimation of their paramters.*
 
 Introduction
 --------------
