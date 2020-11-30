@@ -103,8 +103,6 @@ For example, the following dataset was generated with three Guassians (left), bu
 
 On the left, each point is colored according to the Gaussian from which it was sampled. Notice that when $$K$$ is too small (middle), two of the true clusters are being grouped into a single cluster. Notice that when $$K$$ is too large (right), some of the true clusters are split into multiple small clusters.
 
-**Shape of clusters**
-
 Another important point is that GMM's are good for finding clusters that are shaped like "blobs" -- that is, sets of datapoints that form ellipsoid-like clusters. When the data forms more complex structures, GMM's may not produce clusters that make intuitive sense. For example, take a dataset consisting of two concentric rings. A GMM searching for two "blob-like" clusters will not be capable of separating the inner ring from the outer ring. As seen below, the GMM splits each ring in half and assigns each half to a cluster:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_rings.png" alt="drawing" width="400"/></center>
