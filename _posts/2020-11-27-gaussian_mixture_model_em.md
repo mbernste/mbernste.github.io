@@ -95,7 +95,7 @@ When and how to use GMM's for clustering
 
 GMM's are good for finding clusters that are shaped like "blobs" -- that is, sets of datapoints that form ellipsoid-like clusters. When the data forms more complex structures, GMM's may not produce clusters that make intuitive sense. For example, take a dataset consisting of two concentric rings. A GMM searching for two "blob-like" clusters will not be capable of separating the inner ring from the outer ring. As seen below, the GMM splits each ring in half and assigns each half to a cluster:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_rings.png" alt="drawing" width="700"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_rings.png" alt="drawing" width="400"/></center>
 
 Moreover, GMM's require the user to posit a number of Gaussians that best describe the data. The number of Gaussians corresponds to the number of clusters that the algorithm is looking for. If the number of clusters is too low, then maximum-likelihood estimation of the model will settle on placing GMM's that may encompass multiple "true" clusters. For example, the following dataset was generated with three Guassians, but we are fitting a GMM with two Gaussians:
 
