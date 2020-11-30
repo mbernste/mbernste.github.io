@@ -95,7 +95,7 @@ GMM's require the user to posit a number of Gaussians that best describe the dat
 
 For example, the following dataset was generated with three Guassians, but we are fitting a GMM with two Gaussians (left) and five Guassians (right):
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_clustering_K_wrong.png" alt="drawing" width="700"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_clustering_K_wrong.png" alt="drawing" width="1000"/></center>
 
 On the left, you can see the true GMM with each point colored according to the Gaussian from which each was sampled. In the middle, we fit a GMM to the data using two Gaussians (i.e, $$K = 2$$). Notice that two of the true clusters are being grouped into a single cluster. On the right, we fit a GMM with five Gaussians (i.e., $$K = 5$$). Notice that some of the true clusters are divided into multiple smaller clusters.
 
