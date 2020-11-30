@@ -9,8 +9,6 @@ tags:
   - probability
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
-
 *Gaussian mixture model's are a very popular method for data clustering. In this post, I will define the Gaussian mixture model and also derive the EM algorithm for performing maximum likelihood estimation of its paramters.*
 
 Introduction
@@ -99,12 +97,11 @@ For example, the following dataset was generated with three Guassians, but we ar
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_clustering_K_wrong.png" alt="drawing" width="700"/></center>
 
-On the left, you can see two of the "true" clusters are being subsumed by a single Gaussian. On the right, some of the "true" clusters are being broken down into multiple smaller clusters.
+On the left, you can see the true GMM with each point colored according to the Gaussian from which each was sampled. In the middle, we fit a GMM to the data using two Gaussians (i.e, $$K = 2$$). Notice that two of the true clusters are being grouped into a single cluster. On the right, we fit a GMM with five Gaussians (i.e., $$K = 5$$). Notice that some of the true clusters are divided into multiple smaller clusters.
 
-Furthermore, GMM's are good for finding clusters that are shaped like "blobs" -- that is, sets of datapoints that form ellipsoid-like clusters. When the data forms more complex structures, GMM's may not produce clusters that make intuitive sense. For example, take a dataset consisting of two concentric rings. A GMM searching for two "blob-like" clusters will not be capable of separating the inner ring from the outer ring. As seen below, the GMM splits each ring in half and assigns each half to a cluster:
+Another important point is that GMM's are good for finding clusters that are shaped like "blobs" -- that is, sets of datapoints that form ellipsoid-like clusters. When the data forms more complex structures, GMM's may not produce clusters that make intuitive sense. For example, take a dataset consisting of two concentric rings. A GMM searching for two "blob-like" clusters will not be capable of separating the inner ring from the outer ring. As seen below, the GMM splits each ring in half and assigns each half to a cluster:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_rings.png" alt="drawing" width="400"/></center>
-
 
 
 Maximum-likelihood estimation for GMM's via the EM algorithm
