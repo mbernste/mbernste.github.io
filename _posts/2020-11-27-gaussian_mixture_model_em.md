@@ -139,7 +139,7 @@ The solution to this optimization problem is given by
 
 $$\begin{align*}\forall k, \alpha_{t+1, k} &:= \frac{1}{n} \sum_{i=1}^n \gamma_{t,i,k}\\  \forall k, \boldsymbol{\mu}_{t+1, k} &:= \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}\boldsymbol{x}_i \\ \forall k, \boldsymbol{\Sigma}_{t+1, k} &:= \frac{1}{\sum_{i=1}^n \gamma_{t,i,k}} \sum_{i=1}^n \gamma_{t,i,k}(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})(\boldsymbol{x}_i - \boldsymbol{\mu}_{t,k})^T \end{align*}$$
 
-**Psuedocode**
+**Pseudocode**
 
 The EM algorithm is described by the following pseudocode:
 
@@ -181,7 +181,7 @@ subject to
 
 $$\sum_{k=1}^K \alpha_k = 1$$
 
-Because of the equality constraint, and because the objective and constraint are continuous, this optimization problem can be solved using Lagrange multipliers. First, we form the Lagrangian:
+Because of the equality constraint, and because the objective and constraint are continuous, this optimization problem can be solved using [Lagrange multipliers](https://en.wikipedia.org/wiki/Lagrange_multiplier). First, we form the Lagrangian:
 
 $$L(\Theta, \lambda) := \sum_{i=1}^n \sum_{k=1}^K \gamma_{t,i,k} \log \alpha_k \phi(\boldsymbol{x}_i ; \boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k) + \lambda \left( \sum_{k=1}^K \alpha_k - 1 \right)$$
 
