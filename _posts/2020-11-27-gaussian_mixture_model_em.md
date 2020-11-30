@@ -95,13 +95,13 @@ When and how to use GMM's for clustering
 
 There are a few important points to keep in mind when applying GMM's for clustering. 
 
-First, GMM's require the user to specify $$K$$, the number of Gaussians in the model that are posited to have generated the data. The number of Gaussians corresponds to the number of clusters that the algorithm is looking for. If the number of clusters is too low, then maximum-likelihood estimation of the model will settle on placing GMM's that may encompass multiple "true" clusters. In contrast, when using a GMM with too many Gaussians, some of the "true" clusters may be split up into multiple clusters.
+First, GMM's require the user to specify $$K$$, the number of Gaussians in the model that are posited to have generated the data. The number of Gaussians corresponds to the number of clusters that the algorithm is looking for. If $$K$$ is too low, then maximum-likelihood estimation of the model will settle on placing Gaussians's that may encompass multiple true clusters. In contrast, if $$K$$ is too high, some of the "true" clusters may be split up into multiple small clusters.
 
 For example, the following dataset was generated with three Guassians (left), but we are fitting a GMM with two Gaussians (middle) and five Guassians (right):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_clustering_K_wrong.png" alt="drawing" width="1200"/></center>
 
-On the left, you can see the true GMM with each point colored according to the Gaussian from which it was sampled. In the middle, we fit a GMM to the data using two Gaussians (i.e, $$K = 2$$). Notice that two of the true clusters are being grouped into a single cluster. On the right, we fit a GMM with five Gaussians (i.e., $$K = 5$$). Notice that some of the true clusters are divided into multiple smaller clusters.
+On the left, each point is colored according to the Gaussian from which it was sampled. Notice that when $$K$$ is too small (middle), two of the true clusters are being grouped into a single cluster. Notice that when $$K$$ is too large (right), some of the true clusters are split into multiple small clusters.
 
 **Shape of clusters**
 
