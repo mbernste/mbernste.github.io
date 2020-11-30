@@ -95,11 +95,11 @@ When and how to use GMM's for clustering
 
 GMM's require the user to posit a number of Gaussians that best describe the data. The number of Gaussians corresponds to the number of clusters that the algorithm is looking for. If the number of clusters is too low, then maximum-likelihood estimation of the model will settle on placing GMM's that may encompass multiple "true" clusters. In contrast, when using a GMM with too many Gaussians, some of the "true" clusters may be split up into multiple clusters.
 
-For example, the following dataset was generated with three Guassians, but we are fitting a GMM with two Gaussians (left) and five Guassians (right):
+For example, the following dataset was generated with three Guassians (left), but we are fitting a GMM with two Gaussians (middle) and five Guassians (right):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gmm_example_clustering_K_wrong.png" alt="drawing" width="1200"/></center>
 
-On the left, you can see the true GMM with each point colored according to the Gaussian from which each was sampled. In the middle, we fit a GMM to the data using two Gaussians (i.e, $$K = 2$$). Notice that two of the true clusters are being grouped into a single cluster. On the right, we fit a GMM with five Gaussians (i.e., $$K = 5$$). Notice that some of the true clusters are divided into multiple smaller clusters.
+On the left, you can see the true GMM with each point colored according to the Gaussian from which it was sampled. In the middle, we fit a GMM to the data using two Gaussians (i.e, $$K = 2$$). Notice that two of the true clusters are being grouped into a single cluster. On the right, we fit a GMM with five Gaussians (i.e., $$K = 5$$). Notice that some of the true clusters are divided into multiple smaller clusters.
 
 Another important point is that GMM's are good for finding clusters that are shaped like "blobs" -- that is, sets of datapoints that form ellipsoid-like clusters. When the data forms more complex structures, GMM's may not produce clusters that make intuitive sense. For example, take a dataset consisting of two concentric rings. A GMM searching for two "blob-like" clusters will not be capable of separating the inner ring from the outer ring. As seen below, the GMM splits each ring in half and assigns each half to a cluster:
 
