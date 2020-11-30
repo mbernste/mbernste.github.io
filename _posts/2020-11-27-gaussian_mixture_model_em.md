@@ -95,7 +95,7 @@ When and how to use GMM's for clustering
 
 There are a few important points to keep in mind when applying GMM's for clustering. 
 
-First, GMM's require the user to specify $$K$$, the number of Gaussians in the model that are posited to have generated the data. The number of Gaussians corresponds to the number of clusters that the algorithm is looking for. If $$K$$ is too low, then maximum-likelihood estimation of the model will settle on placing Gaussians's that may encompass multiple true clusters. In contrast, if $$K$$ is too high, some of the "true" clusters may be split up into multiple small clusters.
+First, GMM's require the user to specify $$K$$, the number of Gaussians in the model that are posited to have generated the data. The number of Gaussians corresponds to the number of clusters that the algorithm is looking for. If $$K$$ is too low, then maximum-likelihood estimation of the model will settle on placing Gaussians's that may encompass multiple "true" clusters. In contrast, if $$K$$ is too high, some of the "true" clusters may be split up into multiple small clusters.
 
 For example, the following dataset was generated with three Guassians (left), but we are fitting a GMM with two Gaussians (middle) and five Guassians (right):
 
