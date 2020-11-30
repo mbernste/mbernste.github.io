@@ -201,7 +201,7 @@ $$\begin{align*} \sum_{k=1}^K -\frac{1}{\lambda} \sum_{i=1}^n \gamma_{t,i,k} &= 
 
 Finally, plugging $$\lambda$$ back into the equation that sets the derivative of the Lagrangian to zero, we can solve for the final value of $$\alpha_k$$:
 
-$$\begin{align*}0 &= \frac{1}{\alpha_k} \sum_{i=1} \gamma_{t,i,k} + \lambda \\ 0 &= \implies \frac{1}{\alpha_k} \sum_{i=1} \gamma_{t,i,k} - n \\ \implies \alpha_k &= \frac{1}{n} \sum_{i=1} \gamma_{t,i,k} \end{align*}$$
+$$\begin{align*}0 &= \frac{1}{\alpha_k} \sum_{i=1} \gamma_{t,i,k} + \lambda \\ \implies 0 &= \frac{1}{\alpha_k} \sum_{i=1} \gamma_{t,i,k} - n \\ \implies \alpha_k &= \frac{1}{n} \sum_{i=1} \gamma_{t,i,k} \end{align*}$$
 
 And there we go; we've solved for the $$\alpha_1, \dots, \alpha_k$$ parameters that maximize the Q-function. 
 
