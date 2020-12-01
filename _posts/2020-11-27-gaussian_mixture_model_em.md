@@ -68,7 +68,7 @@ This situation is depicted in the figure below. On the left-hand side, we have a
 
 In order to perform clustering on $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n$$, we can perform the following steps. First, we need to estimate the values for $$\Theta$$. This estimation task will be the subject of much of this blog post, but for now, let's say we have an estimate which we will denote as 
 
-$$\hat{\Theta} := \{ \hat{\boldsymbol{\mu}_1}, \hat{\boldsymbol{\Sigma}_1}, \dots, \hat{\boldsymbol{\mu}_K}, \hat{\boldsymbol{\Sigma}_K}, \hat{\alpha_1}, \dots, \hat{\alpha_K} \}$$
+$$\hat{\Theta} := \{ \hat{\boldsymbol{\mu}_1}, \dots, \hat{\boldsymbol{\mu}_K}, \hat{\boldsymbol{\Sigma}_1}, \dots, \hat{\boldsymbol{\Sigma}_K}, \hat{\alpha_1}, \dots, \hat{\alpha_K} \}$$
 
 Given this estimate, we can assign $$\boldsymbol{x}_i$$ to the Gaussain (i.e., cluster) that was most likely to generate $$\boldsymbol{x}_i$$:
 
