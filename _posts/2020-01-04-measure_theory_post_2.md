@@ -8,6 +8,8 @@ tags:
   - probability
   - statistics
   - tutorial
+  - measureable function
+  - random variable
 ---
 
 *In this series of posts, I present my understanding of some basic concepts in measure theory — the mathematical study of objects with “size”— that have enabled me to gain a deeper understanding into the foundations of probability theory.*
