@@ -37,7 +37,7 @@ This model is depicted by the following graphical model:
 
 Note, that each of the $$K$$ Gaussian distributions has a separate set of parameters (i.e., a mean vector and a covariance matrix).  Furthermore, the probabilities of picking the Guassians $$\alpha_1, \dots, \alpha_k$$ are also parameters to the model.  We will denote this full set of model parameters as
 
-$$\Theta = \{ \boldsymbol{\mu}_1, \boldsymbol{\Sigma}_1, \dots, \boldsymbol{\mu}_K, \boldsymbol{\Sigma}_K, \alpha_1, \dots, \alpha_K \}$$
+$$\Theta = \{ \boldsymbol{\mu}_1, \dots, \boldsymbol{\mu}_K,  \boldsymbol{\Sigma}_1, \dots,\boldsymbol{\Sigma}_K, \alpha_1, \dots, \alpha_K \}$$
 
 In contexts in which GMM's are applied, such as data clustering (to be discussed), $$Z$$ is usually not observed. Thus, we will be interested in the marginal distribution of $$\boldsymbol{X}$$ whose density function is given by
 
