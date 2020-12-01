@@ -6,6 +6,7 @@ tags:
   - probability
   - statistics
   - tutorial
+  - covariance
 ---
 
 *Covariance quantifies to what extent two random variables are linearly correlated. In this post, I will outline a visualization of covariance that helped me better intuit this concept.*
