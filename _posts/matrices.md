@@ -24,3 +24,12 @@ $$\begin{align*}\begin{bmatrix}2 & 4 \\ 1 & 3\end{bmatrix}\end{align*}$$
 or as the *augmented matrix*
 
 $$\begin{align*}\begin{bmatrix}2 & 4 & 6 \\ 1 & 3 & 2\end{bmatrix}\end{align*}$$
+
+After this explanation, I was left to wander: *but what IS a matrix?* That is, I knew that there was something much deeper than simply an efficient storage mechanism (after all, there was a whole [movie](https://en.wikipedia.org/wiki/The_Matrix) made about them :P) for a bunch of simple, linear equations. It wasn't until I started using linear algebra in practice, did I truly start to get a handle on what they are. 
+
+However, I wonder if matrices were better explained at the outset, I would have been set up to understand them much better at the start. This blog post is an attempt at such an introduction.
+
+What *IS* a matrix?
+-------------
+
+So what *are* matrices?  Well, as I discuss in my [previous blog post](), I think matrices are one of those things that require seeing multiple angles (or "projections") to fully grasp what they are.  These three main angles are 
