@@ -65,7 +65,7 @@ Another way to imagine this is to think of $F$ as a ceramic plate that is cracke
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/sigma_algebra.png" alt="drawing" width="400"/></center>
 
-In this figure, the large oval at the top is a ceramic plate with cracks along its surface. Let the points on the plate be the set $F$. Below, we illustrate every subset $A \subseteq F$ where $A$ representes the palte with some combination of the chunks removed. We are only allowed to remove a chunk if it is surrounded by cracks. The entire set of configurations of ways we can remove chunks of the plate is the $\sigma$-algebra $\mathcal{F}$ over $F$.
+In this figure, the large oval at the top is a ceramic plate with cracks along its surface. Let the points on the plate be the set $F$. Below, we illustrate every subset $A \subseteq \mathcal{F}$. You can think of each $A$ as representing the plate with some combination of the chunks removed. We are only allowed to remove a chunk if it is surrounded by cracks. The entire set of configurations of ways we can remove chunks of the plate is the $\sigma$-algebra $\mathcal{F}$ over $F$.
 
 Measure spaces
 ------
