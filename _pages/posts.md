@@ -4,7 +4,7 @@ permalink: /posts/
 author_profile: true
 ---
 
-A blog containing tutorials, notes, and insights on topics in math, statistics, machine learning, computational biology, and pedagogy.  To view posts in order that they were published, [click here](https://mbernste.github.io/year-archive/).
+A blog containing tutorials, notes, and insights on topics in math, statistics, machine learning, computational biology, and pedagogy.  To view posts in the order that they were published, [click here](https://mbernste.github.io/year-archive/).
 
 ## Thoughts and insights
 
