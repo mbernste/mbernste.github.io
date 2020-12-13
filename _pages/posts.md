@@ -4,9 +4,9 @@ permalink: /posts/
 author_profile: true
 ---
 
-A blog containing tutorials, notes, and insights.
+A blog containing tutorials, notes, and insights on topics in math, statistics, machine learning, computational biology, and pedagogy.  To view these posts in order that they are published, [click here](https://mbernste.github.io/year-archive/).
 
-## Teaching
+## Thoughts and insights
 
 [True understanding is "seeing" in 3D](https://mbernste.github.io/posts/understanding_3d/)  
 
