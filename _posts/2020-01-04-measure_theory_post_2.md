@@ -95,11 +95,11 @@ The sigma-algebra $\mathcal{H}$ over $H$ encodes all of the groups of outcomes o
 
 $$\mathcal{H} := \{\emptyset, \{0\}, \{1\}, \{0,1\} \}$$
 
-For example, the element $\{1\}$ contains only the outcome of the coin landing as heads. The element $\{0,1\}$ contains both the outcomes of the coin landing heads and the coin landing tails (that is, an outcome in which either the coin lands head or it lands tails). 
+For example, the element $$\{1\}$$ contains only the outcome of the coin landing as heads. The element $$\{0,1\}$$ contains both the outcomes of the coin landing heads and the coin landing tails (that is, an outcome in which either the coin lands head or it lands tails). 
 
-Importantly, the preimage under $X$ for each of these sets is an event in the original probability space (i.e. a member of $E$). Thus, we can assign each set in $\mathcal{H}$ a probability according to the measure of it's preimage under $X$ according to $P$!  For example, the probability that the coin lands as heads is given by:
+Importantly, the preimage under $$X$$ for each of these sets is an event in the original probability space (i.e. a member of $$E$$). Thus, we can assign each set in $$\mathcal{H}$$ a probability according to the measure of it's preimage under $$X$$ according to $$P$$!  For example, the probability that the coin lands as heads is given by:
 
-$$P\left(X^{-1}(\{1\})\right) = P({\omega \mid X(\omega) = 1})$$
+$$P\left(X^{-1}(\{1\})\right) = P(\{\omega \mid X(\omega) = 1\})$$
 
 Generally, we use the familiar notation 
 
