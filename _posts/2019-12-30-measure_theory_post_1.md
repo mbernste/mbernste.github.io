@@ -61,7 +61,9 @@ Given our object/set $F$, we then need a way to describe how $F$ can be broken i
 
 Intuitively, each element of the $\sigma$-algebra (i.e. a subset of F), represents a "piece" of the object. The first criteria in the definition above establishes a "null piece" (i.e. a piece of zero size) can be considered a piece of the object.  The second criteria establishes the fact that if we break off a piece, $A$, of the object, then the remaining object $A^c$ (the compliment of $A$) is also a valid piece. Finally, the third criteria establishes the fact that if we glue a countable set of pieces together, the resultant piece is also a piece of the object.
 
-Another way to imagine this is to think of $F$ as a ceramic plate that is cracked. The $\sigma$-algebra describes all the ways that the plate can fall apart along the cracks. The figure below illustrates this:
+In fact, with these three axioms for the definition of a $\sigma$-algebra, it follows that a $sigma$-algebra is not just closed under set unions (i.e. Axiom 3), but also set intersections, set differences, and symmetric differences (see the Appendix to this blog post below).  
+
+With these properties in mind, another way to imagine this is to think of $F$ as a ceramic plate that is cracked. The $\sigma$-algebra describes all the ways that the plate can fall apart along its "cracks". The figure below illustrates this:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/sigma_algebra.png" alt="drawing" width="400"/></center>
 
@@ -117,3 +119,11 @@ The fact that $P(\emptyset) := 0$ expresses the impossibility that no outcome in
 - Uncertainty has a "size" in the following sense: if we have two disjoint events, then the probability of either of these events occurring should be the sum of the probabilities of the individual events. By using a measure space to model uncertainty, we ensure that given $A, B \subset \Omega$ where $A \cap B = \emptyset$, it follows that $P(A \cup B) = P(A) + P(B)$.
 
 Second, as we will see in part 2, this foundation for probability theory will enable us to unify both discrete and continuous probability distributions.
+
+Appendix: Properties of $sigma$-algebras
+------------------
+
+In the following theorems, we prove that $sigma$-algebras are closed under set intersections, differences, and symmetric differences.
+
+<span style="color:#0060C6">**Theorem 1:**</span>
+
