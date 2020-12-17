@@ -142,5 +142,5 @@ In the following theorems, we prove that $\sigma$-algebras are closed under set 
 
 <center><span style="color:#0060C6">$$A \bigtriangleup B \in \mathcal{F}$$</span></center>
 
-**Proof:** By Theorem 2 we know that $A \setminus B \in \mathcal{F}$ and that $B \setminus A \in \mathcal{F}$.  By Axiom 3, we have $ (A \setminus B) \cup  (B \setminus A ) \in  \mathcal{F}$ and we know that $(A \setminus B) \cup  (B \setminus A ) = A \bigtriangleup B$. $\square*
+**Proof:** By Theorem 2 we know that $A \setminus B \in \mathcal{F}$ and that $B \setminus A \in \mathcal{F}$.  By Axiom 3, we have $ (A \setminus B) \cup  (B \setminus A ) \in  \mathcal{F}$ and we know that $(A \setminus B) \cup  (B \setminus A ) = A \bigtriangleup B$. $\square$
 
