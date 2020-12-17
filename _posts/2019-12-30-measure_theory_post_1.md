@@ -120,10 +120,10 @@ The fact that $P(\emptyset) := 0$ expresses the impossibility that no outcome in
 
 Second, as we will see in part 2, this foundation for probability theory will enable us to unify both discrete and continuous probability distributions.
 
-Appendix: Properties of $sigma$-algebras
+Appendix: Properties of $\sigma$-algebras
 ------------------
 
-In the following theorems, we prove that $sigma$-algebras are closed under set intersections, differences, and symmetric differences.
+In the following theorems, we prove that $\sigma$-algebras are closed under set intersections, differences, and symmetric differences.
 
 <span style="color:#0060C6">**Theorem 1:** Let $F$ be a set and $\mathcal{F}$ be a $\sigma$-algebra on $F$ with $A, B \in \mathcal{F}$.  Then</span> 
 
