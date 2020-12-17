@@ -61,7 +61,7 @@ Given our object/set $F$, we then need a way to describe how $F$ can be broken i
 
 Intuitively, each element of the $\sigma$-algebra (i.e. a subset of F), represents a "piece" of the object. The first criteria in the definition above establishes a "null piece" (i.e. a piece of zero size) can be considered a piece of the object.  The second criteria establishes the fact that if we break off a piece, $A$, of the object, then the remaining object $A^c$ (the compliment of $A$) is also a valid piece. Finally, the third criteria establishes the fact that if we glue a countable set of pieces together, the resultant piece is also a piece of the object.
 
-In fact, with these three axioms for the definition of a $\sigma$-algebra, it follows that a $sigma$-algebra is not just closed under set unions (i.e. Axiom 3), but also set intersections, set differences, and symmetric differences (see the Theorems 1, 2, and 3 in the Appendix at the end of this blog post).  
+In fact, with these three axioms for the definition of a $\sigma$-algebra, it follows that a $\sigma$-algebra is not just closed under set unions (i.e. Axiom 3), but also set intersections, set differences, and symmetric differences (see the Theorems 1, 2, and 3 in the Appendix at the end of this blog post).  
 
 With these properties in mind, another way to imagine this is to think of $F$ as a ceramic plate that is cracked. The $\sigma$-algebra describes all the ways that the plate can fall apart along its "cracks". The figure below illustrates this:
 
