@@ -135,12 +135,12 @@ In the following theorems, we prove that $\sigma$-algebras are closed under set 
 
 <center><span style="color:#0060C6">$$A \setminus B \in \mathcal{F}$$</span></center>
 
-**Proof:** First, by Axiom 2, we have $A^c \in \mathcal{F}$. By Theorem~\ref{thrm:sigma_algebra_closed_intersection}, $A \cap B^c \in \mathcal{F}$.  Since $ A \cap B^c = A \setminus B$, it follows that $A \setminus B \in \mathcal{F}$. $\square$
+**Proof:** First, by Axiom 2, we have $A^c \in \mathcal{F}$. By Theorem 1, $A \cap B^c \in \mathcal{F}$.  Since $ A \cap B^c = A \setminus B$, it follows that $A \setminus B \in \mathcal{F}$. $\square$
 
 
 <span style="color:#0060C6">**Theorem 3:** Let $F$ be a set and $\mathcal{F}$ be a $\sigma$-algebra on $F$ with $A, B \in \mathcal{F}$.  Then</span>
 
 <center><span style="color:#0060C6">$$A \bigtriangleup B \in \mathcal{F}$$</span></center>
 
-**Proof:** By Theorem~\ref{thrm:sigma_algebra_closed_subtraction} we know that $A \setminus B \in \mathcal{F}$ and that $B \setminus A \in \mathcal{F}$.  By Axiom 3, we have $ (A \setminus B) \cup  (B \setminus A ) \in  \mathcal{F}$ and we know that $(A \setminus B) \cup  (B \setminus A ) = A \bigtriangleup B$. $\square*
+**Proof:** By Theorem 2 we know that $A \setminus B \in \mathcal{F}$ and that $B \setminus A \in \mathcal{F}$.  By Axiom 3, we have $ (A \setminus B) \cup  (B \setminus A ) \in  \mathcal{F}$ and we know that $(A \setminus B) \cup  (B \setminus A ) = A \bigtriangleup B$. $\square*
 
