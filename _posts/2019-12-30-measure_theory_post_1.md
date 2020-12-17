@@ -61,7 +61,7 @@ Given our object/set $F$, we then need a way to describe how $F$ can be broken i
 
 Intuitively, each element of the $\sigma$-algebra (i.e. a subset of F), represents a "piece" of the object. The first criteria in the definition above establishes a "null piece" (i.e. a piece of zero size) can be considered a piece of the object.  The second criteria establishes the fact that if we break off a piece, $A$, of the object, then the remaining object $A^c$ (the compliment of $A$) is also a valid piece. Finally, the third criteria establishes the fact that if we glue a countable set of pieces together, the resultant piece is also a piece of the object.
 
-In fact, with these three axioms for the definition of a $\sigma$-algebra, it follows that a $sigma$-algebra is not just closed under set unions (i.e. Axiom 3), but also set intersections, set differences, and symmetric differences (see the Appendix to this blog post below).  
+In fact, with these three axioms for the definition of a $\sigma$-algebra, it follows that a $sigma$-algebra is not just closed under set unions (i.e. Axiom 3), but also set intersections, set differences, and symmetric differences (see the Theorems 1, 2, and 3 in the Appendix at the end of this blog post).  
 
 With these properties in mind, another way to imagine this is to think of $F$ as a ceramic plate that is cracked. The $\sigma$-algebra describes all the ways that the plate can fall apart along its "cracks". The figure below illustrates this:
 
@@ -125,5 +125,10 @@ Appendix: Properties of $sigma$-algebras
 
 In the following theorems, we prove that $sigma$-algebras are closed under set intersections, differences, and symmetric differences.
 
-<span style="color:#0060C6">**Theorem 1:**</span>
+<span style="color:#0060C6">**Theorem 1:** Let $F$ be a set and $\mathcal{F}$ be a $\sigma$-algebra on $F$ with $A, B \in \mathcal{F}$.  Then</span> 
+
+<center><span style="color:#0060C6">$$A, B \in \mathcal{F} \implies A \cap B \in \mathcal{F}$$</span></center>
+
+**Proof:** By Axiom 2, we know that $A^c, B^c \in \mathcal{F}$.  Then by Axiom 3, we have $A^c \cup B^c \in \mathcal{F}$.  By De Morgan's Laws, we know that $A^c \cup B^c = (A \cap B)^c$ and thus, $(A \cap B)^c \in \mathcal{F}$.  Finally, by Axiom 2, $\left(\left(A \cap B\right)^c\right)^c \in \mathcal{F}$ and we know that $\left(\left(A \cap B\right)^c\right)^c = A \cap B$. $\square$
+
 
