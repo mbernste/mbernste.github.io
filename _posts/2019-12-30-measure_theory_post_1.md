@@ -97,7 +97,7 @@ Now, a **measure space** is simply the combination of a set (i.e. object), a $\s
 
 <span style="color:#0060C6">**Definition 4:** The tuple $(F, \mathcal{F}, \mu)$ where $F$ is a set, $\mathcal{F}$ is a $\sigma$-algebra on $F$, and $\mu$ is a measure on $F$ and $\mathcal{F}$ is a **measure space**.</span>
 
-Let's look at one last definition: a **measurable space** is a pair consisting of a set (i.e. an object) and a $sigma$-algebra (i.e. pieces of the object). The word "measurable" in measurable space alludes to the fact that it is capable of being equipped with a measure. Once equipped with a measure, it forms complete measure space. 
+Let's look at one last definition: a **measurable space** is a pair consisting of a set (i.e. an object) and a $\sigma$-algebra (i.e. pieces of the object). The word "measurable" in measurable space alludes to the fact that it is capable of being equipped with a measure. Once equipped with a measure, it forms complete measure space. 
 
 <span style="color:#0060C6">**Definition 5:** The tuple $(F, \mathcal{F})$ where $F$ is a set and $\mathcal{F}$ is a $\sigma$-algebra on $F$ is a **measurable space**.</span>
 
