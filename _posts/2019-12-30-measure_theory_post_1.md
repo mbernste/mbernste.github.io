@@ -131,12 +131,16 @@ In the following theorems, we prove that $\sigma$-algebras are closed under set 
 
 **Proof:** By Axiom 2, we know that $A^c, B^c \in \mathcal{F}$.  Then by Axiom 3, we have $A^c \cup B^c \in \mathcal{F}$.  By De Morgan's Laws, we know that $A^c \cup B^c = (A \cap B)^c$ and thus, $(A \cap B)^c \in \mathcal{F}$.  Finally, by Axiom 2, $\left(\left(A \cap B\right)^c\right)^c \in \mathcal{F}$ where $\left(\left(A \cap B\right)^c\right)^c = A \cap B$. $\square$
 
-<span style="color:#0060C6">Let $F$ be a set and $\mathcal{F}$ be a $\sigma$-algebra on $F$ with $A, B \in \mathcal{F}$.  Then</span>
+<span style="color:#0060C6">**Theorem 2:** Let $F$ be a set and $\mathcal{F}$ be a $\sigma$-algebra on $F$ with $A, B \in \mathcal{F}$.  Then</span>
 
 <center><span style="color:#0060C6">$$A \setminus B \in \mathcal{F}$$</span></center>
 
 **Proof:** First, by Axiom 2, we have $A^c \in \mathcal{F}$. By Theorem~\ref{thrm:sigma_algebra_closed_intersection}, $A \cap B^c \in \mathcal{F}$.  Since $ A \cap B^c = A \setminus B$, it follows that $A \setminus B \in \mathcal{F}$. $\square$
 
 
+<span style="color:#0060C6">**Theorem 3:** Let $F$ be a set and $\mathcal{F}$ be a $\sigma$-algebra on $F$ with $A, B \in \mathcal{F}$.  Then</span>
 
+<center><span style="color:#0060C6">$$A \bigtriangleup B \in \mathcal{F}$$</span></center>
+
+**Proof:** By Theorem~\ref{thrm:sigma_algebra_closed_subtraction} we know that $A \setminus B \in \mathcal{F}$ and that $B \setminus A \in \mathcal{F}$.  By Axiom 3, we have $ (A \setminus B) \cup  (B \setminus A ) \in  \mathcal{F}$ and we know that $(A \setminus B) \cup  (B \setminus A ) = A \bigtriangleup B$. $\square*
 
