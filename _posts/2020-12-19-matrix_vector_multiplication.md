@@ -70,7 +70,7 @@ In fact, as we show in a later post, such a matrix-defined function is a [linear
 Appendix
 -----------
 
-<span style="color:#0060C6">**Theorem 1:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ and vector $\boldsymbol{x} \in \mathbb{R}^n$, follows that</span>
+<span style="color:#0060C6">**Theorem 1:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ and vector $\boldsymbol{x} \in \mathbb{R}^n$, it holds that</span>
 
 <center><span style="color:#0060C6">$$\boldsymbol{Ax} = \begin{bmatrix}\boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*}  \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*}  \cdot \boldsymbol{x} \\ \end{bmatrix}$$</span></center>
 
