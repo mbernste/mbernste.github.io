@@ -63,5 +63,15 @@ where $T$ uses the matrix $\boldsymbol{A}$ to performing the mapping.
 
 This is illustrated schematically below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_as_function.png" alt="drawing" width="600"/></center>
 
 In fact, as we show in a later section, such a matrix-defined function is a [linear function](https://en.wikipedia.org/wiki/Linear_map).  Even more importantly, *any* linear function between coordinate vector spaces  is uniquely defined by some matrix.
+
+Appendix
+-----------
+
+<span style="color:#0060C6">**Theorem 1:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ and vector $\boldsymbol{x} \in \mathbb{R}^n$, follows that</span>
+
+<center><span style="color:#0060C6">$$\boldsymbol{Ax} = \begin{bmatrix}\boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*}  \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*}  \cdot \boldsymbol{x} \\ \end{bmatrix}$$</span></center>
+
+<span style="color:#0060C6">where $\boldsymbol{a}_{i,*}$ is the $i$th row-vector in $\boldsymbol{A}$</span>
