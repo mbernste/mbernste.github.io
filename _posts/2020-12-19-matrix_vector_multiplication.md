@@ -33,7 +33,7 @@ I find all three of the perspectives useful. The first two perspectives provide 
 Matrix-vector multiplication as a "row-wise", vector-generating process
 ------------
 
-A useful way for viewing the mechanism of matrix-vector multiplication between a matrix $\boldsymbol{A}$ and a vector $\boldsymbol{x}$ is to see it as a sort of "process" (or even as a computer program) that constructs each element of the output vector in an iterative fashion where we iterate over each row of $A$. Specifically, for each row $i$ of $\boldsymbol{A}$, we take $\boldsymbol{x}$ and compute the dot product between $\boldysmbol{x}$ and the $i$th row of the matrix thereby producing the $i$th element of the output vector (See Theorem 1 in the Appendix to this post):
+A useful way for viewing the mechanism of matrix-vector multiplication between a matrix $\boldsymbol{A}$ and a vector $\boldsymbol{x}$ is to see it as a sort of "process" (or even as a computer program) that constructs each element of the output vector in an iterative fashion where we iterate over each row of $A$. Specifically, for each row $i$ of $\boldsymbol{A}$, we take $\boldsymbol{x}$ and compute the dot product between $\boldsymbol{x}$ and the $i$th row of the matrix thereby producing the $i$th element of the output vector (See Theorem 1 in the Appendix to this post):
 
 $$\boldsymbol{Ax} = \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*}  \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*}  \cdot \boldsymbol{x} \\ \end{bmatrix}$$
 
