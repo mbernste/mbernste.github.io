@@ -41,5 +41,7 @@ where $\boldsymbol{a}_{i,*}$ is the $i$th row-vector in $\boldsymbol{A}$.  This 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_process.png" alt="drawing" width="700"/></center>
 
+Matrix-vector multiplication as taking a linear combination of the columns of a matrix
+------------
 
-
+Matrix-vector multiplication between a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ and vector $\boldsymbol{x} \in \mathbb{R}^m$ can be understood as taking a linear combination of the column vectors of $\boldsymbol{A}$ using the elements of $\boldsymbol{x}$ as the coefficients.  This is illustrated schematically below:
