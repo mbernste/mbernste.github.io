@@ -13,7 +13,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 ## Linear algebra
 
 [Introducing matrices](https://mbernste.github.io/posts/matrices/)  
-[Matrix-vector multiplication](https://mbernste.github.io/posts/matrices/)
+[Matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/)
 
 ## Probability
 
