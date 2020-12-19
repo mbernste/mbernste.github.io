@@ -24,11 +24,19 @@ Matrix-vector multiplication is an operation between a matrix and a vector that 
 
 Like most mathematical concepts, matrix-vector multiplication can be [viewed from multiple angles](), at various levels of abstraction. These views come in handy when we attempt to conceptualize the various ways in which we utilize matrix-vector multiplication to model real-world problems.  Below are three ways that I find useful for conceptualizing matrix-vector multiplication ordered from least to most abstract:
 
-1. **As a vector-generating process:** Matrix-vector multiplication defines a process for creating a new vector using an existing vector where each element of the new vector is "generated" by taking a weighted sum of each row of the matrix using the elements of a vector as coefficients
+1. **As a "row-wise", vector-generating process:** Matrix-vector multiplication defines a process for creating a new vector using an existing vector where each element of the new vector is "generated" by taking a weighted sum of each row of the matrix using the elements of a vector as coefficients
 2. **As taking a linear combination of the columns of a matrix:**  Matrix-vector multiplication is the process of  taking a linear combination of the column-space of a matrix using the elements of a vector as the coefficients
-3. **As a linear function between vector spaces:** Matrix-vector multiplication allows a matrix to define a mapping between two vector spaces.
+3. **As evaluating a function between vector spaces:** Matrix-vector multiplication allows a matrix to define a mapping between two vector spaces.
 
+I find all three of the perspectives useful. The first two perspectives provide a way of understanding the *mechanism* of matrix-vector multiplication whereas the third perspective provides the *essence* of matrix-vector multiplication.  It is this third perspective of matrix-vector multiplication that enables us to view matrices as functions, as we discussed in the [previous post](https://mbernste.github.io/posts/matrices/).
 
+Matrix-vector multiplication as a "row-wise", vector-generating" process
+------------
 
+We can also view matrix-vector multiplication as a sort of "process" that constructs each element of the output vector. This process involves taking the vector and computing the dot product of that vector with each row in the matrix thereby forming each element of the output vector (See Theorem 1 in the Appendix to this post):
+
+$$\boldsymbol{Ax} = \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \bold{x} \\ \boldsymbol{a}_{2,*}  \cdot \bold{x} \\ \vdots \\ \boldsymbol{a}_{m,*}  \cdot \boldsymbol{x} \\ \end{bmatrix}$$
+
+where $\boldsymbol{a}_{i,*}$ is the $i$th row-vector in $\boldsymbol{A}$.  This process is illustrated schematically in Panel A of the figure below:
 
 
