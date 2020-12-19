@@ -16,7 +16,7 @@ In a [previous post](https://mbernste.github.io/posts/matrices/), we discussed t
 
 Matrix-vector multiplication is an operation between a matrix and a vector that produces a new vector.  Notably, matrix-vector multiplication is only defined between a matrix and a vector where the length of the vector equals the number of columns of the matrix.  It is defined as follows:
 
-<span style="color:#0060C6">**Definition 1 (Matrix-vector multiplication):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ and vector $\boldsymbol{x} \in \mathbb{R}^n$ the \textbf{matrix-vector multiplication} of $\boldsymbol{A}$ and $\boldsymbol{x}$ is defined as </span>
+<span style="color:#0060C6">**Definition 1 (Matrix-vector multiplication):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ and vector $\boldsymbol{x} \in \mathbb{R}^n$ the **matrix-vector multiplication** of $\boldsymbol{A}$ and $\boldsymbol{x}$ is defined as </span>
 
 <center><span style="color:#0060C6">$$\boldsymbol{A}\boldsymbol{x} := x_1\boldsymbol{a}_{*,1} + x_2\boldsymbol{a}_{*,2} + \dots +  x_n\boldsymbol{a}_{*,n}$$ </span></center>
 
