@@ -74,4 +74,10 @@ Appendix
 
 <center><span style="color:#0060C6">$$\boldsymbol{Ax} = \begin{bmatrix}\boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*}  \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*}  \cdot \boldsymbol{x} \\ \end{bmatrix}$$</span></center>
 
-<span style="color:#0060C6">where $\boldsymbol{a}_{i,*}$ is the $i$th row-vector in $\boldsymbol{A}$</span>
+<span style="color:#0060C6">where $\boldsymbol{a}_{i,*}$ is the $i$th row-vector in $\boldsymbol{A}$.</span>
+
+**Proof:** 
+
+$$\begin{align*} \boldsymbol{A}\boldsymbol{x} &:= x_1\boldsymbol{a}_{*,1} + x_2\boldsymbol{a}_{*,2} + \dots +  x_n\boldsymbol{a}_{*,n} \\ &= x_1 \begin{bmatrix}a_{1,1} \\ a_{2,1} \\ \vdots \\ a_{m, 1} \end{bmatrix} + x_2\begin{bmatrix}a_{1,2} \\ a_{2,2} \\ \vdots \\ a_{m, 2} \end{bmatrix} + \dots + \begin{bmatrix}a_{1,n} \\ a_{2,n} \\ \vdots \\ a_{m, n} \end{bmatrix} \\ &= \begin{bmatrix}x_1a_{1,1} \\ x_1a_{2,1} \\ \vdots \\ x_1a_{m, 1} \end{bmatrix} + \begin{bmatrix}x_2a_{1,2} \\ x_2a_{2,2} \\ \vdots \\ x_2a_{m, 2} \end{bmatrix} + \dots + \begin{bmatrix}x_na_{1,n} \\ x_na_{2,n} \\ \vdots \\ x_na_{m, n} \end{bmatrix} \\ &= \begin{bmatrix} x_1a_{1,1}   + x_2a_{1,2} + \dots + x_na_{1,n} \\ x_1a_{2,1}   + x_2a_{2,2} + \dots + x_na_{2,n} \\ \vdots \\ x_1a_{m,1}   + x_2a_{m,2} + \dots + x_na_{m,n} \\ \end{bmatrix}\\ &= \begin{bmatrix} \sum_{i=1}^n  a_{1,i}x_i \\ \sum_{i=1}^n  a_{2,i}x_i \\ \vdots \\ \sum_{i=1}^n a_{m,i}x_i \\ \end{bmatrix} \\ &= \begin{bmatrix}\boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\\boldsymbol{a}_{2,*}  \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*}  \cdot \bold{x} \\ \end{bmatrix} \end{align*}
+
+$$\square$$
