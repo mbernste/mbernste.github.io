@@ -1,7 +1,7 @@
 ---
 title: 'Matrix-vector multiplication'
 date: 2020-12-19
-permalink: /posts/matrices/
+permalink: /posts/matrix_vector_mult/
 tags:
   - tutorial
   - mathematics
