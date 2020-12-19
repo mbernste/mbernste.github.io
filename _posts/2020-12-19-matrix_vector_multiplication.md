@@ -39,4 +39,7 @@ $$\boldsymbol{Ax} = \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\
 
 where $\boldsymbol{a}_{i,*}$ is the $i$th row-vector in $\boldsymbol{A}$.  This process is illustrated schematically in Panel A of the figure below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_process.png" alt="drawing" width="700"/></center>
+
+
 
