@@ -54,3 +54,14 @@ We can also view this geometrically:
 
 In Panel A, we depict two column vectors of some matrix $\boldsymbol{A} \in \mathbb{R}^{3,2}$. In Panel B, we take a linear combination of the two column vectors of $$\boldsymbol{A}$$ according to the elements of some vector $\boldsymbol{x}$ thus producing the vector $\boldsymbol{Ax}$ (black vector) as shown in Panel C.
 
+Matrix-vector multiplication as evaluating a function between vector spaces
+------------
+
+If we hold a matrix $\boldsymbol{A}  \in \mathbb{R}^{m \times n}$ as fixed, this matrix maps vectors in $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$.  Making this more explicit, we can define a function $T : \mathbb{R}^n \rightarrow \mathbb{R}^m$ as:
+$$T(\boldsymbol{x}) := \boldsymbol{Ax}$$
+where $T$ uses the matrix $\boldsymbol{A}$ to performing the mapping.  
+
+This is illustrated schematically below:
+
+
+In fact, as we show in a later section, such a matrix-defined function is a [linear function](https://en.wikipedia.org/wiki/Linear_map).  Even more importantly, *any* linear function between coordinate vector spaces  is uniquely defined by some matrix.
