@@ -10,7 +10,10 @@ tags:
   - linear transformation
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
+*Matrix-vector multiplication is an operation between a matrix and a vector that produces a new vector. In this post, I'll define matrix vector multiplication as well as three angles from which to view this concept. The third angle will enable us to view matrices as functions between vector spaces*
+
+Introduction 
+--------------
 
 In a [previous post](https://mbernste.github.io/posts/matrices/), we discussed three ways one can view a matrix: as a table of values, as a list of vectors, and finally, as a function.  It is the third way of viewing a matrices that really gives matrices their power.  Here, we'll introduce an operation between matrices and vectors, called **matrix-vector multiplication**, which will enable us to use matrices as functions. 
 
