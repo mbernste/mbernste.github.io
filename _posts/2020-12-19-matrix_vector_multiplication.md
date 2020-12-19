@@ -48,3 +48,9 @@ Matrix-vector multiplication between a matrix $\boldsymbol{A} \in \mathbb{R}^{m 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="700"/></center>
 
+We can also view this geometrically:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_linear_comb_geom.png" alt="drawing" width="700"/></center>
+
+In Panel A, we depict two column vectors of some matrix $\boldysmbol{A} \in \mathbb{R}^{3,2}$. In Panel B, we take a linear combination of the two column vectors of $$\boldsymbol{A}$$ according to the elements of some matrix $x$ thus producing the vector $\boldsymbol{Ax}$ (black vector) as shown in Panel C.
+
