@@ -30,7 +30,7 @@ Like most mathematical concepts, matrix-vector multiplication can be [viewed fro
 
 I find all three of the perspectives useful. The first two perspectives provide a way of understanding the *mechanism* of matrix-vector multiplication whereas the third perspective provides the *essence* of matrix-vector multiplication.  It is this third perspective of matrix-vector multiplication that enables us to view matrices as functions, as we discussed in the [previous post](https://mbernste.github.io/posts/matrices/).
 
-Matrix-vector multiplication as a "row-wise", vector-generating" process
+Matrix-vector multiplication as a "row-wise", vector-generating process
 ------------
 
 We can also view matrix-vector multiplication as a sort of "process" that constructs each element of the output vector. This process involves taking the vector and computing the dot product of that vector with each row in the matrix thereby forming each element of the output vector (See Theorem 1 in the Appendix to this post):
