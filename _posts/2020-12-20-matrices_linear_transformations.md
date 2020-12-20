@@ -21,8 +21,6 @@ Linear transformations
 
 A linear transformation is a function that maps vectors from one vector space to vectors in another vector space such that it preserves scaler multiplication and vector addition. Specifically, a linear transformation is defined as follows:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_transform.png" alt="drawing" width="500"/></center>
-
 <span style="color:#0060C6">**Definition 1 (Linear transformation):** Given vector spaces $(\mathcal{V}, \mathcal{F})$ and $(\mathcal{U}, \mathcal{F})$, a function $T : \mathcal{V} \rightarrow \mathcal{U}$ is a \textbf{linear transformation}, or \textbf{linear}, if for all $\boldsymbol{u}, \boldsymbol{v} \in \mathcal{V}$ and all scalars $c \in \mathcal{F}$,</span>
 
 <center><span style="color:#0060C6">$$T(\boldsymbol{u} + \boldsymbol{v}) = T(\boldsymbol{u}) + T(\boldsymbol{v})$$</span></center>
@@ -30,6 +28,11 @@ A linear transformation is a function that maps vectors from one vector space to
 <span style="color:#0060C6">and</span>
 
 <center><span style="color:#0060C6">$$T(c\boldsymbol{u}) = cT(\boldsymbol{u})$$</span></center>
+
+The figure below illustrates a linear transformation $T$ applied to three vectors (red, blue, and purple).  The vectors on the left are in $T$'s domain and the vectors on the right are in $T$'s range. The dotted lines connect each vector in the domain to its vector in the range as mapped by $T$.  Notice that the $T(\text{red}) + T(\text{blue}) = T(\text{red} + \text{blue})$.
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_transform.png" alt="drawing" width="500"/></center>
+
 
 Matrices as linear transformations
 ----------
@@ -44,13 +47,12 @@ where $T$ uses the matrix $\boldsymbol{A}$ to performing the mapping.  As shown 
 Appendix
 -----------
 
-<span style="color:#0060C6">**Theorem (Matrices define linear transformations):** The function $T(\bold{x}) := \bold{Ax}$ is a linear transformation.</span>
+<span style="color:#0060C6">**Theorem (Matrices define linear transformations):** The function $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is a linear transformation.</span>
 
 **Proof:** We  show that for all $\boldsymbol{u}, \boldsymbol{v}$ in the domain of $T$ and for all scalars $c$, the following conditions hold:
 
 1. $$\boldsymbol{A}(\boldsymbol{u} + \boldsymbol{v}) = \boldsymbol{A}\boldsymbol{u} + \boldsymbol{A}\boldsymbol{v}$$
 2. $$\boldsymbol{A}(c\boldsymbol{u}) = c(\boldsymbol{A}\boldsymbol{u})$$
 
-The figure below illustrates a linear transformation $T$ applied to three vectors (red, blue, and purple).  The vectors on the left are in $T$'s domain and the vectors on the right are in $T$'s range. The dotted lines connect each vector in the domain to its vector in the range as mapped by $T$.  Notice that the $T(\text{red}) + T(\text{blue}) = T(\text{red} + \text{blue})$.
 
 
