@@ -58,3 +58,7 @@ Proof of 1:
 
 $$\begin{align*}\boldsymbol{A}(\boldsymbol{u} + \boldsymbol{v}) &= \boldsymbol{a}_{*,1}(u_1 + v_1) + \boldsymbol{a}_{*,2}(u_2 + v_2) + \dots + \boldsymbol{a}_{*,n}(u_n + v_n) \\ &= \boldsymbol{a}_{*,1}u_1 + \boldsymbol{a}_{*,1}v_1 + \boldsymbol{a}_{*,2}u_2 + \boldsymbol{a}_{*,2}v_2 + \dots + \boldsymbol{a}_{*,n}u_n + \boldsymbol{a}_{*,n}v_n \\ &= (\boldsymbol{a}_{*,1}u_1 + \boldsymbol{a}_{*,2}u_2 + \dots + \boldsymbol{a}_{*,n}u_n) + (\boldsymbol{a}_{*,1}v_1 + \boldsymbol{a}_{*,2}v_2 + \dots + \boldsymbol{a}_{*,n}v_n) \\ &= \boldsymbol{Au} + \boldsymbol{Av}\end{align*}$$
 
+Proof of 2:
+
+$$\begin{align*}\boldsymbol{A}(c\boldsymbol{u}) &= \boldsymbol{a}_{*,1}(cu_1) + \boldsymbol{a}_{*,2}(cu_2) + \dots + \boldsymbol{a}_{*,n}(cu_n) \\ &= c\boldsymbol{a}_{*,1}(u_1) + c\boldsymbol{a}_{*,2}(u_2) + \dots + c\boldsymbol{a}_{*,n}(u_n) \\ &= c(\boldsymbol{a}_{*,1}u_1 + \boldsymbol{a}_{*,2}u_2 + \dots + \boldsymbol{a}_{*,n}u_n) \\ &= c(\boldsymbol{Au})\end{align*}$$
+
