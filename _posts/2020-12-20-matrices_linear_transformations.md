@@ -46,7 +46,10 @@ where $T$ uses the matrix $\boldsymbol{A}$ to performing the mapping.  As shown 
 Every linear transformation is characterized by a matrix
 ------------
 
-Perhaps more interestingly, it turns out that *every* linear transformation between finite-dimensional vector spaces is defined by a unique matrix that performs the transformation.  That is, if I have two vector spaces in, say $\mathbb{R}^m$ and $\mathbb{R}^n$, and I have a linear transformation $T$ mapping vectors between them, then there exists a single unique matrix $\boldsymbol{A}$ that performs $T$'s mapping. That is, where $T(\boldsymbol{x}) = \boldsymbol{Ax}$. This matrix is called the **standard matrix** of $T$. This is proven in Theorem 2 in the Appendix to this post.
+Perhaps more interestingly, it turns out that *every* linear transformation between finite-dimensional vector spaces is defined by a unique matrix that performs the transformation.  That is, if I have two vector spaces in, say $\mathbb{R}^m$ and $\mathbb{R}^n$, and I have a linear transformation $T$ mapping vectors between them, then there exists a single unique matrix $\boldsymbol{A}$ that performs $T$'s mapping. That is, where $T(\boldsymbol{x}) = \boldsymbol{Ax}$. This matrix is called the **standard matrix** of $T$.  In fact, computing the standard matrix for $T$ is quite simple. It's simply:
+
+
+The existence of the standard matrix for every $T$ is proven in Theorem 2 in the Appendix to this post.
 
 This fact, that every linear transformation is characterized by a matrix, means that there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* is a linear transformation.
 
