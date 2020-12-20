@@ -17,7 +17,7 @@ Recall that we can view matrices as functions in the following sense: if we hold
 
 $$T(\boldsymbol{x}) := \boldsymbol{A}\boldsymbol{x}$$
 
-Through this lense, let's look at a few common, "elementary" functions and determine their matrix:
+Through this lense, let's look at a few common functions and discuss their corresponding matrix.
 
 The identity matrix defines the identity function
 -------------------
@@ -30,7 +30,7 @@ For example, the identity matrix for $\mathbb{R}^3$ is defined as
 
 $$\boldsymbol{I}_3 := \begin{bmatrix} 1 & 0  & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$  
 
-It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{I}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the same vector $\bold{x}$.  Thus, a function $T(\bold{x}) := \bold{I}\bold{x}$ is the identity function for $\bold{R}^n$. 
+It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{I}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the same vector $\boldsymbol{x}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{I}\boldsymbol{x}$ is the identity function for $\mathbb{R}^n$. 
 
 The zero matrix defines the zero function
 -------------------
@@ -40,6 +40,7 @@ Recall a zero-function $f$ for a set $S$ is the function $f(x) := 0$ for all $x 
 <span style="color:#0060C6">Each real-valued, Euclidean vector space $\mathbb{R}^n$ is associated with a **zero matrix**, denoted $\boldsymbol{0}_{n \times n}$, which is a square matrix consisting of all zeros.</span>
 
 For example, the zero matrix for $\mathbb{R}^3$ is defined as
+
  $$\boldsymbol{0}_3 := \begin{bmatrix} 0 & 0  & 0\\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
  
  It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{0}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the zero vector $\boldsymbol{0}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{0}_n\bold{x}$ is the zero function for $\mathbb{R}^n$. 
