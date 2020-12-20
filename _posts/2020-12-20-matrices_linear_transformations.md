@@ -34,7 +34,7 @@ The figure below illustrates a linear transformation $T$ applied to three vector
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_transform.png" alt="drawing" width="500"/></center>
 
 
-Matrices as linear transformations
+Matrices perform linear transformations
 ----------
 
 If we hold a matrix $\boldsymbol{A}  \in \mathbb{R}^{m \times n}$ as fixed, this matrix maps vectors in $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$.  Making this more explicit, we can define a function $T : \mathbb{R}^n \rightarrow \mathbb{R}^m$ as:
@@ -52,6 +52,9 @@ Perhaps more interestingly, it turns out that *every* linear transformation betw
 The existence of the standard matrix for every $T$ is proven in Theorem 2 in the Appendix to this post.
 
 This fact, that every linear transformation is characterized by a matrix, means that there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* is a linear transformation.
+
+Common matrices viewed through the lense of functions
+------------
 
 Appendix
 -----------
