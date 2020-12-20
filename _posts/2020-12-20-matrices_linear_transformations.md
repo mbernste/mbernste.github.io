@@ -1,0 +1,54 @@
+---
+title: 'Matrices as linear transformations'
+date: 2020-12-20
+permalink: /posts/matrices_linear_transformations/
+tags:
+  - tutorial
+  - mathematics
+  - linear algebra
+  - linear transformation
+---
+
+THIS POST IS CURRENTLY UNDER CONSTRUCTION
+
+Introduction
+-----------
+In a [previous post](https://mbernste.github.io/posts/matrix_vector_mult/), we discussed the definition of matrix-vector multiplication enables us to view matrices as functions between vector spaces. As we'll show in this post, matrices represent a very specific type of function: a **linear transformation**.
+
+
+Linear transformations
+---------
+
+A linear transformation is a function that maps vectors from one vector space to vectors in another vector space such that it preserves scaler multiplication and vector addition. Specifically, a linear transformation is defined as follows:
+
+<span style="color:#0060C6">**Definition 1 (Linear transformation):** Given vector spaces $(\mathcal{V}, \mathcal{F})$ and $(\mathcal{U}, \mathcal{F})$, a function $T : \mathcal{V} \rightarrow \mathcal{U}$ is a \textbf{linear transformation}, or \textbf{linear}, if for all $\boldsymbol{u}, \boldsymbol{v} \in \mathcal{V}$ and all scalars $c \in \mathcal{F}$,</span>
+
+<center><span style="color:#0060C6">$$T(\boldsymbol{u} + \boldsymbol{v}) = T(\boldsymbol{u}) + T(\boldsymbol{v})$$</span></center>
+
+<span style="color:#0060C6">and</span>
+
+<center><span style="color:#0060C6">$$T(c\boldsymbol{u}) = cT(\boldsymbol{u})$$</span></center>
+
+Matrices as linear transformations
+----------
+
+If we hold a matrix $\boldsymbol{A}  \in \mathbb{R}^{m \times n}$ as fixed, this matrix maps vectors in $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$.  Making this more explicit, we can define a function $T : \mathbb{R}^n \rightarrow \mathbb{R}^m$ as:
+
+$$T(\boldsymbol{x}) := \boldsymbol{A}\boldsymbol{x}$$
+
+where $T$ uses the matrix $\boldsymbol{A}$ to performing the mapping.  As shown in Theorem 1 in the Appendix to this post, any function $T$ defined as a matrix multiplied by an input vector is a linear function.
+
+
+Appendix
+-----------
+
+<span style="color:#0060C6">**Theorem (Matrices define linear transformations):** The function $T(\bold{x}) := \bold{Ax}$ is a linear transformation.</span>
+
+**Proof:** We  show that for all $\boldsymbol{u}, \boldsymbol{v}$ in the domain of $T$ and for all scalars $c$, the following conditions hold:
+
+1. $$\boldsymbol{A}(\boldsymbol{u} + \boldsymbol{v}) = \boldsymbol{A}\boldsymbol{u} + \boldsymbol{A}\boldsymbol{v}$$
+2. $$\boldsymbol{A}(c\boldsymbol{u}) = c(\boldsymbol{A}\boldsymbol{u})$$
+
+The figure below illustrates a linear transformation $T$ applied to three vectors (red, blue, and purple).  The vectors on the left are in $T$'s domain and the vectors on the right are in $T$'s range. The dotted lines connect each vector in the domain to its vector in the range as mapped by $T$.  Notice that the $T(\text{red}) + T(\text{blue}) = T(\text{red} + \text{blue})$.
+
+
