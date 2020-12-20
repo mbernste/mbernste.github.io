@@ -22,7 +22,7 @@ Through this lense, let's look at a few common functions and discuss their corre
 The identity matrix defines the identity function
 -------------------
 
-Recall an identity function $f$ for a set $S$ is the function $f(x) := x$ for all $x \in S$. In the context of a function $T$ over a vector space $\mathbb{R}^n$, the identity function $T(\boldsymbol{x}) := \boldsymbol{x}$ for all $\boldsymbol{x} \in \mathbb{R}^n$ is defined using the **identity matrix** for $\mathbb{R}^n$.  The identity matrix for $\mathbb{R}^n$, denoted $\boldsymbol{I}_n$ (or simply $\bold{I}$ if the dimensionality is implied by the context), is a square matrix of all zeros except for ones along the diagonal:  
+Recall an identity function $f$ for a set $S$ is the function $f(x) := x$ for all $x \in S$. In the context of a function $T$ over a vector space $\mathbb{R}^n$, the identity function $T(\boldsymbol{x}) := \boldsymbol{x}$ for all $\boldsymbol{x} \in \mathbb{R}^n$ is defined using the **identity matrix** for $\mathbb{R}^n$.  The identity matrix for $\mathbb{R}^n$, denoted $\boldsymbol{I}_n$ (or simply $\boldsymbol{I}$ if the dimensionality is implied by the context), is a square matrix of all zeros except for ones along the diagonal:  
 
 <span style="color:#0060C6">**Definition (Identity matrix):** Each real-valued, Euclidean vector space $\mathbb{R}^n$ is associated with an **identity matrix**, denoted $\boldsymbol{I}_{n \times n}$ (or simply $\boldsymbol{I}$ if the dimensionality is implied by the context), which is a square matrix consisting of zeros in the off-diagonal entries and ones along the diagonal.</span>
 
@@ -43,7 +43,7 @@ For example, the zero matrix for $\mathbb{R}^3$ is defined as
 
  $$\boldsymbol{0}_3 := \begin{bmatrix} 0 & 0  & 0\\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
  
- It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{0}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the zero vector $\boldsymbol{0}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{0}_n\bold{x}$ is the zero function for $\mathbb{R}^n$. 
+ It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{0}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the zero vector $\boldsymbol{0}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{0}_n\boldsymbol{x}$ is the zero function for $\mathbb{R}^n$. 
 
 An inverse matrix defines an inverse function
 -------------------
