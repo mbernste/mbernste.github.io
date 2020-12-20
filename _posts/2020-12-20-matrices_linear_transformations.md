@@ -1,6 +1,6 @@
 ---
 title: 'Matrices as linear transformations'
-date: 2020-12-20
+date: 2020-12-21
 permalink: /posts/matrices_linear_transformations/
 tags:
   - tutorial
@@ -15,8 +15,6 @@ Introduction
 -----------
 In a [previous post](https://mbernste.github.io/posts/matrix_vector_mult/), we discussed the definition of matrix-vector multiplication enables us to view matrices as functions between vector spaces. As we'll show in this post, matrices represent a very specific type of function: a **linear transformation**.
 
-Matrices as functions
----------
 
 Recall that we can view matrices as functions in the following sense: if we hold a matrix $\boldsymbol{A}  \in \mathbb{R}^{m \times n}$ as fixed, this matrix maps vectors in $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$.  That is, we can define a function $T : \mathbb{R}^n \rightarrow \mathbb{R}^m$ as:
 
