@@ -15,6 +15,17 @@ Introduction
 -----------
 In a [previous post](https://mbernste.github.io/posts/matrix_vector_mult/), we discussed the definition of matrix-vector multiplication enables us to view matrices as functions between vector spaces. As we'll show in this post, matrices represent a very specific type of function: a **linear transformation**.
 
+Matrices as functions
+---------
+
+Recall that we can view matrices as functions in the following sense: if we hold a matrix $\boldsymbol{A}  \in \mathbb{R}^{m \times n}$ as fixed, this matrix maps vectors in $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$.  That is, we can define a function $T : \mathbb{R}^n \rightarrow \mathbb{R}^m$ as:
+
+$$T(\boldsymbol{x}) := \boldsymbol{A}\boldsymbol{x}$$
+
+Through this lense, let's look at a few common, "elementary" functions and determine their matrix:
+
+
+
 
 Linear transformations
 ---------
@@ -37,16 +48,18 @@ The figure below illustrates a linear transformation $T$ applied to three vector
 Matrices perform linear transformations
 ----------
 
-If we hold a matrix $\boldsymbol{A}  \in \mathbb{R}^{m \times n}$ as fixed, this matrix maps vectors in $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$.  Making this more explicit, we can define a function $T : \mathbb{R}^n \rightarrow \mathbb{R}^m$ as:
 
-$$T(\boldsymbol{x}) := \boldsymbol{A}\boldsymbol{x}$$
 
 where $T$ uses the matrix $\boldsymbol{A}$ to performing the mapping.  As shown in Theorem 1 in the Appendix to this post, any function $T$ defined as a matrix multiplied by an input vector is a linear transformation.
 
 Every linear transformation is characterized by a matrix
 ------------
 
-Perhaps more interestingly, it turns out that *every* linear transformation between finite-dimensional vector spaces is defined by a unique matrix that performs the transformation.  That is, if I have two vector spaces in, say $\mathbb{R}^m$ and $\mathbb{R}^n$, and I have a linear transformation $T$ mapping vectors between them, then there exists a single unique matrix $\boldsymbol{A}$ that performs $T$'s mapping. That is, where $T(\boldsymbol{x}) = \boldsymbol{Ax}$. This matrix is called the **standard matrix** of $T$.  In fact, computing the standard matrix for $T$ is quite simple. It's simply:
+Perhaps more interestingly, it turns out that *every* linear transformation between finite-dimensional vector spaces is defined by a unique matrix that performs the transformation.  That is, if I have two vector spaces in, say $\mathbb{R}^m$ and $\mathbb{R}^n$, and I have a linear transformation $T$ mapping vectors between them, then there exists a single unique matrix $\boldsymbol{A}$ that performs $T$'s mapping. That is, where $T(\boldsymbol{x}) = \boldsymbol{Ax}$. More specifically, $A$ is defined as:
+
+$A := $
+
+This matrix is called the **standard matrix** of $T$.  In fact, computing the standard matrix for $T$ is quite simple. It's simply:
 
 
 The existence of the standard matrix for every $T$ is proven in Theorem 2 in the Appendix to this post.
