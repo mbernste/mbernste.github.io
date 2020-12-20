@@ -1,7 +1,7 @@
 ---
-title: 'Intuiting linear transformations'
+title: 'Matrices linear transformations'
 date: 2020-12-20
-permalink: /posts/linear_transformations/
+permalink: /posts/matrices_linear_transformations/
 tags:
   - tutorial
   - mathematics
@@ -13,9 +13,8 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
 Introduction
 -----------
-In a [previous post](), we discussed the definition of matrix-vector multiplication enables us to view matrices as functions between vector spaces. As we'll see in a future post, matrices represent a very specific type of function: a **linear transformation**. But before getting that far, it helps to first understand linear transformations.
+In a [previous post](https://mbernste.github.io/posts/matrix_vector_mult/), we discussed the definition of matrix-vector multiplication enables us to view matrices as functions between vector spaces. As we'll show in this post, matrices represent a very specific type of function: a **linear transformation**.
 
-So what exactly is a linear transformation? As we'll soon see, linear transformations have a pretty simply definition, but think this definition does not do well at illuminating what linear transformations really do geometrically.  In this post, we will define linear transformations and show that linear transformations are capable of stretching and rotating objects, but they are incapable of "warping" objects.  Let's dig into the details.
 
 Definition
 ---------
