@@ -45,3 +45,17 @@ For example, the zero matrix for $\mathbb{R}^3$ is defined as
  
  It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{0}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the zero vector $\boldsymbol{0}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{0}_n\bold{x}$ is the zero function for $\mathbb{R}^n$. 
 
+An inverse matrix defines an inverse function
+-------------------
+
+Let's say we have some function $T(\boldsymbol{x}) := \boldsymbol{Ax}$.  Let's say there exists a matrix $\boldsymbol{C}$ such that the function $F(\boldsymbol{x}) := \boldsymbol{Cx}$ is the inverse function of $T$. That is, $$F = T^{-1}$$ where
+
+$$T^{-1}(T(\boldsymbol{x})) = \boldsymbol{x}$$
+
+If this is the case, then we call $\boldsymbol{C}$ the **inverse matrix** of $\boldsymbol{A}$. Usually, we will denote this inverse matrix $\boldsymbol{C}$ as $\boldsymbol{A}^{-1}$.  This is depicted in the figure below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_inverse.png" alt="drawing" width="500"/></center>
+
+Not every matrix has an inverse.  Matrices that have inverses are a special category of matrix called **invertible matrices** and have special properties, which we will discuss in a future post. 
+
+
