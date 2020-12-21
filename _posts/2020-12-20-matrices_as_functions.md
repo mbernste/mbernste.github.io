@@ -6,6 +6,8 @@ tags:
   - tutorial
   - mathematics
   - linear algebra
+  - matrices
+  - functions
 ---
 
 *At the core of linear algebra is the idea that matrices represent functions. In this post, we'll look at a few common, elementary functions and discuss their corresponding matrices.*
