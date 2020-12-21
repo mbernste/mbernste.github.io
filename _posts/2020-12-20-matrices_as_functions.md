@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
+*At the core of linear algebra is the idea that matrices represent functions. In this post, we'll look at a few common functions and discuss their corresponding matrix.*
 
 Introduction
 ----------------
@@ -17,7 +17,7 @@ Recall that we can view matrices as functions in the following sense: if we hold
 
 $$T(\boldsymbol{x}) := \boldsymbol{A}\boldsymbol{x}$$
 
-Through this lense, let's look at a few common functions and discuss their corresponding matrix.
+In this post, we'll look at a few common functions and discuss their corresponding matrix.
 
 The identity matrix defines the identity function
 -------------------
@@ -30,7 +30,10 @@ For example, the identity matrix for $\mathbb{R}^3$ is defined as
 
 $$\boldsymbol{I}_3 := \begin{bmatrix} 1 & 0  & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$  
 
-It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{I}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the same vector $\boldsymbol{x}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{I}\boldsymbol{x}$ is the identity function for $\mathbb{R}^n$. 
+It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{I}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the same vector $\boldsymbol{x}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{I}\boldsymbol{x}$ is the identity function for $\mathbb{R}^n$. This is depicted schematically below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/identity_matrix_as_function.png" alt="drawing" width="500"/></center>
+
 
 The zero matrix defines the zero function
 -------------------
