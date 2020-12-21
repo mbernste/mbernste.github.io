@@ -14,6 +14,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [Introducing matrices](https://mbernste.github.io/posts/matrices/)  
 [Matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/)
+[Matrices as functions](https://mbernste.github.io/posts/matrices_as_functions/)  
 
 ## Probability
 
