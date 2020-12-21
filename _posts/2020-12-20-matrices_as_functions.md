@@ -26,7 +26,7 @@ The identity matrix defines the identity function
 
 Recall an identity function $f$ for a set $S$ is the function $f(x) := x$ for all $x \in S$. In the context of a function $T$ over a vector space $\mathbb{R}^n$, the identity function $T(\boldsymbol{x}) := \boldsymbol{x}$ for all $\boldsymbol{x} \in \mathbb{R}^n$ is defined using the **identity matrix** for $\mathbb{R}^n$.  The identity matrix for $\mathbb{R}^n$, denoted $\boldsymbol{I}_n$ (or simply $\boldsymbol{I}$ if the dimensionality is implied by the context), is a square matrix of all zeros except for ones along the diagonal:  
 
-<span style="color:#0060C6">**Definition (Identity matrix):** Each real-valued, Euclidean vector space $\mathbb{R}^n$ is associated with an **identity matrix**, denoted $\boldsymbol{I}_{n \times n}$ (or simply $\boldsymbol{I}$ if the dimensionality is implied by the context), which is a square matrix consisting of zeros in the off-diagonal entries and ones along the diagonal.</span>
+<span style="color:#0060C6">**Definition 1 (Identity matrix):** Each real-valued, Euclidean vector space $\mathbb{R}^n$ is associated with an **identity matrix**, denoted $\boldsymbol{I}_{n \times n}$ (or simply $\boldsymbol{I}$ if the dimensionality is implied by the context), which is a square matrix consisting of zeros in the off-diagonal entries and ones along the diagonal.</span>
 
 For example, the identity matrix for $\mathbb{R}^3$ is defined as
 
@@ -42,7 +42,7 @@ The zero matrix defines the zero function
 
 Recall a zero-function $f$ for a set $S$ is the function $f(x) := 0$ for all $x \in S$.  In the context of a function $T$ over a vector space $\mathbb{R}^n$, the zero function $T(\boldsymbol{x}) := \boldsymbol{0}$ for all $\boldsymbol{x} \in \mathbb{R}^n$ is defined using the **zero matrix** for $\mathbb{R}^n$.  The zero matrix for $\mathbb{R}^n$, denoted $\boldsymbol{0}_n$ is a square matrix of all zeros:
 
-<span style="color:#0060C6">Each real-valued, Euclidean vector space $\mathbb{R}^n$ is associated with a **zero matrix**, denoted $\boldsymbol{0}_{n \times n}$, which is a square matrix consisting of all zeros.</span>
+<span style="color:#0060C6">**Definition 2 (Zero matrix):** Each real-valued, Euclidean vector space $\mathbb{R}^n$ is associated with a **zero matrix**, denoted $\boldsymbol{0}_{n \times n}$, which is a square matrix consisting of all zeros.</span>
 
 For example, the zero matrix for $\mathbb{R}^3$ is defined as
 
