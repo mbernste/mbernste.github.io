@@ -12,9 +12,9 @@ One of the most important and, in my opinion, overlooked skill sets in academics
 
 In this post, I’ll provide an analogy that I find helpful for thinking about what it means to "understand". This analogy also helps guide my teaching goals.   
 
-The analogy goes as follows: An abstract, complex concept is akin to an object that resides in three-dimensional (3D) space.  True understanding of that concept is akin to seeing the object in 3D. One only partially understands the concept if they are only able to see the object as a two-dimensional (2D) projection. One fully understands the concept when they are able to make the leap from viewing the object in 2D to seeing the object in 3D.  This leap is often accompanied by an “aha” moment.
+The analogy goes as follows: An abstract, complex concept is akin to an object that resides in three-dimensional (3D) space.  True understanding of that concept is akin to seeing the object in 3D. One only partially understands the concept if they are only able to see the object as a two-dimensional (2D) projection.  A 2D viewing of a concept is understanding a concept through limited perspectives. One fully understands the concept when they are able to make the leap from viewing the object in 2D to seeing the object in 3D.  This leap is often accompanied by an “aha” moment.
 
-This analogy is well illustrated by the image on the cover of [Gödel, Escher, Bach by Douglas Hofstadter](https://en.wikipedia.org/wiki/Gödel,_Escher,_Bach):
+This analogy is well illustrated by the image on the cover of [Gödel, Escher, Bach](https://en.wikipedia.org/wiki/Gödel,_Escher,_Bach) by Douglas Hofstadter:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/GodelEscherBachCover.png" alt="drawing" width="500"/></center>
 
@@ -29,7 +29,7 @@ Each of these perspectives are akin to a 2D projection:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Entropy3DConcept.png" alt="drawing" width="500"/></center>
 
-However, each of these 2D projections (i.e, perspectives) is incomplete.  Truly understanding the concept of entropy is to intuit how all of these perspectives are really just projections of some "higher dimensional" concept that integrates all of these ideas. 
+However, each of these 2D projections (i.e, perspectives) is incomplete. If you only understand entropy through one of these perspectives, then your understanding is incomplete.  Truly understanding the concept of entropy is to intuit how all of these perspectives are really just projections of some "higher dimensional" concept that integrates all of these ideas. 
 
 Importantly, the sum of multiple 2D projections does not equate to seeing the full 3D object.  There is something phenomenologically different about seeing the 3D object than seeing an amalgamation of 2D projections. It is their integration that results in understanding.
 
