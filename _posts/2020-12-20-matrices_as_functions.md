@@ -32,7 +32,7 @@ For example, the identity matrix for $\mathbb{R}^3$ is defined as
 
 $$\boldsymbol{I}_3 := \begin{bmatrix} 1 & 0  & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$  
 
-It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{I}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the same vector $\boldsymbol{x}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{I}\boldsymbol{x}$ is the identity function for $\mathbb{R}^n$. This is depicted schematically below:
+It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{I}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the same vector $\boldsymbol{x}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{I}\boldsymbol{x}$ is the identity function with domain $\mathbb{R}^n$. This is depicted schematically below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/identity_matrix_as_function.png" alt="drawing" width="500"/></center>
 
@@ -48,7 +48,7 @@ For example, the zero matrix for $\mathbb{R}^3$ is defined as
 
  $$\boldsymbol{0}_3 := \begin{bmatrix} 0 & 0  & 0\\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$$
  
- It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{0}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the zero vector $\boldsymbol{0}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{0}_n\boldsymbol{x}$ is the zero function for $\mathbb{R}^n$. This is depicted schematically below:
+ It can easily be shown that applying matrix-vector multiplication using an identity matrix $\boldsymbol{0}_n$ with any vector $\boldsymbol{x} \in \mathbb{R}^n$ will result in the zero vector $\boldsymbol{0}$.  Thus, a function $T(\boldsymbol{x}) := \boldsymbol{0}_n\boldsymbol{x}$ is the zero function for domain $\mathbb{R}^n$. This is depicted schematically below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/zero_matrix_as_function.png" alt="drawing" width="500"/></center>
 
