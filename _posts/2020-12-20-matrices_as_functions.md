@@ -15,7 +15,7 @@ tags:
 Introduction
 ----------------
 
-Recall that we can view matrices as functions in the following sense: if we hold a matrix $\boldsymbol{A}  \in \mathbb{R}^{m \times n}$ as fixed, this matrix maps vectors in $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$.  That is, we can define a function $T : \mathbb{R}^n \rightarrow \mathbb{R}^m$ as:
+Recall that the definition of [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/) enables us treat matrices as functions in the following sense: if we hold a matrix $\boldsymbol{A}  \in \mathbb{R}^{m \times n}$ as fixed, this matrix maps vectors in $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$.  That is, we can define a function $T : \mathbb{R}^n \rightarrow \mathbb{R}^m$ as:
 
 $$T(\boldsymbol{x}) := \boldsymbol{A}\boldsymbol{x}$$
 
