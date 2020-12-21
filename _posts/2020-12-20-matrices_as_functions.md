@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-*At the core of linear algebra is the idea that matrices represent functions. In this post, we'll look at a few common functions and discuss their corresponding matrix.*
+*At the core of linear algebra is the idea that matrices represent functions. In this post, we'll look at a few common, elementary functions and discuss their corresponding matrices.*
 
 Introduction
 ----------------
@@ -17,7 +17,7 @@ Recall that we can view matrices as functions in the following sense: if we hold
 
 $$T(\boldsymbol{x}) := \boldsymbol{A}\boldsymbol{x}$$
 
-In this post, we'll look at a few common functions and discuss their corresponding matrix.
+In this post, we'll look at a few common, elementary functions and discuss their corresponding matrices.
 
 The identity matrix defines the identity function
 -------------------
