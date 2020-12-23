@@ -42,7 +42,7 @@ Matrix-vector multiplication has the following two properties:
 1. $\boldsymbol{A}(\boldsymbol{v} + \boldsymbol{u}) = \boldsymbol{Av} + \boldsymbol{Au}$
 2. $\boldsymbol{A}(c\boldsymbol{v}) = c\boldsymbol{Av}$
 
-Thus, if we hold some matrix \boldsymbol{A} as fixed and define a function $T(\boldsymbol{x}) = \boldsymbol{Ax}$, then it follows that
+Thus, if we hold some matrix $\boldsymbol{A}$ as fixed and define a function $T(\boldsymbol{x}) := \boldsymbol{Ax}$, then it follows that
 
 1. $T(\boldsymbol{v} + \boldsymbol{u}) = T(\boldsymbol{v}) + T(\boldsymbol{u})$
 2. $T(c\boldsymbol{v}) = cT(\boldsymbol{v})$
