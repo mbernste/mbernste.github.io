@@ -37,21 +37,30 @@ The figure below illustrates a linear transformation $T$ applied to three vector
 Matrices perform linear transformations
 ----------
 
-Where $T$ uses the matrix $\boldsymbol{A}$ to performing the mapping.  As shown in Theorem 1 in the Appendix to this post, any function $T$ defined as a matrix multiplied by an input vector is a linear transformation.
+Matrix-vector multiplication has the following two properties:
+
+1. $\boldsymbol{A}(\boldsymbol{v} + \boldsymbol{u}) = \boldsymbol{Av} + \boldsymbol{Au}$
+2. $\boldsymbol{A}(c\boldsymbol{v}) = c\boldsymbol{Av}$
+
+Thus, if we hold some matrix \boldsymbol{A} as fixed and define a function $T(\boldsymbol{x}) = \boldsymbol{Ax}$, then it follows that
+
+1. $T(\boldsymbol{v} + \boldsymbol{u}) = T(\boldsymbol{v}) + T(\boldsymbol{u})$
+2. $T(c\boldsymbol{v}) = cT(\boldsymbol{v})$
+
+That is, $T$ is a linear transformation. These facts are proven in Theorem 1 in the Appendix to this post.
 
 Every linear transformation is characterized by a matrix
 ------------
 
-Perhaps more interestingly, it turns out that *every* linear transformation between finite-dimensional vector spaces is defined by a unique matrix that performs the transformation.  That is, if I have two vector spaces in, say $\mathbb{R}^m$ and $\mathbb{R}^n$, and I have a linear transformation $T$ mapping vectors between them, then there exists a single unique matrix $\boldsymbol{A}$ that performs $T$'s mapping. That is, where $T(\boldsymbol{x}) = \boldsymbol{Ax}$. More specifically, $A$ is defined as:
+Perhaps more interestingly, it turns out that *every* linear transformation between finite-dimensional vector spaces is defined by a unique matrix that performs the transformation.  That is, if I have two vector spaces in, say $\mathbb{R}^m$ and $\mathbb{R}^n$, and I have a linear transformation $T$ mapping vectors between them, then there exists a single unique matrix $\boldsymbol{A}_T$ that performs $T$'s mapping. That is, where $T(\boldsymbol{x}) = \boldsymbol{A}_T\boldsymbol{x}$.  This matrix is called the **standard matrix** of $T$.  
 
-$A := $
+In fact, computing the standard matrix for $T$ is quite simple. It's simply:
 
-This matrix is called the **standard matrix** of $T$.  In fact, computing the standard matrix for $T$ is quite simple. It's simply:
+$$A_T := \begin{bmatrix}T(\boldsymbol{I}_{1,*}) & T(\boldsymbol{I}_{2,*}) & \dots & T(\boldsymbol{I}_{m,*}) \end{bmatrix}$$
 
+Both the existence and form of the standard matrix for any linear transformation $T$ is proven in Theorem 2 in the Appendix to this post.
 
-The existence of the standard matrix for every $T$ is proven in Theorem 2 in the Appendix to this post.
-
-This fact, that every linear transformation is characterized by a matrix, means that there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* is a linear transformation.
+Because every linear transformation is characterized by a matrix, means that there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* is a linear transformation.
 
 
 Appendix
