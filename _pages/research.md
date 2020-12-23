@@ -10,7 +10,7 @@ Within the last decades, scientists have deposited vast amounts of raw genomics 
 
 Cell type annotation is a fundamental task in the analysis of single-cell RNA-sequencing data. We present [CellO](https://github.com/deweylab/CellO), a machine learning-based tool for annotating human RNA-seq data with the [Cell Ontology](http://www.obofoundry.org/ontology/cl.html). CellO enables accurate and standardized cell type classification by considering the rich hierarchical structure of known cell types. Furthemore, CellO comes pre-trained on a novel, comprehensive dataset of human, healthy, untreated primary samples in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA), which to the best of our knowledge, is the most diverse curated collection of primary cell data to date. 
 
-* Bernstein, M.N., Ma, J., Gleicher, M., and Dewey, C.N. (2020). [CellO: Comprehensive and hierarchical cell type classification of human cells with the Cell Ontology](https://www.biorxiv.org/content/10.1101/634097v2). _bioRxiv_.
+* Bernstein, M.N., Ma, J., Gleicher, M., and Dewey, C.N. (2020). [CellO: Comprehensive and hierarchical cell type classification of human cells with the Cell Ontology](https://doi.org/10.1016/j.isci.2020.101913). _iScience_, 24(1), 101913.
 
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
 ![My helpful screenshot]({{ "  https://mbernste.github.io/images/cell_type_classification.png" |   https://mbernste.github.io/images/cell_type_classification.png }})
