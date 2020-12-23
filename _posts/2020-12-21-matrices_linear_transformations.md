@@ -13,7 +13,7 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
 Introduction
 -----------
-In a [previous post](https://mbernste.github.io/posts/matrix_vector_mult/), we discussed the definition of matrix-vector multiplication enables us to view matrices as functions between vector spaces. As we'll show in this post, matrices represent a very specific type of function: a **linear transformation**.
+As previously discussed, [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/) enables us to view [matrices as functions](https://mbernste.github.io/posts/matrices_as_functions/) between vector spaces. It turns out that matrices define a very specific type of function: **linear transformations**.  In fact, *any* linear transformation between coordinate vector spaces can be characterized by a *single, unique matrix*.  That is, there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* a linear transformation.
 
 
 Linear transformations
@@ -37,9 +37,7 @@ The figure below illustrates a linear transformation $T$ applied to three vector
 Matrices perform linear transformations
 ----------
 
-
-
-where $T$ uses the matrix $\boldsymbol{A}$ to performing the mapping.  As shown in Theorem 1 in the Appendix to this post, any function $T$ defined as a matrix multiplied by an input vector is a linear transformation.
+Where $T$ uses the matrix $\boldsymbol{A}$ to performing the mapping.  As shown in Theorem 1 in the Appendix to this post, any function $T$ defined as a matrix multiplied by an input vector is a linear transformation.
 
 Every linear transformation is characterized by a matrix
 ------------
@@ -55,8 +53,6 @@ The existence of the standard matrix for every $T$ is proven in Theorem 2 in the
 
 This fact, that every linear transformation is characterized by a matrix, means that there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* is a linear transformation.
 
-Common matrices viewed through the lense of functions
-------------
 
 Appendix
 -----------
