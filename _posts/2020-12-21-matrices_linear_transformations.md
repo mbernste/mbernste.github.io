@@ -9,7 +9,7 @@ tags:
   - linear transformation
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
+Linear transformations are functions between vector spaces that preserve vector addition and scalar multiplication. In this post, we show that there exists a one-to-one corresondence between linear transformations between coordinate vector spaces and matrices. Thus, we can view a matrix as representing a unique linear transformation between coordinate vector spaces.
 
 Introduction
 -----------
@@ -113,3 +113,4 @@ $\square$
 
 $$\begin{align*} \boldsymbol{x} &= \boldsymbol{Ix} \\ &= \boldsymbol{e}_1x_1, + \boldsymbol{e}_2x_2 + \dots + \boldsymbol{e}_mx_m \\ \implies T(\boldsymbol{x}) &= T(\boldsymbol{e}_1x_1 + \boldsymbol{e}_2x_2 + \dots + \boldsymbol{e}_mx_m) \\ &= T(\boldsymbol{e}_1x_1) + T( \boldsymbol{e}_2x_2) + \dots +  T(\boldsymbol{e}_mx_m) && \text{$T$ is linear} \\ &= T(\boldsymbol{e}_1)x_1 + T( \boldsymbol{e}_2)x_2 + \dots +  T(\boldsymbol{e}_m)x_m && \text{$T$ is linear} \\ &= \begin{bmatrix} T(\boldsymbol{e}_1), T(\boldsymbol{e}_2), \dots, T(\boldsymbol{e}_m) \end{bmatrix} \boldsymbol{x} \\ &= \boldsymbol{A}_T\boldsymbol{x} \end{align*}$$
 
+$\square$
