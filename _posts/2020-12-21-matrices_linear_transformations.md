@@ -101,7 +101,7 @@ $\square$
 
 <span style="color:#0060C6">**Theorem 2 (Standard matrix of a linear transformations):** Given a linear transformation $T: \mathbb{R}^m \rightarrow \mathbb{R}^n$, $T$'s mapping is performed by a unique matrix $\boldsymbol{A}_T$. That is, </span>
 
-<center><span style="color:#0060C6">$$T(\boldsymbol{x}) = \boldsymbol{Ax}$$</span></center>
+<center><span style="color:#0060C6">$$T(\boldsymbol{x}) = \boldsymbol{A}_T\boldsymbol{x}$$</span></center>
 
 <span style="color:#0060C6">where $\boldsymbol{A}_T$ is defined as</span> 
 
