@@ -9,11 +9,11 @@ tags:
   - linear transformation
 ---
 
-*Linear transformations are functions between vector spaces that preserve vector addition and scalar multiplication. In this post, we show that there exists a one-to-one corresondence between linear transformations between coordinate vector spaces and matrices. Thus, we can view a matrix as representing a unique linear transformation between coordinate vector spaces.*
+*Linear transformations are functions mapping vectors between two vector spaces that preserve vector addition and scalar multiplication. In this post, we show that there exists a one-to-one corresondence between linear transformations between coordinate vector spaces and matrices. Thus, we can view a matrix as representing a unique linear transformation between coordinate vector spaces.*
 
 Introduction
 -----------
-As previously discussed, [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/) enables us to view [matrices as functions](https://mbernste.github.io/posts/matrices_as_functions/) between vector spaces. It turns out that matrices define a very specific type of function: **linear transformations**.  In fact, *any* linear transformation between coordinate vector spaces can be characterized by a *single, unique matrix*.  That is, there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* a linear transformation.
+As previously discussed, [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/) enables us to view [matrices as functions](https://mbernste.github.io/posts/matrices_as_functions/) between vector spaces. It turns out that matrices define a very specific type of function:  **linear transformations**.  In fact, *any* linear transformation between coordinate vector spaces can be characterized by a *single, unique matrix*.  That is, there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* a linear transformation.
 
 
 Linear transformations
