@@ -61,9 +61,15 @@ Computing the standard matrix of a linear transformation
 
 A natural question is: given a linear transformation $T$, how do we compute its standard matrix?  In fact, it's quite simple. $A_T$ is computed simply as:
 
-$$A_T = \begin{bmatrix}T(\boldsymbol{I}_{1,*}) & T(\boldsymbol{I}_{2,*}) & \dots & T(\boldsymbol{I}_{m,*}) \end{bmatrix}$$
+$$A_T = \begin{bmatrix}T(\boldsymbol{e}_1) & T(\boldsymbol{e}_2) & \dots & T(\boldsymbol{e}_m) \end{bmatrix}$$
 
-where $$\boldsymbol{I}_{i,*}$$ is the $i$th row of the identity matrix for $\mathbb{R}^m$ -- that is, the $m$ *basis vectors* in $\mathbb{R}^m$. What this says is that in order to form the standard matrix for a linear transformation $T$, you simply compute the vectors that result from transforming the basis vectors under $T$. The resultant vectors form the columns of $T$'s standard matrix!  This is proven in Theorem 2 in the Appendix to this post.
+where $$\boldsymbol{e}_i$$ is the $i$th basis vector of $\mathbb{R}^m$ (i.e., the vector with every element equal to zero except for the $i$th element, which is equal to one). 
+
+What this says is that in order to form the standard matrix for a linear transformation $T$, you simply compute the vectors that result from transforming the basis vectors under $T$. The resultant vectors form the columns of $T$'s standard matrix!  This is depicted in the figure below where we visualize the basis vectors for $\mathbb{R}^2$ and the two column vectors of the standard matrix for some linear transformation $T$:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/columns_standard_matrix.png" alt="drawing" width="400"/></center>
+
+This is proven in Theorem 2 in the Appendix to this post.
 
 Appendix
 -----------
