@@ -99,7 +99,7 @@ $$\begin{align*}T(c\boldsymbol{u}) &= \boldsymbol{A}(c\boldsymbol{u}) \\ &= c\bo
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 2 (Standard matrix of a linear transformations):** Given a linear transformation $T: \mathbb{R}^m \rightarrow \mathbb{R}^n$, then </span>
+<span style="color:#0060C6">**Theorem 2 (Standard matrix of a linear transformations):** Given a linear transformation $T: \mathbb{R}^m \rightarrow \mathbb{R}^n$, it holds that </span>
 
 <center><span style="color:#0060C6">$$T(\boldsymbol{x}) = \boldsymbol{A}_T\boldsymbol{x}$$</span></center>
 
