@@ -54,13 +54,16 @@ Every linear transformation is characterized by a matrix
 
 Perhaps more interestingly, it turns out that *every* linear transformation between finite-dimensional vector spaces is defined by a unique matrix that performs the transformation.  That is, if I have two vector spaces in, say $\mathbb{R}^m$ and $\mathbb{R}^n$, and I have a linear transformation $T$ mapping vectors between them, then there exists a single unique matrix $\boldsymbol{A}_T$ that performs $T$'s mapping. That is, where $T(\boldsymbol{x}) = \boldsymbol{A}_T\boldsymbol{x}$.  This matrix is called the **standard matrix** of $T$. 
 
-Now, a natural question is: given a linear transformation $T$, how do we compute its standard matrix?  In fact, it's quite simple. $A_T$ is computed simply as:
+Because every matrix performs a linear transformation *and* every linear transformation is characterized by a matrix, it follows that there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* is a linear transformation.
+
+Computing the standard matrix of a linear transformation
+------------
+
+A natural question is: given a linear transformation $T$, how do we compute its standard matrix?  In fact, it's quite simple. $A_T$ is computed simply as:
 
 $$A_T = \begin{bmatrix}T(\boldsymbol{I}_{1,*}) & T(\boldsymbol{I}_{2,*}) & \dots & T(\boldsymbol{I}_{m,*}) \end{bmatrix}$$
 
 where $$\boldsymbol{I}_{i,*}$$ is the $i$th row of the identity matrix for $\mathbb{R}^m$ -- that is, the $m$ *basis vectors* in $\mathbb{R}^m$. What this says is that in order to form the standard matrix for a linear transformation $T$, you simply compute the vectors that result from transforming the basis vectors under $T$. The resultant vectors form the columns of $T$'s standard matrix!  This is proven in Theorem 2 in the Appendix to this post.
-
-Because every matrix performs a linear transformation *and* every linear transformation is characterized by a matrix, it follows that there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* is a linear transformation.
 
 Appendix
 -----------
