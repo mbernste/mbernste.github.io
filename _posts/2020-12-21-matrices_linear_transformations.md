@@ -108,3 +108,8 @@ $\square$
 <center><span style="color:#0060C6">$$A_T := \begin{bmatrix}T(\boldsymbol{e}_1) & T(\boldsymbol{e}_2) & \dots & T(\boldsymbol{e}_m) \end{bmatrix}$$</span></center>
   
 <span style="color:#0060C6">where $\boldsymbol{e}_i$ is the $i$th basis vector of $\mathbb{R}^m$.</span>
+
+**Proof:**
+
+\begin{align*} \bold{x} &= \bold{Ix} \\ &= \boldsymbol{e}_1x_1, + \boldsymbol{e}_2x_2 + \dots + \boldsymbol{e}_mx_m \\ \implies T(\boldsymbol{x}) &= T(\boldsymbol{e}_1x_1 + \boldsymbol{e}_2x_2 + \dots + \boldsymbol{e}_mx_n) \\ &= T(\boldsymbol{e}_1x_1) + T( \boldsymbol{e}_2x_2) + \dots +  T(\boldsymbol{e}_mx_m) && \text{$T$ is linear} \\ &= \begin{bmatrix} T(\boldsymbol{e}_1), T(\boldsymbol{e}_2), \dots, T(\boldsymbol{e}_m) \end{bmatrix} \boldsymbol{x} \\ &= \boldsymbol{A}_T\boldsymbol{x} \end{align*}
+
