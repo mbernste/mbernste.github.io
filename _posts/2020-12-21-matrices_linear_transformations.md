@@ -58,7 +58,7 @@ Now, a natural question is: given a linear transformation $T$, how do we compute
 
 $$A_T = \begin{bmatrix}T(\boldsymbol{I}_{1,*}) & T(\boldsymbol{I}_{2,*}) & \dots & T(\boldsymbol{I}_{m,*}) \end{bmatrix}$$
 
-where $\boldsymbol{I}_{i,*}$ is the $i$th row of the identity matrix for $\mathbb{R}^m$ -- that is, the $m$ *basis vectors* in $\mathbb{R}^m$. What this says is that in order to form the standard matrix for a linear transformation $T$, you simply compute the vectors that result from transforming the basis vectors under $T$. The resultant vectors form the columns of $T$'s standard matrix!  This is proven in Theorem 2 in the Appendix to this post.
+where $$\boldsymbol{I}_{i,*}$$ is the $i$th row of the identity matrix for $\mathbb{R}^m$ -- that is, the $m$ *basis vectors* in $\mathbb{R}^m$. What this says is that in order to form the standard matrix for a linear transformation $T$, you simply compute the vectors that result from transforming the basis vectors under $T$. The resultant vectors form the columns of $T$'s standard matrix!  This is proven in Theorem 2 in the Appendix to this post.
 
 Because every matrix performs a linear transformation *and* every linear transformation is characterized by a matrix, it follows that there is a one-to-one mapping between linear transformations and matrices.  Thus, in some sense, we can say that a matrix *is* is a linear transformation.
 
