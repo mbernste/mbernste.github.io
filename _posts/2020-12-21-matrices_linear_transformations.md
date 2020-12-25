@@ -65,7 +65,7 @@ $$A_T = \begin{bmatrix}T(\boldsymbol{e}_1) & T(\boldsymbol{e}_2) & \dots & T(\bo
 
 where $$\boldsymbol{e}_i$$ is the $i$th basis vector of $\mathbb{R}^m$ (i.e., the vector with every element equal to zero except for the $i$th element, which is equal to one). 
 
-What this says is that in order to form the standard matrix for a linear transformation $T$, you simply compute the vectors that result from transforming the basis vectors under $T$. The resultant vectors form the columns of $T$'s standard matrix!  This is depicted in the figure below where we visualize the basis vectors for $\mathbb{R}^2$ and the two column vectors of the standard matrix for some linear transformation $T$:
+What this says is that in order to form the standard matrix for a linear transformation $T$, you simply compute the vectors that result from transforming the basis vectors under $T$. The resultant vectors form the columns of $T$'s standard matrix!  This is depicted in the figure below where we visualize the basis vectors for $\mathbb{R}^2$ and the two column vectors of the standard matrix for some linear transformation $T: \mathbb{R}^2 \rightarrow \mathbb{R}^2$:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/columns_standard_matrix.png" alt="drawing" width="400"/></center>
 
