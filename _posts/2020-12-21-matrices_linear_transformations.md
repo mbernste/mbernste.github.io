@@ -74,7 +74,7 @@ This is proven in Theorem 2 in the Appendix to this post.
 Appendix
 -----------
 
-<span style="color:#0060C6">**Theorem (Matrices define linear transformations):** The function $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is a linear transformation.</span>
+<span style="color:#0060C6">**Theorem 1 (Matrices define linear transformations):** The function $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is a linear transformation.</span>
 
 **Proof:** We  show that for all $\boldsymbol{u}, \boldsymbol{v}$ in the domain of $T$ and for all scalars $c$, the following conditions hold:
 
@@ -88,4 +88,14 @@ $$\begin{align*}\boldsymbol{A}(\boldsymbol{u} + \boldsymbol{v}) &= \boldsymbol{a
 Proof of 2:
 
 $$\begin{align*}\boldsymbol{A}(c\boldsymbol{u}) &= \boldsymbol{a}_{*,1}(cu_1) + \boldsymbol{a}_{*,2}(cu_2) + \dots + \boldsymbol{a}_{*,n}(cu_n) \\ &= c\boldsymbol{a}_{*,1}(u_1) + c\boldsymbol{a}_{*,2}(u_2) + \dots + c\boldsymbol{a}_{*,n}(u_n) \\ &= c(\boldsymbol{a}_{*,1}u_1 + \boldsymbol{a}_{*,2}u_2 + \dots + \boldsymbol{a}_{*,n}u_n) \\ &= c(\boldsymbol{Au})\end{align*}$$
+
+Now, we see that
+
+$$\begin{align*}T(\boldsymbol{u} + \boldsymbol{v}) &= \boldsymbol{A}(\boldsymbol{u} + \boldsymbol{v}) \\ &= \boldsymbol{Au} + \boldsymbol{Av} \\ &= T(\boldsymbol{u}) + T(\boldsymbol{v})\end{align*}$$
+
+and
+
+$$\begin{align*}T(c\boldsymbol{u}) &= \boldsymbol{A}(c\boldsymbol{u}) \\ &= c\boldsymbol{Au} \\ &= cT(\boldsymbol{u})\end{align*}$$
+
+$\square$
 
