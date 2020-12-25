@@ -9,7 +9,7 @@ tags:
   - linear transformation
 ---
 
-Linear transformations are functions between vector spaces that preserve vector addition and scalar multiplication. In this post, we show that there exists a one-to-one corresondence between linear transformations between coordinate vector spaces and matrices. Thus, we can view a matrix as representing a unique linear transformation between coordinate vector spaces.
+*Linear transformations are functions between vector spaces that preserve vector addition and scalar multiplication. In this post, we show that there exists a one-to-one corresondence between linear transformations between coordinate vector spaces and matrices. Thus, we can view a matrix as representing a unique linear transformation between coordinate vector spaces.*
 
 Introduction
 -----------
