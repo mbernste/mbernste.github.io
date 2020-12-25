@@ -111,5 +111,5 @@ $\square$
 
 **Proof:**
 
-$$\begin{align*} \boldsymbol{x} &= \boldsymbol{Ix} \\ &= \boldsymbol{e}_1x_1, + \boldsymbol{e}_2x_2 + \dots + \boldsymbol{e}_mx_m \\ \implies T(\boldsymbol{x}) &= T(\boldsymbol{e}_1x_1 + \boldsymbol{e}_2x_2 + \dots + \boldsymbol{e}_mx_n) \\ &= T(\boldsymbol{e}_1x_1) + T( \boldsymbol{e}_2x_2) + \dots +  T(\boldsymbol{e}_mx_m) && \text{$T$ is linear} \\ &= \begin{bmatrix} T(\boldsymbol{e}_1), T(\boldsymbol{e}_2), \dots, T(\boldsymbol{e}_m) \end{bmatrix} \boldsymbol{x} \\ &= \boldsymbol{A}_T\boldsymbol{x} \end{align*}$$
+$$\begin{align*} \boldsymbol{x} &= \boldsymbol{Ix} \\ &= \boldsymbol{e}_1x_1, + \boldsymbol{e}_2x_2 + \dots + \boldsymbol{e}_mx_m \\ \implies T(\boldsymbol{x}) &= T(\boldsymbol{e}_1x_1 + \boldsymbol{e}_2x_2 + \dots + \boldsymbol{e}_mx_m) \\ &= T(\boldsymbol{e}_1x_1) + T( \boldsymbol{e}_2x_2) + \dots +  T(\boldsymbol{e}_mx_m) && \text{$T$ is linear} \\ &= T(\boldsymbol{e}_1)x_1 + T( \boldsymbol{e}_2)x_2 + \dots +  T(\boldsymbol{e}_m)x_m && \text{$T$ is linear} \\ &= \begin{bmatrix} T(\boldsymbol{e}_1), T(\boldsymbol{e}_2), \dots, T(\boldsymbol{e}_m) \end{bmatrix} \boldsymbol{x} \\ &= \boldsymbol{A}_T\boldsymbol{x} \end{align*}$$
 
