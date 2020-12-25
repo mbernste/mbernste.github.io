@@ -99,12 +99,12 @@ $$\begin{align*}T(c\boldsymbol{u}) &= \boldsymbol{A}(c\boldsymbol{u}) \\ &= c\bo
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 2 (Standard matrix of a linear transformations):** Given a linear transformation $T: \mathbb{R}^m \rightarrow \mathbb{R}^n$, $T$'s mapping is performed by a unique matrix $A$. That is, </span>
+<span style="color:#0060C6">**Theorem 2 (Standard matrix of a linear transformations):** Given a linear transformation $T: \mathbb{R}^m \rightarrow \mathbb{R}^n$, $T$'s mapping is performed by a unique matrix $\boldsymbol{A}_T$. That is, </span>
 
-<center><span style="color:#0060C6">$$T(\bold{x}) = \boldsymbol{Ax}$$</span></center>
+<center><span style="color:#0060C6">$$T(\boldsymbol{x}) = \boldsymbol{Ax}$$</span></center>
 
 <span style="color:#0060C6">where $\boldsymbol{A}_T$ is defined as</span> 
 
-<center><span style="color:#0060C6">$$A_T := \begin{bmatrix}T(\boldsymbol{e}_1) & T(\boldsymbol{e}_2) & \dots & T(\boldsymbol{e}_m) \end{bmatrix}$$</center><span>
+<center><span style="color:#0060C6">$$A_T := \begin{bmatrix}T(\boldsymbol{e}_1) & T(\boldsymbol{e}_2) & \dots & T(\boldsymbol{e}_m) \end{bmatrix}$$</span></center>
   
-<span style="color:#0060C6">where $\boldsymbo{e}_i$ is the $i$th basis vector of $\mathbb{R}^m$.</span>
+<span style="color:#0060C6">where $\boldsymbol{e}_i$ is the $i$th basis vector of $\mathbb{R}^m$.</span>
