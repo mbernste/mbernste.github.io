@@ -58,6 +58,22 @@ If we view the matrix $\boldsymbol{A}$ as a list of row-vectors and the matrix $
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_column_rule.png" alt="drawing" width="350"/></center>
 
+**Matrix multiplication computes the composition of two linear transformation:**
+
+If we view *both* $\boldsymbol{A}$ *and* $\boldsymbol{B}$ as linear transformations, then the matrix $\boldsymbol{AB}$ is the matrix that characterizes the linear transformation formed by the composition of the linear transformations characterized by $\boldsymbol{A}$ and $\boldsymbol{B}$ (See Theorem 2 in the Appendix to this post).   That is, given two linear transformations
+
+$$\begin{align*}f(\boldsymbol{x}) &:= \boldsymbol{Ax} \\ g(\boldsymbol{x}) &:= \boldsymobl{Bx}\end{align*}$$
+
+the matrix $\boldsymbol{AB}$ is the matrix that characterizes the composition $f \circ g$.  That is, $\boldsymbol{AB}$ characterizes the linear transformation:
+
+$$h(\bold{x}) := f \circ g(\boldsymbol) = \boldsymbol{A}(\boldsymbol{Bx})$$
+
+This concept is illustrated below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_composition.png" alt="drawing" width="500"/></center>
+
+Recall that a matrix's number of rows determines the dimensions of the vectors in its range and the number of columns correspond to the number of dimensions the domain.  Since $\bold{AB}$ characterizes the composition $f \circ g$, it follows that the matrix $\boldsymbol{AB}$ will map from the domain of $\boldsymbol{B}$ to the range of $\boldsymbol{A}$.
+
 
 Appendix
 --------
