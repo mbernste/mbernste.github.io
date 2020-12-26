@@ -80,7 +80,7 @@ Properties of matrix multiplication
 Here are several properties of matrix multiplication that can be used in calculations and derivations involving matrices. For the sake of succinctness, we push all of the proofs to the Appendix of the blog post:
 
 1. **Associative law for matrices** (Theorem 3): $\boldsymbol{A}(\boldsymbol{BC}) = (\boldsymbol{AB})\boldsymbol{C}$
-2. **Commutative property of scalars** (Theorem 4): $r(\bold{AB}) = (r\bold{A})\bold{B} = \bold{A}r\bold{B}$ where $r$ is a scalar.
+2. **Commutative property of scalars** (Theorem 4): $r(\boldsymbol{AB}) = (r\boldsymbol{A})\boldsymbol{B} = \boldsymbol{A}r\boldsymbol{B}$ where $r$ is a scalar. 
 3. **Left distributive law** (Theorem 5): $\boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) = \boldsymbol{AB} + \boldsymbol{AC}$
 4. **Right distributive law** (Theorem 6): $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$
 5. **Identity** (Theorem 7): $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$$
