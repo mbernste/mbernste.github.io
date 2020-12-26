@@ -37,7 +37,7 @@ There are at least three perspectives for which one can view matrix multiplicati
 Given these various ways of possibly viewing each matrix factor, $\boldsymbol{A}$ and $\boldsymbol{B}$, we can view their product, $\boldsymbol{AB}$, as follows:
 
 1. **Matrix multiplication computes a linear transformation on a set of vectors:** If we view $\boldsymbol{A}$ as a linear transformation and $\boldsymbol{B}$ as a list of column vectors, the columns of the product matrix $\boldsymbol{AB}$ are the results of transforming each column of $\boldsymbol{B}$ under $\boldsymbol{A}$. 
-2. **Matrix multiplication computes the dot products for pairs of vectors:** This perspective follows from viewing $\boldsymbol{A}$ as an ordered list of row-vectors and viewing $\boldsymbol{B}$ as an ordered list of column-vectors. The product matrix $boldsymbol{AB}$ then stores all of the pair-wise dot products between the rows of $\boldsymbol{A}$ and columns of $\boldsymbol{B}$.
+2. **Matrix multiplication computes the dot products for pairs of vectors:** This perspective follows from viewing $\boldsymbol{A}$ as an ordered list of row-vectors and viewing $\boldsymbol{B}$ as an ordered list of column-vectors. The product matrix $\boldsymbol{AB}$ then stores all of the pair-wise dot products between the rows of $\boldsymbol{A}$ and columns of $\boldsymbol{B}$.
 3. **Matrix multiplication computes the composition of two linear transformation:** If we view both $\boldsymbol{A}$ *and* \boldsymbol{B}$ as linear transformations, then the product matrix is a linear transformation formed by taking the [composition](https://en.wikipedia.org/wiki/Function_composition) of linear transformations defined by $\boldsymbol{A}$ and $\boldsymbol{B}$.
 
 Let's dig into each of these perspectives.
@@ -54,10 +54,10 @@ $$\boldsymbol{AB} := \begin{bmatrix} \boldsymbol{A}\boldsymbol{B}_{*,1} & \bolds
 
 **Matrix multiplication computes dot products for pairs of vectors**
 
-If we view the matrix $\boldsymbol{A}$ as a list of row-vectors and the matrix $\boldsybmol{B}$ as a list of column vectors, then the product $\boldsymbol{AB}$ is the matrix that stores all of the pair-wise dot products of the vectors in $\boldsymbol{A}$ and $\boldsymbol{B}$.  More specifically, the $i,j$th element of $\boldsymbol{AB}$ is the the dot product between the $i$th row of $\boldsymbol{A}$ and the $j$th column of $\boldsymbol{B}$ (See Theorem 1 in the Appendix to this post).   This fact, often called the **row-column rule**, can be used for computing each element of $\boldsymbol{AB}$. This is illustrated below:
+If we view the matrix $\boldsymbol{A}$ as a list of row-vectors and the matrix $\boldsymbol{B}$ as a list of column vectors, then the product $\boldsymbol{AB}$ is the matrix that stores all of the pair-wise dot products of the vectors in $\boldsymbol{A}$ and $\boldsymbol{B}$.  More specifically, the $i,j$th element of $\boldsymbol{AB}$ is the the dot product between the $i$th row of $\boldsymbol{A}$ and the $j$th column of $\boldsymbol{B}$ (See Theorem 1 in the Appendix to this post).   This fact, often called the **row-column rule**, can be used for computing each element of $\boldsymbol{AB}$. This is illustrated below:
 
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (Row-column rule):** Given an $m \times n$ matrix $\boldsymbol{A}$ and a $n \times p$ matrix $\boldsymbol{B}$, the $i,j$th element of $\boldsymbol{AB}$ is computed by $\bold{a}_{i,*} \cdot \bold{b}_{*,j}$, where $\boldsymbol{A}_{i,*}$ is the $i$th column of $\boldsymbol{A}$ and $\boldsymbol{B}_{*,j}* is the $j$th column of $\boldsymbol{B}$.</span>
+<span style="color:#0060C6">**Theorem 1 (Row-column rule):** Given an $m \times n$ matrix $\boldsymbol{A}$ and a $n \times p$ matrix $\boldsymbol{B}$, the $i,j$th element of $\boldsymbol{AB}$ is computed by $\bold{A}_{i,*} \cdot \bold{B}_{*,j}$, where $\boldsymbol{A}_{i,*}$ is the $i$th column of $\boldsymbol{A}$ and $\boldsymbol{B}_{*,j}$ is the $j$th column of $\boldsymbol{B}$.</span>
 
