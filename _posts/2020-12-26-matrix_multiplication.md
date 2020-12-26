@@ -79,7 +79,7 @@ Properties of matrix multiplication
 
 Here are several properties of matrix multiplication that can be used in calculations and derivations involving matrices. For the sake of succinctness, we push all of the proofs to the Appendix of the blog post:
 
-1. **Associative law for matrices** (Theorem 3): $\boldsymbol{A}(\boldsymbol{BC}) = (\boldsymbol{AB})\boldsymbol{C}$
+1. **Associative property for matrices** (Theorem 3): $\boldsymbol{A}(\boldsymbol{BC}) = (\boldsymbol{AB})\boldsymbol{C}$
 2. **Commutative property of scalars** (Theorem 4): $r(\boldsymbol{AB}) = (r\boldsymbol{A})\boldsymbol{B} = \boldsymbol{A}(r\boldsymbol{B})$ where $r$ is a scalar. 
 3. **Left distributive law** (Theorem 5): $\boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) = \boldsymbol{AB} + \boldsymbol{AC}$
 4. **Right distributive law** (Theorem 6): $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$
@@ -113,5 +113,21 @@ $$\begin{align*} \boldsymbol{Bx} &= \boldsymbol{b}_{*,1}x_1 + \boldsymbol{b}_{*,
 Now,
 
 $$\begin{align*}(\boldsymbol{AB})\boldsymbol{x} &= \begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \boldsymbol{A}\boldsymbol{b}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,n} \end{bmatrix} \boldsymbol{x} \\ &= \boldsymbol{A}\boldsymbol{b}_{*,1}x_1 + \boldsymbol{A}\boldsymbol{b}_{*,2}x_2 + \dots + \boldsymbol{A}\boldsymbol{b}_{*,n}x_n \\ &=  \left(\boldsymbol{a}_{*,1}b_{1,1} + \dots + \boldsymbol{a}_{*,n} b_{n,1}\right)x_1 + \left(\boldsymbol{a}_{*,1}b_{1,2} + \dots + \boldsymbol{a}_{*,n} b_{n,2}\right)x_2 + \dots + \left(\boldsymbol{a}_{*,1}b_{1,n} + \dots + \boldsymbol{a}_{*,n} b_{n,n}\right)x_n \\ &= \left(\boldsymbol{a}_{*,1}b_{1,1}x_1 + \dots + \boldsymbol{a}_{*,n}b_{n,1}x_1\right) + \left(\boldsymbol{a}_{*,1}b_{1,2}x_2 + \dots + \boldsymbol{a}_{*,n} b_{n,2}x_2\right) + \dots + \left(\boldsymbol{a}_{*,1}b_{1,n}x_n + \dots \boldsymbol{a}_{*,n} b_{n,n}x_n\right) \\ &= \boldsymbol{a}_{*,1}(b_{1,1}x_1 + \dots + b_{1,n}x_n) + \boldsymbol{a}_{*,2}(b_{2,1}x_1 + \dots + b_{2,n}x_n) + \dots + \boldsymbol{a}_{*,n}(b_{n,1}x_1 + \dots + b_{n,n}x_n)  \\ &= \boldsymbol{a}_{*,1}(\boldsymbol{Bx})_1 + \boldsymbol{a}_{*,2}(\boldsymbol{Bx})_2+ \dots \boldsymbol{a}_{*,n}(\boldsymbol{Bx})_n  \\ &= \boldsymbol{A}(\boldsymbol{Bx}) \end{align*}$$
+
+$\square$
+
+<span style="color:#0060C6">**Theorem 3 (Associative property for matrices):** Given matrices $\boldsymbol{A} \in \mathbb{R}^{m \times l}$, $\boldsymbol{B} \in \mathbb{R}^{l * p}$, and $\boldsymbol{C} \in \mathbb{R}^{p \times n}$ it holds that $\boldsymbol{A}(\boldsymbol{BC}) = (\boldsymbol{AB})\boldsymbol{C}$.</span>
+  
+**Proof:** Since matrix-multiplication can be understood as a composition of functions, and since compositions of functions are associative, it follows that matrix-multiplication is associative.
+
+<span style="color:#0060C6">**Theorem 4 (Commutative property of scalars):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, a matrix $\boldsymbol{B} \in \mathbb{R}^{n \times p}$, and scalar $r$, it holds that $r(\boldsymbol{AB}) = (r\boldsymbol{A})\boldsymbol{B} = \boldsymbol{A}(r\boldsymbol{B})$
+  
+**Proof:** First we prove $r(\boldsymbol{AB}) = (r\boldsymbol{A})\boldsymbol{B}$:
+
+$$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} r\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & r\boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= (r\bold{A})\bold{B}  \end{align*}$$
+
+Next, we prove $r(\boldsymbol{AB}) = \boldsymbol{A}(r\boldsymbol{B})$:
+
+$$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} r\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & r\boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{A}(r\boldsymbol{b}_{*,1}) & \dots & \boldsymbol{A}(r\bold{b}_{*,p}) \end{bmatrix} && \text{linearity of matrix-vector multiplication} \\ &= \bold{A}(r\bold{B}) \end{align*}$$
 
 $\square$
