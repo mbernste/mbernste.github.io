@@ -59,5 +59,5 @@ If we view the matrix $\boldsymbol{A}$ as a list of row-vectors and the matrix $
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (Row-column rule):** Given an $m \times n$ matrix $\boldsymbol{A}$ and a $n \times p$ matrix $\boldsymbol{B}$, the $i,j$th element of $\boldsymbol{AB}$ is computed by $\bold{A}_{i,*} \cdot \bold{B}_{*,j}$, where $\boldsymbol{A}_{i,*}$ is the $i$th column of $\boldsymbol{A}$ and $\boldsymbol{B}_{*,j}$ is the $j$th column of $\boldsymbol{B}$.</span>
+<span style="color:#0060C6">**Theorem 1 (Row-column rule):** Given an $m \times n$ matrix $\boldsymbol{A}$ and a $n \times p$ matrix $\boldsymbol{B}$, the $i,j$th element of $\boldsymbol{AB}$ is computed by $$\boldsymbol{A}_{i,*} \cdot \boldsymbol{B}_{*,j}$$, where $\boldsymbol{A}_{i,*}$ is the $i$th column of $\boldsymbol{A}$ and $\boldsymbol{B}_{*,j}$ is the $j$th column of $\boldsymbol{B}$.</span>
 
