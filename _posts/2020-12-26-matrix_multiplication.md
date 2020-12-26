@@ -66,7 +66,7 @@ $$\begin{align*}f(\boldsymbol{x}) &:= \boldsymbol{Ax} \\ g(\boldsymbol{x}) &:= \
 
 the matrix $\boldsymbol{AB}$ is the matrix that characterizes the composition $f \circ g$:
 
-$f \circ g(\boldsymbol{x}) := f(g(\boldsymbol{x})) = \boldsymbol{A}(\boldsymbol{Bx})$$
+$$f \circ g(\boldsymbol{x}) := f(g(\boldsymbol{x})) = \boldsymbol{A}(\boldsymbol{Bx})$$
 
 This concept is illustrated below:
 
