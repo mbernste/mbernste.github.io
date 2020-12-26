@@ -34,7 +34,7 @@ There are at least three perspectives for which one can view matrix multiplicati
 2. As a list of row vectors
 3. As a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/)
 
-Given these various ways of possibly viewing each matrix factor, $\boldsymbol{A}$ and $\boldsymbol{B}$, we can view their product, $\boldysmbol{AB}$, as follows:
+Given these various ways of possibly viewing each matrix factor, $\boldsymbol{A}$ and $\boldsymbol{B}$, we can view their product, $\boldsymbol{AB}$, as follows:
 
 1. **Matrix multiplication computes a linear transformation on a set of vectors:** If we view $\boldsymbol{A}$ as a linear transformation and $\boldsymbol{B}$ as a list of column vectors, the columns of the product matrix $\boldsymbol{AB}$ are the results of transforming each column of $\boldsymbol{B}$ under $\boldysmbol{A}$. 
 2. **Matrix multiplication computes the dot products for pairs of vectors:** This perspective follows from viewing $\boldsymbol{A}$ as an ordered list of row-vectors and viewing $\boldsymbol{B}$ as an ordered list of column-vectors. The product matrix $boldsymbol{AB}$ then stores all of the pair-wise dot products between the rows of $\boldsymbol{A}$ and columns of $\boldsymbol{B}$.
@@ -45,11 +45,11 @@ Let's dig into each of these perspectives.
 Matrix multiplication computes a linear transformation on a set of vectors
 -------------
 
-If we view $\boldsymbol{A}$ as a linear transformation and we view the matrix $\boldsymbol{B}$ as an ordered list of column vectors 
+This perspective follows most directly from our definition of matrix multuiplication: If we view $\boldsymbol{A}$ as a linear transformation and we view the matrix $\boldsymbol{B}$ as an ordered list of column vectors 
 
 $$\boldsymbol{B} := \begin{bmatrix} \boldsymbol{B}_{*,1} & \boldsymbol{B}_{*,2} & \dots & \boldsymbol{B}_{*,n} \end{bmatrix}$$
 
-Each column of $\bold{AB}$ is computed by taking the linear transformation characterized by $\boldsymbol{A}$ of each $\boldsymbol{B}_{*,i}$:
+then each column of $\boldsymbol{AB}$ is computed by taking the linear transformation characterized by $\boldsymbol{A}$ of each $\boldsymbol{B}_{*,i}$:
 
 $$\boldsymbol{AB} := \begin{bmatrix} \boldsymbol{A}\boldsymbol{B}_{*,1} & \boldsymbol{A}\boldsymbol{B}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{B}_{*,n} \end{bmatrix}$$
 
