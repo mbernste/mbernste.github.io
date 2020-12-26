@@ -56,6 +56,9 @@ $$\boldsymbol{AB} := \begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \bolds
 
 If we view the matrix $\boldsymbol{A}$ as a list of row-vectors and the matrix $\boldsymbol{B}$ as a list of column vectors, then the product $\boldsymbol{AB}$ is the matrix that stores all of the pair-wise dot products of the vectors in $\boldsymbol{A}$ and $\boldsymbol{B}$.  More specifically, the $i,j$th element of $\boldsymbol{AB}$ is the the dot product between the $i$th row of $\boldsymbol{A}$ and the $j$th column of $\boldsymbol{B}$ (See Theorem 1 in the Appendix to this post).   This fact, often called the **row-column rule**, can be used for computing each element of $\boldsymbol{AB}$. This is illustrated below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_column_rule.png" alt="drawing" width="500"/></center>
+
+
 Appendix
 --------
 
