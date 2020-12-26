@@ -15,9 +15,9 @@ At a very high level, matrix multiplication is an operation between two [matrice
 
 <span style="color:#0060C6">**Definition 1 (Matrix multiplication):** The product of an $m \times n$ matrix $\boldsymbol{A}$ **matrix multiplied** by a $n \times p$ matrix $\boldsymbol{B}$ is given by</span>
  
-<center><span style="color:#0060C6">$$\boldsymbol{AB} := \begin{bmatrix} \boldsymbol{A}\boldsymbol{B}_{*,1} & \boldsymbol{A}\boldsymbol{B}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{B}_{*,n} \end{bmatrix}$$</span></center>
+<center><span style="color:#0060C6">$$\boldsymbol{AB} := \begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \boldsymbol{A}\boldsymbol{b}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,n} \end{bmatrix}$$</span></center>
 
-<span style="color:#0060C6">where $\boldsymbol{B}_{*,i}$ is the $i$th column of $\boldsymbol{B}$.</span>
+<span style="color:#0060C6">where $\boldsymbol{b}_{*,i}$ is the $i$th column of $\boldsymbol{B}$.</span>
 
 Note that this definition requires that if we multiply an $m \times n$ matrix by a $n \times p$ matrix, the result will be an $m \times p$ matrix where the number of rows is determined by the first matrix and the number of columns is determined by the second matrix.  Furthermore, we require that the number of columns of the first matrix be equal to the number of rows of the second matrix. If this doesn't hold, then matrix multiplication is not defined. More succinctly:
 
@@ -46,11 +46,11 @@ Let's dig into each of these perspectives.
 
 This perspective follows most directly from our definition of matrix multuiplication: If we view $\boldsymbol{A}$ as a linear transformation and we view the matrix $\boldsymbol{B}$ as an ordered list of column vectors 
 
-$$\boldsymbol{B} := \begin{bmatrix} \boldsymbol{B}_{*,1} & \boldsymbol{B}_{*,2} & \dots & \boldsymbol{B}_{*,n} \end{bmatrix}$$
+$$\boldsymbol{B} := \begin{bmatrix} \boldsymbol{b}_{*,1} & \boldsymbol{b}_{*,2} & \dots & \boldsymbol{b}_{*,n} \end{bmatrix}$$
 
-then each column of $\boldsymbol{AB}$ is computed by taking the linear transformation characterized by $\boldsymbol{A}$ of each $\boldsymbol{B}_{*,i}$:
+then each column of $\boldsymbol{AB}$ is computed by taking the linear transformation characterized by $\boldsymbol{A}$ of each $\boldsymbol{b}_{*,i}$:
 
-$$\boldsymbol{AB} := \begin{bmatrix} \boldsymbol{A}\boldsymbol{B}_{*,1} & \boldsymbol{A}\boldsymbol{B}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{B}_{*,n} \end{bmatrix}$$
+$$\boldsymbol{AB} := \begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \boldsymbol{A}\boldsymbol{b}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,n} \end{bmatrix}$$
 
 **Matrix multiplication computes dot products for pairs of vectors**
 
@@ -59,5 +59,11 @@ If we view the matrix $\boldsymbol{A}$ as a list of row-vectors and the matrix $
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (Row-column rule):** Given an $m \times n$ matrix $\boldsymbol{A}$ and a $n \times p$ matrix $\boldsymbol{B}$, the $i,j$th element of $\boldsymbol{AB}$ is computed by $$\boldsymbol{A}_{i,*} \cdot \boldsymbol{B}_{*,j}$$, where $$\boldsymbol{A}_{i,*}$$ is the $i$th column of $\boldsymbol{A}$ and $$\boldsymbol{B}_{*,j}$$ is the $j$th column of $\boldsymbol{B}$.</span>
+<span style="color:#0060C6">**Theorem 1 (Row-column rule):** Given an $m \times n$ matrix $\boldsymbol{A}$ and a $n \times p$ matrix $\boldsymbol{B}$, the $i,j$th element of $\boldsymbol{AB}$ is computed by $$\boldsymbol{a}_{i,*} \cdot \boldsymbol{b}_{*,j}$$, where $$\boldsymbol{a}_{i,*}$$ is the $i$th column of $\boldsymbol{A}$ and $$\boldsymbol{b}_{*,j}$$ is the $j$th column of $\boldsymbol{B}$.</span>
 
+$$\begin{align*}
+(\boldsymbol{AB}) &=  \begin{bmatrix} \bold{A}\boldsymbol{b}_{*,1} & \boldsymbol{A}\bold{b}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,n} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{a}_{*,1}b_{1,1} + \dots + \boldsymbol{a}_{*,n}b_{n,1} & \dots & \boldsymbol{a}_{*,1}b_{1,n} + \dots + \boldsymbol{a}_{*,n}b_{n,n} \end{bmatrix} \\ &= \begin{bmatrix} a_{1,1}b_{1,1} + \dots + a_{1,n} b_{n,1} & \dots & a_{1,1}b_{1,n} + \dots + a_{1,n}b_{n,n} \\
+a_{2,1}b_{1,1} + \dots + a_{2,n} b_{n,1} & \dots & a_{2,1}b_{1,n} + \dots + a_{2,n}b_{n,n} \\
+\vdots & \ddots & \vdots \\
+a_{n,1}b_{1,1} + \dots + a_{n,n} b_{n,1} & \dots & a_{n,1}b_{1,n} + \dots + a_{n,n}b_{n,n}
+\end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{b}_{*,1} & \dots & \boldsymbol{a}_{1,*} \cdot \boldsymbol{b}_{*,n} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{b}_{*,1} & \dots & \boldsymbol{a}_{2,*} \cdot \boldsymbol{b}_{*,n} \\ \vdots & \ddots & \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{b}_{*,1} & \dots & \boldsymbol{a}_{m,*} \cdot \boldsymbol{b}_{*,n} \end{bmatrix} \end{align*}$$
