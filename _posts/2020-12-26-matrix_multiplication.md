@@ -122,12 +122,12 @@ $\square$
 
 <span style="color:#0060C6">**Theorem 4 (Commutative property of scalars):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, a matrix $\boldsymbol{B} \in \mathbb{R}^{n \times p}$, and scalar $r$, it holds that $r(\boldsymbol{AB}) = (r\boldsymbol{A})\boldsymbol{B} = \boldsymbol{A}(r\boldsymbol{B})$
   
-**Proof:** First we prove $r(\boldsymbol{AB}) = (r\boldsymbol{A})\boldsymbol{B}$:
+**Proof:** First we prove $r(\boldsymbol{AB}) = (r\boldsymbol{A})\boldsymbol{B} = \boldsymbol{A}(r\boldsymbol{B})$:
 
-$$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} r\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & r\boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= (r\bold{A})\bold{B}  \end{align*}$$
+$$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} r\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & r\boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= (r\boldsymbol{A})\boldsymbol{B}  \end{align*}$$
 
 Next, we prove $r(\boldsymbol{AB}) = \boldsymbol{A}(r\boldsymbol{B})$:
 
-$$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} r\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & r\boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{A}(r\boldsymbol{b}_{*,1}) & \dots & \boldsymbol{A}(r\bold{b}_{*,p}) \end{bmatrix} && \text{linearity of matrix-vector multiplication} \\ &= \bold{A}(r\bold{B}) \end{align*}$$
+$$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} r\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & r\boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{A}(r\boldsymbol{b}_{*,1}) & \dots & \boldsymbol{A}(r\bold{b}_{*,p}) \end{bmatrix} && \text{linearity of matrix-vector multiplication} \\ &= \boldsymbol{A}(r\boldsymbol{B}) \end{align*}$$
 
 $\square$
