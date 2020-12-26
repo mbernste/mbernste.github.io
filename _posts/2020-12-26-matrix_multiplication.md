@@ -64,9 +64,9 @@ If we view *both* $\boldsymbol{A}$ *and* $\boldsymbol{B}$ as linear transformati
 
 $$\begin{align*}f(\boldsymbol{x}) &:= \boldsymbol{Ax} \\ g(\boldsymbol{x}) &:= \boldsymobl{Bx}\end{align*}$$
 
-the matrix $\boldsymbol{AB}$ is the matrix that characterizes the composition $f \circ g$.  That is, $\boldsymbol{AB}$ characterizes the linear transformation:
+the matrix $\boldsymbol{AB}$ is the matrix that characterizes the composition $f \circ g$:
 
-$$h(\bold{x}) := f \circ g(\boldsymbol{x}) = \boldsymbol{A}(\boldsymbol{Bx})$$
+$f \circ g(\boldsymbol{x}) := f(g(\boldsymbol{x})) = \boldsymbol{A}(\boldsymbol{Bx})$$
 
 This concept is illustrated below:
 
