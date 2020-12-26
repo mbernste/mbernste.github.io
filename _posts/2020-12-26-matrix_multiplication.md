@@ -68,7 +68,7 @@ the matrix $\boldsymbol{AB}$ is the matrix that characterizes the composition $f
 
 $$f \circ g(\boldsymbol{x}) := f(g(\boldsymbol{x})) = \boldsymbol{A}(\boldsymbol{Bx})$$
 
-This concept is illustrated below:
+This is proven in Theorem 2 in the Appendix to this poast and is illustrated below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_composition.png" alt="drawing" width="500"/></center>
 
@@ -90,3 +90,16 @@ a_{n,1}b_{1,1} + \dots + a_{n,n} b_{n,1} & \dots & a_{n,1}b_{1,n} + \dots + a_{n
 \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{b}_{*,1} & \dots & \boldsymbol{a}_{1,*} \cdot \boldsymbol{b}_{*,n} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{b}_{*,1} & \dots & \boldsymbol{a}_{2,*} \cdot \boldsymbol{b}_{*,n} \\ \vdots & \ddots & \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{b}_{*,1} & \dots & \boldsymbol{a}_{m,*} \cdot \boldsymbol{b}_{*,n} \end{bmatrix} \end{align*}$$
 
 $\square$
+
+
+<span style="color:#0060C6">**Theorem 2:** Matrix multiplication between an $m \times n$ matrix $\boldsymbol{A}$ and a $n \times p$ matrix $\boldsymbol{B}$ results in a matrix $\boldsymbol{AB}$ such that given a vector $\boldsymbol{x} \in \mathbb{R}^m$, the following holds:</span> 
+
+<center><span style="color:#0060C6">$$(\boldsymbol{AB})\boldsymbol{x} = \boldsymbol{A}(\boldsymbol{Bx})$$</span></center>
+
+**Proof:** First, let's expand $\boldsymbol{Bx}$:
+
+$$\begin{align*} \boldsymbol{Bx} &= \boldsymbol{b}_{*,1}x_1 + \boldsymbol{b}_{*,2}x_2 + \dots + \boldsymbol{b}_{*,n}x_n \\ &= \begin{bmatrix} b_{1,1}x_1 + b_{1,2}x_2 + \dots + b_{1,n}x_n \\ b_{2,1}x_1 + b_{2,2}x_2 + \dots + b_{2,n}x_n \\ \vdots \\ b_{n,1}x_1 + b_{n,2}x_2 + \dots + b_{n,n}x_n \end{bmatrix} \end{align*}$$
+
+Now,
+
+
