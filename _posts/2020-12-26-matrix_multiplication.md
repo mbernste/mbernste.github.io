@@ -61,9 +61,13 @@ Appendix
 
 <span style="color:#0060C6">**Theorem 1 (Row-column rule):** Given an $m \times n$ matrix $\boldsymbol{A}$ and a $n \times p$ matrix $\boldsymbol{B}$, the $i,j$th element of $\boldsymbol{AB}$ is computed by $$\boldsymbol{a}_{i,*} \cdot \boldsymbol{b}_{*,j}$$, where $$\boldsymbol{a}_{i,*}$$ is the $i$th column of $\boldsymbol{A}$ and $$\boldsymbol{b}_{*,j}$$ is the $j$th column of $\boldsymbol{B}$.</span>
 
+**Proof:**
+
 $$\begin{align*}
-(\boldsymbol{AB}) &=  \begin{bmatrix} \bold{A}\boldsymbol{b}_{*,1} & \boldsymbol{A}\bold{b}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,n} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{a}_{*,1}b_{1,1} + \dots + \boldsymbol{a}_{*,n}b_{n,1} & \dots & \boldsymbol{a}_{*,1}b_{1,n} + \dots + \boldsymbol{a}_{*,n}b_{n,n} \end{bmatrix} \\ &= \begin{bmatrix} a_{1,1}b_{1,1} + \dots + a_{1,n} b_{n,1} & \dots & a_{1,1}b_{1,n} + \dots + a_{1,n}b_{n,n} \\
+(\boldsymbol{AB}) &=  \begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \boldsymbol{A}\boldsymbol{b}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,n} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{a}_{*,1}b_{1,1} + \dots + \boldsymbol{a}_{*,n}b_{n,1} & \dots & \boldsymbol{a}_{*,1}b_{1,n} + \dots + \boldsymbol{a}_{*,n}b_{n,n} \end{bmatrix} \\ &= \begin{bmatrix} a_{1,1}b_{1,1} + \dots + a_{1,n} b_{n,1} & \dots & a_{1,1}b_{1,n} + \dots + a_{1,n}b_{n,n} \\
 a_{2,1}b_{1,1} + \dots + a_{2,n} b_{n,1} & \dots & a_{2,1}b_{1,n} + \dots + a_{2,n}b_{n,n} \\
 \vdots & \ddots & \vdots \\
 a_{n,1}b_{1,1} + \dots + a_{n,n} b_{n,1} & \dots & a_{n,1}b_{1,n} + \dots + a_{n,n}b_{n,n}
 \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{b}_{*,1} & \dots & \boldsymbol{a}_{1,*} \cdot \boldsymbol{b}_{*,n} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{b}_{*,1} & \dots & \boldsymbol{a}_{2,*} \cdot \boldsymbol{b}_{*,n} \\ \vdots & \ddots & \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{b}_{*,1} & \dots & \boldsymbol{a}_{m,*} \cdot \boldsymbol{b}_{*,n} \end{bmatrix} \end{align*}$$
+
+$\square$
