@@ -38,7 +38,7 @@ Given these various ways of possibly viewing each matrix factor, $\boldsymbol{A}
 
 1. **Matrix multiplication computes a linear transformation on a set of vectors:** If we view $\boldsymbol{A}$ as a linear transformation and $\boldsymbol{B}$ as a list of column vectors, the columns of the product matrix $\boldsymbol{AB}$ are the results of transforming each column of $\boldsymbol{B}$ under $\boldsymbol{A}$. 
 2. **Matrix multiplication computes the dot products for pairs of vectors:** This perspective follows from viewing $\boldsymbol{A}$ as an ordered list of row-vectors and viewing $\boldsymbol{B}$ as an ordered list of column-vectors. The product matrix $\boldsymbol{AB}$ then stores all of the pair-wise dot products between the rows of $\boldsymbol{A}$ and columns of $\boldsymbol{B}$.
-3. **Matrix multiplication computes the composition of two linear transformation:** If we view both $\boldsymbol{A}$ *and* \boldsymbol{B}$ as linear transformations, then the product matrix is a linear transformation formed by taking the [composition](https://en.wikipedia.org/wiki/Function_composition) of linear transformations defined by $\boldsymbol{A}$ and $\boldsymbol{B}$.
+3. **Matrix multiplication computes the composition of two linear transformations:** If we view both $\boldsymbol{A}$ *and* \boldsymbol{B}$ as linear transformations, then the product matrix is a linear transformation formed by taking the [composition](https://en.wikipedia.org/wiki/Function_composition) of linear transformations defined by $\boldsymbol{A}$ and $\boldsymbol{B}$.
 
 Let's dig into each of these perspectives.
 
@@ -58,7 +58,7 @@ If we view the matrix $\boldsymbol{A}$ as a list of row-vectors and the matrix $
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_column_rule.png" alt="drawing" width="350"/></center>
 
-**Matrix multiplication computes the composition of two linear transformation:**
+**Matrix multiplication computes the composition of two linear transformations:**
 
 If we view *both* $\boldsymbol{A}$ *and* $\boldsymbol{B}$ as linear transformations, then the matrix $\boldsymbol{AB}$ is the matrix that characterizes the linear transformation formed by the composition of the linear transformations characterized by $\boldsymbol{A}$ and $\boldsymbol{B}$ (See Theorem 2 in the Appendix to this post).   That is, given two linear transformations
 
@@ -66,13 +66,13 @@ $$\begin{align*}f(\boldsymbol{x}) &:= \boldsymbol{Ax} \\ g(\boldsymbol{x}) &:= \
 
 the matrix $\boldsymbol{AB}$ is the matrix that characterizes the composition $f \circ g$.  That is, $\boldsymbol{AB}$ characterizes the linear transformation:
 
-$$h(\bold{x}) := f \circ g(\boldsymbol) = \boldsymbol{A}(\boldsymbol{Bx})$$
+$$h(\bold{x}) := f \circ g(\boldsymbol{x}) = \boldsymbol{A}(\boldsymbol{Bx})$$
 
 This concept is illustrated below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_composition.png" alt="drawing" width="500"/></center>
 
-Recall that a matrix's number of rows determines the dimensions of the vectors in its range and the number of columns correspond to the number of dimensions the domain.  Since $\bold{AB}$ characterizes the composition $f \circ g$, it follows that the matrix $\boldsymbol{AB}$ will map from the domain of $\boldsymbol{B}$ to the range of $\boldsymbol{A}$.
+Recall that a matrix's number of rows determines the dimensions of the vectors in its range and the number of columns correspond to the number of dimensions the domain.  Since $\boldsymbol{AB}$ characterizes the composition $f \circ g$, it follows that the matrix $\boldsymbol{AB}$ will map from the domain of $\boldsymbol{B}$ to the range of $\boldsymbol{A}$.
 
 
 Appendix
