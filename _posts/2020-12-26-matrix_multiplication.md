@@ -62,7 +62,7 @@ If we view the matrix $\boldsymbol{A}$ as a list of row-vectors and the matrix $
 
 If we view *both* $\boldsymbol{A}$ *and* $\boldsymbol{B}$ as linear transformations, then the matrix $\boldsymbol{AB}$ is the matrix that characterizes the linear transformation formed by the composition of the linear transformations characterized by $\boldsymbol{A}$ and $\boldsymbol{B}$ (See Theorem 2 in the Appendix to this post).   That is, given two linear transformations
 
-$$\begin{align*}f(\boldsymbol{x}) &:= \boldsymbol{Ax} \\ g(\boldsymbol{x}) &:= \boldsymobl{Bx}\end{align*}$$
+$$\begin{align*}f(\boldsymbol{x}) &:= \boldsymbol{Ax} \\ g(\boldsymbol{x}) &:= \boldsymbol{Bx}\end{align*}$$
 
 the matrix $\boldsymbol{AB}$ is the matrix that characterizes the composition $f \circ g$:
 
