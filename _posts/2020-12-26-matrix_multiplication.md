@@ -64,7 +64,7 @@ Appendix
 **Proof:**
 
 $$\begin{align*}
-(\boldsymbol{AB}) &=  \begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \boldsymbol{A}\boldsymbol{b}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,n} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{a}_{*,1}b_{1,1} + \dots + \boldsymbol{a}_{*,n}b_{n,1} & \dots & \boldsymbol{a}_{*,1}b_{1,n} + \dots + \boldsymbol{a}_{*,n}b_{n,n} \end{bmatrix} \\ &= \begin{bmatrix} a_{1,1}b_{1,1} + \dots + a_{1,n} b_{n,1} & \dots & a_{1,1}b_{1,n} + \dots + a_{1,n}b_{n,n} \\
+\boldsymbol{AB} &=  \begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \boldsymbol{A}\boldsymbol{b}_{*,2} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,n} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{a}_{*,1}b_{1,1} + \dots + \boldsymbol{a}_{*,n}b_{n,1} & \dots & \boldsymbol{a}_{*,1}b_{1,n} + \dots + \boldsymbol{a}_{*,n}b_{n,n} \end{bmatrix} \\ &= \begin{bmatrix} a_{1,1}b_{1,1} + \dots + a_{1,n} b_{n,1} & \dots & a_{1,1}b_{1,n} + \dots + a_{1,n}b_{n,n} \\
 a_{2,1}b_{1,1} + \dots + a_{2,n} b_{n,1} & \dots & a_{2,1}b_{1,n} + \dots + a_{2,n}b_{n,n} \\
 \vdots & \ddots & \vdots \\
 a_{n,1}b_{1,1} + \dots + a_{n,n} b_{n,1} & \dots & a_{n,1}b_{1,n} + \dots + a_{n,n}b_{n,n}
