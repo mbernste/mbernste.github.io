@@ -83,7 +83,7 @@ Here are several properties of matrix multiplication that can be used in calcula
 2. **Commutative property of scalars** (Theorem 4): $r(\boldsymbol{AB}) = (r\boldsymbol{A})\boldsymbol{B} = \boldsymbol{A}(r\boldsymbol{B})$ where $r$ is a scalar. 
 3. **Left distributive law** (Theorem 5): $\boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) = \boldsymbol{AB} + \boldsymbol{AC}$
 4. **Right distributive law** (Theorem 6): $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$
-5. **Identity** (Theorem 7): $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$$
+5. **Identity** (Theorem 7): $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$
 
 Appendix
 --------
