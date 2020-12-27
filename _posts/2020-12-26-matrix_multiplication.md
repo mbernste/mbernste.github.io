@@ -85,6 +85,15 @@ Here are several properties of matrix multiplication that can be used in calcula
 4. **Right distributive property** (Theorem 6): $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$
 5. **Identity** (Theorem 7): $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$
 
+Why isn't matrix multiplication simply the pairwise products of elements between matrices?  
+--------
+
+As we mentioned at the beginning of the post, it can be somewhat unintuitive that matrix multiplication is *not* simply the pairwise products of elements between two matrices. That is,
+
+$$\begin{bmatrix}a_{1,1} & a_{1,2} \\ a_{2,1} & a_{2,2}\begin{bmatrix}b_{1,1} & b_{1,2} \\ b_{2,1} & b_{2,2}\end{bmatrix} \neq \begin{bmatrix}a_{1,1}b_{1,1} & a_{1,2}b_{1,2} \\ a_{2,1}b_{2,1} & a_{2,2}b_{2,2}$$
+
+On the surface this would seem to be a much more natural definition for matrix multiplication, but it turns out to be a much less powerful definition. The reason why this is so much less powerful is that it totally dismisses the fact that matrices can be viewed as linear transformations. When matrix multiplication is defined in this naive way, matrix multiplication no longer represents the composition of linear functions.
+
 Appendix
 --------
 
