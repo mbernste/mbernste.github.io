@@ -81,8 +81,8 @@ Here are several properties of matrix multiplication that can be used in calcula
 
 1. **Associative property for matrices** (Theorem 3): $\boldsymbol{A}(\boldsymbol{BC}) = (\boldsymbol{AB})\boldsymbol{C}$
 2. **Commutative property of scalars** (Theorem 4): $r(\boldsymbol{AB}) = (r\boldsymbol{A})\boldsymbol{B} = \boldsymbol{A}(r\boldsymbol{B})$ where $r$ is a scalar. 
-3. **Left distributive law** (Theorem 5): $\boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) = \boldsymbol{AB} + \boldsymbol{AC}$
-4. **Right distributive law** (Theorem 6): $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$
+3. **Left distributive property** (Theorem 5): $\boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) = \boldsymbol{AB} + \boldsymbol{AC}$
+4. **Right distributive property** (Theorem 6): $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$
 5. **Identity** (Theorem 7): $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$
 
 Appendix
@@ -131,3 +131,5 @@ Next, we prove $r(\boldsymbol{AB}) = \boldsymbol{A}(r\boldsymbol{B})$:
 $$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} r\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & r\boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{A}(r\boldsymbol{b}_{*,1}) & \dots & \boldsymbol{A}(r\boldsymbol{b}_{*,p}) \end{bmatrix} && \text{linearity of matrix-vector multiplication} \\ &= \boldsymbol{A}(r\boldsymbol{B}) \end{align*}$$
 
 $\square$
+
+<span style="color:#0060C6">**Theorem 5 (Left distributive property of matrix multiplication): Given matrices $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, $\boldsymbol{B} \in \mathbb{R}^{n * p}$, and $\boldsymbol{C} \in \mathbb{R}^{n \times p}$, the following holds: $\boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) = \boldsymbol{AB} + \boldsymbol{AC}$</span>
