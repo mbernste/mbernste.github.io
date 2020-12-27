@@ -140,8 +140,14 @@ $$\begin{align*} \boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) &= \begin{bmatr
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 5 (Right distributive property of matrix multiplication):** Given matrices $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, $\boldsymbol{B} \in \mathbb{R}^{n * p}$, and $\boldsymbol{C} \in \mathbb{R}^{n \times p}$, the following holds: $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$</span>
+<span style="color:#0060C6">**Theorem 6 (Right distributive property of matrix multiplication):** Given matrices $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, $\boldsymbol{B} \in \mathbb{R}^{n * p}$, and $\boldsymbol{C} \in \mathbb{R}^{n \times p}$, the following holds: $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$</span>
 
 **Proof:**
 
 $$\begin{align*}(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A}  &= \begin{bmatrix}(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{a}_{*,1} & \dots & (\boldsymbol{B} + \boldsymbol{C})\boldsymbol{a}_{*,p} \end{bmatrix} && \text{definition of matrix-matrix multiplication} \\ &= \begin{bmatrix}(\boldsymbol{B}\boldsymbol{a}_{*,1} + \boldsymbol{C}\boldsymbol{a}_{*,1}) & \dots & (\boldsymbol{B}\boldsymbol{a}_{*,p} + \boldsymbol{C}\boldsymbol{a}_{*,p}) \end{bmatrix} && \text{definition of matrix addition} \\ &= \begin{bmatrix}\boldsymbol{B}\boldsymbol{a}_{*,1} & \dots & \boldsymbol{B}\boldsymbol{a}_{*,p} \end{bmatrix} + \begin{bmatrix} \boldsymbol{C}\boldsymbol{a}_{*,1} & \dots &  \boldsymbol{C}\boldsymbol{a}_{*,p} \end{bmatrix} \\ &= \boldsymbol{BA} + \boldsymbol{CA}\end{align*}$$
+
+$\square$
+
+<span style="color:#0060C6">**Theorem 7 (Identity):** Given an $m \times n$ matrix $\boldsymbol{A}$, the following holds: $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$<\span>
+  
+**Proof:** By the fact that an identity function simply maps each element in its domain back to itself, it follows that the composition of a function $f$ and the identity function is simply the function $f$.  The [identity matrix defines the identity function on vectors](https://mbernste.github.io/posts/matrices_as_functions/). Furthermore, matrix multiplication represents a composition of linear transforamtions. Thus, it follows that any matrix multiplied on the left or right by the identity matrix returns the original matrix (i.e., the function itself).  Therefore, $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$. $\square$
