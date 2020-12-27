@@ -128,6 +128,6 @@ $$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol
 
 Next, we prove $r(\boldsymbol{AB}) = \boldsymbol{A}(r\boldsymbol{B})$:
 
-$$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} r\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & r\boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{A}(r\boldsymbol{b}_{*,1}) & \dots & \boldsymbol{A}(r\bold{b}_{*,p}) \end{bmatrix} && \text{linearity of matrix-vector multiplication} \\ &= \boldsymbol{A}(r\boldsymbol{B}) \end{align*}$$
+$$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} r\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & r\boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} \\ &= \begin{bmatrix} \boldsymbol{A}(r\boldsymbol{b}_{*,1}) & \dots & \boldsymbol{A}(r\boldsymbol{b}_{*,p}) \end{bmatrix} && \text{linearity of matrix-vector multiplication} \\ &= \boldsymbol{A}(r\boldsymbol{B}) \end{align*}$$
 
 $\square$
