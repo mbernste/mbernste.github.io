@@ -9,7 +9,7 @@ tags:
   - matrices
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
+*At first glance, the definition for the product of two matrices can be unintuitive. In this post, we discuss three perspectives for viewing matrix multiplication. It is the third perspective that gives this "unintuitive" definition its power: that matrix multiplication represents the composition of linear transformations.* 
 
 At a very high level, matrix multiplication is an operation between two [matrices](https://mbernste.github.io/posts/matrices/) that creates a new matrix.  For students introduced to matrix multiplication, it can be puzzling to learn that matrix multiplication does **not** simply entail computing the product of the each pair of corresponding entries between the two matrices. That is, 
 
