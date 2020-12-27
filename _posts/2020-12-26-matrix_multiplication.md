@@ -137,3 +137,11 @@ $\square$
 **Proof:** 
 
 $$\begin{align*} \boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) &= \begin{bmatrix}\boldsymbol{A}(\boldsymbol{b}_{*,1} + \boldsymbol{c}_{*,1}) & \dots & \boldsymbol{A}(\boldsymbol{b}_{*,p} + \boldsymbol{c}_{*,p}) \end{bmatrix} && \text{definition of matrix multiplication} \\ &= \begin{bmatrix}(\boldsymbol{A}\boldsymbol{b}_{*,1} + \boldsymbol{A}\boldsymbol{c}_{*,1}) & \dots & (\boldsymbol{A}\boldsymbol{b}_{*,p} + \boldsymbol{A}\boldsymbol{c}_{*,p}) \end{bmatrix} && \text{linearity of matrix-vector multiplication} \\ &= \begin{bmatrix}\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\boldsymbol{b}_{*,p} \end{bmatrix} + \begin{bmatrix} \boldsymbol{A}\boldsymbol{c}_{*,1} & \dots &  \boldsymbol{A}\boldsymbol{c}_{*,p} \end{bmatrix} && \text{definition of matrix-addition} \\ &= \boldsymbol{AB} + \boldsymbol{AC} && \text{definition of matrix multiplication}\end{align*}$$
+
+$\square$
+
+<span style="color:#0060C6">**Theorem 5 (Right distributive property of matrix multiplication):** Given matrices $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, $\boldsymbol{B} \in \mathbb{R}^{n * p}$, and $\boldsymbol{C} \in \mathbb{R}^{n \times p}$, the following holds: $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$</span>
+
+**Proof:**
+
+$$\begin{align*}(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A}  &= \begin{bmatrix}(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{a}_{*,1} & \dots & (\boldsymbol{B} + \boldsymbol{C})\boldsymbol{a}_{*,p} \end{bmatrix} && \text{definition of matrix-matrix multiplication} \\ &= \begin{bmatrix}(\boldsymbol{B}\boldsymbol{a}_{*,1} + \boldsymbol{C}\boldsymbol{a}_{*,1}) & \dots & (\boldsymbol{B}\boldsymbol{a}_{*,p} + \boldsymbol{C}\boldsymbol{a}_{*,p}) \end{bmatrix} && \text{definition of matrix addition} \\ &= \begin{bmatrix}\boldsymbol{B}\boldsymbol{a}_{*,1} & \dots & \boldsymbol{B}\boldsymbol{a}_{*,p} \end{bmatrix} + \begin{bmatrix} \boldsymbol{C}\boldsymbol{a}_{*,1} & \dots &  \boldsymbol{C}\boldsymbol{a}_{*,p} \end{bmatrix} \\ &= \boldsymbol{BA} + \boldsymbol{CA}\end{align*}$$
