@@ -11,7 +11,11 @@ tags:
 
 THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
-At a very high level, matrix multiplication is an operation between two [matrices](https://mbernste.github.io/posts/matrices/) that creates a new matrix.  For students introduced to matrix multiplication, it can be puzzling to learn that matrix multiplication does not simply entail computing the product of the each pair of corresponding entries between the two matrices. Rather, matrix multiplication is much more complicated: given two matrices $\boldsymbol{A}$ and $\boldsymbol{B}$, each column of the product matrix $\boldsymbol{AB}$ is formed by performing [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/) between $\boldsymbol{A}$ and each column of $\boldsymbol{B}$: 
+At a very high level, matrix multiplication is an operation between two [matrices](https://mbernste.github.io/posts/matrices/) that creates a new matrix.  For students introduced to matrix multiplication, it can be puzzling to learn that matrix multiplication does not simply entail computing the product of the each pair of corresponding entries between the two matrices. That is, 
+
+$$\begin{bmatrix} a_{1,1} & a_{1,2} \\ a_{2,1} & a_{2,2}\end{bmatrix}\begin{bmatrix}b_{1,1} & b_{1,2} \\ b_{2,1} & b_{2,2}\end{bmatrix} \neq \begin{bmatrix}a_{1,1}b_{1,1} & a_{1,2}b_{1,2} \\ a_{2,1}b_{2,1} & a_{2,2}b_{2,2}\end{bmatrix}$$
+
+Rather, matrix multiplication is defined in what can look to be a much more complicated way: 
 
 <span style="color:#0060C6">**Definition 1 (Matrix multiplication):** The product of an $m \times n$ matrix $\boldsymbol{A}$ **matrix multiplied** by a $n \times p$ matrix $\boldsymbol{B}$ is given by</span>
  
@@ -19,11 +23,9 @@ At a very high level, matrix multiplication is an operation between two [matrice
 
 <span style="color:#0060C6">where $\boldsymbol{b}_{*,i}$ is the $i$th column of $\boldsymbol{B}$.</span>
 
-Note that this definition requires that if we multiply an $m \times n$ matrix by a $n \times p$ matrix, the result will be an $m \times p$ matrix where the number of rows is determined by the first matrix and the number of columns is determined by the second matrix.  Furthermore, we require that the number of columns of the first matrix be equal to the number of rows of the second matrix. If this doesn't hold, then matrix multiplication is not defined. More succinctly:
+That is, given two matrices $\boldsymbol{A}$ and $\boldsymbol{B}$, each column of the product matrix $\boldsymbol{AB}$ is formed by performing [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/) between $\boldsymbol{A}$ and each column of $\boldsymbol{B}$ Not that this definition requires that the number of columns of the first matrix be equal to the number of rows of the second matrix. If this doesn't hold, then matrix multiplication is not defined. 
 
-$$\boldsymbol{A}_{m \times n} \ \boldsymbol{B}_{n \times p} = (\boldsymbol{AB})_{m \times p}$$
-
-This complicated definition begs the question, what is the intuition behind matrix vector multiplication? And, why is it defined this way?
+This complicated definition begs the question, what is the intuition behind matrix multiplication? And, why isn't it defined as simply the pairwise products between corresponding elements of two matrices as described above? In this post, we'll look at three ways of viewing matrix multiplication and hopefully it will become evident that this more complicated definition is much more powerful than a naive definition that computes pairwise products.  It's power will come from the third perspective that we will discuss: that matrix multiplication represents the [composition](https://en.wikipedia.org/wiki/Function_composition) of the functions represented by the factor matrices.  
 
 Three perspectives for understanding matrix multiplication
 ---------------
@@ -85,14 +87,6 @@ Here are several properties of matrix multiplication that can be used in calcula
 4. **Right distributive property** (Theorem 6): $(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A} = \boldsymbol{BA} + \boldsymbol{CA}$
 5. **Identity** (Theorem 7): $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$
 
-Why isn't matrix multiplication simply the pairwise products of elements between matrices?  
---------
-
-As we mentioned at the beginning of the post, it can be somewhat unintuitive that matrix multiplication is *not* simply the pairwise products of elements between two matrices. That is,
-
-$$\begin{bmatrix}a_{1,1} & a_{1,2} \\ a_{2,1} & a_{2,2}\begin{bmatrix}b_{1,1} & b_{1,2} \\ b_{2,1} & b_{2,2}\end{bmatrix} \neq \begin{bmatrix}a_{1,1}b_{1,1} & a_{1,2}b_{1,2} \\ a_{2,1}b_{2,1} & a_{2,2}b_{2,2}$$
-
-On the surface this would seem to be a much more natural definition for matrix multiplication, but it turns out to be a much less powerful definition. The reason why this is so much less powerful is that it totally dismisses the fact that matrices can be viewed as linear transformations. When matrix multiplication is defined in this naive way, matrix multiplication no longer represents the composition of linear functions.
 
 Appendix
 --------
