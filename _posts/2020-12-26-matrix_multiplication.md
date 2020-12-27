@@ -133,3 +133,7 @@ $$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol
 $\square$
 
 <span style="color:#0060C6">**Theorem 5 (Left distributive property of matrix multiplication): Given matrices $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, $\boldsymbol{B} \in \mathbb{R}^{n * p}$, and $\boldsymbol{C} \in \mathbb{R}^{n \times p}$, the following holds: $\boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) = \boldsymbol{AB} + \boldsymbol{AC}$</span>
+
+**Proof:** 
+
+$$\begin{align*} \boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) &= \begin{bmatrix}\boldsymbol{A}(\boldsymbol{b}_{*,1} + \boldsymbol{c}_{*,1}) & \dots & \boldsymbol{A}(\boldsymbol{b}_{*,p} + \boldsymbol{c}_{*,p}) \end{bmatrix} && \text{definition of matrix multiplication} \\ &= \begin{bmatrix}(\boldsymbol{A}\boldsymbol{b}_{*,1} + \boldsymbol{A}\boldsymbol{c}_{*,1}) & \dots & (\boldsymbol{A}\boldsymbol{b}_{*,p} + \boldsymbol{A}\boldsymbol{c}_{*,p}) \end{bmatrix} && \text{linearity of matrix-vector multiplication} \\ &= \begin{bmatrix}\boldsymbol{A}\boldsymbol{b}_{*,1} & \dots & \boldsymbol{A}\bold{b}_{*,p} \end{bmatrix} + \begin{bmatrix} \boldsymbol{A}\bold{c}_{*,1} & \dots &  \boldsymbol{A}\boldsymbol{c}_{*,p} \end{bmatrix} && \text{definition of matrix-addition} \\ &= \boldsymbol{AB} + \boldsymbol{AC} && \text{definition of matrix multiplication}\end{align*}$$
