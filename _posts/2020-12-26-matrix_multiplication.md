@@ -42,7 +42,7 @@ Given these various ways of possibly viewing each matrix factor, $\boldsymbol{A}
 2. **Matrix multiplication computes the dot products for pairs of vectors:** This perspective follows from viewing $\boldsymbol{A}$ as an ordered list of row-vectors and viewing $\boldsymbol{B}$ as an ordered list of column-vectors. The product matrix $\boldsymbol{AB}$ then stores all of the pair-wise dot products between the rows of $\boldsymbol{A}$ and columns of $\boldsymbol{B}$.
 3. **Matrix multiplication computes the composition of two linear transformations:** If we view both $\boldsymbol{A}$ *and* \boldsymbol{B}$ as linear transformations, then the product matrix is a linear transformation formed by taking the [composition](https://en.wikipedia.org/wiki/Function_composition) of linear transformations defined by $\boldsymbol{A}$ and $\boldsymbol{B}$.
 
-Let's dig into each of these perspectives.
+It is this third perspective that is the most abstract and, arguably, the most powerful. Let's dig into each of these perspectives.
 
 **Matrix multiplication computes a linear transformation on a set of vectors**
 
@@ -62,7 +62,7 @@ If we view the matrix $\boldsymbol{A}$ as a list of row-vectors and the matrix $
 
 **Matrix multiplication computes the composition of two linear transformations:**
 
-If we view *both* $\boldsymbol{A}$ *and* $\boldsymbol{B}$ as linear transformations, then the matrix $\boldsymbol{AB}$ is the matrix that characterizes the linear transformation formed by the composition of the linear transformations characterized by $\boldsymbol{A}$ and $\boldsymbol{B}$ (See Theorem 2 in the Appendix to this post).   That is, given two linear transformations
+The third and final perspective for viewing matrix multiplication requires that we view *both* $\boldsymbol{A}$ *and* $\boldsymbol{B}$ as linear transformations.  Then, it turns out that the matrix $\boldsymbol{AB}$ is the matrix that characterizes the linear transformation formed by the composition of the linear transformations characterized by $\boldsymbol{A}$ and $\boldsymbol{B}$ (See Theorem 2 in the Appendix to this post).   That is, given two linear transformations
 
 $$\begin{align*}f(\boldsymbol{x}) &:= \boldsymbol{Ax} \\ g(\boldsymbol{x}) &:= \boldsymbol{Bx}\end{align*}$$
 
