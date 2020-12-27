@@ -151,6 +151,6 @@ $$\begin{align*}(\boldsymbol{B} + \boldsymbol{C})\boldsymbol{A}  &= \begin{bmatr
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 7 (Identity):** Given an $m \times n$ matrix $\boldsymbol{A}$, the following holds: $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$<\span>
+<span style="color:#0060C6">**Theorem 7 (Identity):** Given an $m \times n$ matrix $\boldsymbol{A}$, the following holds: $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$</span>
   
 **Proof:** By the fact that an identity function simply maps each element in its domain back to itself, it follows that the composition of a function $f$ and the identity function is simply the function $f$.  The [identity matrix defines the identity function on vectors](https://mbernste.github.io/posts/matrices_as_functions/). Furthermore, matrix multiplication represents a composition of linear transforamtions. Thus, it follows that any matrix multiplied on the left or right by the identity matrix returns the original matrix (i.e., the function itself).  Therefore, $\boldsymbol{I}_m\boldsymbol{A} = \boldsymbol{A} = \boldsymbol{AI}_n$. $\square$
