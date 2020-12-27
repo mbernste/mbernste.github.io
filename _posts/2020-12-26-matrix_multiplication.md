@@ -132,7 +132,7 @@ $$\begin{align*}r(\boldsymbol{AB}) &= r\begin{bmatrix} \boldsymbol{A}\boldsymbol
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 5 (Left distributive property of matrix multiplication): Given matrices $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, $\boldsymbol{B} \in \mathbb{R}^{n * p}$, and $\boldsymbol{C} \in \mathbb{R}^{n \times p}$, the following holds: $\boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) = \boldsymbol{AB} + \boldsymbol{AC}$</span>
+<span style="color:#0060C6">**Theorem 5 (Left distributive property of matrix multiplication):** Given matrices $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, $\boldsymbol{B} \in \mathbb{R}^{n * p}$, and $\boldsymbol{C} \in \mathbb{R}^{n \times p}$, the following holds: $\boldsymbol{A}(\boldsymbol{B} + \boldsymbol{C}) = \boldsymbol{AB} + \boldsymbol{AC}$</span>
 
 **Proof:** 
 
