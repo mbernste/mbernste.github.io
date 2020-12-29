@@ -25,7 +25,7 @@ main:
 #    url: /notes/
     
   - title: "Blog"
-    url: /year-archive/
+    url: /posts/
  
   - title: "Art"
     url: /art/
