@@ -1,5 +1,5 @@
 ---
-title: 'Inverse matrices'
+title: 'Linear independence and the rank of a matrix'
 date: 2020-12-29
 permalink: /posts/inverse_matrices/
 tags:
