@@ -31,21 +31,19 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Information entropy (Foundations of information theory: Part 2)](https://mbernste.github.io/posts/entropy/)  
 [Shannon’s Source Coding Theorem (Foundations of information theory: Part 3)](https://mbernste.github.io/posts/sourcecoding/)
 
-## Probabilistic modeling
-
-**Quantities**
+## Quantities related to probabilistic models
 
 [The evidence lower bound](https://mbernste.github.io/posts/elbo/)
 
-**Inference**
+## Algorithms for statistical inference
 
 [Expectation-maximization: theory and intuition](https://mbernste.github.io/posts/em/)  
 
-**Models**
+## Probabilistic models
 
 [Gaussian mixture models](https://mbernste.github.io/posts/gmm_em/)
 
-## Clustering
+## Algorithms for clustering
 
 [Gaussian mixture models](https://mbernste.github.io/posts/gmm_em/)
 
