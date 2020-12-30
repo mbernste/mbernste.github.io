@@ -15,4 +15,4 @@ An important concept in linear algebra and the data sciences is the idea of **in
 
 **Dimensionality**
 
-Let's start with a basic question: what does it mean for an object to be "$D$-dimensional"? 
+Let's start with a basic question: what does it mean for an object to be three-dimensional versus two-dimensional?  More generally, what does it mean for an object to be $D$-dimensional? 
