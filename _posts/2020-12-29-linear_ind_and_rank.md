@@ -1,5 +1,5 @@
 ---
-title: 'Linear independence and the rank of a matrix'
+title: 'Intrinsic dimensionality'
 date: 2020-12-29
 permalink: /posts/inverse_matrices/
 tags:
@@ -11,4 +11,8 @@ tags:
 
 THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
-As we have discussed in depth, matrices can viewed [as functions](https://mbernste.github.io/posts/matrices_as_functions/) between vector spaces. More specifically, matrices represent a very specific type of function: [linear transformations](https://mbernste.github.io/posts/matrices_linear_transformations/).
+An important concept in linear algebra and the data sciences is the idea of **intrinsic dimensionality**.  I found that in my formal education this concept was never explicitly taught; however, it undergirds so many concepts in linear algebra and data analysis. In this post I will discuss the difference between the **dimensionality** of an object versus its **intrinsic dimensionality**.  This concept provides a nice framework for understanding such broad concepts as the [rank of a matrix](https://en.wikipedia.org/wiki/Rank_(linear_algebra)) in linear algebra as well as [dimension reduction](https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction) and [feature selection](https://en.wikipedia.org/wiki/Feature_extraction) in machine learning. 
+
+**Dimensionality**
+
+What does it mean for an object to be "$D$-dimensional"? 
