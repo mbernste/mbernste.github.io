@@ -1,15 +1,14 @@
 ---
 title: 'Intrinsic dimensionality'
 date: 2020-12-29
-permalink: /posts/inverse_matrices/
+permalink: /posts/intrinsic_dimensionality/
 tags:
   - tutorial
   - mathematics
-  - linear algebra
-  - matrices
+  - intrinsic dimensionality
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
+*In my formal eductation, I found that the concept of "intrinsic dimensionality" was never explicitly taught; however, it undergirds so many concepts in linear algebra and the data sciences such as the rank of a matrix and feature selection for machine learning.  In this post I will discuss the difference between the extrinsic dimensionality of a space versus its intrinsic dimensionality.*
 
 Introduction
 -------------
