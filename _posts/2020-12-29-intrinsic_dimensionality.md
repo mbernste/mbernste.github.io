@@ -15,4 +15,12 @@ An important concept in linear algebra and the data sciences is the idea of **in
 
 **Dimensionality**
 
-Let's start with a basic question: what does it mean for a space to be three-dimensional versus two-dimensional?  More generally, what does it mean for a space to be $D$-dimensional? A basic answer to this question is that a $D$-dimensional space is a space in which points require $D$ pieces of information to uniquely specify each point. In three-dimensional space, we need three pieces of information to describe a point: its value along an x-axis, its value along a y-axis, and a value along a z-axis. 
+Let's start with a basic question: what does it mean for a space to be three-dimensional versus two-dimensional?  More generally, what does it mean for a space to be $D$-dimensional? A basic answer to this question is that a $D$-dimensional space is a space in which one uses $D$ pieces of information to describe each point or object in that space. For example, in three-dimensional space, we need three pieces of information to describe a point: its value along an x-axis, its value along a y-axis, and a value along a z-axis:
+
+
+
+**Intrinsic dimensionality**
+
+Let's say we're in some situtation we're we are dealing with points (or objects) in some $D$-dimensional space. Thus, we are dealing with $D$ pieces of information for describing "things" in that space. One may ask a simple question: do we *really* need $D$ pieces of information to describe each thing? Or can we get by with fewer?
+
+Take the following example:
