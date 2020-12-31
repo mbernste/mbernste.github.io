@@ -16,17 +16,20 @@ Introduction
 
 An important concept in linear algebra and the data sciences is the idea of **intrinsic dimensionality**.  I found that in my formal education this concept was never explicitly taught; however, it undergirds so many concepts in linear algebra and data analysis. In this post I will discuss the difference between the **dimensionality** of a space versus its **intrinsic dimensionality**.  These general ideas provides a nice framework for understanding such diverse concepts as the [rank of a matrix](https://en.wikipedia.org/wiki/Rank_(linear_algebra)) in linear algebra as well as [dimension reduction](https://en.wikipedia.org/wiki/Dimensionality_reduction) and [feature selection](https://en.wikipedia.org/wiki/Feature_extraction) in machine learning. 
 
-**What exactly is a "space"?**
+What exactly is a "space"?
+-------------
 
 Let's start with a very basic question: what is a space?  According to [Wikipedia](https://en.wikipedia.org/wiki/Space_(mathematics)), a space is a [set](https://en.wikipedia.org/wiki/Set_(mathematics)) of objects with some "structure."  This definition is extremely general, perhaps even trivial, but I think it deserves emphasizing that a space is, first and foremost, a *set* (ignoring the "structure" component of this definition).  When we refer to "three-dimensional space", we are in essence describing the set of all *points* in three dimensions.  As I've said, this may seem trivial at first, but I think it will be an important idea as we move on to describe the concept of "intrinsic dimensionality."
 
-**What is a dimension?**
+What is a dimension?
+-------------
 
 Let's move on to another basic question: what does it mean for a space to be three-dimensional versus two-dimensional?  More generally, what does it mean for a space to be $D$-dimensional? A basic answer to this question is that a $D$-dimensional space is a space in which one uses $D$ pieces of information (i.e., characteristics), called **dimensions**, to describe each object in that space. For example, in three-dimensional Euclidean space (3D space), we need three pieces of information to describe each point: its value along the x-axis, its value along the y-axis, and its value along the z-axis:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/3D_space.png" alt="drawing" width="400"/></center>
 
-**Intrinsic vs. extrinsic dimensionality**
+Intrinsic vs. extrinsic dimensionality
+-------------
 
 Now that we have some basic ideas down -- namely, "space" and "dimensions" -- let's move on to the core of this blog post: intrinsic dimensionality.  Before we move on, let me spoil the ending: the **intrinsic dimensionality** of a space is the number of *required* pieces of information that we need to describe each object in the space, which may differ the the number of pieces of information that we *are* using, which we call the **extrinsic dimensionality** of the space. 
 
