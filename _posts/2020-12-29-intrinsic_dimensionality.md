@@ -30,7 +30,7 @@ Let's move on to another basic question: what does it mean for a space to be thr
 Intrinsic vs. extrinsic dimensionality
 -------------
 
-Now that we have some basic ideas down -- namely, "space" and "dimensions" -- let's move on to the core of this blog post: intrinsic dimensionality.  Before we move on, let me spoil the ending: the **intrinsic dimensionality** of a space is the number of *required* pieces of information that we need to describe each object in the space, which may differ the the number of pieces of information that we *are* using, which we call the **extrinsic dimensionality** of the space. 
+Now that we have some basic ideas down -- namely, "space" and "dimensions" -- let's move on to the core of this blog post: intrinsic dimensionality.  Before we move on, let me spoil the ending: the **intrinsic dimensionality** of a space is the number of *required* pieces of information that we need to describe each object in the space, which may differ from the number of pieces of information that we *are* using, which we call the **extrinsic dimensionality** of the space. 
 
 Let's make this concrete with an example.  Let's say we're in some situtation we're we are dealing with objects in some extrinsically $D$-dimensional space. Thus, we are dealing with $D$ pieces of information for describing objects in that space. One may ask a simple question: do we *really* need $D$ pieces of information to describe each object? Or can we get by with fewer?
 
