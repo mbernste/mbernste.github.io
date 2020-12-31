@@ -19,7 +19,7 @@ Let's start with a very basic question: what is a space?  According to [Wikipedi
 
 **Dimensionality**
 
-Let's move on to another basic question: what does it mean for a space to be three-dimensional versus two-dimensional?  More generally, what does it mean for a space to be $D$-dimensional? A basic answer to this question is that a $D$-dimensional space is a space in which one uses $D$ pieces of information to describe each object in that space (i.e., in the set). For example, in three-dimensional Euclidean space, we need three pieces of information to describe each point: its value along the x-axis, its value along the y-axis, and its value along the z-axis:
+Let's move on to another basic question: what does it mean for a space to be three-dimensional versus two-dimensional?  More generally, what does it mean for a space to be $D$-dimensional? A basic answer to this question is that a $D$-dimensional space is a space in which one uses $D$ pieces of information to describe each object in that space (i.e., in the set). For example, in three-dimensional Euclidean space (3D space), we need three pieces of information to describe each point: its value along the x-axis, its value along the y-axis, and its value along the z-axis:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/3D_space.png" alt="drawing" width="400"/></center>
 
@@ -29,7 +29,7 @@ Now that we have some basic ideas down -- namely, "space" and "dimensionality" -
 
 Let's say we're in some situtation we're we are dealing with objects in some $D$-dimensional space. Thus, we are dealing with $D$ pieces of information for describing objects in that space. One may ask a simple question: do we *really* need $D$ pieces of information to describe each object? Or can we get by with fewer?
 
-Take the following example: we want to describe all points on a flat piece of paper in three-dimensional space.  That is, all of the points that we care about will lie *only* on the sheet of paper.
+Take the following example: we want to describe all points on a flat piece of paper in 3D space.  That is, all of the points that we care about will lie *only* on the sheet of paper.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/paper_in_3D.png" alt="drawing" width="500"/></center>
 
@@ -38,5 +38,7 @@ Of course, we can use each points x, y, and z coordinates, but do we really need
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/paper_in_3D_coordinates.png" alt="drawing" width="400"/></center>
 
+Of course, representing each point on the paper using these new coordinates requires keeping track of the position of the left edge and top edge in 3D space; however, once we have this information handy *every* point on the paper can be represented using only these two coordinates. 
 
+The **intrinsic dimensionality** of a space is the number of *required* pieces of information for representing each object. In the piece of paper example, only two coordinates are needed to describe each point on the paper, and thus, it can be said that the space of the paper is *intrinsically* only two-dimensional rather than three-dimensional.  Notably, the intrinsic dimensionality of a space may be different than its explicit dimensionality.  That is, even though we may be representing each point on the paper using their original three coordinates in 3D space, we could instead only use two. 
 
