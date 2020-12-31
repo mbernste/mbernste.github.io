@@ -11,6 +11,9 @@ tags:
 
 THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
+Introduction
+-------------
+
 An important concept in linear algebra and the data sciences is the idea of **intrinsic dimensionality**.  I found that in my formal education this concept was never explicitly taught; however, it undergirds so many concepts in linear algebra and data analysis. In this post I will discuss the difference between the **dimensionality** of a space versus its **intrinsic dimensionality**.  These general ideas provides a nice framework for understanding such diverse, and more specific, concepts as the [rank of a matrix](https://en.wikipedia.org/wiki/Rank_(linear_algebra)) in linear algebra as well as [dimension reduction](https://en.wikipedia.org/wiki/Dimensionality_reduction) and [feature selection](https://en.wikipedia.org/wiki/Feature_extraction) in machine learning. 
 
 **What exactly is a "space"?**
@@ -44,8 +47,16 @@ The **intrinsic dimensionality** of a space is the number of *required* pieces o
 
 When will the intrinsic dimensionality of a space be smaller than its explicit dimensionality?  Intuitively, this will happen when the space that we care about can be formed by taking a subset of the entire space.  In the piece of paper example of above, we only care about the *subset of points* in 3D space that lie on the piece of paper. By taking a subset, we are in essence coming up with a new, smaller space than the full 3D space. 
 
-A couple more examples
+Another example
 ---------------
 
 Here's another example of a piece of paper embedded in 3D space, but this time, the paper is rolled up in a "Swiss roll" shape:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/swiss_roll.png" alt="drawing" width="400"/></center>
+
+Again, one may say that the set of points that lie on the Swiss roll forms an intrinsically two dimensional space rather than a 3D space. The reason is that we can represent each point using two pieces of information: its distance along the width of the roll and its distance around the roll:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/swiss_roll_coordinates.png" alt="drawing" width="400"/></center>
+
+This is very high level and we haven't described a rigorous system of coordinates for actually describing each point on the roll, but intuitively one can see that if one fixed the geometry of the roll, one could easily describe each point on the roll with only two dimensions. 
 
