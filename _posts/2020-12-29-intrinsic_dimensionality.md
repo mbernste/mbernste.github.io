@@ -21,6 +21,8 @@ Let's start with a very basic question: what is a space?  According to [Wikipedi
 
 Let's move on to another basic question: what does it mean for a space to be three-dimensional versus two-dimensional?  More generally, what does it mean for a space to be $D$-dimensional? A basic answer to this question is that a $D$-dimensional space is a space in which one uses $D$ pieces of information to describe each object in that space (i.e., in the set). For example, in three-dimensional Euclidean space, we need three pieces of information to describe each point: its value along the x-axis, its value along the y-axis, and its value along the z-axis:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/3D_space.png" alt="drawing" width="400"/></center>
+
 **Intrinsic dimensionality**
 
 Now that we have some basic ideas down -- namely, "space" and "dimensionality" -- let's move on to the core of this blog post: intrinsic dimensionality.
