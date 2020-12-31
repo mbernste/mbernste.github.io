@@ -31,7 +31,7 @@ Let's say we're in some situtation we're we are dealing with objects in some $D$
 
 Take the following example: we want to describe all points on a flat piece of paper in three-dimensional space.  That is, all of the points that we care about will lie *only* on the sheet of paper.
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/paper_in_3D.png" alt="drawing" width="400"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/paper_in_3D.png" alt="drawing" width="500"/></center>
 
 
 Of course, we can use each points x, y, and z coordinates, but do we really need three pieces of information to describe each point on the paper? The answer is no, we really only need two! Intuitively, we can specify each point on the paper using two coordinates: its distance from the left edge of the paper and its distance from the top edge of the paper:
