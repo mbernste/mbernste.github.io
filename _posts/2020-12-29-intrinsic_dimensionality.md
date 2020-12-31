@@ -44,5 +44,8 @@ The **intrinsic dimensionality** of a space is the number of *required* pieces o
 
 When will the intrinsic dimensionality of a space be smaller than its explicit dimensionality?  Intuitively, this will happen when the space that we care about can be formed by taking a subset of the entire space.  In the piece of paper example of above, we only care about the *subset of points* in 3D space that lie on the piece of paper. By taking a subset, we are in essence coming up with a new, smaller space than the full 3D space. 
 
+A couple more examples
+---------------
+
 Here's another example of a piece of paper embedded in 3D space, but this time, the paper is rolled up in a "Swiss roll" shape:
 
