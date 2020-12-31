@@ -25,9 +25,9 @@ Let's move on to another basic question: what does it mean for a space to be thr
 
 **Intrinsic dimensionality**
 
-Now that we have some basic ideas down -- namely, "space" and "dimensionality" -- let's move on to the core of this blog post: intrinsic dimensionality.
+Now that we have some basic ideas down -- namely, "space" and "dimensionality" -- let's move on to the core of this blog post: intrinsic dimensionality.  Before we move on, let me spoil the ending: the **intrinsic dimensionality** of a space is the number of *required* pieces of information that we need to describe each object in the space, which may differ the the number of pieces of information that we *are* using. 
 
-Let's say we're in some situtation we're we are dealing with objects in some $D$-dimensional space. Thus, we are dealing with $D$ pieces of information for describing objects in that space. One may ask a simple question: do we *really* need $D$ pieces of information to describe each object? Or can we get by with fewer?
+Let's make this concrete with an example.  Let's say we're in some situtation we're we are dealing with objects in some $D$-dimensional space. Thus, we are dealing with $D$ pieces of information for describing objects in that space. One may ask a simple question: do we *really* need $D$ pieces of information to describe each object? Or can we get by with fewer?
 
 Take the following example: we want to describe all points on a flat piece of paper in 3D space.  That is, all of the points that we care about will lie *only* on the sheet of paper.
 
@@ -43,3 +43,6 @@ Of course, representing each point on the paper using these new coordinates requ
 The **intrinsic dimensionality** of a space is the number of *required* pieces of information for representing each object. In the piece of paper example, only two coordinates are needed to describe each point on the paper, and thus, it can be said that the space of the paper is *intrinsically* only two-dimensional rather than three-dimensional.  Notably, the intrinsic dimensionality of a space may be different than its explicit dimensionality.  That is, even though we may be representing each point on the paper using their original three coordinates in 3D space, we could instead only use two. 
 
 When will the intrinsic dimensionality of a space be smaller than its explicit dimensionality?  Intuitively, this will happen when the space that we care about can be formed by taking a subset of the entire space.  In the piece of paper example of above, we only care about the *subset of points* in 3D space that lie on the piece of paper. By taking a subset, we are in essence coming up with a new, smaller space than the full 3D space. 
+
+Here's another example of a piece of paper embedded in 3D space, but this time, the paper is rolled up in a "Swiss roll" shape:
+
