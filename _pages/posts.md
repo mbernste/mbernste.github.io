@@ -6,7 +6,7 @@ author_profile: true
 
 A blog containing tutorials, notes, and insights on topics in math, statistics, machine learning, computational biology, and pedagogy.  To view posts in the order that they were published, [click here](https://mbernste.github.io/year-archive/).
 
-## miscellaneous
+## Miscellaneous
 
 [True understanding is "seeing" in 3D](https://mbernste.github.io/posts/understanding_3d/)  
 [Intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/)  
