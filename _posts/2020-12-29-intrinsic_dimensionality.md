@@ -27,10 +27,13 @@ Now that we have some basic ideas down -- namely, "space" and "dimensionality" -
 
 Let's say we're in some situtation we're we are dealing with objects in some $D$-dimensional space. Thus, we are dealing with $D$ pieces of information for describing objects in that space. One may ask a simple question: do we *really* need $D$ pieces of information to describe each object? Or can we get by with fewer?
 
-Take the following example: we have wish to describe all points on a flat piece of paper in three-dimensional space.  That is, all of the points that we care about will lie *only* on the sheet of paper.  
+Take the following example: we have wish to describe all points on a flat piece of paper in three-dimensional space.  That is, all of the points that we care about will lie *only* on the sheet of paper.
 
 
-Do we really need three pieces of information to describe each point on the paper?  The answer is no, we really only need two! 
+
+
+Do we really need three pieces of information to describe each point on the paper?  The answer is no, we really only need two! Intuitively, we can specify each point on the paper using two coordinates: its distance from the left edge of the paper and its distance from the top edge of the paper:
+
 
 
 
