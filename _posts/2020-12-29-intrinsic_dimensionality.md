@@ -19,7 +19,7 @@ An important concept in linear algebra and the data sciences is the idea of **in
 What exactly is a "space"?
 -------------
 
-Let's start with a very basic question: what is a space?  According to [Wikipedia](https://en.wikipedia.org/wiki/Space_(mathematics)), a space is a [set](https://en.wikipedia.org/wiki/Set_(mathematics)) of objects with some "structure."  This definition is extremely general, perhaps even trivial, but I think it deserves emphasizing that a space is, first and foremost, a *set*.  When we refer to "three-dimensional space", we are in essence describing the set of all *points* in three dimensions.  As I've said, this may seem trivial at first, but I think it will be an important idea as we move on to describe the concept of "intrinsic dimensionality."
+Before jumpting into the dimensionality of spaces, let's first address a very basic question: what is a space?  According to [Wikipedia](https://en.wikipedia.org/wiki/Space_(mathematics)), a space is a [set](https://en.wikipedia.org/wiki/Set_(mathematics)) of objects with some "structure."  This definition is extremely general, perhaps even trivial, but I think it deserves emphasizing that a space is, first and foremost, a *set*.  When we refer to "three-dimensional space", we are in essence describing the set of all *points* in three dimensions.  As I've said, this may seem trivial at first, but I think it will be an important idea as we move on to describe the concept of "intrinsic dimensionality."
 
 What is a dimension?
 -------------
