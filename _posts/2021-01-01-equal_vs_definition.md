@@ -42,7 +42,7 @@ To illustrate how the overloading of the equal sign creates confusion, I'll tell
 
 So she was quite confused when she came upon the phrase, 
 
-$$\sin \theta = \frac{b}{c}$$
+$$\sin \theta = \frac{\text{opposite}}{{hypotenuse}}$$
 
 She asked, *why* is $\sin \theta$ *equal* to the quantity $\frac{b}{c}$.  My interpretation of her question was, "what magic is happening inside of $\sin \theta$ that enables it to be $\frac{b}{c}?"
 
@@ -55,7 +55,7 @@ It turns out that so long as $\theta$ is the same between the two triangles, the
 
 $$\frac{b}{c} = \frac{b'}{c'}$$
 
-where "=" is equality here, not definition.  This is just a "natural law" of right-triangles. 
+where "=" is equality here, not definition.  This is just a "natural law" of right-triangles. Furthermore, each unique angle between 0 and 90 degrees will be associated with a unique ratio of the length of the opposite side to the hypotenuse.  Thus, we can define a *function*, which we will call "sine" that when given an angle $\theta$, will spit out ratio of the length of the opposite side to the length of the hypotenuse. 
 
 
 
