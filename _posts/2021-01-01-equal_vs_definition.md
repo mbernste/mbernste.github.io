@@ -42,6 +42,18 @@ To illustrate how the overloading of the equal sign creates confusion, I'll tell
 
 When she came to the phrase, $\sin \theta = \frac{b}{c}$, she was quite confused. She wanted to know *why* $\sin \theta$ is *equal* to the quantity $\frac{b}{c}$.  What magic is happening inside of $\sin \theta$ that enables it to be $\frac{b}{c}?
 
+I tried to explain to her that $\sin \theta = \frac{b}{c}$ is a *definition*.  That is, $\sin \theta$ is defined to be $\frac{b}{c}$, and so there is nothing inherently mysterious about the strange symbol $\sin$.  
+
+This explanation was only *partly* true; there is indeed some magic behind $\sin \theta$, but it requires a bit more explication to convey. First, let's take our right-triangle with edge lengths $a$, $b$, and $c$ that has an angle of $\theta$ between the $a$-length edge and $c$-length edge. Now, let's look at another right triangle with different edge lengths $a'$, $b'$, and $c'$, but it has the same angle $\theta$ between its $a'$-length edge and $c'$-length edge:  
+
+
+It turns out that so long as $\theta$ is the same between the two triangles, the ratios $\frac{b}{c}$ and ${b'}{c'}$ will always be equal! That is, 
+
+$$\frac{b}{c} = \frac{b'}{c'}$$
+
+where "=" is equality here, not definition.  This is just a "natural law" of right-triangles. 
+
+
 
 
 
