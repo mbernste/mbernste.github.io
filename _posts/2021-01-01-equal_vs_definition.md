@@ -19,7 +19,7 @@ To ensure that we're on the same page, let's first define these two different re
 
 
 
-This is the [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem).  Importantly, what this says is that the quantity $c^2$ *is the same quantity* as the quantity $a^2 + b^2$.
+This is the [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem). What it says is that the quantity $c^2$ *is the same quantity* as the quantity $a^2 + b^2$.
 
 Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$" is also denoted as $X = Y$.  For example, given the same right triangle with edge lengths $a$, $b$, and $c$, where we now we let $\theta$ be the angle between the hypotenuse and the edge whose length is $a$, we define the quantity $\sin \theta$ as the $\frac{b}{c}$.  That is,
 
