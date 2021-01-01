@@ -34,7 +34,7 @@ The fundamental difference between equality and definition is that in the the eq
 
 In contrast, in a definition, only one of the two symbols is bound to an entity. The act of stating a definition is the act of *binding a known entity to a new symbol*.  For example, the symbol "$\text{foo} \ \theta$" is meaningless. What exactly is "foo"?  We don't know because we have not defined it.
 
-How overloading the equal sign creates confusion
+Overloading the equal sign creates confusion
 ----------------
 
 To illustrate how the overloading of the equal sign creates confusion, I'll tell a personal story. My mom is a very curious person and over the last year, she has set out to (re)-learn high school level math and physics. It has been decades since she has seen trigonometric identities, but now she wants to learn about them. She *really* wants to learn about them. What *are* they?  
