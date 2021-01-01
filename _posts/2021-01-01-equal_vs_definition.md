@@ -15,11 +15,12 @@ Introduction
 
 It sometimes amazes me that two of the most important relationships in mathematics, namely **equality** and **definition**, are denoted using the exact same symbol: the equal sign, "=". Early in my learning days, I believe that this [overloading](https://en.wikipedia.org/wiki/Operator_overloading) of the equal sign led to way more confusion than necessary.  In fact, I believe I still have some residual confusion regarding many basic mathematical concepts that all originate from this unfortunate circumstance.  I am almost surely not the first person to point this out, but after a cursory Google search, I could not find an essay or article that expressed the nuance of my concern, so here I'll lay out it and also propose a remedy.
 
-To ensure that we're on the same page, let's first define these two different relationships. Let's start with idea of **equality**.  Let's say we have two entities, which we will denote using the symbols $X$ and $Y$.  The statement "$X$ equals $Y$", denoted $X = Y$, means that $X$ and $Y$ **are the same thing**.  Here's an example: given a right-triangle with edge lengths $a$, $b$ and $c$, where $c$ is the hypotenuse, it holds that $a^2 + b^2 = c^2$:
+To ensure that we're on the same page, let's first define these two different relationships. Let's start with idea of **equality**.  Let's say we have two entities, which we will denote using the symbols $X$ and $Y$.  The statement "$X$ equals $Y$", denoted $X = Y$, means that $X$ and $Y$ **are the same thing**.  
+
+For example, let's say we have a right-triangle with edge lengths $a$, $b$ and $c$, where $c$ is the hypotenuse: 
 
 
-
-This is the [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem). What it says is that the quantity $c^2$ *is the same quantity* as the quantity $a^2 + b^2$.
+The [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) says that $a^2 + b^2 = c^2$. Said differently, the quantity $c^2$ *is the same quantity* as the quantity $a^2 + b^2$.
 
 Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$" is also denoted as $X = Y$.  For example, given the same right triangle with edge lengths $a$, $b$, and $c$, where we now we let $\theta$ be the angle between the hypotenuse and the edge whose length is $a$, we define the quantity $\sin \theta$ as the $\frac{b}{c}$.  That is,
 
