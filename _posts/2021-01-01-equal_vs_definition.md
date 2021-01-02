@@ -50,6 +50,21 @@ Where she was interpreting this phrase to be an equality: "these two quantities,
 
 In fact, a better explanation would proceed like the following: for *any* right triangle with an angle $\theta$, the ratio of the length of the opposite side to the length of the hypotenuse is *always* the same (it's just a natural fact about right triangles). We denote that ratio as $\sin \theta$. 
 
+Equality vs. definition when defining probabalistic models
+----------------
+
+In retrospect, the overloading of the equal sign to denote both equality and definition was a source of confusion early in grad school when I began learning more about probabilistic modeling. The confusion stems from the fact that, in some cases, one builds a probabilistic model by defining a joint distribution over multiple random variables and then deriving each variables marginal distribution. For example, for two random variables $X$ and $Y$ that are jointly distributed according to a multivariate normal distribution, we would say that 
+
+$$p(X, Y) = $$
+
+This is a definition. We are defining how to assign probabilities to joint assignments of $X$ and $Y$. Then, the marginal distribution of, say, $X$ is then 
+
+$$p(X) = $$
+
+This is an equality. The quantity $p(X)$ is the same quantity as the left-hand side.
+
+In other cases, especially when the variables are independent (or conditionally independent on some other variables), one can first define distributions over individual random variables or on conditional random variables and then derive their joint distribution.  
+
 ":=" instead of "="
 ----------------
 
