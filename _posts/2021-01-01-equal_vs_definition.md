@@ -40,15 +40,11 @@ Overloading the equal sign creates confusion
 
 Here's a story to illustrate how the overloading of the equal symbol creates confusion. My mom is a very curious person and over the last year, she has set out to (re)learn high school math and physics. It has been decades since she has seen the material, but she is steadily plugging away through pre-calculus and kinematics. Moreover, she doesn't just want to know the material, she wants to *really* know the material. She wants to know the essence of each concept. 
 
-So she was quite confused when she came upon the statement, 
+She was quite confused when she came upon the statement, 
 
 $$\sin \theta = \frac{\text{opposite}}{{hypotenuse}}$$
 
-She asked, *why* is $\sin \theta$ *equal* to the quantity $\frac{b}{c}$. Much more fundamentally, it seemed she was asking, *what* is the sine of an angle?  It so happens that the answer is right there in statement. The reason being is that the statement is a definition and not a statement of equality. 
-
-Where she was interpreting this phrase to be an equality: "these two quantities, $\sin \theta$ and $\frac{b}{c}$, are the same." The statement should read, $\sin \theta$ is assigned to be the fraction $\frac{b}{c}$. 
-
-In fact, a better explanation would proceed like the following: for *any* right triangle with an angle $\theta$, the ratio of the length of the opposite side to the length of the hypotenuse is *always* the same (it's just a natural fact about right triangles). We denote that ratio as $\sin \theta$. 
+She asked, *why* is $\sin \theta$ *equal* to the quantity $\frac{\text{opposite}}{{hypotenuse}}$? She was interpreting this phrase to be an equality: "these two quantities, $\sin \theta$ and $\frac{b}{c}$, are the same." Instead, the statement should read, $\sin \theta$ is assigned to be the fraction $\frac{\text{opposite}}{{hypotenuse}}$. Really, what this statement says is that for *any* right triangle with an angle $\theta$, the ratio of the length of the opposite side of the angle to the length of the hypotenuse is *always* the same quantity no matter what the lengths actually are (it's just a natural fact about right triangles). This ratio for the angle $\theta$ is denoted $\sin \theta$. 
 
 Equality vs. definition when defining probabalistic models
 ----------------
