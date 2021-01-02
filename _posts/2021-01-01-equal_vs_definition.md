@@ -28,9 +28,6 @@ $$\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
 This is a definition. We are **assigning** the symbol/concept $\sin \theta$ to be the ratio of the length of the triangle's opposite side to the length of its hypotenuse.
 
-The fundamental difference between equality and definition
-----------------
-
 The fundamental difference between equality and definition is that in the the equality relationship between $X$ and $Y$, both the symbols $X$ and $Y$ are bound to entities -- that is, they "refer" to entities. The statement $Y = X$ is simply a comment about those two entities, namely, that they are the same.
 
 In contrast, in a definition, only one of the two symbols is bound to an entity. The act of stating a definition is the act of *binding a known entity to a new symbol*.  For example, the symbol "$\text{foo} \ \theta$" is meaningless. What exactly is "foo"?  We don't know because we have not defined it.
