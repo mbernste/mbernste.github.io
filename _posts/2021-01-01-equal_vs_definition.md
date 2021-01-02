@@ -38,33 +38,20 @@ In contrast, in a definition, only one of the two symbols is bound to an entity.
 Overloading the equal sign creates confusion
 ----------------
 
-Here's a story to illustrate how the overloading of the equal symbol creates confusion. My mom is a very curious person and over the last year, she has set out to (re)learn high school math and physics. It has been decades since she has seen the material, but she is steadily plugging away through pre-calculus and kinematics. Moreover, she doesn't just want to know the material, she wants to *really* know the material. She wants to know the essence of each concept. 
-
-She was quite confused when she came upon the statement, 
+Here's a story to illustrate how the overloading of the equal symbol creates confusion. My mom is a very curious person and over the last year, she has set out to (re)learn high school math and physics. It has been decades since she has seen the material, but she is steadily plugging away through pre-calculus and kinematics. She was quite confused when she came upon the statement, 
 
 $$\sin \theta = \frac{\text{opposite}}{{hypotenuse}}$$
 
-She asked, *why* is $\sin \theta$ *equal* to the quantity $\frac{\text{opposite}}{{hypotenuse}}$? She was interpreting this phrase to be an equality: "these two quantities, $\sin \theta$ and $\frac{b}{c}$, are the same." Instead, the statement should read, $\sin \theta$ is assigned to be the fraction $\frac{\text{opposite}}{{hypotenuse}}$. Really, what this statement says is that for *any* right triangle with an angle $\theta$, the ratio of the length of the opposite side of the angle to the length of the hypotenuse is *always* the same quantity no matter what the lengths actually are (it's just a natural fact about right triangles). This ratio for the angle $\theta$ is denoted $\sin \theta$. 
+She asked, why is $\sin \theta$ equal to the quantity $\frac{\text{opposite}}{{hypotenuse}}$? It was as if $\sin \theta$ were this utterly mysterious object that somehow, magically, is equal to the ratio of the length of the opposite side to the length of the hypotenuse. Her confusion was stemming from her interpreting this statement to be describing an equality -- "these two quantities, $\sin \theta$ and $\frac{b}{c}$, are the same" -- when it was meant to describe a definition. The statement should instead read, "$\sin \theta$ is defined to be the quantity $\frac{\text{opposite}}{{hypotenuse}}$". 
 
-Equality vs. definition when defining probabalistic models
-----------------
-
-In retrospect, the overloading of the equal sign to denote both equality and definition was a source of confusion early in grad school when I began learning more about probabilistic modeling. The confusion stems from the fact that, in some cases, one builds a probabilistic model by defining a joint distribution over multiple random variables and then deriving each variables marginal distribution. For example, for two random variables $X$ and $Y$ that are jointly distributed according to a multivariate normal distribution, we would say that 
-
-$$p(X, Y) = $$
-
-This is a definition. We are defining how to assign probabilities to joint assignments of $X$ and $Y$. Then, the marginal distribution of, say, $X$ is then 
-
-$$p(X) = $$
-
-This is an equality. The quantity $p(X)$ is the same quantity as the left-hand side.
-
-In other cases, especially when the variables are independent (or conditionally independent on some other variables), one can first define distributions over individual random variables or on conditional random variables and then derive their joint distribution.  
+Of course, there is still a little bit of mystery left in $\sin \theta$. One may ask, why would we ever care about such a definition. To which one would answer that it turns out, for *all* right triangle that have an angle $\theta$ between one of its sides and the hypotenuse, the ratio of the length of the opposite side to the length of the hypotenuse is *always* the same quantity no matter what those lengths are. Then, for some angle $\theta$, we denote this shared ratio as "$\sin \theta$". 
 
 ":=" instead of "="
 ----------------
 
-I'm a big fan of the symbol ":=" to denote definition. I prefer this symbol to the symbol "". 
+I think it's important to use the symbol ":=" to denote definition.  I prefer this symbol over the popular "\equiv" symbol because it emphasizes the assymetry of the statement.  That is, $X := Y$ means "use $X$ as a symbol for $Y$", which differs from "use $Y$ as a symbol for $X$." In contrast, the plain equal sign "=" is appropriately symmetric. 
+
+Using the appropriate symbol to distinguish definition statements from equality statements may go a long way, at lesat in proportion to the effort, towards alleviating confusion with novice readers.  
 
 
 
