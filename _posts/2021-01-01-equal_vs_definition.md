@@ -40,9 +40,9 @@ Overloading the equal sign creates confusion
 
 Here's a story to illustrate how the overloading of the equal symbol creates confusion. My mom is a very curious person and over the last year, she has set out to (re)learn high school math and physics. It has been decades since she has seen the material, but she is steadily plugging away through pre-calculus and kinematics. She was quite confused when she came upon the statement, 
 
-$$\sin \theta = \frac{\text{opposite}}{{hypotenuse}}$$
+$$\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
-She asked, why is $\sin \theta$ equal to the quantity $\frac{\text{opposite}}{{hypotenuse}}$? It was as if $\sin \theta$ were this utterly mysterious object that somehow, magically, is equal to the ratio of the length of the opposite side to the length of the hypotenuse. Her confusion was stemming from her interpreting this statement to be describing an equality -- "these two quantities, $\sin \theta$ and $\frac{b}{c}$, are the same" -- when it was meant to describe a definition. The statement should instead read, "$\sin \theta$ is defined to be the quantity $\frac{\text{opposite}}{{hypotenuse}}$". 
+She asked, why is $\sin \theta$ equal to the quantity $\frac{\text{opposite}}{\text{hypotenuse}}$? It was as if $\sin \theta$ were this utterly mysterious object that somehow, magically, is equal to the ratio of the length of the opposite side to the length of the hypotenuse. Her confusion was stemming from her interpreting this statement to be describing an equality -- "these two quantities, $\sin \theta$ and $\frac{b}{c}$, are the same" -- when it was meant to describe a definition. The statement should instead read, "$\sin \theta$ is defined to be the quantity $\frac{\text{opposite}}{{hypotenuse}}$". 
 
 Of course, there is still a little bit of mystery left in $\sin \theta$. One may ask, why would we ever care about such a definition. To which one would answer that it turns out, for *all* right triangle that have an angle $\theta$ between one of its sides and the hypotenuse, the ratio of the length of the opposite side to the length of the hypotenuse is *always* the same quantity no matter what those lengths are. Then, for some angle $\theta$, we denote this shared ratio as "$\sin \theta$". 
 
