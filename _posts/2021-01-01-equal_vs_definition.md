@@ -38,24 +38,22 @@ In contrast, in a definition, only one of the two symbols is bound to an entity.
 Overloading the equal sign creates confusion
 ----------------
 
-To illustrate how the overloading of the equal sign creates confusion, I'll tell a personal story. My mom is a very curious person and over the last year, she has set out to (re)-learn high school level math and physics. It has been decades since she has seen the material, but to her credit, she is slowly plugging away through pre-calculus and kinematics. Moreover, she doesn't just want to know the material, she wants to *really* know the material. She wants to know the essence of each concept. 
+Here's a story to illustrate how the overloading of the equal symbol creates confusion. My mom is a very curious person and over the last year, she has set out to (re)learn high school math and physics. It has been decades since she has seen the material, but she is steadily plugging away through pre-calculus and kinematics. Moreover, she doesn't just want to know the material, she wants to *really* know the material. She wants to know the essence of each concept. 
 
-So she was quite confused when she came upon the phrase, 
+So she was quite confused when she came upon the statement, 
 
 $$\sin \theta = \frac{\text{opposite}}{{hypotenuse}}$$
 
-She asked, *why* is $\sin \theta$ *equal* to the quantity $\frac{b}{c}$.  My interpretation of her question was, "what magic is happening inside of $\sin \theta$ that enables it to be $\frac{b}{c}?"
+She asked, *why* is $\sin \theta$ *equal* to the quantity $\frac{b}{c}$. Much more fundamentally, it seemed she was asking, *what* is the sine of an angle?  It so happens that the answer is right there in statement. The reason being is that the statement is a definition and not a statement of equality. 
 
-I tried to explain to her that $\sin \theta = \frac{b}{c}$ is a *definition*.  That is, $\sin \theta$ is defined to be $\frac{b}{c}$, and so there is nothing inherently mysterious about the strange symbol $\sin$.  She was interpreting this phrase to be an equality: "these two quantities, $\sin \theta$ and $\frac{b}{c}$, are the same."  
+Where she was interpreting this phrase to be an equality: "these two quantities, $\sin \theta$ and $\frac{b}{c}$, are the same." The statement should read, $\sin \theta$ is assigned to be the fraction $\frac{b}{c}$. 
 
-This explanation was only *partly* true because there is indeed some magic behind $\sin \theta$, but it requires a bit more explication to convey. First, let's take our right-triangle with edge lengths $a$, $b$, and $c$ that has an angle of $\theta$ between the $a$-length edge and $c$-length edge. Now, let's look at another right triangle with different edge lengths $a'$, $b'$, and $c'$, but it has the same angle $\theta$ between its $a'$-length edge and $c'$-length edge:  
+In fact, a better explanation would proceed like the following: for *any* right triangle with an angle $\theta$, the ratio of the length of the opposite side to the length of the hypotenuse is *always* the same (it's just a natural fact about right triangles). We denote that ratio as $\sin \theta$. 
 
+":=" instead of "="
+----------------
 
-It turns out that so long as $\theta$ is the same between the two triangles, the ratios $\frac{b}{c}$ and ${b'}{c'}$ will always be equal! That is, 
-
-$$\frac{b}{c} = \frac{b'}{c'}$$
-
-where "=" is equality here, not definition.  This is just a "natural law" of right-triangles. Furthermore, each unique angle between 0 and 90 degrees will be associated with a unique ratio of the length of the opposite side to the hypotenuse.  Thus, we can define a *function*, which we will call "sine" that when given an angle $\theta$, will spit out ratio of the length of the opposite side to the length of the hypotenuse. 
+I'm a big fan of the symbol ":=" to denote definition. I prefer this symbol to the symbol "". 
 
 
 
