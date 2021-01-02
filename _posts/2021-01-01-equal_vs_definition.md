@@ -13,7 +13,7 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 ----------
 
-I find it a little bit unfortunate that two of the most important relationships in mathematics, namely **equality** and **definition**, are often denoted using the exact same symbol: the equal sign ("="). Early in my learning days, I believe that this [overloading](https://en.wikipedia.org/wiki/Operator_overloading) of the equal sign led to way more confusion than necessary.  In fact, I believe I still have some residual confusion regarding many basic mathematical concepts that all originate from this unfortunate circumstance.  I am almost surely not the first person to point this out, but after a cursory Google search, I could not find an essay or article that expressed the nuance of my concern, so here I'll lay out it and also propose a remedy.
+I find it a little bit unfortunate that two of the most important relationships in mathematics, namely **equality** and **definition**, are often denoted using the exact same symbol: the equal sign ("="). Early in my learning days, I believe that this [overloading](https://en.wikipedia.org/wiki/Operator_overloading) of the equal sign led to way more confusion than necessary.  
 
 To ensure that we're on the same page, let's first define these two different relationships. Let's start with idea of **equality**.  Let's say we have two entities, which we will denote using the symbols $X$ and $Y$.  The statement "$X$ equals $Y$", denoted $X = Y$, means that $X$ and $Y$ **are the same thing**.  
 
