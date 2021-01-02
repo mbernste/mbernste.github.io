@@ -46,7 +46,7 @@ She asked, why is $\sin \theta$ equal to the quantity $\frac{\text{opposite}}{{h
 
 Of course, there is still a little bit of mystery left in $\sin \theta$. One may ask, why would we ever care about such a definition. To which one would answer that it turns out, for *all* right triangle that have an angle $\theta$ between one of its sides and the hypotenuse, the ratio of the length of the opposite side to the length of the hypotenuse is *always* the same quantity no matter what those lengths are. Then, for some angle $\theta$, we denote this shared ratio as "$\sin \theta$". 
 
-":=" instead of "="
+Use ":=" instead of "="
 ----------------
 
 I think it's important to use the symbol ":=" to denote definition.  I prefer this symbol over the popular "$\equiv$" symbol because it emphasizes the assymetry of the statement.  That is, $X := Y$ means "use $X$ as a symbol for $Y$", which differs from "use $Y$ as a symbol for $X$." In contrast, the plain equal sign "=" is appropriately symmetric. 
