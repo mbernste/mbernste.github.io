@@ -22,11 +22,11 @@ For example, let's say we have a right-triangle with edge lengths $a$, $b$ and $
 
 The [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) says that $a^2 + b^2 = c^2$. Said differently, the quantity $c^2$ *is the same quantity* as the quantity $a^2 + b^2$.
 
-Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$" is also denoted as $X = Y$.  For example, given the same right triangle with edge lengths $a$, $b$, and $c$, where we now we let $\theta$ be the angle between the hypotenuse and the edge whose length is $a$, we define the quantity $\sin \theta$ as the $\frac{b}{c}$.  That is,
+Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$", also often denoted $X = Y$, means that one should use the symbol "$X$" to refer to the entity referred to by "Y".  For example, in textbooks it is common to define the sine function for a right triangle as 
 
-$$\sin \theta = \frac{b}{c}$$
+$$\sin = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
-This is a definition. We are **assigning** the symbol/concept $\sin \theta$ to be the quantity $\frac{b}{c}$.
+This is a definition. We are **assigning** the symbol/concept $\sin \theta$ to be the ratio of the length of the triangle's opposite side to the length of its hypotenuse.
 
 The fundamental difference between equality and definition
 ----------------
