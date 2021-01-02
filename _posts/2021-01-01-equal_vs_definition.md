@@ -24,7 +24,7 @@ The [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) say
 
 Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$", also often denoted $X = Y$, means that one should use the symbol "$X$" to refer to the entity referred to by "Y".  For example, in textbooks it is common to define the sine function for a right triangle as 
 
-$$\sin = \frac{\text{opposite}}{\text{hypotenuse}}$$
+$$\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
 This is a definition. We are **assigning** the symbol/concept $\sin \theta$ to be the ratio of the length of the triangle's opposite side to the length of its hypotenuse.
 
