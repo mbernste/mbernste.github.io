@@ -22,15 +22,15 @@ For example, let's say we have a right-triangle with edge lengths $a$, $b$ and $
 
 The [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) says that $a^2 + b^2 = c^2$. Said differently, the quantity $c^2$ *is the same quantity* as the quantity $a^2 + b^2$.
 
-Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$", also often denoted $X = Y$, means that one should use the symbol "$X$" to refer to the entity referred to by "Y".  For example, in textbooks it is common to define the sine function for a right triangle as 
+Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$", also often denoted $X = Y$, means that one should use the symbol "$X$" to refer to the entity referred to by "Y".  
+
+For example, in textbooks it is common to define the sine function for a right triangle as 
 
 $$\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
 This is a definition. We are **assigning** the symbol/concept $\sin \theta$ to be the ratio of the length of the triangle's opposite side to the length of its hypotenuse.
 
-The fundamental difference between equality and definition is that in the the equality relationship between $X$ and $Y$, both the symbols $X$ and $Y$ are bound to entities -- that is, they "refer" to entities. The statement $Y = X$ is simply a comment about those two entities, namely, that they are the same.
-
-In contrast, in a definition, only one of the two symbols is bound to an entity. The act of stating a definition is the act of *binding a known entity to a new symbol*.  For example, the symbol "$\text{foo} \ \theta$" is meaningless. What exactly is "foo"?  We don't know because we have not defined it.
+The fundamental difference between equality and definition is that in the the equality relationship between $X$ and $Y$, both the symbols $X$ and $Y$ are bound to entities -- that is, they "refer" to entities. The statement $Y = X$ is simply a comment about those two entities, namely, that they are the same.  In contrast, in a definition, only one of the two symbols is bound to an entity. The act of stating a definition is the act of *binding a known entity to a new symbol*.  For example, the symbol "$\text{foo} \ \theta$" is meaningless. What exactly is "foo"?  We don't know because we have not defined it.
 
 Overloading the equal sign creates confusion
 ----------------
