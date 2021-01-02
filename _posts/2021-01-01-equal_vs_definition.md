@@ -41,7 +41,7 @@ $$\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
 She asked, why is $\sin \theta$ equal to the quantity $\frac{\text{opposite}}{\text{hypotenuse}}$? It was as if $\sin \theta$ were this utterly mysterious object that somehow, magically, is equal to the ratio of the length of the opposite side to the length of the hypotenuse. Her confusion arose from her erroneous interpretation of this statement as describing an equality -- i.e., "these two quantities, $\sin \theta$ and $\frac{\text{opposite}}{\text{hypotenuse}}$, are the same" -- when it was meant to describe a definition: "$\sin \theta$ is defined to be the quantity $\frac{\text{opposite}}{\text{hypotenuse}}$". 
 
-Of course, there may still be some mystery to $\sin \theta$, but it's the good kind of mystery. One may ask, why would we ever care to create such a definition? To which one could then answer: it's a useful definition because *all* right triangle with angle $\theta$ have the same ratio of the length of the opposite side to the length of the hypotenuse even if those lengths differ. For some angle $\theta$, we denote this shared ratio as "$\sin \theta$". 
+Of course, there may still be some mystery to $\sin \theta$, but it's the good kind of mystery. One may ask, why would we ever care to create such a definition? To which one could then answer: it's a useful definition because *all* right triangle with angle $\theta$ have the *same* ratio between the length of the opposite side to the length of the hypotenuse.  Interestingly, that ratio is the same even if those lengths differ. For some angle $\theta$, we denote this shared ratio as "$\sin \theta$". 
 
 Use ":=" instead of "=" for definitions
 ----------------
