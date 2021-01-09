@@ -1,12 +1,15 @@
 ---
 title: 'What you want from RNA-seq versus what you get'
-date: 2020-12-29
+date: 2021-01-07
 permalink: /posts/rnaseq_tpm_vs_median_ratio/
 tags:
   - tutorial
-  - mathematics
-  - intrinsic dimensionality
+  - bioinformatics
+  - RNA-seq
+  - gene expression
 ---
+
+THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
 Introduction
 ---------
