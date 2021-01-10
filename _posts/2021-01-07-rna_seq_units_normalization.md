@@ -72,7 +72,7 @@ More rigorously, let $c_i$ be the number of reads aligning to gene $i$.  Let $N$
 
 $$\text{CPM}_i := \frac{c_i}{N} \times 10^6$$
 
-Normalizing read counts to account for gene length
+Transcripts per million
 ----------------
 
 
