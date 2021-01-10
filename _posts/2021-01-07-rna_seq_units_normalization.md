@@ -61,20 +61,21 @@ Let's say in our toy example the Blue gene is 4 bases long, the Green gene is 7 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_reads_vs_transcript_abundance.png" alt="drawing" width="700"/></center>
 
-Notice how these fractions differ from the fraction of transcripts that originate from each gene. Notably, the fraction of the reads from the Green gene is higher than the fraction of transcripts from the Green gene. This is because the Green gene is long and thus, when we sample locations along the transcript, we are more likely to select locations along a Green gene.  To counteract this effect, we need only divide each each gene's fraction of reads its gene length to recover the fraction of transcripts.
+Notice how these fractions differ from the fraction of transcripts that originate from each gene. Notably, the fraction of the reads from the Green gene is higher than the fraction of transcripts from the Green gene. This is because the Green gene is long and thus, when we sample locations along the transcript, we are more likely to select locations along a Green gene.  In the next section, we will discuss how to counteract this effect in order to recover the fraction of transcripts from each gene.
 
-Counts per million vs. transcripts per million
+Estimating the fraction of transcripts from each gene from read counts
 ----------
 
-If one does not care to compare the expression of two different genes *within* a sample, but rather, only cares to compare the expression of a gene *between* samples, then these read fractions *may* be okay (see caveats below in the section titled, *Estimating absolute abundance via median-ratio normalization*) because they will be *proportional* to the transcript fractions (with a proportionality constant equal to the inverse of the length of the gene).  
+Before we get started, let's define some quick mathematical notation:
 
-Because we are dealing with tens of thousands of genes, these fractions may be extremely small. In order to avoid dealing with very small numbers (which may help to avoid numerical underflow), it is common to multiply these read fractions by one million. Read count fractions multiplied by one million are called **counts per million (CPM)**.  
+1. Let $G$ be the number of genes (in our toy example, $G = 3$). 
+2. Let $N$ be the number of reads.
+3. Let $l_i$ be the length of gene $i$.
+4. Let $t_i$ be the number of transcritps from gene $i$ in our original sampel.
 
-More rigorously, let $c_i$ be the number of reads aligning to gene $i$.  Let $N$ be the total number of reads in the RNA-seq sample.  Then the counts per million for gene $i$ is given by:
 
-$$\text{CPM}_i := \frac{c_i}{N} \times 10^6$$
 
-If we do need to look at differences in expression between genes *within* a sample, then we will need to account for gene length.  That is, we will need to calculate the estimated fraction of transcripts in the sample. 
+
 
 
 A note on RPKM and FPKM
