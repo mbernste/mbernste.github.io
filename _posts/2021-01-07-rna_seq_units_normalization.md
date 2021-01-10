@@ -71,12 +71,25 @@ Before we get started, let's define some quick mathematical notation:
 
 1. Let $G$ be the number of genes (in our toy example, $G = 3$). 
 2. Let $N$ be the number of reads.
+3. Let $c_i$ be the number of reads aligning to gene $i$.
 3. Let $l_i$ be the length of gene $i$.
 4. Let $t_i$ be the number of transcritps from gene $i$ in our original sample.
 
 Now let's look at the quantity that we are after, the fraction of transcripts from each gene:
 
-$$\frac{t_i}{\sum_{j=1}^G t_j$$
+$$\text{Fraction of transcripts from gene $i$} = \frac{t_i}{\sum_{j=1}^G t_j}$$
+
+How do we estimate this from our read counts?  For gene $i$, we have $c_i$ reads that align to that gene.  The fraction of all reads from gene $i$ is thus 
+
+$$\text{Fraction of reads from gene $i$} = \frac{c_i}{N}$$ 
+
+How do we relate this value to the fraction of transcripts from gene $i$?  Recall that each read can be thought of as a random sample from the set of all possible locations along the transcripts in the sample.  The number of possible start sites long a transcript from a gene $i$ is the length of gene $i$, denoted $l_i$. The number of possible start sites for all transcripts from gene $i$ is thus $l_i t_i$.  Therefore, the fraction of reads that we would expect from gene $i$ is
+
+$$\text{Fraction of reads from gene $i$} = \frac{l_i t_i}{\frac{j=1}^G {l_j t_j}}$$
+
+Now we see that
+
+$$\frac{c_i}{N} = \frac{l_i t_i}{\frac{j=1}^G {l_j t_j}}$$
 
 
 
