@@ -25,7 +25,7 @@ RNA-seq is a procedure for estimating the relative abundances of transcripts fro
 
 In this toy example, we have 13 total transcripts: 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts. 
 
-RNA-seq provides the **relative abundance** of transcripts from each gene.  That is, rather than the provide the **absolute abundance** -- that is, the values 7, 4, and 2 -- RNA-seq provides the fraction of transcripts from each gene: 
+RNA-seq estimates the *fraction* of transcripts from each gene.  That is, rather than the estimate the **absolute abundance** -- in our toy example, the values 7, 4, and 2 -- RNA-seq estimates the **relative abundance** of transcripts from each gene: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_transcript_abundance.png" alt="drawing" width="400"/></center>
 
