@@ -16,8 +16,8 @@ Introduction
 
 At a high level RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single).  The type of data that RNA-seq provides is relatively complex and because of this complexity, there is a good amount of confusion regarding the units of gene expression derived from RNA-seq data and the various methods used for normalizing these expression measurements across samples. In this post, I will discuss how the various normalization methods that are used in RNA-seq analysis result from the following problem: RNA-seq provides a measurement of *relative* gene expression between genes rather than *absolute* gene expression.  I believe that this discrepancy is the cause for much confusion regarding the various units of gene expression derived from RNA-seq as well as the methods for normalizing those measurements between samples.
 
-The steps of an RNA-seq experiment
------------
+Inputs and outputs
+---------
 
 RNA-seq is a procedure for estimating the relative abundances of transcripts from each gene in a sample.  The input to an RNA-seq experiment is a subset of RNA molecules (i.e., transcripts) from a biological sample. Below, we depict a set of transcripts where each transcript is colored according to the gene from which it was derived (Blue, Green, Yellow):
 
@@ -28,7 +28,10 @@ In this toy example, we have 13 total transcripts: 7 transcripts from the Blue g
 RNA-seq provides the **relative abundance** of transcripts from each gene.  That is, rather than the provide the **absolute abundance** -- that is, the values 7, 4, and 2 -- RNA-seq provides the fraction of transcripts from each gene: 
 
 
-Now that we see what RNA-seq provides, let's look at how RNA-seq works.  The full RNA-seq protocol requires both physical and computational steps. 
+The steps of an RNA-seq experiment
+-----------
+
+Now that we have looked at the inputs and outputs to an RNA-seq experiment, let's dig into its steps:
 
 1. **RNA isolation:** Isolate RNA molecules from a cell or population of cells. 
 2. **Fragmentation:** Break RNA molecules into fragments.
@@ -38,8 +41,7 @@ Now that we see what RNA-seq provides, let's look at how RNA-seq works.  The ful
 7. **Alignment:** Align the reads to the genome. That is, we wish to find a character-to-character match between each read and a location within the genome.  This is a challenging computational task given that genomes consist of billions of bases and we are dealing with millions of reads. (New algorithms, such as [kallisto](https://www.nature.com/articles/nbt.3519) and [Salmon](https://www.nature.com/articles/nmeth.4197), circumvent the computationally expensive task of performing character-to-character alignment.)
 8. **Quantification:** For each gene, count the number of reads that align to the gene. (Because of noise and reads that align to multiple genes, one performs [statistical inference](https://academic.oup.com/bioinformatics/article/26/4/493/243395); however, for the purposes of this post, counting will suffice to explain to the general ideas).
 
-By design, each step of the RNA-seq protocol preserves, in expectation, the relative abundance of each transcript so that at the end, you are able to estimate the relative abundances of each transcript.  Here's a figure illustrating all of these steps:
-
+By design, each step of the RNA-seq protocol preserves, in expectation, the relative abundance of each transcript so that at the end, one is able to estimate the relative abundances of each transcript.  Here's a figure illustrating all of these steps:
 
 Distilling RNA-seq down to its essence
 -----------
