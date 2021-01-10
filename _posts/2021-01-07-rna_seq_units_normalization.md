@@ -59,7 +59,7 @@ Because we are sampling *locations* along all of the transcripts in the sample, 
 
 Let's say in our toy example the Blue gene is 4 bases long, the Green gene is 7 bases long, and the yellow gene is 2 bases long.  Then, the expected fraction of locations/reads sampled from each transcript will be the following:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_reads_vs_transcript_abundance.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_reads_vs_transcript_abundance.png" alt="drawing" width="700"/></center>
 
 Notice how these fractions differ from the fraction of transcripts that originate from each gene. Notably, the fraction of the reads from the Green gene is higher than the fraction of transcripts from the Green gene. This is because the Green gene is long and thus, when we sample locations along the transcript, we are more likely to select locations along a Green gene. 
 
