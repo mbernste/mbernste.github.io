@@ -44,6 +44,8 @@ Now that we have looked at the inputs and outputs to an RNA-seq experiment, let'
 
 By design, each step of the RNA-seq protocol preserves, in expectation, the relative abundance of each transcript so that at the end, one is able to estimate the relative abundances of each transcript.  Here's a figure illustrating all of these steps:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_schematic.png" alt="drawing" width="700"/></center>
+
 Distilling RNA-seq down to its essence
 -----------
 
