@@ -41,7 +41,7 @@ Now that we see what RNA-seq provides, let's look at how RNA-seq works.  The ful
 By design, each step of the RNA-seq protocol preserves, in expectation, the relative abundance of each transcript so that at the end, you are able to estimate the relative abundances of each transcript.  Here's a figure illustrating all of these steps:
 
 
-Distilling RNA-seq to its essence
+Distilling RNA-seq down to its essence
 -----------
 
 All of the aforementioned steps may seem little complex, so let me try to distill the RNA-seq process down to its essence. At the end of the day, one may view an RNA-seq experiment as a *sampling process*, where we randomly sample *locations* along the transcripts in the sample. That is, each read is viewed as a *sampled location*.  
