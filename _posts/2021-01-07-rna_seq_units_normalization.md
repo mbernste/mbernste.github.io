@@ -27,6 +27,7 @@ In this toy example, we have 13 total transcripts: 7 transcripts from the Blue g
 
 RNA-seq provides the **relative abundance** of transcripts from each gene.  That is, rather than the provide the **absolute abundance** -- that is, the values 7, 4, and 2 -- RNA-seq provides the fraction of transcripts from each gene: 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_transcript_abundance.png" alt="drawing" width="500"/></center>
 
 The steps of an RNA-seq experiment
 -----------
