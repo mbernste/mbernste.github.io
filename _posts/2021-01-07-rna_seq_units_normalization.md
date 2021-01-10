@@ -95,7 +95,7 @@ $$\hat{p}_i = \frac{c_i}{N}$$
 
 Finally, we estimate $\theta$ as 
 
-$$\hat{\theta} := \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1}$$
+$$\hat{\theta}_i := \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1}$$
 
 Which can be derived as follows:
 
