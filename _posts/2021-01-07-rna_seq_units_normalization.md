@@ -1,5 +1,5 @@
 ---
-title: 'A primer on RNA-seq and what it provides'
+title: 'A primer on RNA-seq'
 date: 2021-01-07
 permalink: /posts/rnaseq_tpm_vs_median_ratio/
 tags:
@@ -19,22 +19,36 @@ At a high level RNA sequencing (RNA-seq) measures the transcription of each gene
 A high-level primer on RNA-seq
 -----------
 
-Let's start with the input to an RNA-seq experiment. The input to an RNA-seq experiment is a random subset of RNA molecules (i.e., transcripts) in a biological sample. Below, we depict a set of transcripts where each transcript is colored according to the gene from which it was derived (Blue, Green, Yellow):
+RNA-seq is a procedure for estimating the relative abundances of transcripts from each gene in a sample.  The input to an RNA-seq experiment is a subset of RNA molecules (i.e., transcripts) from a biological sample. Below, we depict a set of transcripts where each transcript is colored according to the gene from which it was derived (Blue, Green, Yellow):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_input.png" alt="drawing" width="500"/></center>
 
-In an ideal world, we would have a procedure to tell us exactly how many transcripts in our sample origiante from each gene.  That is, our procedure would tell us that we have 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. These values are the **absolute expression** of each gene. Unfortunately, RNA-seq does provide such measurements.  (Note that these numbers are just a toy example. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts.) 
+In this toy example, we have 13 total transcripts: 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts.) 
 
-So what does RNA-seq provide? Essentially, each RNA-seq sequencing read can be thought of as a *location* that was randomly sampled from all possible locations within the transcripts in the sample. The sum of the reads aligning to each gene can be understood to be the sum of all of these sampled locations. This can be visualized as follows:
+RNA-seq provides the **relative abundance** of transcripts from each gene.  That is, rather than the provide the **absolute abundance** -- that is, the values 7, 4, and 2 -- RNA-seq provides the fraction of transcripts from each gene: 
+
+
+Now that we see what RNA-seq provides, let's look at how RNA-seq works.  The full RNA-seq protocol requires both physical and computational steps. 
+
+1. **RNA isolation:** Isolate RNA molecules from a cell or population of cells. 
+2. **Fragmentation:** Break RNA molecules into fragments.
+3. **Reverse transcription:** Reverse transcribe the RNA into DNA.
+4. **Amplification:** Amplify the DNA molecules using [polymerase chain reaction](https://en.wikipedia.org/wiki/Polymerase_chain_reaction).
+5. **Sequencing:** Feed the amplified DNA fragments to a sequencer.  The sequencer randomly samples fragments and records a short subsequence from the end (or both ends) of the fragment (on the order of a few hundred bases). These measured subsequences are called **sequencing reads**.  A sequencing experiment generates millions of reads that are stored on a digital file.
+7. **Alignment:** Align the reads to the genome. That is, we wish to find a character-to-character match between each read and a location within the genome.  This is a challenging computational task given that genomes consist of billions of bases and we are dealing with millions of reads. (New algorithms, such as [kallisto](https://www.nature.com/articles/nbt.3519) and [Salmon](https://www.nature.com/articles/nmeth.4197), circumvent the computationally expensive task of performing character-to-character alignment.)
+8. **Quantification:** For each gene, count the number of reads that align to the gene. (Because of noise and reads that align to multiple genes, one performs [statistical inference](https://academic.oup.com/bioinformatics/article/26/4/493/243395); however, for the purposes of this post, counting will suffice to explain to the general ideas).
+
+By design, each step of the RNA-seq protocol preserves, in expectation, the relative abundance of each transcript so that at the end, you are able to estimate the relative abundances of each transcript.  Here's a figure illustrating all of these steps:
+
+
+
+
+This may seem a little complex, so let me try to distill this process down to its essence. At the end of the day, one may view an RNA-seq experiment as a sampling process, where we randomly sample *locations* along the transcripts in the sample where each read is viewed as a *sampled location*.  Let's take the toy example from above that had 13 transcripts from three genes (Blue, Green, and Yellow).  If our RNA-seq experiment generated 10 reads, then we can view these 10 reads as randomly sampled locations from anywhere along the 13 transcripts:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_read_locations.png" alt="drawing" width="700"/></center>
 
-These counts are the raw numerical measurements that an RNA-seq experiment provides.  
 
-What RNA-seq gives you versus what you want
--------------
 
-These sampled locations do not tell us the absolute expression of each gene.
 
 
 
