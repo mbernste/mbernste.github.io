@@ -34,7 +34,7 @@ The steps of an RNA-seq experiment
 
 Now that we have looked at the inputs and outputs to an RNA-seq experiment, let's dig into its steps:
 
-1. **RNA isolation:** Isolate RNA molecules from a cell or population of cells. 
+1. **Isolation:** Isolate RNA molecules from a cell or population of cells. 
 2. **Fragmentation:** Break RNA molecules into fragments.
 3. **Reverse transcription:** Reverse transcribe the RNA into DNA.
 4. **Amplification:** Amplify the DNA molecules using [polymerase chain reaction](https://en.wikipedia.org/wiki/Polymerase_chain_reaction).
@@ -61,9 +61,9 @@ Let's say in our toy example the Blue gene is 4 bases long, the Green gene is 7 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_reads_vs_transcript_abundance.png" alt="drawing" width="700"/></center>
 
-Notice how these fractions differ from the fraction of transcripts that originate from each gene. Notably, the fraction of the reads from the Green gene is higher than the fraction of transcripts from the Green gene. This is because the Green gene is long and thus, when we sample locations along the transcript, we are more likely to select locations along a Green gene. 
+Notice how these fractions differ from the fraction of transcripts that originate from each gene. Notably, the fraction of the reads from the Green gene is higher than the fraction of transcripts from the Green gene. This is because the Green gene is long and thus, when we sample locations along the transcript, we are more likely to select locations along a Green gene.  To counteract this effect, we need only divide each each gene's fraction of reads its gene length to recover the fraction of transcripts.
 
-Counts per million
+Counts per million vs. transcripts per million
 ----------
 
 If one does not care to compare the expression of two different genes *within* a sample, but rather, only cares to compare the expression of a gene *between* samples, then these read fractions *may* be okay (see caveats below in the section titled, *Estimating absolute abundance via median-ratio normalization*) because they will be *proportional* to the transcript fractions (with a proportionality constant equal to the inverse of the length of the gene).  
@@ -74,9 +74,7 @@ More rigorously, let $c_i$ be the number of reads aligning to gene $i$.  Let $N$
 
 $$\text{CPM}_i := \frac{c_i}{N} \times 10^6$$
 
-Transcripts per million
-----------------
-
+If we do need to look at differences in expression between genes *within* a sample, then we will need to account for gene length.  That is, we will need to calculate the estimated fraction of transcripts in the sample. 
 
 
 A note on RPKM and FPKM
