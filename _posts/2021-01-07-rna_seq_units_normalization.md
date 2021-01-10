@@ -70,7 +70,7 @@ If one does not care to compare the expression of two different genes *within* a
 
 More rigorously, let $c_i$ be the number of reads aligning to gene $i$.  Let $N$ be the total number of reads in the RNA-seq sample.  Then the counts per million for gene $i$ is given by:
 
-$$\text{CPM}_i := \frac{c_i}{N} \times 1e^6$$
+$$\text{CPM}_i := \frac{c_i}{N} \times 10^6$$
 
 Normalizing read counts to account for gene length
 ----------------
