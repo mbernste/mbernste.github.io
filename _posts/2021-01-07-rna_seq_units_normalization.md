@@ -25,7 +25,9 @@ Let's start with the input to an RNA-seq experiment. The input to an RNA-seq exp
 
 In an ideal world, we would have a procedure to tell us exactly how many transcripts in our sample origiante from each gene.  That is, our procedure would tell us that we have 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. These values are the **absolute expression** of each gene. Unfortunately, RNA-seq does provide such measurements.  (Note that these numbers are just a toy example. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts.) 
 
-So what does RNA-seq provide? To understand what RNA-seq provides, we need to understand what RNA-seq does.  Essentially, RNA-seq repeatedly samples *locations* along any of the transcripts in the sample (these are the sequencing reads). If you sum up all of the sampled locations, then you get a **count** for each gene gene. This can be visualized as follows:
+So what does RNA-seq provide? Essentially, each RNA-seq sequencing read can be thought of as a *location* that was randomly sampled from all possible locations within the transcripts in the sample. The sum of the reads aligning to each gene can be understood to be the sum of all of these sampled locations. This can be visualized as follows:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_read_locations.png" alt="drawing" width="700"/></center>
 
 These counts are the raw numerical measurements that an RNA-seq experiment provides.  
 
