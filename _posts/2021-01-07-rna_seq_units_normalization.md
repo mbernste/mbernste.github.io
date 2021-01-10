@@ -16,7 +16,7 @@ Introduction
 
 At a high level RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single).  The type of data that RNA-seq provides is relatively complex and because of this complexity, there is a good amount of confusion regarding the units of gene expression derived from RNA-seq data and the various methods used for normalizing these expression measurements across samples. In this post, I will discuss how the various normalization methods that are used in RNA-seq analysis result from the following problem: RNA-seq provides a measurement of *relative* gene expression between genes rather than *absolute* gene expression.  I believe that this discrepancy is the cause for much confusion regarding the various units of gene expression derived from RNA-seq as well as the methods for normalizing those measurements between samples.
 
-A high-level primer on RNA-seq
+The steps of an RNA-seq experiment
 -----------
 
 RNA-seq is a procedure for estimating the relative abundances of transcripts from each gene in a sample.  The input to an RNA-seq experiment is a subset of RNA molecules (i.e., transcripts) from a biological sample. Below, we depict a set of transcripts where each transcript is colored according to the gene from which it was derived (Blue, Green, Yellow):
@@ -41,9 +41,12 @@ Now that we see what RNA-seq provides, let's look at how RNA-seq works.  The ful
 By design, each step of the RNA-seq protocol preserves, in expectation, the relative abundance of each transcript so that at the end, you are able to estimate the relative abundances of each transcript.  Here's a figure illustrating all of these steps:
 
 
+Distilling RNA-seq to its essence
+-----------
 
+All of the aforementioned steps may seem little complex, so let me try to distill the RNA-seq process down to its essence. At the end of the day, one may view an RNA-seq experiment as a *sampling process*, where we randomly sample *locations* along the transcripts in the sample. That is, each read is viewed as a *sampled location*.  
 
-This may seem a little complex, so let me try to distill this process down to its essence. At the end of the day, one may view an RNA-seq experiment as a sampling process, where we randomly sample *locations* along the transcripts in the sample where each read is viewed as a *sampled location*.  Let's take the toy example from above that had 13 transcripts from three genes (Blue, Green, and Yellow).  If our RNA-seq experiment generated 10 reads, then we can view these 10 reads as randomly sampled locations from anywhere along the 13 transcripts:
+Let's take the toy example from above that consisted of 13 transcripts from three genes: 7 from the Blue gene, 4 from the Green gene, and 2 from the Yellow gene.  If our RNA-seq experiment generated 10 reads, then we can view these 10 reads as randomly sampled locations from anywhere along the 13 transcripts:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_read_locations.png" alt="drawing" width="700"/></center>
 
