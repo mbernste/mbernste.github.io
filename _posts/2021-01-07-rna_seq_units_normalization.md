@@ -74,30 +74,28 @@ Before we get started, let's define some quick mathematical notation:
 3. Let $c_i$ be the number of reads aligning to gene $i$.
 3. Let $l_i$ be the length of gene $i$.
 4. Let $t_i$ be the number of transcripts from gene $i$ in our original sample.
-5. Let $n_i$ be the number of bases, over all transcripts, from gene $i$ in our sample.
-6. Let $p_i$ be the probability of selecting a read that originates from gene $i$.
 
 Now let's look at the quantity that we are after, the fraction of transcripts from each gene, which we will denote as $\theta_i$:
 
-$$\theta_i = \frac{t_i}{\sum_{j=1}^G t_j}$$
+$$\theta_i := \frac{t_i}{\sum_{j=1}^G t_j}$$
 
 How do we estimate this from our read counts?  First, we realize that the total number of bases belonging to gene $i$ in the cell is given by 
 
-$$n_i = l_it_i$$
+$$n_i := l_it_i$$
 
 That is, it is simply the length of gene $i$ (i.e., the number of base-pairs long) multiplied by the number of transcripts from gene $i$. Recall that each read can be thought of as a random sample from the set of all possible locations along the transcripts in the sample. In this light, $n_i$ represents the total number of possible start sites for a given read from gene $i$.  Therefore, the fraction of reads we would expect to see from gene $i$ is 
 
 $$p_i := \frac{n_i}{\sum_{j=1}^G n_j}$$
 
-We can *estimate* $p_i$ from our counts via maximum likelihood:
+This is the probability that if we select a read, that read will have originated from gene $i$.  This is simply the probability parameter for a [Bernoulli random variable](https://en.wikipedia.org/wiki/Bernoulli_distribution), and thus, its maximum likelihood estimate is simply:
 
-$$\hat{p}_i = \frac{c_i}{N}$$
+$$\hat{p}_i := \frac{c_i}{N}$$
 
-Finally, we estimate $\theta$ as 
+With our estimated $\hat{p}_i, we can then estimate $\hat{theta}_i$ as follows:
 
 $$\hat{\theta}_i := \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1}$$
 
-Which can be derived as follows:
+At first glance, this might be a little bit confusing so let's derive it:
 
 $$\begin{align*}\theta_i = \frac{t_i}{\sum_{j=1}^G t_j}\end{align*}$$
 
