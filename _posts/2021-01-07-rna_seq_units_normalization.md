@@ -57,21 +57,21 @@ Estimating the fraction of transcripts from each gene
 
 Before we get started, let's define some quick mathematical notation:
 
-1. Let $G$ be the number of genes (in our toy example, $G = 3$). 
-2. Let $N$ be the number of reads.
+1. Let $G$ be the number of genes. In our toy example, $G = 3$ -- that is, we have three genes: the Blue gene, the Green gene, and the Yellow gene. 
+2. Let $N$ be the number of reads. 
 3. Let $c_i$ be the number of reads aligning to gene $i$.
-3. Let $l_i$ be the length of gene $i$.
-4. Let $t_i$ be the number of transcripts from gene $i$ in our original sample.
+4. Let $t_i$ be the number of transcripts from gene $i$ in the sample. In our toy example,  $l_{\text{Blue}} := 7$, $l_{\text{Green}} := 4$, and $t_{\text{Yellow}} := 2$.
+5. Let $l_i$ be the length of gene $i$. In our toy example, $l_{\text{Blue}} := 4$, $l_{\text{Green}} := 7$, and $l_{\text{Yellow}} := 2$.
 
 Now let's look at the quantity that we are after, the fraction of transcripts from each gene, which we will denote as $\theta_i$:
 
 $$\theta_i := \frac{t_i}{\sum_{j=1}^G t_j}$$
 
-How do we estimate this from our read counts?  First, we realize that the total number of bases belonging to gene $i$ in the cell is given by 
+How do we estimate this from our read counts?  First, we realize that the total number of bases belonging to gene $i$ in the sample can be computed by multiplying the length of gene $i$ by the number of transcripts from gene $i$: 
 
 $$n_i := l_it_i$$
 
-That is, it is simply the length of gene $i$ (i.e., the number of base-pairs long) multiplied by the number of transcripts from gene $i$. Recall that each read can be thought of as a random sample from the set of all possible locations along the transcripts in the sample. In this light, $n_i$ represents the total number of possible start sites for a given read from gene $i$.  Therefore, the fraction of reads we would expect to see from gene $i$ is 
+Furthermore, recall that each read can be thought of as a random sample from the set of all possible locations along the transcripts in the sample. In this light, $n_i$ represents the total number of possible start sites for a given read from gene $i$.  Therefore, the fraction of reads we would expect to see from gene $i$ is 
 
 $$p_i := \frac{n_i}{\sum_{j=1}^G n_j}$$
 
