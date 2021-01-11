@@ -14,13 +14,9 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 ---------
 
-At a high level RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single).  The type of data that RNA-seq provides is relatively complex and because of this complexity, there is a good amount of confusion regarding the units of gene expression derived from RNA-seq data and the various methods used for normalizing these expression measurements across samples. In this post, I will discuss how the various normalization methods that are used in RNA-seq analysis result from the following problem: RNA-seq provides a measurement of *relative* gene expression between genes rather than *absolute* gene expression.  I believe that this discrepancy is the cause for much confusion regarding the various units of gene expression derived from RNA-seq as well as the methods for normalizing those measurements between samples.
+At a high level RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single).  The type of data that RNA-seq provides is relatively complex and because of this complexity, there is a good amount of confusion regarding the units of gene expression derived from RNA-seq data and the various methods used for normalizing these expression measurements across samples. In this post, I will review the RNA-seq protocol and explain how to interpret the various normalization procedures and resulting units for measuring gene expression. 
 
-
-The steps of an RNA-seq experiment
------------
-
-RNA-seq comprises the following general steps:
+Before getting started, let's review the RNA-seq protocol. RNA-seq comprises the following general steps:
 
 1. **Isolation:** Isolate RNA molecules from a cell or population of cells. 
 2. **Fragmentation:** Break RNA molecules into fragments.
@@ -41,9 +37,9 @@ RNA-seq is a procedure for estimating the relative abundances of transcripts fro
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_input.png" alt="drawing" width="700"/></center>
 
-In this toy example, we have 13 total transcripts: 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts. 
+In this toy example, we have 13 total transcripts: 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts. RNA-seq provides the **relative** number of transcripts from each gene rather than the **absolute number**.  That is, RNA-seq provides an estimate of the fraction of transcripts originating from each gene out of all transcripts in the sample. 
 
-At the end of the day, one may view RNA-seq as a *sampling process*, where we randomly sample *locations* along the transcripts in the sample. That is, each read is viewed as a *sampled location*.  If our RNA-seq experiment generated 10 reads, then we can view these 10 reads as randomly sampled locations from anywhere along the 13 transcripts:
+To see how this is, we will take an abstract view of the RNA-seq procedure. Specifically, one may view RNA-seq as a *sampling process*, where we randomly sample *locations* along all of the transcripts in the sample. That is, each read is viewed as a *sampled location* from some transcript in the sample.  If our RNA-seq experiment generated 10 reads, then we can view these 10 reads as randomly sampled locations from anywhere along the 13 aforementioned transcripts:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_read_locations.png" alt="drawing" width="700"/></center>
 
