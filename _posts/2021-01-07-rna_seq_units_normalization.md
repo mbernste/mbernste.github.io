@@ -16,7 +16,15 @@ Introduction
 
 At a high level RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single).  The type of data that RNA-seq provides is relatively complex and because of this complexity, there is a good amount of confusion regarding the units of gene expression derived from RNA-seq data and the various methods used for normalizing these expression measurements across samples. In this post, I will review the RNA-seq protocol and explain how to interpret the various normalization procedures and resulting units for measuring gene expression.  This post will assume a basic understanding of the [Central Dogma](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology) of molecular biology.
 
-Before getting started, let's review the RNA-seq protocol. RNA-seq comprises the following general steps:
+Before getting started, let's review the inputs and outputs of an RNA-seq protocol. We're given a biological sample consisting of a cell or a population of cells, and our goal is to estimate the fraction of transcripts in the sample that originate from each gene. A toy example is depicted below where the genome consists only of three genes: a Blue gene, a Green gene, and a Yellow gene.
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_input_output.png" alt="drawing" width="700"/></center>
+
+
+Overview of RNA-seq
+--------
+
+RNA-seq comprises the following general steps:
 
 1. **Isolation:** Isolate RNA molecules from a cell or population of cells. 
 2. **Fragmentation:** Break RNA molecules into fragments.
