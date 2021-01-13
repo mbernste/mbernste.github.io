@@ -88,6 +88,9 @@ At first glance, this might be a little bit confusing so let's derive it:
 $$\begin{align*}\theta_i = \frac{t_i}{\sum_{j=1}^G t_j}\end{align*}$$
 
 
+RPKM/FPKM versus TPM: which one to use?
+-----------
+
 
 
 
