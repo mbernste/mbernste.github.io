@@ -52,7 +52,7 @@ Let's say in our toy example the Blue gene is 4 bases long, the Green gene is 7 
 Notice how these fractions differ from the fraction of transcripts that originate from each gene. Notably, the fraction of the reads from the Green gene is higher than the fraction of transcripts from the Green gene. This is because the Green gene is long and thus, when we sample locations along the transcript, we are more likely to select locations along a Green gene.  In the next section, we will discuss how to counteract this effect in order to recover the fraction of transcripts from each gene.
 
 
-Estimating the fraction of transcripts from each gene
+Estimating transcripts per million (i.e., the fraction of transcripts from each gene)
 ----------
 
 Before we get started, let's define some quick mathematical notation:
