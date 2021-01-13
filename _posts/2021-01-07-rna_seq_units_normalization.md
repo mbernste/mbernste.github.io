@@ -14,7 +14,7 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 ---------
 
-At a high level RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single).  The type of data that RNA-seq provides is relatively complex and because of this complexity, there is a good amount of confusion regarding the units of gene expression derived from RNA-seq data and the various methods used for normalizing these expression measurements across samples. In this post, I will review the RNA-seq protocol and explain how to interpret the various normalization procedures and resulting units for measuring gene expression. 
+At a high level RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single).  The type of data that RNA-seq provides is relatively complex and because of this complexity, there is a good amount of confusion regarding the units of gene expression derived from RNA-seq data and the various methods used for normalizing these expression measurements across samples. In this post, I will review the RNA-seq protocol and explain how to interpret the various normalization procedures and resulting units for measuring gene expression.  This post will assume a basic understanding of the [Central Dogma](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology) of molecular biology.
 
 Before getting started, let's review the RNA-seq protocol. RNA-seq comprises the following general steps:
 
@@ -71,7 +71,7 @@ How do we estimate this from our read counts?  First, we realize that the total 
 
 $$n_i := l_it_i$$
 
-Furthermore, recall that each read can be thought of as a random sample from the set of all possible locations along the transcripts in the sample. In this light, $n_i$ represents the total number of possible start sites for a given read from gene $i$.  Therefore, the fraction of reads we would expect to see from gene $i$ is 
+This is the total number of RNA bases within all of the RNA transcripts floating around in the cells in the sample that originated from gene $i$.  Furthermore, recall that each read can be thought of as a random sample from the set of all possible locations along the transcripts in the sample. In this light, $n_i$ represents the total number of possible start sites for a given read from gene $i$.  Therefore, the fraction of reads we would expect to see from gene $i$ is 
 
 $$p_i := \frac{n_i}{\sum_{j=1}^G n_j}$$
 
