@@ -37,7 +37,7 @@ Here's a an overview of the genral steps that comprise the RNA-seq protocol:
 
 By design, each step of the RNA-seq protocol preserves, in expectation, the relative abundance of each transcript so that at the end, one is able to estimate the relative abundances of each transcript.  Here's a figure illustrating all of these steps (Take from [Bernstein, 2019](https://search.proquest.com/openview/af4f51ec373a0b13438c59e7731adeed/1?pq-origsite=gscholar&cbl=18750&diss=y)):
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_schematic.png" alt="drawing" width="700"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_schematic.png" alt="drawing" width="800"/></center>
 
 An abstracted overview of RNA-seq
 -----------
