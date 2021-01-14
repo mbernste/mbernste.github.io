@@ -14,7 +14,7 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 ---------
 
-At a high level RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single).  The type of data that RNA-seq provides is relatively complex and because of this complexity, there is a good amount of confusion regarding the units of gene expression derived from RNA-seq data and the various methods used for normalizing these expression measurements across samples. In this post, I will review the RNA-seq protocol and explain how to interpret the various normalization procedures and resulting units for measuring gene expression.  This post will assume a basic understanding of the [Central Dogma](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology) of molecular biology.
+At a high level RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single). In this post, I will review the RNA-seq protocol and explain how to interpret the most commonly used units of gene expression derived from an RNA-seq experiment: transcripts per million.  This post will assume a basic understanding of the [Central Dogma](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology) of molecular biology.
 
 Before getting started, let's review the inputs and outputs of an RNA-seq protocol. We're given a biological sample consisting of a cell or a population of cells, and our goal is to estimate the **transcript abundances** from each gene in the sample -- that is, the *fraction* of transcripts in the sample that originate from each gene. A toy example is depicted below where the genome consists only of three genes: a Blue gene, a Green gene, and a Yellow gene.
 
@@ -44,7 +44,7 @@ An abstracted overview of RNA-seq
 
 The RNA-seq protocol may appear somewhat complex so let's look at an abstracted view of the RNA-seq procedure.  In this abstracted view, we will simplify RNA-seq down to two steps. First, we extract all of the transcripts from the cells in the sample. Then, we randomly sample *locations* along all of the transcripts in the sample. That is, each read is viewed as a *sampled location* from some transcript in the sample.  Of course, this is not physically what RNA-seq is doing, rather it is a mathematically equivalent process.
 
-In the figure below, we depict a toy example where we have a total of three genes in the genome: a Blue gene, a Green gene, and a Yellow gene. We then extract 13 total transcripts from the sample: 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts. We can then think of the reads that we generate from the RNA-seq experiment as random locations along these 10 transcripts. Here we depict 10 reads.
+In the figure below, we depict a toy example where we have a total of three genes in the genome, each with only one isoform: a Blue gene, a Green gene, and a Yellow gene. We then extract 13 total transcripts from the sample: 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts. We can then think of the reads that we generate from the RNA-seq experiment as random locations along these 10 transcripts. Here we depict 10 reads.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_abstracted.png" alt="drawing" width="800"/></center>
 
@@ -94,9 +94,22 @@ $$\begin{align*}\theta_i = \frac{t_i}{\sum_{j=1}^G t_j}\end{align*}$$
 Note that these $\hat{\theta}_i$ values will be very small because there are so many genes. Therefore, it is common to multiply each $\hat{p}_i$ by one million. The resulting values, called **transcripts per million (TPM)** tells you the number of transcripts in the cell from each gene if you select one million transcripts at random.
 
 
+Handling genes with multiple isoforms
+----------
+
+Most genes in the human genome are [alternatively spliced], resulting in transcripts of multiple isoforms.
+
+
 RPKM/FPKM versus TPM: which one to use?
 -----------
 
+
+Handling noise and multi-mapped reads
+----------
+
+So far, we have assumed an idealized scenario in which we know with certainty which gene "produced" each read.  In reality, this is not the case.  Sometimes, a read may align to multiple isoforms within a single gene (common), or it might align to multiple genes (common enough to affect results), or it might align imperfectly to a gene and we might wonder whether the read really was produced by that gene and the mismatch in alignment is due to a sequencing error or the read was not produced by that gene (e.g., it might be due to contamination). 
+
+So how do we estimate the relative gene abundances in the real world?  In the next post, we will discuss how this is done using statistical inference under a probabilistic model.
 
 
 
