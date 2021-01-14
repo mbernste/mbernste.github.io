@@ -42,15 +42,11 @@ By design, each step of the RNA-seq protocol preserves, in expectation, the rela
 An abstracted overview of RNA-seq
 -----------
 
-RNA-seq is a procedure for estimating the relative abundances of transcripts from each gene in a sample. Below, we depict a set of transcripts where each transcript is colored according to the gene from which it was derived (Blue, Green, Yellow):
+The RNA-seq protocol may appear somewhat complex so let's look at an abstracted view of the RNA-seq procedure.  In this abstracted view, we will simplify RNA-seq down to two steps. First, we extract all of the transcripts from the cells in the sample. Then, we randomly sample *locations* along all of the transcripts in the sample. That is, each read is viewed as a *sampled location* from some transcript in the sample.  Of course, this is not physically what RNA-seq is doing, rather it is a mathematically equivalent process.
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_input.png" alt="drawing" width="700"/></center>
+In the figure below, we depict a toy example where we have a total of three genes in the genome: a Blue gene, a Green gene, and a Yellow gene. We then extract 13 total transcripts from the sample: 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts. We can then think of the reads that we generate from the RNA-seq experiment as random locations along these 10 transcripts. Here we depict 10 reads.
 
-In this toy example, we have 13 total transcripts: 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts. RNA-seq provides the **relative** number of transcripts from each gene rather than the **absolute number**.  That is, RNA-seq provides an estimate of the fraction of transcripts originating from each gene out of all transcripts in the sample. 
-
-To see how this is, we will take an abstract view of the RNA-seq procedure. Specifically, one may view RNA-seq as a *sampling process*, where we randomly sample *locations* along all of the transcripts in the sample. That is, each read is viewed as a *sampled location* from some transcript in the sample.  If our RNA-seq experiment generated 10 reads, then we can view these 10 reads as randomly sampled locations from anywhere along the 13 aforementioned transcripts:
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_read_locations.png" alt="drawing" width="700"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_abstracted.png" alt="drawing" width="700"/></center>
 
 Because we are sampling *locations* along all of the transcripts in the sample, we will tend to get more reads from longer genes and fewer reads from shorter genes. Thus, these counts will not, by themselves be an accurate estimation of the fraction of transcripts from each gene.
 
@@ -59,7 +55,6 @@ Let's say in our toy example the Blue gene is 4 bases long, the Green gene is 7 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_reads_vs_transcript_abundance.png" alt="drawing" width="700"/></center>
 
 Notice how these fractions differ from the fraction of transcripts that originate from each gene. Notably, the fraction of the reads from the Green gene is higher than the fraction of transcripts from the Green gene. This is because the Green gene is long and thus, when we sample locations along the transcript, we are more likely to select locations along a Green gene.  In the next section, we will discuss how to counteract this effect in order to recover the fraction of transcripts from each gene.
-
 
 Estimating the fraction of transcripts from each gene
 ----------
