@@ -39,7 +39,7 @@ By design, each step of the RNA-seq protocol preserves, in expectation, the rela
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_schematic.png" alt="drawing" width="700"/></center>
 
-Distilling RNA-seq down to its essence
+An abstracted overview of RNA-seq
 -----------
 
 RNA-seq is a procedure for estimating the relative abundances of transcripts from each gene in a sample. Below, we depict a set of transcripts where each transcript is colored according to the gene from which it was derived (Blue, Green, Yellow):
