@@ -97,7 +97,7 @@ Note that these $\hat{\theta}_i$ values will be very small because there are so 
 Handling genes with multiple isoforms
 ----------
 
-Most genes in the human genome are [alternatively spliced], resulting in transcripts of multiple isoforms.
+Most genes in the human genome are [alternatively spliced](https://en.wikipedia.org/wiki/Alternative_splicing), resulting in multiple isoforms of the gene.  
 
 
 RPKM/FPKM versus TPM: which one to use?
@@ -107,9 +107,9 @@ RPKM/FPKM versus TPM: which one to use?
 Handling noise and multi-mapped reads
 ----------
 
-So far, we have assumed an idealized scenario in which we know with certainty which gene "produced" each read.  In reality, this is not the case.  Sometimes, a read may align to multiple isoforms within a single gene (common), or it might align to multiple genes (common enough to affect results), or it might align imperfectly to a gene and we might wonder whether the read really was produced by that gene and the mismatch in alignment is due to a sequencing error or the read was not produced by that gene (e.g., it might be due to contamination). 
+So far, we have assumed an idealized scenario in which we know with certainty which gene "produced" each read.  In reality, this is not the case.  Sometimes, a read may align to multiple isoforms within a single gene (extremely common), or it might align to multiple genes (common enough to affect results), or it might align imperfectly to a gene and we might wonder whether the read really was produced by that gene and the mismatch in alignment is due to a sequencing error, or the read was not produced by that gene (it might be due to contamination). 
 
-So how do we estimate the relative gene abundances in the real world?  In the next post, we will discuss how this is done using statistical inference under a probabilistic model.
+So how do we estimate the relative gene abundances in the real world where we have these issues?  In the next post, we will discuss how we estimate transcript abundances in the real world using statistical inference under a probabilistic model.
 
 
 
