@@ -46,7 +46,7 @@ The RNA-seq protocol may appear somewhat complex so let's look at an abstracted 
 
 In the figure below, we depict a toy example where we have a total of three genes in the genome: a Blue gene, a Green gene, and a Yellow gene. We then extract 13 total transcripts from the sample: 7 transcripts from the Blue gene, 4 transcripts from the Green gene, and 2 transcripts from the Yellow gene. In reality, a single cell contains [hundreds of thousands](https://www.qiagen.com/us/resources/faq?id=06a192c2-e72d-42e8-9b40-3171e1eb4cb8&lang=en) of transcripts. We can then think of the reads that we generate from the RNA-seq experiment as random locations along these 10 transcripts. Here we depict 10 reads.
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_abstracted.png" alt="drawing" width="700"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_abstracted.png" alt="drawing" width="800"/></center>
 
 Because we are sampling *locations* along all of the transcripts in the sample, we will tend to get more reads from longer genes and fewer reads from shorter genes. Thus, these counts will not, by themselves be an accurate estimation of the fraction of transcripts from each gene.
 
