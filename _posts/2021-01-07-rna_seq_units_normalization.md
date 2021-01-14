@@ -61,11 +61,11 @@ Estimating the fraction of transcripts from each gene
 
 Before we get started, let's define some quick mathematical notation:
 
-1. Let $G$ be the number of genes. (In our toy example, $G = 3$ -- that is, we have three genes: the Blue gene, the Green gene, and the Yellow gene.) 
+1. Let $G$ be the number of genes. 
 2. Let $N$ be the number of reads. 
 3. Let $c_i$ be the number of reads aligning to gene $i$.
-4. Let $t_i$ be the number of transcripts from gene $i$ in the sample. (In our toy example,  $t_{\text{Blue}} = 7$, $t_{\text{Green}} = 4$, and $t_{\text{Yellow}} = 2$).
-5. Let $l_i$ be the length of gene $i$. (In our toy example, $l_{\text{Blue}} = 4$, $l_{\text{Green}} = 7$, and $l_{\text{Yellow}} = 2$.)
+4. Let $t_i$ be the number of transcripts from gene $i$ in the sample. 
+5. Let $l_i$ be the length of gene $i$.
 
 Now let's look at the quantity that we are after, the fraction of transcripts from each gene, which we will denote as $\theta_i$:
 
