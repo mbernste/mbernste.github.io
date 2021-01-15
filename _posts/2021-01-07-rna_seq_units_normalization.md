@@ -89,7 +89,7 @@ $$\hat{\theta}_i := \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{
 
 Let's derive it:
 
-$$\begin{align*} \theta_i &= \frac{t_i}{\sum_{j=1}^G t_j} \\ &= \frac{ \frac{l_i}{n_i} }{ \sum_{j=1}^G \frac{l_j}{n_j}} \end{align*}$$
+$$\begin{align*} \theta_i &= \frac{t_i}{\sum_{j=1}^G t_j} \\ &= \frac{ \frac{l_i}{n_i} }{ \sum_{j=1}^G \frac{l_j}{n_j}} && \text{because} \ t_i = \frac{n_i}{l_i}\end{align*}$$
 
 && \text{because} \ t_i = \frac{n_i}{l_i} \\ &= \frac{\frac{p_i}{l_i \sum_{j=1}^G n_j}}{ \sum_{j=1} \frac{p_j}{l_j \sum_{k=1}^G n_k}}}
 
