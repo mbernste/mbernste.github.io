@@ -116,7 +116,7 @@ So how do we estimate the relative gene abundances in the real world where we ha
 RPKM versus TPM
 -----------
 
-In the early days of RNA-seq, read counts were summarized in units of reads per killobase per million mapped reads (RPKM). (In the case of [paired-end reads](https://www.illumina.com/science/technology/next-generation-sequencing/plan-experiments/paired-end-vs-single-read.html), the corresponding units are fragments per killobase per million mapped fragments (FPKM), but for the simplicity of this discussion we will assume single-end reads).  These units are often still used to this day despite the fact that they are known to suffer from a fundamental issue. 
+In the [early days of RNA-seq](https://doi.org/10.1038/nmeth.1226), read counts were summarized in units of reads per killobase per million mapped reads (RPKM). (In the case of [paired-end reads](https://www.illumina.com/science/technology/next-generation-sequencing/plan-experiments/paired-end-vs-single-read.html), the corresponding units are fragments per killobase per million mapped fragments (FPKM), but for the simplicity of this discussion we will assume single-end reads).  These units are often still used to this day despite the fact that they are known to suffer from a fundamental issue. 
 
 First, let's define RPKM.  Recall, the issue that comes with the raw read counts is that we will tend to sample more reads from longer isoforms/genes and thus, the raw counts will not reflect the relative abundance of each isoform or gene.  To get around this, we might try the following normalization procedure: simply divide the fraction of reads from each gene/isoform by the length of each gene.  We'll call the resulting unit 
 
