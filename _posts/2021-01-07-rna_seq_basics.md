@@ -154,11 +154,14 @@ The problem with RPKM values is that, although they do allow us to compare relat
 
 Let's illustrate this with an example. In the figure below, we depict two samples with the same three genes as used previously, each with only one isoform. The Blue gene is of length 4, the Green gene is of length 7, and the Yellow gene is of length 2.  The two samples have the same fraction of transcripts originating from the Yellow gene, but differ in the fraction of transcripts originating from the Blue and Green genes. If we generated many reads, assuming no noise, then the RPKMs would converge the values depicted below the pie charts:
 
-As you can see, the RPKM values differ for the Yellow gene between the two samples even though the fraction of transcripts from the Yellow gene is the same between the two samples!   
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/problem_w_RPKM.png" alt="drawing" width="500"/></center>
+
+As you can see, the RPKM values differ for the Yellow gene between the two samples even though the fraction of transcripts from the Yellow gene is the same between the two samples! This is not desirable.  
 
 Why is this the case?  As described in [Li and Dewey 2011](https://doi.org/10.1093/bioinformatics/btp692), the RPKM values are affected by the *mean length* of the transcripts in the sample.  In the example above, the mean length of transcripts in Sample 2 is greater than the mean length of transcripts in Sample 1 because we have more transcripts of the Green gene than the Blue gene, which is a longer gene.
 
 To see this more rigorously, let's view the relationship between RPKM and estimated TPM through another lense:
+
 
 
 
