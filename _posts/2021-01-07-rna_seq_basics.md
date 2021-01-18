@@ -143,14 +143,24 @@ With read counts normalized into units of RPKM, we can compare expression values
 
 Now, let's compare RPKM to estimated TPM.  We see that RPKM can be viewed as "unnormalized" estimated TPM's: 
 
-$$\begin{align*}\hat{\text{TPM}}_i &:= 10^6 \times \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1} \\ &= 10^{6} \times  \frac{10^9 p_i}{N l_i} \left(\sum_{j=1}^G \frac{10^9 p_j}{N l_j} \\ 10^{6} \times \frac{\text{RPKM}_i}{\sum_{j=1}^G \text{RPKM}_j}\end{align*}$$
+$$\begin{align*} \hat{\text{TPM}}_i &:= 10^6 \times \frac{\hat{p}_i}{l_i} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1} \\ &= 10^{6} \times  \frac{10^9 \hat{p}_i}{N l_i} \left(\sum_{j=1}^G \frac{10^9 \hat{p}_j}{N l_j} \\ 10^{6} \times \frac{\text{RPKM}_i}{\sum_{j=1}^G \text{RPKM}_j}\end{align*}$$
 
 The core difference between RPKM and TPM is that RPKM is really just a **summarization of the read counts** whereas TPM is a **physical quantity** that we may attempt to *infer* ((Pachter 2011)[https://arxiv.org/abs/1104.3889]).  One can attempt to *estimate* TPMs from the read counts or one can summarize their read counts as RPKMs. In the next section we will discuss a fundamental problem with RPKMs and show that TPMs are generally preferred. 
 
 Problems with RPKM
 ----------
 
-The problem with RPKM values is that, although they do allow us to compare relative transcript abundances *between two genes within a single sample*, they do not allow us to compare relative transcript abundances of a *single gene betweeen two samples*.  Let's illustrate this with an example.
+The problem with RPKM values is that, although they do allow us to compare relative transcript abundances *between two genes within a single sample*, they do not allow us to compare relative transcript abundances of a *single gene betweeen two samples*.  
+
+Let's illustrate this with an example. In the figure below, we depict two samples with the same three genes as used previously, each with only one isoform. The Blue gene is of length 4, the Green gene is of length 7, and the Yellow gene is of length 2.  The two samples have the same fraction of transcripts originating from the Yellow gene, but differ in the fraction of transcripts originating from the Blue and Green genes. If we generated many reads, assuming no noise, then the RPKMs would converge the values depicted below the pie charts:
+
+As you can see, the RPKM values differ for the Yellow gene between the two samples even though the fraction of transcripts from the Yellow gene is the same between the two samples!   
+
+Why is this the case?  As described in [Li and Dewey 2011](https://doi.org/10.1093/bioinformatics/btp692), the RPKM values are affected by the *mean length* of the transcripts in the sample.  In the example above, the mean length of transcripts in Sample 2 is greater than the mean length of transcripts in Sample 1 because we have more transcripts of the Green gene than the Blue gene, which is a longer gene.
+
+To see this more rigorously, let's view the relationship between RPKM and estimated TPM through another lense:
+
+
 
 
 
