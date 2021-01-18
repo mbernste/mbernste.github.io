@@ -77,7 +77,7 @@ $$n_i := l_it_i$$
 
 This is the total number of RNA bases within all of the RNA transcripts floating around in the cells in the sample that originated from gene $i$.  Furthermore, recall that each read can be thought of as a random sample from the set of all possible locations along the transcripts in the sample. In this light, $n_i$ represents the total number of possible start sites for a given read from gene $i$.  Therefore, the fraction of reads we would expect to see from gene $i$ is 
 
-$$p_i := \frac{n_i}{\sum_{j=1}^G n_j}$$
+$$p_i := \frac{l_it_i}{\sum_{j=1}^G l_jt_j} = \frac{n_i}{\sum_{j=1}^G n_j}$$
 
 This is the probability that if we select a read, that read will have originated from gene $i$.  This is simply the probability parameter for a [Bernoulli random variable](https://en.wikipedia.org/wiki/Bernoulli_distribution), and thus, its maximum likelihood estimate is simply:
 
@@ -160,7 +160,7 @@ As you can see, the RPKM values differ for the Yellow gene between the two sampl
 
 Why is this the case? Recall that RPKMs can be viewed as un-normalized estimates of the TPM.  As shown by [Li and Dewey (2011)](https://doi.org/10.1093/bioinformatics/btp692), it turns out that the normalization factor includes the *mean length* of all of the transcripts in the sample. R
 
-$$\begin{align*}\hat{\text{TPM}}_i &= 10^{6} \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \\ &= \text{RPKM}_i \left[\frac{10^6 }{10^9 \sum_{j=1}^G \frac{\hat{p}_j}{N l_j} } \right] \\ &= \text{RPKM}_i \left[ \frac{10^{-3}}{N} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1}  \right] \\ &= \text{RPKM}_i \left[ \left( \frac{\hat{\theta}_j l_j \sum_{k=1}^G \frac{\hat{p}_k}{l_k} }{l_j} \right)^{-1} \right] \end{align*}$$ 
+$$\begin{align*}\hat{\text{TPM}}_i &= 10^{6} \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \\ &= \text{RPKM}_i \left[\frac{10^6 }{10^9 \sum_{j=1}^G \frac{\hat{p}_j}{N l_j} } \right] \\ &= \text{RPKM}_i \left[ \frac{10^{-3}}{N} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1}  \right] \\ &= \text{RPKM}_i \left[ \left( \sum_{j=1}^G \frac{ \frac{\theta_j l_j}{\sum_{k=1}^G \theta_kl_k} } {l_j} \right)^{-1} \right] \end{align*}$$ 
  
  In the example above, the mean length of transcripts in Sample 2 is greater than the mean length of transcripts in Sample 1 because we have more transcripts of the Green gene than the Blue gene, which is a longer gene.
 
