@@ -122,8 +122,17 @@ Before digging into the problem with RPKM, let's first define it.  Recall, the i
 
 $$\frac{c_i}{N l_i} = \frac{\hat{p}_i}{l_i}$$
 
-Let's try to wrap our head around the units of this quantity. First, we see that $\frac{c_i}{l_i}$ is the fraction of reads *per base* of the gene/isoform.  That is, it is the average number of reads generated from each base along the gene/isoform.  Then, if we divide this quantity by the total number of reads $N$, we arrive at the fraction of reads per base of the gene/isoform *per read*.  This is a bit strange, we're looking at the fraction of reads per bases per read.  It seems circular.    
+Let's try to wrap our head around the units of this quantity. First, we see that $\frac{c_i}{l_i}$ is the *number* of reads *per base* of the gene/isoform.  That is, it is the average number of reads generated from each base along the gene/isoform.  Then, if we divide this quantity by the total number of reads, $N$, we arrive at the number of reads per base of the gene/isoform *per read*. 
 
+This is a bit confusing. It almost seems circular that we're computing the number of reads per base per read.  Here's another way to think about it: we're computing the *fraction of all reads*, $\frac{c_i}{N}$, per base of the gene/isoform.  That is, on average, we're computing the fraction all of the reads were generated, on average, by each base of a gene.  This inherently normalizes for gene length because the units are a single base!
+
+We note that $N$ is very large (on the order of millions) and so too is $l_i$ (on the order of thousands), so to avoid dealing with such small numbers, we multiply $\frac{c_i}{N l_i}$ by $10^9$.  The resulting units are reads per killobase per million reads of a given gene:
+
+$$\text{RPKM}_i := 10^9 \frac{c_i}{N l_i}$$
+
+Note that $10^9$ is the result of multiplying by one million reads and one thousand bases.
+
+Now that we've defined RPKM, what is it's problem?  
 
 
 
