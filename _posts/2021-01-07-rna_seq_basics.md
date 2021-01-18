@@ -1,7 +1,7 @@
 ---
 title: 'The basics of RNA-seq'
 date: 2021-01-07
-permalink: /posts/rnaseq_tpm_vs_median_ratio/
+permalink: /posts/rna_seq_basics/
 tags:
   - tutorial
   - bioinformatics
