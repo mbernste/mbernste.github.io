@@ -136,9 +136,15 @@ $$\text{RPKM}_i := 10^9 \times \frac{c_i}{N l_i}$$
 
 Note that $10^9$ is the result of multiplying by one thousand bases and one million reads.
 
-This seems fine, right?  The units *seem* to normalize for gene length so we can compare RPKM values between genes and we don't have to worry about gene length being an issue.  That is, if we have two genes $i$, and $j$ and we have $\text{RPKM}_i > \text{RPKM}_j$, we can acertain that gene $i$ may be more highly expressed than gene $j$.  So what's the problem with RPMK?
+With read counts normalized into units of RPKM, we can compare expression values between genes and we don't have to worry about gene length being an issue.  That is, if we have two genes $i$, and $j$ and we have $\text{RPKM}_i > \text{RPKM}_j$, we can acertain that gene $i$ may be more highly expressed than gene $j$.  So what's the problem with RPKM?
+
+
+Problems with RPKM
+----------
 
 The problem with RPKM values is that, although they do allow us to compare gene expression *between two genes within a single sample*, they do not allow us to compare gene expression of a *single gene betweeen two samples*.  Let's illustrate this with an example.
+
+
 
 
 
