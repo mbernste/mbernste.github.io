@@ -109,7 +109,7 @@ Most genes in the human genome are [alternatively spliced](https://en.wikipedia.
 
 In fact, this is quite trivial. We simply compute the fraction of transcripts *of each isoform* as described above, and then simply sum the fractions of all isoforms for each gene to arrive at the fraction of transcripts originating from the gene. This is depicted in the figure below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_isoform_vs_gene_abundance.png" alt="drawing" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_isoform_abundances.png" alt="drawing" width="400"/></center>
 
 Thus, if we have isoform-level estimates of each gene's TPM, then we simply sum these estimates across isoforms for each gene to arrive at an estimate of the TPM of for the gene as a whole.
 
