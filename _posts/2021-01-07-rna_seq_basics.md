@@ -143,7 +143,11 @@ With read counts normalized into units of RPKM, we can compare expression values
 
 Now, let's compare RPKM to estimated TPM.  We see that RPKM can be viewed as "unnormalized" estimated TPM's: 
 
-$$\begin{align*} \hat{\text{TPM}}_i &:= 10^6 \times \frac{\hat{p}_i}{l_i} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1} \\ &= 10^{6} \times  \frac{10^9 \hat{p}_i}{N l_i} \left(\sum_{j=1}^G \frac{10^9 \hat{p}_j}{N l_j}\right)^{-1} \\ 10^{6} \times \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \end{align*}$$
+$$\begin{align*} \hat{\text{TPM}}_i &:= 10^6 \times \frac{\hat{p}_i}{l_i} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1} \\ &= 10^{6} \times  \frac{10^9 \hat{p}_i}{N l_i} \left(\sum_{j=1}^G \frac{10^9 \hat{p}_j}{N l_j}\right)^{-1} \\ &= 10^{6} \times \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \end{align*}$$
+
+As shown by [Li and Dewey (2011)](https://doi.org/10.1093/bioinformatics/btp692), it tunrs out that the normalization constant is the *mean length* of the transcripts in the sample:
+
+$$\begin{align*}\text{TPM_i} &= 10^{6} \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \\ &= RPKM_i \frac{10^6 }{10^9 \sum_{j=1}^G \frac{\hat{p}_i}{N l_i} } \\ &= \text{RPKM}_i 10^{-3}   \end{align*}$$
 
 At a higher level, one can understand the core difference between RPKM and TPM by viewing RPKM as a **summarization of the read counts** whereas TPM is a **physical quantity** that we may attempt to *infer* ([Pachter 2011](https://arxiv.org/abs/1104.3889)).  One can attempt to *estimate* TPMs from the read counts or one can summarize their read counts as RPKMs. In the next section we will discuss a fundamental problem with RPKMs and show that TPMs are generally preferred. 
 
@@ -158,7 +162,7 @@ Let's illustrate this with an example. In the figure below, we depict two sample
 
 As you can see, the RPKM values differ for the Yellow gene between the two samples even though the fraction of transcripts from the Yellow gene is the same between the two samples! This is not desirable.  
 
-Why is this the case?  As described by [Li and Dewey (2011)](https://doi.org/10.1093/bioinformatics/btp692), the RPKM values are affected by the *mean length* of the transcripts in the sample.  In the example above, the mean length of transcripts in Sample 2 is greater than the mean length of transcripts in Sample 1 because we have more transcripts of the Green gene than the Blue gene, which is a longer gene.
+  In the example above, the mean length of transcripts in Sample 2 is greater than the mean length of transcripts in Sample 1 because we have more transcripts of the Green gene than the Blue gene, which is a longer gene.
 
 To see this more rigorously, let's view the relationship between RPKM and estimated TPM through another lense:
 
