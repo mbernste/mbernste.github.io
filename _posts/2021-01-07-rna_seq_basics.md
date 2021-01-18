@@ -123,7 +123,7 @@ So how do we estimate the relative gene abundances in the real world where we ha
 RPKM versus TPM
 -----------
 
-In the [early days of RNA-seq](https://doi.org/10.1038/nmeth.1226), read counts were summarized in units of reads per killobase per million mapped reads (RPKM).  These units are often still used to this day despite the fact that they are known to suffer from a fundamental issue. 
+In the [early days of RNA-seq](https://doi.org/10.1038/nmeth.1226), read counts were summarized in units of reads per killobase per million mapped reads (RPKM).  As will be discussed in the next section, RPKM's are known to suffer from a fundamental issue.   
 
 Before digging into the problem with RPKM, let's first define it.  Recall, the issue that comes with the raw read counts is that we will tend to sample more reads from longer isoforms/genes and thus, the raw counts will not reflect the relative abundance of each isoform or gene.  To get around this, we might try the following normalization procedure: simply divide the fraction of reads from each gene/isoform by the length of each gene.  That is, 
 
@@ -145,20 +145,21 @@ Now, let's compare RPKM to estimated TPM.  We see that RPKM can be viewed as "un
 
 $$\begin{align*}\hat{\text{TPM}}_i &:= 10^6 \times \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1} \\ &= 10^{6} \times  \frac{10^9 p_i}{N l_i} \left(\sum_{j=1}^G \frac{10^9 p_j}{N l_j} \\ 10^{6} \times \frac{\text{RPKM}_i}{\sum_{j=1}^G \text{RPKM}_j}\end{align*}$$
 
+The core difference between RPKM and TPM is that RPKM is really just a **summarization of the read counts** whereas TPM is a **physical quantity** that we may attempt to *infer* ((Pachter 2011)[https://arxiv.org/abs/1104.3889]).  One can attempt to *estimate* TPMs from the read counts or one can summarize their read counts as RPKMs. In the next section we will discuss a fundamental problem with RPKMs and show that TPMs are generally preferred. 
+
 Problems with RPKM
 ----------
 
 The problem with RPKM values is that, although they do allow us to compare relative transcript abundances *between two genes within a single sample*, they do not allow us to compare relative transcript abundances of a *single gene betweeen two samples*.  Let's illustrate this with an example.
 
 
+
 Problems with TPM
 ------------
 
-When dealing in units of estimated TPMs, we can compare *relative transcript abundances* between two samples; however, we cannot compare absolute expression between two samples.  That is, for some gene $i$, if we let $x_{1,i}$ be the TPM of gene $i$ in Sample 1 and $x_{2,i}$ be the TPM of gene $i$ in Sample 2, then 
+In the previous section we showed that estimated TPMs are preferred to RPKMs because estimated TPMs allow one to compare *estimated relative transcript abundances* between two samples. This is a nice advantage to RPKMs; however, it's important to keep in mind that even TPMs do **not** enable us to compare absolute expression between two samples.  
 
-$$x_{1,i} > x_{2,i}$$
-
-only indicates that the *fraction* of transcripts from gene $i$ is greater in Sample 1 than it is in Sample 2. However, it does **not** tell us that gene $i$ is more highly expressed in Sample 1.  It may be the case that it is more highly expressed in Sample 2!  In the figure below, we depict two samples in which the the TPM is higher in Sample 1 than Sample 2, but is in fact more lowly expressed:
+That is, when comparing the estimated TPMs for some gene $i$ between two samples, which we'll call Sample 1 and Sample 2, it may be that the TPM is larger in Sample 1, but is in fact more lowly expressed.  Here's an example to illustrate:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_isoform_vs_gene_abundance.png" alt="drawing" width="350"/></center>
 
