@@ -128,15 +128,17 @@ $$\frac{c_i}{N l_i} = \frac{\hat{p}_i}{l_i}$$
 
 Let's try to wrap our head around the units of this quantity. First, we see that $\frac{c_i}{l_i}$ is the *number* of reads *per base* of the gene/isoform.  That is, it is the average number of reads generated from each base along the gene/isoform.  Then, if we divide this quantity by the total number of reads, $N$, we arrive at the number of reads per base of the gene/isoform *per read*. 
 
-This is a bit confusing. It almost seems circular that we're computing the number of reads per base per read.  Here's another way to think about it: we're computing the *fraction of all reads*, $\frac{c_i}{N}$, per base of the gene/isoform.  That is, on average, we're computing the fraction all of the reads were generated, on average, by each base of a gene.  This inherently normalizes for gene length because the units are a single base!
+This is a bit confusing. It almost seems circular that we're computing the number of reads per base per read.  Here's another way to think about it: we're computing the *fraction of all reads*, $\frac{c_i}{N}$, per base of the gene/isoform.  That is, on average, we're computing the fraction all of the reads were generated, on average, by each base of a gene.  This inherently normalizes for gene length because the units are in terms of a single base of each gene!
 
 We note that $N$ is very large (on the order of millions) and so too is $l_i$ (on the order of thousands), so to avoid dealing with such small numbers, we multiply $\frac{c_i}{N l_i}$ by $10^9$.  The resulting units are reads per killobase per million reads of a given gene:
 
 $$\text{RPKM}_i := 10^9 \times \frac{c_i}{N l_i}$$
 
-Note that $10^9$ is the result of multiplying by one million reads and one thousand bases.
+Note that $10^9$ is the result of multiplying by one thousand bases and one million reads.
 
-Now that we've defined RPKM, what is it's problem?  
+This seems fine, right?  The units *seem* to normalize for gene length so we can compare RPKM values between genes and we don't have to worry about gene length being an issue.  That is, if we have two genes $i$, and $j$ and we have $\text{RPKM}_i > \text{RPKM}_j$, we can acertain that gene $i$ may be more highly expressed than gene $j$.  So what's the problem with RPMK?
+
+The problem with RPKM values is that, although they do allow us to compare gene expression *between two genes within a single sample*, they do not allow us to compare gene expression of a *single gene betweeen two samples*.  Let's illustrate this with an example.
 
 
 
