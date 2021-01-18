@@ -106,7 +106,7 @@ In fact, this is quite trivial. We simply compute the fraction of transcripts *o
 
 Thus, if we have isoform-level estimates of each gene's TPM, then we simply sum these estimates across isoforms for each gene to arrive at an estimate of the TPM of for the gene as a whole.
 
-RPKM/FPKM versus TPM: which one to use?
+RPKM/FPKM versus TPM
 -----------
 
 
