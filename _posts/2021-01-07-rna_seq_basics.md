@@ -154,6 +154,13 @@ The problem with RPKM values is that, although they do allow us to compare relat
 Problems with TPM
 ------------
 
+When dealing in units of estimated TPMs, we can compare *relative transcript abundances* between two samples; however, we cannot compare absolute expression between two samples.  That is, for some gene $i$, if we let $x_{1,i}$ be the TPM of gene $i$ in Sample 1 and $x_{2,i}$ be the TPM of gene $i$ in Sample 2, then 
+
+$$x_{1,i} > x_{2,i}$$
+
+only indicates that the *fraction* of transcripts from gene $i$ is greater in Sample 1 than it is in Sample 2. However, it does **not** tell us that gene $i$ is more highly expressed in Sample 1.  It may be the case that it is more highly expressed in Sample 2!  In the figure below, we depict two samples in which the the TPM is higher in Sample 1 than Sample 2, but is in fact more lowly expressed:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_isoform_vs_gene_abundance.png" alt="drawing" width="350"/></center>
 
 Further reading
 ------------
