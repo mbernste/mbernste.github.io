@@ -160,7 +160,7 @@ As you can see, the RPKM values differ for the Yellow gene between the two sampl
 
 Why is this the case? Recall that RPKMs can be viewed as un-normalized estimates of the TPM.  As shown by [Li and Dewey (2011)](https://doi.org/10.1093/bioinformatics/btp692), it turns out that the normalization factor includes the *mean length* of all of the transcripts in the sample (see the Appendix to this blog post for the full derivation):
 
-$$\hat{\text{TPM}}_i &= 10^{6} &= \text{RPKM}_i \left[ \frac{10^{-3}}{N} \sum_{k=1}^G \hat{\theta}_k l_k \right]$$ 
+$$\hat{\text{TPM}}_i &= 10^{6} = \text{RPKM}_i \left[ \frac{10^{-3}}{N} \sum_{k=1}^G \hat{\theta}_k l_k \right]$$ 
 
 We see that the term $$\sum_{k=1}^G \hat{\theta}_k l_k$$ is the mean length of all of the transcripts.  Thus, the normalization constant required to transform each $\text{RPKM}_i$ value to an estimate of $\hat{TPM}_i$ is dependent on *all* of the transcript abundances in the sample, not just the abundances for gene/isoform $i$.
 
