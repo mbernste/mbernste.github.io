@@ -158,9 +158,9 @@ Let's illustrate this with an example. In the figure below, we depict two sample
 
 As you can see, the RPKM values differ for the Yellow gene between the two samples even though the fraction of transcripts from the Yellow gene is the same between the two samples! This is not desirable.  
 
-Why is this the case? As shown by [Li and Dewey (2011)](https://doi.org/10.1093/bioinformatics/btp692), it turns out that the RPKM value for a given gene is affected by the *mean length* of all of the transcripts in the sample:
+Why is this the case? Recall that RPKMs can be viewed as un-normalized estimates of the TPM.  As shown by [Li and Dewey (2011)](https://doi.org/10.1093/bioinformatics/btp692), it turns out that the normalization factor includes the *mean length* of all of the transcripts in the sample. R
 
-$$\begin{align*}\hat{\text{TPM}}_i &= 10^{6} \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \\ &= \frac{10^9 c_i}{N l_i} \left[\frac{10^6 }{10^9 \sum_{j=1}^G \frac{\hat{p}_i}{N l_i} } \right] \\ &= \text{RPKM}_i \left[10^{-3}  \right]   \end{align*}$$ 
+$$\begin{align*}\hat{\text{TPM}}_i &= 10^{6} \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \\ &= \text{RPKM}_i \left[\frac{10^6 }{10^9 \sum_{j=1}^G \frac{\hat{p}_j}{N l_j} } \right] \\ &= \text{RPKM}_i \left[ \frac{10^{-3}}{N} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1}  \right]   \end{align*}$$ 
  
  In the example above, the mean length of transcripts in Sample 2 is greater than the mean length of transcripts in Sample 1 because we have more transcripts of the Green gene than the Blue gene, which is a longer gene.
 
