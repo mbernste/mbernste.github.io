@@ -143,12 +143,18 @@ With read counts normalized into units of RPKM, we can compare expression values
 
 Now, let's compare RPKM to estimated TPM.  We see that RPKM can be viewed as "unnormalized" estimated TPM's: 
 
-$$\begin{align*}\hat{\text{TPM}}_i &:= 10^6 \times \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1} \\ &= 10^{-3} \frac{\text{RPKM}_i}{\sum_{j=1}^G \text{RPKM}_j}\end{align*}$$
+$$\begin{align*}\hat{\text{TPM}}_i &:= 10^6 \times \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1} \\ &= 10^{6} \times  \frac{10^9 p_i}{N l_i} \left(\sum_{j=1}^G \frac{10^9 p_j}{N l_j} \\ 10^{6} \times \frac{\text{RPKM}_i}{\sum_{j=1}^G \text{RPKM}_j}\end{align*}$$
 
 Problems with RPKM
 ----------
 
-The problem with RPKM values is that, although they do allow us to compare gene expression *between two genes within a single sample*, they do not allow us to compare gene expression of a *single gene betweeen two samples*.  Let's illustrate this with an example.
+The problem with RPKM values is that, although they do allow us to compare relative transcript abundances *between two genes within a single sample*, they do not allow us to compare relative transcript abundances of a *single gene betweeen two samples*.  Let's illustrate this with an example.
+
+
+Problems with TPM
+------------
+
+
 
 
 
