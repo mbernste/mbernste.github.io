@@ -93,7 +93,11 @@ $$\begin{align*} \theta_i &= \frac{t_i}{\sum_{j=1}^G t_j} \\ &= \frac{ \frac{n_i
 
 Then, to estimate $\theta_i$, we simply plug in our estimate $\hat{p}_i$ for each gene to arrive at our estimate $\hat{\theta}_i$.
 
-Note that these $\hat{\theta}_i$ values will be very small because there are so many genes. Therefore, it is common to multiply each $\hat{p}_i$ by one million. The resulting values, called **transcripts per million (TPM)** tells you the number of transcripts in the cell from each gene if you select one million transcripts at random.
+Note that these $\hat{\theta}_i$ values will be very small because there are so many genes. Therefore, it is common to multiply each ${p}_i$ by one million. The resulting values, called **transcripts per million (TPM)** tells you the number of transcripts in the cell from each gene if you select one million transcripts at random:
+
+$$\text{TPM}_i := 10^6 \times \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1}$$
+
+Thus, if we substitute $\hat{p}_i$ into the above equation, we have an *estimate* of the transcripts per million in the sample for gene $i$.
 
 Handling genes with multiple isoforms
 ----------
