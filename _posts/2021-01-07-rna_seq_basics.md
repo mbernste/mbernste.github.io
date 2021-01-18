@@ -97,7 +97,10 @@ Note that these $\hat{\theta}_i$ values will be very small because there are so 
 
 $$\text{TPM}_i := 10^6 \times \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1}$$
 
-Thus, if we substitute $\hat{p}_i$ into the above equation, we have an *estimate* of the transcripts per million in the sample for gene $i$.
+Thus, if we substitute $\hat{p}_i$ into the above equation, we have an *estimate* of the transcripts per million in the sample for gene $i$.  We'll use $\hat{\text{TPM}}$ to denote *estimated* TPM's from true TPMs. That is,
+
+$$\hat{\text{TPM}}_i := 10^6 \times \frac{\hat{p}_i}{l_i} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1}$$
+
 
 Handling genes with multiple isoforms
 ----------
@@ -140,7 +143,7 @@ With read counts normalized into units of RPKM, we can compare expression values
 
 Now, let's compare RPKM to estimated TPM.  We see that RPKM can be viewed as "unnormalized" estimated TPM's: 
 
-$$\begin{align*}\text{TPM}_i &:= 10^6 \times \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1} \\ &= 10^{-3} \frac{\text{RPKM}_i}{\sum_{j=1}^G \text{RPKM}_j}\end{align*}$$
+$$\begin{align*}\hat{\text{TPM}}_i &:= 10^6 \times \frac{p_i}{l_i} \left(\sum_{j=1}^G \frac{p_j}{l_j} \right)^{-1} \\ &= 10^{-3} \frac{\text{RPKM}_i}{\sum_{j=1}^G \text{RPKM}_j}\end{align*}$$
 
 Problems with RPKM
 ----------
