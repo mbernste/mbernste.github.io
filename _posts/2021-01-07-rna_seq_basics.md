@@ -32,10 +32,10 @@ Here's a an overview of the genral steps that comprise the RNA-seq protocol:
 3. **Reverse transcription:** Reverse transcribe the RNA into DNA.
 4. **Amplification:** Amplify the DNA molecules using [polymerase chain reaction](https://en.wikipedia.org/wiki/Polymerase_chain_reaction).
 5. **Sequencing:** Feed the amplified DNA fragments to a sequencer.  The sequencer randomly samples fragments and records a short subsequence from the end (or both ends) of the fragment (on the order of a few hundred bases). These measured subsequences are called **sequencing reads**.  A sequencing experiment generates millions of reads that are stored on a digital file.
-7. **Alignment:** Computationally align the reads to the genome. That is, we wish to find a character-to-character match between each read and a location within the genome.  This is a challenging computational task given that genomes consist of billions of bases and we are dealing with millions of reads. (Caveat: New algorithms, such as [kallisto](https://www.nature.com/articles/nbt.3519) and [Salmon](https://www.nature.com/articles/nmeth.4197), circumvent the computationally expensive task of performing character-to-character alignment via approximate alignments called "pseudoalignment" and "quasi-aligmnent" respectively. These ideas are [very similar](https://liorpachter.wordpress.com/2015/11/01/what-is-a-read-mapping/).)
+7. **Alignment:** Computationally align the reads to the genome. That is, we wish to find a character-to-character match between each read and a location within the genome.  This is a challenging computational task given that genomes consist of billions of bases and we are dealing with millions of reads. (Caveat: New algorithms, such as kallisto ([Bray et al. 2016](https://www.nature.com/articles/nbt.3519)) and Salmon ([Patro et al. 2017](https://www.nature.com/articles/nmeth.4197)), circumvent the computationally expensive task of performing character-to-character alignment via approximate alignments called "pseudoalignment" and "quasi-aligmnent" respectively. These ideas are [very similar](https://liorpachter.wordpress.com/2015/11/01/what-is-a-read-mapping/).)
 8. **Quantification:** For each gene, count the number of reads that align to the gene. (Caveat: because of sequencing errors and the presence of reads that align to multiple genes, one performs [statistical inference](https://academic.oup.com/bioinformatics/article/26/4/493/243395) to infer the gene of origin for each read.  That is the read "counts" for each gene are inferred quantities.   Explicit counting of reads aligning to each gene can be viewed as a crude inference procedure.)
 
-By design, each step of the RNA-seq protocol preserves, in expectation, the relative abundance of each transcript so that at the end, one is able to estimate the relative abundances of each transcript.  Here's a figure illustrating all of these steps (Taken from [Bernstein, 2019](https://search.proquest.com/openview/af4f51ec373a0b13438c59e7731adeed/1?pq-origsite=gscholar&cbl=18750&diss=y)). This figure depicts a toy example where the genome consists of only five genes specified by the colors red, blue, purple, green, and orange:
+By design, each step of the RNA-seq protocol preserves, in expectation, the relative abundance of each transcript so that at the end, one is able to estimate the relative abundances of each transcript.  Here's a figure illustrating all of these steps (Taken from [Bernstein 2019](https://search.proquest.com/openview/af4f51ec373a0b13438c59e7731adeed/1?pq-origsite=gscholar&cbl=18750&diss=y)). This figure depicts a toy example where the genome consists of only five genes specified by the colors red, blue, purple, green, and orange:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_schematic.png" alt="drawing" width="800"/></center>
 
@@ -118,7 +118,7 @@ Handling noise and multi-mapped reads
 
 So far, we have assumed an idealized scenario in which we know with certainty which gene "produced" each read.  In reality, this is not the case.  Sometimes, a read may align to multiple isoforms within a single gene (extremely common), or it might align to multiple genes (common enough to affect results), or it might align imperfectly to a gene and we might wonder whether the read really was produced by the gene. That is, was the mismatch in alignment due to a sequencing error, or was the read *not* produced by that gene (for example, the read may have been produced by a contaminant DNA fragment)? 
 
-So how do we estimate the relative gene abundances in the real world where we have these issues? Because we don't know which gene produced each read, we have to infer it.  State-of-the methods perform this inference under an assumed [probabilistic generative model](https://doi.org/10.1093/bioinformatics/btp692) of the reads-generating process (to be discussed in a future post).
+So how do we estimate the relative gene abundances in the real world where we have these issues? Because we don't know which gene produced each read, we have to infer it.  State-of-the methods perform this inference under an assumed probabilistic generative model ([Li et al. 2011](https://doi.org/10.1093/bioinformatics/btp692)) of the reads-generating process (to be discussed in a future post).
 
 RPKM versus TPM
 -----------
@@ -154,6 +154,12 @@ The problem with RPKM values is that, although they do allow us to compare relat
 Problems with TPM
 ------------
 
+
+Further reading
+------------
+
+* A blog post by Harold Pimentel discussing the differences between RPKM and TPM: [https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/](https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/) 
+* A more rigorous summary of the statistical methods behind RNA-seq by Lior Pachter: [https://arxiv.org/abs/1104.3889](https://arxiv.org/abs/1104.3889)
 
 
 
