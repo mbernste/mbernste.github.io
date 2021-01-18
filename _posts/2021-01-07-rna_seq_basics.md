@@ -143,7 +143,7 @@ With read counts normalized into units of RPKM, we can compare expression values
 
 Now, let's compare RPKM to estimated TPM.  We see that RPKM can be viewed as "unnormalized" estimated TPM's: 
 
-$$\begin{align*} \hat{\text{TPM}}_i &:= 10^6 \times \frac{\hat{p}_i}{l_i} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1} \\ &= 10^{6} \times  \frac{10^9 \hat{p}_i}{N l_i} \left(\sum_{j=1}^G \frac{10^9 \hat{p}_j}{N l_j} \\ 10^{6} \times \frac{\text{RPKM}_i}{\sum_{j=1}^G \text{RPKM}_j}\end{align*}$$
+$$\begin{align*} \hat{\text{TPM}}_i &:= 10^6 \times \frac{\hat{p}_i}{l_i} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1} \\ &= 10^{6} \times  \frac{10^9 \hat{p}_i}{N l_i} \left(\sum_{j=1}^G \frac{10^9 \hat{p}_j}{N l_j}\right)^{-1} \\ 10^{6} \times \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \end{align*}$$
 
 The core difference between RPKM and TPM is that RPKM is really just a **summarization of the read counts** whereas TPM is a **physical quantity** that we may attempt to *infer* ((Pachter 2011)[https://arxiv.org/abs/1104.3889]).  One can attempt to *estimate* TPMs from the read counts or one can summarize their read counts as RPKMs. In the next section we will discuss a fundamental problem with RPKMs and show that TPMs are generally preferred. 
 
