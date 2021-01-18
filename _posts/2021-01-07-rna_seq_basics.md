@@ -111,7 +111,7 @@ Handling noise and multi-mapped reads
 
 So far, we have assumed an idealized scenario in which we know with certainty which gene "produced" each read.  In reality, this is not the case.  Sometimes, a read may align to multiple isoforms within a single gene (extremely common), or it might align to multiple genes (common enough to affect results), or it might align imperfectly to a gene and we might wonder whether the read really was produced by the gene. That is, was the mismatch in alignment due to a sequencing error, or was the read *not* produced by that gene (for example, the read may have been produced by a contaminant DNA fragment)? 
 
-So how do we estimate the relative gene abundances in the real world where we have these issues? Because we don't know which gene produced each read, we have to infer it.  State-of-the methods perform this inference under an assumed [probabilistic model](https://doi.org/10.1093/bioinformatics/btp692) to be discussed in a future post.
+So how do we estimate the relative gene abundances in the real world where we have these issues? Because we don't know which gene produced each read, we have to infer it.  State-of-the methods perform this inference under an assumed [probabilistic generative model](https://doi.org/10.1093/bioinformatics/btp692) of the reads-generating process (to be discussed in a future post).
 
 RPKM/FPKM versus TPM
 -----------
