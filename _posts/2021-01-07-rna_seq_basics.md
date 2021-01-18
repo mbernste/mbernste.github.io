@@ -132,7 +132,7 @@ This is a bit confusing. It almost seems circular that we're computing the numbe
 
 We note that $N$ is very large (on the order of millions) and so too is $l_i$ (on the order of thousands), so to avoid dealing with such small numbers, we multiply $\frac{c_i}{N l_i}$ by $10^9$.  The resulting units are reads per killobase per million reads of a given gene:
 
-$$\text{RPKM}_i := 10^9 \frac{c_i}{N l_i}$$
+$$\text{RPKM}_i := 10^9 \times \frac{c_i}{N l_i}$$
 
 Note that $10^9$ is the result of multiplying by one million reads and one thousand bases.
 
