@@ -91,7 +91,7 @@ Let's derive it:
 
 $$\begin{align*} \theta_i &= \frac{t_i}{\sum_{j=1}^G t_j} \\ &= \frac{ \frac{n_i}{l_i} }{ \sum_{j=1}^G \frac{n_j}{l_j}} && \text{because} \ n_i = l_it_i \implies t_i = \frac{n_i}{l_i} \\ &= \frac{ \frac{p_i \sum_{j=1}^G n_j}{l_i}  }{\sum_{j=1}^G p_j \frac{\sum_{k=1}^G n_k}{l_j}} && \text{because} \ p_i = \frac{n_i}{\sum_{j=1}^G n_j} \implies n_i = p_i \sum_{j=1}^G n_j \\ &=  \frac{ \frac{p_i}{l_i}} {\sum_{j=1}^G \frac{p_j}{l_j}} \end{align*}$$
 
-Then, to estimate $\theta_i$, we simply plug in our estimate $\hat{p}_i$ for each gene to arrive at our estimate $\hat{\theta}_i$ of $\theta$.
+Then, to estimate $\theta_i$, we simply plug in our estimate $\hat{p}_i$ for each gene to arrive at our estimate $\hat{\theta}_i$.
 
 Note that these $\hat{\theta}_i$ values will be very small because there are so many genes. Therefore, it is common to multiply each $\hat{p}_i$ by one million. The resulting values, called **transcripts per million (TPM)** tells you the number of transcripts in the cell from each gene if you select one million transcripts at random.
 
@@ -113,9 +113,9 @@ RPKM/FPKM versus TPM
 Handling noise and multi-mapped reads
 ----------
 
-So far, we have assumed an idealized scenario in which we know with certainty which gene "produced" each read.  In reality, this is not the case.  Sometimes, a read may align to multiple isoforms within a single gene (extremely common), or it might align to multiple genes (common enough to affect results), or it might align imperfectly to a gene and we might wonder whether the read really was produced by that gene and the mismatch in alignment is due to a sequencing error, or the read was not produced by that gene (it might be due to contamination). 
+So far, we have assumed an idealized scenario in which we know with certainty which gene "produced" each read.  In reality, this is not the case.  Sometimes, a read may align to multiple isoforms within a single gene (extremely common), or it might align to multiple genes (common enough to affect results), or it might align imperfectly to a gene and we might wonder whether the read really was produced by the gene. That is, was the mismatch in alignment due to a sequencing error, or was the read *not* produced by that gene (for example, the read may have been produced by a contaminant DNA fragment)? 
 
-So how do we estimate the relative gene abundances in the real world where we have these issues?  In the next post, we will discuss how we estimate transcript abundances in the real world using statistical inference under a probabilistic model.
+So how do we estimate the relative gene abundances in the real world where we have these issues? Because we don't know which gene produced each read, we have to infer it.  State-of-the methods perform this inference under an assumed probabilistic model to be discussed in a future post.
 
 
 
