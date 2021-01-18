@@ -107,7 +107,7 @@ Handling genes with multiple isoforms
 
 Most genes in the human genome are [alternatively spliced](https://en.wikipedia.org/wiki/Alternative_splicing), resulting in multiple isoforms of the gene.  In the example above, we assumed that each gene had only one isoform. How do we handle the case in which a gene has multiple isoforms?
 
-In fact, this is quite trivial. We simply compute the fraction of transcripts *of each isoform* as described above, and then simply sum the fractions of all isoforms for each gene to arrive at the fraction of transcripts originating from the gene. This is depicted in the figure below:
+In fact, this is quite trivial. We simply compute the fraction of transcripts *of each isoform* as described above, and then simply sum the fractions of all isoforms for each gene to arrive at the fraction of transcripts originating from the gene. This is depicted in the figure below where we now assume that the Blue gene produces two isoforms:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_isoform_abundances.png" alt="drawing" width="400"/></center>
 
