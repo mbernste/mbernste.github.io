@@ -91,14 +91,20 @@ Let's derive it:
 
 $$\begin{align*} \theta_i &= \frac{t_i}{\sum_{j=1}^G t_j} \\ &= \frac{ \frac{n_i}{l_i} }{ \sum_{j=1}^G \frac{n_j}{l_j}} && \text{because} \ n_i = l_it_i \implies t_i = \frac{n_i}{l_i} \\ &= \frac{ \frac{p_i \sum_{j=1}^G n_j}{l_i}  }{\sum_{j=1}^G p_j \frac{\sum_{k=1}^G n_k}{l_j}} && \text{because} \ p_i = \frac{n_i}{\sum_{j=1}^G n_j} \implies n_i = p_i \sum_{j=1}^G n_j \\ &=  \frac{ \frac{p_i}{l_i}} {\sum_{j=1}^G \frac{p_j}{l_j}} \end{align*}$$
 
-Note that these $\hat{\theta}_i$ values will be very small because there are so many genes. Therefore, it is common to multiply each $\hat{p}_i$ by one million. The resulting values, called **transcripts per million (TPM)** tells you the number of transcripts in the cell from each gene if you select one million transcripts at random.
+Then, to estimate $\theta_i$, we simply plug in our estimate $\hat{p}_i$ for each gene to arrive at our estimate $\hat{\theta}_i$ of $\theta$.
 
+Note that these $\hat{\theta}_i$ values will be very small because there are so many genes. Therefore, it is common to multiply each $\hat{p}_i$ by one million. The resulting values, called **transcripts per million (TPM)** tells you the number of transcripts in the cell from each gene if you select one million transcripts at random.
 
 Handling genes with multiple isoforms
 ----------
 
-Most genes in the human genome are [alternatively spliced](https://en.wikipedia.org/wiki/Alternative_splicing), resulting in multiple isoforms of the gene.  
+Most genes in the human genome are [alternatively spliced](https://en.wikipedia.org/wiki/Alternative_splicing), resulting in multiple isoforms of the gene.  In the example above, we assumed that each gene had only one isoform. How do we handle the case in which a gene has multiple isoforms?
 
+In fact, this is quite trivial. We simply compute the fraction of transcripts *of each isoform* as described above, and then simply sum the fractions of all isoforms for each gene to arrive at the fraction of transcripts originating from the gene. This is depicted in the figure below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_isoform_vs_gene_abundance.png" alt="drawing" width="350"/></center>
+
+Thus, if we have isoform-level estimates of each gene's TPM, then we simply sum these estimates across isoforms for each gene to arrive at an estimate of the TPM of for the gene as a whole.
 
 RPKM/FPKM versus TPM: which one to use?
 -----------
