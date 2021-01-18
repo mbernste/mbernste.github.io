@@ -175,6 +175,8 @@ That is, when comparing the estimated TPMs for some gene $i$ between two samples
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_isoform_vs_gene_abundance.png" alt="drawing" width="350"/></center>
 
+If RNA-seq only enables us to compute the relative abundances of transcripts within a sample, how are we to compare expression between multiple samples?  This task, called **differential expression analysis** is indeed a challenging problem with a number of proposed solutions.  Most solutions require a *normalization procedure*, such as [median-ratio normalization](https://doi.org/10.1186/gb-2010-11-10-r106), that attempt to make expression measurements between samples more comparable.  Moreover, most approaches for detecting differential expression start with the raw read counts, rather than estimated TPM's, and attempt detect, using probabilistic inference, underlying differences in the read-generating (i.e., count-generating) processes between the two samples.  We will save this problem for a future blog post. 
+
 Further reading
 ------------
 
