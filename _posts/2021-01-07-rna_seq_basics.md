@@ -9,7 +9,7 @@ tags:
   - gene expression
 ---
 
-*RNA sequencing (RNA-seq) has become a ubiquitous tool in biomedical research for measuring gene expression in a population of cells, or a single cell, across the genome.  Despite its ubiquity, RNA-seq is relatively complex and there exists a large research effort towards developing statistical and computational methods for analyzing its results. In this post, I will provide a high level overview of RNA-seq and describe how to interpret some of the common units in which gene expression is measured from an RNA-seq experiment.* 
+*RNA sequencing (RNA-seq) has become a ubiquitous tool in biomedical research for measuring gene expression in a population of cells, or a single cell, across the genome.  Despite its ubiquity, RNA-seq is relatively complex and there exists a large research effort towards developing statistical and computational methods for analyzing the raw data that it produces. In this post, I will provide a high level overview of RNA-seq and describe how to interpret some of the common units in which gene expression is measured from an RNA-seq experiment.* 
 
 Introduction
 ---------
