@@ -125,7 +125,7 @@ Because in the real-world, we don't know which gene produced each read, we have 
 RPKM versus TPM
 -----------
 
-In the [early days of RNA-seq](https://doi.org/10.1038/nmeth.1226), read counts were summarized in units of **reads per killobase per million mapped reads (RPKM)**.  As will be discussed in the next section, RPKM's are known to suffer from a fundamental issue.   
+In the [early days of RNA-seq](https://doi.org/10.1038/nmeth.1226), read counts were summarized in units of **reads per killobase per million mapped reads (RPKM)**.  As will be discussed in the next section, RPKMs are known to suffer from a fundamental issue.   
 
 Before digging into the problem with RPKM, let's first define it.  Recall, the issue with the raw read counts is that we will tend to sample more reads from longer isoforms/genes and thus, the raw counts will not reflect the relative abundance of each isoform or gene.  To get around this, we might try the following normalization procedure: simply divide the fraction of reads from each gene/isoform by the length of each gene/isoform.  That is, 
 
