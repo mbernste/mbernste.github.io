@@ -154,7 +154,7 @@ The problem with RPKM values is that, although they do allow us to compare relat
 
 Let's illustrate this with an example. In the figure below, we depict two samples with the same three genes as used previously, each with only one isoform. The Blue gene is of length 4, the Green gene is of length 7, and the Yellow gene is of length 2.  The two samples have the same fraction of transcripts originating from the Yellow gene, but differ in the fraction of transcripts originating from the Blue and Green genes. If we generated many reads, assuming no noise, then the RPKMs would converge the values depicted below the pie charts:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/problem_w_RPKM.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/relative_vs_absolute_abundance.png" alt="drawing" width="500"/></center>
 
 As you can see, the RPKM values differ for the Yellow gene between the two samples even though the fraction of transcripts from the Yellow gene is the same between the two samples! This is not desirable.  
 
@@ -169,13 +169,15 @@ In our toy example above, the mean length of transcripts in Sample 2 is greater 
 Problems with TPM
 ------------
 
-In the previous section we showed that estimated TPMs are preferred to RPKMs because estimated TPMs allow one to compare *estimated relative transcript abundances* between two samples. This is a nice advantage to RPKMs; however, it's important to keep in mind that even TPMs do **not** enable us to compare absolute expression between two samples.  
+In the previous section we showed that estimated TPMs are preferred to RPKMs because estimated TPMs allow one to compare *estimated relative transcript abundances* between two samples. This is a nice advantage to RPKMs; however, it's important to keep in mind that because TPMs are scaled fractions, they do **not** enable us to compare absolute expression between two samples.  
 
 That is, when comparing the estimated TPMs for some gene $i$ between two samples, which we'll call Sample 1 and Sample 2, it may be that the TPM is larger in Sample 1, but is in fact more lowly expressed.  Here's an example to illustrate:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_isoform_vs_gene_abundance.png" alt="drawing" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/relative_vs_absolute_abundance.png" alt="drawing" width="500"/></center>
 
-If RNA-seq only enables us to compute the relative abundances of transcripts within a sample, how are we to compare expression between multiple samples?  The task of identifying genes that are differentially expressed between samples is a challenging problem with a number of proposed solutions.  Most solutions require a *normalization procedure*, such as [median-ratio normalization](https://doi.org/10.1186/gb-2010-11-10-r106), that attempt to make expression measurements between samples more comparable.  Moreover, most approaches for detecting differential expression start with the raw read counts, rather than estimated TPM's, and attempt detect, using probabilistic inference, underlying differences in the read-generating (i.e., count-generating) processes between the two samples.  We will save this problem for a future blog post. 
+As you can see, the absolute number of transcripts from the Blue gene is lower in Sample 1 than in Sample 2, but the *fraction* of transcripts (and thus, the TPM) of the Blue gene is higher in Sample 1 than in Sample 2. 
+
+If RNA-seq only enables us to compute the relative abundances of transcripts within a sample, how is one to compare expression between multiple samples?  This is a challenging problem with a number of proposed solutions. One method involves injecting the sample with RNA for which we know it's abudundance, called [spike-in RNA](https://en.wikipedia.org/wiki/RNA_spike-in), and use the spike-in RNA abundance as a baseline from which one can estimate absolute expression.  Other solutions involve using [house-keeping gene](https://en.wikipedia.org/wiki/Housekeeping_gene), for which we assume expression is constant between samples and can be used as a baseline from which to absolute abundances in a similar vein to the spike-in method.  Another method, called [median-ratio normalization](https://doi.org/10.1186/gb-2010-11-10-r106), makes the assumption that most genes are not differentially expressed between the samples and using this assumption proposes a procedure for normalizing counts between samples (to be discussed in a future post).  
 
 Further reading
 ------------
