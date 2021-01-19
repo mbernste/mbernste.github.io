@@ -11,6 +11,10 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [True understanding is "seeing" in 3D](https://mbernste.github.io/posts/understanding_3d/)  
 [Intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/)  
 
+## Bioinformatics
+
+[RNA-seq: the basics](https://mbernste.github.io/posts/rna_seq_basics/)
+
 ## Linear algebra
 
 [Introducing matrices](https://mbernste.github.io/posts/matrices/)  
