@@ -13,7 +13,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 ## Bioinformatics
 
-[RNA-seq: the basics](https://mbernste.github.io/posts/rna_seq_basics/)
+[RNA-seq: the basics](https://mbernste.github.io/posts/rna_seq_basics/)  
 
 ## Linear algebra
 
