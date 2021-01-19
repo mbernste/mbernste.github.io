@@ -185,7 +185,7 @@ Further reading
 ------------
 
 * A blog post by Harold Pimentel discussing the differences between RPKM and TPM: [https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/](https://haroldpimentel.wordpress.com/2014/05/08/what-the-fpkm-a-review-rna-seq-expression-units/) 
-* A more rigorous summary of the statistical methods behind RNA-seq by Lior Pachter: [https://arxiv.org/abs/1104.3889](https://arxiv.org/abs/1104.3889)
+* A more rigorous summary of the statistical methods behind RNA-seq analysis by Lior Pachter: [https://arxiv.org/abs/1104.3889](https://arxiv.org/abs/1104.3889)
 * A nice tutorial on RNA-seq normalization: [https://hbctraining.github.io/DGE_workshop/lessons/02_DGE_count_normalization.html](https://hbctraining.github.io/DGE_workshop/lessons/02_DGE_count_normalization.html)
 
 Appendix
