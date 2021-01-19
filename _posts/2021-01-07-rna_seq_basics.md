@@ -139,7 +139,7 @@ Because $N$ is very large (on the order of millions), and so too is $l_i$ (on th
 
 $$\text{RPKM}_i := 10^9 \times \frac{c_i}{N l_i}$$
 
-Note that $10^9$ is the result of multiplying by one thousand bases and one million reads (hence **killo**base per **million** mapped reads).
+Note that $10^9$ is the result of multiplying by one thousand bases and one million reads (hence, "**killo**bases per **million** mapped reads").
 
 With read counts normalized into units of RPKM, we can compare expression values between genes and we don't have to worry about gene length being an issue.  That is, if we have two genes, $i$ and $j$, and we find that $\text{RPKM}_i > \text{RPKM}_j$, we can acertain that gene $i$ may be more highly expressed than gene $j$.  
 
