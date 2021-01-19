@@ -156,7 +156,7 @@ The problem with RPKM values is that, although they do allow us to compare relat
 
 Let's illustrate this with an example. In the figure below, we depict two samples with the same three genes as used previously, each with only one isoform. Again, the Blue gene is of length 4, the Green gene is of length 7, and the Yellow gene is of length 2.  The two samples have the same fraction of transcripts originating from the Yellow gene, but differ in the fraction of transcripts originating from the Blue and Green genes. If we generated many reads, assuming no noise, then the RPKMs would converge to the values depicted below the pie charts:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/relative_vs_absolute_abundance.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/problem_w_RPKM.png" alt="drawing" width="500"/></center>
 
 As you can see, the RPKM values differ for the Yellow gene between the two samples even though the fraction of transcripts from the Yellow gene is the same between the two samples! This is not desirable.  
 
