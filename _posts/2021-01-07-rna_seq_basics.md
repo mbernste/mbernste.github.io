@@ -133,7 +133,7 @@ $$\frac{c_i}{N l_i} = \frac{\hat{p}_i}{l_i}$$
 
 Here we see that $\frac{c_i}{l_i}$ is the *number* of reads *per base* of the gene/isoform.  That is, it is the average number of reads generated from each base along the gene/isoform.  Then, if we divide this quantity by the total number of reads, $N$, we arrive at the number of reads per base of the gene/isoform *per read*. 
 
-This is a bit confusing. It almost seems circular that we're computing the number of reads per base per read.  If that's confusing, here's another way to think about it: we're computing the fraction of the reads that were generated, on average, by each base of a gene.  This inherently normalizes for gene length because the units are in terms of a single base of each gene!
+This is a bit confusing. It almost seems circular that we're computing the number of reads per base per read.  If that's confusing, here's another way to think about it: $\frac{c_i}{N l_i}$ is the *fraction* of the reads that were generated, on average, by each base of gene $i$.  This inherently normalizes for gene length because the units are in terms of a single base of the gene!
 
 Because $N$ is very large (on the order of millions), and so too is $l_i$ (on the order of thousands), we multiply $\frac{c_i}{N l_i}$ by $10^9$.  The resulting units are reads per killobase per million reads of a given gene:
 
