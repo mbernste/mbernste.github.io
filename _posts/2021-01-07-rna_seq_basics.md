@@ -1,5 +1,5 @@
 ---
-title: 'RNA-seq: The basics'
+title: 'RNA-seq: the basics'
 date: 2021-01-07
 permalink: /posts/rna_seq_basics/
 tags:
