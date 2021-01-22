@@ -162,7 +162,7 @@ As you can see, the RPKM values differ for the Yellow gene between the two sampl
 
 Why is this the case? Recall that RPKMs can be viewed as un-normalized TPM estimates.  As shown by [Li and Dewey (2011)](https://doi.org/10.1093/bioinformatics/btp692), it turns out that the normalization factor includes the *mean length* of all of the transcripts in the sample (see the Appendix to this blog post for the full derivation):
 
-$$\hat{\text{TPM}}_i = \text{RPKM}_i \left[ \frac{10^{-3}}{N} \sum_{k=1}^G \hat{\theta}_k l_k \right]$$ 
+$$\hat{\text{TPM}}_i = \text{RPKM}_i \left[ N 10^{-3} \sum_{k=1}^G \hat{\theta}_k l_k \right]$$ 
 
 We see that the term $$\sum_{k=1}^G \hat{\theta}_k l_k$$ is the mean length of all of the transcripts.  Thus, the normalization constant required to transform each $\text{RPKM}_i$ value to an estimate of $\hat{TPM}_i$ is dependent on *other* transcript abundances in the sample, not just the abundances for a specific gene/isoform.
 
@@ -193,7 +193,7 @@ Appendix
 
 Deriving the normalizing constant between RPKM and TPM:
 
-$$\begin{align*}\hat{\text{TPM}}_i &= 10^{6} \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \\ &= \text{RPKM}_i \left[\frac{10^6 }{10^9 \sum_{j=1}^G \frac{\hat{p}_j}{N l_j} } \right] \\ &= \text{RPKM}_i \left[ \frac{10^{-3}}{N} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1}  \right] \\ &= \text{RPKM}_i \left[ \frac{10^{-3}}{N}  \left( \sum_{j=1}^G \frac{ \frac{\hat{\theta}_j l_j}{\sum_{k=1}^G \hat{\theta}_kl_k} } {l_j} \right)^{-1} \right] && \text{because} \   \hat{p}_j = \frac{\hat{\theta}_j l_j}{\sum_{k=1}^G \hat{\theta}_kl_k} \\ &=  \text{RPKM}_i \left[ \frac{10^{-3}}{N}  \left(\sum_{k=1}^G \hat{\theta}_k l_k \right) \left( \sum_{j=1}^G \hat{\theta}_j \right)^{-1} \right] \\ &= \text{RPKM}_i \left[ \frac{10^{-3}}{N} \sum_{k=1}^G \hat{\theta}_k l_k \right] && \text{because} \ \sum_j \hat{\theta}_j = 1 \end{align*}$$ 
+$$\begin{align*}\hat{\text{TPM}}_i &= 10^{6} \frac{ \text{RPKM}_i }{\sum_{j=1}^G \text{RPKM}_j} \\ &= \text{RPKM}_i \left[\frac{10^6 }{10^9 \sum_{j=1}^G \frac{\hat{p}_j}{N l_j} } \right] \\ &= \text{RPKM}_i \left[ N 10^{-3} \left(\sum_{j=1}^G \frac{\hat{p}_j}{l_j} \right)^{-1}  \right] \\ &= \text{RPKM}_i \left[ N 10^{-3}  \left( \sum_{j=1}^G \frac{ \frac{\hat{\theta}_j l_j}{\sum_{k=1}^G \hat{\theta}_kl_k} } {l_j} \right)^{-1} \right] && \text{because} \   \hat{p}_j = \frac{\hat{\theta}_j l_j}{\sum_{k=1}^G \hat{\theta}_kl_k} \\ &=  \text{RPKM}_i \left[ N 10^{-3}  \left(\sum_{k=1}^G \hat{\theta}_k l_k \right) \left( \sum_{j=1}^G \hat{\theta}_j \right)^{-1} \right] \\ &= \text{RPKM}_i \left[ N 10^{-3} \sum_{k=1}^G \hat{\theta}_k l_k \right] && \text{because} \ \sum_j \hat{\theta}_j = 1 \end{align*}$$ 
 
 
 
