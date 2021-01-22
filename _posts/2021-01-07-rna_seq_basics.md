@@ -16,7 +16,7 @@ Introduction
 
 RNA sequencing (RNA-seq) measures the transcription of each gene in a biological sample (i.e. a group of cells or a single single). In this post, I will review the RNA-seq protocol and explain how to interpret the most commonly used units of gene expression derived from an RNA-seq experiment: transcripts per million (TPM). I will also contrast transcripts per million with another common unit of expression: reads per killobase per million mapped reads (RPKM). This post will assume a basic understanding of the [Central Dogma](https://en.wikipedia.org/wiki/Central_dogma_of_molecular_biology) of molecular biology.
 
-Before getting started, let's review the inputs and outputs of an RNA-seq experiment. We're given a biological sample consisting of a cell or a population of cells, and our goal is to estimate the **transcript abundances** from each gene in the sample -- that is, the *fraction* of transcripts in the sample that originate from each gene. A toy example is depicted below where the genome consists of only three genes: a Blue gene, a Green gene, and a Yellow gene.
+Getting started, let's review the inputs and outputs of an RNA-seq experiment. We're given a biological sample consisting of a cell or a population of cells, and our goal is to estimate the **transcript abundances** from each gene in the sample -- that is, the *fraction* of transcripts in the sample that originate from each gene. A toy example is depicted below where the genome consists of only three genes: a Blue gene, a Green gene, and a Yellow gene.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/RNA_seq_input_output.png" alt="drawing" width="700"/></center>
 
