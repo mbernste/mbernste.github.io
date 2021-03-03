@@ -84,7 +84,7 @@ We do so as follows: we extend the cellular state space to include multiple indi
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_isomorphism.png" alt="drawing" width="500"/></center>
 
-From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following. Of course, in practice, we don't have access to the underlying cellular state, so we are left to heuristics. (For example, [Haghverdi et al. (2018)](https://www.nature.com/articles/nbt.4091) propose a method for detecting _mutual nearest neighbors_ between cells that belong to two differet batches and then using these neighbors to transform the cells into a common space.)
+From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following. Of course, in practice, we don't have access to the underlying cellular state space, so we are left to heuristics. (For example, [Haghverdi et al. (2018)](https://www.nature.com/articles/nbt.4091) propose a method for detecting _mutual nearest neighbors_ between cells that belong to two differet batches and then use these neighbors to transform the cells into a common space.)
 
 
 Putting these ideas into practice
@@ -99,3 +99,4 @@ Further reading
 * An article by Samantha Morris on the ongoing discussion on how to think about cell types and cell states: [https://dev.biologists.org/content/146/12/dev169748.abstract](https://dev.biologists.org/content/146/12/dev169748.abstract)
 * Opinions on how to define a cell type: [https://www.cell.com/cell-systems/pdf/S2405-4712(17)30091-1.pdf](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30091-1.pdf)
 * Human Cell Atlas: [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5762154/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5762154/)
+* An exploration of the distinction between cell type and cell state in Clytia Medusa by Tara Chari _et al._: [https://www.biorxiv.org/content/10.1101/2021.01.22.427844v2.full.pdf](https://www.biorxiv.org/content/10.1101/2021.01.22.427844v2.full.pdf) 
