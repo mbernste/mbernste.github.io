@@ -36,6 +36,8 @@ A cell type is a subset of states
 
 I argue that one can define a _cell type_ to simply be a **subset of cell states in the cellular state space**.  For example, when one talks about a "T cell", they are inherently talking about all states in the cell state space in which the cell is performing a function that we have named "T cell".  Importantly, a cell type is a man-made partition on the cell state space. This is depicted in the figure below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_cell_type.png" alt="drawing" width="350"/></center>
+
 Importantly, one can define cell types arbitrarily. In fact, any member of the [power set](https://en.wikipedia.org/wiki/Power_set) of cell states could be given a name and considered to be a cell type! Of course, as human beings with particular goals (such as treating disease), only a very small number of subsets of the state space are useful to think about. Thus, it might not be a good idea to go ahead and create millions of cell types, even though we could.
 
 Cataloging cell types with ontologies
