@@ -22,14 +22,23 @@ The cell state space
 
 First, let's get the obvious out of the way: the concept of "cell type" is man made.  Nature does not create categories, rather, we create categories in our minds. They are fundamental building blocks in our mental processing.  Rather, in nature, there are _only cell states_.  That is, every cell simply exists in a certain configuration. It is expressing certain genes. It is comprised of certain proteins. It's genome is chemically and spatially configured in a specific way. Moreover, cells _change_ their state over time.  A cell is in a constant state of flux as it goes about its function and responds to external stimuli.
 
-Thus, we can simplify this concept by thinking about the cell **state space**.  In computer science parlance, the cell state space can be thought about as an autamata. It exists in a state at a specific time, and over time it _transitions_ to new states according. If these states are finite (or [countable]()), one can view the state space as a [graph]() in which nodes in the graph are states and edges are transitions between states. This is depicted in the figure below:
+In computer science parlance, we can think about the set of cell states as a [state space](https://en.wikipedia.org/wiki/State_space).  That is, the cell always exists in a specific, single state at a specific time, and over time it _transitions_ to new states. If these states are finite (or [countable]()), one can view the state space as a [cellular automaton](https://en.wikipedia.org/wiki/Cellular_automaton), where the state space can be represented by a [graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)), in which nodes in the graph are states and edges are transitions between states. This is depicted in the figure below:
 
 
-In reality, the state space is continuous, but for the purposes of this discussion, we will use the simplification that the state space is discrete and can be represented by a graph.
+In reality, the state space of a cell is continuous, but for the purposes of this discussion, we will use the simplification that the state space is discrete and can be represented by a graph.
 
 
 A cell type is a subset of states
 -------------------
+
+I argue that one can define a _cell type_ to simply be a **subset of cell states in the cellular state space**.  For example, when one talks about a "T cell", they are inherently talking about all states in the cell state space in which the cell is performing a function that we have named "T cell".  Importantly, a cell type is a man-made partition on the cell state space. This is depicted in the figure below:
+
+Importatnly, one can define cell types arbitrarily. In fact, any member of the [power set](https://en.wikipedia.org/wiki/Power_set) of cell states could be given a name and considered to be a cell type! Of course, as human beings with particular goals (such as treating disease), only a very small number of subsets of the state space are useful to think about. Thus, it might not be a good idea to go ahead and create millions of cell types, even though we could.
+
+Marker gene-based definitions are a proxy for labelling a subgraph
+-------------------
+
+
 
 
 Connectionist versus symbolic strategies for knowledge representation
