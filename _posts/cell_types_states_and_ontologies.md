@@ -55,9 +55,7 @@ Viewing batch effects through the lense of cellular state spaces
 
 Another important point to keep in mind is that the subgraph of cell states used to define a given cell state need not be connected in the cellular state space. For example, in some individual, owing to their particular genotype and environment, their T cells are almost certainly in a slightly different state than another individual.  Nonetheless, we may still wish to call both of these cells "T cells".  This may also occur in two samples of cultured cells. The two cell cultures may not be grown under the exact same conditions and thus, there may be a slight difference in the cellular states of the cells in the two cultures. Nonetheless, we may wish to still define the cells in the two cultures to be of the same cell types.
 
-We do so as follows: we extend the cellular state space to include multiple individuals or multiple samples (i.e., multiple _batches_). This results in a two disconnected, and approximately [isomorphic](https://en.wikipedia.org/wiki/Graph_isomorphism) subgraphs.    
-
-From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following.  
+We do so as follows: we extend the cellular state space to include multiple individuals or multiple samples (i.e., multiple _batches_). This results in a two disconnected, and approximately [isomorphic](https://en.wikipedia.org/wiki/Graph_isomorphism) subgraphs. From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following.  
 
 Viewing disease through the lense of cellular state spaces
 -------------------
