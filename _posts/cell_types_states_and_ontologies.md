@@ -11,7 +11,7 @@ Unfortunately, researchers found that a such a fuzzy definition does suffice as 
 
 <center><img src="https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/database/2020/10.1093_database_baaa073/1/baaa073f5.png?Expires=1617811413&Signature=vgKmvJGJNIfPHi80jk-x~M1omAGqatgvKTdAieh4XFc4RYlNZaGjYnBjnSbAvOrMBPL8JHRDj4Q0oBtTaUGkEG~wmyhGAog7YF~qg3lnpPqHehTDGDbPING5Z85sFyxfNyu73LX38mlzJEm~DdmviENgLOjl8GEwVlTNUzr0rsZA0sK3gC2n9mEStGrBtoJKjNWf2BEhhFBfHGn~KPRLh-NWQFHtfTZgRsNkJpyHlFqNo3tKUyHeWIYWZDTFsgQSKxmt0dZ3HKwq8y4m9I4NaeF3nvrvrT19vzxDTWwI8Gp5yQZpg8aULyS7EthE66FSHkULFYEX3~d2aaA-yy8L3w__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="drawing" width="700"/></center>
 
-Moreover, we now know that cells are actually pretty plastic. While skin cells naturally don't morph into neurons, they can be induced to morph into neurons [using special treatments]() in a petri dish.  Moreover, cells do switch their functions relatively often. A T cell floating in the blood stream can "activate" to fight an infection. Do we call transient cell states "cell types"? Do we include them in our reference?
+Moreover, we now know that cells are actually pretty plastic. While skin cells naturally don't morph into neurons, they can be induced to morph into neurons [using special treatments](https://www.nature.com/articles/nbt.1946).  Moreover, cells do switch their functions relatively often. A T cell floating in the blood stream can "activate" to fight an infection. Do we call transient cell states "cell types"? Do we include them in our reference?
 
 Lastly, there is the question of how to handle diseased cells. Is a neuron that is no longer able to perform its function still a neuron?  Do we call a "diseased" neuron to be its own cell state? What criteria do we use to label a cell as a diseased cell?
 
@@ -37,17 +37,28 @@ I argue that one can define a _cell type_ to simply be a **subset of cell states
 
 Importantly, one can define cell types arbitrarily. In fact, any member of the [power set](https://en.wikipedia.org/wiki/Power_set) of cell states could be given a name and considered to be a cell type! Of course, as human beings with particular goals (such as treating disease), only a very small number of subsets of the state space are useful to think about. Thus, it might not be a good idea to go ahead and create millions of cell types, even though we could.
 
-Cataloging cell types with knowledge graphs
+Cataloging cell types with ontologies
 -------------------
 
 A big question is, how do we organize all of these cell types?  One idea that I find particularly compelling is to use [knowledge graphs](https://en.wikipedia.org/wiki/Knowledge_graph) or [ontologies](https://en.wikipedia.org/wiki/Ontology) (the two concepts are very similar, with a few subtle differences). In such graphs, each node represents a concept and an edge between two concepts represents a relationship between those two concepts. For example, the _subtype_ relationship between two concepts is often denoted using an edge labelled as "is a" . For example, if we have knowledge graph with the nodes "car" and "vehicle", we would draw an "is a" edge between them, which encodes the knowledge that, "every car is a vehicle".  
 
 In the cellular state space, these "is a" edges are simply subset relationships. If one cell type's set of states is a subset of another cell type's set of states, then we can draw an "is a" edge between them in the cell type ontology.
 
-
 Viewing batch effects through the lense of cellular state spaces
 -------------------
+
+Another important point to keep in mind is that the subgraph of cell states used to define a given cell state need not be connected in the cellular state space. For example, in some individual, owing to their particular genotype and environment, their T cells are almost certainly in a slightly different state than another individual.  Nonetheless, we may still wish to call both of these cells "T cells".  This may also occur in two samples of cultured cells. The two cell cultures may not be grown under the exact same conditions and thus, there may be a slight difference in the cellular states of the cells in the two cultures. Nonetheless, we may wish to still define the cells in the two cultures to be of the same cell types.
+
+We do so as follows: we extend the cellular state space to include multiple individuals or multiple samples (i.e., multiple _batches_). This results in a two disconnected, and approximately [isomorphic](https://en.wikipedia.org/wiki/Graph_isomorphism) subgraphs.    
+
+From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces of the two individuals.  
 
 Viewing disease through the lense of cellular state spaces
 -------------------
 
+Putting this perspective into practice
+-------------------
+
+
+Further reading
+-------------------
