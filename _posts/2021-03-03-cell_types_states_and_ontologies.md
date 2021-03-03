@@ -34,7 +34,7 @@ There is not yet an agreement in the scientific community on how to answer these
 The cell state space
 -------------------
 
-First, let's get the obvious out of the way: the concept of "cell type" is man made.  Nature does not create categories, rather, we create categories in our minds. They are fundamental building blocks in our mental processing.  Rather, in nature, there are _only cell states_.  That is, every cell simply exists in a certain configuration. It is expressing certain genes. It is comprised of certain proteins. It's genome is chemically and spatially configured in a specific way. Moreover, cells _change_ their state over time.  A cell is in a constant state of flux as it goes about its function and responds to external stimuli.
+First, let's get the obvious out of the way: the concept of "cell type" is man made.  Nature does not create categories, rather, we create categories in our minds. Categories are fundamental building blocks of our mental processing.  In nature, there are _only cell states_.  That is, every cell simply exists in a certain configuration. It is expressing certain genes. It is comprised of certain proteins. It's genome is chemically and spatially configured in a specific way. Moreover, cells _change_ their state over time.  A cell is in a constant state of flux as it goes about its function and responds to external stimuli.
 
 In computer science parlance, we can think about the set of cell states as a [state space](https://en.wikipedia.org/wiki/State_space).  That is, the cell always exists in a specific, single state at a specific time, and over time it _transitions_ to new states. If these states are finite (or [countable](https://en.wikipedia.org/wiki/Countable_set)), one can view the state space as a [cellular automaton](https://en.wikipedia.org/wiki/Cellular_automaton), where the state space can be represented by a [graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)), in which nodes in the graph are states and edges are transitions between states. This is depicted in the figure below:
 
@@ -48,7 +48,7 @@ This idea is not new. In fact there is a whole subfield of computational biology
 A cell type is a subset of states
 -------------------
 
-I argue that one can define a _cell type_ to simply be a **subset of cell states in the cellular state space**.  For example, when one talks about a "T cell", they are inherently talking about all states in the cell state space in which the cell is performing a function that we have named "T cell".  Importantly, a cell type is a man-made partition on the cell state space. This is depicted in the figure below:
+I argue that one can define a _cell type_ to simply be a **subset of cell states in the cellular state space**.  For example, when one talks about a "T cell", they are inherently talking about all states in the cell state space in which the cell is performing a function that we have named "T cell".  Importantly, a cell type is a man made partition on the cellular state space. This is depicted in the figure below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_cell_type.png" alt="drawing" width="350"/></center>
 
