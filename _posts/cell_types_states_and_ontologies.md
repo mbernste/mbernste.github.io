@@ -70,6 +70,9 @@ The idea of defining cell types to be subsets of cell states enables one to defi
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_states_diseased.png" alt="drawing" width="400"/></center>
 
+Because diseased cell types are represented in the same framework as any other cell type, we can add them to an ontology of cell types as discussed previously:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_states_diseased_ontology.png" alt="drawing" width="400"/></center>
 
 Viewing batch effects through the lense of cellular state spaces
 -------------------
@@ -84,9 +87,11 @@ We do so as follows: we extend the cellular state space to include multiple indi
 From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following. Of course, in practice, we don't have access to the underlying cellular state, so we are left to heuristics. (For example, [Haghverdi et al. (2018)](https://www.nature.com/articles/nbt.4091) propose a method for detecting _mutual nearest neighbors_ between cells that belong to two differet batches and then using these neighbors to transform the cells into a common space.)
 
 
-Putting this perspective into practice
+Putting these ideas into practice
 -------------------
 
+All of the ideas that I presented in this post are horribly simplified. In general, our knowledge of cellular function and the underlying state space of the biochemistry of cells is woefully incomplete and thus, it remains impossible to rigorously define a cell type as a set of cellular states as I discussed here. Nonetheless, I find it to be a useful mental model for thinking about cell types, cell states, and for placing open problems in bioinformatics into a common conceptual framework.  
 
 Further reading
 -------------------
+
