@@ -1,6 +1,6 @@
 ---
 title: 'On cell types and cell states'
-date: 2021-03-01
+date: 2021-03-03
 permalink: /posts/rna_seq_basics/
 tags:
   - bioinformatics
@@ -97,4 +97,5 @@ Further reading
 
 * An article by Cole Trapnell discussing the differences between cell types and cell states: [https://genome.cshlp.org/content/25/10/1491.full.html](https://genome.cshlp.org/content/25/10/1491.full.html)
 * An article by Samantha Morris on the ongoing discussion on how to think about cell types and cell states: [https://dev.biologists.org/content/146/12/dev169748.abstract](https://dev.biologists.org/content/146/12/dev169748.abstract)
+* Opinions on how to define a cell type: [https://www.cell.com/cell-systems/pdf/S2405-4712(17)30091-1.pdf](https://www.cell.com/cell-systems/pdf/S2405-4712(17)30091-1.pdf)
 * Human Cell Atlas white paper: [https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5762154/](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5762154/)
