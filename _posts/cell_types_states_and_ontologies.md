@@ -13,3 +13,10 @@ https://academic.oup.com/view-large/figure/215753221/baaa073f5.tif
 
 Moreover, we now know that cells are actually pretty plastic. While skin cells naturally don't morph into neurons, they can be induced to morph into neurons [using special treatments]() in a petri dish.  Moreover, cells do switch their functions relatively often. A T cell floating in the blood stream can "activate" to fight an infection. 
 
+
+Connectionist versus symbolic strategies for knowledge representation
+------------
+
+
+Combining strategies for mapping cell types
+------------
