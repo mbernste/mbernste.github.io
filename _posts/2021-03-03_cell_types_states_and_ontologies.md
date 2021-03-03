@@ -1,7 +1,7 @@
 ---
 title: 'On cell types and cell states'
 date: 2021-03-03
-permalink: /posts/rna_seq_basics/
+permalink: /posts/cell_types_cell_states/
 tags:
   - bioinformatics
   - RNA-seq
