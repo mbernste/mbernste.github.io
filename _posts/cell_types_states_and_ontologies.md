@@ -52,7 +52,7 @@ Another important point to keep in mind is that the subgraph of cell states used
 
 We do so as follows: we extend the cellular state space to include multiple individuals or multiple samples (i.e., multiple _batches_). This results in a two disconnected, and approximately [isomorphic](https://en.wikipedia.org/wiki/Graph_isomorphism) subgraphs.    
 
-From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces of the two individuals.  
+From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following.  
 
 Viewing disease through the lense of cellular state spaces
 -------------------
