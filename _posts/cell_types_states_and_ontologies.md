@@ -27,23 +27,34 @@ In computer science parlance, we can think about the set of cell states as a [st
 
 In reality, the state space of a cell is continuous, but for the purposes of this discussion, we will use the simplification that the state space is discrete and can be represented by a graph.
 
+This idea is not new. In fact there is a whole subfield of computational biology that seeks to [model cells](https://en.wikipedia.org/wiki/Cellular_model), and other biological systems, as computational state spaces. 
+
 
 A cell type is a subset of states
 -------------------
 
 I argue that one can define a _cell type_ to simply be a **subset of cell states in the cellular state space**.  For example, when one talks about a "T cell", they are inherently talking about all states in the cell state space in which the cell is performing a function that we have named "T cell".  Importantly, a cell type is a man-made partition on the cell state space. This is depicted in the figure below:
 
-Importatnly, one can define cell types arbitrarily. In fact, any member of the [power set](https://en.wikipedia.org/wiki/Power_set) of cell states could be given a name and considered to be a cell type! Of course, as human beings with particular goals (such as treating disease), only a very small number of subsets of the state space are useful to think about. Thus, it might not be a good idea to go ahead and create millions of cell types, even though we could.
+Importantly, one can define cell types arbitrarily. In fact, any member of the [power set](https://en.wikipedia.org/wiki/Power_set) of cell states could be given a name and considered to be a cell type! Of course, as human beings with particular goals (such as treating disease), only a very small number of subsets of the state space are useful to think about. Thus, it might not be a good idea to go ahead and create millions of cell types, even though we could.
 
-Marker gene-based definitions are a proxy for labelling a subgraph
+Marker gene-based cell type definitions
+-------------------
+
+Recently, there has been a large effort towards finding **marker genes** for defining cell types.  The idea here is that one can define a specific cell type to be any cell that is expressing a set of marker genes for that cell type.  For example, one can define a T cell to be any cell that is expressing CD3.  
+
+The idea of defining cell types by marker genes was born out of necessity more than anything. In single-cell RNA-seq, one only measures which genes are expressed in each cell and thus, one must only use this information when inferring each cell's cell type.  If one simply defines cell types according to the expression of some set of genes, then this inference task is easy! 
+
+One can view these marker gene-based definitions in terms of the cellular state space.  That is, one can consider the set of cellular states that express a specific subset of genes. That subset is then given a name. For example, the subset of all cellular states expressing CD3 is now called the "T cell" subgraph.  
+
+As [many have pointed out], marker gene-based definitions suffer from the problem that there is not a one-to-one mapping between the expression of subsets of genes and cellular function. For example, maybe not all cells doing "T cell" functions are expressing CD3. In terms of the cellular state space, the argument here that the T cell subgraph needs to be extended.
+
+Cataloging cell types with knowledge graphs
 -------------------
 
 
+Viewing batch effects through the lense of cellular state spaces
+-------------------
 
+Viewing disease through the lense of cellular state spaces
+-------------------
 
-Connectionist versus symbolic strategies for knowledge representation
-------------
-
-
-Combining strategies for mapping cell types
-------------
