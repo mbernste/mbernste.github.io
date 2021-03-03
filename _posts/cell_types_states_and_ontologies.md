@@ -47,7 +47,7 @@ A big question is, how do we organize all of these cell types?  One idea that I 
 
 In the cellular state space, these "is a" edges are simply subset relationships. If one cell type's set of states is a subset of another cell type's set of states, then we can draw an "is a" edge between them in the cell type ontology. For example if we have "Cell Type B is a Cell Type A", this means that any cell in the set of states labelled "Cell Type B" is also in the set of states labelled as "Cell Type A".  This is depicted in the figure below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_ontologies.png" alt="drawing" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_ontologies.png" alt="drawing" width="400"/></center>
 
 
 Viewing batch effects through the lense of cellular state spaces
