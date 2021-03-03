@@ -15,15 +15,20 @@ Moreover, we now know that cells are actually pretty plastic. While skin cells n
 
 Lastly, there is the question of how to handle diseased cells. Is a neuron that is no longer able to perform its function still a neuron?  Do we call a "diseased" neuron to be its own cell state? What criteria do we use to label a cell as a diseased cell?
 
-In this post, I will convey a comprehensive perspective on the cell type mapping task that will attempt to answer these questions and provide a mental framework for thinking about cell types, cell states, and what it means to "catalogue" a cell type.
+There is not yet an agreement in the scientific community on how to answer these questions. Nonetheless, in this post, I will convey a perspective, which combines many existing ideas in the field, that will attempt to answer them.  This perspective is a mental framework for thinking about cell types, cell states, and what it means to "catalogue" a cell type.  
 
 The cell state space
 -------------------
 
-First, let's talk about what 
+First, let's get the obvious out of the way: the concept of "cell type" is man made.  Nature does not create categories, rather, we create categories in our minds. They are fundamental building blocks in our mental processing.  Rather, in nature, there are _only cell states_.  That is, every cell simply exists in a certain configuration. It is expressing certain genes. It is comprised of certain proteins. It's genome is chemically and spatially configured in a specific way. Moreover, cells _change_ their state over time.  A cell is in a constant state of flux as it goes about its function and responds to external stimuli.
+
+Thus, we can simplify this concept by thinking about the cell **state space**.  In computer science parlance, the cell state space can be thought about as an autamata. It exists in a state at a specific time, and over time it _transitions_ to new states according. If these states are finite (or [countable]()), one can view the state space as a [graph]() in which nodes in the graph are states and edges are transitions between states. This is depicted in the figure below:
 
 
-The cell state space
+In reality, the state space is continuous, but for the purposes of this discussion, we will use the simplification that the state space is discrete and can be represented by a graph.
+
+
+A cell type is a subset of states
 -------------------
 
 
