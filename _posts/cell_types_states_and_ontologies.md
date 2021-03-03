@@ -1,15 +1,18 @@
 ---
 title: 'On cell types and cell states'
-date: 2021-01-07
+date: 2021-03-01
 permalink: /posts/rna_seq_basics/
 tags:
-  - tutorial
   - bioinformatics
   - RNA-seq
+  - single-cell
   - gene expression
+  - cell type
+  - knowledge representation
+  - ontologies
 ---
 
-*RNA sequencing (RNA-seq) has become a ubiquitous tool in biomedical research for measuring gene expression in a population of cells, or a single cell, across the genome.  Despite its ubiquity, RNA-seq is relatively complex and there exists a large research effort towards developing statistical and computational methods for analyzing the raw data that it produces. In this post, I will provide a high level overview of RNA-seq and describe how to interpret some of the common units in which gene expression is measured from an RNA-seq experiment.*
+*The advent of single-cell genomics has brought about new efforts to characterize and catalog all of the cell types in the human body. Despite these efforts, the very definition for a "cell type" is under debate. In this post, I will discuss a conceptual framework for defining cell types as subsets of states in an underlying cellular state space. Moreover, I will link the cellular state space to biomedical ontologies that attempt to capture biological knowledge regarding cell types.*
 
 Introduction
 ------------
