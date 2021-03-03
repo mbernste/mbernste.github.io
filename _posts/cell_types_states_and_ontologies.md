@@ -24,6 +24,7 @@ First, let's get the obvious out of the way: the concept of "cell type" is man m
 
 In computer science parlance, we can think about the set of cell states as a [state space](https://en.wikipedia.org/wiki/State_space).  That is, the cell always exists in a specific, single state at a specific time, and over time it _transitions_ to new states. If these states are finite (or [countable](https://en.wikipedia.org/wiki/Countable_set)), one can view the state space as a [cellular automaton](https://en.wikipedia.org/wiki/Cellular_automaton), where the state space can be represented by a [graph](https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)), in which nodes in the graph are states and edges are transitions between states. This is depicted in the figure below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space.png" alt="drawing" width="700"/></center>
 
 In reality, the state space of a cell is continuous, but for the purposes of this discussion, we will use the simplification that the state space is discrete and can be represented by a graph.
 
