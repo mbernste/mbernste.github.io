@@ -5,15 +5,15 @@ Introduction
 
 With the advent of single-cell genomics, researchers are nwo able to probe molecular biology at the single-cell level.  That is, scientists are able to measure some aspect of a cell, such as its transcriptome (RNA-seq) or its open chromatin regions (ATAC-seq), for thousands, and [sometimes even millions]() of cells, at a time. These new technologies have brought about new efforts for to map and catalogue all of the cell types in the human body.  The premier effort of this kind is the [Human Cell Atlas](https://www.humancellatlas.org), an international consortium of researchers who have set themselves on the journey towards creating "comprehensive reference maps of all human cells—the fundamental units of life—as a basis for both understanding human health and diagnosing, monitoring, and treating disease".
 
-Of course, before one begins to catalogue cell types, one must define what they mean by "cell type".  This has become a topic of hot debate.  Before the age of single-cell genomics, a rigorous definition was usually not necessary. Colloquially, a cell type is a category of cells in the body that performs a certain function. Commonly, cell types are considered to be relatively stable.  For example, a cell in one's skil will not, as far we know, spontaneously morph into a neuron.
+Of course, before one begins to catalogue cell types, one must define what they mean by "cell type".  This has become a topic of hot debate.  Before the age of single-cell genomics, a rigorous definition was usually not necessary. Colloquially, a cell type is a category of cells in the body that performs a certain function. Commonly, cell types are considered to be relatively stable.  For example, a cell in one's skin will not, as far we know, spontaneously morph into a neuron.
 
 Unfortunately, researchers found that a such a fuzzy definition does suffice as a foundational definition from which one could go on to create "reference maps".  One reason for this is that the resolution provided by single-cell technologies enables one to find clusters of similar cells, that one may deem to be a "cell type" at ever more extreme resolutions.  For example, [Svennson et al. (2021)](https://academic.oup.com/database/article/doi/10.1093/database/baaa073/6008692) found that as researchers measure more cells, they tend to find more "cell types". Here's Figure 5 from their paper:
 
 <center><img src="https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/database/2020/10.1093_database_baaa073/1/baaa073f5.png?Expires=1617811413&Signature=vgKmvJGJNIfPHi80jk-x~M1omAGqatgvKTdAieh4XFc4RYlNZaGjYnBjnSbAvOrMBPL8JHRDj4Q0oBtTaUGkEG~wmyhGAog7YF~qg3lnpPqHehTDGDbPING5Z85sFyxfNyu73LX38mlzJEm~DdmviENgLOjl8GEwVlTNUzr0rsZA0sK3gC2n9mEStGrBtoJKjNWf2BEhhFBfHGn~KPRLh-NWQFHtfTZgRsNkJpyHlFqNo3tKUyHeWIYWZDTFsgQSKxmt0dZ3HKwq8y4m9I4NaeF3nvrvrT19vzxDTWwI8Gp5yQZpg8aULyS7EthE66FSHkULFYEX3~d2aaA-yy8L3w__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="drawing" width="700"/></center>
 
-Moreover, we now know that cells are actually pretty plastic. While skin cells naturally don't morph into neurons, they can be induced to morph into neurons [using special treatments](https://www.nature.com/articles/nbt.1946).  Moreover, cells do switch their functions relatively often. A T cell floating in the blood stream can "activate" to fight an infection. Do we call transient cell states "cell types"? Do we include them in our reference?
+Moreover, we now know that cells are actually pretty plastic. While skin cells naturally don't morph into neurons, they can be induced to morph into neurons [using special treatments](https://www.nature.com/articles/nbt.1946).  Moreover, cells do switch their functions relatively often. A T cell floating in the blood stream can "activate" to fight an infection. Do we call transient cell states "cell types"? Do we include them in our catalog?
 
-Lastly, there is the question of how to handle diseased cells. Is a neuron that is no longer able to perform its function still a neuron?  Do we call a "diseased" neuron to be its own cell state? What criteria do we use to label a cell as a diseased cell?
+Lastly, there is the question of how to handle diseased cells. Is a neuron that is no longer able to perform the function that a neuron usually performs still a neuron?  Does a "diseased" neuron get its own cell type definition? What criteria do we use to determine whether a cell is "diseased"?
 
 There is not yet an agreement in the scientific community on how to answer these questions. Nonetheless, in this post, I will convey a perspective, which combines many existing ideas in the field, that will attempt to answer them.  This perspective is a mental framework for thinking about cell types, cell states, and what it means to "catalogue" a cell type.  
 
@@ -52,6 +52,11 @@ In the cellular state space, these "is a" edges are simply subset relationships.
 Viewing disease through the lense of cellular state spaces
 ------------------
 
+The idea of defining cell types to be subsets of cell states enables one to define disease cell types. That is, a diseased cell type is simply a collection of cell states just like any other cell type. This is depicted in the figure below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_states_diseased.png" alt="drawing" width="400"/></center>
+
+
 Viewing batch effects through the lense of cellular state spaces
 -------------------
 
@@ -62,9 +67,7 @@ We do so as follows: we extend the cellular state space to include multiple indi
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_isomorphism.png" alt="drawing" width="500"/></center>
 
-
-From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following.  
-
+From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following. Of course, in practice, we don't have access to the underlying cellular state, so we are left to heuristics. (For example, [Haghverdi et al. (2018)](https://www.nature.com/articles/nbt.4091) propose a method for detecting _mutual nearest neighbors_ between cells that belong to two differet batches and then using these neighbors to transform the cells into a common space.)
 
 
 Putting this perspective into practice
