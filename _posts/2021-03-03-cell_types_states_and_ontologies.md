@@ -29,7 +29,7 @@ Moreover, we now know that cells are actually pretty plastic. While skin cells n
 
 Lastly, there is the question of how to handle diseased cells. Is a neuron that is no longer able to perform the function that a neuron usually performs still a neuron?  Does a "diseased" neuron get its own cell type definition? What criteria do we use to determine whether a cell is "diseased"?
 
-There is not yet an agreement in the scientific community on how to answer these questions. Nonetheless, in this post, I will convey a perspective, which combines many existing ideas in the field, that will attempt to answer them.  This perspective is a mental framework for thinking about cell types, cell states, and what it means to "catalogue" a cell type.  
+There is not yet an agreement in the scientific community on how to answer these questions. Nonetheless, in this post, I will convey a perspective, which combines many existing ideas in the field, that will attempt to answer them.  This perspective is a mental framework for thinking about cell types, cell states, and what it means to "catalog" a cell type.  
 
 The cell state space
 -------------------
