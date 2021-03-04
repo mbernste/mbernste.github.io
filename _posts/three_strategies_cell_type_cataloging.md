@@ -12,10 +12,13 @@ tags:
   - ontologies
 ---
 
-In my [previous post](), I outlined a conceptual framework for defining and reasoning about "cell types". Specifically, I noted that the idea of a "cell type" can be viewed as a human-made partition on the universal cellular state space. That is, the set of all possible states a living cell can exist in and the transitions between them. This idea can be summarized in the following figure:
+Introduction
+------------
+
+In my [previous post](), I outlined a conceptual framework for defining and reasoning about "cell types". Specifically, I noted that the idea of a "cell type" can be viewed as a human-made partition on the universal cellular state space: the set of all possible states a living cell can exist in and the transitions between them. This idea can be summarized in the following figure:
 
 
-In this framework, the task of cataloging cell types involves identifying "useful" subsets of cell states and giving those subsets names. Then, one can create a hierarchy of cell types by simpling computing the subset relationships between those subsets of cell types.
+In this framework, the task of cataloging cell types involves identifying "useful" subsets of cell states and giving those subsets names. Then, one can create a hierarchy of cell types by simply computing the subset-relationships between those sets of cell states.
 
 While this framework is conceptually clean and simple, there are a number of problems with implementing it in the real world. These problems include:
 1. We don't know the full cellular state space
@@ -36,4 +39,12 @@ Let me dig a bit into each of these strategies.
 Each scientist on their own
 ----------------------
 
-This is more or less the current state of affairs. 
+This is more or less the current state of affairs (minus the whole cellular state space framework). That is, each scientist has some unique definition of a cell type that may vary, perhaps slightly, with other scientist's who uses that same cell type name. In the cellular state space framework, this scenario looks something like the following:
+
+
+
+The benefits to this framework is that there is no need to come to a consenus on how to define a particular cell type. Just pick your own! However, without a common language for defining the cell states that they are using to define their cell types, this framework can easily suffer from the problem that two scientists might be using the same term to discuss two different cell types! This is what happens now.
+
+
+
+
