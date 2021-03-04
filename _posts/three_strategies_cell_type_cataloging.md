@@ -30,13 +30,13 @@ Problems 1 and 2 are hard, and I'll save a discussion on these problems for late
 In my opinion there are three core strategies that have been proposed by the scientific community; however, these ideas have taken different forms. In this post, I will attempt to tease out and more rigorously describe each of these strategies. 
 
 These strategies are:
-1. **Each scientist on their own!** Come up with your own cell type definition based on your own needs. In fact, this idea is central to a number of single-cell RNA-seq cell type classifiers such as [Garnett](). Garnett features a "zoo" of cell type classifiers that one can create and then use to label a new dataset.
+1. **Every scientist for themself.** Come up with your own cell type definition based on your own needs. In fact, this idea is central to a number of single-cell RNA-seq cell type classifiers such as [Garnett](). Garnett features a "zoo" of cell type classifiers that one can create and then use to label a new dataset.
 2. **Crowd-sourcing.** In this strategy, one may look at all of the published genomics data out there in public repositories and use these to describe a consensus of how the scientific community uses cell type terms. This is the core idea behind [CellO](), a cell type classification tool that I worked on that uses the collection of publicly available primary cell data to train cell type classifiers.
 3. **A central authority.** This is the idea behind the Human Cell Atlas. The idea here is that a single group, or committee, will collect tons of data and attempt to define the various cell types. These cell types will then serve as a reference for all of science.
 
 Let me dig a bit into each of these strategies.
 
-Each scientist on their own
+Every scientist for themself
 ----------------------
 
 This is more or less the current state of affairs (minus the whole cellular state space framework). That is, each scientist has some unique definition of a cell type that may vary, perhaps slightly, with other scientist's who uses that same cell type name. In the cellular state space framework, this scenario looks something like the following:
