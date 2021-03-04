@@ -42,7 +42,7 @@ Every scientist for themself
 
 This is more or less the current state of affairs (minus the whole cellular state space framework). That is, each scientist has some unique definition of a cell type that may vary, perhaps slightly, with other scientist's who uses that same cell type name. In the cellular state space framework, this scenario looks something like the following:
 
-
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cell_type_every_scientist_for_themself.png" alt="drawing" width="350"/></center>
 
 The benefits to this framework is that there is no need to come to a consenus on how to define a particular cell type. Just pick your own! However, without a common language for defining the cell states that they are using to define their cell types, this framework can easily suffer from the problem that two scientists might be using the same term to discuss two different cell types! This happens all the time. For example, when two scientists use two different sets of marker genes to label cell types in a single-cell RNA-seq dataset they are likely choosing different subsets of the cellular state space.  Just take a look at the [CellMarker database](https://academic.oup.com/nar/article/47/D1/D721/5115823), a database of literature curated marker genes and you will see that there are often multiple sets of marker genes used to define the same cell type.  In computer science parlance, the cell type names are [overloaded](https://en.wikipedia.org/wiki/Function_overloading). 
 
@@ -53,6 +53,6 @@ Crowd sourcing
 
 Here's a less prevalent approach: let's just take the union of all cellular states that have been used by a scientist and come to a consensus partition on the cellular state space. That is, if multiple scientific publications have slightly different definitions for "T cell", let's just use the union of all of them. This is depicted in the figure below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cell_type_every_scientist_for_themself.png" alt="drawing" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cell_type_crowdsource.png" alt="drawing" width="350"/></center>
 
 
