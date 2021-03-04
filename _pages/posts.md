@@ -15,6 +15,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [RNA-seq: the basics](https://mbernste.github.io/posts/rna_seq_basics/)  
 [On cell types and cell states](https://mbernste.github.io/posts/cell_types_cell_states/)  
+[Three strategies for cataloging cell types](https://mbernste.github.io/posts/cell_type_cataloging/)  
 
 ## Linear algebra
 
