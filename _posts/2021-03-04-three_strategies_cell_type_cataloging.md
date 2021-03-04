@@ -34,7 +34,7 @@ In my opinion there are three core strategies that have been proposed by the sci
 
 These strategies are:
 1. **Every scientist for themself.** Come up with your own cell type definition based on your own needs. In fact, this idea is embraced by a number of single-cell RNA-seq cell type classifiers such as [Garnett](https://www.nature.com/articles/s41592-019-0535-3). Garnett features a "[zoo](https://cole-trapnell-lab.github.io/garnett/classifiers/)" of cell type classifiers that one can create and then use to label a new dataset.
-2. **Crowdsourcing.** In this strategy, one may look at all of the published genomics data out there in public repositories and use these to describe a consensus of how the scientific community uses cell type terms. This is the core idea behind [CellO](https://www.cell.com/iscience/fulltext/S2589-0042(20)31110-X), a cell type classification tool that I worked on that uses the collection of publicly available primary cell data to train cell type classifiers.
+2. **Crowdsourcing.** In this strategy, one may look at all of the published genomics data out there in public repositories and use these data to come to a consensus of how the scientific community as a whole defines cell types. This is the core idea behind [CellO](https://www.cell.com/iscience/fulltext/S2589-0042(20)31110-X), a cell type classification tool that I worked on that uses the collection of publicly available primary cell data to train cell type classifiers.
 3. **Central authority.** This is the idea behind the Human Cell Atlas. The idea here is that a single group, or committee, will collect tons of data and attempt to define the various cell types. These cell types will then serve as a reference for all of science.
 
 Let me dig a bit into each of these strategies.
@@ -67,5 +67,3 @@ Central authority
 ------------
 
 Lastly, one can rely on a central authority to define cell types. This is the idea behind the [Human Cell Atlas](https://www.humancellatlas.org) (HCA). The goal of the HCA is to bring together an international consortium of scientists to map out the cellular state space and come to agreed upon partitions of the state space from which one can then use for all of science. This strategy is the most ambitious strategy!  Of course, this is a massive undertaking, but if it works, would help to remove ambiguity and clarify our understanding of human biology.
-
-
