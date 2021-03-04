@@ -53,7 +53,7 @@ Crowd sourcing
 
 Here's a less prevalent approach: let's just take the union of all cellular states that have been used by a scientist and come to a consensus partition on the cellular state space. That is, if multiple scientific publications have slightly different definitions for "T cell", let's just use the union of all of them. This is depicted in the figure below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cell_type_crowdsource.png" alt="drawing" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cell_type_crowdsource.png" alt="drawing" width="700"/></center>
 
 I argue that cell type classification tools that are trained on public data take this approach. For example, our own tool [CellO](https://www.cell.com/iscience/fulltext/S2589-0042(20)31110-X) was trained on a collection of primary cell samples from the Sequence Read Archive. Another method that takes this approach is [URSA](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3834796/).  Importantly, the training labels used for training CellO and URSA are provided by the scientists who submitted their data. As discussed previously, they might have differing definitions for their cell types; however, this might be a good thing! We're essentially crowdsourcing the definition of cell type to build a universal cell type classifier.
 
