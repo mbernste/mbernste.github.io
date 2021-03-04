@@ -59,9 +59,9 @@ Here's a less prevalent approach: let's just take the union of all cellular stat
 
 I argue that cell type classification tools that are trained on public data take this approach. For example, our own tool [CellO](https://www.cell.com/iscience/fulltext/S2589-0042(20)31110-X) was trained on a collection of primary cell samples from the Sequence Read Archive. Another method that takes this approach is [URSA](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3834796/).  Importantly, the training labels used for training CellO and URSA are provided by the scientists who submitted their data. As discussed previously, they might have differing definitions for their cell types; however, this might be a good thing! We're essentially crowdsourcing the definition of cell type to build a universal cell type classifier.
 
-In fact, you can use such models to build up marker genes for defining each cell type. Because these marker genes are derived from models that are trained on an amalgamation of samples that might use different definitions, one can view these definitions as sort of a consensus definition from the scientific literature. You can check out CellO's derived marker genes [here](https://uwgraphics.github.io/CellOViewer/). 
+In fact, you can use such models to build up marker genes for defining each cell type. Because these marker genes are derived from models that are trained on an amalgamation of samples that might use different definitions, one can view these definitions as sort of a consensus definition from the scientific community. You can check out CellO's derived marker genes [here](https://uwgraphics.github.io/CellOViewer/). 
 
-One problem with this approach is that it is difficult to formalize these definitions. Furthermore, it is prone to bad data, and thus, one might want to curate the samples one uses to create a consensus. This leads to the third approach: Central Authority.
+One problem with this approach is that it is difficult to formalize the cell types defined in this way. Furthermore, it is prone to bad data, and thus, one might want to curate the samples one uses to create a consensus. This leads to the third approach: Central Authority.
 
 Central authority
 ------------
