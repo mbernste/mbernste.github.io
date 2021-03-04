@@ -19,7 +19,7 @@ Introduction
 
 With the advent of single-cell genomics, researchers are now able to probe molecular biology at the single-cell level.  That is, scientists are able to measure some aspect of a cell, such as its transcriptome (RNA-seq) or its open chromatin regions (ATAC-seq), for thousands, and [sometimes even millions](https://science.sciencemag.org/content/370/6518/eaba7721/tab-figures-data) of cells, at a time. These new technologies have brought about new efforts to map and catalog all of the cell types in the human body.  The premier effort of this kind is the [Human Cell Atlas](https://www.humancellatlas.org), an international consortium of researchers who have set themselves on the journey towards creating "comprehensive reference maps of all human cells—the fundamental units of life—as a basis for both understanding human health and diagnosing, monitoring, and treating disease."
 
-Of course, before one begins to catalogue cell types, one must define what they mean by "cell type".  This has become a topic of hot debate.  Before the age of single-cell genomics, a rigorous definition was usually not necessary. Colloquially, a cell type is a category of cells in the body that performs a certain function. Commonly, cell types are considered to be relatively stable.  For example, a cell in one's skin will not, as far we know, spontaneously morph into a neuron.
+Of course, before one begins to catalog cell types, one must define what they mean by "cell type".  This has become a topic of hot debate.  Before the age of single-cell genomics, a rigorous definition was usually not necessary. Colloquially, a cell type is a category of cells in the body that performs a certain function. Commonly, cell types are considered to be relatively stable.  For example, a cell in one's skin will not, as far we know, spontaneously morph into a neuron.
 
 Unfortunately, researchers found that such a fuzzy definition does not suffice as a foundational definition from which one could go on to create "reference maps".  One reason for this is that the resolution provided by single-cell technologies enables one to find clusters of similar cells, that one may deem to be a "cell type" at ever more extreme resolutions.  For example, [Svennson et al. (2021)](https://academic.oup.com/database/article/doi/10.1093/database/baaa073/6008692) found that as researchers measure more cells, they tend to find more "cell types". Here's Figure 5 from their paper:
 
@@ -31,7 +31,7 @@ Lastly, there is the question of how to handle diseased cells. Is a neuron that 
 
 There is not yet an agreement in the scientific community on how to answer these questions. Nonetheless, in this post, I will convey a perspective, which combines many existing ideas in the field, that will attempt to answer them.  This perspective is a mental framework for thinking about cell types, cell states, and what it means to "catalog" a cell type.  
 
-The cell state space
+The cellular state space
 -------------------
 
 First, let's get the obvious out of the way: the concept of "cell type" is human-made.  Nature does not create categories, rather, we create categories in our minds. Categories are fundamental building blocks of our mental processing.  In nature, there are _only cell states_.  That is, every cell simply exists in a certain configuration. It is expressing certain genes. It is comprised of certain proteins. It's genome is chemically and spatially configured in a specific way. Moreover, cells _change_ their state over time.  A cell is in a constant state of flux as it goes about its function and responds to external stimuli.
@@ -84,7 +84,7 @@ We do so as follows: we extend the cellular state space to include multiple indi
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_isomorphism.png" alt="drawing" width="500"/></center>
 
-From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch affects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following. Of course, in practice, we don't have access to the underlying cellular state space, so we are left to heuristics. (For example, [Haghverdi et al. (2018)](https://www.nature.com/articles/nbt.4091) propose a method for detecting _mutual nearest neighbors_ between cells that belong to two different batches and then use these neighbors to transform the cells into a common space.)
+From this angle, we can more rigorously define the common task in single-cell analysis that involves removing batch effects between two samples.  That is, our goal is to find the isomorphism between the two cellular state spaces that the cells in the two samples are following. Of course, in practice, we don't have access to the underlying cellular state space, so we are left to heuristics. (For example, [Haghverdi et al. (2018)](https://www.nature.com/articles/nbt.4091) propose a method for detecting _mutual nearest neighbors_ between cells that belong to two different batches and then use these neighbors to transform the cells into a common space.)
 
 
 Putting these ideas into practice
