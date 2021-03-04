@@ -32,7 +32,7 @@ In my opinion there are three core strategies that have been proposed by the sci
 These strategies are:
 1. **Every scientist for themself.** Come up with your own cell type definition based on your own needs. In fact, this idea is central to a number of single-cell RNA-seq cell type classifiers such as [Garnett](). Garnett features a "zoo" of cell type classifiers that one can create and then use to label a new dataset.
 2. **Crowd-sourcing.** In this strategy, one may look at all of the published genomics data out there in public repositories and use these to describe a consensus of how the scientific community uses cell type terms. This is the core idea behind [CellO](), a cell type classification tool that I worked on that uses the collection of publicly available primary cell data to train cell type classifiers.
-3. **A central authority.** This is the idea behind the Human Cell Atlas. The idea here is that a single group, or committee, will collect tons of data and attempt to define the various cell types. These cell types will then serve as a reference for all of science.
+3. **Central authority.** This is the idea behind the Human Cell Atlas. The idea here is that a single group, or committee, will collect tons of data and attempt to define the various cell types. These cell types will then serve as a reference for all of science.
 
 Let me dig a bit into each of these strategies.
 
