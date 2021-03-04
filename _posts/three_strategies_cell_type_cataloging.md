@@ -17,7 +17,7 @@ Introduction
 
 In my [previous post](), I outlined a conceptual framework for defining and reasoning about "cell types". Specifically, I noted that the idea of a "cell type" can be viewed as a human-made partition on the universal cellular state space: the set of all possible states a living cell can exist in and the transitions between them. This idea can be summarized in the following figure:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_cell_type.png" alt="drawing" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_ontologies.png" alt="drawing" width="400"/></center>
 
 In this framework, the task of cataloging cell types involves identifying "useful" subsets of cell states and giving those subsets names. Then, one can create a hierarchy of cell types by simply computing the subset-relationships between those sets of cell states.
 
