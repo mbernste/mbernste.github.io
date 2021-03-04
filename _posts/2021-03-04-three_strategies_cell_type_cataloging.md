@@ -12,10 +12,12 @@ tags:
   - ontologies
 ---
 
+*In my previous post, I outlined a conceptual framework for defining and reasoning about "cell types". Specifically, I noted that the idea of a "cell type" can be viewed as a human-made partition on the universal cellular state space. In this post, I attempt to distill three strategies for partitioning this state space and agreeing on cell type definitions.*
+
 Introduction
 ------------
 
-In my [previous post](), I outlined a conceptual framework for defining and reasoning about "cell types". Specifically, I noted that the idea of a "cell type" can be viewed as a human-made partition on the universal cellular state space: the set of all possible states a living cell can exist in and the transitions between them. This idea can be summarized in the following figure:
+In my [previous post](https://mbernste.github.io/posts/cell_types_cell_states/), I outlined a conceptual framework for defining and reasoning about "cell types". Specifically, I noted that the idea of a "cell type" can be viewed as a human-made partition on the universal cellular state space: the set of all possible states a living cell can exist in and the transitions between them. This idea can be summarized in the following figure:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cellular_state_space_ontologies.png" alt="drawing" width="400"/></center>
 
@@ -32,7 +34,7 @@ In my opinion there are three core strategies that have been proposed by the sci
 
 These strategies are:
 1. **Every scientist for themself.** Come up with your own cell type definition based on your own needs. In fact, this idea is embraced by a number of single-cell RNA-seq cell type classifiers such as [Garnett](https://www.nature.com/articles/s41592-019-0535-3). Garnett features a "[zoo](https://cole-trapnell-lab.github.io/garnett/classifiers/)" of cell type classifiers that one can create and then use to label a new dataset.
-2. **Crowd-sourcing.** In this strategy, one may look at all of the published genomics data out there in public repositories and use these to describe a consensus of how the scientific community uses cell type terms. This is the core idea behind [CellO](https://www.cell.com/iscience/fulltext/S2589-0042(20)31110-X), a cell type classification tool that I worked on that uses the collection of publicly available primary cell data to train cell type classifiers.
+2. **Crowdsourcing.** In this strategy, one may look at all of the published genomics data out there in public repositories and use these to describe a consensus of how the scientific community uses cell type terms. This is the core idea behind [CellO](https://www.cell.com/iscience/fulltext/S2589-0042(20)31110-X), a cell type classification tool that I worked on that uses the collection of publicly available primary cell data to train cell type classifiers.
 3. **Central authority.** This is the idea behind the Human Cell Atlas. The idea here is that a single group, or committee, will collect tons of data and attempt to define the various cell types. These cell types will then serve as a reference for all of science.
 
 Let me dig a bit into each of these strategies.
@@ -48,7 +50,7 @@ The benefit to this approach is that there is no need to come to a consenus on h
 
 [Garnett](https://www.nature.com/articles/s41592-019-0535-3) is a cell type classification tool that embraces this idea. They have a model [zoo](https://cole-trapnell-lab.github.io/garnett/classifiers/) where you can deposit your pre-trained classifiers that have been trained on data that was labelled based on your own, personal cell type definitions.  Moreover, they provide a markdown language in which you define your cell types, and your cell type hierarchy based on your own choice of marker genes.
 
-Crowd sourcing
+Crowdsourcing
 ----------------------
 
 Here's a less prevalent approach: let's just take the union of all cellular states that have been used by a scientist and come to a consensus partition on the cellular state space. That is, if multiple scientific publications have slightly different definitions for "T cell", let's just use the union of all of them. This is depicted in the figure below:
@@ -58,3 +60,12 @@ Here's a less prevalent approach: let's just take the union of all cellular stat
 I argue that cell type classification tools that are trained on public data take this approach. For example, our own tool [CellO](https://www.cell.com/iscience/fulltext/S2589-0042(20)31110-X) was trained on a collection of primary cell samples from the Sequence Read Archive. Another method that takes this approach is [URSA](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3834796/).  Importantly, the training labels used for training CellO and URSA are provided by the scientists who submitted their data. As discussed previously, they might have differing definitions for their cell types; however, this might be a good thing! We're essentially crowdsourcing the definition of cell type to build a universal cell type classifier.
 
 In fact, you can use such models to build up marker genes for defining each cell type. Because these marker genes are derived from models that are trained on an amalgamation of samples that might use different definitions, one can view these definitions as sort of a consensus definition from the scientific literature. You can check out CellO's derived marker genes [here](https://uwgraphics.github.io/CellOViewer/). 
+
+One problem with this approach is that it is difficult to formalize these definitions. Furthermore, it is prone to bad data, and thus, one might want to curate the samples one uses to create a consensus. This leads to the third approach: Central Authority.
+
+Central authority
+------------
+
+Lastly, one can rely on a central authority to define cell types. This is the idea behind the [Human Cell Atlas](https://www.humancellatlas.org) (HCA). The goal of the HCA is to bring together an international consortium of scientists to map out the cellular state space and come to agreed upon partitions of the state space from which one can then use for all of science. This strategy is the most ambitious strategy!  Of course, this is a massive undertaking, but if it works, would help to remove ambiguity and clarify our understanding of human biology.
+
+
