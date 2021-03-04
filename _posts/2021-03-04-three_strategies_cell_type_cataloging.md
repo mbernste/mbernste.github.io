@@ -1,7 +1,7 @@
 ---
 title: 'Three strategies for cataloging cell types'
 date: 2021-03-04
-permalink: /posts/cell_types_cataloging/
+permalink: /posts/cell_type_cataloging/
 tags:
   - bioinformatics
   - RNA-seq
