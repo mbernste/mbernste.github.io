@@ -25,7 +25,7 @@ The transcript abundances can be encoded as a vector of numbers where each eleme
 Overview of RNA-seq
 --------
 
-Herea are the general steps of an RNA-seq experiment:
+Here are the general steps of an RNA-seq experiment:
 
 1. **Isolation:** Isolate RNA molecules from a cell or population of cells. 
 2. **Fragmentation:** Break RNA molecules into fragments (on the order of a few hundred bases long).
