@@ -48,7 +48,9 @@ This is more or less the current state of affairs (minus the whole cellular stat
 
 The benefit to this approach is that there is no need to come to a consenus on how to define a particular cell type. Just pick your own! However, without a common language for defining the cell states that they are using to define their cell types, this framework can easily suffer from the problem that two scientists might be using the same term to discuss two different cell types! This happens all the time. For example, when two scientists use two different sets of marker genes to label cell types in a single-cell RNA-seq dataset they are likely choosing different subsets of the cellular state space.  Just take a look at the [CellMarker database](https://academic.oup.com/nar/article/47/D1/D721/5115823), a database of literature curated marker genes and you will see that there are often multiple sets of marker genes used to define the same cell type.  In computer science parlance, the cell type names are [overloaded](https://en.wikipedia.org/wiki/Function_overloading). 
 
-[Garnett](https://www.nature.com/articles/s41592-019-0535-3) is a cell type classification tool that embraces this idea. They have a model [zoo](https://cole-trapnell-lab.github.io/garnett/classifiers/) where you can deposit your pre-trained classifiers that have been trained on data that was labelled based on your own, personal cell type definitions.  Moreover, they provide a markdown language in which you define your cell types, and your cell type hierarchy based on your own choice of marker genes.
+[Garnett](https://www.nature.com/articles/s41592-019-0535-3) is a cell type classification tool that, in some sense, embraces this idea. They have a model [zoo](https://cole-trapnell-lab.github.io/garnett/classifiers/) where you can deposit your pre-trained classifiers that have been trained on data that was labelled based on your own, personal cell type definitions.  Moreover, they provide a markdown language in which you define your cell types, and your cell type hierarchy based on your own choice of marker genes.
+
+
 
 Crowdsourcing
 ----------------------
@@ -61,9 +63,10 @@ I argue that cell type classification tools that are trained on public data take
 
 In fact, you can use such models to build up marker genes for defining each cell type. Because these marker genes are derived from models that are trained on an amalgamation of samples that might use slightly different definitions, one can view these definitions as sort of a consensus definition from the scientific community. You can check out CellO's derived marker genes [here](https://uwgraphics.github.io/CellOViewer/). 
 
-One problem with this approach is that it is difficult to formalize the cell types defined in this way. Furthermore, it is prone to bad data, and thus, one might want to curate the samples one uses to create a consensus. This leads to the third approach: Central Authority.
+One problem with this approach is that it is difficult to formalize the cell types defined in this way. Furthermore, it is prone to bad data, and thus, one might want to curate the samples one uses to create a consensus. 
 
 Central authority
 ------------
 
 Lastly, one can rely on a central authority to define cell types. This is the idea behind the [Human Cell Atlas](https://www.humancellatlas.org) (HCA). The goal of the HCA is to bring together an international consortium of scientists to map out the cellular state space and come to agreed upon partitions of the state space from which one can then use for all of science. This strategy is the most ambitious!  Of course, this is a massive undertaking, but if it works, would help to remove ambiguity and clarify our understanding of human biology.
+
