@@ -6,7 +6,7 @@ author_profile: true
 
 Within the last decades, scientists have deposited vast amounts of raw genomics data into publicly accessible domains.  My goal is to develop new models, databases, and tools that will enable researchers to unleash the untapped potential of these data. I am eager to discover new techniques and to combine ideas in novel ways in order to tackle this challenge. See a sample of my research outputs below.
 
-## Hierarchical cell type classification against the Cell Ontology
+## Hierarchical cell type classification with the Cell Ontology
 
 Cell type annotation is a fundamental task in the analysis of single-cell RNA-sequencing data. We present [CellO](https://github.com/deweylab/CellO), a machine learning-based tool for annotating human RNA-seq data with the [Cell Ontology](http://www.obofoundry.org/ontology/cl.html). CellO enables accurate and standardized cell type classification by considering the rich hierarchical structure of known cell types. Furthemore, CellO comes pre-trained on a novel, comprehensive dataset of human, healthy, untreated primary samples in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA), which to the best of our knowledge, is the most diverse curated collection of primary cell data to date. 
 
