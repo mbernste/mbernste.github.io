@@ -117,6 +117,8 @@ include:
   - .htaccess
   - _pages
   - files
+  - .well-known
+
 exclude:
   - "*.sublime-project"
   - "*.sublime-workspace"
@@ -321,5 +323,3 @@ compress_html:
     envs: development
 
 theme: jekyll-theme-minimal
-
-include: [".well-known"]
