@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: mbernste.github.io
+Token: 0e0e81d771dd42ce2e8ee80b231a4c4e2a881c1412b2dc4ca30c2ef59c64e97c
