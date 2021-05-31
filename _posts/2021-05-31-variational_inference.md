@@ -18,7 +18,7 @@ Variational inference is a high-level paradigm for estimating a posterior distri
 
 $$p(z \mid x) := \frac{p(x \mid z)p(z)}{p(x)}$$
 
-where $$z$$ and $$x$$ are realizations $$Z$$ and $$X$$ respectively and $$p(.)$$ are probability mass/density functions for the distributions implied by their arguments.
+where $$z$$ and $$x$$ are realizations of $$Z$$ and $$X$$ respectively and $$p(.)$$ are probability mass/density functions for the distributions implied by their arguments.
 
 Instead of computing $$p(z \mid x)$$ exactly, variational inference attempts to find another distribution $q(z)$ that is ``close" to $$p(z \mid x)$$.  Ideally, $q(z)$ is easier to evaluate than $$p(z \mid x)$$, and, if $$p(z \mid x)$$ and $$q(z)$$ are similar, then we can use $$q(z)$$ as a replacement for $p(z \mid x)$ for any relevant downstream tasks.  
 
@@ -27,7 +27,7 @@ and return $$q(z \mid \hat{\phi})$$ as our approximation of the true posterior.
 
 
 Details
-------------
+--------
 
 Variational inference uses the KL-divergence from $p(z \mid x)$ to $q(z)$ as a measure of ``closeness":
 
@@ -40,3 +40,16 @@ $$\hat{q} := \text{argmin}_q \ KL(q(z) \ || \ p(z \mid x))$$
 and then returns $\hat{q}(z)$ as the approximation to the posterior.
 
 Variational inference minimizes the KL-divergence in Equation~\ref{eq:kl_variational} by maximizing a surrogate quantity called the \textbf{evidence lower bound} (ELBO) which is a lower bound on the log-marginal likelihood, $\log p(x)$ -- also called the \textbf{evidence}.  That is, the KL-divergence can be formulated as the evidence minus the ELBO:
+
+$$\begin{align*}KL(q(z \mid \phi) \ || \ p(z \mid x)) &= E_{Z \sim q}\left[\log\frac{q(Z \mid \phi)}{p(Z \mid x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z \mid \phi) \right] - E_{Z \sim q}\left[\log p(Z \mid x) \right] \\ &= E_{Z \sim q}\left[\log q(Z \mid \phi) \right] - E_{Z \sim q}\left[\log \frac{p(Z, x)}{p(x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z \mid \phi) \right] -  E_{Z \sim q}\left[\log p(Z, x) \right] + E_{Z \sim q}\left[\log p(x) \right]  \\ &=  \log p(x) - \left( E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\left[\log q(Z \mid \phi) \right]  \right)\\ &= \log p(x) - \text{ELBO}\end{align*}$$
+
+where the ELBO is defined as
+
+$$\text{ELBO} :=  \left( E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\left[\log q(Z \mid \phi) \right]  \right)$$
+
+For a more in-depth discussion of the evidence lower bound, you can check out [my previous blog post](https://mbernste.github.io/posts/elbo/).
+
+Bayesian inference as optimization
+-------------------------
+
+
