@@ -55,6 +55,6 @@ Because $\log p(x)$ does not depend on $q$, one can treat the ELBO as a function
 
 $$\hat{q} := \text{argmax}_q \ \text{ELBO}(q)$$
 
-In doing so, this will minimize the KL-divergence between $q(z)$ and $p(z \mid \phi)$.
+In doing so, this will minimize the KL-divergence between $q(z)$ and $p(z \mid x)$.
 
 Conceptually, variational inference allows us to formulate our approximate Bayesian inference problem as an optimization problem.  By formulating the problem as such, we can approach this optimization problem using the full toolkit available to us from the fields of [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization)!
