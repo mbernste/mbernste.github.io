@@ -45,7 +45,7 @@ $$\text{ELBO} :=  \left( E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\l
 
 To see why this works, we can show that the KL-divergence can be formulated as the difference between the marginal log-likelihood of the observed data, $$\log p(x)$$ (called the *evidence*) and the ELBO:
 
-$$\begin{align*}KL(q(z \mid \phi) \ || \ p(z \mid x)) &= E_{Z \sim q}\left[\log\frac{q(Z \mid \phi)}{p(Z \mid x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z \mid \phi) \right] - E_{Z \sim q}\left[\log p(Z \mid x) \right] \\ &= E_{Z \sim q}\left[\log q(Z \mid \phi) \right] - E_{Z \sim q}\left[\log \frac{p(Z, x)}{p(x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z \mid \phi) \right] -  E_{Z \sim q}\left[\log p(Z, x) \right] + E_{Z \sim q}\left[\log p(x) \right]  \\ &=  \log p(x) - \left( E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\left[\log q(Z \mid \phi) \right]  \right)\\ &= \log p(x) - \text{ELBO}\end{align*}$$
+$$\begin{align*}KL(q(z) \ || \ p(z \mid x)) &= E_{Z \sim q}\left[\log\frac{q(Z)}{p(Z \mid x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] - E_{Z \sim q}\left[\log p(Z \mid x) \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] - E_{Z \sim q}\left[\log \frac{p(Z, x)}{p(x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] -  E_{Z \sim q}\left[\log p(Z, x) \right] + E_{Z \sim q}\left[\log p(x) \right]  \\ &=  \log p(x) - \left( E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\left[\log q(Z) \right]  \right)\\ &= \log p(x) - \text{ELBO}\end{align*}$$
 
 Because $\log p(x)$ does not depend on $q$, one can treat the ELBO as a function of $q$ and maximize this function:
 
