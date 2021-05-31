@@ -41,7 +41,7 @@ and then returns $\hat{q}(z)$ as the approximation to the posterior.
 
 Variational inference minimizes the KL-divergence by maximizing a surrogate quantity called the **evidence lower bound (ELBO)** (For a more in-depth discussion of the evidence lower bound, you can check out [my previous blog post](https://mbernste.github.io/posts/elbo/)):
 
-$$\text{ELBO} :=  \left( E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\left[\log q(Z) \right]  \right)$$
+$$\text{ELBO} :=  E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\left[\log q(Z) \right]$$
 
 To see why this works, we can show that the KL-divergence can be formulated as the difference between the marginal log-likelihood of the observed data, $$\log p(x)$$ (called the *evidence*) and the ELBO:
 
