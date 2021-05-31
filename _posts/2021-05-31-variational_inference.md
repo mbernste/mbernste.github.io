@@ -22,13 +22,16 @@ where $$z$$ and $$x$$ are realizations of $$Z$$ and $$X$$ respectively and $$p(.
 
 In practice, it is often difficult to compute $p(z \mid x)$ via Bayes theorem because the denominator $p(x)$ does not have a closed form. Usually, the denominator $p(x)$ can be only be expressed as an integral that marginalizes over $z$: $p(x) = \int p(x, z) \ dz$. In such scenarios, we're often forced to approximate $p(z \mid x)$ rather than compute it directly. Variational inference is one such approximation technique.
 
-Details
+Intuition
 --------
 
 Instead of computing $$p(z \mid x)$$ exactly via Bayes theorem, variational inference attempts to find another distribution $q(z)$ that is ``close" to $$p(z \mid x)$$ (how we define "closeness" between distributions will be addressed later in this post).  Ideally, $q(z)$ is easier to evaluate than $$p(z \mid x)$$, and, if $$p(z \mid x)$$ and $$q(z)$$ are similar, then we can use $$q(z)$$ as a replacement for $p(z \mid x)$ for any relevant downstream tasks.  
 
 We restrict our search for $$q(z)$$ to a family of surrogate distributions over $$Z$$, called the **variational distribution family**, denoted by the set of distributions $\mathcal{Q}$.  Our goal then is to find the distribution $q \in \mathcal{Q}$ that makes $q(z)$ as ``close" to $p(z \mid x)$ as possible.    When, each member of $\mathcal{Q}$ is characterized by the values of a set of parameters $\phi$, we call $\phi$ the **variational parameters**.  Our goal is then to find the value for $\hat{\phi}$ that makes $q(z \mid \phi)$ as close to $p(z \mid x)$ as possible
 and return $$q(z \mid \hat{\phi})$$ as our approximation of the true posterior.
+
+Details
+--------
 
 Variational inference uses the KL-divergence from $p(z \mid x)$ to $q(z)$ as a measure of ``closeness" between these two distributions:
 
