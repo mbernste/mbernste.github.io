@@ -50,7 +50,7 @@ $$\begin{align*}KL(q(z) \ || \ p(z \mid x)) &= E_{Z \sim q}\left[\log\frac{q(Z)}
 
 Because $\log p(x)$ does not depend on $q$, one can treat the ELBO as a function of $q$ and maximize this function:
 
-$$\hat{q} := \text{argmax}_q \ KL(q(z) \ || \ p(z \mid x))$$
+$$\hat{q} := \text{argmax}_q \ \text{ELBO}(q)$$
 
 In doing so, this will minimize the KL-divergence between $q(z)$ and $p(z \mid \phi)$.
 
