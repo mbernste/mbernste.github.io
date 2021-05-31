@@ -1,7 +1,7 @@
 ---
 title: 'A high-level overview of variational inference'
 date: 2021-05-31
-permalink: /posts/em/
+permalink: /posts/variational_inference/
 tags:
   - machine learning
   - probability
