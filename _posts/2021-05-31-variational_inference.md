@@ -1,6 +1,6 @@
 ---
 title: 'A high-level overview of variational inference'
-date: 2020-05-13
+date: 2021-05-31
 permalink: /posts/em/
 tags:
   - machine learning
