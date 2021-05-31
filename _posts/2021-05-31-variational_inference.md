@@ -14,15 +14,15 @@ tags:
 Introduction
 ------------
 
-Variational inference is a high-level paradigm for estimating a posterior distribution when computing it explicitly is intractable.  More specifically, variational inference is used in situations in which we have a model that involves hidden random variables $Z$, observed data $X$, and some posited probabilistic model over the hidden and observed random variables $$P(Z, X)$$. Our goal is to perform inference on the hidden data via the posterior distribution over $Z$ by computing the posterior $P(Z \mid X)$. Under an ideal situation, we would do so using by Bayes theorem:
+Variational inference is a high-level paradigm for estimating a posterior distribution when computing it explicitly is intractable.  More specifically, variational inference is used in situations in which we have a model that involves hidden random variables $Z$, observed data $X$, and some posited probabilistic model over the hidden and observed random variables $$P(Z, X)$$. Our goal is to compute the posterior distribution $P(Z \mid X)$. Under an ideal situation, we would do so using by Bayes theorem:
 
-$$p(z \mid x) := \frac{p(x \mid z)p(z)}{p(x)}$$
+$$p(z \mid x) = \frac{p(x \mid z)p(z)}{p(x)}$$
 
 where $$z$$ and $$x$$ are realizations of $$Z$$ and $$X$$ respectively and $$p(.)$$ are probability mass/density functions for the distributions implied by their arguments.
 
-In practice, it is often difficult to compute $p(z \mid x)$ via Bayes theorem because the denominator $p(x)$ does not have a closed form. Usually, the denominator $p(x)$ can be only be expressed as an integral marginalizing over $z$: \int p(x, z) \ dz$.
+In practice, it is often difficult to compute $p(z \mid x)$ via Bayes theorem because the denominator $p(x)$ does not have a closed form. Usually, the denominator $p(x)$ can be only be expressed as an integral that marginalizes over $z$: p(x) = \int p(x, z) \ dz$.
 
-Instead of computing $$p(z \mid x)$$ exactly via Bayes theorem, variational inference attempts to find another distribution $q(z)$ that is ``close" to $$p(z \mid x)$$.  Ideally, $q(z)$ is easier to evaluate than $$p(z \mid x)$$, and, if $$p(z \mid x)$$ and $$q(z)$$ are similar, then we can use $$q(z)$$ as a replacement for $p(z \mid x)$ for any relevant downstream tasks.  
+Instead of computing $$p(z \mid x)$$ exactly via Bayes theorem, variational inference attempts to find another distribution $q(z)$ that is ``close" to $$p(z \mid x)$$ (how we define "closeness" between distributions will be addressed later in this post).  Ideally, $q(z)$ is easier to evaluate than $$p(z \mid x)$$, and, if $$p(z \mid x)$$ and $$q(z)$$ are similar, then we can use $$q(z)$$ as a replacement for $p(z \mid x)$ for any relevant downstream tasks.  
 
 We restrict our search for $$q(z)$$ to a family of surrogate distributions over $$Z$$, called the **variational distribution family**, denoted by the set of distributions $\mathcal{Q}$.  Our goal then is to find the distribution $q \in \mathcal{Q}$ that makes $q(z)$ as ``close" to $p(z \mid x)$ as possible.    When, each member of $\mathcal{Q}$ is characterized by the values of a set of parameters $\phi$, we call $\phi$ the **variational parameters**.  Our goal is then to find the value for $\hat{\phi}$ that makes $q(z \mid \phi)$ as close to $p(z \mid x)$ as possible
 and return $$q(z \mid \hat{\phi})$$ as our approximation of the true posterior.
