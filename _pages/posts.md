@@ -45,7 +45,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 ## Algorithms for statistical inference
 
 [Expectation-maximization: theory and intuition](https://mbernste.github.io/posts/em/)  
-[A high-level overview of variational inference](https://mbernste.github.io/posts/variational_inference/)  
+[Variational inference](https://mbernste.github.io/posts/variational_inference/)  
 
 ## Probabilistic models
 
