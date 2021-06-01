@@ -1,5 +1,5 @@
 ---
-title: 'A high-level overview of variational inference'
+title: 'Variational inference: a high-level overview'
 date: 2021-05-31
 permalink: /posts/variational_inference/
 tags:
