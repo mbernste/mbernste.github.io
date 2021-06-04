@@ -53,9 +53,9 @@ $$\hat{q} := \text{argmax}_q \ \text{ELBO}(q)$$
 
 The solution to this optimization problem is equivalent to the solution that minimizes the KL-divergence between $q(z)$ and $p(z \mid x)$.  To see why this works, we can show that the KL-divergence can be formulated as the difference between the marginal log-likelihood of the observed data, $$\log p(x)$$ (called the *evidence*) and the ELBO:
 
-$$KL(q(z) \ || \ p(z \mid x)) = \log p(x) - \text{ELBO}(q)$$
+$$\begin{align*}KL(q(z) \ || \ p(z \mid x)) &= E_{Z \sim q}\left[\log\frac{q(Z)}{p(Z \mid x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] - E_{Z \sim q}\left[\log p(Z \mid x) \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] - E_{Z \sim q}\left[\log \frac{p(Z, x)}{p(x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] - E_{Z \sim q}\left[\log p(Z, x) \right] + E_{Z \sim q}\left[\log p(x) \right] \\ &= \log p(x) - \left( E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\left[\log q(Z) \right] \right)\\ &= \log p(x) - \text{ELBO}(q)\end{align*}$$
 
-Because $\log p(x)$ does not depend on $q$, one can treat the ELBO as a function of $q$ and maximize the ELBO.  For the derivation of this equation, see [my previous blog post](https://mbernste.github.io/posts/elbo/) discussing the ELBO. 
+Because $\log p(x)$ does not depend on $q$, one can treat the ELBO as a function of $q$ and maximize the ELBO.  
 
 Conceptually, variational inference allows us to formulate our approximate Bayesian inference problem as an optimization problem.  By formulating the problem as such, we can approach this optimization problem using the full toolkit available to us from the field of [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization)!
 
