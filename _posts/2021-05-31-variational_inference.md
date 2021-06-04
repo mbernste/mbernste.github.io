@@ -62,7 +62,7 @@ Conceptually, variational inference allows us to formulate our approximate Bayes
 Why is this called "variational" inference?
 --------
 
-The term "variational" in "variational inference" comes from the mathematical area of [the calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations).  The calculus of variations is all about optimization problems that optimize *functions of functions* (called *functionsal*).  
+The term "variational" in "variational inference" comes from the mathematical area of [the calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations).  The calculus of variations is all about optimization problems that optimize *functions of functions* (called **functionals**).  
 
 More specifically, let's say we have some set of functions $\mathcal{F}$ where each $f \in \mathcal{F}$ maps items from some set $A$ to some set $B$. That is,
 
