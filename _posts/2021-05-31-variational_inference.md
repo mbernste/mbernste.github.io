@@ -76,4 +76,4 @@ Then, we may wish to solve an optimization problem of the form:
 
 $$\text{arg max}_{f \in \mathcal{F}} g(f)$$
 
-This is precisely the problem addressed in the calculus of variations.  In the case of variational inference, the functional, $g$, that we are optimzing is the ELBO.  The set of functions, $\mathcal{F}$, that we are searching over are the set of [measureable functions](https://mbernste.github.io/posts/measure_theory_2/) in the variational family, $\mathcal{Q}$.
+This is precisely the problem addressed in the calculus of variations.  In the case of variational inference, the functional, $g$, that we are optimzing is the ELBO.  The set of functions, $\mathcal{F}$, that we are searching over is the set of [measureable functions](https://mbernste.github.io/posts/measure_theory_2/) in the variational family, $\mathcal{Q}$.
