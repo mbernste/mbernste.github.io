@@ -53,8 +53,32 @@ $$\hat{q} := \text{argmax}_q \ \text{ELBO}(q)$$
 
 The solution to this optimization problem is equivalent to the solution that minimizes the KL-divergence between $q(z)$ and $p(z \mid x)$.  To see why this works, we can show that the KL-divergence can be formulated as the difference between the marginal log-likelihood of the observed data, $$\log p(x)$$ (called the *evidence*) and the ELBO:
 
-$$\begin{align*}KL(q(z) \ || \ p(z \mid x)) &= E_{Z \sim q}\left[\log\frac{q(Z)}{p(Z \mid x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] - E_{Z \sim q}\left[\log p(Z \mid x) \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] - E_{Z \sim q}\left[\log \frac{p(Z, x)}{p(x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] -  E_{Z \sim q}\left[\log p(Z, x) \right] + E_{Z \sim q}\left[\log p(x) \right]  \\ &=  \log p(x) - \left( E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\left[\log q(Z) \right]  \right)\\ &= \log p(x) - \text{ELBO}\end{align*}$$
+$$\begin{align*}KL(q(z) \ || \ p(z \mid x)) &= E_{Z \sim q}\left[\log\frac{q(Z)}{p(Z \mid x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] - E_{Z \sim q}\left[\log p(Z \mid x) \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] - E_{Z \sim q}\left[\log \frac{p(Z, x)}{p(x)} \right] \\ &= E_{Z \sim q}\left[\log q(Z) \right] -  E_{Z \sim q}\left[\log p(Z, x) \right] + E_{Z \sim q}\left[\log p(x) \right]  \\ &=  \log p(x) - \left( E_{Z \sim q}\left[\log p(x, Z) \right] - E_{Z \sim q}\left[\log q(Z) \right]  \right)\\ &= \log p(x) - \text{ELBO}(q)\end{align*}$$
 
 Because $\log p(x)$ does not depend on $q$, one can treat the ELBO as a function of $q$ and maximize the ELBO.
 
-Conceptually, variational inference allows us to formulate our approximate Bayesian inference problem as an optimization problem.  By formulating the problem as such, we can approach this optimization problem using the full toolkit available to us from the fields of [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization)!
+Conceptually, variational inference allows us to formulate our approximate Bayesian inference problem as an optimization problem.  By formulating the problem as such, we can approach this optimization problem using the full toolkit available to us from the field of [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization)!
+
+Why is this called "variational" inference?
+
+The term "variational" in "variational inference" comes from the mathematical area of [the calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations).  The calculus of variations is all about optimization problems that entail finding a *function* that maximizes some function.  
+
+More specifically, let's say we have some set of functions $\mathcal{F}$ where each $f \in F$ maps items from some set $A$ to some set $B$. That is,
+
+$$f: A \rightarrow B$$ 
+
+Let's say we have some function $g$ that maps functions in $\mathcal{F}$ to real numbers $\mathbb{R}$ (such functions are called **functionals**).  That is,
+
+$$g: \mathcal{F} \rightarrow \mathbb{R}$$
+
+Then, we may wish to solve an optimization problem of the form:
+
+$$\text{arg max}_{f \in \mathcal{F}} g(f)$$
+
+This is precisely the problems addressed in the calculus of variations.  In the case of variational inference, the functional we are optimzing is the ELBO:
+
+$$g := ELBO$$
+
+The set of functions we are attempting to optimize over are the set probability measures in the variational family $\mathcal{Q}$:
+
+$$\mathcal{F} := \mathcal{Q}$$
