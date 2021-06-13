@@ -1,5 +1,5 @@
 ---
-title: 'Hypothesis testing versus binary classification: A unified framework'
+title: 'Binary classification with hypothesis testing and machine learning: A unified framework'
 date: 2021-06-13
 permalink: /posts/hypothesis_vs_ml/
 tags:
@@ -13,7 +13,7 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 -----------
 
-Statistical hypothesis testing and machine learning-based binary classification are two very different frameworks for making binary decisions with data. A [recent article](https://doi.org/10.1016/j.patter.2020.100115) by Jingyi Jessica Li and Xin Tong discusses the differences between these two strategies and offers guidance on which one to choose for a given binary decision problem at hand. Indeed, the two strategies are very different given that they were born from two different scientific fields (statistics and computer science) and are generally best-suited for different kinds of problems. Understanding these differences, as well as the strengths and weaknesses of each, is vital for choosing the appropriate strategy for one's problem. Nonetheless, I also think it is helpful to understand how these two strategies are similar. In this post, I will emphasize the similarities between the two approaches and present a framework for thinking about these two approaches as belonging to two ends of a continuum defined by the well-known the [bias-variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff). 
+Statistical hypothesis testing and machine learning-based binary classification are two very different frameworks for making binary decisions with data. A [recent article](https://doi.org/10.1016/j.patter.2020.100115) by Jingyi Jessica Li and Xin Tong discusses the differences between these two strategies and offers guidance on which one to choose for a given binary decision problem at hand. Indeed, the two strategies are very different given that they were born from two different scientific fields (statistics and computer science) and are generally best-suited for different kinds of problems. Understanding these differences, as well as the strengths and weaknesses of each, is vital for choosing the appropriate strategy for one's problem. Nonetheless, I also think it is helpful to understand how these two strategies are similar. In this post, I will emphasize the similarities between the two approaches and present a framework for thinking about these two approaches as belonging to two ends of a continuum defined by the well-known [bias-variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff). 
 
 Binary decision making with data
 ----------
@@ -56,7 +56,6 @@ $$f(T(X)) := \mathcal{A}(\mathcal{D})(T(X))$$
 
 where $\mathcal{A}(\mathcal{D})$ is the decision function output by the learning algorithm $\mathcal{A}$ when trained on dataset $\mathcal{D}$.
 
-
 A continuum of decision-making algorithms
 -----------
 
@@ -64,4 +63,8 @@ On the surface, the biggest difference between hypothesis testing and machine le
 
 In the remainder of this blog post, I will argue that this difference is not as vast as it seems.  When dealing with complex data, such as for applications in computational biology, the development of a novel hypothesis test requires that the developer looks at a lot of data! In converse, all machine learning algorithms make assumptions about the data; they just do so a bit more implicitly than hypothesis testing.  Thus, I argue that both hypothesis testing and machine learning algorithms lie at two ends of the [bias-variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)!
 
+Inductive bias and the bias-variance tradeoff
+-----------
+
+A central idea in statistical learning theory is the inductive bias of a learning algorithm.  Roughly speaking, the inductive bias of an algorithm are of the assumptions that the algorithm will bring to the table when attempting to find a decision function that will accurately make decisions from data.  If an algorithm has very strong assumptions about what the data will look like, and the underlying process that generated them, then the algorithm will perform very poorly if the data does not meet the algorithm's assumptions.  This problem can be mitigated by 
 
