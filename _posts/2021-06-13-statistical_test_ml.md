@@ -54,12 +54,11 @@ If one views the learning algorithm itself as a function, $\mathcal{A}$, that ta
 
 $$f(T(X)) := \mathcal{A}(\mathcal{D})(T(X))$$
 
-where $\mathcal{A}(\mathcal{D}}$ is the decision function output by the learning algorithm when trained on dataset $\mathcal{D}$.
+where $\mathcal{A}(\mathcal{D})$ is the decision function output by the learning algorithm $\mathcal{A}$ when trained on dataset $\mathcal{D}$.
 
 
 A continuum of decision-making algorithms
 -----------
-
 
 On the surface, the biggest difference between hypothesis testing and machine learning-based classification is that one approach does not require training data to generate the and the other does.  That is, hypothesis testing does not require training data, rather, it requires an assumption of the null distribution.  Machine learning on the other hand, requires training data to estimate the distribution of the data from scratch.  This seems to be a huge difference! 
 
