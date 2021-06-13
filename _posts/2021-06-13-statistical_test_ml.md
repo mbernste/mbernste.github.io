@@ -48,7 +48,7 @@ Note that the null distribution from hypothesis testing can be viewed as
 $$P_{null} := P(T(X) \mid Y = C_0)$$.
 
 
-Training data or no training data?
+Hypothesis testing and machine learning are more similar than they appear
 -----------
 
 On the surface, the biggest difference between hypothesis testing and machine learning-based classification is that one approach does not require training data and the other does.  That is, hypothesis testing does not require training data, rather, it requires an assumption of the null distribution.  Machine learning on the other hand, requires training data to estimate the distribution of the data from scratch.  This seems to be a huge difference! 
