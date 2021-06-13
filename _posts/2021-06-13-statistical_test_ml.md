@@ -24,7 +24,7 @@ There are many scenarios that fit this description. For example, $X$ might be an
 
 Traditionally, machine learning is used for examples like the former (classifying images as either cats or dogs) and hypothesis testing is used for the latter (deciding whether the mean score between two populations of students are equal). While indeed machine learning is usually a better fit for problems similar to the former and statistical testing for the latter, this does not necessarily have to be the case. Both of these problems can be cast as the problem of making a binary decision between two choices, which can be addressed by either machine learning or hypothesis testing.  The [article](https://doi.org/10.1016/j.patter.2020.100115) by Li and Tong discuss the strengths of both methods.
 
-A quick overview of hypothesis testing and machine learning-based classification
+A quick overview of hypothesis testing  
 -----------
 
 Before we get started, I will provide a very brief (and not comprehensive) description of the two frameworks.  The language and mathematical notation I use will attempt to highlight the similarities between the two approaches. 
@@ -34,6 +34,9 @@ In hypothesis testing, we summarize our data $X$ using a summarization function 
 $$\text{p-value} := \int P_{\text{null}}(x \mid x \ \text{is more extreme than} \ T(X)) \ dx$$
 
 A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of our data $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold such that if the p-value is below the given threshold, one chooses $C_1$ rather than $C_0$.
+
+A quick overview of machine learning-based classification
+-----------------
 
 In machine learning-based binary classification, our data $X$ is also summarized using some summarization function $T$.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$. (Note, in hypothesis testing $T(X)$ is usually a single number and in machine learning $T(X)$ is usually a numeric vector).  Furthermore, to use machine learning, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as 
 
