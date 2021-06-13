@@ -29,7 +29,7 @@ Before we get started, I will provide a very brief (and not comprehensive) descr
 
 In hypothesis testing, we summarize our data $X$ using a summarization function $T$, thereby computing $T(X)$.  In hypothesis testing, $T(X)$ is called the **test statistic**.  When performing hypothesis testing, one makes the very strong assumption that if $X$ belongs to one of the two categories, which we'll denote $C_0$, then $T(X)$ will follow a specified distribution.  In hypothesis testing parlance, this distribution is called the [null distribution](https://en.wikipedia.org/wiki/Null_distribution#:~:text=Null%20distribution%20is%20a%20tool,is%20said%20to%20be%20true). We'll denote the null distribution as $P_{C_0}$.  In hypothesis testing, one computes the probability of drawing a sample from the null distribution that is "at least as extreme" as $T(X)$.  This probability is called a [p-value](https://en.wikipedia.org/wiki/P-value): 
 
-$$\text{p-value} := \int \text{extremeness}(x, T(X)) P_{C_0}(x) \ \dx$$
+$$\text{p-value} := \int P_{C_0}(y \mid y \ \text{is more extreme than} \ T(X)) \ dy$$
 
 A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of our data $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold such that if the p-value is below the given threshold, one chooses $C_1$ rather than $C_0$.
 
