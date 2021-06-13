@@ -35,6 +35,15 @@ $$\text{p-value} := \int P_{\text{null}}(x \mid x \ \text{is more extreme than} 
 
 A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of our data $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold such that if the p-value is below the given threshold, one chooses $C_1$ rather than $C_0$.
 
+In mathematical notation, this decision making function can be written as:
+
+In mathematical notation, this decision function is:
+
+$$f(T(X)) := \mathbb{I}\left(\text{p-value} < \alpha \right)$$
+
+where $\alpha$ is the pre-defined p-value threshold.
+
+
 A quick overview of machine learning-based classification
 -----------------
 
@@ -42,24 +51,18 @@ In machine learning-based binary classification, our data $X$ is also summarized
 
 $$\mathcal{D} := (X_1, Y_1), (X_2, Y_2), \dots, (X_n, Y_n)$$ 
 
-Then, given these samples, we employ a **learning algorithm** that looks at the data and finds a function, $h$, that will map a given item's features, $T(X)$, to a category:
+Then, given these samples, we employ a **learning algorithm** that looks at the data and finds a decision function, $f$, that will map a given item's features, $T(X)$, to a category.  That is, we can view the learning algorithm itself as a function, $\mathcal{A}$, that takes as input a training set $\mathcal{D}$ and outputs a decision function $f$.  
 
-$$h(T(X)) \in \{C_0, C_1\}$$
+Putting this all together, one can view the machine learning binary classification task as:
 
-In machine learning parlance, the function $h$ is called a **decision function**. 
+$$f(T(X)) := \mathcal{A}(\mathcal{D})(T(X))$$
+
+where $\mathcal{A}(\mathcal{D}}$ is the decision function output by the learning algorithm when trained on dataset $\mathcal{D}$.
+
 
 A continuum of decision-making algorithms
 -----------
 
-Before moving forward, I think it is important to point out that a hypothesis test can be viewed as a decision function similar to what would be output by a learning algorithm. In mathematical notation, this decision function is:
-
-$$f(T(X)) := \mathbb{I}\left(\int P_{\text{null}}(x \mid x \ \text{is more extreme than} \ T(X)) < \alpha \right)$$
-
-In machine learning, we can represent the 
-
-$$f(T(X)) := \mathcal{A}(\mathcal{D})(T(X))$$
-
-Note that $\mathcal{A}(\mathcal{D}}$ is the decision function output by the learning algorithm.
 
 On the surface, the biggest difference between hypothesis testing and machine learning-based classification is that one approach does not require training data to generate the and the other does.  That is, hypothesis testing does not require training data, rather, it requires an assumption of the null distribution.  Machine learning on the other hand, requires training data to estimate the distribution of the data from scratch.  This seems to be a huge difference! 
 
