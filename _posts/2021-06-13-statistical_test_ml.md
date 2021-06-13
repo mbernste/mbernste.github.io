@@ -37,8 +37,9 @@ A low p-value means that the null distribution is a poor explanation for our obs
 
 In mathematical notation, this decision function is:
 
-$$f(T(X)) := \begin{cases}C_0  \ \text{if} \ \mathbb{I}\left(\text{p-value} < \alpha \right) == 0 \\  C_1  \ \text{if} \ \mathbb{I}\left(\text{p-value} < \alpha \right) == 1\end{cases}$$
+$$f(T(X)) := \begin{cases}C_1  \ \text{if} \ \mathbb{I}\left(\text{p-value} < \alpha \right) = 1 \\  C_1  \ \text{otherwise} \end{cases}$$
 
+where $\mathbb{I}$ is the indicator function.
 
 A quick overview of machine learning-based classification
 -----------------
