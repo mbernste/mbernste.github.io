@@ -15,6 +15,9 @@ Introduction
 
 Statistical hypothesis testing and machine learning-based binary classification are two very different frameworks for making binary decisions with data. A [recent article](https://doi.org/10.1016/j.patter.2020.100115) by Jingyi Jessica Li and Xin Tong discusses the differences between these two strategies and offers guidance on which one to choose for a given binary decision problem at hand. Indeed, the two strategies are very different given that they were born from two different scientific fields (statistics and computer science) and are generally best-suited for different kinds of problems. Understanding these differences, as well as the strengths and weaknesses of each, is vital for choosing the appropriate strategy for one's problem. Nonetheless, I also think it is helpful to understand how these two strategies are similar. In this post, I will emphasize the similarities between the two approaches and present a framework for thinking about these two approaches as belonging to two ends of a continuum defined by the well-known [bias-variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff). 
 
+Before discussing this continuum, I will provide a very brief (and not comprehensive) description of the binary classification task as well as for hypothesis testing and machine learning.  The language and mathematical notation I use will be a sort of hybrid between the language and notation traditionally used in statistics and machine learning. My goal is to highlight the similarities between the two approaches. 
+
+
 Binary decision making with data
 ----------
 
@@ -26,8 +29,6 @@ Traditionally, machine learning is used for examples like the former (classifyin
 
 A quick overview of hypothesis testing  
 -----------
-
-Before we get started, I will provide a very brief (and not comprehensive) description of the two frameworks.  The language and mathematical notation I use will attempt to highlight the similarities between the two approaches. 
 
 In hypothesis testing, we summarize our data $X$ using a summarization function $T$, thereby computing $T(X)$.  In hypothesis testing, $T(X)$ is called the **test statistic**.  When performing hypothesis testing, one makes the very strong assumption that if $X$ belongs to one of the two categories, which we'll denote $C_0$, then $T(X)$ will follow a specified distribution.  In hypothesis testing parlance, this distribution is called the [null distribution](https://en.wikipedia.org/wiki/Null_distribution#:~:text=Null%20distribution%20is%20a%20tool,is%20said%20to%20be%20true). We'll denote the null distribution as $P_{\text{null}}$.  In hypothesis testing, one computes the probability of drawing a sample from the null distribution that is "at least as extreme" as $T(X)$.  This probability is called a [p-value](https://en.wikipedia.org/wiki/P-value): 
 
