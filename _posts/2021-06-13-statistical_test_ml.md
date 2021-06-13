@@ -29,9 +29,9 @@ A quick overview of hypothesis testing and machine learning-based classification
 
 Before we get started, I will provide a very brief (and not comprehensive) description of the two frameworks.  The language and mathematical notation I use will attempt to highlight the similarities between the two approaches. 
 
-In hypothesis testing, we summarize our data $X$ using a summarization function $T$, thereby computing $T(X)$.  In hypothesis testing, $T(X)$ is called the **test statistic**.  When performing hypothesis testing, one makes the very strong assumption that if $X$ belongs to one of the two categories, which we'll denote $C_0$, then $T(X)$ will follow a specified distribution.  In hypothesis testing parlance, this distribution is called the [null distribution](https://en.wikipedia.org/wiki/Null_distribution#:~:text=Null%20distribution%20is%20a%20tool,is%20said%20to%20be%20true). We'll denote the null distribution as $P_{C_0}$.  In hypothesis testing, one computes the probability of drawing a sample from the null distribution that is "at least as extreme" as $T(X)$.  This probability is called a [p-value](https://en.wikipedia.org/wiki/P-value): 
+In hypothesis testing, we summarize our data $X$ using a summarization function $T$, thereby computing $T(X)$.  In hypothesis testing, $T(X)$ is called the **test statistic**.  When performing hypothesis testing, one makes the very strong assumption that if $X$ belongs to one of the two categories, which we'll denote $C_0$, then $T(X)$ will follow a specified distribution.  In hypothesis testing parlance, this distribution is called the [null distribution](https://en.wikipedia.org/wiki/Null_distribution#:~:text=Null%20distribution%20is%20a%20tool,is%20said%20to%20be%20true). We'll denote the null distribution as $P_{\text{null}}$.  In hypothesis testing, one computes the probability of drawing a sample from the null distribution that is "at least as extreme" as $T(X)$.  This probability is called a [p-value](https://en.wikipedia.org/wiki/P-value): 
 
-$$\text{p-value} := \int P_{C_0}(x \mid x \ \text{is more extreme than} \ T(X)) \ dx$$
+$$\text{p-value} := \int P_{\text{null}}(x \mid x \ \text{is more extreme than} \ T(X)) \ dx$$
 
 A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of our data $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold such that if the p-value is below the given threshold, one chooses $C_1$ rather than $C_0$.
 
@@ -45,8 +45,15 @@ $$P(Y = C_1 \mid T(X)) = 1 - P(Y = C_0 \mid T(X))$$
 
 Note that the null distribution from hypothesis testing can be viewed as
 
-$$P(T(X) \mid Y = C_0)$$.
+$$P_{null} := P(T(X) \mid Y = C_0)$$.
 
+
+Training data or no training data?
+-----------
+
+On the surface, the biggest difference between hypothesis testing and machine learning-based classification is that one approach does not require training data and the other does.  That is, hypothesis testing does not require training data, rather, it requires an assumption of the null distribution.  Machine learning on the other hand, requires training data to estimate the distribution of the data from scratch.  This seems to be a huge difference! 
+
+In the remainder of this blog post, I will argue that this difference is not as vast as it seems.  In practice, the development of a novel hypothesis test requires that the developer looks at a lot of data! In converse, all machine learning algorithms make assumptions about the data -- they just do so a bit more implicitly than hypothesis testing.  Thus, I argue that both hypothesis testing and machine learning algorithms lie at two ends of a continuum of decision-making algorithms that is defined by the strength of the [inductive bias](https://en.wikipedia.org/wiki/Inductive_bias) made by the method!
 
 
 
