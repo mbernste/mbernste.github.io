@@ -1,5 +1,5 @@
 ---
-title: 'Binary classification with hypothesis testing and machine learning: A unified framework'
+title: 'Binary classification with hypothesis testing and supervised machine learning: A unified framework'
 date: 2021-06-13
 permalink: /posts/hypothesis_vs_ml/
 tags:
@@ -13,9 +13,11 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 -----------
 
-Statistical hypothesis testing and machine learning-based binary classification are two very different frameworks for making binary decisions with data. A [recent article](https://doi.org/10.1016/j.patter.2020.100115) by Jingyi Jessica Li and Xin Tong discusses the differences between these two strategies and offers guidance on which one to choose for a given binary decision problem at hand. Indeed, the two strategies are very different given that they were born from two different scientific fields (statistics and computer science) and are generally best-suited for different kinds of problems. Understanding these differences, as well as the strengths and weaknesses of each, is vital for choosing the appropriate strategy for one's problem. Nonetheless, I also think it is helpful to understand how these two strategies are similar. In this post, I will emphasize the similarities between the two approaches and present a framework for thinking about these two approaches as belonging to two ends of a continuum defined by the well-known [bias-variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff). 
+Statistical hypothesis testing and supervised machine learning are two very different frameworks for making binary decisions with data. A [recent article](https://doi.org/10.1016/j.patter.2020.100115) by Jingyi Jessica Li and Xin Tong discusses the differences between these two strategies and offers guidance on which one to choose for a given binary decision problem at hand. Indeed, the two strategies are very different given that they were born from two different scientific fields (statistics and computer science) and are generally best-suited for different kinds of problems. For some probelms, the choice is obvious. For example, when attempting to decide whether the means between two groups differ based on a finite sample, then the obvious method is hypothesis testing. Alternatively, when attempting to classify images, machine learning is often the much better choice. 
 
-Before discussing this continuum, I will provide a very brief (and not comprehensive) review of the binary classification task, hypothesis testing, and machine learning.  The language and mathematical notation I use will be a sort of hybrid between the language and notation traditionally used in statistics and machine learning. My goal is to highlight the similarities between the two approaches. 
+Nonetheless, there are problems for which the best method is not so obvious. Such problems are pervasive in computational biology. For example, [inferring gene regulatory networks](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2217-z) is a problem that has been addressed using both hypothesis testing and supervised machine learning. Understanding these differences, as well as the strengths and weaknesses of each, is vital for choosing the appropriate strategy for one's problem. Nonetheless, I also think it is helpful to understand how these two strategies are similar. In this post, I will emphasize the similarities between the two approaches and present a framework for thinking about these two approaches as belonging to two ends of a continuum defined by the well-known [bias-variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff). 
+
+Before discussing this continuum, I will provide a very brief (and not comprehensive) review of the binary classification task, hypothesis testing, and supervised machine learning.  The language and mathematical notation I use will be a sort of hybrid between the language and notation traditionally used in statistics and machine learning. My goal is to highlight the similarities between the two approaches. 
 
 
 Binary decision making with data
