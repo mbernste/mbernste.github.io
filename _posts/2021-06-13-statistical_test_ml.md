@@ -52,7 +52,7 @@ In supervised machine learning for binary classification, our data $X$ is summar
 
 $$\mathcal{D} := (X_1, Y_1), (X_2, Y_2), \dots, (X_n, Y_n)$$ 
 
-Then, given these samples, we employ a **learning algorithm** that looks at the data and finds a decision function, $f$, that will map a given item's features, $T(X)$, to a category.  
+Then, given these training examples, we employ a **learning algorithm** that looks at these data and finds a decision function, $f$, that will make perform the binary decision when given $T(X)$.  
 
 If one views the learning algorithm itself as a function, $\mathcal{A}$, that takes as input a training set $\mathcal{D}$ and outputs a decision function $f$, then we can formulate the complete machine learning-based decision making algorithm as:
 
