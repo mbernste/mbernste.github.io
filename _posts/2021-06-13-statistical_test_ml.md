@@ -45,10 +45,10 @@ $$f(T(X)) := \begin{cases}C_1  \ \text{if} \ \mathbb{I}\left(\text{p-value} < \a
 
 where $\mathbb{I}$ is the indicator function.
 
-A quick review of machine learning-based classification
+A quick review of supervised machine learning
 -----------------
 
-In machine learning-based binary classification, our data $X$ is also summarized using some summarization function $T$.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$. (Note, in hypothesis testing $T(X)$ is usually a single number and in machine learning $T(X)$ is usually a numerical vector).  Furthermore, to use machine learning, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as 
+In supervised machine learning for binary classification, our data $X$ is summarized using a summarization function $T$ in a similar manner to hypothesis testing.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$ and are usually a numerical vector rather than a single number as is usually the case in hypothesis testing.  Furthermore, to use machine learning, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as 
 
 $$\mathcal{D} := (X_1, Y_1), (X_2, Y_2), \dots, (X_n, Y_n)$$ 
 
