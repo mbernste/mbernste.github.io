@@ -35,16 +35,30 @@ $$\text{p-value} := \int P_{\text{null}}(x \mid x \ \text{is more extreme than} 
 
 A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of our data $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold such that if the p-value is below the given threshold, one chooses $C_1$ rather than $C_0$.
 
-In machine learning-based binary classification, our data $X$ is also summarized using some summarization function $T$.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$. (Note, in hypothesis testing $T(X)$ is usually a single number and in machine learning $T(X)$ is usually a numeric vector).  In machine learning-based binary classification, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as $(X_1, Y_1), (X_2, Y_2), \dots, (X_n, Y_n)$. Then, given these samples, we employ a **learning algorithm** that uses the data to find a function, $h$, that will map a given item's features, $T(X)$, to its correct category:
+In machine learning-based binary classification, our data $X$ is also summarized using some summarization function $T$.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$. (Note, in hypothesis testing $T(X)$ is usually a single number and in machine learning $T(X)$ is usually a numeric vector).  Furthermore, to use machine learning, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as 
+
+$$\mathcal{D} := (X_1, Y_1), (X_2, Y_2), \dots, (X_n, Y_n)$$ 
+
+Then, given these samples, we employ a **learning algorithm** that looks at the data and finds a function, $h$, that will map a given item's features, $T(X)$, to a category:
 
 $$h(T(X)) \in \{C_0, C_1\}$$
 
-In machine learning parlance, the function $h$ is called a **hypothesis function**. 
+In machine learning parlance, the function $h$ is called a **decision function**. 
 
-Hypothesis testing and machine learning are more similar than they appear
+A continuum of decision-making algorithms
 -----------
 
-On the surface, the biggest difference between hypothesis testing and machine learning-based classification is that one approach does not require training data and the other does.  That is, hypothesis testing does not require training data, rather, it requires an assumption of the null distribution.  Machine learning on the other hand, requires training data to estimate the distribution of the data from scratch.  This seems to be a huge difference! 
+Before moving forward, I think it is important to point out that a hypothesis test can be viewed as a decision function similar to what would be output by a learning algorithm. In mathematical notation, this decision function is:
+
+$$f(T(X)) := \mathbb{I}\left(\int P_{\text{null}}(x \mid x \ \text{is more extreme than} \ T(X)) < \alpha \right)$$
+
+In machine learning, we can represent the 
+
+$$f(T(X)) := \mathcal{A}(\mathcal{D})(T(X))$$
+
+Note that $\mathcal{A}(\mathcal{D}}$ is the decision function output by the learning algorithm.
+
+On the surface, the biggest difference between hypothesis testing and machine learning-based classification is that one approach does not require training data to generate the and the other does.  That is, hypothesis testing does not require training data, rather, it requires an assumption of the null distribution.  Machine learning on the other hand, requires training data to estimate the distribution of the data from scratch.  This seems to be a huge difference! 
 
 In the remainder of this blog post, I will argue that this difference is not as vast as it seems.  In practice, the development of a novel hypothesis test requires that the developer looks at a lot of data! In converse, all machine learning algorithms make assumptions about the data -- they just do so a bit more implicitly than hypothesis testing.  Thus, I argue that both hypothesis testing and machine learning algorithms lie at two ends of a continuum of decision-making algorithms that is defined by the strength of the [inductive bias](https://en.wikipedia.org/wiki/Inductive_bias) made by the method!
 
