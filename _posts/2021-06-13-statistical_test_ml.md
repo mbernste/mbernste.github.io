@@ -56,4 +56,3 @@ On the surface, the biggest difference between hypothesis testing and machine le
 In the remainder of this blog post, I will argue that this difference is not as vast as it seems.  In practice, the development of a novel hypothesis test requires that the developer looks at a lot of data! In converse, all machine learning algorithms make assumptions about the data -- they just do so a bit more implicitly than hypothesis testing.  Thus, I argue that both hypothesis testing and machine learning algorithms lie at two ends of a continuum of decision-making algorithms that is defined by the strength of the [inductive bias](https://en.wikipedia.org/wiki/Inductive_bias) made by the method!
 
 
-
