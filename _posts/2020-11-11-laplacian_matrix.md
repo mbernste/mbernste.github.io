@@ -131,7 +131,7 @@ What matrix will perform this summation?  Precisely the transpose of the inciden
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LaplacianDivergenceCalculation.png" alt="drawing" width="600"/></center>
 
 
-Now, putting it all together, the Laplacian on a graph is, like the Laplacian for real-valued functions, simply the divergence applied to the gradient of $$f$$. Recall from linear algebra that, the composition of two operators is simply the product of the two matrices representing those operators.  Applying the divergence to the gradient is carried out by the matrix product $$K^TK$$. This is the Laplacian matrix $$L$$. That is, 
+Now, putting it all together, the Laplacian on a graph is, like the Laplacian for real-valued functions, simply the divergence applied to the gradient of $$f$$. Recall from linear algebra that, the composition of two operators is simply the [product of the two matrices](https://mbernste.github.io/posts/matrix_multiplication/) representing those operators.  Applying the divergence to the gradient is carried out by the matrix product $$K^TK$$. This is the Laplacian matrix $$L$$. That is, 
 
 $$L := K^TK$$ 
 
