@@ -25,7 +25,7 @@ Traditionally, machine learning is used for examples like the former (classifyin
 A quick overview of hypothesis testing and machine learning-based classification
 -----------
 
-Before we get started, I will provide a very brief (and not comprehensive) description of the two frameworks.  The language I choose to use will attempt to highlight the similarities between the two approaches.  
+Before we get started, I will provide a very brief (and not comprehensive) description of the two frameworks.  The language and mathematical notation I use will attempt to highlight the similarities between the two approaches.  
 
 In hypothesis testing, we summarize our data $X$ using a summarization function $T$, thereby computing $T(X)$.  In hypothesis testing, $T(X)$ is called the **test statistic**.  When performing hypothesis testing, one makes the very strong assumption that if $X$ belongs to one of the two categories, which we'll denote $C_0$, then $T(X)$ will follow a specified distribution.  In hypothesis testing parlance, this distribution is called the [null distribution](https://en.wikipedia.org/wiki/Null_distribution#:~:text=Null%20distribution%20is%20a%20tool,is%20said%20to%20be%20true). We'll denote the null distribution as $P_{C_0}$.  In hypothesis testing, one computes the probability of drawing a sample from the null distribution that is "at least as extreme" as $T(X)$.  This probability is called a [p-value](https://en.wikipedia.org/wiki/P-value): 
 
