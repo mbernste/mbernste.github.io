@@ -35,9 +35,11 @@ $$\text{p-value} := \int P_{\text{null}}(x \mid x \ \text{is more extreme than} 
 
 A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of our data $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold such that if the p-value is below the given threshold, one chooses $C_1$ rather than $C_0$.
 
-In machine learning-based binary classification, our data $X$ is also summarized using some summarization function $T$.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$. (Note, in hypothesis testing $T(X)$ is usually a single number and in machine learning $T(X)$ is usually a numeric vector).  In machine learning-based binary classification, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as $(X_1, Y_1), (X_2, Y_2), \dots, (X_n, Y_n)$. Then, given these samples, we employ a **learning algorithm** that uses the data to find a function, $f$, that will map a given item's features, $T(X)$, to its correct category:
+In machine learning-based binary classification, our data $X$ is also summarized using some summarization function $T$.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$. (Note, in hypothesis testing $T(X)$ is usually a single number and in machine learning $T(X)$ is usually a numeric vector).  In machine learning-based binary classification, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as $(X_1, Y_1), (X_2, Y_2), \dots, (X_n, Y_n)$. Then, given these samples, we employ a **learning algorithm** that uses the data to find a function, $h$, that will map a given item's features, $T(X)$, to its correct category:
 
-$$f(T(X)) \in \{C_0, C_1\}$$
+$$h(T(X)) \in \{C_0, C_1\}$$
+
+In machine learning parlance, the function $h$ is called a **hypothesis function**. 
 
 Hypothesis testing and machine learning are more similar than they appear
 -----------
