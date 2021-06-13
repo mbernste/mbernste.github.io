@@ -33,7 +33,9 @@ A quick review of hypothesis testing
 
 In hypothesis testing, we summarize our data $X$ using a summarization function $T$ called a **statistic**. For example, if $X$ consists of test scores for a sample of students, then $T$ might be a function that simply computes the mean test score.  When performing hypothesis testing, one makes the very strong assumption that if one of the two choices, say $C_0$, is correct, then $T(X)$ will follow a specified distribution.  In hypothesis testing parlance, this distribution is called the [null distribution](https://en.wikipedia.org/wiki/Null_distribution#:~:text=Null%20distribution%20is%20a%20tool,is%20said%20to%20be%20true) which we'll denote as $P_{\text{null}}$.  In hypothesis testing, one computes the probability of drawing a sample from the null distribution that is "at least as extreme" as $T(X)$.  This probability is called a [p-value](https://en.wikipedia.org/wiki/P-value): 
 
-$$\text{p-value} := \int P_{\text{null}}(x \mid x \ \text{is more extreme than} \ T(X)) \ dx$$
+$$\text{p-value} := \int P_{\text{null}}(x) \mathbb{I}(x \ \text{is more extreme than} \ T(X)) \ dx$$
+
+where $\mathbb{I}$ is the indicator function.
 
 A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of our data $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold, $\alpha$, such that if the p-value is below $\alpha$, one chooses $C_1$ rather than $C_0$.
 
