@@ -1,5 +1,5 @@
 ---
-title: 'Binary classification with hypothesis testing and supervised machine learning: A unified framework'
+title: 'Hypothesis testing versus supervised machine learning: A unified framework'
 date: 2021-06-13
 permalink: /posts/hypothesis_vs_ml/
 tags:
