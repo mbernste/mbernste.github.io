@@ -9,7 +9,7 @@ tags:
   - Laplacian matrix
 ---
 
-*At the heart of of a number of important machine learning algorithms, such as spectral clustering, lies a matrix called the graph Laplacian.  In this post, I'll walk through the intuition behind the graph Laplacian and describe how it represents the discrete analog to the Laplacian operator on continuous multivariate functions.*
+*At the heart of of a number of important machine learning algorithms, such as spectral clustering, lies a matrix called the graph Laplacian.  In this post, I'll walk through the intuition behind the graph Laplacian and describe how it represents the discrete analogue to the Laplacian operator on continuous multivariate functions.*
 
 Introduction
 --------------
@@ -28,7 +28,7 @@ the Laplacian matrix is defined as
 
 $$L := D - A$$
 
-This definition is super simple, but it describes something quite deep: it's the discrete analog to the Laplacian operator on multivariate continuous functions.  How does such a simple definition capture such a complex idea?  We will demonstrate this in the remainder of this post.
+This definition is super simple, but it describes something quite deep: it's the discrete analogue to the Laplacian operator on multivariate continuous functions.  How does such a simple definition capture such a complex idea?  We will demonstrate this in the remainder of this post.
 
 Review of the Laplacian for continuous, multivariate functions
 --------------
@@ -120,7 +120,7 @@ Then, given a graph function $$\boldsymbol{g}$$, we compute the "gradient" as
 
 **Divergence**
 
-Finally, how should we think about a divergence analog for graphs?  Recall that divergence on continuous, multivariate real-valued functions measures the amount of "flow" coming into and out of each point where the flow is determined by the vectors surrounding each point. Since, our analog for points are vertices, and our analog for vectors around each point are simply the edges adjacent to each vertex, it follows that we can calculate the divergence by simply summing the edge values around each vertex. 
+Finally, how should we think about a divergence analogue for graphs?  Recall that divergence on continuous, multivariate real-valued functions measures the amount of "flow" coming into and out of each point where the flow is determined by the vectors surrounding each point. Since, our analogue for points are vertices, and our analogue for vectors around each point are simply the edges adjacent to each vertex, it follows that we can calculate the divergence by simply summing the edge values around each vertex. 
 
 For our example graph, if we have edge assignments given by $$g(e_1), g(e_2), g(e_3)$$ and  $$g(e_4)$$, then the divergence at node A should simply be the sum of the edge values adjacent to A where each edge value is multiplied by $$-1$$ if the flow is flowing "into" A. In the case of node A, all edges flow outward and thus
 
@@ -155,4 +155,4 @@ What happens when we compute an off-diagonal entry of $$K^TK$$?  That is, what w
 
 Because the $$i$$th column of $$K$$ represents the "edge indicators" of all edges adjacent to $$v_i$$, we see that the dot product filters out all edges that are not adjacent to *both* $$v_i$$ and $$v_j$$.  Thus, if $$v_i$$ is adjacent to $$v_j$$ there will be only one non-zero term in the dot product's summation corresponding to the one edge that connects them!  This term is simply $$-1$$.  Why is it always negative?  By design of the incidence matrix each row has one value of -1 and one value of 1. When multiplied together, this results in -1.
 
-And there you have it. The Laplacian matrix as the graph analog to the Laplacian operator on multi-variate, continuous functions!
+And there you have it. The Laplacian matrix as the graph analogue to the Laplacian operator on multi-variate, continuous functions!
