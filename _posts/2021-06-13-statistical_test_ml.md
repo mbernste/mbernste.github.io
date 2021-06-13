@@ -45,7 +45,7 @@ $$P(Y = C_1 \mid T(X)) = 1 - P(Y = C_0 \mid T(X))$$
 
 Note that the null distribution from hypothesis testing can be viewed as
 
-$$P_{null} := P(T(X) \mid Y = C_0)$$.
+$$P_{\text{null}} := P(T(X) \mid Y = C_0)$$
 
 
 Hypothesis testing and machine learning are more similar than they appear
