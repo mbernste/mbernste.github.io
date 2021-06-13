@@ -33,15 +33,11 @@ In hypothesis testing, we summarize our data $X$ using a summarization function 
 
 $$\text{p-value} := \int P_{\text{null}}(x \mid x \ \text{is more extreme than} \ T(X)) \ dx$$
 
-A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of our data $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold such that if the p-value is below the given threshold, one chooses $C_1$ rather than $C_0$.
-
-In mathematical notation, this decision making function can be written as:
+A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of our data $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold, $\alpha$, such that if the p-value is below $\alpha$, one chooses $C_1$ rather than $C_0$.
 
 In mathematical notation, this decision function is:
 
-$$f(T(X)) := \mathbb{I}\left(\text{p-value} < \alpha \right)$$
-
-where $\alpha$ is the pre-defined p-value threshold.
+$$f(T(X)) := \begin{cases}C_0  \ \text{if} \ \mathbb{I}\left(\text{p-value} < \alpha \right) == 0 \\  C_1  \ \text{if} \ \mathbb{I}\left(\text{p-value} < \alpha \right) == 1\end{cases}$$
 
 
 A quick overview of machine learning-based classification
@@ -51,9 +47,9 @@ In machine learning-based binary classification, our data $X$ is also summarized
 
 $$\mathcal{D} := (X_1, Y_1), (X_2, Y_2), \dots, (X_n, Y_n)$$ 
 
-Then, given these samples, we employ a **learning algorithm** that looks at the data and finds a decision function, $f$, that will map a given item's features, $T(X)$, to a category.  That is, we can view the learning algorithm itself as a function, $\mathcal{A}$, that takes as input a training set $\mathcal{D}$ and outputs a decision function $f$.  
+Then, given these samples, we employ a **learning algorithm** that looks at the data and finds a decision function, $f$, that will map a given item's features, $T(X)$, to a category.  
 
-Putting this all together, one can view the machine learning binary classification task as:
+If one views the learning algorithm itself as a function, $\mathcal{A}$, that takes as input a training set $\mathcal{D}$ and outputs a decision function $f$, then we can formulate the complete machine learning-based decision making algorithm as:
 
 $$f(T(X)) := \mathcal{A}(\mathcal{D})(T(X))$$
 
