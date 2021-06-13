@@ -1,0 +1,2 @@
+
+Statistical hypothesis testing and binary classification are two very different frameworks for making binary decisions. A [recent article](https://www.sciencedirect.com/science/article/pii/S2666389920301562) by Jingyi Jessica Li and Xin Tong discusses the differences between these two strategies.  I found this article to be very well-written and important; however, it tends to focus on the *differences* between the two strategies rather on their similarities.
