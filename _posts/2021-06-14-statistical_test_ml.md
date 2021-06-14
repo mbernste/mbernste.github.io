@@ -67,6 +67,8 @@ Both approaches may require training data
 
 The use of training data in machine learning is obvious; training models using data is the whole point! On the other hand, the use of training data in hypothesis testing is much less obvious, but I would argue is still present, at least in the development of hypothesis tests for complex problems.  Here, I use "training data" in a very loose sense to mean all data that was used by either person or machine to formulate the decision function $f$.  Im machine learning, $f$ is output by the learning algorithm $\mathcal{A}$.  In hypothesis testing, $f$ is usually more handcrafted. Nonetheless, this handcrafting of $f$ almost always requires data. 
 
+As an illustrative example, let's look at the problem of [identifying differentially expressed genes]() in [RNA-seq](https://mbernste.github.io/posts/rna_seq_basics/) data.  In this problem, one is given two conditions on which we measure the expression of a set of genes. We are interested in identifying the subset of genes whose mean expression differs between the two conditions.  This fundamental problem has been addressed by a multitude of approaches in bioinformatics.
+
 Both approaches require assumptions about the data
 -----------------
 
