@@ -1,5 +1,5 @@
 ---
-title: 'Hypothesis testing versus supervised machine learning: A unified framework'
+title: 'Hypothesis testing versus supervised machine learning: A unified perspective'
 date: 2021-06-14
 permalink: /posts/hypothesis_vs_ml/
 tags:
