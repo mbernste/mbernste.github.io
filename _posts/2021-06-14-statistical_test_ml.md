@@ -30,7 +30,7 @@ There are many scenarios that fit this description. For example, $X$ might be an
 
 Traditionally, machine learning is used for examples like the former (classifying images as either cats or dogs) and hypothesis testing is used for the latter (deciding whether the mean scores between two populations of students are equal). While indeed machine learning is usually a better fit for problems similar to the former and statistical testing for the latter (see the [article](https://doi.org/10.1016/j.patter.2020.100115) by Li and Tong), this does not necessarily have to be the case. Both of these problems can be cast as the problem of making a binary decision between two choices, which can be addressed by either hypothesis testing or machine learning.
 
-A quick review of hypothesis testing  
+A brief review of hypothesis testing  
 -----------
 
 In hypothesis testing, we summarize our data $X$ using a summarization function $T$ called a **statistic**. For example, if $X$ consists of test scores for a sample of students, then $T$ might be a function that simply computes the mean test score.  When performing hypothesis testing, one makes the very strong assumption that if one of the two choices, say $C_0$, is correct, then $T(X)$ will follow a specified distribution.  In hypothesis testing parlance, this distribution is called the [null distribution](https://en.wikipedia.org/wiki/Null_distribution#:~:text=Null%20distribution%20is%20a%20tool,is%20said%20to%20be%20true) which we'll denote as $P_{\text{null}}$.  In hypothesis testing, one computes the probability of drawing a sample from the null distribution that is "at least as extreme" as $T(X)$.  This probability is called a [p-value](https://en.wikipedia.org/wiki/P-value): 
@@ -47,7 +47,7 @@ $$f(T(X)) := \begin{cases}C_1  \ \text{if} \ \mathbb{I}\left(\text{p-value} < \a
 
 where $\mathbb{I}$ is the indicator function.
 
-A quick review of supervised machine learning
+A brief review of supervised machine learning
 -----------------
 
 In supervised machine learning for binary classification, our data $X$ is summarized using a summarization function $T$ in a similar manner to hypothesis testing.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$ and are usually a numerical vector rather than a single number as is usually the case in hypothesis testing.  Furthermore, to use machine learning, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as 
@@ -62,10 +62,18 @@ $$f(T(X)) := \mathcal{A}(\mathcal{D})(T(X))$$
 
 where $\mathcal{A}(\mathcal{D})$ is the decision function output by the learning algorithm $\mathcal{A}$ when trained on dataset $\mathcal{D}$.
 
-The use of "training" data is common to both approaches
+Both approaches may require training data
 -----------------
 
-All methods make strong assumptions about the data
+Both approaches require assumptions about the data
 -----------------
 
-A central idea in statistical learning theory is the inductive bias of a learning algorithm. Roughly speaking, the inductive bias of an algorithm are of the assumptions that the algorithm will bring to the table when attempting to find a decision function that will accurately make decisions from data. If an algorithm has very strong assumptions about what the data will look like, and the underlying process that generated them, then the algorithm will perform very poorly if the data does not meet the algorithm's assumptions. This problem can be mitigated by
+It is obvious that hypothesis testing requires one to make strong assumptions about the data. These assumptions take the form of the null distribution -- that is, we assume a probability distribution over $T(X)$ conditioned on $Y = C_0$.  If data as extreme as $T(X)$ looks unlikely under the null distribution, we choose $C_1$.
+
+In supervised machine learning, the assumptions made about the data are less obvious. These assumptions are called the **inductive bias** of a learning algorithm. If an algorithm has very strong assumptions about the underlying process that generated the data, then the algorithm will perform very poorly if the data does not meet the algorithm's assumptions.  In fact, this is a mathematical requirement! The [No Free Lunch Theorem]() in statistical learning theory states that no machine learning algorithm will work for every possible distribution of data. That is, for any given algorithm, it will work well for some data and poorly for others. The types of distributions on which the model works are the inductive bias of the algorithm!  
+
+Here are a few examples of some inductive biases of well-known algorithms:
+* [Logistic regression]() assumes that the $Y$ is a linear function of $T(X)$. If this does not hold, then logistic regression may not work well!
+* [Bayesian networks]() make explicit the expected distribution of the data and highlight the conditional dependencies between elements of $T(X)$. 
+* [Convolutional neural networks]() assume that useful groups of elements within $T(X)$ are invariant to spatial shifts and rotations. If this is not the case, then convolutional neural networks might not be the best choice.
+
