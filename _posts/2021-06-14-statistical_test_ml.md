@@ -1,6 +1,6 @@
 ---
 title: 'Hypothesis testing versus supervised machine learning: A unified framework'
-date: 2021-06-13
+date: 2021-06-14
 permalink: /posts/hypothesis_vs_ml/
 tags:
   - machine learning
@@ -15,9 +15,13 @@ Introduction
 
 Statistical hypothesis testing and supervised machine learning are two very different frameworks for making binary decisions with data. A [recent article](https://doi.org/10.1016/j.patter.2020.100115) by Jingyi Jessica Li and Xin Tong discusses the differences between these two strategies and offers guidance on which one to choose for a given binary decision problem at hand. Indeed, the two strategies are very different given that they were born from two different scientific fields (statistics and computer science) and are generally best-suited for different kinds of problems. For some problems, the choice is obvious. For example, when attempting to decide whether the means between two groups differ based on a finite sample, then the obvious method to use is hypothesis testing. Alternatively, when attempting to classify images as being of either say, a dog or a cat, machine learning is often the much better choice. 
 
-Nonetheless, there are problems for which the best method is not so obvious. Such problems are pervasive in computational biology. For example, inferring gene regulatory networks is a problem that has been addressed using [oth hypothesis testing and supervised machine learning](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2217-z). Of course, understanding the differences between the two frameworks and their respective strengths and weaknesses, is vital for choosing the appropriate strategy for one's problem. Nonetheless, I also think it is helpful to understand how these two strategies are similar. In this post, I will emphasize the similarities between the two approaches and present a framework for thinking about these two approaches as belonging to two ends of a continuum defined by the well-known [bias-variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff). 
+Nonetheless, there are problems for which the best method is not so obvious. Such problems are pervasive in computational biology. For example, inferring gene regulatory networks is a problem that has been addressed using [both hypothesis testing and supervised machine learning](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-018-2217-z). Of course, understanding the differences between the two frameworks and their respective strengths and weaknesses, is vital for choosing the appropriate strategy for one's problem. 
 
-Before discussing this continuum, I will provide a very brief (and not comprehensive) review of the binary classification task, hypothesis testing, and supervised machine learning.  The language and mathematical notation I use will be a sort of hybrid between the language and notation traditionally used in statistics and machine learning. My goal is to highlight the similarities between the two approaches. 
+On the surface, the biggest difference between hypothesis testing and supervised machine learning is that one approach requires training data while the other does not.  That is, machine learning requires training data, but (seemingly) few assumptions about the data whereas hypothesis testing requires (seemingly) no training data, but requires strong assumptions about the data in the form of the null distribution. This seems to be a huge difference! 
+
+In the remainder of this blog post, I will argue that this difference is not as vast as it seems.  When dealing with complex data, such as for applications in computational biology, the development of a novel hypothesis test requires looking at a lot of data!  In some sense, one can view this as "learning" or "training", even though it isn't being performed by a machine.  Conversely, all machine learning algorithms make assumptions about the data; they just do so a bit more implicitly than hypothesis testing.  These implicit assumptions, collectively called the **inductive bias** of a learning algorithm, are crucial to undersand when applying machine learning to a problem.
+
+Before digging into these commonalities, I will provide a very brief (and not comprehensive) review of the binary classification task, hypothesis testing, and supervised machine learning.  The language and mathematical notation I use will be a sort of hybrid between the language and notation traditionally used in statistics and machine learning. My goal is to highlight the similarities between the two approaches. 
 
 Binary decision making with data
 ----------
@@ -60,15 +64,10 @@ $$f(T(X)) := \mathcal{A}(\mathcal{D})(T(X))$$
 
 where $\mathcal{A}(\mathcal{D})$ is the decision function output by the learning algorithm $\mathcal{A}$ when trained on dataset $\mathcal{D}$.
 
-A continuum of decision-making algorithms
------------
+The use of "training" data is common to both approaches
+-----------------
 
-On the surface, the biggest difference between hypothesis testing and machine learning-based classification is that one approach requires training data the other does not.  That is, machine learning requires training data, but little assumptions about the data whereas hypothesis testing requires no training data, but does require assumptions about the data in the form of the null distribution. This seems to be a huge difference! 
+All methods make strong assumptions about the data
+-----------------
 
-In the remainder of this blog post, I will argue that this difference is not as vast as it seems.  When dealing with complex data, such as for applications in computational biology, the development of a novel hypothesis test requires that the developer looks at a lot of data! In converse, all machine learning algorithms make assumptions about the data; they just do so a bit more implicitly than hypothesis testing.  Thus, I argue that both hypothesis testing and machine learning algorithms lie at two ends of a continuum. Moreover, this continuum can be understood to be the well-knonw [bias-variance tradeoff](https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff)!
-
-Inductive bias and the bias-variance tradeoff
------------
-
-A central idea in statistical learning theory is the inductive bias of a learning algorithm.  Roughly speaking, the inductive bias of an algorithm are of the assumptions that the algorithm will bring to the table when attempting to find a decision function that will accurately make decisions from data.  If an algorithm has very strong assumptions about what the data will look like, and the underlying process that generated them, then the algorithm will perform very poorly if the data does not meet the algorithm's assumptions.  This problem can be mitigated by 
-
+A central idea in statistical learning theory is the inductive bias of a learning algorithm. Roughly speaking, the inductive bias of an algorithm are of the assumptions that the algorithm will bring to the table when attempting to find a decision function that will accurately make decisions from data. If an algorithm has very strong assumptions about what the data will look like, and the underlying process that generated them, then the algorithm will perform very poorly if the data does not meet the algorithm's assumptions. This problem can be mitigated by
