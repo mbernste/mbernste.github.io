@@ -62,7 +62,7 @@ $$f(T(X)) := \mathcal{A}(\mathcal{D})(T(X))$$
 
 where $\mathcal{A}(\mathcal{D})$ is the decision function output by the learning algorithm $\mathcal{A}$ when trained on dataset $\mathcal{D}$.
 
-Both approaches may require training data
+Both approaches may require "training" data
 -----------------
 
 The use of training data in machine learning is obvious; training models using data is the whole point! On the other hand, the use of training data in hypothesis testing is much less obvious, but I would argue is still present, at least in the development of hypothesis tests for complex problems.  Here, I use "training data" in a very loose sense to mean all data that was used by either person or machine to formulate the decision function $f$.  Im machine learning, $f$ is output by the learning algorithm $\mathcal{A}$.  In hypothesis testing, $f$ is usually more handcrafted. Nonetheless, this handcrafting of $f$ almost always requires data. 
