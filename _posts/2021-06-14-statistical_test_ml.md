@@ -21,7 +21,7 @@ On the surface, the biggest difference between hypothesis testing and supervised
 
 Before digging into these commonalities, I will provide a very brief (and not comprehensive) review of the binary classification task, hypothesis testing, and supervised machine learning.  The language and mathematical notation I use will be a sort of hybrid between the language and notation traditionally used in statistics and machine learning. My goal is to highlight the similarities between the two approaches. 
 
-Binary decision making with data
+Making binary decisions with data
 ----------
 
 The problem we're interested in addressing is the following: we're given data, $X$, describing some object or sample and we want to use $X$ in order to make some kind of binary decision between two choices $C_0$ or $C_1$. We'll use the variable $Y$ to denote the correct choice and thus, we are attempting to determine whether $Y = C_0$ or $Y = C_1$.  
@@ -70,10 +70,13 @@ Both approaches require assumptions about the data
 
 It is obvious that hypothesis testing requires one to make strong assumptions about the data. These assumptions take the form of the null distribution -- that is, we assume a probability distribution over $T(X)$ conditioned on $Y = C_0$.  If data as extreme as $T(X)$ looks unlikely under the null distribution, we choose $C_1$.
 
-In supervised machine learning, the assumptions made about the data are less obvious. These assumptions are called the **inductive bias** of a learning algorithm. If an algorithm has very strong assumptions about the underlying process that generated the data, then the algorithm will perform very poorly if the data does not meet the algorithm's assumptions.  In fact, this is a mathematical requirement! The [No Free Lunch Theorem]() in statistical learning theory states that no machine learning algorithm will work for every possible distribution of data. That is, for any given algorithm, it will work well for some data and poorly for others. The types of distributions on which the model works are the inductive bias of the algorithm!  
+In supervised machine learning, the assumptions made about the data are less obvious, but they are always present. In fact, their presence is a mathematical certainty! The [No Free Lunch Theorem]() in statistical learning theory states that no machine learning algorithm will work for every possible distribution of data. That is, for any given algorithm, it will work well for some data and poorly for others. One can view the types of distributions on which the model works well as the assumptions that the model is making about the data. These assumptions are often called the **inductive bias** of the algorithm.  
 
 Here are a few examples of some inductive biases of well-known algorithms:
 * [Logistic regression]() assumes that the $Y$ is a linear function of $T(X)$. If this does not hold, then logistic regression may not work well!
 * [Bayesian networks]() make explicit the expected distribution of the data and highlight the conditional dependencies between elements of $T(X)$. 
 * [Convolutional neural networks]() assume that useful groups of elements within $T(X)$ are invariant to spatial shifts and rotations. If this is not the case, then convolutional neural networks might not be the best choice.
+
+A note on "inference" versus "prediction"
+-----------------
 
