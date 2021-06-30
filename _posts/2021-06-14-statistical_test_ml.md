@@ -24,9 +24,9 @@ Before digging into these commonalities, I will provide a very brief (and not co
 Making binary decisions with data
 ----------
 
-The problem we're interested in addressing is the following: we're given data, $X$, describing some object or sample and we want to use $X$ in order to make some kind of binary decision between two choices $C_0$ or $C_1$. We'll use the variable $Y$ to denote the correct choice and thus, we are attempting to determine whether $Y = C_0$ or $Y = C_1$.  
+The problem we're interested in addressing is the following: we're given data, $X$, describing some object, or sample, and we want to use $X$ in order to make some kind of binary decision between two choices $C_0$ or $C_1$. We'll use the variable $Y$ to denote the correct choice and thus, we are attempting to determine whether $Y = C_0$ or $Y = C_1$.  
 
-There are many scenarios that fit this description. For example, $X$ might be an image of either a cat or a dog and we are interested in classifying which it is. In this case, $Y$ is the decision regarding whether the image is of a cat or dog. A very different example would be that $X$ is a sample of datapoints (e.g., test scores) from two populations (e.g., students from two different schools) and we are interested in deciding whether the true (unobserved) means of the two groups are equal based upon our observed, but limited sample $X$.  Here, $C_0$ might be the conclusion/decision that indeed the two groups of students have the same underlying test scores whereas $C_1$ is the conclusion that the two groups' mean scores differ.
+There are many scenarios that fit this description. For example, $X$ might be an image of either a cat or a dog and we are interested in classifying which it is. In this case, $Y$ is the decision regarding whether the image is of a cat or dog. A very different example would be that $X$ is a sample of datapoints -- for example, test scores from two groups of students, and we are interested in deciding whether the true (unobserved) means of the two groups' scores are equal based upon our observed, but limited data $X$.  Here, $C_0$ might be the conclusion that the two groups of students have the same underlying test scores whereas $C_1$ is the conclusion that the two groups' mean scores differ.
 
 Traditionally, machine learning is used for examples like the former (classifying images as either cats or dogs) and hypothesis testing is used for the latter (deciding whether the mean scores between two populations of students are equal). While indeed machine learning is usually a better fit for problems similar to the former and statistical testing for the latter (see the [article](https://doi.org/10.1016/j.patter.2020.100115) by Li and Tong), this does not necessarily have to be the case. Both of these problems can be cast as the problem of making a binary decision between two choices, which can be addressed by either hypothesis testing or machine learning.
 
@@ -41,20 +41,18 @@ where $\mathbb{I}$ is the indicator function.
 
 A low p-value means that the null distribution is a poor explanation for our observed $T(X)$ and that we should look elsewhere for an explanation of $X$.  That is, a low p-value supports the choosing the alternate category, $C_1$, for $X$ rather than $C_0$ (making this choice is called "rejecting the null hypothesis"; the null hypothesis is the hypothesis that the null distribution produced $T(X)$). Traditionally, one pre-specifies a threshold, $\alpha$, such that if the p-value is below $\alpha$, one chooses $C_1$ rather than $C_0$.
 
-In mathematical notation, this decision function is:
+In mathematical notation, the decision function, $f$, that outputs our choice of $C_0$ versus $C_1$ is:
 
 $$f(T(X)) := \begin{cases}C_1  \ \text{if} \ \text{p-value} < \alpha \\  C_0  \ \text{otherwise} \end{cases}$$
-
-where $\mathbb{I}$ is the indicator function.
 
 A brief review of supervised machine learning
 -----------------
 
-In supervised machine learning for binary classification, our data $X$ is summarized using a summarization function $T$ in a similar manner to hypothesis testing.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$ and are usually a numerical vector rather than a single number as is usually the case in hypothesis testing.  Furthermore, to use machine learning, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as 
+In supervised machine learning for binary classification, our data $X$ is summarized using a summarization function $T$ in a similar manner to hypothesis testing.  In machine learning, $T(X)$ are called [features](https://en.wikipedia.org/wiki/Feature_selection) of $X$ and are usually a numerical vector.  Furthermore, to use machine learning, one is required to have on hand a set of *training examples* consisting of items and their associated correct decisions. We denote these item-decision pairs as 
 
 $$\mathcal{D} := (X_1, Y_1), (X_2, Y_2), \dots, (X_n, Y_n)$$ 
 
-Then, given these training examples, we employ a **learning algorithm** that looks at these data and finds a decision function, $f$, that will make perform the binary decision when given $T(X)$.  
+Then, given these training examples, we employ a **learning algorithm** that looks at these data and finds a decision function, $f$, that will perform the binary decision when given some $T(X)$.  
 
 If one views the learning algorithm itself as a function, $\mathcal{A}$, that takes as input a training set $\mathcal{D}$ and outputs a decision function $f$, then we can formulate the complete machine learning-based decision making algorithm as:
 
@@ -65,7 +63,7 @@ where $\mathcal{A}(\mathcal{D})$ is the decision function output by the learning
 Both approaches may require "training" data
 -----------------
 
-The use of training data in machine learning is obvious; training models using data is the whole point! On the other hand, the use of training data in hypothesis testing is much less obvious, but I would argue is still present, at least in the development of hypothesis tests for complex problems.  Here, I use "training data" in a very loose sense to mean all data that was used by either person or machine to formulate the decision function $f$.  Im machine learning, $f$ is output by the learning algorithm $\mathcal{A}$.  In hypothesis testing, $f$ is handcrafted by a person. This handcrafting of $f$ almost always requires data. 
+The use of training data in machine learning is obvious; training models using examples is the entire premise of the field! On the other hand, the use of training data in hypothesis testing is much less obvious, but I would argue is still present, at least in the development of hypothesis tests for complex problems.  Here, I use "training data" in a very loose sense to mean all data that was used by either person or machine to formulate the decision function $f$.  Im machine learning, $f$ is output by the learning algorithm $\mathcal{A}$.  In hypothesis testing, $f$ is handcrafted by a person. This handcrafting of $f$ almost always requires data. 
 
 As an illustrative example, let's look at the problem of [identifying differentially expressed genes]() in [RNA-seq](https://mbernste.github.io/posts/rna_seq_basics/) data.  In this problem, one is given two conditions on which we measure the expression of a set of genes. We are interested in identifying the subset of genes whose mean expression differs between the two conditions.  This fundamental problem has been addressed by a multitude of approaches in bioinformatics.
 
