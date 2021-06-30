@@ -23,6 +23,7 @@ The NCBI’s [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA) pro
 however, the data remain largely underutilized, in part, due to the [poor structure](https://www.nature.com/articles/sdata201921) of the metadata associated with each sample. We developed the [MetaSRA](http://metasra.biostat.wisc.edu), a novel computational pipeline and associated database for standardizing the metadata associated with samples in the SRA by mapping each sample to biomedical [ontologies](https://en.wikipedia.org/wiki/Ontology_(information_science)).  See [my talk](https://www.youtube.com/watch?v=pVHMq9SdUtc) describing the MetaSRA from [ISMB 2018](https://www.iscb.org/ismb2018).
 
 * Bernstein, M.N., Doan, A., and Dewey, C.N. (2017). [MetaSRA: Normalized human sample-specific metadata for the Sequence Read Archive](https://doi.org/10.1093/bioinformatics/btx334). _Bioinformatics_. 33(18), 2914–2923. 
+* Bernstein, M.N., et al. (2020). [Jupyter notebook-based tools for building structured datasets from the Sequence Read Archive](https://f1000research.com/articles/9-376). _F1000 Research_. 9(376).
 
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
 ![My helpful screenshot]({{ " https://mbernste.github.io/images/MetaSRA_web.png" |  https://mbernste.github.io/images/MetaSRA_web.png }})
@@ -34,13 +35,3 @@ Single-cell RNA-seq (scRNA-seq) enables the profiling of genome-wide gene expres
 * Bernstein, M.N., Ni, Z., Collins, M., Burkard, M.E., Kendziorski, C., and Stewart, R. (2021). [CHARTS: A web application for characterizing and comparing tumor subpopulations in publicly available single-cell RNA-seq datasets](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-021-04021-x). _BMC Bioinformatics_. 22(83).
 
 ![My helpful screenshot]({{ " https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png" |  https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png }})
-
-
-## Developing tools for querying large, public genomics databases
-
-We've built [Jupyter-notebook based tools](https://github.com/mbernste/hypothesis-driven-SRA-queries) atop the [MetaSRA](http://metasra.biostat.wisc.edu) for constructing structured datasets from the [SRA](https://www.ncbi.nlm.nih.gov/sra). The [Case-Control Finder](https://colab.research.google.com/drive/1HX8V5yFRCh-AdkC-XHnfo6thg6VHwplC?usp=sharing) finds matches samples of a given condition/disease from the SRA to control samples. The [Series Finder](https://colab.research.google.com/drive/1BNmBokHi41ODCWeS3G_WY8OfZ54RVXf3?usp=sharing) finds ordered sets of samples where samples are ordered by a continuous property such as age.
-
-* Bernstein, M.N., et al. (2020). [Jupyter notebook-based tools for building structured datasets from the Sequence Read Archive](https://f1000research.com/articles/9-376). _F1000 Research_. 9(376).
-
-![My helpful screenshot]({{ " https://mbernste.github.io/images/CaseControl.png" |  https://mbernste.github.io/images/CaseControl.png }})
-
