@@ -7,7 +7,8 @@ tags:
   - insight
 ---
 
-
+Introduction
+-------------
 
 Dimensionality reduction is a common technique for visualizing high-dimensional data.  In computational biology, dimensionality reduction is an extremely common (almost ubiquotous) method for visualizing single-cell genomics data. As a quick review, in a single-cell genomics dataset, one is presented with a set of cells (on the order of thousands to hundreds of thousands) where each cell is associated with a high-dimensional measurement.  For example, in single-cell RNA-sequencing (scRNA-seq), one measures the relative abundance of RNA transcripts produced by each genomic features of interest (e.g., protein-coding genes), of which there exist tens of thousands. Thus, one can represent each cell as a vector $$\boldsymbol{x}_i \in \mathbb{R}^G$$ where $$G$$ is the number of genome-wide measurements.
 
