@@ -24,7 +24,7 @@ Here, it helps to take a step back and ask the question: what task are we trying
 
 So we must therefore ask ourselves, what qualities of the high dimensional data do we want preserved in our final two dimensions?  This is a very task-dependent (or hypothesis-dependent) question! It depends on what question we have that we think a visual instrument will help us answer.  Importantly, "general purpose" dimensionality-reduction methods, such as PCA, t-SNE, and UMAP, each make very specific choices about what information it decides to keep and that which it decides to throw away. These choices may not actually align with the qualities that one actually wants to preserve in order to answer a particular question about the data. Thus, one can be mislead if one does not understand sacrifices and trade-offs, in the form of discarded information, the method at-hand is making.
 
-Loss-functions encode how much a given characteristic in the original data is preserved
+Loss-functions quantify how much some quality of the original data is preserved in the embedding
 -------------------
 
 
