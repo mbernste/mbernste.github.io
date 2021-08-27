@@ -18,11 +18,13 @@ Because these measurements are many dimensional, it is impossible to visualize t
 
 $$(y_1, y_2) := F(\boldsymbol{x})$$
 
-Now the question is, what do we use for our function $$F$$? 
+Now the question is, how do we choose our function $$F$$? Here, it helps to take a step back and ask the question: what task are we trying to solve? At a high-level, one might say, "well, we want to visualize the high dimensional data!" But, of course, the problem is that you cannot! So you will be forced to make trade-offs along various lines regarding how you decide to embed your high-dimensional datapoints in just a few dimensions.
 
-Here, it helps to take a step back and ask the question: what task are we trying to solve? At a high-level, one might say, "well, we want to visualize the high dimensional data!" But, of course, the problem is that you cannot! When you take high-dimensional data and squeeze it down into two dimensions, you are forced to throw away a lot of information. The amount of information you throw out is related to the [intrinsic dimensionality of the data](https://mbernste.github.io/posts/intrinsic_dimensionality/). If the intrinsic dimensionality is high, one may end of up throwing away a lot of information.  Often, I've heard, "we want to isolate the structure in the data." But what does one mean by "structure"? 
+Specifically, in my mind, there are three categories of criteria that I have seen used for choosing an $$F$$:
 
-Ultimately, we really need to quantify exactly what qualities of the high dimensional data that we want preserved in our final two dimensions?  This is a very task-dependent (or hypothesis-dependent) question!  Importantly, "general purpose" dimensionality-reduction methods, such as PCA, t-SNE, and UMAP, each make very specific choices about what information it decides to keep and that which it decides to throw away. These choices may not actually align with the qualities that one actually wants to preserve in order to answer a particular question. Thus, one can be mislead if one does not understand sacrifices and trade-offs, in the form of discarded information, the method at-hand is making.
+1. First and foremost, one must decide what aspects of the original, high-dimensional data one wants to preserve in the low-dimensional embedding versus which aspects will be discarded or distorted. This is the most obvious criteria. The amount of information that you are forced to throw away is related to the [intrinsic dimensionality of the data](https://mbernste.github.io/posts/intrinsic_dimensionality/). If the intrinsic dimensionality is high, one may end of up throwing away a lot of information and therefore one must decide that which is the most critical.
+2. Second, and perhaps less obvious, is the aesthetic quality of the low-dimensional points when plotted as a scatterplot.  Now this might seem somewhat unscientific, but in fact, it is a criteria used by the commonly used t-SNE and UMAP methods! 
+
 
 Understanding a method's loss-function is critical
 -------------------
@@ -33,6 +35,9 @@ A quick synopsis of the loss-functions used by common dimensionality-reduction m
 -------------------
 
 **Feature-selection**: Feature-selection involves keeping some of the original dimensions and throwing away the rest. This is the most simple, straightforward dimensionality reduction method as it simply entails throwing some dimensions away! Defining a loss-function for feature-selection is basically trivial, but for the sake of placing feature-selection into the same conceptual framework as other methods, let's define it. Let's say we would like to embed our data into two dimensions, $$\mathbb{R}^2$$, and we 
+
+
+Ultimately, we really need to quantify exactly what qualities of the high dimensional data that we want preserved in our final two dimensions?  This is a very task-dependent (or hypothesis-dependent) question!  Importantly, "general purpose" dimensionality-reduction methods, such as PCA, t-SNE, and UMAP, each make very specific choices about what information it decides to keep and that which it decides to throw away. These choices may not actually align with the qualities that one actually wants to preserve in order to answer a particular question. Thus, one can be mislead if one does not understand sacrifices and trade-offs, in the form of discarded information, the method at-hand is making.
 
 
 
