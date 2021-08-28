@@ -13,12 +13,24 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 -----------
 
-Statistical hypothesis testing and supervised machine learning are two very different frameworks that can be used for making binary decisions with data. A [recent article](https://doi.org/10.1016/j.patter.2020.100115) by Jingyi Jessica Li and Xin Tong discusses the differences between these two strategies and offers guidance on which one to choose for a given binary decision problem.  Furthermore, a [recent article by Bzdok et al.](https://www.nature.com/articles/nmeth.4642) differentiates statistical testing from supervised machine learning by arguing that the two approaches address different tasks: namely, _inference_ and _prediction_ respectively. Indeed, the two strategies are very different; they were born from two different scientific fields -- statistics and computer science -- and are generally best-suited for different kinds of problems. However, in this post, I will attempt to argue that these two frameworks are not as different as they seem.
+Statistical hypothesis testing and supervised machine learning are two very different frameworks that can be used for making binary decisions with data. A [recent article by Bzdok et al.](https://www.nature.com/articles/nmeth.4642) differentiates statistical testing from supervised machine learning by arguing that the two approaches address different tasks: namely, _inference_ and _prediction_ respectively. [Another article](https://doi.org/10.1016/j.patter.2020.100115) by Jingyi Jessica Li and Xin Tong discusses the differences between these two strategies and offers guidance on which one to choose for a given binary decision problem. Indeed, the two strategies are very different; they were born from two different scientific fields -- statistics and computer science -- and are generally best-suited for different kinds of problems. However, in this post, I will attempt to argue that these two frameworks are not as different as they seem.
+
+Specifically, I will argue that statistical testinng and supervised machine learning are similar in the following ways: First, I argue that at a high level, "prediction" and "inference" can be viewed as the same thing -- namely, they are the act of claiming something about an unknown variable. Second, both statistical testing and supervised machine learning often require some form of training data. In hypothesis testing, this prior information takes the form of a null distribution. In supervised learning, this prior information is the training set. Third, and finally, both methods require assumptions about the data.
 
 Before digging into these commonalities, I will provide a very brief (and not comprehensive) review of the binary classification task, hypothesis testing, and supervised machine learning.  The language and mathematical notation I use will be a sort of hybrid between the language and notation traditionally used in statistics and machine learning. My goal is to highlight the similarities between the two approaches. 
 
-Making binary decisions with data
+Prediction versus inference
 ----------
+
+A [recent article by Bzdok et al.](https://www.nature.com/articles/nmeth.4642) differentiates statistical testing from supervised machine learning by arguing that the two approaches address different tasks: namely, _inference_ and _prediction_ respectively. The article does not provide a rigorous definition for these tasks, but let me take a stab at it. In an inference task, we are presented with some set of data $$X$$ and we seek to use $$X$$ to make some claim about some unknown variable $$Y$$. For example, we might be interested in the fraction of voters in a given state that support a political candidate. We have access to polling data $$X$$ with the voting intentions for some limited number of voters and we wish to make some claim about the fraction of _all_ voters that support the candidate. We use the polling data $$X$$ to _infer_ the value of $$Y$$.
+
+In the prediction task, we are again presented with some set of data $$X$$, and we wish to use $$X$$ to predict the future value of some variable $$Y$$.  For example, in a healthcare setting, $$X$$ might be a patient's clinical data and we want to predict whether the patient will suffer from some adverse health event. That is, we can let $$Y$$ be the patient's binary outcome as to whether they do or do not suffer the event.
+
+
+In both prediction and inference we are simply using data to make a claim about an unknown variable. Whether that variable exists in the present, but is unobserved (inference), or exists in the future (prediction) is, in my opinion, not an important distinction. Both problems have the same structure and can be addressed with the same methods!
+
+Making claims about unknown binary variables
+---------------
 
 The problem we're interested in addressing is the following: we're given data, $X$, describing some object, or sample, and we want to use $X$ in order to make some kind of binary decision between two choices $C_0$ or $C_1$. We'll use the variable $Y$ to denote the correct choice and thus, we are attempting to determine whether $Y = C_0$ or $Y = C_1$.  
 
