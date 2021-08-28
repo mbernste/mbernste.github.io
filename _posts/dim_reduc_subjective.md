@@ -26,6 +26,7 @@ Specifically, in my mind, there are three categories of criteria that I have see
 2. **Incorporate prior knowledge.** One might have some set of prior knowledge about the high-dimensional data that you would like incorporated into the scatterplot. 
 3. **Aesthetic quality**. This might seem like an unscientific criteria, but in fact, it is a motivating criteria for the t-SNE method!
 
+In this blog post, I will discuss how these various criteria are priortized by various dimensionality reduction methods and the various pitfalls that come from over-relying on any one method. It is my opinion that dimensionality reduction methods do have value, but it is essential that one understands the mathematics and motivations behind each method. Unfortunately, knowing the intricacies of any given dimensionality reduction method can be daunting! In this way, these visualization techniques are best interpreted by specialists and should be avoided for communicating to general audiences.
 
 Deciding what information is kept versus thrown away
 ----------------
@@ -48,6 +49,11 @@ Incorporating prior knowledge
 
 Enforcing aesthetic critera
 ----------------
+
+
+How and when should one use dimensionality-reduction methods for visualizing data? 
+----------------
+
 
 
 What do I mean by "information" here? Let me try to define my meaning of this word a bit more rigorously.  To define it, I will evoke the idea of a [loss functions]().  A loss function is a function that maps the output of an algorithm to a quantified measure of its "wrongness". In the dimension-reduction example, we are given a set of high dimensional vectors $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n \in \mathbb{R}^G$$ and our dimensionality reduction method will output a set of two-dimensional vectors $$\boldsymbol{y}_1, \dots, \boldsymbol{y}_n$$.  Our loss function is then a function on these two sets of vectors that quantify how "good" our low-dimensional vectors are:
