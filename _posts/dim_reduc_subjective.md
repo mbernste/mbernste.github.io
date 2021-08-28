@@ -24,21 +24,40 @@ Specifically, in my mind, there are three categories of criteria that I have see
 
 1. **What information is preserved.** Perhaps most obviously, one must decide what aspects of the original, high-dimensional data one wants to preserve in the low-dimensional embedding versus which aspects will be discarded or distorted.
 2. **Incorporate prior knowledge.** One might have some set of prior knowledge about the high-dimensional data that you would like incorporated into the scatterplot. 
-3. **Aesthetic quality**. This might seem somewhat unscientific, but in fact, it is a motivator for the t-SNE method!
-
-
-In the remainder of this post, I will dig in to each of these criteria.
-
-Loss-functions
-----------------
-
-Roughly speaking, a [loss function]() is a function that maps the output of an algorithm to a quantified measure of how correct that output is.  The specific loss function that one uses depends on the notion of "correctness".  
+3. **Aesthetic quality**. This might seem like an unscientific criteria, but in fact, it is a motivating criteria for the t-SNE method!
 
 
 Deciding what information is kept versus thrown away
 ----------------
 
-The amount of information that you are forced to throw away is related to the [intrinsic dimensionality of the data](https://mbernste.github.io/posts/intrinsic_dimensionality/). If the intrinsic dimensionality is high, one may end of up throwing away a lot of information and therefore one must decide that which is the most critical.
+Most obviously, dimensionality reduction potentially requires that we throw away a lot of information owing to the simple fact that we are compressing a lot of data down to a small amount of data. Here, "information" is a tricky concept to define rigorously (there is probably some way to mathematically describe it using the concepts of information theory, but I have neither seen it nor worked it out), but intuitively, the amount of information that one will throw away is related to the [intrinsic dimensionality of the data](https://mbernste.github.io/posts/intrinsic_dimensionality/). If the intrinsic dimensionality is high, one may end of up throwing away more information.
+
+So, we are forced to decide what information we want to keep. This information can take many forms! Let's start with a very simple example. Let's say we only care about two dimensions in the original data. In scRNA-seq data, for example, we only care about the expression of two specific genes. Then, we might decide that want to keep ONLY the expression data for these two genes and throw away the rest. This "algorithm" for dimensionality-reduction is called [feature selection]() in the field of machine learning.
+
+The form of the "information" that we decide to keep may be more complex than just picking out individual dimensions from the original high-dimensional space. Rather, it might entail some combination of dimensions. As an example, let's look at [principal components analysis (PCA)]().  In PCA, one does not keep an original dimension _per se_, but rather keeps a linear projection of the data onto a basis that preserves the most amount of variance. The intuition behind PCA is that if the data is changing a lot (high variance) along some direction in the ambient space, then that might indicate interesting "structure" and we want to preserve it.  
+
+As a final and more complex example, one might care about preserving the [topology]() of the data in the ambient space, by which one roughly means, points that are close together in the ambient space are also placed close together in the low-dimensional space. Algorithms that attempt to preserve this aspect of the high-dimensional data include [Sammon Mapping](), [t-SNE](), and [UMAP]().
+
+Importantly, when one decides to preserve one aspect of the data in the ambient space, another is usually distorted. For example, t-SNE and UMAP are known to [distort the density of datapoints]() such that points that might be very spread apart in the ambient space tend to look more tightly packed in the embedding space, whereas this is not as big of a distortion in PCA. Here's an example of 3-dimensional points XXXXXXX.
+
+On the otherhand, if datapoints cluster together in clumps, or "clusters", in the high-dimensional space, PCA tends to mash these clusters up whereas t-SNE and UMAP tend to preserve them. Here's an example of XXXXXXX.
+
+Incorporating prior knowledge
+----------------
+
+
+Enforcing aesthetic critera
+----------------
+
+
+What do I mean by "information" here? Let me try to define my meaning of this word a bit more rigorously.  To define it, I will evoke the idea of a [loss functions]().  A loss function is a function that maps the output of an algorithm to a quantified measure of its "wrongness". In the dimension-reduction example, we are given a set of high dimensional vectors $$\boldsymbol{x}_1, \dots, \boldsymbol{x}_n \in \mathbb{R}^G$$ and our dimensionality reduction method will output a set of two-dimensional vectors $$\boldsymbol{y}_1, \dots, \boldsymbol{y}_n$$.  Our loss function is then a function on these two sets of vectors that quantify how "good" our low-dimensional vectors are:
+
+$$\ell(\boldsymbol{y}_1, \dots, \boldsymbol{y}_n)$$
+
+We can define "wrongness" any way that we want! 
+
+one must decide what aspects of the original, high-dimensional data one wants to preserve in the low-dimensional embedding versus which aspects will be discarded or distorted.
+
 
 
 Understanding a method's loss-function is critical
