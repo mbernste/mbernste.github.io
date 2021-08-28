@@ -22,8 +22,23 @@ Now the question is, how do we choose our function $$F$$? Here, it helps to take
 
 Specifically, in my mind, there are three categories of criteria that I have seen used for choosing an $$F$$:
 
-1. First and foremost, one must decide what aspects of the original, high-dimensional data one wants to preserve in the low-dimensional embedding versus which aspects will be discarded or distorted. This is the most obvious criteria. The amount of information that you are forced to throw away is related to the [intrinsic dimensionality of the data](https://mbernste.github.io/posts/intrinsic_dimensionality/). If the intrinsic dimensionality is high, one may end of up throwing away a lot of information and therefore one must decide that which is the most critical.
-2. Second, and perhaps less obvious, is the aesthetic quality of the low-dimensional points when plotted as a scatterplot.  Now this might seem somewhat unscientific, but in fact, it is a criteria used by the commonly used t-SNE and UMAP methods! 
+1. **What information is preserved.** Perhaps most obviously, one must decide what aspects of the original, high-dimensional data one wants to preserve in the low-dimensional embedding versus which aspects will be discarded or distorted.
+2. **Incorporate prior knowledge.** One might have some set of prior knowledge about the high-dimensional data that you would like incorporated into the scatterplot. 
+3. **Aesthetic quality**. This might seem somewhat unscientific, but in fact, it is a motivator for the t-SNE method!
+
+
+In the remainder of this post, I will dig in to each of these criteria.
+
+Loss-functions
+----------------
+
+Roughly speaking, a [loss function]() is a function that maps the output of an algorithm to a quantified measure of how correct that output is.  The specific loss function that one uses depends on the notion of "correctness".  
+
+
+Deciding what information is kept versus thrown away
+----------------
+
+The amount of information that you are forced to throw away is related to the [intrinsic dimensionality of the data](https://mbernste.github.io/posts/intrinsic_dimensionality/). If the intrinsic dimensionality is high, one may end of up throwing away a lot of information and therefore one must decide that which is the most critical.
 
 
 Understanding a method's loss-function is critical
