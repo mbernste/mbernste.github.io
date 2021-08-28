@@ -78,6 +78,8 @@ Here are a few examples of some inductive biases of well-known algorithms:
 * [Logistic regression](https://en.wikipedia.org/wiki/Logistic_regression) assumes that the individual elements of $T(X)$ (assuming $T(X)$ is a feature vector) contribute additively and independently to the likelihood that $C_1$ is a better choice than $C_0$. 
 * [Convolutional neural networks](https://en.wikipedia.org/wiki/Convolutional_neural_network) assume that useful groups of elements within $T(X)$ ($T(X)$ is assumed to be a tensor) are invariant to spatial shifts and rotations. If this is not the case, then convolutional neural networks might not be the best choice.
 
-A note on "inference" versus "prediction"
+Inference vs. prediction: are these two different things?
 -----------------
+
+A [recent article by Bzdok et al.](https://www.nature.com/articles/nmeth.4642) differentiates statistical testing from supervised machine learning by arguing that the two approaches address different tasks: namely, _inference_ and _prediction_ respectively. The article does not provide a rigorous definition for these tasks, but let me take a stab at it. In an inference task, we are presented with some set of data $$X$$ about some system that in some way helps us make a claim about an unobserved characteristic of the system, call it $$Y$$. In the prediction task, we are again presented with some set of data $$X$$ about the system, and we wish to use $$X$$ to predict the future value of some variable $$Y$$.  For example, in a healthcare setting, $$X$$ might be a patients clinical data and we want to predict whether the patient will suffer from some adverse health event. That is, we can let $$Y \in \{\text{True}, \text{False}\}$$ be the patient's binary outcome as to whether they do or do not suffer the event.
 
