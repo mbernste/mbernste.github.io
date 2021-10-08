@@ -36,7 +36,8 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [What is information? (Foundations of information theory: Part 1)](https://mbernste.github.io/posts/self_info/)  
 [Information entropy (Foundations of information theory: Part 2)](https://mbernste.github.io/posts/entropy/)  
-[Shannon’s Source Coding Theorem (Foundations of information theory: Part 3)](https://mbernste.github.io/posts/sourcecoding/)
+[Shannon’s Source Coding Theorem (Foundations of information theory: Part 3)](https://mbernste.github.io/posts/sourcecoding/)  
+[Perplexity: a more interpretable measure of uncertainty than entropy](https://mbernste.github.io/posts/perplexity/)  
 
 ## Quantities related to probabilistic models
 
