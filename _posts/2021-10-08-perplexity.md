@@ -34,7 +34,7 @@ Arguably, perplexity provides a more human-interpretable way of thinking about t
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem:** Given a discrete uniform random variable $X \sim \text{Cat}(p_1, p_2, \dots, p_K)$ where $\forall i,j \in [K], p_i = p_k it holds that the perplexity of $X$ is $K$.</span>
+<span style="color:#0060C6">**Theorem:** Given a discrete uniform random variable $X \sim \text{Cat}(p_1, p_2, \dots, p_K)$ where $\forall i,j \in [K], p_i = p_k$ it holds that the perplexity of $X$ is $K$.</span>
 
 **Proof:**
 
@@ -42,6 +42,7 @@ $$\begin{align*}
 \text{Perplexity}(X) &:= 2^{H(X)} \\
 &= 2^{\frac{1}{K} \sum_{i=1}^K \log_2 \frac{1}{K}} \\
 &= 2^{-\log_2 \frac{1}{K}} \\
+&= \frac{1}{2^{\log_2 \frac{1}{K}}} \\
 &= K
 \end{align*}$$
 
