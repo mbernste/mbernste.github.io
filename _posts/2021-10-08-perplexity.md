@@ -9,7 +9,7 @@ tags:
   - tutorial
 ---
 
-*Like entropy, perplexity is an information theoretic quantity that describes the uncertainty of a random variable. In fact, perplexity is simply a monotonic function of entropy and thus, in some sense, they can be used interchangeabley. In this post, we discuss why perplexity can be understood as a more intuitive measure of uncertainty than entropy.*  
+*Like entropy, perplexity is an information theoretic quantity that describes the uncertainty of a random variable. In fact, perplexity is simply a monotonic function of entropy and thus, in some sense, they can be used interchangeabley. So why do we need it? In this post, I'll discuss why perplexity is a more intuitive measure of uncertainty than entropy.*  
 
 Introduction
 ------------
