@@ -1,5 +1,5 @@
 ---
-title: 'Perplexity: a human-interpretable measure of entropy'
+title: 'Perplexity: a human-interpretable measure of uncertainty'
 date: 2021-10-08
 permalink: /posts/perplexity/
 tags:
@@ -9,7 +9,7 @@ tags:
   - tutorial
 ---
 
-*Perplexity is an information theoretic quantity that, like entropy, provides a measure for the uncertainty of a random variable. In fact, perplexity is simply a monotonic function of entropy and thus, in some sense, they can be used interchangeabley. In this post, we discuss the relationship between perplexity and entropy as well as how to interpret perplexity.*  
+*Like entropy, perplexity is an information theoretic quantity that describes the uncertainty of a random variable. In fact, perplexity is simply a monotonic function of entropy and thus, in some sense, they can be used interchangeabley. In this post, we discuss why perplexity can be understood as a more intuitive measure of uncertainty than entropy.*  
 
 Introduction
 ------------
