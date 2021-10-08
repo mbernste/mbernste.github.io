@@ -18,7 +18,7 @@ Perplexity is an information theoretic quantity that crops up in a number of con
 
 Like [entropy](https://mbernste.github.io/posts/entropy/), perplexity provides a measure of the amount of uncertainty of a random variable. In fact, perplexity is simply a monotonic function of entropy. Given a discrete random variable, $X$, perplexity is defined as:
 
-$\text{Perplexity}(X) := 2^{H(X)}$
+$$\text{Perplexity}(X) := 2^{H(X)}$$
 
 where $H(X)$ is the entropy of $X$.
 
