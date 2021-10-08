@@ -1,5 +1,5 @@
 ---
-title: 'Perplexity: a human-interpretable measure of uncertainty'
+title: 'Perplexity: a more interpretable measure of uncertainty than entropy'
 date: 2021-10-08
 permalink: /posts/perplexity/
 tags:
@@ -24,8 +24,8 @@ where $H(X)$ is the entropy of $X$.
 
 When I first saw this definition, I did not understand its purpose? That is, if perplexity is simply exponentiated entropy, which is a monotonic function of entropy, why do we need it? After all, we have a good intuition for entropy already: it describes [the number of bits](https://mbernste.github.io/posts/sourcecoding/) needed to encode random samples from $X$'s probability distribution. So why perplexity?
 
-A "human-interpretable" measure of uncertainty
-----------------------------------------------
+An interpretable measure of uncertainty
+--------------------------------------
 
 Perplexity is often used instead of entropy due to the fact that it is arguably more interpretable than entropy.  Of course, as we've discussed in a [previous blog post](https://mbernste.github.io/posts/sourcecoding/), entropy describes the number of bits needed to encode random samples from a distribution, which one may argue is already interpretable; however, I would argue that it is hard to intuit at a gut level.  If I tell you that a given random variable has an entropy of 7, how should you _feel_ about that?
 
