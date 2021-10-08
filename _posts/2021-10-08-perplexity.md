@@ -34,7 +34,7 @@ Arguably, perplexity provides a more human way of thinking about the random vari
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem:** Given a discrete uniform random variable $X \sim \text{Cat}(p_1, p_2, \dots, p_K)$ where $\forall i,j \in [K], p_i = p_k = 1/K$ it holds that the perplexity of $X$ is $K$.</span>
+<span style="color:#0060C6">**Theorem:** Given a discrete uniform random variable $X \sim \text{Cat}(p_1, p_2, \dots, p_K)$ where $\forall i,j \in [K], p_i = p_j = 1/K$ it holds that the perplexity of $X$ is $K$.</span>
 
 **Proof:**
 
