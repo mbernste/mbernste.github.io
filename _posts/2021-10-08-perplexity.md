@@ -22,7 +22,7 @@ $\text{Perplexity}(X) := 2^{H(X)}$
 
 where $H(X)$ is the entropy of $X$.
 
-When I first saw this definition, I asked myself: what is the point of it? That is, if perplexity is simply exponentiated entropy, which is a monotonic function of entropy, why do we need it? After all, we have a good intuition for entropy already: it describes [the number of bits](https://mbernste.github.io/posts/sourcecoding/) needed to encode random samples from $X$'s probability distribution. So why perplexity?
+When I first saw this definition, I did not understand its purpose? That is, if perplexity is simply exponentiated entropy, which is a monotonic function of entropy, why do we need it? After all, we have a good intuition for entropy already: it describes [the number of bits](https://mbernste.github.io/posts/sourcecoding/) needed to encode random samples from $X$'s probability distribution. So why perplexity?
 
 A "human-interpretable" measure of uncertainty
 ----------------------------------------------
