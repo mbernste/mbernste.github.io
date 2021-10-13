@@ -30,19 +30,18 @@ This definition might seem a bit of opaque, so in the remainder of this blog pos
 An invertible matrix characterizes an invertible linear transformation
 -----------------------------------------------------------------------
 
-Any matrix $\boldsymbol{A}$ for which there exists an inverse matrix $\boldsymbol{A}^{-1}$ characterizes an invertible linear transformation. That is given an invertible matrix $\boldsymbol{A}$, the linear transformation $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$ has an inverse linear transformation $T^{-1}(\boldsymbol{x})$. Recall, for a function to be invertible it must be both [onto](https://en.wikipedia.org/wiki/Surjective_function) and [one-to-one](https://en.wikipedia.org/wiki/Injective_function). We show in the Appendix to this blog post that $T(\bold{x})$ defined using an invertible matrix $\boldsymbol{A}$ is both onto (Theorem 1) and one-to-one (Theorem 2).
+Any matrix $\boldsymbol{A}$ for which there exists an inverse matrix $\boldsymbol{A}^{-1}$ characterizes an invertible linear transformation. That is given an invertible matrix $\boldsymbol{A}$, the linear transformation $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$ has an inverse linear transformation $T^{-1}(\boldsymbol{x})$. Recall, for a function to be invertible it must be both [onto](https://en.wikipedia.org/wiki/Surjective_function) and [one-to-one](https://en.wikipedia.org/wiki/Injective_function). We show in the Appendix to this blog post that $T(\boldsymbol{x})$ defined using an invertible matrix $\boldsymbol{A}$ is both onto (Theorem 1) and one-to-one (Theorem 2).
 
 At a more intuitive level, the inverse of a matrix $\boldsymbol{A}$ is the matrix that ``reverts" vectors transformed by $\boldsymbol{A}$ back to their original vectors (Figure~\ref{fig:inverse_matrix}). Thus, since matrix multiplication encodes a composition of the matrices' linear transformations, it follows that a matrix multiplied by its inverse yields the identity matrix $\boldsymbol{I}$, which characterizes the linear transformation that maps vectors back to themselves. This observation allows us to rigorously define the inverse of a matrix $\boldsymbol{A}$ as the matrix that when multiplied by $\boldsymbol{A}^{-1}$ yields the identity matrix as is done by Definition~\ref{def:inverse_matrix}.
 
 \begin{figure}[htbp] \centering \includegraphics[scale=0.4]{matrix_inverse.png}
-\caption{The inverse of matrix $\bold{A}$ denoted $\bold{A}^{-1}$ maps the vector $\bold{Ax}$ back to $\bold{x}$.} \label{fig:inverse_matrix} \end{figure}
 
 
 
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (Invertible matrices characterize onto functions):** An invertible matrix $\bold{A} \in \mathbb{R}^{n \times n}$ characterizes an onto linear transformation. </span>
+<span style="color:#0060C6">**Theorem 1 (Invertible matrices characterize onto functions):** An invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ characterizes an onto linear transformation. </span>
 
 **Proof:**
 
@@ -51,7 +50,7 @@ $$\boldsymbol{Ax} = \boldsymbol{b}$$
 This solution is precisely 
 $$\boldsymbol{x} := \boldsymbol{A}^{-1}\boldsymbol{b}$$
 
-$$\begin{align*}&\boldsymbol{A}(\boldsymbol{A}^{-1}\boldsymbol{b}) = \boldsymbol{b} \\ \implies & (\boldsymbol{AA}^{-1})\boldsymbol{b} = \boldsymbol{b} && \text{associative law} \\ \implies & \boldsymbol{I}\bold{b} = \boldsymbol{b} && \text{definition of inverse matrix} \\ \implies & \boldsymbol{b} = \boldsymbol{b} \end{align*}$$
+$$\begin{align*}&\boldsymbol{A}(\boldsymbol{A}^{-1}\boldsymbol{b}) = \boldsymbol{b} \\ \implies & (\boldsymbol{AA}^{-1})\boldsymbol{b} = \boldsymbol{b} && \text{associative law} \\ \implies & \boldsymbol{I}\boldsymbol{b} = \boldsymbol{b} && \text{definition of inverse matrix} \\ \implies & \boldsymbol{b} = \boldsymbol{b} \end{align*}$$
 
 $\square$
  
