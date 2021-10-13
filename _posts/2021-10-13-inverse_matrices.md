@@ -1,6 +1,6 @@
 ---
 title: 'Inverse Matrices'
-date: 2020-12-29
+date: 2021-10-13
 permalink: /posts/inverse_matrices/
 tags:
   - tutorial
