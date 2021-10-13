@@ -1,5 +1,5 @@
 ---
-title: 'Linear independence and the rank of a matrix'
+title: 'Inverse Matrices'
 date: 2020-12-29
 permalink: /posts/inverse_matrices/
 tags:
@@ -39,11 +39,23 @@ At a more intuitive level, the inverse of a matrix $\bold{A}$ is the matrix that
 
 
 
+Appendix
+--------
 
+<span style="color:#0060C6">**Theorem 1 (Invertible matrices characterize onto functions):** An invertible matrix $\bold{A} \in \mathbb{R}^{n \times n}$ characterizes an onto linear transformation. </span>
 
+**Proof:**
 
+ Let $\bold{x}$ and $b \in \mathbb{R}^n$.  Then, there exists a vector, $\bold{x} \in \mathbb{R}^n$ such that
+$$\bold{Ax} = \bold{b}$$
+This solution is precisely 
+$$\bold{x} := \bold{A}^{-1}\bold{b}$$
 
+$$\begin{align*}&\bold{A}(\bold{A}^{-1}\bold{b}) = \bold{b} \\ \implies & (\bold{AA}^{-1})\bold{b} = \bold{b} && \text{associative law} \\ \implies & \bold{I}\bold{b} = \bold{b} && \text{definition of inverse matrix} \\ \implies & \bold{b} = \bold{b} \end{align*}$$
 
+$\square$
+ 
+ 
 
 
 
