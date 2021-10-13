@@ -37,6 +37,19 @@ At a more intuitive level, the inverse of a matrix $\bold{A}$ is the matrix that
 \begin{figure}[htbp] \centering \includegraphics[scale=0.4]{matrix_inverse.png}
 \caption{The inverse of matrix $\bold{A}$ denoted $\bold{A}^{-1}$ maps the vector $\bold{Ax}$ back to $\bold{x}$.} \label{fig:inverse_matrix} \end{figure}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsubsection*{2. An invertible matrix preserves information}
 
 The transformation carried out by an invertible matrix $\bold{A}$ can be ``reverted." That is, let $\bold{b}$ be the vector that results from transforming $\bold{x}$ with $\bold{A}$. We can recover the original $\bold{x}$ by multiplying $\bold{b}$ by $\bold{A}^{-1}$: \begin{align*} \bold{b} := \bold{Ax} \ \implies \bold{A}^{-1}\bold{b} = \bold{A}^{-1}\bold{Ax} \ \implies \bold{x} = \bold{A}^{-1}\bold{b} \end{align*}
