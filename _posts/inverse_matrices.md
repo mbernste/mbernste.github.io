@@ -24,7 +24,7 @@ This definition might seem a bit of opaque, so in the remainder of this blog pos
 
 1. An invertible matrix characterizes an invertible linear transformation 
 2. An invertible matrix preserves information 
-3. An invertible matrix preserves the dimensionality of a transformed vector whereas a singular matrix collapses vectors into a lower-dimensional subspace 
+3. An invertible matrix preserves the dimensionality of transformed vectors 
 4. An invertible matrix computes a change of coordinates for a vector space 
 
 An invertible matrix characterizes an invertible linear transformation
