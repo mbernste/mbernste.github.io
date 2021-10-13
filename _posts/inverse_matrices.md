@@ -16,26 +16,19 @@ Introduction
 
 As we have discussed in depth, matrices can viewed [as functions](https://mbernste.github.io/posts/matrices_as_functions/) between vector spaces. In this post, we will discuss matrices that represent **invertible functions**. Such matrices are called **invertible matrices** and their corresponding inverse function is characterized by an **inverse matrix**. 
 
-More rigorously, the inverse matrix of a matrix $\bold{A}$ is defined to be the matrix $\bold{C}$ that when either left or right multiplied by $\bold{A}$, yields the identity matrix. That is, if for a matrix $\bold{C}$ it holds that $$\bold{AC} = \bold{CA} = \bold{I}$$ then $\bold{C}$ is the inverse of $\bold{A}$. This definition might seem a bit of opaque, but let's reason through it.
+More rigorously, the inverse matrix of a matrix $\bold{A}$ is defined as follows:
 
-If a matrix does not represent an invertible function, ! If it does exist for a given matrix, then that matrix is called an **invertible matrix**. Otherwise, it is called a **singular matrix**.
+<span style="color:#0060C6">**Definition 1 (Inverse matrix):** Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, it's **inverse matrix** is the matrix $\bold{C}$ that when either left or right multiplied by $\bold{A}$, yields the identity matrix. That is, if for a matrix $\bold{C}$ it holds that $$\bold{AC} = \bold{CA} = \bold{I}$$ then $\bold{C}$ is the inverse of $\bold{A}$.</span>
+  
+This definition might seem a bit of opaque, so in the remainder of this blog post we will explore a number of  [complimentary perspectives]() for viewing inverse matrices: 
 
-
-Aside from this characterization, there are a [number of perspectives]() for viewing matrices that are complimentary and helpful: 
-
-1. As discussed above, an invertible matrix characterizes an invertible linear transformation 
+1. An invertible matrix characterizes an invertible linear transformation 
 2. An invertible matrix preserves information 
 3. An invertible matrix preserves the dimensionality of a transformed vector whereas a singular matrix collapses vectors into a lower-dimensional subspace 
 4. An invertible matrix computes a change of coordinates for a vector space 
 
-These perspectives are discussed in the following sections.
-
-
-\subsection*{Intuition}
-
-
-
-\subsubsection*{1. An invertible matrix characterizes an invertible linear transformation}
+An invertible matrix characterizes an invertible linear transformation
+-----------------------------------------------------------------------
 
 Any matrix that meets the criteria of Definition~\ref{def:inverse_matrix} characterizes an invertible linear transformation. That is given an invertible matrix $\bold{A}$, the linear transformation $$T(\bold{x}) := \bold{Ax}$$ has an inverse linear transformation $T^{-1}(\bold{x})$. Recall, for a function to be invertible it must be both onto and one-to-one. Theorem~\ref{def:invertible_onto} proves that $T(\bold{x})$ is onto. To prove that it is one-to-one, we first must prove that the null space of $T(\bold{x})$ consists of only the zero vector (Theorem~\ref{thrm:null_space_inv_mat}). Then, this fact is used to prove that a linear transformation with this characteristic must be one-to-one (Theorem~\ref{def:invertible_one_to_one}).
 
