@@ -20,7 +20,7 @@ More rigorously, the inverse matrix of a matrix $\bold{A}$ is defined as follows
 
 <span style="color:#0060C6">**Definition 1 (Inverse matrix):** Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, it's **inverse matrix** is the matrix $\bold{C}$ that when either left or right multiplied by $\bold{A}$, yields the identity matrix. That is, if for a matrix $\bold{C}$ it holds that $$\bold{AC} = \bold{CA} = \bold{I}$$ then $\bold{C}$ is the inverse of $\bold{A}$.</span>
   
-This definition might seem a bit of opaque, so in the remainder of this blog post we will explore a number of  [complimentary perspectives]() for viewing inverse matrices: 
+This definition might seem a bit of opaque, so in the remainder of this blog post we will explore a number of  [complimentary perspectives](https://mbernste.github.io/posts/understanding_3d/) for viewing inverse matrices: 
 
 1. An invertible matrix characterizes an invertible linear transformation 
 2. An invertible matrix preserves information 
