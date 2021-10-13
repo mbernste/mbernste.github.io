@@ -16,7 +16,7 @@ Introduction
 
 As we have discussed in depth, matrices can viewed [as functions](https://mbernste.github.io/posts/matrices_as_functions/) between vector spaces. In this post, we will discuss matrices that represent **invertible functions**. Such matrices are called **invertible matrices** and their corresponding inverse function is characterized by an **inverse matrix**. 
 
-Mathematically speaking, the inverse matrix of a matrix $\bold{A}$ is the matrix $\bold{C}$ that when either left or right multiplied by $\bold{A}$, yields the identity matrix. That is, if for a matrix $\bold{C}$ it holds that $$\bold{AC} = \bold{CA} = \bold{I}$$ then $\bold{C}$ is the inverse of $\bold{A}$. This definition might seem a bit of opaque, but let's reason through it.
+More rigorously, the inverse matrix of a matrix $\bold{A}$ is defined to be the matrix $\bold{C}$ that when either left or right multiplied by $\bold{A}$, yields the identity matrix. That is, if for a matrix $\bold{C}$ it holds that $$\bold{AC} = \bold{CA} = \bold{I}$$ then $\bold{C}$ is the inverse of $\bold{A}$. This definition might seem a bit of opaque, but let's reason through it.
 
 If a matrix does not represent an invertible function, ! If it does exist for a given matrix, then that matrix is called an **invertible matrix**. Otherwise, it is called a **singular matrix**.
 
