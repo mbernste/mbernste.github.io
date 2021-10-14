@@ -59,7 +59,7 @@ $$\boldsymbol{Ax} = \boldsymbol{0}$$
  
 has only the trivial solution $\boldsymbol{x} := \boldsymbol{0}$.
  
-$$\begin{align*}\bold{Ax} &= \bold{0} \\ \implies \boldsymbol{A}^{-1}\boldsymbol{Ax} &= \boldsymbol{A}^{-1}\boldsymbol{0} \\ \implies \boldsymbol{x} &= \boldsymbol{0} \end{align*}$$
+$$\begin{align*}\boldsymbol{Ax} &= \boldsymbol{0} \\ \implies \boldsymbol{A}^{-1}\boldsymbol{Ax} &= \boldsymbol{A}^{-1}\boldsymbol{0} \\ \implies \boldsymbol{x} &= \boldsymbol{0} \end{align*}$$
 
 $\square$
 
