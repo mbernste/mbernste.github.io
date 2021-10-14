@@ -68,6 +68,7 @@ For the sake of contradiction assume that there exists two vectors $\boldsymbol{
  where $b \neq \boldsymbol{0}$.  Then,
 
  $$\begin{align*} \boldsymbol{Ax} - \boldsymbol{Ax}' &= \boldsymbol{0} \\ \implies \boldsymbol{A}(\boldsymbol{x} - \boldsymbol{x}') = 0\end{align*}$$
+ 
  By Theorem~\ref{thrm:null_space_inv_mat}, it must hold that 
  
  $$\boldsymbol{x} - \boldsymbol{x}' = \boldsymbol{0}$$
