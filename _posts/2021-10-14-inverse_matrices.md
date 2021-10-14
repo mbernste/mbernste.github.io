@@ -49,7 +49,21 @@ Inherently, $\boldsymbol{A}$ preserves all of the information of $\boldsymbol{x}
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (Invertible matrices characterize onto functions):** An invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ characterizes an onto linear transformation. </span>
+<span style="color:#0060C6">**Theorem 1 (Null space of an invertible matrix) The null space of an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ consists of only the zero vector $\boldsymbol{0}$.</span>
+
+**Proof:**
+
+We must prove that
+ 
+$$\boldsymbol{Ax} = \boldsymbol{0}$$
+ 
+has only the trivial solution $\boldsymbol{x} := \boldsymbol{0}$.
+ 
+$$\begin{align*}\bold{Ax} &= \bold{0} \\ \implies \boldsymbol{A}^{-1}\boldsymbol{Ax} &= \boldsymbol{A}^{-1}\boldsymbol{0} \\ \implies \boldsymbol{x} &= \boldsymbol{0} \end{align*}$$
+
+$\square$
+
+<span style="color:#0060C6">**Theorem 2 (Invertible matrices characterize onto functions):** An invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ characterizes an onto linear transformation. </span>
 
 **Proof:**
 
@@ -65,7 +79,7 @@ $$\begin{align*}&\boldsymbol{A}(\boldsymbol{A}^{-1}\boldsymbol{b}) = \boldsymbol
 
 $\square$
  
-<span style="color:#0060C6">**Theorem 2 (Invertible matrices characterize one-to-one functions):** A an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ characterizes a one-to-one linear transformation.</span>
+<span style="color:#0060C6">**Theorem 3 (Invertible matrices characterize one-to-one functions):** A an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ characterizes a one-to-one linear transformation.</span>
 
 **Proof:**
 
@@ -77,7 +91,7 @@ For the sake of contradiction assume that there exists two vectors $\boldsymbol{
 
  $$\begin{align*} \boldsymbol{Ax} - \boldsymbol{Ax}' &= \boldsymbol{0} \\ \implies \boldsymbol{A}(\boldsymbol{x} - \boldsymbol{x}') = 0\end{align*}$$
  
- By Theorem~\ref{thrm:null_space_inv_mat}, it must hold that 
+ By Theorem 1, it must hold that 
  
  $$\boldsymbol{x} - \boldsymbol{x}' = \boldsymbol{0}$$
  
