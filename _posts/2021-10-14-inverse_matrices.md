@@ -46,6 +46,21 @@ $$\begin{align*} \boldsymbol{b} := \boldsymbol{Ax} \\ \implies \boldsymbol{A}^{-
 Inherently, $\boldsymbol{A}$ preserves all of the information of $\boldsymbol{x}$ in $\boldsymbol{b}$ as evidenced by the fact that we can recover $\boldsymbol{x}$ from $\boldsymbol{b}$ via $\boldsymbol{A}^{-1}$. If, on the other hand, $\boldsymbol{A}$ is singular, then we cannot recover $\boldsymbol{x}$ from $\boldsymbol{b}$. Intuitively, information about $\boldsymbol{x}$ is lost in the transformation into $\boldsymbol{b}$.
 
 
+A singular matrix collapses vectors into a lower-dimensional subspace
+---------------------------------------------------------------------
+
+The loss of information described in the previous section can be viewed geometrically by the fact that a singular matrix "collapses" or "compresses" vectors into an intrinsically lower dimensional space. That is, a singular matrix reduces the [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of the vectors. The loss of these dimensions constitutes the ``loss of information" discussed in the previous section.
+
+As shown in Theorem~\ref{thrm:cols_inverse_lin_ind}, a matrix is invertible if and only if its columns are linearly independent. Recall a set of $n$ linearly independent vectors $$S := {\bold{x}_1, \dots, \bold{x}_n}$$ spans a space with an intrinsic dimensionality of $n$ because in order to specify any vector $\bold{b}$ in the vector space, one must specify the coefficients $c_1, \dots, c_n$ such that $$\bold{b} = c_1\bold{x}_1 + \dots + c_n\bold{x}_n$$ However, if $S$ is not linearly independent, then we can throw away ``redundant" vectors in $S$ that can be constructed from the remaining vectors. Thus, the intrinsic dimensionality of a linearly dependent set $S$ is the maximum sized subset of $S$ that is linearly independent.
+
+When a matrix $\bold{A}$ is singular, its columns are linearly dependent and thus, the vectors that constitute the column space of the matrix is inherently of lower dimension that the number of columns. Thus, when $\bold{A}$ multiplies a vector $\bold{x}$, it transforms $\bold{x}$ into this lower dimensional space. Once transformed, there is no way to transform it back to its original vector because certain dimensions of the vector were ``lost" in this transformation.
+
+To make this more concrete, an example of this phenomenon can be seen in Figure~\ref{fig:inverse_matrix}. In Figure~\ref{fig:inverse_matrix}, a singular matrix $\bold{A} \in \mathbb{R}^{3 \times 3}$ maps vectors in $\mathbb{R}^3$ to vectors that lie on a plane in $\mathbb{R}^3$. All vectors on a plane in $\mathbb{R}^3$ are of intrinsic dimensionality of two rather than three because we only need to specify coefficients for two of the column vectors in $\mathbb{A}$ to specify a point on the plane. We can throw away the third. Thus, we see that this singular matrix collapses points from the full 3-dimensional space $\mathbb{R}^3$ to the 2-dimensional space on the plane spanned by the columns of $\mathbb{A}$.
+
+\begin{figure}[htbp] \centering \includegraphics[scale=0.3]{matrix_inverse_lin_ind.png}
+\caption{(A) The column vectors of a matrix $\bold{A} \in \mathbb{R}^{3 \times 3}$. (B) One solution to the equation $\bold{Ax} = \bold{b}$. (C) Another solution to $\bold{Ax} = \bold{b}$. That is, there are multiple $\bold{x} \in \mathbb{R}^3$ that map to $\bold{b}$. Thus, there does not exist an inverse mapping and therefore no inverse matrix to $\bold{A}$. These multiple constructions of mappings from $\mathbb{R}^3$ to $\bold{b}$ arise directly from the fact that the columns of $\bold{A}$ are linearly dependent.} \label{fig:inverse_matrix} \end{figure}
+
+
 Appendix
 --------
 
@@ -105,18 +120,7 @@ $\square$
 
 
 
-\subsubsection*{3. A singular matrix collapses vectors into a lower-dimensional subspace}
 
-The loss of information described in the previous section can be viewed geometrically by the fact that a singular matrix collapses" or compresses" vectors into an intrinsic lower dimensional space. That is, a singular matrix reduces the intrinsic dimensionality of the vectors. The loss of these dimensions constitutes the ``loss of information" discussed in the previous section.
-
-As shown in Theorem~\ref{thrm:cols_inverse_lin_ind}, a matrix is invertible if and only if its columns are linearly independent. Recall a set of $n$ linearly independent vectors $$S := {\bold{x}_1, \dots, \bold{x}_n}$$ spans a space with an intrinsic dimensionality of $n$ because in order to specify any vector $\bold{b}$ in the vector space, one must specify the coefficients $c_1, \dots, c_n$ such that $$\bold{b} = c_1\bold{x}_1 + \dots + c_n\bold{x}_n$$ However, if $S$ is not linearly independent, then we can throw away ``redundant" vectors in $S$ that can be constructed from the remaining vectors. Thus, the intrinsic dimensionality of a linearly dependent set $S$ is the maximum sized subset of $S$ that is linearly independent.
-
-When a matrix $\bold{A}$ is singular, its columns are linearly dependent and thus, the vectors that constitute the column space of the matrix is inherently of lower dimension that the number of columns. Thus, when $\bold{A}$ multiplies a vector $\bold{x}$, it transforms $\bold{x}$ into this lower dimensional space. Once transformed, there is no way to transform it back to its original vector because certain dimensions of the vector were ``lost" in this transformation.
-
-To make this more concrete, an example of this phenomenon can be seen in Figure~\ref{fig:inverse_matrix}. In Figure~\ref{fig:inverse_matrix}, a singular matrix $\bold{A} \in \mathbb{R}^{3 \times 3}$ maps vectors in $\mathbb{R}^3$ to vectors that lie on a plane in $\mathbb{R}^3$. All vectors on a plane in $\mathbb{R}^3$ are of intrinsic dimensionality of two rather than three because we only need to specify coefficients for two of the column vectors in $\mathbb{A}$ to specify a point on the plane. We can throw away the third. Thus, we see that this singular matrix collapses points from the full 3-dimensional space $\mathbb{R}^3$ to the 2-dimensional space on the plane spanned by the columns of $\mathbb{A}$.
-
-\begin{figure}[htbp] \centering \includegraphics[scale=0.3]{matrix_inverse_lin_ind.png}
-\caption{(A) The column vectors of a matrix $\bold{A} \in \mathbb{R}^{3 \times 3}$. (B) One solution to the equation $\bold{Ax} = \bold{b}$. (C) Another solution to $\bold{Ax} = \bold{b}$. That is, there are multiple $\bold{x} \in \mathbb{R}^3$ that map to $\bold{b}$. Thus, there does not exist an inverse mapping and therefore no inverse matrix to $\bold{A}$. These multiple constructions of mappings from $\mathbb{R}^3$ to $\bold{b}$ arise directly from the fact that the columns of $\bold{A}$ are linearly dependent.} \label{fig:inverse_matrix} \end{figure}
 
 \subsubsection*{An invertible matrix computes a change of coordinates for a vector space}
 
