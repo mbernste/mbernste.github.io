@@ -45,10 +45,11 @@ Appendix
 
 **Proof:**
 
- Let $\boldsymbol{x}$ and $b \in \mathbb{R}^n$.  Then, there exists a vector, $\boldsymbol{x} \in \mathbb{R}^n$ such that
+Let $\boldsymbol{x}$, $\boldsymbol{b} \in \mathbb{R}^n$.  Then, there exists a vector, $\boldsymbol{x} \in \mathbb{R}^n$ such that
 $$\boldsymbol{Ax} = \boldsymbol{b}$$
 This solution is precisely 
 $$\boldsymbol{x} := \boldsymbol{A}^{-1}\boldsymbol{b}$$
+as we see below:
 
 $$\begin{align*}&\boldsymbol{A}(\boldsymbol{A}^{-1}\boldsymbol{b}) = \boldsymbol{b} \\ \implies & (\boldsymbol{AA}^{-1})\boldsymbol{b} = \boldsymbol{b} && \text{associative law} \\ \implies & \boldsymbol{I}\boldsymbol{b} = \boldsymbol{b} && \text{definition of inverse matrix} \\ \implies & \boldsymbol{b} = \boldsymbol{b} \end{align*}$$
 
