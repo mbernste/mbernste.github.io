@@ -36,6 +36,15 @@ At a more intuitive level, the inverse of a matrix $\boldsymbol{A}$ is the matri
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_inverse.png" alt="drawing" width="500"/></center>
 
+An invertible matrix preserves information
+------------------------------------------
+
+The transformation carried out by an invertible matrix $\boldsymbol{A}$ can be ``reverted." That is, let $\boldsymbol{b}$ be the vector that results from transforming $\boldsymbol{x}$ with $\boldsymbol{A}$. We can recover the original $\boldsymbol{x}$ by multiplying $\boldsymbol{b}$ by $\boldsymbol{A}^{-1}$: 
+
+$$\begin{align*} \boldsymbol{b} := \boldsymbol{Ax} \ \implies \boldsymbol{A}^{-1}\boldsymbol{b} = \boldsymbol{A}^{-1}\boldsymbol{Ax} \ \implies \boldsymbol{x} = \boldsymbol{A}^{-1}\boldsymbol{b} \end{align*}$$
+
+Inherently, $\boldsymbol{A}$ preserves all of the information of $\boldsymbol{x}$ in $\boldsymbol{b}$ as evidenced by the fact that we can recover $\boldsymbol{x}$ from $\boldsymbol{b}$ via $\boldsymbol{A}^{-1}$. If, on the other hand, $\boldsymbol{A}$ is singular, then we cannot recover $\boldsymbol{x}$ from $\boldsymbol{b}$. Intuitively, information about $\boldsymbol{x}$ is lost in the transformation into $\boldsymbol{b}$.
+
 
 Appendix
 --------
@@ -81,11 +90,6 @@ $\square$
 
 
 
-\subsubsection*{2. An invertible matrix preserves information}
-
-The transformation carried out by an invertible matrix $\bold{A}$ can be ``reverted." That is, let $\bold{b}$ be the vector that results from transforming $\bold{x}$ with $\bold{A}$. We can recover the original $\bold{x}$ by multiplying $\bold{b}$ by $\bold{A}^{-1}$: \begin{align*} \bold{b} := \bold{Ax} \ \implies \bold{A}^{-1}\bold{b} = \bold{A}^{-1}\bold{Ax} \ \implies \bold{x} = \bold{A}^{-1}\bold{b} \end{align*}
-
-Inherently, $\bold{A}$ preserves all of the information of $\bold{x}$ in $\bold{b}$ as evidenced by the fact that we can recover $\bold{x}$ from $\bold{b}$ via $\bold{A}^{-1}$. If, on the other hand, $\bold{A}$ is singular, then we cannot recover $\bold{x}$ from $\bold{b}$. Intuitively, information about $\bold{x}$ is lost in the transformation into $\bold{b}$.
 
 \subsubsection*{3. A singular matrix collapses vectors into a lower-dimensional subspace}
 
