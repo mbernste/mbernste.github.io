@@ -49,7 +49,7 @@ Inherently, $\boldsymbol{A}$ preserves all of the information of $\boldsymbol{x}
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (Null space of an invertible matrix) The null space of an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ consists of only the zero vector $\boldsymbol{0}$.</span>
+<span style="color:#0060C6">**Theorem 1 (Null space of an invertible matrix):** The null space of an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ consists of only the zero vector $\boldsymbol{0}$.</span>
 
 **Proof:**
 
