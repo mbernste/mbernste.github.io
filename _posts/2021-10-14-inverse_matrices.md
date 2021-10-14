@@ -34,8 +34,7 @@ Any matrix $\boldsymbol{A}$ for which there exists an inverse matrix $\boldsymbo
 
 At a more intuitive level, the inverse of a matrix $\boldsymbol{A}$ is the matrix that ``reverts" vectors transformed by $\boldsymbol{A}$ back to their original vectors (Figure~\ref{fig:inverse_matrix}). Thus, since matrix multiplication encodes a composition of the matrices' linear transformations, it follows that a matrix multiplied by its inverse yields the identity matrix $\boldsymbol{I}$, which characterizes the linear transformation that maps vectors back to themselves. This observation allows us to rigorously define the inverse of a matrix $\boldsymbol{A}$ as the matrix that when multiplied by $\boldsymbol{A}^{-1}$ yields the identity matrix as is done by Definition~\ref{def:inverse_matrix}.
 
-\begin{figure}[htbp] \centering \includegraphics[scale=0.4]{matrix_inverse.png}
-
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_inverse.png" alt="drawing" width="500"/></center>
 
 
 Appendix
