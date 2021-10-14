@@ -57,7 +57,24 @@ $$\begin{align*}&\boldsymbol{A}(\boldsymbol{A}^{-1}\boldsymbol{b}) = \boldsymbol
 
 $\square$
  
+<span style="color:#0060C6">**Theorem 2 (Invertible matrices characterize one-to-one functions):** A an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ characterizes a one-to-one linear transformation.</span>
+
+**Proof:**
+
+For the sake of contradiction assume that there exists two vectors $\boldsymbol{x}$ and $\boldsymbol{x}'$ such that $\boldsymbol{x} \neq \boldsymbol{x}'$ and that 
+ $$\boldsymbol{Ax} = \boldsymbol{b}$$
+ and
+ $$\boldsymbol{Ax}' = \boldsymbol{b}$$
+ where $b \neq \boldsymbol{0}$.  Then,
+
+ $$\begin{align*} \boldsymbol{Ax} - \boldsymbol{Ax}' &= \boldsymbol{0} \\ \implies \boldsymbol{A}(\boldsymbol{x} - \boldsymbol{x}') = 0\end{align*}$$
+ By Theorem~\ref{thrm:null_space_inv_mat}, it must hold that 
  
+ $$\boldsymbol{x} - \boldsymbol{x}' = \boldsymbol{0}$$
+ 
+which implies that $\boldsymbol{x} = \boldsymbol{x}'$. This contradicts our original assumption. Therefore, it must hold that there does not exist two vectors $\boldsymbol{x}$ and $\boldsymbol{x}'$ that map to the same vector via the invertible matrix $\boldsymbol{A}$.  Therefore, $\boldsymbol{A}$ encodes a one-to-one function.
+
+$\square$
 
 
 
