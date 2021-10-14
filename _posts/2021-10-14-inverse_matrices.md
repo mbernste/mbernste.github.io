@@ -41,7 +41,7 @@ An invertible matrix preserves information
 
 The transformation carried out by an invertible matrix $\boldsymbol{A}$ can be ``reverted." That is, let $\boldsymbol{b}$ be the vector that results from transforming $\boldsymbol{x}$ with $\boldsymbol{A}$. We can recover the original $\boldsymbol{x}$ by multiplying $\boldsymbol{b}$ by $\boldsymbol{A}^{-1}$: 
 
-$$\begin{align*} \boldsymbol{b} := \boldsymbol{Ax} \ \implies \boldsymbol{A}^{-1}\boldsymbol{b} = \boldsymbol{A}^{-1}\boldsymbol{Ax} \ \implies \boldsymbol{x} = \boldsymbol{A}^{-1}\boldsymbol{b} \end{align*}$$
+$$\begin{align*} \boldsymbol{b} := \boldsymbol{Ax} \\ \implies \boldsymbol{A}^{-1}\boldsymbol{b} = \boldsymbol{A}^{-1}\boldsymbol{Ax} \\ \implies \boldsymbol{x} = \boldsymbol{A}^{-1}\boldsymbol{b} \end{align*}$$
 
 Inherently, $\boldsymbol{A}$ preserves all of the information of $\boldsymbol{x}$ in $\boldsymbol{b}$ as evidenced by the fact that we can recover $\boldsymbol{x}$ from $\boldsymbol{b}$ via $\boldsymbol{A}^{-1}$. If, on the other hand, $\boldsymbol{A}$ is singular, then we cannot recover $\boldsymbol{x}$ from $\boldsymbol{b}$. Intuitively, information about $\boldsymbol{x}$ is lost in the transformation into $\boldsymbol{b}$.
 
