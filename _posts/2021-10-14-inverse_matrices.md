@@ -1,5 +1,5 @@
 ---
-title: 'Inverse Matrices'
+title: 'Invertible Matrices'
 date: 2021-10-13
 permalink: /posts/inverse_matrices/
 tags:
