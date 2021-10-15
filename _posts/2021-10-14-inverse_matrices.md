@@ -39,7 +39,7 @@ Any matrix $\boldsymbol{A}$ for which there exists an inverse matrix $\boldsymbo
 
 Recall, for a function to be invertible it must be both [onto](https://en.wikipedia.org/wiki/Surjective_function) and [one-to-one](https://en.wikipedia.org/wiki/Injective_function). We show in the Appendix to this blog post that if $\boldsymbol{A}$  is invertible, then $T(\boldsymbol{x})$ defined using an invertible matrix $\boldsymbol{A}$ is both onto (Theorem 2) and one-to-one (Theorem 3).
 
-At a more intuitive level, the inverse of a matrix $\boldsymbol{A}$ is the matrix that ``reverts" vectors transformed by $\boldsymbol{A}$ back to their original vectors:
+At a more intuitive level, the inverse of a matrix $\boldsymbol{A}$ is the matrix that "reverts" vectors transformed by $\boldsymbol{A}$ back to their original vectors:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_inverse.png" alt="drawing" width="500"/></center>
 
