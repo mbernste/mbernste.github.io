@@ -98,7 +98,7 @@ For the sake of contradiction assume that there exists two vectors $\boldsymbol{
  $$\boldsymbol{Ax}' = \boldsymbol{b}$$
  where $b \neq \boldsymbol{0}$.  Then,
 
- $$\begin{align*} \boldsymbol{Ax} - \boldsymbol{Ax}' &= \boldsymbol{0} \\ \implies \boldsymbol{A}(\boldsymbol{x} - \boldsymbol{x}') = boldsymbol{0}\end{align*}$$
+ $$\begin{align*} \boldsymbol{Ax} - \boldsymbol{Ax}' &= \boldsymbol{0} \\ \implies \boldsymbol{A}(\boldsymbol{x} - \boldsymbol{x}') = \boldsymbol{0}\end{align*}$$
  
  By Theorem 1, it must hold that 
  
