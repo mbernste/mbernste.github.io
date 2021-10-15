@@ -71,6 +71,25 @@ An invertible matrix $\boldsymbol{A} := [\boldsymbol{a}_1, \dots, \boldsymbol{a}
 \begin{figure}[htbp] \centering \includegraphics[scale=0.3]{coordinate_change.png}
 \caption{Here we have a vector $\bold{x} \in \mathbb{R}^2$. Using the standard basis vectors $\bold{e_1}, \bold{e_2}$, the vector $\bold{x}$ is given by $[-4, -2]$. Using the column vectors $\bold{a}1$ and $\bold{a}2$ of matrix $\bold{A}$ as a basis, this vector $\bold{x}{\bold{A}}$ is given by $[-1,1]$. The matrix $\bold{A}$ maps $\bold{x}\bold{A}$ to $\bold{x}$.} \label{fig:coordinate_change} \end{figure}
 
+Properties
+----------
+ 
+Below we discuss several properties of invertible matrices that provide more intuition into how they behave and also provide algebraic rules that can be used in derivations.
+
+1. **The columns of an invertible matrix are linearly independent** (Theorem~\ref{thrm:cols_inverse_lin_ind}). 
+2. **Taking the inverse of an inverse matrix gives you back the original matrix**  (Theorem~\ref{thrm:inv_of_inv_mat}). Given an invertible matrix $\bold{A}$ with inverse $\bold{A}^{-1}$, it follows from Definition~\ref{def:inverse_matrix}, that $\bold{A}^{-1}$ is also invertible with inverse $\bold{A}$.  That is, 
+$$(\bold{A}^{-1})^{-1} = \bold{A}$$
+This also follows from the fact that the inverse of an inverse function $f^{-1}$ is simply the original function $f$.
+\item \textbf{The result of multiplying invertible matrices is invertible} (Theorem~\ref{thrm:comp_inv_matrices}). Given two matrices $\bold{A}, \bold{B} \in \mathbb{R}^{n \times n}$, the matrix that results from their multiplication is invertible. That is, $\bold{AB}$ is invertible and its inverse is given by 
+$$(\bold{AB})^{-1} = \bold{B}^{-1}\bold{A}^{-1}$$
+Recall the result of matrix multiplication results in a matrix that characterizes the composition of the linear transformations characterized by the factor matrices. That is, $\bold{ABx}$ first transforms $\bold{x}$ with $\bold{B}$ and then transforms the result with $\bold{A}$.  It follows that in order to invert this composition of transformations, one must first pass the vector through $\bold{B}^{-1}$ and then through $\bold{A}^{-1}$.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{inverse_matrix_mult.png}  
+\caption{Demonstrating schematically why $(\bold{AB})^{-1} = \bold{B}^{-1}\bold{A}^{-1}$. The matrix $\bold{AB}$ first applies the mapping by $\bold{B}$ and then applies the mapping by $\bold{A}$.  The inverse of this function would thus entails applying the inverse of $\bold{A}$ followed by the inverse of $\bold{B}$.}
+\label{fig:inverse_matrix}
+\end{figure} 
 
 Appendix
 --------
