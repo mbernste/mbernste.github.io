@@ -20,14 +20,20 @@ More rigorously, the inverse matrix of a matrix $\boldsymbol{A}$ is defined as f
 
 <span style="color:#0060C6">**Definition 1 (Inverse matrix):** Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, it's **inverse matrix** is the matrix $\boldsymbol{C}$ that when either left or right multiplied by $\boldsymbol{A}$, yields the identity matrix. That is, if for a matrix $\boldsymbol{C}$ it holds that $$\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$$, then $\boldsymbol{C}$ is the inverse of $\boldsymbol{A}$. This inverse matrix, $\boldsymbol{C}$ is commonly denoted as $\boldsymbol{A}^{-1}$.</span>
   
-This definition might seem a bit of opaque, so in the remainder of this blog post we will explore a number of  [complimentary perspectives](https://mbernste.github.io/posts/understanding_3d/) for viewing inverse matrices: 
+This definition might seem a bit of opaque, so in the remainder of this blog post we will explore a number of  [complimentary perspectives](https://mbernste.github.io/posts/understanding_3d/) for viewing inverse matrices.
+
+Viewing invertible matrices
+---------------------------
+
+Here are three ways to understand invertible matrices:
 
 1. An invertible matrix characterizes an invertible linear transformation 
 2. An invertible matrix preserves the dimensionality of transformed vectors 
 3. An invertible matrix computes a change of coordinates for a vector space 
 
-An invertible matrix characterizes an invertible linear transformation
------------------------------------------------------------------------
+Below we will explore each of these.
+
+**1. An invertible matrix characterizes an invertible linear transformation**
 
 Any matrix $\boldsymbol{A}$ for which there exists an inverse matrix $\boldsymbol{A}^{-1}$ characterizes an invertible linear transformation. That is, given an invertible matrix $\boldsymbol{A}$, the linear transformation $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$ has an inverse linear transformation $T^{-1}(\boldsymbol{x})$ defined as $T^{-1}(\boldsymbol{x}) := \boldsymbol{A}^{-1}\boldsymbol{x}$. 
 
@@ -40,8 +46,7 @@ At a more intuitive level, the inverse of a matrix $\boldsymbol{A}$ is the matri
 Thus, since matrix multiplication encodes a composition of the matrices' linear transformations, it follows that a matrix multiplied by its inverse yields the identity matrix $\boldsymbol{I}$, which characterizes the linear transformation that maps vectors back to themselves. This observation allows us to rigorously define the inverse of a matrix $\boldsymbol{A}$ as the matrix that when multiplied by $\boldsymbol{A}^{-1}$ yields the identity matrix.
 
 
-A singular matrix collapses vectors into a lower-dimensional subspace
----------------------------------------------------------------------
+**2. A singular matrix collapses vectors into a lower-dimensional subspace**
 
 A singular matrix "collapses" or "compresses" vectors into an intrinsically lower dimensional space whereas an invertible matrix preserves their [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of the vectors.
 
@@ -55,8 +60,7 @@ To make this more concrete, an example of this phenomenon can be seen in Figure~
 \caption{(A) The column vectors of a matrix $\bold{A} \in \mathbb{R}^{3 \times 3}$. (B) One solution to the equation $\bold{Ax} = \bold{b}$. (C) Another solution to $\bold{Ax} = \bold{b}$. That is, there are multiple $\bold{x} \in \mathbb{R}^3$ that map to $\bold{b}$. Thus, there does not exist an inverse mapping and therefore no inverse matrix to $\bold{A}$. These multiple constructions of mappings from $\mathbb{R}^3$ to $\bold{b}$ arise directly from the fact that the columns of $\bold{A}$ are linearly dependent.} \label{fig:inverse_matrix} \end{figure}
 
 
-An invertible matrix computes a change of coordinates for a vector space
-------------------------------------------------------------------------
+**3. An invertible matrix computes a change of coordinates for a vector space**
 
 A vector $\boldsymbol{x} \in \mathbb{R}^n$ can be viewed as the coordinates for a point in a coordinate system. That is, for each dimension $i$, the vector $\boldsymbol{x}$ provides a value along each dimension (e.g. $x_i$ is the value along dimension $i$). Of course, the coordinate system we use can be arbitrary. In Figure~\ref{fig:coordinate_change}, we can specify locations in $\bold{R}^2$ using either the grey coordinate system or the blue coordinate system. Furthermore, there is a one-to-one and onto mapping between coordinates in each of these two alternative coordinate systems. The point $\boldsymbol{x}$ located at $[-4, -2]$ in the grey coordinate system can be described as $[-1, 1]$ according to the blue coordinate system.
 
