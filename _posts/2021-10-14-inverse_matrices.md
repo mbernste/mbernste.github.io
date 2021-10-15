@@ -104,7 +104,7 @@ For the sake of contradiction assume that there exists two vectors $\boldsymbol{
  $$\boldsymbol{Ax}' = \boldsymbol{b}$$
  where $b \neq \boldsymbol{0}$.  Then,
 
- $$\begin{align*} \boldsymbol{Ax} - \boldsymbol{Ax}' &= \boldsymbol{0} \\ \implies \boldsymbol{A}(\boldsymbol{x} - \boldsymbol{x}') = 0\end{align*}$$
+ $$\begin{align*} \boldsymbol{Ax} - \boldsymbol{Ax}' &= \boldsymbol{0} \\ \implies \boldsymbol{A}(\boldsymbol{x} - \boldsymbol{x}') = boldsymbol{0}\end{align*}$$
  
  By Theorem 1, it must hold that 
  
@@ -116,8 +116,8 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 4 (Column vectors of invertible matrices are independent):**Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$,
-$\boldsymbol{A}$ is invertible if and only if $\{\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,n}\}$ are linearly independent. </span>
+<span style="color:#0060C6">**Theorem 4 (Column vectors of invertible matrices are linearly independent):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$,
+$\boldsymbol{A}$ is invertible if and only if $\{ \boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n} \}$ are linearly independent. </span>
 
 **Proof:**
 
