@@ -132,7 +132,7 @@ Though not proven formally, it can be seen that elementary row matrices are inve
 
 $$\begin{align*} & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)\boldsymbol{A} = \boldsymbol{I} \\ \implies & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)^{-1} (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)\boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1}\boldsymbol{I} \\ \implies & \boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \boldsymbol{I} \\ \implies \boldsymbol{A} &= \boldsymbol{I}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \\ \implies \boldsymbol{A}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k) &= (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)\boldsymbol{I} \end{align*}$$ 
 
-Hence, $\bold{C} := (\bold{E}_1\dots\bold{E}_k)$ is the matrix for which $\bold{AC} = \bold{CA} = \bold{I}$ and is thus $\bold{A}$'s inverse.
+Hence, $\boldsymbol{C} := (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)$ is the matrix for which $\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$ and is thus $\boldsymbol{A}$'s inverse.
 
 
 
