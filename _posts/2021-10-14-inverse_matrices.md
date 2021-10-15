@@ -23,33 +23,27 @@ More rigorously, the inverse matrix of a matrix $\boldsymbol{A}$ is defined as f
 This definition might seem a bit of opaque, so in the remainder of this blog post we will explore a number of  [complimentary perspectives](https://mbernste.github.io/posts/understanding_3d/) for viewing inverse matrices: 
 
 1. An invertible matrix characterizes an invertible linear transformation 
-2. An invertible matrix preserves information 
-3. An invertible matrix preserves the dimensionality of transformed vectors 
-4. An invertible matrix computes a change of coordinates for a vector space 
+2. An invertible matrix preserves the dimensionality of transformed vectors 
+3. An invertible matrix computes a change of coordinates for a vector space 
 
 An invertible matrix characterizes an invertible linear transformation
 -----------------------------------------------------------------------
 
-Any matrix $\boldsymbol{A}$ for which there exists an inverse matrix $\boldsymbol{A}^{-1}$ characterizes an invertible linear transformation. That is given an invertible matrix $\boldsymbol{A}$, the linear transformation $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$ has an inverse linear transformation $T^{-1}(\boldsymbol{x})$. Recall, for a function to be invertible it must be both [onto](https://en.wikipedia.org/wiki/Surjective_function) and [one-to-one](https://en.wikipedia.org/wiki/Injective_function). We show in the Appendix to this blog post that $T(\boldsymbol{x})$ defined using an invertible matrix $\boldsymbol{A}$ is both onto (Theorem 2) and one-to-one (Theorem 3).
+Any matrix $\boldsymbol{A}$ for which there exists an inverse matrix $\boldsymbol{A}^{-1}$ characterizes an invertible linear transformation. That is, given an invertible matrix $\boldsymbol{A}$, the linear transformation $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$ has an inverse linear transformation $T^{-1}(\boldsymbol{x})$ defined as $T^{-1}(\boldsymbol{x}) := \boldsymbol{A}^{-1}\boldsymbols{x}$. 
 
-At a more intuitive level, the inverse of a matrix $\boldsymbol{A}$ is the matrix that ``reverts" vectors transformed by $\boldsymbol{A}$ back to their original vectors (Figure~\ref{fig:inverse_matrix}). Thus, since matrix multiplication encodes a composition of the matrices' linear transformations, it follows that a matrix multiplied by its inverse yields the identity matrix $\boldsymbol{I}$, which characterizes the linear transformation that maps vectors back to themselves. This observation allows us to rigorously define the inverse of a matrix $\boldsymbol{A}$ as the matrix that when multiplied by $\boldsymbol{A}^{-1}$ yields the identity matrix.
+Recall, for a function to be invertible it must be both [onto](https://en.wikipedia.org/wiki/Surjective_function) and [one-to-one](https://en.wikipedia.org/wiki/Injective_function). We show in the Appendix to this blog post that if $\boldsymbol{A}$  is invertibel, then $T(\boldsymbol{x})$ defined using an invertible matrix $\boldsymbol{A}$ is both onto (Theorem 2) and one-to-one (Theorem 3).
+
+At a more intuitive level, the inverse of a matrix $\boldsymbol{A}$ is the matrix that ``reverts" vectors transformed by $\boldsymbol{A}$ back to their original vectors:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_inverse.png" alt="drawing" width="500"/></center>
 
-An invertible matrix preserves information
-------------------------------------------
-
-The transformation carried out by an invertible matrix $\boldsymbol{A}$ can be ``reverted." That is, let $\boldsymbol{b}$ be the vector that results from transforming $\boldsymbol{x}$ with $\boldsymbol{A}$. We can recover the original $\boldsymbol{x}$ by multiplying $\boldsymbol{b}$ by $\boldsymbol{A}^{-1}$: 
-
-$$\begin{align*} \boldsymbol{b} := \boldsymbol{Ax} \\ \implies \boldsymbol{A}^{-1}\boldsymbol{b} = \boldsymbol{A}^{-1}\boldsymbol{Ax} \\ \implies \boldsymbol{x} = \boldsymbol{A}^{-1}\boldsymbol{b} \end{align*}$$
-
-Inherently, $\boldsymbol{A}$ preserves all of the information of $\boldsymbol{x}$ in $\boldsymbol{b}$ as evidenced by the fact that we can recover $\boldsymbol{x}$ from $\boldsymbol{b}$ via $\boldsymbol{A}^{-1}$. If, on the other hand, $\boldsymbol{A}$ is singular, then we cannot recover $\boldsymbol{x}$ from $\boldsymbol{b}$. Intuitively, information about $\boldsymbol{x}$ is lost in the transformation into $\boldsymbol{b}$.
+Thus, since matrix multiplication encodes a composition of the matrices' linear transformations, it follows that a matrix multiplied by its inverse yields the identity matrix $\boldsymbol{I}$, which characterizes the linear transformation that maps vectors back to themselves. This observation allows us to rigorously define the inverse of a matrix $\boldsymbol{A}$ as the matrix that when multiplied by $\boldsymbol{A}^{-1}$ yields the identity matrix.
 
 
 A singular matrix collapses vectors into a lower-dimensional subspace
 ---------------------------------------------------------------------
 
-The loss of information described in the previous section can be viewed geometrically by the fact that a singular matrix "collapses" or "compresses" vectors into an intrinsically lower dimensional space. That is, a singular matrix reduces the [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of the vectors. The loss of these dimensions constitutes the "loss of information" discussed in the previous section.
+A singular matrix "collapses" or "compresses" vectors into an intrinsically lower dimensional space whereas an invertible matrix preserves their [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of the vectors.
 
 A matrix is invertible if and only if its columns are linearly independent (See Thoerem XXXXX in the Appendix to this post). Recall a set of $n$ linearly independent vectors $$S := {\boldsymbol{x}_1, \dots, \boldsymbol{x}_n}$$ spans a space with an intrinsic dimensionality of $n$ because in order to specify any vector $\boldsymbol{b}$ in the vector space, one must specify the coefficients $c_1, \dots, c_n$ such that $$\boldsymbol{b} = c_1\boldsymbol{x}_1 + \dots + c_n\boldsymbol{x}_n$$ However, if $S$ is not linearly independent, then we can throw away ``redundant" vectors in $S$ that can be constructed from the remaining vectors. Thus, the intrinsic dimensionality of a linearly dependent set $S$ is the maximum sized subset of $S$ that is linearly independent.
 
@@ -117,7 +111,7 @@ $\square$
 
 
 <span style="color:#0060C6">**Theorem 4 (Column vectors of invertible matrices are linearly independent):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$,
-$\boldsymbol{A}$ is invertible if and only if $\{ \boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n} \}$ are linearly independent. </span>
+$\boldsymbol{A}$ is invertible if and only if $\{ \boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,n} \}$ are linearly independent. </span>
 
 **Proof:**
 
