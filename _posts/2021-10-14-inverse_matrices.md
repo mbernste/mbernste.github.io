@@ -29,7 +29,7 @@ This definition might seem a bit of opaque, so in the remainder of this blog pos
 An invertible matrix characterizes an invertible linear transformation
 -----------------------------------------------------------------------
 
-Any matrix $\boldsymbol{A}$ for which there exists an inverse matrix $\boldsymbol{A}^{-1}$ characterizes an invertible linear transformation. That is, given an invertible matrix $\boldsymbol{A}$, the linear transformation $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$ has an inverse linear transformation $T^{-1}(\boldsymbol{x})$ defined as $T^{-1}(\boldsymbol{x}) := \boldsymbol{A}^{-1}\boldsymbols{x}$. 
+Any matrix $\boldsymbol{A}$ for which there exists an inverse matrix $\boldsymbol{A}^{-1}$ characterizes an invertible linear transformation. That is, given an invertible matrix $\boldsymbol{A}$, the linear transformation $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$ has an inverse linear transformation $T^{-1}(\boldsymbol{x})$ defined as $T^{-1}(\boldsymbol{x}) := \boldsymbol{A}^{-1}\boldsymbol{x}$. 
 
 Recall, for a function to be invertible it must be both [onto](https://en.wikipedia.org/wiki/Surjective_function) and [one-to-one](https://en.wikipedia.org/wiki/Injective_function). We show in the Appendix to this blog post that if $\boldsymbol{A}$  is invertibel, then $T(\boldsymbol{x})$ defined using an invertible matrix $\boldsymbol{A}$ is both onto (Theorem 2) and one-to-one (Theorem 3).
 
