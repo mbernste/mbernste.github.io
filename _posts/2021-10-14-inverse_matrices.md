@@ -79,22 +79,22 @@ Thus we see that all coordinate systems are able to provide an unambiguous locat
 
 All coordinate systems can then be constructed from the coordinate system defined by the standard basis vectors. This is depicted in the previous figure in which the reference coordinate system is depicted by the grey grid and is constructed by the orthonormal basis vectors $\boldsymbol{e}_1$ and $\boldsymbol{e}_2$. An alternative coordinate system is depicted by the blue grid and is constructed from the basis vectors $\boldsymbol{a}_1$ and $\boldsymbol{a}_2$.
 
-Now, how do invertible matrices enter the picture? Well, an invertible matrix $\boldsymbol{A} := [\boldsymbol{a}_1, \dots, \boldsymbol{a}_n]$ can be viewed as an operator that converts vectors described in terms of some set of basis vectors ${\boldsymbol{a}_1, \dots, \boldsymbol{a}_n}$ back to a description in terms of the standard basis vectors ${\boldsymbol{e}_1, \dots, \boldsymbol{e}_n }$. That is, if we have some vector $\boldsymbol{x'} \in \mathbb{R}^n$, then $\boldsymbol{Ax'}$ can be understood to be the vector in the standard basis *if* $\boldsymbol{x'}$ was described according to the basis formed by the columns of $\boldsymbol{A}$. 
+Now, how do invertible matrices enter the picture? Well, an invertible matrix $\boldsymbol{A} := [\boldsymbol{a}_1, \dots, \boldsymbol{a}_n]$ can be viewed as an operator that converts vectors described in terms of some set of basis vectors ${\boldsymbol{a}_1, \dots, \boldsymbol{a}_n}$ back to a description in terms of the standard basis vectors ${\boldsymbol{e}_1, \dots, \boldsymbol{e}_n }$. That is, if we have some vector $\boldsymbol{x} \in \mathbb{R}^n$, then $\boldsymbol{Ax}$ can be understood to be the vector in the standard basis *if* $\boldsymbol{x}$ was described according to the basis formed by the columns of $\boldsymbol{A}$. 
 
-Another way to think about this is that if we have some vector $\boldsymbol{x} \in \mathbb{R}^n$ described according to the standard basis, then we can describe $\boldsymbol{x}$ in terms of an alternative basis $\boldsymbol{a}_1, \dots, \boldsymbol{a}_n$ by multiplying $\boldsymbol{x}$ by the inverse of the matrix $\boldsymbol{A} := [ \boldsymbol{a}_1, \dots, \boldsymbol{a}_n]$. That is $$\boldsymbol{x}_{\boldsymbol{A}} := \boldsymbol{A}^{-1}\boldsymbol{x}$$ is the representation of $\boldsymbol{x}$ in terms of the basis columns of $\boldsymbol{A}$.
+Another way to think about this is that if we have some vector $\boldsymbol{x} \in \mathbb{R}^n$ described according to the standard basis, then we can describe $\boldsymbol{x}$ in terms of an alternative basis $\boldsymbol{a}_1, \dots, \boldsymbol{a}_n$ by multiplying $\boldsymbol{x}$ by the inverse of the matrix $\boldsymbol{A} := [ \boldsymbol{a}_1, \dots, \boldsymbol{a}_n]$. That is $$\boldsymbol{x}_{\boldsymbol{A}} := \boldsymbol{A}^{-1}\boldsymbol{x}$$ is the representation of $\boldsymbol{x}$ in terms of the basis formed by the columns of $\boldsymbol{A}$.
 
 Properties
 ----------
  
-Below we discuss several properties of invertible matrices that provide more intuition into how they behave and also provide algebraic rules that can be used in derivations.
+Below we discuss several properties of invertible matrices that provide further intuition into how they behave and also provide algebraic rules that can be used in derivations.
 
-1. **The columns of an invertible matrix are linearly independent** (Theorem~\ref{thrm:cols_inverse_lin_ind}). 
-2. **Taking the inverse of an inverse matrix gives you back the original matrix**  (Theorem~\ref{thrm:inv_of_inv_mat}). Given an invertible matrix $\bold{A}$ with inverse $\bold{A}^{-1}$, it follows from Definition~\ref{def:inverse_matrix}, that $\bold{A}^{-1}$ is also invertible with inverse $\bold{A}$.  That is, 
-$$(\bold{A}^{-1})^{-1} = \bold{A}$$
+1. **The columns of an invertible matrix are linearly independent** (Theorem 4 in the Appendix). 
+2. **Taking the inverse of an inverse matrix gives you back the original matrix**  (Theorem XXXX in the Appendix). Given an invertible matrix $\boldsymbol{A}$ with inverse $\boldsymbol{A}^{-1}$, it follows from the definition of invertible matrices, that $\boldsymbol{A}^{-1}$ is also invertible with its inverse being $\boldsymbol{A}$.  That is, 
+$$(\boldsymbol{A}^{-1})^{-1} = \boldsymbol{A}$$
 This also follows from the fact that the inverse of an inverse function $f^{-1}$ is simply the original function $f$.
-3. **The result of multiplying invertible matrices is invertible** (Theorem~\ref{thrm:comp_inv_matrices}). Given two matrices $\bold{A}, \bold{B} \in \mathbb{R}^{n \times n}$, the matrix that results from their multiplication is invertible. That is, $\bold{AB}$ is invertible and its inverse is given by 
-$$(\bold{AB})^{-1} = \bold{B}^{-1}\bold{A}^{-1}$$
-Recall the result of matrix multiplication results in a matrix that characterizes the composition of the linear transformations characterized by the factor matrices. That is, $\bold{ABx}$ first transforms $\bold{x}$ with $\bold{B}$ and then transforms the result with $\bold{A}$.  It follows that in order to invert this composition of transformations, one must first pass the vector through $\bold{B}^{-1}$ and then through $\bold{A}^{-1}$.
+3. **The result of multiplying invertible matrices is invertible** (Theorem XXXXXXX). Given two matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{n \times n}$, the matrix that results from their multiplication is invertible. That is, $\boldsymbol{AB}$ is invertible and its inverse is given by 
+$$(\boldsymbol{AB})^{-1} = \boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$$
+Recall the result of matrix multiplication results in a matrix that characterizes the composition of the linear transformations characterized by the factor matrices. That is, $\boldsymbol{ABx}$ first transforms $\boldsymbol{x}$ with $\boldsymbol{B}$ and then transforms the result with $\boldsymbol{A}$.  It follows that in order to invert this composition of transformations, one must first pass the vector through $\boldsymbol{B}^{-1}$ and then through $\boldsymbol{A}^{-1}$:
 
 \begin{figure}[htbp]
 \centering
