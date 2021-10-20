@@ -89,7 +89,7 @@ Properties
 Below we discuss several properties of invertible matrices that provide further intuition into how they behave and also provide algebraic rules that can be used in derivations.
 
 1. **The columns of an invertible matrix are linearly independent** (Theorem 4 in the Appendix). 
-2. **Taking the inverse of an inverse matrix gives you back the original matrix**  (Theorem XXXX in the Appendix). Given an invertible matrix $\boldsymbol{A}$ with inverse $\boldsymbol{A}^{-1}$, it follows from the definition of invertible matrices, that $\boldsymbol{A}^{-1}$ is also invertible with its inverse being $\boldsymbol{A}$.  That is, 
+2. **Taking the inverse of an inverse matrix gives you back the original matrix**. Given an invertible matrix $\boldsymbol{A}$ with inverse $\boldsymbol{A}^{-1}$, it follows from the definition of invertible matrices, that $\boldsymbol{A}^{-1}$ is also invertible with its inverse being $\boldsymbol{A}$.  That is, 
 $$(\boldsymbol{A}^{-1})^{-1} = \boldsymbol{A}$$
 This also follows from the fact that the inverse of an inverse function $f^{-1}$ is simply the original function $f$.
 3. **The result of multiplying invertible matrices is invertible** (Theorem XXXXXXX). Given two matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{n \times n}$, the matrix that results from their multiplication is invertible. That is, $\boldsymbol{AB}$ is invertible and its inverse is given by 
@@ -179,9 +179,17 @@ Hence, $\boldsymbol{C} := (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)$ is the matr
 
 $\square$
 
+<span style="color:#0060C6">**Theorem 5 (Inverse of matrix product):** Given two invertible matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^n$, the inverse of their product $\boldsymbol{AB}$ is given by $\boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$.</span>
 
+**Proof:**
 
+ We seek the inverse matrix $\boldsymbol{X}$ such that
+ $$(\boldsymbol{AB})\boldsymbol{X} = \boldsymbol{I}$$
+ boldsymbol for $\boldsymbol{X}$:
+ 
+$$\begin{align*} & \boldsymbol{ABX} = \boldsymbol{I} \\ \implies & \boldsymbol{A}^{-1}\boldsymbol{ABX} = \boldsymbol{A}^{-1}\boldsymbol{I}\\ \implies &\boldsymbol{B}^{-1}\boldsymbol{BX} = \boldsymbol{B}^{-1}\boldsymbol{A}^{-1}\boldsymbol{I} \\ \implies &\boldsymbol{X} = \boldsymbol{B}^{-1}\boldsymbol{A}^{-1} \\ \end{align*}$$
 
+$\square$ 
 
 
 
