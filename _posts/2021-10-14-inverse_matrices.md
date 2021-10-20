@@ -167,7 +167,7 @@ We now prove the $\impliedby$ direction: we assume the columns of $\boldsymbol{A
 
 $$\boldsymbol{CA} = \boldsymbol{AC} = \boldsymbol{I}$$
 
-Since the columns of $\boldsymbol{A}$ are linearly independent, then the reduced row echelon form of $\boldsymbol{A}$ has a pivot in every column. This means that there exists a sequence of elementary row matrices $\boldsymbol{E}_1, \dots, \boldsymbol{E}_k$ such that when multiplied by $\boldsymbol{A}$, they produce the identity matrix. That is,
+Since the columns of $\boldsymbol{A}$ are linearly independent, then the [reduced row echelon form](https://en.wikipedia.org/wiki/Row_echelon_form#Reduced_row_echelon_form) of $\boldsymbol{A}$ has a [pivot](https://en.wikipedia.org/wiki/Pivot_element) in every column. This means that there exists a sequence of [elementary row matrices](https://en.wikipedia.org/wiki/Elementary_matrix) $\boldsymbol{E}_1, \dots, \boldsymbol{E}_k$ such that when multiplied by $\boldsymbol{A}$, they produce the identity matrix. That is,
 $$(\boldsymbol{E}_1\dots\boldsymbol{E}_k)\boldsymbol{A} = \boldsymbol{I}$$
 
 Though not proven formally, it can be seen that elementary row matrices are invertible.  That is, you can always ``undo" the transformation imposed by an elementary row matrix (e.g. for an elementary row matrix that swaps rows, you can always swap them back). Furthermore, since the product of invertible matrices is also invertible, $(\boldsymbol{E}_1\dots\boldsymbol{E}_k)$ is invertible. Thus,
