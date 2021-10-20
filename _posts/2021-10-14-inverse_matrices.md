@@ -184,8 +184,7 @@ $\square$
 **Proof:**
 
  We seek the inverse matrix $\boldsymbol{X}$ such that
- $$(\boldsymbol{AB})\boldsymbol{X} = \boldsymbol{I}$$
- boldsymbol for $\boldsymbol{X}$:
+ $$(\boldsymbol{AB})\boldsymbol{X} = \boldsymbol{I}$$:
  
 $$\begin{align*} & \boldsymbol{ABX} = \boldsymbol{I} \\ \implies & \boldsymbol{A}^{-1}\boldsymbol{ABX} = \boldsymbol{A}^{-1}\boldsymbol{I}\\ \implies &\boldsymbol{B}^{-1}\boldsymbol{BX} = \boldsymbol{B}^{-1}\boldsymbol{A}^{-1}\boldsymbol{I} \\ \implies &\boldsymbol{X} = \boldsymbol{B}^{-1}\boldsymbol{A}^{-1} \\ \end{align*}$$
 
