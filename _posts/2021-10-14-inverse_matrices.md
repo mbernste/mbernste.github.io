@@ -69,14 +69,23 @@ Also notice that this singular matrix maps vectors in $\mathbb{R}^3$ to vectors 
 
 **3. An invertible matrix computes a change of coordinates for a vector space**
 
-A vector $\boldsymbol{x} \in \mathbb{R}^n$ can be viewed as the coordinates for a point in a coordinate system. That is, for each dimension $i$, the vector $\boldsymbol{x}$ provides a value along each dimension (e.g. $x_i$ is the value along dimension $i$). Of course, the coordinate system we use can be arbitrary. In Figure~\ref{fig:coordinate_change}, we can specify locations in $\mathbb{R}^2$ using either the grey coordinate system or the blue coordinate system. Furthermore, there is a one-to-one and onto mapping between coordinates in each of these two alternative coordinate systems. The point $\boldsymbol{x}$ located at $[-4, -2]$ in the grey coordinate system can be described as $[-1, 1]$ according to the blue coordinate system.
+A vector $\boldsymbol{x} \in \mathbb{R}^n$ can be viewed as the coordinates for a point in a coordinate system. That is, for each dimension $i$, the vector $\boldsymbol{x}$ provides a value along each dimension -- that is, $x_i$ is the value along dimension $i$. The coordinate system we use is, in a mathematical sense, arbitrary. In the figure below, we can specify locations in $\mathbb{R}^2$ using either the grey coordinate system or the blue coordinate system:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/coordinate_change.png" alt="drawing" width="750"/></center>
+
+
+Notice that there is a one-to-one and onto mapping between coordinates in each of these two alternative coordinate systems. The point $\boldsymbol{x}$ located at $[-4, -2]$ in the grey coordinate system and as $[-1, 1]$ in the blue coordinate system.
 
 All coordinate systems are, in some sense, equivalent in that each is able to provide an unambiguous location for points in the space. Nonetheless, it often helps to have some coordinate system that acts as a reference to every other coordinate system. This reference coordinate system is the defined by the standard basis vectors ${\boldsymbol{e}_1, \dots, \boldsymbol{e}_n }$. All other coordinate systems can then be constructed from this reference coordinate system. In Figure~\ref{fig:coordinate_change}, the reference coordinate system is depicted by the grey grid and is constructed by the orthonormal basis vectors $\boldsymbol{e}_1$ and $\boldsymbol{e}_2$. An alternative coordinate system is depicted by the blue grid and is constructed from the basis vectors $\boldsymbol{a}_1$ and $\boldsymbol{a}_2$.
 
 An invertible matrix $\boldsymbol{A} := [\boldsymbol{a}_1, \dots, \boldsymbol{a}_n]$ can be viewed as an operator that converts vectors described in terms of the basis vectors ${\boldsymbol{a}_1, \dots, \boldsymbol{a}_n}$ back to a description in terms of the standard basis vectors ${\boldsymbol{e}_1, \dots, \boldsymbol{e}_n }$. That is, if we have some vector $\boldsymbol{x'} \in \mathbb{R}^n$, then $\boldsymbol{Ax'}$ can be understood to be the vector in the standard basis \textit{if} $\boldsymbol{x'}$ was described according to the basis formed by the columns of $\boldsymbol{A}$. Another way to think about this is that if we have some vector $\boldsymbol{x} \in \mathbb{R}^n$ described according to the standard basis, then we can describe $\boldsymbol{x}$ in terms of an alternative basis $\boldsymbol{a}_1, \dots, \boldsymbol{a}_n$ by multiplying $\boldsymbol{x}$ by the inverse of the matrix $\boldsymbol{A} := [ \boldsymbol{a}_1, \dots, \boldsymbol{a}n]$. That is $$\boldsymbol{x}\boldsymbol{A} := \boldsymbol{A}^{-1}\boldsymbol{x}$$ is the representation of $\boldsymbol{x}$ in terms of the basis columns of $\boldsymbol{A}$.
 
-\begin{figure}[htbp] \centering \includegraphics[scale=0.3]{coordinate_change.png}
-\caption{Here we have a vector $\boldsymbol{x} \in \mathbb{R}^2$. Using the standard basis vectors $\boldsymbol{e_1}, \boldsymbol{e_2}$, the vector $\boldsymbol{x}$ is given by $[-4, -2]$. Using the column vectors $\boldsymbol{a}1$ and $\boldsymbol{a}2$ of matrix $\boldsymbol{A}$ as a basis, this vector $\boldsymbol{x}{\boldsymbol{A}}$ is given by $[-1,1]$. The matrix $\boldsymbol{A}$ maps $\boldsymbol{x}\boldsymbol{A}$ to $\boldsymbol{x}$.} \label{fig:coordinate_change} \end{figure}
+
+
+
+Here we have a vector $\boldsymbol{x} \in \mathbb{R}^2$. Using the standard basis vectors $\boldsymbol{e_1}, \boldsymbol{e_2}$, the vector $\boldsymbol{x}$ is given by $[-4, -2]$. Using the column vectors $\boldsymbol{a}1$ and $\boldsymbol{a}2$ of matrix $\boldsymbol{A}$ as a basis, this vector $\boldsymbol{x}{\boldsymbol{A}}$ is given by $[-1,1]$. The matrix $\boldsymbol{A}$ maps $\boldsymbol{x}\boldsymbol{A}$ to $\boldsymbol{x}$.
+
+
 
 Properties
 ----------
