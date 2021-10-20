@@ -14,7 +14,7 @@ _In this post, we discuss invertible matrices: those matrices that characterize 
 Introduction
 ------------
 
-As we have discussed in depth, matrices can viewed [as functions](https://mbernste.github.io/posts/matrices_as_functions/) between vector spaces. In this post, we will discuss matrices that represent **invertible functions**. Such matrices are called **invertible matrices** and their corresponding inverse function is characterized by an **inverse matrix**. 
+As we have discussed in depth, matrices can viewed [as functions](https://mbernste.github.io/posts/matrices_as_functions/) between vector spaces. In this post, we will discuss matrices that represent [inverse functions](https://en.wikipedia.org/wiki/Inverse_function). Such matrices are called **invertible matrices** and their corresponding inverse function is characterized by an **inverse matrix**. 
 
 More rigorously, the inverse matrix of a matrix $\boldsymbol{A}$ is defined as follows:
 
