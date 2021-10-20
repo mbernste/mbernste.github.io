@@ -60,11 +60,11 @@ When a matrix $\boldsymbol{A}$ is singular, its columns are linearly dependent a
 
 To make this more concrete, an example is shown in below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_inverse_lin_ind.png" alt="drawing" width="500"/></center>
 
-In this figure, a singular matrix $\boldsymbol{A} \in \mathbb{R}^{3 \times 3}$ maps vectors in $\mathbb{R}^3$ to vectors that lie on a plane in $\mathbb{R}^3$. All vectors on a plane in $\mathbb{R}^3$ are of intrinsic dimensionality of two rather than three because we only need to specify coefficients for two of the column vectors in $\boldsymbol{A}$ to specify a point on the plane. We can throw away the third. Thus, we see that this singular matrix collapses points from the full 3-dimensional space $\mathbb{R}^3$ to the 2-dimensional space on the plane spanned by the columns of $\boldsymbol{A}$.
+In Panel A of this figure, we show the column vectors of a matrix $\boldsymbol{A} \in \mathbb{R}^{3 \times 3}$. In Panel B, we show tne solution to the equation $\boldsymbol{Ax} = \boldsymbol{b}$. In Panel C, we show another solution to $\boldsymbol{Ax} = \boldsymbol{b}$. Notice that there are multiple vectors in $\mathbb{R}^3$ that $$\boldsymbol{A}$$ maps to $\boldsymbol{b}$. Thus, there does not exist an inverse mapping and therefore no inverse matrix to $\boldsymbol{A}$. These multiple constructions of mappings from $\mathbb{R}^3$ to $\boldsymbol{b}$ arise directly from the fact that the columns of $\boldsymbol{A}$ are linearly dependent.
 
-\begin{figure}[htbp] \centering \includegraphics[scale=0.3]{matrix_inverse_lin_ind.png}
-\caption{(A) The column vectors of a matrix $\boldsymbol{A} \in \mathbb{R}^{3 \times 3}$. (B) One solution to the equation $\bold{Ax} = \boldsymbol{b}$. (C) Another solution to $\bold{Ax} = \bold{b}$. That is, there are multiple $\bold{x} \in \mathbb{R}^3$ that map to $\boldsymbol{b}$. Thus, there does not exist an inverse mapping and therefore no inverse matrix to $\bold{A}$. These multiple constructions of mappings from $\mathbb{R}^3$ to $\boldsymbol{b}$ arise directly from the fact that the columns of $\bold{A}$ are linearly dependent.} \label{fig:inverse_matrix} \end{figure}
+Also notice that this singular matrix maps vectors in $\mathbb{R}^3$ to vectors that lie on a plane in $\mathbb{R}^3$. All vectors on a plane in $\mathbb{R}^3$ are of intrinsic dimensionality of two rather than three because we only need to specify coefficients for two of the column vectors in $\boldsymbol{A}$ to specify a point on the plane. We can throw away the third. Thus, we see that this singular matrix collapses points from the full 3-dimensional space $\mathbb{R}^3$ to the 2-dimensional space on the plane spanned by the columns of $\boldsymbol{A}$.
 
 
 **3. An invertible matrix computes a change of coordinates for a vector space**
