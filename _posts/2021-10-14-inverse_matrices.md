@@ -1,6 +1,6 @@
 ---
 title: 'Invertible matrices'
-date: 2021-10-13
+date: 2021-10-20
 permalink: /posts/inverse_matrices/
 tags:
   - tutorial
@@ -9,7 +9,7 @@ tags:
   - matrices
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
+_In this post, we discuss invertible matrices: those matrices that characterize invertible linear transformations. We discuss three different perspectives for intuiting inverse matrices as well as several of their properties._
 
 Introduction
 ------------
