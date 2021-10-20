@@ -50,7 +50,7 @@ Thus, since matrix multiplication encodes a composition of the matrices' linear 
 
 A singular matrix "collapses" or "compresses" vectors into an intrinsically lower dimensional space whereas an invertible matrix preserves their [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of the vectors.
 
-This follows from the fact that a matrix is invertible if and only if its columns are linearly independent (Thoerem XXXXX in the Appendix). Recall a set of $n$ linearly independent vectors $$S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$$ spans a space with an intrinsic dimensionality of $n$ because in order to specify any vector $\boldsymbol{b}$ in the vector space, one must specify the coefficients $c_1, \dots, c_n$ such that 
+This follows from the fact that a matrix is invertible if and only if its columns are linearly independent (Thoerem 4 in the Appendix). Recall a set of $n$ linearly independent vectors $$S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$$ spans a space with an intrinsic dimensionality of $n$ because in order to specify any vector $\boldsymbol{b}$ in the vector space, one must specify the coefficients $c_1, \dots, c_n$ such that 
 
 $$\boldsymbol{b} = c_1\boldsymbol{x}_1 + \dots + c_n\boldsymbol{x}_n$$ 
 
@@ -92,7 +92,7 @@ Below we discuss several properties of invertible matrices that provide further 
 2. **Taking the inverse of an inverse matrix gives you back the original matrix**. Given an invertible matrix $\boldsymbol{A}$ with inverse $\boldsymbol{A}^{-1}$, it follows from the definition of invertible matrices, that $\boldsymbol{A}^{-1}$ is also invertible with its inverse being $\boldsymbol{A}$.  That is, 
 $$(\boldsymbol{A}^{-1})^{-1} = \boldsymbol{A}$$
 This also follows from the fact that the inverse of an inverse function $f^{-1}$ is simply the original function $f$.
-3. **The result of multiplying invertible matrices is invertible** (Theorem XXXXXXX). Given two matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{n \times n}$, the matrix that results from their multiplication is invertible. That is, $\boldsymbol{AB}$ is invertible and its inverse is given by 
+3. **The result of multiplying invertible matrices is invertible** (Theorem 5 in the Appendix). Given two matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{n \times n}$, the matrix that results from their multiplication is invertible. That is, $\boldsymbol{AB}$ is invertible and its inverse is given by 
 $$(\boldsymbol{AB})^{-1} = \boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$$
 Recall the result of [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/) results in a matrix that characterizes the composition of the linear transformations characterized by the factor matrices. That is, $\boldsymbol{ABx}$ first transforms $\boldsymbol{x}$ with $\boldsymbol{B}$ and then transforms the result with $\boldsymbol{A}$.  It follows that in order to invert this composition of transformations, one must first pass the vector through $\boldsymbol{B}^{-1}$ and then through $\boldsymbol{A}^{-1}$:
 
