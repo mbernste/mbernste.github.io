@@ -31,7 +31,7 @@ Here are three ways to understand invertible matrices:
 2. An invertible matrix preserves the dimensionality of transformed vectors 
 3. An invertible matrix computes a change of coordinates for a vector space 
 
-Below we will explore each of these.
+Below we will explore each of these perspectives.
 
 **1. An invertible matrix characterizes an invertible linear transformation**
 
