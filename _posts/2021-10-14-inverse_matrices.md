@@ -152,7 +152,7 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 4 (Column vectors of invertible matrices are linearly independent):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, $\boldsymbol{A}$ is invertible if and only if $\{ \boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,n} \}$ are linearly independent. </span>
+<span style="color:#0060C6">**Theorem 4 (Column vectors of invertible matrices are linearly independent):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, $\boldsymbol{A}$ is invertible if and only if $\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,n}$ are linearly independent. </span>
 
 **Proof:**
 
