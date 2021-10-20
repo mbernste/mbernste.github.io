@@ -69,12 +69,11 @@ Also notice that this singular matrix maps vectors in $\mathbb{R}^3$ to vectors 
 
 **3. An invertible matrix computes a change of coordinates for a vector space**
 
-A vector $\boldsymbol{x} \in \mathbb{R}^n$ can be viewed as the coordinates for a point in a coordinate system. That is, for each dimension $i$, the vector $\boldsymbol{x}$ provides a value along each dimension -- that is, $x_i$ is the value along dimension $i$. The coordinate system we use is, in a mathematical sense, arbitrary. In the figure below, we can specify locations in $\mathbb{R}^2$ using either the grey coordinate system or the blue coordinate system:
+A vector $\boldsymbol{x} \in \mathbb{R}^n$ can be viewed as the coordinates for a point in a coordinate system. That is, for each dimension $i$, the vector $\boldsymbol{x}$ provides a value along each dimension -- that is, $x_i$ is the value along dimension $i$. The coordinate system we use is, in a mathematical sense, arbitrary. To see why it's arbitrary, notice in the figure below that we can specify locations in $\mathbb{R}^2$ using either the grey coordinate system or the blue coordinate system:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/coordinate_change.png" alt="drawing" width="750"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/coordinate_change.png" alt="drawing" width="600"/></center>
 
-
-Notice that there is a one-to-one and onto mapping between coordinates in each of these two alternative coordinate systems. The point $\boldsymbol{x}$ located at $[-4, -2]$ in the grey coordinate system and as $[-1, 1]$ in the blue coordinate system.
+We see that there is a one-to-one and onto mapping between coordinates in each of these two alternative coordinate systems. The point $\boldsymbol{x}$ located at $[-4, -2]$ in the grey coordinate system and as $[-1, 1]$ in the blue coordinate system.
 
 All coordinate systems are, in some sense, equivalent in that each is able to provide an unambiguous location for points in the space. Nonetheless, it often helps to have some coordinate system that acts as a reference to every other coordinate system. This reference coordinate system is the defined by the standard basis vectors ${\boldsymbol{e}_1, \dots, \boldsymbol{e}_n }$. All other coordinate systems can then be constructed from this reference coordinate system. In Figure~\ref{fig:coordinate_change}, the reference coordinate system is depicted by the grey grid and is constructed by the orthonormal basis vectors $\boldsymbol{e}_1$ and $\boldsymbol{e}_2$. An alternative coordinate system is depicted by the blue grid and is constructed from the basis vectors $\boldsymbol{a}_1$ and $\boldsymbol{a}_2$.
 
@@ -83,7 +82,6 @@ An invertible matrix $\boldsymbol{A} := [\boldsymbol{a}_1, \dots, \boldsymbol{a}
 
 
 
-Here we have a vector $\boldsymbol{x} \in \mathbb{R}^2$. Using the standard basis vectors $\boldsymbol{e_1}, \boldsymbol{e_2}$, the vector $\boldsymbol{x}$ is given by $[-4, -2]$. Using the column vectors $\boldsymbol{a}1$ and $\boldsymbol{a}2$ of matrix $\boldsymbol{A}$ as a basis, this vector $\boldsymbol{x}{\boldsymbol{A}}$ is given by $[-1,1]$. The matrix $\boldsymbol{A}$ maps $\boldsymbol{x}\boldsymbol{A}$ to $\boldsymbol{x}$.
 
 
 
