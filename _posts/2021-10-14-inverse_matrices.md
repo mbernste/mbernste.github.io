@@ -94,14 +94,9 @@ $$(\boldsymbol{A}^{-1})^{-1} = \boldsymbol{A}$$
 This also follows from the fact that the inverse of an inverse function $f^{-1}$ is simply the original function $f$.
 3. **The result of multiplying invertible matrices is invertible** (Theorem XXXXXXX). Given two matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{n \times n}$, the matrix that results from their multiplication is invertible. That is, $\boldsymbol{AB}$ is invertible and its inverse is given by 
 $$(\boldsymbol{AB})^{-1} = \boldsymbol{B}^{-1}\boldsymbol{A}^{-1}$$
-Recall the result of matrix multiplication results in a matrix that characterizes the composition of the linear transformations characterized by the factor matrices. That is, $\boldsymbol{ABx}$ first transforms $\boldsymbol{x}$ with $\boldsymbol{B}$ and then transforms the result with $\boldsymbol{A}$.  It follows that in order to invert this composition of transformations, one must first pass the vector through $\boldsymbol{B}^{-1}$ and then through $\boldsymbol{A}^{-1}$:
+Recall the result of [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/) results in a matrix that characterizes the composition of the linear transformations characterized by the factor matrices. That is, $\boldsymbol{ABx}$ first transforms $\boldsymbol{x}$ with $\boldsymbol{B}$ and then transforms the result with $\boldsymbol{A}$.  It follows that in order to invert this composition of transformations, one must first pass the vector through $\boldsymbol{B}^{-1}$ and then through $\boldsymbol{A}^{-1}$:
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=0.4]{inverse_matrix_mult.png}  
-\caption{Demonstrating schematically why $(\bold{AB})^{-1} = \bold{B}^{-1}\bold{A}^{-1}$. The matrix $\bold{AB}$ first applies the mapping by $\bold{B}$ and then applies the mapping by $\bold{A}$.  The inverse of this function would thus entails applying the inverse of $\bold{A}$ followed by the inverse of $\bold{B}$.}
-\label{fig:inverse_matrix}
-\end{figure} 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/inverse_matrix_mult.png" alt="drawing" width="900"/></center>
 
 Appendix
 --------
