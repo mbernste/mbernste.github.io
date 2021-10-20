@@ -22,8 +22,8 @@ More rigorously, the inverse matrix of a matrix $\boldsymbol{A}$ is defined as f
   
 This definition might seem a bit of opaque, so in the remainder of this blog post we will explore a number of  [complimentary perspectives](https://mbernste.github.io/posts/understanding_3d/) for viewing inverse matrices.
 
-Viewing invertible matrices
----------------------------
+Intuition behind invertible matrices
+------------------------------------
 
 Here are three ways to understand invertible matrices:
 
