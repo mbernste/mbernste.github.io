@@ -23,7 +23,7 @@ If the array of numbers is of length two or three, than one can visualize the ve
 
 
 
-While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. Moreover, it is upon this more foundationational definition upon which one can construct more sophisticated spaces with additional structure. Because these definitions are abstract, they are more powerful; that is, they can be used to model more than just Euclidean vectors, they can also model the structure among sets of functions or matrices!
+While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. Moreover, it is upon this more foundationational definition upon which one can construct more complex spaces with additional structure. Moreover, because these definitions are abstract, they are more powerful; that is, they can be used to model more than just Euclidean vectors. For example, they can  model the structure among sets of [functions, matrices, or polynomials](https://en.wikipedia.org/wiki/Examples_of_vector_spaces)!
 
 In this post, we will dig into vector spaces and then will proceed to define and discuss the following mathematical structures that build upon vector spaces:
 
