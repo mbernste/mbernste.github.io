@@ -1,5 +1,5 @@
 ---
-title: 'Vector spaces with structure: inner products, norms, and Hilbert spaces'
+title: 'Vector spaces and additional structures: inner products, norms, and Hilbert spaces'
 date: 2021-10-25
 permalink: /posts/vector_spaces/
 tags:
@@ -7,6 +7,8 @@ tags:
   - mathematics
   - linear algebra
 ---
+
+THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
 _The concept of a vector space is a foundational concept in mathematics, physics, and the data sciences. In this post, we first present and explain the definition of a vector space and then go on to describe additional mathematical structures that can be built atop vector spaces in order to create ever-more powerful concepts. From vector spaces, we will define inner product spaces, normed vector spaces, Banach spaces, and finally, Hilbert spaces, which are generalization of Euclidean spaces._
 
