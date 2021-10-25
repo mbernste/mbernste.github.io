@@ -61,6 +61,13 @@ At a more rigorous mathematical level, the notion of "scaling" is modeled by a [
 
 Axioms 1-5 of the definition describe how vectors can be added together. Axioms 6-10 describe how these vectors can be scaled using the field of scalars.
 
+**Properties**
+
+Here are several properties of vector spaces that both provide insight into how they capture the notions of adding and scaling:
+
+
+
+
 Metric spaces
 -------------
 
