@@ -15,13 +15,25 @@ _The concept of a vector space is a foundational concept in mathematics, physics
 Introduction
 ------------
 
-In this post, we will first present vector spaces and then will build upon this concept to evermore complex spaces. Specifically, we will define and discuss the following mathematical concepts:
+The concept of a vector space is a foundational concept in mathematics, physics, and the data sciences. In most introductory courses, only vectors in a Euclidean space are discussed. That is, vectors are presented as arrays of numbers:
+
+$$\boldsymbol{x} = \begin{bmatrix}1 \\ 3\end{bmatrix}$$
+
+If the array of numbers is of length two or three, than one can visualize the vector as an arrow:
+
+
+
+While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. Moreover, it is upon this more foundationational definition upon which one can construct more sophisticated spaces with additional structure. Because these definitions are abstract, they are more powerful; that is, they can be used to model more than just Euclidean vectors, they can also model the structure among sets of functions or matrices!
+
+In this post, we will dig into vector spaces and then will proceed to define and discuss the following mathematical structures that build upon vector spaces:
 
 1. Vector spaces
 2. Inner product spaces
 3. Normed vector spaces
 4. Banach spaces
 5. Hilbert spaces
+
+This final structure, the Hilbert space, is a generalization of Euclidean space and thus, provides a powerful, abstract model to define all spaces that behave like Euclidean spaces. 
 
 Vector spaces
 -------------
