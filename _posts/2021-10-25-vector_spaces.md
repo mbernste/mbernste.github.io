@@ -1,5 +1,5 @@
 ---
-title: 'Vector spaces and their extensions'
+title: 'Vector spaces and their extensions: inner products, metrics, norms, and completeness'
 date: 2021-10-25
 permalink: /posts/vector_spaces/
 tags:
