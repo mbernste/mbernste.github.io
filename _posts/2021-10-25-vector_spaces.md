@@ -64,6 +64,17 @@ Axioms 1-5 of the definition describe how vectors can be added together. Axioms 
 Inner product spaces
 --------------------
 
+An **inner product space** is a vector space with a function, called an **inner product** that associates each pair of vectors in the space with a scalar quantity.  The inner product is denoted as $\langle ., .\rangle$.  
+
+
+<span style="color:#0060C6">**Definition 2 (inner product):** Given a vector space $(\mathcal{V}, \mathcal{F})$, a function
+$$\langle ., .\rangle : \mathcal{V} \times \mathcal{V} \rightarrow \mathbb{R}$$
+is an \textbf{inner product} on the vector space if every $\boldsymbol{v}, \boldsymbol{u}, \boldsymbol{w} \in \mathcal{V}$ and $\alpha \in \mathcal{F}$ satisfy the following:</span>
+
+1. $\langle \boldsymbol{v} + \boldsymbol{u}, \bold{w} \rangle = \langle \boldsymbol{v}, \boldsymbol{w} \rangle + \langle \boldsymbol{u}, \boldsymbol{w} \rangle$ 
+2. $\langle \alpha \boldsymbol{v}, \boldsymbol{w} \rangle = \alpha \langle \boldsymbol{v}, \boldsymbol{u} \rangle$ 
+3. $\langle \boldsymbol{v}, \boldsymbol{w} \rangle =  \langle \boldsymbol{w}, \boldsymbol{v} \rangle$ 
+4. $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle \geq 0$ and $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle= 0 \iff \boldsymbol{v} = \boldsymbol{0}$
 
 Normed vector spaces
 --------------------
