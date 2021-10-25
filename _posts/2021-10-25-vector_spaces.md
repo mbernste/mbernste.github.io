@@ -61,5 +61,4 @@ At a more rigorous mathematical level, the notion of "scaling" is modeled by a [
 
 Axioms 1-5 of the definition describe how vectors can be added together. Axioms 6-10 describe how these vectors can be scaled using the field of scalars.
 
-The Euclidean spaces defined by $\mathbb{R}^n$ are the most common examples of vector spaces.  The vector spaces $\mathbb{R}^2$ and $\mathbb{R}^3$ are easily visualized as arrows starting from the origin and provide intuition into most concepts involving vectors. 
 
