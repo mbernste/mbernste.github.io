@@ -71,5 +71,15 @@ Normed vector spaces
 Banach spaces
 -------------
 
+A Banach space extends normed vector spaces in the following, relatively simple way: a Banach space is a normed vector space that is also **complete**. A vector space is **complete** if every **Cauchy sequence** of vectors converges on a vector that is also in the vector space. 
+
+Let's unravel this a bit. First, what is a Cauchy sequence? Roughly speaking, a Cauchy sequence is a sequence of vectors such that the distance between a vector and its predecessor is always small than the distance between it and its successor. Furthermore, these distances shrink until the subsequent vectors in the sequence become infinitesimally close to one another. Stated more mathematically:
+
+<span style="color:#0060C6">**Definition XXXXXX (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldysmobl{x}_1, \boldysmobl{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $||\boldsymbol{x}_N - \boldsymbol{x}_{N-1}|| < \epsilon$./span>
+
+We visualize this concept in the schematic below:
+  
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CauchySequence.png" alt="drawing" width="500"/></center>
+
 Hilbert spaces
 --------------
