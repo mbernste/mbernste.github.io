@@ -75,7 +75,7 @@ A Banach space extends normed vector spaces in the following, relatively simple 
 
 Let's unravel this a bit. First, what is a Cauchy sequence? Roughly speaking, a Cauchy sequence is a sequence of vectors such that the distance between a vector and its predecessor is always small than the distance between it and its successor. Furthermore, these distances shrink until the subsequent vectors in the sequence become infinitesimally close to one another. Stated more mathematically:
 
-<span style="color:#0060C6">**Definition XXXXXX (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldysmobl{x}_1, \boldysmobl{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $||\boldsymbol{x}_N - \boldsymbol{x}_{N-1}|| < \epsilon$./span>
+<span style="color:#0060C6">**Definition XXXXXX (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $$||\boldsymbol{x}_N - \boldsymbol{x}_{N-1}|| < \epsilon$$./span>
 
 We visualize this concept in the schematic below:
   
