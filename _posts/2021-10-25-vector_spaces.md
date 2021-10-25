@@ -75,11 +75,15 @@ A Banach space extends normed vector spaces in the following, relatively simple 
 
 Let's unravel this a bit. First, what is a Cauchy sequence? Roughly speaking, a Cauchy sequence is a sequence of vectors such that the distance between each subsequent pair of vectors shrinks until the distances between each successive pair becomes infinitesimally small. Stated more mathematically:
 
-<span style="color:#0060C6">**Definition XXXXXX (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $$||\boldsymbol{x}_N - \boldsymbol{x}_{N-1}|| < \epsilon$$./span>
+<span style="color:#0060C6">**Definition XXXXXX (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $$\forall m, n > N$$ it holds that $$||\boldsymbol{x}_m - \boldsymbol{x}_{m}|| < \epsilon$$./span>
 
 We visualize this concept in the schematic below:
   
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CauchySequence.png" alt="drawing" width="350"/></center>
 
+Here we show the first five elements of a Cauchy sequence in $$\mathbb{R}^2$$ that converge to a point representing the vector in grey. The vector space is complete if for every such sequence, the vector that the sequence is converging on is also in the vector space.
+  
+At a more intuitive level, the completeness of a vector space means that the vector space doesn't have any "holes" in it. That is, if you start approaching a point in the limit, you are gauranteed that the point you are approaching is also a valid point. It's not "missing" from the vector space.
+  
 Hilbert spaces
 --------------
