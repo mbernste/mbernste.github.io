@@ -73,7 +73,7 @@ Banach spaces
 
 A Banach space extends normed vector spaces in the following, relatively simple way: a Banach space is a normed vector space that is also **complete**. A vector space is **complete** if every **Cauchy sequence** of vectors converges on a vector that is also in the vector space. 
 
-Let's unravel this a bit. First, what is a Cauchy sequence? Roughly speaking, a Cauchy sequence is a sequence of vectors such that the distance between a vector and its predecessor is always small than the distance between it and its successor. Furthermore, these distances shrink until the subsequent vectors in the sequence become infinitesimally close to one another. Stated more mathematically:
+Let's unravel this a bit. First, what is a Cauchy sequence? Roughly speaking, a Cauchy sequence is a sequence of vectors such that the distance between each subsequent pair of vectors shrinks until the distances between each successive pair becomes infinitesimally small. Stated more mathematically:
 
 <span style="color:#0060C6">**Definition XXXXXX (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $$||\boldsymbol{x}_N - \boldsymbol{x}_{N-1}|| < \epsilon$$./span>
 
