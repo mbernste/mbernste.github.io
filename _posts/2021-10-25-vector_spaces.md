@@ -21,7 +21,7 @@ $$\boldsymbol{x} = \begin{bmatrix}1 \\ 2\end{bmatrix}$$
 
 If the array of numbers is of length two or three, than one can visualize the vector as an arrow:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/EuclideanVector.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/EuclideanVector.png" alt="drawing" width="350"/></center>
 
 While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. Moreover, it is upon this more foundationational definition more complex spaces with additional structure can be constructed. 
 
