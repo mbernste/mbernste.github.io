@@ -1,5 +1,5 @@
 ---
-title: 'Vector spaces and their extensions: inner products, metrics, norms, and completeness'
+title: 'Vector spaces and their extensions: inner product spaces, Banach spaces, and Hilbert Spaces'
 date: 2021-10-25
 permalink: /posts/vector_spaces/
 tags:
