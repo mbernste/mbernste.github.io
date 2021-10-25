@@ -1,5 +1,5 @@
 ---
-title: 'Vector spaces and associated structures: inner products, norms, Cauchy sequences, and Hilbert spaces'
+title: 'Vector spaces and their extensions: inner product spaces, normed vector spaces, Banach spaces, and Hilbert spaces'
 date: 2021-10-25
 permalink: /posts/vector_spaces/
 tags:
