@@ -10,7 +10,7 @@ tags:
 
 THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
-_The concept of a vector space is a foundational concept in mathematics, physics, and the data sciences. In this post, we first present and explain the definition of a vector space and then go on to describe additional mathematical structures that can be built atop vector spaces in order to create ever-more powerful concepts. From vector spaces, we will define inner product spaces, normed vector spaces, Banach spaces, and finally, Hilbert spaces, which are generalization of Euclidean spaces._
+_The concept of a vector space is a foundational concept in mathematics, physics, and the data sciences. In this post, we first present and explain the definition of a vector space and then go on to describe additional mathematical structures that can be built atop vector spaces in order to create ever-more powerful concepts. From vector spaces, we will define inner product spaces, normed vector spaces, Banach spaces, and finally, Hilbert spaces, which generalize Euclidean spaces._
 
 Introduction
 ------------
@@ -25,17 +25,17 @@ If the array of numbers is of length two or three, than one can visualize the ve
 
 While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. Moreover, it is upon this more foundationational definition more complex spaces with additional structure can be constructed. 
 
-In this post, we will dig into vector spaces and then will proceed to define and discuss the following mathematical structures that build upon vector spaces:
+In this post, we will dig into vector spaces and then will proceed to define and discuss extended structures built atop vector spaces. Importantly, in this post we will highlight how each of these mathematical constructs generalizes a more elementary idea; however it is in this generalization that these ideas hold their power. Specifically, we will discuss the following constructs:
 
-1. Vector spaces
-2. Inner product spaces
-3. Normed vector spaces
-4. Banach spaces
-5. Hilbert spaces
+1. **Vector spaces:** generalize coordinate vectors
+2. **Metric spaces:** generalize the notion of "distance"
+3. **Complete vector spaces:** generalize spaces that lack "holes" in them
+4. **Normed vector spaces:** generalizes the notion of "magnitude"
+5. **Banach spaces:** complete vector spaces in which the norm acts as the distance metric
+6. **Inner product spaces:** generalize the notation of "multiplication" between vectors
+7. **Hilbert spaces:** generalizes Euclidean spaces
 
-Importantly, in this post we will highlight how each of these mathematical constructs generalizes a more elementary idea; however it is in this generalization that these ideas hold their power. By being general, they can be used to model a wide variety of concepts and phenomena! For example, as we will see, inner products generalize the idea of "multiplication". Norms generalize the idea of "distance".  Banach spaces generalize the idea of a space that doesn't have any "holes" (such as the 3-dimensional volumetric world we live in). Hilbert spaces 0Euclidean spaces. 
-
-Let's get in to it.
+By being so general, these constructs can be used to model a wide variety of concepts and phenomena! Let's get in to it.
 
 Vector spaces
 -------------
@@ -61,6 +61,34 @@ At a more rigorous mathematical level, the notion of "scaling" is modeled by a [
 
 Axioms 1-5 of the definition describe how vectors can be added together. Axioms 6-10 describe how these vectors can be scaled using the field of scalars.
 
+Metric spaces
+-------------
+
+Normed vector spaces
+--------------------
+
+Complete spaces
+-------------
+
+A complete space extends metric vectors spaces in the following, relatively simple way: a Banach space is a normed vector space that is also **complete**. A vector space is **complete** if every **Cauchy sequence** of vectors converges on a vector that is also in the vector space. 
+
+Let's unravel this a bit. First, what is a Cauchy sequence? Roughly speaking, a Cauchy sequence is a sequence of vectors such that the distance between each subsequent pair of vectors shrinks until the distances between each successive pair becomes infinitesimally small. Stated more mathematically:
+
+<span style="color:#0060C6">**Definition 4 (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $$\forall m, n > N$$ it holds that $$d(\boldsymbol{x}_m, \boldsymbol{x}_{m}) < \epsilon$$.</span>
+
+We visualize this concept in the schematic below:
+  
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CauchySequence.png" alt="drawing" width="350"/></center>
+
+Here we show the first five elements of a Cauchy sequence in $$\mathbb{R}^2$$ that converge to a point represented by the grey vector. The vector space is complete if for every such sequence, the vector that the sequence is converging to (in this example, the grey vector) is also in the vector space. Thus, we have the following definitions:
+
+<span style="color:#0060C6">**Definition 5 (Complete vector space):** Given a vector space $(\mathcal{V}, \mathcal{F})$ and associated metric function $$d$$, the vector space is **complete** if for every Cauchy sequence, $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$, it holds that $\lim_{n \rightarrow \infty} \boldsymbol{x}_n \in \mathcal{V}$$.  
+  
+At a more intuitive level, the completeness of a vector space means that the vector space doesn't have any "holes" in it. That is, if you start approaching a point in the limit, you are gauranteed that the point you are approaching is also a valid point. It's not "missing" from the vector space.
+  
+Banach spaces
+-------------
+  
 Inner product spaces
 --------------------
 
@@ -77,33 +105,6 @@ is an **inner product** on the vector space if every $\boldsymbol{v}, \boldsymbo
 4. $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle \geq 0$ and $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle= 0 \iff \boldsymbol{v} = \boldsymbol{0}$
 
 
-Metric spaces
--------------
-
-Normed vector spaces
---------------------
-
-Complete spaces
--------------
-
-A complete space extends metric vectors spaces in the following, relatively simple way: a Banach space is a normed vector space that is also **complete**. A vector space is **complete** if every **Cauchy sequence** of vectors converges on a vector that is also in the vector space. 
-
-Let's unravel this a bit. First, what is a Cauchy sequence? Roughly speaking, a Cauchy sequence is a sequence of vectors such that the distance between each subsequent pair of vectors shrinks until the distances between each successive pair becomes infinitesimally small. Stated more mathematically:
-
-<span style="color:#0060C6">**Definition 4 (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $$\forall m, n > N$$ it holds that $$d(\boldsymbol{x}_m, \boldsymbol{x}_{m}) < \epsilon$$./span>
-
-We visualize this concept in the schematic below:
-  
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CauchySequence.png" alt="drawing" width="350"/></center>
-
-Here we show the first five elements of a Cauchy sequence in $$\mathbb{R}^2$$ that converge to a point represented by the grey vector. The vector space is complete if for every such sequence, the vector that the sequence is converging to (in this example, the grey vector) is also in the vector space. Thus, we have the following definitions:
-
-<span style="color:#0060C6">**Definition 5 (Complete vector space):** Given a vector space $(\mathcal{V}, \mathcal{F})$ and associated metric function $$d$$, the vector space is **complete** if for every Cauchy sequence, $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$, it holds that $\lim_{n \rightarrow \infty} \boldsymbol{x}_n \in \mathcal{V}$$.  
-  
-At a more intuitive level, the completeness of a vector space means that the vector space doesn't have any "holes" in it. That is, if you start approaching a point in the limit, you are gauranteed that the point you are approaching is also a valid point. It's not "missing" from the vector space.
-  
-Banach spaces
--------------
   
 Hilbert spaces
 --------------
