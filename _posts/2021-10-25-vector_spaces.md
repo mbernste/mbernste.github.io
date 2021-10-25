@@ -25,6 +25,9 @@ In this post, we will first present vector spaces and then will build upon this 
 
 Vector spaces
 -------------
+
+A **vector space** consists of an abstract set of elements, called **vectors** that can be added together and scaled.  The notion of "scaling" is modeled by a [field](https://en.wikipedia.org/wiki/Field_(mathematics)).  That is, a vector space involves a set of vectors $\mathcal{V}$ and a field of scalars $\mathcal{F}$ for which one can add together vectors in $\mathcal{V}$ as well as scale these vectors by elements in the field $\mathcal{F}$ according to the set of rules outlined in the following definition:
+
 Given a set of objects $\mathcal{V}$ called vectors and a field $\mathcal{F} := (C, +, \cdot, -, ^{-1}, 0, 1)$ where $C$ is the set of elements in the field, called scalars, the tuple $(\mathcal{V}, \mathcal{F})$ is a \textbf{vector space} if for all $\boldsymbol{v}, \boldsymbol{u}, \boldsymbol{w} \in \mathcal{V}$ and $c, d \in C$, it obeys the following ten axioms:  
 
 
@@ -38,3 +41,8 @@ Given a set of objects $\mathcal{V}$ called vectors and a field $\mathcal{F} := 
 8. $(c + d)\boldsymbol{u} = c\boldsymbol{u} + d\boldsymbol{u}$
 9. $c(d\boldsymbol{u}) = (cd)\boldsymbol{u}$
 10. $1\boldsymbol{u} = \boldsymbol{u}$
+
+Axioms 1-5 of the definition describe how vectors can be added together. Axioms 6-10 describe how these vectors can be scaled using the field of scalars.
+
+The Euclidean spaces defined by $\mathbb{R}^n$ are the most common examples of vector spaces.  The vector spaces $\mathbb{R}^2$ and $\mathbb{R}^3$ are easily visualized as arrows starting from the origin and provide intuition into most concepts involving vectors. 
+
