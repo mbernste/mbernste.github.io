@@ -1,5 +1,5 @@
 ---
-title: 'Vector spaces and their extensions: inner product spaces, normed vector spaces, Banach spaces, and Hilbert spaces'
+title: 'Vector spaces and their extensions'
 date: 2021-10-25
 permalink: /posts/vector_spaces/
 tags:
@@ -69,32 +69,41 @@ An **inner product space** is a vector space with a function, called an **inner 
 
 <span style="color:#0060C6">**Definition 2 (inner product):** Given a vector space $(\mathcal{V}, \mathcal{F})$, a function
 $$\langle ., .\rangle : \mathcal{V} \times \mathcal{V} \rightarrow \mathbb{R}$$
-is an \textbf{inner product} on the vector space if every $\boldsymbol{v}, \boldsymbol{u}, \boldsymbol{w} \in \mathcal{V}$ and $\alpha \in \mathcal{F}$ satisfy the following:</span>
+is an **inner product** on the vector space if every $\boldsymbol{v}, \boldsymbol{u}, \boldsymbol{w} \in \mathcal{V}$ and $\alpha \in \mathcal{F}$ satisfy the following:</span>
 
 1. $\langle \boldsymbol{v} + \boldsymbol{u}, \bold{w} \rangle = \langle \boldsymbol{v}, \boldsymbol{w} \rangle + \langle \boldsymbol{u}, \boldsymbol{w} \rangle$ 
 2. $\langle \alpha \boldsymbol{v}, \boldsymbol{w} \rangle = \alpha \langle \boldsymbol{v}, \boldsymbol{u} \rangle$ 
 3. $\langle \boldsymbol{v}, \boldsymbol{w} \rangle =  \langle \boldsymbol{w}, \boldsymbol{v} \rangle$ 
 4. $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle \geq 0$ and $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle= 0 \iff \boldsymbol{v} = \boldsymbol{0}$
 
+
+Metric spaces
+-------------
+
 Normed vector spaces
 --------------------
 
-Banach spaces
+Complete spaces
 -------------
 
-A Banach space extends normed vector spaces in the following, relatively simple way: a Banach space is a normed vector space that is also **complete**. A vector space is **complete** if every **Cauchy sequence** of vectors converges on a vector that is also in the vector space. 
+A complete space extends metric vectors spaces in the following, relatively simple way: a Banach space is a normed vector space that is also **complete**. A vector space is **complete** if every **Cauchy sequence** of vectors converges on a vector that is also in the vector space. 
 
 Let's unravel this a bit. First, what is a Cauchy sequence? Roughly speaking, a Cauchy sequence is a sequence of vectors such that the distance between each subsequent pair of vectors shrinks until the distances between each successive pair becomes infinitesimally small. Stated more mathematically:
 
-<span style="color:#0060C6">**Definition XXXXXX (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $$\forall m, n > N$$ it holds that $$||\boldsymbol{x}_m - \boldsymbol{x}_{m}|| < \epsilon$$./span>
+<span style="color:#0060C6">**Definition 4 (Cauchy sequence):** A **Cauchy sequence** is an infinite sequence of vectors $$\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$$ such that for $\forall \epsilon \in \mathbb{R}, \exists N$ such that $$\forall m, n > N$$ it holds that $$d(\boldsymbol{x}_m, \boldsymbol{x}_{m}) < \epsilon$$./span>
 
 We visualize this concept in the schematic below:
   
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CauchySequence.png" alt="drawing" width="350"/></center>
 
-Here we show the first five elements of a Cauchy sequence in $$\mathbb{R}^2$$ that converge to a point representing the vector in grey. The vector space is complete if for every such sequence, the vector that the sequence is converging on is also in the vector space.
+Here we show the first five elements of a Cauchy sequence in $$\mathbb{R}^2$$ that converge to a point represented by the grey vector. The vector space is complete if for every such sequence, the vector that the sequence is converging to (in this example, the grey vector) is also in the vector space. Thus, we have the following definitions:
+
+<span style="color:#0060C6">**Definition 5 (Complete vector space):** Given a vector space $(\mathcal{V}, \mathcal{F})$ and associated metric function $$d$$, the vector space is **complete** if for every Cauchy sequence, $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots$, it holds that $\lim_{n \rightarrow \infty} \boldsymbol{x}_n \in \mathcal{V}$$.  
   
 At a more intuitive level, the completeness of a vector space means that the vector space doesn't have any "holes" in it. That is, if you start approaching a point in the limit, you are gauranteed that the point you are approaching is also a valid point. It's not "missing" from the vector space.
+  
+Banach spaces
+-------------
   
 Hilbert spaces
 --------------
