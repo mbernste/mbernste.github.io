@@ -23,7 +23,7 @@ If the array of numbers is of length two or three, than one can visualize the ve
 
 
 
-While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. Moreover, it is upon this more foundationational definition upon which one can construct more complex spaces with additional structure. Moreover, because these definitions are abstract, they are more powerful; that is, they can be used to model [more than just Euclidean vectors](https://en.wikipedia.org/wiki/Examples_of_vector_spaces). For example, they can  model the structure among sets of [matrices](https://mbernste.github.io/posts/matrices/) or functions!
+While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. Moreover, it is upon this more foundationational definition more complex spaces with additional structure can be constructed. 
 
 In this post, we will dig into vector spaces and then will proceed to define and discuss the following mathematical structures that build upon vector spaces:
 
@@ -33,12 +33,18 @@ In this post, we will dig into vector spaces and then will proceed to define and
 4. Banach spaces
 5. Hilbert spaces
 
-This final structure, the Hilbert space, is a generalization of Euclidean space and thus, provides a powerful, abstract model to define all spaces that behave like Euclidean spaces. 
+Importantly, in this post we will highlight how each of these mathematical constructs generalizes a more elementary idea; however it is in this generalization that these ideas hold their power. By being general, they can be used to model a wide variety of concepts and phenomena! For example, as we will see, inner products generalize the idea of "multiplication". Norms generalize the idea of "distance".  Banach spaces generalize the idea of a space that doesn't have any "holes" (such as the 3-dimensional volumetric world we live in). Hilbert spaces 0Euclidean spaces. 
+
+Let's get in to it.
 
 Vector spaces
 -------------
 
-A **vector space** consists of an abstract set of elements, called **vectors** that can be added together and scaled.  The notion of "scaling" is modeled by a [field](https://en.wikipedia.org/wiki/Field_(mathematics)).  That is, a vector space involves a set of vectors $\mathcal{V}$ and a field of scalars $\mathcal{F}$ for which one can add together vectors in $\mathcal{V}$ as well as scale these vectors by elements in the field $\mathcal{F}$ according to the set of rules outlined in the following definition:
+As we alluded to before, vectors are usually introducted as arrays of numbers, and consequently, as arrows. These arrows can be added together, subtracted from one another, and scaled. This is depicted below:
+
+A **vector space** generalizes this notion of adding things together and scaling them. Any space that comprises such elements is a vector space and its constitent elements are called **vectors**.  
+
+At a more rigorous mathematical level, the notion of "scaling" is modeled by a [field](https://en.wikipedia.org/wiki/Field_(mathematics)) of scalars.  That is, a vector space involves a set of vectors $\mathcal{V}$ and a field of scalars $\mathcal{F}$ for which one can add together vectors in $\mathcal{V}$ as well as scale these vectors by elements in the field $\mathcal{F}$ according to a specific list of rules. These rules are spelled out in the definition for a vector space:
 
 <span style="color:#0060C6">**Definition 1 (vector space):** Given a set of objects $\mathcal{V}$ called vectors and a field $\mathcal{F} := (C, +, \cdot, -, ^{-1}, 0, 1)$ where $C$ is the set of elements in the field, called scalars, the tuple $(\mathcal{V}, \mathcal{F})$ is a **vector space** if for all $\boldsymbol{v}, \boldsymbol{u}, \boldsymbol{w} \in \mathcal{V}$ and $c, d \in C$, it obeys the following ten axioms:</span>  
 
