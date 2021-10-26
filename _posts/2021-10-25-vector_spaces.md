@@ -77,7 +77,7 @@ Normed vector spaces
 Complete spaces
 -------------
 
-A complete space extends metric vectors spaces in the following, relatively simple way: a Banach space is a normed vector space that is also **complete**. A vector space is **complete** if every **Cauchy sequence** of vectors converges on a vector that is also in the vector space. 
+A vector space is **complete** if every **Cauchy sequence** of vectors converges on a vector that is also in the vector space. 
 
 Let's unravel this a bit. First, what is a Cauchy sequence? Roughly speaking, a Cauchy sequence is a sequence of vectors such that the distance between each subsequent pair of vectors shrinks until the distances between each successive pair becomes infinitesimally small. Stated more mathematically:
 
@@ -99,8 +99,7 @@ Banach spaces
 Inner product spaces
 --------------------
 
-An **inner product space** is a vector space with a function, called an **inner product** that associates each pair of vectors in the space with a scalar quantity.  The inner product is denoted as $\langle ., .\rangle$.  
-
+Intuitively, an inner product is generalizes multiplication of numbers to vectors.  More abstractly, multiplication on the real numbers constitutes a ring.  Axioms 1 and 2 are called the \textbf{linearity} properties, which preserves the right-distributivity of multiplication that we see in a ring.  That is, $(a+b)c = ac + bc$.  An **inner product space** is a vector space with a function, called an **inner product** that associates each pair of vectors in the space with a scalar quantity.  The inner product is denoted as $\langle ., .\rangle$.  
 
 <span style="color:#0060C6">**Definition 2 (inner product):** Given a vector space $(\mathcal{V}, \mathcal{F})$, a function
 $$\langle ., .\rangle : \mathcal{V} \times \mathcal{V} \rightarrow \mathbb{R}$$
@@ -112,6 +111,12 @@ is an **inner product** on the vector space if every $\boldsymbol{v}, \boldsymbo
 4. $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle \geq 0$ and $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle= 0 \iff \boldsymbol{v} = \boldsymbol{0}$
 
 
+
+Axiom 3 is called the \textbf{symmetric} property of the inner product.  Intuitively, a product should not depend on the order of the operands.  Note that for complex vector spaces, this axiom would be \textbf{conjugate symmetry}.  That is,
+$$\langle \bold{v}, \bold{w} \rangle = \overline{ \langle \bold{w}, \bold{v} \rangle}$$
+The conjugate is used for complex vector spaces.  In real valued vector spaces, the conjugate can be ignored.
+\\\\
+Axiom 4 is called the \textbf{positive definite} property.  Intuitively, the product of a vector with itself should be greater than zero.  Only the zero-vector multiplied by itself should result in the zero-vector.
   
 Hilbert spaces
 --------------
