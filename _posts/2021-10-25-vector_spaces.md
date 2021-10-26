@@ -23,8 +23,7 @@ If the array of numbers is of length two or three, than one can visualize the ve
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/EuclideanVector.png" alt="drawing" width="300"/></center>
 
-While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. In this post, we will dig into the abstract definition for vector spaces and discuss a few of their properties. Moreover, we will look at a few examples of vector spaces and see how the formal definition generalizes the idea of vectors to other mathematical constructs as well, such as matrices and functions.
-
+While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. In this post, we will dig into the abstract definition for vector spaces and discuss a few of their properties. Moreover, we will look at a few examples of vector spaces outside of the usual Euclidean vectors and see how the formal definition generalizes to other mathematical constructs such as [matrices](https://mbernste.github.io/posts/matrices/) and functions.
 
 Formal definition
 -----------------
