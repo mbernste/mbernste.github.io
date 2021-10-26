@@ -70,7 +70,9 @@ for any $c \in \mathcal{F}$. This is analogous to the fact that zero multiplied 
 Examples of vector spaces
 -------------------------
 
-**Functions**
+**The real numbers**
 
 **Matrices**
+
+**Functions**
 
