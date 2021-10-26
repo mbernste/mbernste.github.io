@@ -97,8 +97,8 @@ Recall the result of [matrix multiplication](https://mbernste.github.io/posts/ma
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/inverse_matrix_mult.png" alt="drawing" width="900"/></center>
 
-Appendix
---------
+Appendix: Proofs of properties of invertible matrices
+-----------------------------------------------------
 
 <span style="color:#0060C6">**Theorem 1 (Null space of an invertible matrix):** The null space of an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ consists of only the zero vector $\boldsymbol{0}$.</span>
 
