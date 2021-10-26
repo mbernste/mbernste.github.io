@@ -54,10 +54,10 @@ Properties
 
 Here are several properties of vector spaces that both provide insight into how they capture the notions of adding and scaling:
 
-1. **The zero vector is unique** (Theorem 1 in Appendix). There is only one distinct zero vector in a vector space.  
-2. **Any vector multiplied by the zero scalar is the zero vector** (Theorem~\ref{thrm:zero_mult_vec}).The zero scalar converts any vector into the zero vector.  That is, given a vector $\boldsymbol{v}$, it holds that
+1. **The zero vector is unique** (Theorem 1 in the Appendix). There is only one distinct zero vector in a vector space. Notice in a Euclidean vector space, there is only one point at the origin, which represents the zero vector in Euclidean spaces. 
+2. **Any vector multiplied by the zero scalar is the zero vector** (Theorem 2 in the Appendix).The zero scalar converts any vector into the zero vector.  That is, given a vector $\boldsymbol{v}$, it holds that
 $$0\boldsymbol{v} = \boldsymbol{0}$$  
-This is analogous to how any number multiplied by zero becomes zero.
+This generalizes the notion of how anything multiplied by zero should become zero.
 3. **The negative of a vector is unique** (Theorem~\ref{thrm:neg_vec_unique}).  Given a vector $\boldsymbol{v}$, we denote its negative vector as $-\boldsymbol{v}$.  This is analogous to each number $x$ having a matching negative number $-x$ that lies $|x|$ distance from 0 on the opposite side of 0.
 4. **Multiplying a negative vector by the scalar -1 produces its negative vector** (Theorem~\ref{thrm:produce_neg_vec}).  That is, given a vector $\boldsymbol{v}$
 $$-1\boldsymbol{v} = -\boldsymbol{v}$$
