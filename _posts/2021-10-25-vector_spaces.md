@@ -55,22 +55,10 @@ Properties
 Here are several properties of vector spaces that both provide insight into how they capture the notions of adding and scaling:
 
 1. **The zero vector is unique** (Theorem 1 in the Appendix). There is only one distinct zero vector in a vector space. Notice in a Euclidean vector space, there is only one point at the origin, which represents the zero vector in Euclidean spaces. 
-2. **Any vector multiplied by the zero scalar is the zero vector** (Theorem 2 in the Appendix).The zero scalar converts any vector into the zero vector.  That is, given a vector $\boldsymbol{v}$, it holds that
-
-$$0\boldsymbol{v} = \boldsymbol{0}$$  
-
-This generalizes the notion of how anything multiplied by zero should become zero.
-3. **The negative of a vector is unique** (Theorem 3 in the Appendix).  Given a vector $\boldsymbol{v}$, we denote its negative vector as $-\boldsymbol{v}$.  This is analogous to each number $x$ having a matching negative number $-x$ that lies $|x|$ distance from 0 on the opposite side of 0.
-4. **Multiplying a negative vector by the scalar -1 produces its negative vector** (Theorem 4 in the Appendix).  That is, given a vector $\boldsymbol{v}$
-
-$$-1\boldsymbol{v} = -\boldsymbol{v}$$
-
-This is analogous to the fact that if you multiply any number $x$ by $-1$ you get the number $-x$ that lies $|x|$ distance from 0 on the opposite side of 0.
-5. **The zero vector multiplied by any scalar is the zero vector** (Theorem 5 in the Appendix).  The zero vector remains the zero vector despite being multiplied by any scalar. That is,
-
-$$c\boldsymbol{0} = \boldsymbol{0}$$
-
-for any $c \in \mathcal{F}$. This is analogous to the fact that zero multiplied by any number remains zero.
+2. **Any vector multiplied by the zero scalar is the zero vector** (Theorem 2 in the Appendix).The zero scalar converts any vector into the zero vector.  That is, given a vector $\boldsymbol{v}$, it holds that $0\boldsymbol{v} = \boldsymbol{0}$$. This generalizes the notion of how anything multiplied by zero should become zero.
+3. **The negative of a vector is unique** (Theorem 3 in the Appendix).  Given a vector $\boldsymbol{v}$, we denote its negative vector as $-\boldsymbol{v}$.  This is analogous to each number $x$ having a matching negative number $-x$ that lies $\|x\|$ distance from 0 on the opposite side of 0.
+4. **Multiplying a negative vector by the scalar -1 produces its negative vector** (Theorem 4 in the Appendix).  That is, given a vector $\boldsymbol{v}$, it holds that $-1\boldsymbol{v} = -\boldsymbol{v}$. This is analogous to the fact that if you multiply any number $x$ by $-1$ you get the number $-x$ that lies \|x\|$ distance from 0 on the opposite side of 0.
+5. **The zero vector multiplied by any scalar is the zero vector** (Theorem 5 in the Appendix).  The zero vector remains the zero vector despite being multiplied by any scalar. That is, $c\boldsymbol{0} = \boldsymbol{0}$ for any $c \in \mathcal{F}$. This is analogous to the fact that zero multiplied by any number remains zero.
 6. **The only vector whose negative is not distinct from itself is the zero vector** (Theorem 6 in the Appendix). For every vector other than the zero vector, its negative vector is a distinct vector in the vector space.  For the zero vector, its negative is itself.  This is analogous to the fact that for any number $x \neq 0$, the number $-x$ is a distinct number from $x$ that lies on the opposite side of 0. However, for $x = 0$, $-x = x$.
 
 Examples of vector spaces
