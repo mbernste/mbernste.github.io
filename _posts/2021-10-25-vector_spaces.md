@@ -10,7 +10,7 @@ tags:
 
 THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
-_The concept of a vector space is a foundational concept in mathematics, physics, and the data sciences. In this post, we first present and explain the definition of a vector space and then go on to describe additional mathematical structures that can be built atop vector spaces in order to create ever-more powerful concepts. From vector spaces, we will define inner product spaces, normed vector spaces, Banach spaces, and finally, Hilbert spaces, which generalize Euclidean spaces._
+_The concept of a vector space is a foundational concept in mathematics, physics, and the data sciences. In this post, we first present and explain the definition of a vector space and then go on to describe properties of vector spaces. Lastly, we present a few examples of vector spaces that go beyond the usual Euclidean vectors that are often taught in introductory math and science courses._
 
 Introduction
 ------------
