@@ -125,7 +125,7 @@ $\square$
 
 **Proof:**
 
-$$\begin{align*}\boldsymbol{v} + (-1)\boldsymbol{v} &= (1)\boldsymbol{v} + (-1)\boldsymbol{v} && \text{by Axiom 10} \\ &= (1-1)\boldsymbol{v} && \text{by Axiom 8} \\ &= 0\boldsymbol{v} \\ &= \boldsymbol{0} && \text{by Theorem 2\end{align*}$$
+$$\begin{align*}\boldsymbol{v} + (-1)\boldsymbol{v} &= (1)\boldsymbol{v} + (-1)\boldsymbol{v} && \text{by Axiom 10} \\ &= (1-1)\boldsymbol{v} && \text{by Axiom 8} \\ &= 0\boldsymbol{v} \\ &= \boldsymbol{0} && \text{by Theorem 2}\end{align*}$$
 
 Then, by Axiom 5, it must be that $(-1)\boldsymbol{v} = -\boldsymbol{v}$.
 
