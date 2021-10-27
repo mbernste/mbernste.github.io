@@ -120,3 +120,14 @@ We need only prove $\boldsymbol{v} + \boldsymbol{a} = \boldsymbol{0} \implies \b
 $$\begin{align*}\boldsymbol{v} + \boldsymbol{a} &= \boldsymbol{0} \\ \implies -\boldsymbol{v} + \boldsymbol{v} + \boldsymbol{a} &= -\boldsymbol{v} + \boldsymbol{0} \\ \implies [-\boldsymbol{v} + \boldsymbol{v}] + \boldsymbol{a} &= -\boldsymbol{v} \\ \implies \boldsymbol{0} + \boldsymbol{a} &= -\boldsymbol{v} &&\text{by Axiom 5} \\ \implies \boldsymbol{a} &= -\boldsymbol{v} && \text{by Axiom 4}\end{align*}$$
 
 $\square$
+
+<span style="color:#0060C6">**Theorem 4 (Derivation of a vector's negative):** Given a vector $\boldsymbol{v} \in \mathcal{V}$, it's negative is $(-1)\boldsymbol{v}$.  That is, $-\boldsymbol{v} = (-1)\boldsymbol{v}$</span>
+
+**Proof:**
+
+$$\begin{align*}\boldsymbol{v} + (-1)\boldsymbol{v} &= (1)\boldsymbol{v} + (-1)\boldsymbol{v} && \text{by Axiom 10} \\ &= (1-1)\boldsymbol{v} && \text{by Axiom 8} \\ &= 0\boldsymbol{v} \\ &= \boldsymbol{0} && \text{by Theorem 2\end{align*}$$
+
+Then, by Axiom 5, it must be that $(-1)\boldsymbol{v} = -\boldsymbol{v}$.
+
+$\square$
+
