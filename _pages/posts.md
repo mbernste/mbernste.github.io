@@ -19,6 +19,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 ## Linear algebra
 
+[Vector spaces](https://mbernste.github.io/posts/vector_spaces/)  
 [Introducing matrices](https://mbernste.github.io/posts/matrices/)  
 [Matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/)  
 [Matrices as functions](https://mbernste.github.io/posts/matrices_as_functions/)  
