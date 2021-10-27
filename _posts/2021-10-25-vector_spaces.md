@@ -54,7 +54,7 @@ Axioms 1-5 of the definition describe how vectors can be added together. Axioms 
 Properties
 ----------
 
-Here are several properties of vector spaces that both provide insight into how they capture the notions of adding and scaling:
+These axioms outlined in the definition for a vector space may seem somewhat arbitrary (at least, they did for me); however, as we will show, these axioms are sufficient for ensuring that vector spaces have all of the properties that we intuitively associated with adding, subtracting, and scaling Euclidean vectors. Specifically, from these axioms, we can derive the following properties:
 
 1. **The zero vector is unique** (Theorem 1 in the Appendix). There is only one distinct zero vector in a vector space. Notice in a Euclidean vector space, there is only one point at the origin, which represents the zero vector in Euclidean spaces. 
 2. **Any vector multiplied by the zero scalar is the zero vector** (Theorem 2 in the Appendix).The zero scalar converts any vector into the zero vector.  That is, given a vector $\boldsymbol{v}$, it holds that $0\boldsymbol{v} = \boldsymbol{0}$. This generalizes the notion of how multiplying a vector in a Euclidean space by zero should shrink the vector to the origin.
