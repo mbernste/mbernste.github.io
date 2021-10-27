@@ -88,18 +88,17 @@ This may seem a bit confusing because as we discuss in [another blog post](https
 
 Sets of functions can also form vector spaces! In fact, the real power in the definition for a vector space reveals itself when dealing with functions, and the fact that some sets of functions form vector spaces lies at the foundation for many fundamental ideas in mathematics, physics, and the data sciences such as [Fourier transforms](https://en.wikipedia.org/wiki/Fourier_transform) and [reproducing kernel Hilbert spaces](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space).
 
-For example, the set of all continuous, real-valued functions forms a vector space. Intuitvely, we see that we can add functions together:
+For example, the set of all continuous, real-valued functions forms a vector space. Intuitively we see that such functions act like vectors in that we can add them together:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/AddFunctionsLikeVectors.png" alt="drawing" width="600"/></center>
 
-We can scale functions:
+We can also scale functions. In the following figure, the function $g$ is scaled by $c$:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ScaleFunctionLikeVector.png" alt="drawing" width="300"/></center>
 
-The zero function acts as the zero vector: 
+Lastly, the zero function acts as the zero vector. Here we depict the zero function, which outputs 0 for all inputs: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ZeroFunctionLikeVector.png" alt="drawing" width="300"/></center>
-
 
 Appendix: Proofs of properties of vector spaces
 -----------------------------------------------
