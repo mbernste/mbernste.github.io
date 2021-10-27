@@ -144,7 +144,7 @@ $\square$
 
 **Proof:**
 
-$$\begin{align*}\boldsymbol{a} + -\boldsymbol{a} &= \boldsymbol{0} && \text{by Axiom 5} \\ \boldsymbol{a} + \boldsymbol{a} &= \boldsymbol{0} && \text{assume $\boldsymbol{a} = -\boldsymbol{a}$} \\ \implies 2\boldsymbol{a} &= \boldsymbol{0} \\ \implies \boldsymbol{a} &= \boldsymbol{0} && \text{by Theorem 5\end{align*}$$
+$$\begin{align*}\boldsymbol{a} + -\boldsymbol{a} &= \boldsymbol{0} && \text{by Axiom 5} \\ \boldsymbol{a} + \boldsymbol{a} &= \boldsymbol{0} && \text{assume $\boldsymbol{a} = -\boldsymbol{a}$} \\ \implies 2\boldsymbol{a} &= \boldsymbol{0} \\ \implies \boldsymbol{a} &= \boldsymbol{0} && \text{by Theorem 5}\end{align*}$$
 
 Thus, if we assume $\boldsymbol{a} = -\boldsymbol{a}$, then $\boldsymbol{a}$ must be the zero vector.
 
