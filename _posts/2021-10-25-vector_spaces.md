@@ -88,6 +88,14 @@ This may seem a bit confusing because as we discuss in [another blog post](https
 
 **Functions**
 
+Sets of functions themselves can form vector spaces! In fact, the real power of the definition for a vector space shows itself when dealing with functions. The fact that some sets of functions form vector spaces lays the foundation for many fundamental ideas in mathematics, physics, and statistics such as [Fourier transforms](https://en.wikipedia.org/wiki/Fourier_transform) and [reproducing kernel hilbert spaces](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space).
+
+For example, the set of all continuous, real-valued functions forms a vector space. Intuitvely, we see that we can add functions together:
+
+We can scale functions:
+
+The zero function acts as the zero vector: 
+
 Appendix: Proofs of properties of vector spaces
 -----------------------------------------------
 
