@@ -68,7 +68,21 @@ Examples of vector spaces
 
 **The real numbers**
 
+It turns out that the real numbers themsevels (when equipped with standard addition and multiplication) are themselves a vector space in which the real numbers are both vectors and scalars! This example may be a bit trivial and silly; however, I like it because it highlights the generality of the definition of a vector space. In this vector space, the number zero acts as the zero vector. 
+
 **Matrices**
+
+Although generally not thought of as vectors, the space of real-valued [matrices](https://mbernste.github.io/posts/matrices/) of a fixed size $$\math{R}^{m \times n}$$ form a vector space in which the matrices are vectors. Intuitively, you can add matrices together:
+
+$$\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix} + \begin{bmatrix}3 & 2 \\ 2 & 5\end{bmatrix} = \begin{bmatrix}4 & 4 \\ 5 & 9\end{bmatrix}$$
+
+You can also scale them:
+
+$$2\begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix} = \begin{bmatrix}2 & 4 \\ 6 & 8\end{bmatrix}$$
+
+The zero matrix acts as the zero vector:
+
+$$\begin{bmatrix}0 & 0 \\ 0 & 0\end{bmatrix}$$
 
 **Functions**
 
