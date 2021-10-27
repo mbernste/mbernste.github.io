@@ -96,7 +96,12 @@ For example, the set of all continuous, real-valued functions forms a vector spa
 
 We can scale functions:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ScaleFunctionLikeVector.png" alt="drawing" width="300"/></center>
+
 The zero function acts as the zero vector: 
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ZeroFunctionLikeVector.png" alt="drawing" width="300"/></center>
+
 
 Appendix: Proofs of properties of vector spaces
 -----------------------------------------------
