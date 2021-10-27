@@ -109,3 +109,14 @@ $$\begin{align*}c\boldsymbol{v} &= (c + 0)\boldsymbol{v} \\ &= c\boldsymbol{v} +
 Our assumption assumed that $\boldsymbol{a} \neq \boldsymbol{0}$ must be false because by Theorem 1 the only vector $\boldsymbol{a}$ for which $c\boldsymbol{v} + \boldsymbol{a} = c\boldsymbol{v}$ would be true is the zero-vector. 
 
 $\square$
+
+
+<span style="color:#0060C6">**Theorem 3 (Each vector has a unique negative vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$ and vector $\boldsymbol{v} \in \mathcal{V}$, its negative, $-\boldsymbol{v}$, is unique.  That is, $\boldsymbol{v} + \boldsymbol{a} = \boldsymbol{0} \iff \boldsymbol{a} = -\boldsymbol{v}$</span>
+
+**Proof:**
+
+We need only prove $\boldsymbol{v} + \boldsymbol{a} = \boldsymbol{0} \implies \boldsymbol{a} = -\boldsymbol{v}$.  The other direction is stated in the axioms for the definition of a vector space.
+
+$$\begin{align*}\boldsymbol{v} + \boldsymbol{a} &= \boldsymbol{0} \\ \implies -\boldsymbol{v} + \boldsymbol{v} + \boldsymbol{a} &= -\boldsymbol{v} + \boldsymbol{0} \\ \implies [-\boldsymbol{v} + \boldsymbol{v}] + \boldsymbol{a} &= -\boldsymbol{v} \\ \implies \boldsymbol{0} + \boldsymbol{a} &= -\boldsymbol{v} &&\text{by Axiom 5} \\ \implies \boldsymbol{a} &= -\boldsymbol{v} && \text{by Axiom 4}\end{align*}$$
+
+$\square$
