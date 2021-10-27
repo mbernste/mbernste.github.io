@@ -87,8 +87,7 @@ Then, this implies that
 
 $$\boldsymbol{a} + \boldsymbol{0} = \boldsymbol{0}$$
 
-However, Axiom 4 of the definition for a vector space states that for the zero-vector 
-$$\boldsymbol{a} + \boldsymbol{0} = \boldsymbol{a}$$
+However, Axiom 4 of the definition for a vector space states that if a vector is the zero-vector, it must be that $\boldsymbol{a} + \boldsymbol{0} = \boldsymbol{a}$.
 
 Since $\boldsymbol{a} \neq \boldsymbol{0}$ , we reach a contradiction.  Therefore, there does not exist a vector $\boldsymbol{a} \neq \boldsymbol{0}$ for which  $\forall \boldsymbol{v} \in \mathcal{V} \ \ \ \boldsymbol{a} + \boldsymbol{v} = \boldsymbol{v}$.  Thus, the zero-vector is unique.
 
