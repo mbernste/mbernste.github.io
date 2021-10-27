@@ -72,3 +72,24 @@ Examples of vector spaces
 
 **Functions**
 
+Appendix: Proofs of properties of vector spaces
+-----------------------------------------------
+
+<span style="color:#0060C6">**Theorem 1 (Uniqueness of zero vector)** Given vector space $(\mathcal{V}, \mathcal{F})$, the zero vector is unique.</span>
+
+**Proof:**
+
+Assume for the sake of contradiction that there exists a vector $\boldsymbol{a}$ such that $\boldsymbol{a} \neq \boldsymbol{0}$ and that $\forall \boldsymbol{v} \in \mathcal{V}$
+
+$$\boldsymbol{a} + \boldsymbol{v} = \boldsymbol{v}$$
+
+Then, this implies that 
+
+$$\boldsymbol{a} + \boldsymbol{0} = \boldsymbol{0}$$
+
+However, Axiom 4 of the definition for a vector space states that for the zero-vector 
+$$\boldsymbol{a} + \boldsymbol{0} = \boldsymbol{a}$$
+
+Since $\boldsymbol{a} \neq \boldsymbol{0}$ , we reach a contradiction.  Therefore, there does not exist a vector $\boldsymbol{a} \neq \boldsymbol{0}$ for which  $\forall \boldsymbol{v} \in \mathcal{V} \ \ \ \boldsymbol{a} + \boldsymbol{v} = \boldsymbol{v}$.  Thus, the zero-vector is unique.
+
+$\square$
