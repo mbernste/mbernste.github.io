@@ -88,7 +88,7 @@ This may seem a bit confusing because as we discuss in [another blog post](https
 
 **Functions**
 
-Sets of functions can also form vector spaces! In fact, the real power in the definition for a vector space reveals itself when dealing with functions, and the fact that some sets of functions form vector spaces lies at the foundation for many fundamental ideas in mathematics, phyiscs (e.g., [Fourier transforms](https://en.wikipedia.org/wiki/Fourier_transform)) and machine learning (such as [kernel methods](https://en.wikipedia.org/wiki/Kernel_method) which depend on special vector spaces called [reproducing kernel Hilbert spaces](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space)).
+Sets of functions can also form vector spaces! In fact, the real power in the definition for a vector space reveals itself when dealing with functions, and the fact that some sets of functions form vector spaces lies at the foundation for many fundamental ideas in mathematics, physics, and the data sciences such as [Fourier transforms](https://en.wikipedia.org/wiki/Fourier_transform) and [reproducing kernel Hilbert spaces](https://en.wikipedia.org/wiki/Reproducing_kernel_Hilbert_space).
 
 For example, the set of all continuous, real-valued functions forms a vector space. Intuitvely, we see that we can add functions together:
 
