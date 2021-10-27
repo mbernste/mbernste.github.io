@@ -75,7 +75,7 @@ Examples of vector spaces
 Appendix: Proofs of properties of vector spaces
 -----------------------------------------------
 
-<span style="color:#0060C6">**Theorem 1 (Uniqueness of zero vector)** Given vector space $(\mathcal{V}, \mathcal{F})$, the zero vector is unique.</span>
+<span style="color:#0060C6">**Theorem 1 (Uniqueness of zero vector):** Given vector space $(\mathcal{V}, \mathcal{F})$, the zero vector is unique.</span>
 
 **Proof:**
 
@@ -91,5 +91,21 @@ However, Axiom 4 of the definition for a vector space states that for the zero-v
 $$\boldsymbol{a} + \boldsymbol{0} = \boldsymbol{a}$$
 
 Since $\boldsymbol{a} \neq \boldsymbol{0}$ , we reach a contradiction.  Therefore, there does not exist a vector $\boldsymbol{a} \neq \boldsymbol{0}$ for which  $\forall \boldsymbol{v} \in \mathcal{V} \ \ \ \boldsymbol{a} + \boldsymbol{v} = \boldsymbol{v}$.  Thus, the zero-vector is unique.
+
+$\square$
+
+<span style="color:#0060C6">**Theorem 2 (The product of the zero scalar and any vector is the zero vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$, it holds that $\forall \bold{v} \in \mathcal{V}, 0\bold{v} = \bold{0}$</span>
+
+**Proof:**
+  
+Assume for the sake of contradiction that there exists a vector $\boldsymbol{a} \neq \boldsymbol{0}$ such that
+
+$$0\boldsymbol{v} = \boldsymbol{a}$$
+
+Now, for any scalar $c \neq 0$, we have
+
+$$\begin{align*}c\boldsymbol{v} &= (c + 0)\boldsymbol{v} \\ &= c\boldsymbol{v} + 0\boldsymbol{v} && \text{by Axiom 8} \\ &=  c\boldsymbol{v} + \boldsymbol{a}\end{align*}$$
+
+Our assumption assumed that $\boldsymbol{a} \neq \boldsymbol{0}$ must be false because by Theorem 1 the only vector $\boldsymbol{a}$ for which $c\boldsymbol{v} + \boldsymbol{a} = c\boldsymbol{v}$ would be true is the zero-vector. 
 
 $\square$
