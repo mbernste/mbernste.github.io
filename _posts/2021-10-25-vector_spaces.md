@@ -92,6 +92,8 @@ Sets of functions can also form vector spaces! In fact, the real power in the de
 
 For example, the set of all continuous, real-valued functions forms a vector space. Intuitvely, we see that we can add functions together:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/AddFunctionsLikeVectors.png" alt="drawing" width="600"/></center>
+
 We can scale functions:
 
 The zero function acts as the zero vector: 
