@@ -139,3 +139,13 @@ $$\begin{align*}\boldsymbol{0}  + \boldsymbol{0} &= \boldsymbol{0}  && \text{by 
 By Theorem 1, the only vector $\boldsymbol{a}$ in $\mathcal{V}$ for which $\boldsymbol{a} + \boldsymbol{v} = \boldsymbol{v}$ for all vectors $\boldsymbol{v} \in \mathcal{V}$ is the zero vector $\boldsymbol{0}$.  Thus, $c\boldsymbol{0} = \boldsymbol{0}$. 
 
 $\square$
+
+<span style="color:#0060C6">**Theorem 6 (The zero vector is its own negative):** Given a vector space $(\mathcal{V}, \mathcal{F})$, it holds that $-\boldsymbol{0} = \boldsymbol{0}$</span>
+
+**Proof:**
+
+$$\begin{align*}\boldsymbol{a} + -\boldsymbol{a} &= \boldsymbol{0} && \text{by Axiom 5} \\ \boldsymbol{a} + \boldsymbol{a} &= \boldsymbol{0} && \text{assume $\boldsymbol{a} = -\boldsymbol{a}$} \\ \implies 2\boldsymbol{a} &= \boldsymbol{0} \\ \implies \boldsymbol{a} &= \boldsymbol{0} && \text{by Theorem 5\end{align*}$$
+
+Thus, if we assume $\boldsymbol{a} = -\boldsymbol{a}$, then $\boldsymbol{a}$ must be the zero vector.
+
+$\square$
