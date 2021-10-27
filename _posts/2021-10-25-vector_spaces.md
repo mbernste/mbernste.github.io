@@ -34,7 +34,7 @@ As we mentioned before, vectors are usually introduced as arrays of numbers, and
 
 A **vector space** generalizes this notion of adding and scaling things that behave like Euclidean vectors.   
 
-At a more rigorous mathematical level, the notion of "scaling" is modeled by a [field](https://en.wikipedia.org/wiki/Field_(mathematics)) of scalars.  That is, a vector space involves a set of vectors $\mathcal{V}$ and a field of scalars $\mathcal{F}$ for which one can add together vectors in $\mathcal{V}$ as well as scale these vectors by elements in the field $\mathcal{F}$ according to a specific list of rules. These rules are spelled out in the definition for a vector space:
+At a more rigorous mathematical level, a vector space consists of both a set of vectors $\mathcal{V}$ and a [field](https://en.wikipedia.org/wiki/Field_(mathematics)) of scalars $\mathcal{F}$ for which one can add together vectors in $\mathcal{V}$ as well as scale these vectors by elements in the field $\mathcal{F}$ according to a specific list of rules (in most cases, the field of scalars are the real numbers, $\mathbb{R}$). These rules are spelled out in the definition for a vector space:
 
 <span style="color:#0060C6">**Definition 1 (vector space):** Given a set of objects $\mathcal{V}$ called vectors and a field $\mathcal{F} := (C, +, \cdot, -, ^{-1}, 0, 1)$ where $C$ is the set of elements in the field, called scalars, the tuple $(\mathcal{V}, \mathcal{F})$ is a **vector space** if for all $\boldsymbol{v}, \boldsymbol{u}, \boldsymbol{w} \in \mathcal{V}$ and $c, d \in C$, the following ten axioms hold:</span>  
 
