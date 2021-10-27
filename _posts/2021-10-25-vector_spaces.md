@@ -131,3 +131,11 @@ Then, by Axiom 5, it must be that $(-1)\boldsymbol{v} = -\boldsymbol{v}$.
 
 $\square$
 
+<span style="color:#0060C6">**Theorem 5 (The zero vector multiplied by any scalar is the zero vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$, it holds that $c\boldsymbol{0} = \boldsymbol{0} \iff \boldsymbol{a} = \boldsymbol{0}$</span>
+
+**Proof:**
+$$\begin{align*}\boldsymbol{0}  + \boldsymbol{0} &= \boldsymbol{0}  && \text{by Axiom 4} \\ c(\boldsymbol{0}  + \boldsymbol{0}) &= c\boldsymbol{0} \\ c\boldsymbol{0}  + c\boldsymbol{0} &= c\boldsymbol{0} && \text{by Axiom 8}\end{align*}$$
+
+By Theorem 1, the only vector $\boldsymbol{a}$ in $\mathcal{V}$ for which $\boldsymbol{a} + \boldsymbol{v} = \boldsymbol{v}$ for all vectors $\boldsymbol{v} \in \mathcal{V}$ is the zero vector $\boldsymbol{0}$.  Thus, $c\boldsymbol{0} = \boldsymbol{0}$. 
+
+$\square$
