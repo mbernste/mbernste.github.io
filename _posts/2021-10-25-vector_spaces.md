@@ -93,7 +93,7 @@ Since $\boldsymbol{a} \neq \boldsymbol{0}$ , we reach a contradiction.  Therefor
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 2 (The product of the zero scalar and any vector is the zero vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$, it holds that $\forall \boldsymbol{v} \in \mathcal{V}, 0\boldsymbol{v} = \boldsymbol{0}$</span>
+<span style="color:#0060C6">**Theorem 2 (The product of the zero scalar and any vector is the zero vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$, it holds that $\forall \boldsymbol{v} \in \mathcal{V}, 0\boldsymbol{v} = \boldsymbol{0}$.</span>
 
 **Proof:**
   
@@ -110,7 +110,7 @@ Our assumption assumed that $\boldsymbol{a} \neq \boldsymbol{0}$ must be false b
 $\square$
 
 
-<span style="color:#0060C6">**Theorem 3 (Each vector has a unique negative vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$ and vector $\boldsymbol{v} \in \mathcal{V}$, its negative, $-\boldsymbol{v}$, is unique.  That is, $\boldsymbol{v} + \boldsymbol{a} = \boldsymbol{0} \iff \boldsymbol{a} = -\boldsymbol{v}$</span>
+<span style="color:#0060C6">**Theorem 3 (Each vector has a unique negative vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$ and vector $\boldsymbol{v} \in \mathcal{V}$, its negative, $-\boldsymbol{v}$, is unique.  That is, $\boldsymbol{v} + \boldsymbol{a} = \boldsymbol{0} \iff \boldsymbol{a} = -\boldsymbol{v}$.</span>
 
 **Proof:**
 
@@ -120,7 +120,7 @@ $$\begin{align*}\boldsymbol{v} + \boldsymbol{a} &= \boldsymbol{0} \\ \implies -\
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 4 (Derivation of a vector's negative):** Given a vector $\boldsymbol{v} \in \mathcal{V}$, it's negative is $(-1)\boldsymbol{v}$.  That is, $-\boldsymbol{v} = (-1)\boldsymbol{v}$</span>
+<span style="color:#0060C6">**Theorem 4 (Derivation of a vector's negative):** Given a vector $\boldsymbol{v} \in \mathcal{V}$, it's negative is $(-1)\boldsymbol{v}$.  That is, $-\boldsymbol{v} = (-1)\boldsymbol{v}$.</span>
 
 **Proof:**
 
@@ -130,7 +130,7 @@ Then, by Axiom 5, it must be that $(-1)\boldsymbol{v} = -\boldsymbol{v}$.
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 5 (The zero vector multiplied by any scalar is the zero vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$, it holds that $c\boldsymbol{0} = \boldsymbol{0} \iff \boldsymbol{a} = \boldsymbol{0}$</span>
+<span style="color:#0060C6">**Theorem 5 (The zero vector multiplied by any scalar is the zero vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$, it holds that $c\boldsymbol{0} = \boldsymbol{0} \iff \boldsymbol{a} = \boldsymbol{0}$.</span>
 
 **Proof:**
 $$\begin{align*}\boldsymbol{0}  + \boldsymbol{0} &= \boldsymbol{0}  && \text{by Axiom 4} \\ c(\boldsymbol{0}  + \boldsymbol{0}) &= c\boldsymbol{0} \\ c\boldsymbol{0}  + c\boldsymbol{0} &= c\boldsymbol{0} && \text{by Axiom 8}\end{align*}$$
