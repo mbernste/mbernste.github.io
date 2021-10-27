@@ -1,14 +1,12 @@
 ---
 title: 'Vector spaces'
-date: 2021-10-25
+date: 2021-10-27
 permalink: /posts/vector_spaces/
 tags:
   - tutorial
   - mathematics
   - linear algebra
 ---
-
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
 _The concept of a vector space is a foundational concept in mathematics, physics, and the data sciences. In this post, we first present and explain the definition of a vector space and then go on to describe properties of vector spaces. Lastly, we present a few examples of vector spaces that go beyond the usual Euclidean vectors that are often taught in introductory math and science courses._
 
