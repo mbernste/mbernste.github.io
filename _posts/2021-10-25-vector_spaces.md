@@ -94,7 +94,7 @@ Since $\boldsymbol{a} \neq \boldsymbol{0}$ , we reach a contradiction.  Therefor
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 2 (The product of the zero scalar and any vector is the zero vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$, it holds that $\forall \bold{v} \in \mathcal{V}, 0\bold{v} = \bold{0}$</span>
+<span style="color:#0060C6">**Theorem 2 (The product of the zero scalar and any vector is the zero vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$, it holds that $\forall \boldsymbol{v} \in \mathcal{V}, 0\boldsymbol{v} = \boldsymbol{0}$</span>
 
 **Proof:**
   
