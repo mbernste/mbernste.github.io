@@ -82,7 +82,7 @@ The zero matrix acts as the zero vector:
 
 $$\begin{bmatrix}0 & 0 \\ 0 & 0\end{bmatrix}$$
 
-This may seem a bit confusing because as we discuss in [another blog post](https://mbernste.github.io/posts/matrices_as_functions/), matrices act as functions between Euclidean vector spaces. Nonetheless, matrices can form vector spaces all on their own distinct from the vector spaces that they act upon!
+This may seem a bit confusing because as we discuss in [another blog post](https://mbernste.github.io/posts/matrices_as_functions/), matrices act as functions between Euclidean vector spaces. Nonetheless, matrices can form vector spaces all on their own, distinct from the vector spaces that they act upon!
 
 **Functions**
 
