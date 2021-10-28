@@ -1,7 +1,7 @@
 ---
-title: 'Vector spaces and their extensions: inner product spaces, normed spaces, and Hilbert Spaces'
-date: 2021-10-25
-permalink: /posts/vector_spaces/
+title: 'Inner product spaces'
+date: 2021-10-28
+permalink: /posts/inner_product/
 tags:
   - tutorial
   - mathematics
@@ -10,72 +10,27 @@ tags:
 
 THIS POST IS CURRENTLY UNDER CONSTRUCTION
 
-_The concept of a vector space is a foundational concept in mathematics, physics, and the data sciences. In this post, we first present and explain the definition of a vector space and then go on to describe additional mathematical structures that can be built atop vector spaces in order to create ever-more powerful concepts. From vector spaces, we will define inner product spaces, normed vector spaces, Banach spaces, and finally, Hilbert spaces, which generalize Euclidean spaces._
-
 Introduction
 ------------
 
-The concept of a vector space is a foundational concept in mathematics, physics, and the data sciences. In most introductory courses, only vectors in a Euclidean space are discussed. That is, vectors are presented as arrays of numbers:
+Intuitively, the **inner product** generalizes the act of multiplication from numbers to vectors. Because of this, it helps to first think about some fundamental properties of multiplication of numbers. First and foremost, multiplication is _function_ that acts on two numbers to produce a number. In the same way, an inner product is a function that acts on two vectors and produces a number as defined below:
 
-$$\boldsymbol{x} = \begin{bmatrix}1 \\ 2\end{bmatrix}$$
+<span style="color:#0060C6">**Definition 2 (inner product):** Given a vector space $(\mathcal{V}, \mathcal{F})$, a function
+$$\langle ., .\rangle : \mathcal{V} \times \mathcal{V} \rightarrow \mathbb{R}$$
+is an **inner product** on the vector space if every $\boldsymbol{v}, \boldsymbol{u}, \boldsymbol{w} \in \mathcal{V}$ and $\alpha \in \mathcal{F}$ satisfy the following:</span>
 
-If the array of numbers is of length two or three, than one can visualize the vector as an arrow:
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/EuclideanVector.png" alt="drawing" width="300"/></center>
-
-While this definition is adequate for most applications of vector spaces, there exists a more abstract, and therefore more sophisticated definition of vector spaces that is required to have a deeper understanding of topics in math, statistics, and machine learning. Moreover, it is upon this more foundationational definition more complex spaces with additional structure can be constructed. 
-
-In this post, we will dig into vector spaces and then will proceed to define and discuss extended structures built atop vector spaces. Importantly, in this post we will highlight how each of these mathematical constructs generalizes a more elementary idea; however it is in this generalization that these ideas hold their power. Specifically, we will discuss the following constructs:
-
-1. **Vector spaces:** generalize coordinate vectors
-2. **Metric spaces:** generalize the notion of "distance"
-3. **Complete vector spaces:** generalize spaces that lack "holes" in them
-4. **Normed vector spaces:** generalizes the notion of "magnitude"
-5. **Banach spaces:** complete vector spaces in which the norm acts as the distance metric
-6. **Inner product spaces:** generalize the notation of "multiplication" between vectors
-7. **Hilbert spaces:** generalizes Euclidean spaces
-
-By being so general, these constructs can be used to model a wide variety of concepts and phenomena! Let's get in to it.
-
-Vector spaces
--------------
-
-As we alluded to before, vectors are usually introducted as arrays of numbers, and consequently, as arrows. These arrows can be added together, subtracted from one another, and scaled. This is depicted below:
-
-A **vector space** generalizes this notion of adding things together and scaling them. Any space that comprises such elements is a vector space and its constitent elements are called **vectors**.  
-
-At a more rigorous mathematical level, the notion of "scaling" is modeled by a [field](https://en.wikipedia.org/wiki/Field_(mathematics)) of scalars.  That is, a vector space involves a set of vectors $\mathcal{V}$ and a field of scalars $\mathcal{F}$ for which one can add together vectors in $\mathcal{V}$ as well as scale these vectors by elements in the field $\mathcal{F}$ according to a specific list of rules. These rules are spelled out in the definition for a vector space:
-
-<span style="color:#0060C6">**Definition 1 (vector space):** Given a set of objects $\mathcal{V}$ called vectors and a field $\mathcal{F} := (C, +, \cdot, -, ^{-1}, 0, 1)$ where $C$ is the set of elements in the field, called scalars, the tuple $(\mathcal{V}, \mathcal{F})$ is a **vector space** if for all $\boldsymbol{v}, \boldsymbol{u}, \boldsymbol{w} \in \mathcal{V}$ and $c, d \in C$, it obeys the following ten axioms:</span>  
-
-1. <span style="color:#0060C6">$\boldsymbol{u} + \boldsymbol{v} \in \mathcal{V}$</span>
-2. <span style="color:#0060C6">$\boldsymbol{u} + \boldsymbol{v} = \boldsymbol{v} + \boldsymbol{u}$</span>
-3. <span style="color:#0060C6">$(\boldsymbol{u} + \boldsymbol{v}) + \boldsymbol{w} = \boldsymbol{u} + (\boldsymbol{v} + \boldsymbol{w})$</span> 
-4. <span style="color:#0060C6">There exists a zero vector $\boldsymbol{0} \in \mathcal{V}$ such that $\boldsymbol{u} + \boldsymbol{0} = \boldsymbol{u}$</span>
-5. <span style="color:#0060C6">For each $\boldsymbol{u \in \mathcal{V}}$ there exists a $\boldsymbol{u'} \in \mathcal{V}$ such that $\boldsymbol{u} + \boldsymbol{u'} = \boldsymbol{0}$.  We call $\boldsymbol{u}'$ the negative of $\boldsymbol{u}$ and denote it as $-\boldsymbol{u}$</span>
-6. <span style="color:#0060C6">The scalar multiple of $\boldsymbol{u}$ by $c$, denoted by $c\boldsymbol{u}$ is in $\mathcal{V}$</span>
-7. <span style="color:#0060C6">$c(\boldsymbol{u} + \boldsymbol{v}) = c\boldsymbol{u} + c\boldsymbol{v}$</span>
-8. <span style="color:#0060C6">$(c + d)\boldsymbol{u} = c\boldsymbol{u} + d\boldsymbol{u}$</span>
-9. <span style="color:#0060C6">$c(d\boldsymbol{u}) = (cd)\boldsymbol{u}$</span>
-10. <span style="color:#0060C6">$1\boldsymbol{u} = \boldsymbol{u}$</span>
-
-Axioms 1-5 of the definition describe how vectors can be added together. Axioms 6-10 describe how these vectors can be scaled using the field of scalars.
-
-**Properties**
-
-Here are several properties of vector spaces that both provide insight into how they capture the notions of adding and scaling:
+1. $\langle \boldsymbol{v} + \boldsymbol{u}, \boldsymbol{w} \rangle = \langle \boldsymbol{v}, \boldsymbol{w} \rangle + \langle \boldsymbol{u}, \boldsymbol{w} \rangle$ 
+2. $\langle \alpha \boldsymbol{v}, \boldsymbol{w} \rangle = \alpha \langle \boldsymbol{v}, \boldsymbol{u} \rangle$ 
+3. $\langle \boldsymbol{v}, \boldsymbol{w} \rangle =  \langle \boldsymbol{w}, \boldsymbol{v} \rangle$ 
+4. $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle \geq 0$ and $\langle  \boldsymbol{v}, \boldsymbol{v} \rangle= 0 \iff \boldsymbol{v} = \boldsymbol{0}$
 
 
+Properties
+----------
+
+1. **Linearity:**
 
 
-Metric spaces
--------------
-
-Normed vector spaces
---------------------
-
-Complete spaces
--------------
 
 A vector space is **complete** if every **Cauchy sequence** of vectors converges on a vector that is also in the vector space. 
 
