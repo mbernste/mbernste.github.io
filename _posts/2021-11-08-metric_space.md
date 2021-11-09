@@ -1,6 +1,6 @@
 ---
 title: 'Metric spaces'
-date: 2021-10-25
+date: 2021-11-08
 permalink: /posts/metric_space/
 tags:
   - tutorial
