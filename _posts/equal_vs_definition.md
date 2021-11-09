@@ -13,12 +13,11 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 ----------
 
-I find it a little bit unfortunate that two of the most important relationships in mathematics, namely **equality** and **definition**, are often denoted using the exact same symbol: the equal sign ("="). Early in my learning days, I believe that this [overloading](https://en.wikipedia.org/wiki/Operator_overloading) of the equal sign led to way more confusion than necessary.  
+I find it unfortunate that two of the most important relationships in mathematics, namely **equality** and **definition**, are often denoted using the exact same symbol -- namely, the equal sign: "=". Early in my learning days, I believe that this [overloading](https://en.wikipedia.org/wiki/Operator_overloading) of the equal sign led to more confusion than necessary and I have personally witness it confuse students.  
 
 To ensure that we're on the same page, let's first define these two notions. Let's start with idea of **equality**.  Let's say we have two entities, which we will denote using the symbols $X$ and $Y$.  The statement "$X$ equals $Y$", denoted $X = Y$, means that $X$ and $Y$ **are the same thing**.  
 
 For example, let's say we have a right-triangle with edge lengths $a$, $b$ and $c$, where $c$ is the hypotenuse: 
-
 
 The [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) says that $a^2 + b^2 = c^2$. Said differently, the quantity $c^2$ *is the same quantity* as the quantity $a^2 + b^2$.
 
@@ -32,16 +31,29 @@ This is a definition. We are **assigning** the symbol/concept $\sin \theta$ to b
 
 The fundamental difference between equality and definition is that in the the equality relationship between $X$ and $Y$, both the symbols $X$ and $Y$ are bound to entities -- that is, they "refer" to entities. The statement $Y = X$ is simply a comment about those two entities, namely, that they are the same.  In contrast, in a definition, only one of the two symbols is bound to an entity. The act of stating a definition is the act of *binding a known entity to a new symbol*.  For example, the symbol "$\text{foo} \ \theta$" is meaningless. What exactly is "foo"?  We don't know because we have not defined it.
 
-Overloading the equal sign creates confusion
-----------------
+Overloading the equal sign creates confusion in mathematics
+-----------------------------------------------------------
 
-Here's a story to illustrate how the overloading of the equal symbol creates confusion. My mom is a very curious person and over the last year, she has set out to (re)learn high school math and physics. It has been decades since she has seen the material, but she is steadily plugging away through pre-calculus and kinematics. She was quite confused when she came upon the statement, 
+I was tutoring someone who self-teaching themselves in pre-calculus, and they were quite confused by the statement, 
 
 $$\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
-She asked, why is $\sin \theta$ equal to the quantity $\frac{\text{opposite}}{\text{hypotenuse}}$? It was as if $\sin \theta$ were this utterly mysterious object that somehow, magically, is equal to the ratio of the length of the opposite side to the length of the hypotenuse. Her confusion arose from her erroneous interpretation of this statement as describing an equality -- i.e., "these two quantities, $\sin \theta$ and $\frac{\text{opposite}}{\text{hypotenuse}}$, are the same" -- when it was meant to describe a definition: "$\sin \theta$ is defined to be the quantity $\frac{\text{opposite}}{\text{hypotenuse}}$". 
+They asked me, why is $\sin \theta$ equal to the quantity $\frac{\text{opposite}}{\text{hypotenuse}}$? They never explicitly stated so, but it become evident that their confusion was not the good kind of confusion. It wasn't, "why is the ratio between the sides of a right triangle a function of the angles of the right triangle?" Or, "Why is this definition important".  Rather, their confusion seemed to stem from the very existence of this mysterious object, "$\sin \theta$", and for whatever reason is equal to the ratio of the sides of the triangle. 
 
-Of course, there may still be some mystery to $\sin \theta$, but it's the good kind of mystery. One may ask, why would we ever care to create such a definition? To which one could then answer: it's a useful definition because *all* right triangle with angle $\theta$ have the *same* ratio between the length of the opposite side to the length of the hypotenuse.  Interestingly, that ratio is the same even if those lengths differ. For some angle $\theta$, we denote this shared ratio as "$\sin \theta$". 
+Their confusion arose from her erroneous interpretation of this statement as describing an equality rather than a definition. The mystery was, at least partly, alleviated by the clarification that $\sin \theta$ is not an object that existed before we saw this statement -- rather, this statement _created the object for the first time_. The statement is _defining_ $\sin \theta$ to be the ratio between the opposite side to the hypotenuse. The true interesting quality to this statement is that the ratio of the sides of a right triangle are a function of its angles regardless of the lengths of the sides.
+
+Overloading the equal sign creates confusion in computer programming
+--------------------------------------------------------------------
+
+Anyone who has taught introductory computer programming is familiar with the very common confusion between the assignment operator and equality operator in programming languages.  In computer programming, one absolutely has to have a clear understanding of the differences between the two fundamentally different operators. For example, in many programming languages, like C and Python, the assigment operator uses the standard equals sign. That is, the statement
+
+`x = y`
+
+assigns the value referenced by symbol `y` to symbol `x`.  In contrast, the statement
+
+`x == y`
+
+returns either `True` or `False` depending on whether the value referenced by `x` is equal to the value referenced by `y`.  Though I have not seen any data on the topic, I often wonder whether teaching these two operators from the very beginning of a student's mathematical education, this would not be a point of confusion in computer programming.
 
 Use ":=" instead of "=" for definitions
 ----------------
