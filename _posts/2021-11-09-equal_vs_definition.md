@@ -38,7 +38,9 @@ $$\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
 They asked me, why is $\sin \theta$ equal to the quantity $\frac{\text{opposite}}{\text{hypotenuse}}$? They never explicitly stated so, but it become evident that their confusion was not the good kind of confusion. It wasn't, "Why are the ratios between the sides of a right-triangle functions of the angles between those sides?" Nor, "Why is this definition important?"  Rather, their confusion seemed to stem from the very existence of this mysterious object, "$\sin \theta$". Their quesiton was more along the lines of, "What _is_ this mysterious thing? And why on earth is it equal to the ratio of the sides of the triangle?" 
 
-Their confusion arose from the erroneous interpretation of this statement as describing an equality rather than a definition. The mystery was, at least partly, alleviated by the clarification that $\sin \theta$ is not an object that existed before we saw this statement -- rather, this statement _created the object for the first time_. The statement is _defining_ $\sin \theta$ to be the ratio between the opposite side to the hypotenuse. The true interesting quality to this statement is that the ratio of the sides of a right triangle are a function of its angles regardless of the lengths of the sides.
+Their confusion arose from the erroneous interpretation of this statement as describing an equality rather than a definition. The mystery was, at least partly, alleviated by the clarification that $\sin \theta$ is not an object that existed before we saw this statement -- rather, this statement _created the object for the first time_. The statement is _defining_ $\sin \theta$ to be the ratio between the opposite side to the hypotenuse. 
+
+The real interesting quality to this definition is that the ratio of the sides of a right triangle are a function of its angles regardless of the lengths of the sides. That is, that we can create this definition at all!
 
 Overloading the equal sign creates confusion in computer programming
 --------------------------------------------------------------------
