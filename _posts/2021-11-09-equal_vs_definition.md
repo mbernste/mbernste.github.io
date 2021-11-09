@@ -21,7 +21,7 @@ For example, let's say we have a right-triangle with edge lengths $a$, $b$ and $
 
 Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$", also often denoted $X = Y$, means that one should use the symbol "$X$" to refer to the entity referred to by "Y".  
 
-For example, in textbooks it is common to define the sine function for a right triangle as 
+For example, in introductory math textbooks it is common to define the sine function for a right triangle as 
 
 $$\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
