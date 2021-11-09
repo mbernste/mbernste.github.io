@@ -52,7 +52,7 @@ For example, in many programming languages, like C and Python, the assigment ope
 Use ":=" instead of "=" to denote definition
 --------------------------------------------
 
-I think it's important to use the symbol ":=" to denote definition.  I prefer this symbol over the popular "$\equiv$" symbol because it emphasizes the assymetry of the statement.  That is, $X := Y$ means "use $X$ as a symbol for $Y$", which differs from "use $Y$ as a symbol for $X$." In contrast, the plain equal sign "=" is appropriately symmetric. 
+I think it's important to use the symbol ":=" to denote definition.  I prefer this symbol over the popular "$\equiv$" symbol because it emphasizes the assymetry of the statement.  That is, $X := Y$ means "use $X$ as a symbol for $Y$", which differs from "use $Y$ as a symbol for $X$." In contrast, the standard equals sign "=" is appropriately symmetric. 
 
 Using the appropriate symbol to distinguish definition statements from equality statements may go a long way, at least in proportion to the effort of using them, towards alleviating confusion in students of math and computer science.  
 
