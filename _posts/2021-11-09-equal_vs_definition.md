@@ -55,8 +55,8 @@ assigns the value referenced by symbol `y` to symbol `x`.  In contrast, the stat
 
 returns either `True` or `False` depending on whether the value referenced by `x` is equal to the value referenced by `y`.  Though I have not seen any data on the topic, I often wonder whether teaching these two operators from the very beginning of a student's mathematical education, this would not be a point of confusion in computer programming.
 
-Use ":=" instead of "=" for definitions
-----------------
+Use ":=" instead of "=" to denote definition
+--------------------------------------------
 
 I think it's important to use the symbol ":=" to denote definition.  I prefer this symbol over the popular "$\equiv$" symbol because it emphasizes the assymetry of the statement.  That is, $X := Y$ means "use $X$ as a symbol for $Y$", which differs from "use $Y$ as a symbol for $X$." In contrast, the plain equal sign "=" is appropriately symmetric. 
 
