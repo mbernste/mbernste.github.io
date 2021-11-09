@@ -17,9 +17,9 @@ A **normed vector** space is a vector space in which each vector is associated w
 
 <span style="color:#0060C6">**Definition 1 (normed vector space):** A **normed vector space** is vector space $(\mathcal{V}, \mathcal{F})$ associated with a function $\|\|.\|\| : \mathcal{V} \rightarrow \mathbb{R}$ that obeys the following axioms:</span>
 
-1. <span style="color:#0060C6">$\forall \boldsymbol{v} \in \mathcal{V} \ \ \|\|\<span style="color:#0060C6">{v}\|\| \geq 0$</span>
-2. <span style="color:#0060C6">$\norm{\alpha\<span style="color:#0060C6">{x}} = |\alpha| \norm{\<span style="color:#0060C6">{x}}$</span>
-3. <span style="color:#0060C6">$\norm{\<span style="color:#0060C6">{x} + \<span style="color:#0060C6">{y}} \leq \norm{\<span style="color:#0060C6">{x}} + \norm{\boldsymbol{y}}$</span> 
+1. <span style="color:#0060C6">$\forall \boldsymbol{v} \in \mathcal{V} \ \ \|\|\<span style="color:#0060C6">{v}\|\| \geq 0$</span>  
+2. <span style="color:#0060C6">$\norm{\alpha\<span style="color:#0060C6">{x}} = |\alpha| \norm{\<span style="color:#0060C6">{x}}$</span>  
+3. <span style="color:#0060C6">$\norm{\<span style="color:#0060C6">{x} + \<span style="color:#0060C6">{y}} \leq \norm{\<span style="color:#0060C6">{x}} + \norm{\boldsymbol{y}}$</span>   
 
 Intuition
 ---------
