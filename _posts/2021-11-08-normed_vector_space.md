@@ -42,7 +42,7 @@ Normed vector spaces are also metric spaces
   
 All normed vector spaces are also metric spaces -- that is, the norm function induces a metric function on pairs of vectors. This metric is simply:
 
-$$d(\boldsymbol{x}, \boldsymbol{y}) := \|\|\boldsymbol{x} - \boldsymbol{y}\|\|$$
+$$d(\boldsymbol{x}, \boldsymbol{y}) := \|\boldsymbol{x} - \boldsymbol{y}\|$$
 
 That is, if one subtracts one vector from the other, then the "length" of the resultant vector can be interpreted as the "distance" between those vectors:
 
