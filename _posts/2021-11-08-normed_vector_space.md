@@ -36,4 +36,9 @@ Unit vectors
 ------------
 
  In a normed vector space, a unit vector is a vector with norm equal to 1. Given a vector $\boldsymbol{v}$, a unit vector can be derived by simply dividing the vector by its norm (Theorem 2 in the Appendix).  This unit vector, called the **normalized vector** of $\boldsymbol{v}$ is denoted $\hat{\boldsymbol{v}}$.  In a Euclidean vector space, the normalized vector $\hat{\boldsymbol{v}}$ is the unit vector that points in the same direction as $\boldsymbol{v}$.  Unit vectors are often used to denote a direction in a vector space.  That is, since it's magnitude is 1, the relevant information encoded in the vector is the direction in which it points.  
+  
+Normed vector spaces are also metric spaces
+-------------------------------------------
+  
+ 
  
