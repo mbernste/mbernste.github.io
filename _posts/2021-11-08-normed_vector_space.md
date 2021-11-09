@@ -1,5 +1,5 @@
 ---
-title: 'Metric spaces'
+title: 'Normed vector spaces'
 date: 2021-11-08
 permalink: /posts/metric_space/
 tags:
