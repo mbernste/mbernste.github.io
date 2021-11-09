@@ -43,15 +43,9 @@ Their confusion arose from her erroneous interpretation of this statement as des
 Overloading the equal sign creates confusion in computer programming
 --------------------------------------------------------------------
 
-Anyone who has taught introductory computer programming is familiar with the very common confusion between the assignment operator and equality operator in programming languages.  In computer programming, one absolutely has to have a clear understanding of the differences between the two fundamentally different operators. For example, in many programming languages, like C and Python, the assigment operator uses the standard equals sign. That is, the statement
+Anyone who has taught introductory computer programming is familiar with the very common confusion between the assignment operator and equality operator in programming languages.  In computer programming, one absolutely has to have a clear understanding of the differences between the two fundamentally different operators. 
 
-`x = y`
-
-assigns the value referenced by symbol `y` to symbol `x`.  In contrast, the statement
-
-`x == y`
-
-returns either `True` or `False` depending on whether the value referenced by `x` is equal to the value referenced by `y`.  Though I have not seen any data on the topic, I often wonder whether teaching these two operators from the very beginning of a student's mathematical education, this would not be a point of confusion in computer programming.
+For example, in many programming languages, like C and Python, the assigment operator uses the standard equals sign. That is, the statement `x = y` assigns the value referenced by symbol `y` to symbol `x`.  In contrast, the statement `x == y` returns either `True` or `False` depending on whether the value referenced by `x` is equal to the value referenced by `y`.  Though I have not seen any data on the topic, I often wonder whether teaching these two operators from the very beginning of a student's mathematical education, this would not be a point of confusion in computer programming.
 
 Use ":=" instead of "=" to denote definition
 --------------------------------------------
