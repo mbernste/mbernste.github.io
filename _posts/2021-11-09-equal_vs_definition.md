@@ -19,7 +19,7 @@ To ensure that we're on the same page, let's first define these two notions. Let
 
 For example, let's say we have a right-triangle with edge lengths $a$, $b$ and $c$, where $c$ is the hypotenuse. The [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem) says that $a^2 + b^2 = c^2$. Said differently, the quantity $c^2$ *is the same quantity* as the quantity $a^2 + b^2$.
 
-Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$", also often denoted $X = Y$, means that one should use the symbol "$X$" to refer to the entity referred to by "Y".  
+Now, let's move on to **definition**. Given some entity denoted with the symbol $Y$, the statement "let $X$ be $Y$", also often denoted $X = Y$, means that one should use the symbol "$X$" to refer to the entity referred to by "$Y$".  
 
 For example, in introductory math textbooks it is common to define the sine function for a right triangle as 
 
