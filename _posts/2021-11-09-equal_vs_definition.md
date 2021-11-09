@@ -32,7 +32,7 @@ The fundamental difference between equality and definition is that in the the eq
 Overloading the equal sign creates confusion in mathematics
 -----------------------------------------------------------
 
-I was tutoring someone who self-teaching themselves in pre-calculus, and they were quite confused by the statement, 
+I was tutoring someone who was teaching themselves pre-calculus out of a textbook, and they were quite confused by the statement, 
 
 $$\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}$$
 
