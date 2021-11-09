@@ -1,6 +1,6 @@
 ---
-title: 'Equality vs. definition'
-date: 2020-12-29
+title: 'Equality versus definition'
+date: 2021-11-09
 permalink: /posts/equality_definition/
 tags:
   - tutorial
@@ -8,7 +8,7 @@ tags:
   - pedagogy
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
+_Two of the most important relationships in mathematics, namely equality and definition, are both denoted using the same symbol -- namely, the equals sign. The overloading of this symbol confuses students in mathematics and computer programming. In this post, argue for the use of two different symbols for these two fundamentally different operators._
 
 Introduction
 ----------
