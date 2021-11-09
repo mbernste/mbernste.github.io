@@ -40,5 +40,14 @@ Unit vectors
 Normed vector spaces are also metric spaces
 -------------------------------------------
   
+All normed vector spaces are also metric spaces -- that is, the norm function induces a metric function on pairs of vectors. This metric is simply:
+
+$$d(\boldsymbol{x}, \boldsymbol{y}) := \|\|\boldsymbol{x} - \boldsymbol{y}\|\|$$
+
+That is, if one subtracts one vector from the other, then the "length" of the resultant vector can be interpreted as the "distance" between those vectors:
+
+
+In Theorem 2 in the Appendix, we prove that that this function is a valid metric in that it satisfies the axioms of a metric function.
+
  
  
