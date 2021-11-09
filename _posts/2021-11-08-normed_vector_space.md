@@ -18,8 +18,8 @@ A **normed vector** space is a vector space in which each vector is associated w
 <span style="color:#0060C6">**Definition 1 (normed vector space):** A **normed vector space** is vector space $(\mathcal{V}, \mathcal{F})$ associated with a function $\|\|.\|\| : \mathcal{V} \rightarrow \mathbb{R}$ that obeys the following axioms:</span>
 
 1. <span style="color:#0060C6">$\forall \boldsymbol{v} \in \mathcal{V}, \ \ \|\|\boldsymbol{v}\|\| \geq 0$</span>  
-2. <span style="color:#0060C6">$\|\|\alpha\boldsymbol{x}\|\| = |\alpha| \|\|\boldsymbol{x}\|\|$</span>  
-3. <span style="color:#0060C6">$\|\|\boldsymbol{x} + \boldsymbol{y}\|\| \leq \|\|\boldsymbol{x}\|\| + \|\|\boldsymbol{y}\|\|$</span>   
+2. <span style="color:#0060C6">$\forall \boldsymbol{v} \in \mathcal{V}, \forall \alpha \in \mathcal{F}, \ \ \|\|\alpha\boldsymbol{v}\|\| = |\alpha| \|\|\boldsymbol{v}\|\|$</span>  
+3. <span style="color:#0060C6">$\forall \boldsymbol{v}, \boldsymbol{u} \in \mathcal{V} \|\|\boldsymbol{u} + \boldsymbol{v}\|\| \leq \|\|\boldsymbol{u}\|\| + \|\|\boldsymbol{v}\|\|$</span>   
 
 Intuition
 ---------
