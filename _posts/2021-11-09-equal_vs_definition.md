@@ -8,7 +8,7 @@ tags:
   - pedagogy
 ---
 
-_Two of the most important relationships in mathematics, namely equality and definition, are both denoted using the same symbol -- namely, the equals sign. The overloading of this symbol confuses students in mathematics and computer programming. In this post, argue for the use of two different symbols for these two fundamentally different operators._
+_Two of the most important relationships in mathematics, namely equality and definition, are both denoted using the same symbol -- namely, the equals sign. The overloading of this symbol confuses students in mathematics and computer programming. In this post, I argue for the use of two different symbols for these two fundamentally different operators._
 
 Introduction
 ----------
