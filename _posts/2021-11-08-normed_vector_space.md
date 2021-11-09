@@ -19,7 +19,7 @@ A **normed vector** space is a vector space in which each vector is associated w
 
 1. <span style="color:#0060C6">$\forall \boldsymbol{v} \in \mathcal{V}, \ \ \|\|\boldsymbol{v}\|\| \geq 0$</span>  
 2. <span style="color:#0060C6">$\forall \boldsymbol{v} \in \mathcal{V}, \forall \alpha \in \mathcal{F}, \ \ \|\|\alpha\boldsymbol{v}\|\| = |\alpha| \|\|\boldsymbol{v}\|\|$</span>  
-3. <span style="color:#0060C6">$\forall \boldsymbol{v}, \boldsymbol{u} \in \mathcal{V} \|\|\boldsymbol{u} + \boldsymbol{v}\|\| \leq \|\|\boldsymbol{u}\|\| + \|\|\boldsymbol{v}\|\|$</span>   
+3. <span style="color:#0060C6">$\forall \boldsymbol{v}, \boldsymbol{u} \in \mathcal{V}, \ \ \|\|\boldsymbol{u} + \boldsymbol{v}\|\| \leq \|\|\boldsymbol{u}\|\| + \|\|\boldsymbol{v}\|\|$</span>   
 
 Intuition
 ---------
