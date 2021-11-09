@@ -1,7 +1,7 @@
 ---
 title: 'Normed vector spaces'
 date: 2021-11-08
-permalink: /posts/metric_space/
+permalink: /posts/normed_vector_space/
 tags:
   - tutorial
   - mathematics
