@@ -29,10 +29,10 @@ The norm of a vector captures the a notion of "length" for a vector.  Below we o
 * Axiom 2 says that if we multiply a vector by a scalar, it's length should increase by the magnitude (i.e. the absolute) value of that scalar. This axiom ties together the notion of scaling vectors (Axiom 6 in the definition of a vector space) to the notion of "length" for a vector.  It essentially says that to scale a vector is to stretch the vector.
 * Axiom 3 says that the length of the sum of two vectors should not exceed the sum of the lengths of each vector.  This enforces our intuition that if we add together two objects that each have a "length", the resultant object should not exceed the sum of the lengths of the original objects.
 
-Properties
-----------
+Following the axioms for a normed vector space, one can also show that only the zero vector has zero length (Theorem 1 in the Appendix to this post).
+  
+Unit vectors
+------------
 
-Following the axioms for a normed vector space, one can derive other properties that further enforce this notion of a generalized length:
-
-
-
+ In a normed vector space, a unit vector is a vector with norm equal to 1. Given a vector $\boldsymbol{v}$, a unit vector can be derived by simply dividing the vector by its norm (Theorem 2 in the Appendix).  This unit vector, called the **normalized vector** of $\boldsymbol{v}$ is denoted $\hat{\boldsymbol{v}}$.  In a Euclidean vector space, the normalized vector $\hat{\boldsymbol{v}}$ is the unit vector that points in the same direction as $\boldsymbol{v}$.  Unit vectors are often used to denote a direction in a vector space.  That is, since it's magnitude is 1, the relevant information encoded in the vector is the direction in which it points.  
+ 
