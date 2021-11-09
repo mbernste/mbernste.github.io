@@ -1,5 +1,5 @@
 ---
-title: 'Equality versus definition'
+title: 'The overloaded equals sign'
 date: 2021-11-09
 permalink: /posts/equality_definition/
 tags:
