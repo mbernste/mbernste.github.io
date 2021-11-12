@@ -89,7 +89,7 @@ The random variable, $X$, is a function that maps each conceivable future to a v
 
 $$H := \{1,0\}$$
 
-where 1 encodes the coin landing heads and 0 encodes the coin landing tails.  For example, there might be two trajectories the coin could take $\omega_1$ and $\omega_1$ for which the coin lands as heads. Therefore, $X(\omega_1) = 1$ and $X(\omega_2) = 1$.
+where 1 encodes the coin landing heads and 0 encodes the coin landing tails.  For example, there might be two trajectories the coin could take, denoted $\omega_1, \omega_2 \in \Omega$, for which the coin lands as heads. Therefore, $X(\omega_1) = 1$ and $X(\omega_2) = 1$.
 
 The sigma-algebra $\mathcal{H}$ over $H$ encodes all of the groups of outcomes of the coin-toss that we wish to assign probability:
 
