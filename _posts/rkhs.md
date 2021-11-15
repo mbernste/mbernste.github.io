@@ -131,8 +131,13 @@ What does this mean? it means that the function $\phi(x)$ is simply $K(x, .)$! T
 
 $$K(x, y) = \langle K(x, .), K(y, .)\rangle$$
 
-For simplicity, it is common to abstract away $K(x, .)$ and $K(y, .)$ as simply $\phi(x)$ and $\phi(y)$.
+Now, a natural question that may arise is: where is are the "features" in this "feature map"? That is, $k(x, .)$ is still a rather opaque object that doesn't appear to be associated with a set of "features" that we commonly associate with objects in machine learning. That is, in machine learning, we generally consider a feature to be a single, quantiable, characteristic of the object. For example, if our objects are images, then the features may be the array of pixel intensities.  Where are the features in $k(x, .)$?
 
+It turns out that there is actually a much more natural way to represent $\phi(x)$ that is more in line with the idea of "features". That is, one can represent $\phi(x) = K(x, .)$ as a coordinate vector (in possibly infinite dimensions)! We'll denote this vector as $\psi(x)$. Then, we can execute the inner product performed by the kernel using a dot product:
+
+$$K(x, y) = \langle K(x, .), K(y, .)\rangle = \psi(x)^T\psi(y) = \sum_{i=1}^\infty \psi(x)_i\psi(y)_i$$
+
+This is proven by Mercer's Theorem.  In this scenario, each $\psi(x)_i$ can be interpreted as a "feature" in the reproducing kernel Hilbert space.
 
 Appendix: Proofs of properties of the RKHS and kernels
 ------------------------------------------------------
