@@ -133,6 +133,7 @@ $$K(x, y) = \langle K(x, .), K(y, .)\rangle$$
 
 For simplicity, it is common to abstract away $K(x, .)$ and $K(y, .)$ as simply $\phi(x)$ and $\phi(y)$.
 
+
 Appendix: Proofs of properties of the RKHS and kernels
 ------------------------------------------------------
 
