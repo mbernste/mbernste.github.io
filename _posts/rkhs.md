@@ -107,7 +107,7 @@ and thus,
 
 $$K(x, y) = \langle \phi(x), \phi(y) \rangle$$
 
-This function, $\phi$, is often called the **feature map** as it maps our objects in $\mathcal{X}$ to a new "feature representation" in the RKHS.  
+This function, $\phi$, is often called the **feature map** as it maps our objects in $\mathcal{X}$ to a new "feature representation" in the RKHS. We'll dig a bit more into this new feature representation in a later section.  
 
 The kernel trick 
 ----------------
@@ -127,17 +127,22 @@ To answer this, let's say we have some positive kernel $K$ and let's fix one of 
 
 $$\begin{align*}K(x, .) &= \langle \phi(x), \phi(.) \rangle \\  &= \delta_{.}(\phi(x)) \\ &= \phi(x)(.)\end{align*}$$
 
-What does this mean? it means that the function $\phi(x)$ is simply $K(x, .)$! Thus, we see that
+What does this mean? it means that the function $\phi(x)$ is simply $K(x, .)$. Thus, we see that
 
 $$K(x, y) = \langle K(x, .), K(y, .)\rangle$$
 
-Now, a natural question that may arise is: where is are the "features" in this "feature map"? That is, $k(x, .)$ is still a rather opaque object that doesn't appear to be associated with a set of "features" that we commonly associate with objects in machine learning. That is, in machine learning, we generally consider a feature to be a single, quantiable, characteristic of the object. For example, if our objects are images, then the features may be the array of pixel intensities.  Where are the features in $k(x, .)$?
+Now, this may still not seem like a satisfying derivation.  There are a number of questions we may still have. First, how does one compute the inner proudction between $K(x, .)$ and $K(y, .)$? What is its form? Second, where are the "features" provided by this "feature map"? In machine learning, we generally consider a feature to be a single, quantiable, characteristic of an (e.g., the intensity of a pixel in an image). So where are the features in $k(x, .)$?
 
-It turns out that there is actually a much more natural way to represent $\phi(x)$ that is more in line with the idea of "features". That is, one can represent $\phi(x) = K(x, .)$ as a coordinate vector (in possibly infinite dimensions)! We'll denote this vector as $\psi(x)$. Then, we can execute the inner product performed by the kernel using a dot product:
+It turns out that, thanks to Mercer's Theorem, there is another way to represent $\phi(x)$ that is more in line with the idea of $\phi(x)$ mapping $x$ to a new set of "features". 
+
+That is, one can represent $\phi(x) = K(x, .)$ as a coordinate vector (in possibly infinite dimensions)! We'll denote this vector as $\psi(x)$. Then, we can execute the inner product performed by the kernel using a dot product:
 
 $$K(x, y) = \langle K(x, .), K(y, .)\rangle = \psi(x)^T\psi(y) = \sum_{i=1}^\infty \psi(x)_i\psi(y)_i$$
 
-This is proven by Mercer's Theorem.  In this scenario, each $\psi(x)_i$ can be interpreted as a "feature" in the reproducing kernel Hilbert space.
+In this scenario, each $\psi(x)_i$ can be interpreted as a "feature" in the reproducing kernel Hilbert space. Thus, we have come to two alternative ways of viewing the feature map:
+
+1. The feature map $\phi$ maps each object $x \in \mathcal{X}$ to the function $K(x, .)$ in the Hilbert space
+2. The feature map $\phi$ maps each object $x \in mathcal{X}$ to a (possibly infinite) coordinate vector $[\psi(x)_1, \psi(x)_2, \dots]$
 
 Appendix: Proofs of properties of the RKHS and kernels
 ------------------------------------------------------
