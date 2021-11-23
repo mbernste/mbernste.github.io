@@ -98,7 +98,7 @@ The last line follows from Theorem 4 in my [previous blog post](https://mbernste
 
 $$\begin{align*} \vert\vert \boldsymbol{y} - \boldsymbol{x} \vert\vert &= \vert\vert \boldsymbol{x} - \boldsymbol{x} \vert\vert \\ &= \vert\vert \boldsymbol{0} \vert\vert \\ &= 0 && \text{by Theorem 1}\end{align*}$$
 
-Second, we need to show that 0$d(\boldsymbol{x}, \boldsymbol{y}) \geq 0$. This fact is already evident based on Axiom 1 in Definition 1 above. 
+Second, we need to show that $d(\boldsymbol{x}, \boldsymbol{y}) \geq 0$. This fact is already evident based on Axiom 1 in Definition 1 above. 
 
 Third and finally, $d$ needs to satisfy the [triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality). That is, we need to show that $\forall \boldsymbol{x}, \boldsymbol{y}, \boldsymbol{z} \in \mathcal{V}$, it holds that
 
