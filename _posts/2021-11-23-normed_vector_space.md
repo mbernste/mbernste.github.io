@@ -19,7 +19,7 @@ A **normed vector space** is a vector space in which each vector is associated w
 
 The definition of a norm, however, generalizes this notion of length to any vector space.  
 
-<span style="color:#0060C6">**Definition 1 (normed vector space):** A **normed vector space** is vector space $(\mathcal{V}, \mathcal{F})$ associated with a function $\|\|.\|\| : \mathcal{V} \rightarrow \mathbb{R}$ that obeys the following axioms:</span>
+<span style="color:#0060C6">**Definition 1 (normed vector space):** A **normed vector space** is vector space $(\mathcal{V}, \mathcal{F})$ associated with a function $\|\|.\|\| : \mathcal{V} \rightarrow \mathbb{R}$, called a **norm**, that obeys the following axioms:</span>
 
 1. <span style="color:#0060C6">$\forall \boldsymbol{v} \in \mathcal{V}, \ \ \|\|\boldsymbol{v}\|\| \geq 0$</span>  
 2. <span style="color:#0060C6">$\forall \boldsymbol{v} \in \mathcal{V}, \forall \alpha \in \mathcal{F}, \ \ \|\|\alpha\boldsymbol{v}\|\| = |\alpha| \|\|\boldsymbol{v}\|\|$</span>  
@@ -76,7 +76,7 @@ Note the first line is proven in Theorem 2 in my [previous blog post](https://mb
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 2 (Formation of unit vector):** Given a vector space $(\mathcal{V}, \mathcal{F}_$ with norm $\vert\vert . \vert\vert$, the vector $\hat{\boldsymbol{v}} := \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert}$$ has norm equal to one.</span>
+<span style="color:#0060C6">**Theorem 2 (Formation of unit vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$ with norm $\vert\vert . \vert\vert$, the vector $\hat{\boldsymbol{v}} := \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert}$$ has norm equal to one.</span>
 
 **Proof:**
 
