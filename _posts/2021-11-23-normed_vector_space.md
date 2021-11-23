@@ -93,7 +93,11 @@ To prove that $d$ is a metric, we need to show that it satisfies the three axiom
 
 $$d(\boldsymbol{x}, \boldsymbol{y}) = 0 \iff \boldsymbol{x} = \boldsymbol{y}$$
 
+Second, we need to show that $$d(\boldsymbol{x}, \boldsymbol{y}) \geq 0$. This one is already evident based on Axiom 1 in Definition 1 above. 
 
+Third and finally, $d$ needs to satisfy the [triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality). That is, we need to show that $\forall \boldsymbol{x}, \boldsymbol{y}, \boldsymbol{x} \in \mathcal{V}$, it holds that
+
+$$d(\boldsymbol{x}, \boldsymbol{y}) \leq d(\boldsymbol{x}, \boldsymbol{z}) + d(\boldsymbol{z}, \boldsymbol{y})$$
 
 $\square$
 
