@@ -64,8 +64,8 @@ In Theorem 2 in the Appendix, we prove that that this function is a valid metric
 
 Appendix
 --------
- 
-$$\vert\vert \boldsymbol{v} \vert\vert = 0 \iff \boldsymbol{v} = \boldsymbol{0}$$
+
+<span style="color:#0060C6">**Theorem 1 (Only the zero vector has zero norm):** $\vert\vert \boldsymbol{v} \vert\vert = 0 \iff \boldsymbol{v} = \boldsymbol{0}$</span>
 
 **Proof:**
 
