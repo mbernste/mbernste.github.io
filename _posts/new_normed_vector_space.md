@@ -15,7 +15,7 @@ Introduction
 
 A **normed vector** space is a vector space in which each vector is associated with a scalar value called a **norm**.  In a standard Euclidean vector spaces, the lengths of each vector is a norm:
 
-
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Norm.png" alt="drawing" width="300"/></center>
 
 The definition of a norm, however, generalizes this notion of length to any vector space.  
 
