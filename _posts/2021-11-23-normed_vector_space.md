@@ -39,7 +39,7 @@ Following the axioms for a normed vector space, one can also show that only the 
 Unit vectors
 ------------
 
-In a normed vector space, a **unit vector** is a vector with norm equal to 1. Given a vector $\boldsymbol{v}$, a unit vector can be derived by simply dividing the vector by its norm (Theorem 2 in the Appendix).  This unit vector, called the **normalized vector** of $\boldsymbol{v}$ is denoted $\hat{\boldsymbol{v}}$.  In a Euclidean vector space, the normalized vector $\hat{\boldsymbol{v}}$ is the unit vector that points in the same direction as $\boldsymbol{v}$.  
+In a normed vector space, a **unit vector** is a vector with norm equal to one. Given a vector $\boldsymbol{v}$, a unit vector can be derived by simply dividing the vector by its norm (Theorem 2 in the Appendix).  This unit vector, called the **normalized vector** of $\boldsymbol{v}$ is denoted $\hat{\boldsymbol{v}}$.  In a Euclidean vector space, the normalized vector $\hat{\boldsymbol{v}}$ is the unit vector that points in the same direction as $\boldsymbol{v}$.  
  
 Unit vectors are important because they generalize the idea of "direction" in Euclidean spaces to vector spaces that are not Euclidean. In a Euclidean space, the unit vectors all fall in a sphere of radius one around the origin:
 
@@ -65,18 +65,20 @@ In Theorem 2 in the Appendix, we prove that that this function is a valid metric
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (Only the zero vector has zero norm):** $\vert\vert \boldsymbol{v} \vert\vert = 0 \iff \boldsymbol{v} = \boldsymbol{0}$</span>
+<span style="color:#0060C6">**Theorem 1 (Only the zero vector has zero norm):** Given a vector space $(\mathcal{V}, \mathcal{F}$ with norm $\vert\vert . \vert\vert$, it holds that $\vert\vert \boldsymbol{v} \vert\vert = 0 \iff \boldsymbol{v} = \boldsymbol{0}$</span>
 
 **Proof:**
 
-$$\begin{align*}\vert\vert \boldsymbol{0} \vert\vert &= \vert\vert 0 \boldsymbol{v} \vert\vert && \text{for any $\boldsymbol{v} \in \mathcal{V}$ by Theorem 2 in this [blog post](https://mbernste.github.io/posts/vector_spaces/)} \\
+$$\begin{align*}\vert\vert \boldsymbol{0} \vert\vert &= \vert\vert 0 \boldsymbol{v} \vert\vert && \text{for any $\boldsymbol{v} \in \mathcal{V}$} \\
 &= \vert 0 \vert \vert\vert \boldsymbol{v} \vert\vert  && \text{by Axiom 2} \\ &= 0\end{align*}$$
+
+Note the first line is proven in Theorem 2 in my [previous blog post](https://mbernste.github.io/posts/vector_spaces/) on vector spaces.
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 2 (Formation of unit vector):** $\hat{\boldsymbol{v}} = \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert}$$
+<span style="color:#0060C6">**Theorem 2 (Formation of unit vector):** Given a vector space $(\mathcal{V}, \mathcal{F}$ with norm $\vert\vert . \vert\vert$, the vector $\hat{\boldsymbol{v}} := \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert} has norm equal to one.$$</span>
 
 **Proof:**
 
-$$\begin{align*}\vert\vert \hat{\boldsymbol{v}} \vert\vert &= \vert\vert \frac{\boldsymbol{v}}{\norm{\boldsymbol{v}}} \vert\vert \\
+$$\begin{align*}\vert\vert \hat{\boldsymbol{v}} \vert\vert &= \vert\vert \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert} \vert\vert \\
 &=\frac{1}{\vert\vert\boldsymbol{v}\vert\vert} \vert\vert\boldsymbol{v}\vert\vert \\ &= 1 \end{align*}$$
