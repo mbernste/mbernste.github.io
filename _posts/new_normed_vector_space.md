@@ -49,5 +49,14 @@ That is, if one subtracts one vector from the other, then the "length" of the re
 
 In Theorem 2 in the Appendix, we prove that that this function is a valid metric in that it satisfies the axioms of a metric function.
 
+Appendix
+--------
  
- 
+$$\vert\vert \boldsymbol{v} \vert\vert = 0 \iff \boldsymbol{v} = \boldsymbol{0}$$
+
+**Proof:**
+
+$$\begin{align*}\vert\vert \boldsymbol{0} \vert\vert &= \vert\vert 0 \boldsymbol{v} \vert\vert && \text{for any vector $\boldsymbol{v} \in \mathcal{V}$} \\
+&= \vert 0 \vert \vert\vert \boldsymbol{v} \vert\vert  && \text{by Axiom 2} \\ &= 0\end{align*}$$
+
+$\square$
