@@ -73,3 +73,10 @@ $$\begin{align*}\vert\vert \boldsymbol{0} \vert\vert &= \vert\vert 0 \boldsymbol
 &= \vert 0 \vert \vert\vert \boldsymbol{v} \vert\vert  && \text{by Axiom 2} \\ &= 0\end{align*}$$
 
 $\square$
+
+<span style="color:#0060C6">**Theorem 2 (Formation of unit vector):** $\hat{\boldsymbol{v}} = \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert}$$
+
+**Proof:**
+
+$$\begin{align*}\vert\vert \hat{\boldsymbol{v}} \vert\vert &= \vert\vert \frac{\boldsymbol{v}}{\norm{\boldsymbol{v}}} \vert\vert \\
+&=\frac{1}{\vert\vert\boldsymbol{v}\vert\vert} \vert\vert\boldsymbol{v}\vert\vert \\ &= 1 \end{align*}$$
