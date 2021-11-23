@@ -69,6 +69,8 @@ The L2 norm is the most common norm as it is simply the Euclidean distance betwe
 
 $$\vert\vert \boldsymbol{x} \vert\vert_2 := \sqrt{\sum_{i=1}^n x_i^2}$$
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/L2Norm.png" alt="drawing" width="200"/></center>
+
 **L1 norm** 
 
 The L1 norm is simply a sum of the of the absolute values of the elements of the vector:
@@ -77,11 +79,16 @@ $$\vert\vert \boldsymbol{x} \vert\vert_2 := \sum_{i=1}^n \vert x_i \vert$$
 
 The L1 norm is also alled the **Manhattan norm** or **taxicab norm** because it calculates distances as if one has take streets around city blocks to get from one point to another:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/L1Norm.png" alt="drawing" width="200"/></center>
+
+
 **Infinity norm** 
 
 The infinity norm is simply the maximum value among the elements of a vector:
 
 $$\vert\vert \boldsymbol{x} \vert\vert_{\infty} := \text{max}\{x_1, x_2, \dots, x_n\}$$
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/LInftyNorm.png" alt="drawing" width="200"/></center>
 
 
 Appendix
