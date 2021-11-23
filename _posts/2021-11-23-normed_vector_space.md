@@ -89,11 +89,15 @@ $\square$
 
 **Proof:**
 
-To prove that $d$ is a metric, we need to show that it satisfies the three axioms of a metric. First we need to show that
+To prove that $d$ is a metric, we need to show that it satisfies the three axioms of a metric function. First we need to show that
 
 $$d(\boldsymbol{x}, \boldsymbol{y}) = 0 \iff \boldsymbol{x} = \boldsymbol{y}$$
 
-Second, we need to show that $$d(\boldsymbol{x}, \boldsymbol{y}) \geq 0$. This one is already evident based on Axiom 1 in Definition 1 above. 
+We'll prove this using a quick proof by contradiction. Say $d(\boldsymbol{x}, \boldsymbol{y}) = 0$, but $\boldsymbol{x} \neq \boldsymbol{y}$. This implies that $$\begin{align*} d(\boldsymbol{x}, \boldsymbol{y}) = 0 \implies & \vert\vert\boldsymbol{x} - \boldsymbol{y} \vert\vert = 0 \\ \implies & \vert\vert \boldsymbol{x} + (-\boldsymbol{y})\vert\vert = 0 \\ \implies & \boldsymbol{x} + (-\boldsymbol{y}) = \boldsymbol{0} && \text{by Theorem 1} \\ \implies & \boldsymbol{y} = -1 * \boldsymbol{x} \end{align*}$$
+
+
+
+Second, we need to show that 0$d(\boldsymbol{x}, \boldsymbol{y}) \geq 0$. This fact is already evident based on Axiom 1 in Definition 1 above. 
 
 Third and finally, $d$ needs to satisfy the [triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality). That is, we need to show that $\forall \boldsymbol{x}, \boldsymbol{y}, \boldsymbol{x} \in \mathcal{V}$, it holds that
 
