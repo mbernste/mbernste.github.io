@@ -47,7 +47,7 @@ Thus, the set of all unit vectors can be used to define the set of all "directio
 Normed vector spaces are also metric spaces
 -------------------------------------------
   
-All normed vector spaces are also [metric spaces](https://en.wikipedia.org/wiki/Metric_(mathematics)) -- that is, the norm function induces a metric function on pairs of vectors that can be interpreted as a "distance" between them. This metric is defined simply as:
+All normed vector spaces are also [metric spaces](https://en.wikipedia.org/wiki/Metric_(mathematics)) -- that is, the norm function induces a metric function on pairs of vectors that can be interpreted as a "distance" between them (Theorem 3 in the Appendix). This metric is defined simply as:
 
 $$d(\boldsymbol{x}, \boldsymbol{y}) := \|\boldsymbol{x} - \boldsymbol{y}\|$$
 
@@ -56,8 +56,6 @@ That is, if one subtracts one vector from the other, then the "length" of the re
 In the figure below we show how the norm can be used to form a metric between Euclidean vectors. On the left, we depict two vectors, $\boldsymbol{v}$ and $\boldsymbol{u}$, as arrows. On the right we depict these vectors as points in Euclidean space. The distance between these points is given by the norm of the difference vector between $\boldsymbol{u}$ and $\boldsymbol{v}$.  
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/NormAsMetric.png" alt="drawing" width="400"/></center>
-
-In Theorem 3 in the Appendix, we prove that that this function is a valid metric function.
 
 Appendix
 --------
