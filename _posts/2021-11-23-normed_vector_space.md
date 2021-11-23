@@ -57,6 +57,25 @@ In the figure below we show how the norm can be used to form a metric between Eu
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/NormAsMetric.png" alt="drawing" width="400"/></center>
 
+
+Examples of norms
+------------------
+
+Notably, a norm is a function that satisfies a set of axioms and thus, one may consider multiple norms when looking at a vector space. For example, there are multiple norms that are commonly associated with Euclidean vector spaces. Here are just a few examples:
+
+**L2 (Euclidean) norm**
+
+$$\vert\vert \boldsymbol{x} \vert\vert_2 := \sqrt{\sum_{i=1}^n x_i^2}$$
+
+**L1 (Manhattan) norm** 
+
+$$\vert\vert \boldsymbol{x} \vert\vert_2 := \sum_{i=1}^n \vert x_i \vert$$
+
+**L0 norm** 
+
+$$\vert\vert \boldsymbol{x} \vert\vert_2 := \sum_{i=1}^n \mathbb{I}(x_i \neq 0)$$
+
+
 Appendix
 --------
 
