@@ -75,7 +75,7 @@ $$\vert\vert \boldsymbol{x} \vert\vert_2 := \sqrt{\sum_{i=1}^n x_i^2}$$
 
 The L1 norm is simply a sum of the of the absolute values of the elements of the vector:
 
-$$\vert\vert \boldsymbol{x} \vert\vert_2 := \sum_{i=1}^n \vert x_i \vert$$
+$$\vert\vert \boldsymbol{x} \vert\vert_1 := \sum_{i=1}^n \vert x_i \vert$$
 
 The L1 norm is also alled the **Manhattan norm** or **taxicab norm** because it calculates distances as if one has to take streets around city blocks to get from one point to another:
 
