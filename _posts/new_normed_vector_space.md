@@ -39,16 +39,25 @@ Following the axioms for a normed vector space, one can also show that only the 
 Unit vectors
 ------------
 
- In a normed vector space, a unit vector is a vector with norm equal to 1. Given a vector $\boldsymbol{v}$, a unit vector can be derived by simply dividing the vector by its norm (Theorem 2 in the Appendix).  This unit vector, called the **normalized vector** of $\boldsymbol{v}$ is denoted $\hat{\boldsymbol{v}}$.  In a Euclidean vector space, the normalized vector $\hat{\boldsymbol{v}}$ is the unit vector that points in the same direction as $\boldsymbol{v}$.  Unit vectors are often used to denote a direction in a vector space.  That is, since it's magnitude is 1, the relevant information encoded in the vector is the direction in which it points.  
+In a normed vector space, a **unit vector** is a vector with norm equal to 1. Given a vector $\boldsymbol{v}$, a unit vector can be derived by simply dividing the vector by its norm (Theorem 2 in the Appendix).  This unit vector, called the **normalized vector** of $\boldsymbol{v}$ is denoted $\hat{\boldsymbol{v}}$.  In a Euclidean vector space, the normalized vector $\hat{\boldsymbol{v}}$ is the unit vector that points in the same direction as $\boldsymbol{v}$.  
+ 
+Unit vectors are important because they generalize the idea of "direction" in Euclidean spaces to vector spaces that are not Euclidean. In a Euclidean space, the unit vectors all fall in a sphere of radius one around the origin:
+
+Thus, the set of all unit vectors form the set of all "directions" that vectors can point in the vector space. 
+ 
+Unit vectors are often used to abstract the idea of a "direction" in a vector space. This is because in a Euclidean vector space, the relevant information encoded in the vector is the direction in which it points:
+
   
 Normed vector spaces are also metric spaces
 -------------------------------------------
   
-All normed vector spaces are also metric spaces -- that is, the norm function induces a metric function on pairs of vectors. This metric is simply:
+All normed vector spaces are also [metric spaces](https://en.wikipedia.org/wiki/Metric_(mathematics)) -- that is, the norm function induces a metric function on pairs of vectors that can be interpreted as a "distance" between them. This metric is defined simply as:
 
 $$d(\boldsymbol{x}, \boldsymbol{y}) := \|\boldsymbol{x} - \boldsymbol{y}\|$$
 
-That is, if one subtracts one vector from the other, then the "length" of the resultant vector can be interpreted as the "distance" between those vectors. In the figure below we show how the norm can be used to form a metric between Euclidean vectors. On the left, we depict two vectors, $\boldsymbol{v}$ and $\boldsymbol{u}$, as arrows. On the right we depict these vectors as points in Euclidean space. The distance between these points is given by the norm of the difference vector between $\boldsymbol{u}$ and $\boldsymbol{v}$.  
+That is, if one subtracts one vector from the other, then the "length" of the resultant vector can be interpreted as the "distance" between those vectors. 
+
+In the figure below we show how the norm can be used to form a metric between Euclidean vectors. On the left, we depict two vectors, $\boldsymbol{v}$ and $\boldsymbol{u}$, as arrows. On the right we depict these vectors as points in Euclidean space. The distance between these points is given by the norm of the difference vector between $\boldsymbol{u}$ and $\boldsymbol{v}$.  
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/NormAsMetric.png" alt="drawing" width="400"/></center>
 
