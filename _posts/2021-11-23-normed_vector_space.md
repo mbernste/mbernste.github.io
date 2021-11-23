@@ -71,7 +71,7 @@ Note the first line is proven in Theorem 2 in my [previous blog post](https://mb
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 2 (Formation of unit vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$ with norm $\vert\vert . \vert\vert$, the vector $\hat{\boldsymbol{v}} := \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert}$$ has norm equal to one.</span>
+<span style="color:#0060C6">**Theorem 2 (Formation of unit vector):** Given a vector space $(\mathcal{V}, \mathcal{F})$ with norm $\vert\vert . \vert\vert$, the vector $\hat{\boldsymbol{v}} := \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert}$ has norm equal to one.</span>
 
 **Proof:**
 
