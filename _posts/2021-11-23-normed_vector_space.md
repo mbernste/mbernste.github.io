@@ -99,7 +99,7 @@ We'll prove this using a quick proof by contradiction. Say $d(\boldsymbol{x}, \b
 
 Second, we need to show that 0$d(\boldsymbol{x}, \boldsymbol{y}) \geq 0$. This fact is already evident based on Axiom 1 in Definition 1 above. 
 
-Third and finally, $d$ needs to satisfy the [triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality). That is, we need to show that $\forall \boldsymbol{x}, \boldsymbol{y}, \boldsymbol{x} \in \mathcal{V}$, it holds that
+Third and finally, $d$ needs to satisfy the [triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality). That is, we need to show that $\forall \boldsymbol{x}, \boldsymbol{y}, \boldsymbol{z} \in \mathcal{V}$, it holds that
 
 $$d(\boldsymbol{x}, \boldsymbol{y}) \leq d(\boldsymbol{x}, \boldsymbol{z}) + d(\boldsymbol{z}, \boldsymbol{y})$$
 
