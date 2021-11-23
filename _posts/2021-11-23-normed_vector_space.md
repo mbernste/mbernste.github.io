@@ -60,7 +60,7 @@ In the figure below we show how the norm can be used to form a metric between Eu
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/NormAsMetric.png" alt="drawing" width="400"/></center>
 
-In Theorem 2 in the Appendix, we prove that that this function is a valid metric in that it satisfies the axioms of a metric function.
+In Theorem 3 in the Appendix, we prove that that this function is a valid metric function.
 
 Appendix
 --------
