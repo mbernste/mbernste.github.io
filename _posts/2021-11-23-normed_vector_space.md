@@ -93,15 +93,21 @@ To prove that $d$ is a metric, we need to show that it satisfies the three axiom
 
 $$d(\boldsymbol{x}, \boldsymbol{y}) = 0 \iff \boldsymbol{x} = \boldsymbol{y}$$
 
-We'll prove this using a quick proof by contradiction. Say $d(\boldsymbol{x}, \boldsymbol{y}) = 0$, but $\boldsymbol{x} \neq \boldsymbol{y}$. This implies that $$\begin{align*} d(\boldsymbol{x}, \boldsymbol{y}) = 0 \implies & \vert\vert\boldsymbol{x} - \boldsymbol{y} \vert\vert = 0 \\ \implies & \vert\vert \boldsymbol{x} + (-\boldsymbol{y})\vert\vert = 0 \\ \implies & \boldsymbol{x} + (-\boldsymbol{y}) = \boldsymbol{0} && \text{by Theorem 1} \\ \implies & \boldsymbol{y} = -1 * \boldsymbol{x} \end{align*}$$
+This can be proven as follows:
 
+$$\begin{align*} d(\boldsymbol{x}, \boldsymbol{y}) = 0 \implies & \vert\vert\boldsymbol{x} - \boldsymbol{y} \vert\vert = 0 \\ \implies & \vert\vert \boldsymbol{x} + (-\boldsymbol{y})\vert\vert = 0 \\ \implies & \boldsymbol{x} + (-\boldsymbol{y}) = \boldsymbol{0} && \text{by Theorem 1} \\ \implies & \boldsymbol{y} = -1 \boldsymbol{x} \\ implies \boldsymbol{y} = \boldsymbol{x}\end{align*}$$
 
+The last line follows from Theorem 4 in my [previous blog post](https://mbernste.github.io/posts/vector_spaces/) on vector spaces. 
 
 Second, we need to show that 0$d(\boldsymbol{x}, \boldsymbol{y}) \geq 0$. This fact is already evident based on Axiom 1 in Definition 1 above. 
 
 Third and finally, $d$ needs to satisfy the [triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality). That is, we need to show that $\forall \boldsymbol{x}, \boldsymbol{y}, \boldsymbol{z} \in \mathcal{V}$, it holds that
 
 $$d(\boldsymbol{x}, \boldsymbol{y}) \leq d(\boldsymbol{x}, \boldsymbol{z}) + d(\boldsymbol{z}, \boldsymbol{y})$$
+
+This is proven as follows:
+
+$$\begin{align*} d(\boldsymbol{x}, \boldsymbol{y}) &=  \vert\vert\boldsymbol{x} - \boldsymbol{y} \vert\vert \\ &= \vert\vert\boldsymbol{x} + \boldsymbol{z} - \boldsymbol{z} - \boldsymbol{y} \vert\vert \\ \vert\vert\(boldsymbol{x} + \boldsymbol{z}) - (\boldsymbol{z} - \boldsymbol{y}) \vert\vert \\ & \leq  \vert\vert\boldsymbol{x} + \boldsymbol{z}\vert\vert\ + \vert\vert\\boldsymbol{z} - \boldsymbol{y}\vert\vert\ && \text{by Axiom 3 of Definition 1} \\ &= d(\boldsymbol{x}, \boldsymbol{z}) + d(\boldsymbol{z}, \boldsymbol{y})$$
 
 $\square$
 
