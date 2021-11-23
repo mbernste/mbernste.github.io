@@ -65,7 +65,7 @@ In Theorem 2 in the Appendix, we prove that that this function is a valid metric
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (Only the zero vector has zero norm):** Given a vector space $(\mathcal{V}, \mathcal{F}$ with norm $\vert\vert . \vert\vert$, it holds that $\vert\vert \boldsymbol{v} \vert\vert = 0 \iff \boldsymbol{v} = \boldsymbol{0}$</span>
+<span style="color:#0060C6">**Theorem 1 (Only the zero vector has zero norm):** Given a vector space $(\mathcal{V}, \mathcal{F})$ with norm $\vert\vert . \vert\vert$, it holds that $\vert\vert \boldsymbol{v} \vert\vert = 0 \iff \boldsymbol{v} = \boldsymbol{0}$</span>
 
 **Proof:**
 
@@ -76,9 +76,24 @@ Note the first line is proven in Theorem 2 in my [previous blog post](https://mb
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 2 (Formation of unit vector):** Given a vector space $(\mathcal{V}, \mathcal{F}$ with norm $\vert\vert . \vert\vert$, the vector $\hat{\boldsymbol{v}} := \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert} has norm equal to one.$$</span>
+<span style="color:#0060C6">**Theorem 2 (Formation of unit vector):** Given a vector space $(\mathcal{V}, \mathcal{F}_$ with norm $\vert\vert . \vert\vert$, the vector $\hat{\boldsymbol{v}} := \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert}$$ has norm equal to one.</span>
 
 **Proof:**
 
 $$\begin{align*}\vert\vert \hat{\boldsymbol{v}} \vert\vert &= \vert\vert \frac{\boldsymbol{v}}{\vert\vert \boldsymbol{v} \vert\vert} \vert\vert \\
 &=\frac{1}{\vert\vert\boldsymbol{v}\vert\vert} \vert\vert\boldsymbol{v}\vert\vert \\ &= 1 \end{align*}$$
+
+$\square$
+
+<span style="color:#0060C6">**Theorem 3 (Norm-induced metric):** Given a vector space $(\mathcal{V}, \mathcal{F})$ with norm $\vert\vert . \vert\vert$, the function $d(\boldsymbol{x}, \boldsymbol{y}) := \vert\vert \boldsymbol{x} - \boldsymbol{y} \vert\vert$ where $\boldsymbol{x}, \boldsymbol{y} \in \mathcal{V}$ is is a metric.</span>
+
+**Proof:**
+
+To prove that $d$ is a metric, we need to show that it satisfies the three axioms of a metric. First we need to show that
+
+$$d(\boldsymbol{x}, \boldsymbol{y}) = 0 \iff \boldsymbol{x} = \boldsymbol{y}$$
+
+
+
+$\square$
+
