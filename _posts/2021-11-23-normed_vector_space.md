@@ -95,7 +95,7 @@ $$d(\boldsymbol{x}, \boldsymbol{y}) = 0 \iff \boldsymbol{x} = \boldsymbol{y}$$
 
 This can be proven as follows:
 
-$$\begin{align*} d(\boldsymbol{x}, \boldsymbol{y}) = 0 \implies & \vert\vert\boldsymbol{x} - \boldsymbol{y} \vert\vert = 0 \\ \implies & \vert\vert \boldsymbol{x} + (-\boldsymbol{y})\vert\vert = 0 \\ \implies & \boldsymbol{x} + (-\boldsymbol{y}) = \boldsymbol{0} && \text{by Theorem 1} \\ \implies & \boldsymbol{y} = -1 \boldsymbol{x} \\ \implies \boldsymbol{y} = \boldsymbol{x}\end{align*}$$
+$$\begin{align*} d(\boldsymbol{x}, \boldsymbol{y}) = 0 \implies & \vert\vert\boldsymbol{x} - \boldsymbol{y} \vert\vert = 0 \\ \implies & \vert\vert \boldsymbol{x} + (-\boldsymbol{y})\vert\vert = 0 \\ \implies & \boldsymbol{x} + (-\boldsymbol{y}) = \boldsymbol{0} && \text{by Theorem 1} \\ \implies & \boldsymbol{y} = -1 \boldsymbol{x} \\ \implies & \boldsymbol{y} = \boldsymbol{x}\end{align*}$$
 
 The last line follows from Theorem 4 in my [previous blog post](https://mbernste.github.io/posts/vector_spaces/) on vector spaces. Going the other direction, we assume that $$\boldsymbol{x} = \boldsymbol{y}$$. Then
 
