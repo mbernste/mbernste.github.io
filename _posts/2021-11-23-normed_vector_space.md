@@ -109,7 +109,7 @@ $$d(\boldsymbol{x}, \boldsymbol{y}) \leq d(\boldsymbol{x}, \boldsymbol{z}) + d(\
 
 This is proven as follows:
 
-$$\begin{align*} d(\boldsymbol{x}, \boldsymbol{y}) &=  \vert\vert\boldsymbol{x} - \boldsymbol{y} \vert\vert \\ &= \vert\vert\boldsymbol{x} + \boldsymbol{z} - \boldsymbol{z} - \boldsymbol{y} \vert\vert \\ &= \vert\vert\(boldsymbol{x} + \boldsymbol{z}) - (\boldsymbol{z} - \boldsymbol{y}) \vert\vert \\ & \leq  \vert\vert\boldsymbol{x} + \boldsymbol{z}\vert\vert\ + \vert\vert\ \boldsymbol{z} - \boldsymbol{y} \vert\vert && \text{by Axiom 3 of Definition 1} \\ &= d(\boldsymbol{x}, \boldsymbol{z}) + d(\boldsymbol{z}, \boldsymbol{y})\end{align*}$$
+$$\begin{align*} d(\boldsymbol{x}, \boldsymbol{y}) &=  \vert\vert\boldsymbol{x} - \boldsymbol{y} \vert\vert \\ &= \vert\vert\boldsymbol{x} - \boldsymbol{z} + \boldsymbol{z} - \boldsymbol{y} \vert\vert \\ &= \vert\vert(\boldsymbol{x} - \boldsymbol{z}) + (\boldsymbol{z} - \boldsymbol{y}) \vert\vert \\ & \leq  \vert\vert\boldsymbol{x} - \boldsymbol{z}\vert\vert\ + \vert\vert\ \boldsymbol{z} - \boldsymbol{y} \vert\vert && \text{by Axiom 3 of Definition 1} \\ &= d(\boldsymbol{x}, \boldsymbol{z}) + d(\boldsymbol{z}, \boldsymbol{y})\end{align*}$$
 
 $\square$
 
