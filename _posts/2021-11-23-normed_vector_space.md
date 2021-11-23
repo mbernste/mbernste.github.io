@@ -8,16 +8,16 @@ tags:
   - linear algebra
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
+_When first introduced to Euclidean vectors, one is taught the length of the vector's arrow is called the norm of the vector. In this post, we present the more rigorous and abstract definition of a norm and show how it generalizes the notion of "length" to non-Euclidean vector spaces. We also discuss how the norm induces a metric function on pairs vectors so that one can discuss distances between vectors._
 
 Introduction
 ------------
 
-A **normed vector space** is a vector space in which each vector is associated with a scalar value called a **norm**.  In a standard Euclidean vector spaces, the lengths of each vector is a norm:
+A **normed vector space** is a vector space in which each vector is associated with a scalar value called a **norm**.  In a standard Euclidean vector spaces, the length of each vector is a norm:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Norm.png" alt="drawing" width="200"/></center>
 
-The definition of a norm, however, generalizes this notion of length to any vector space.  
+The more abstract, rigorous definition of a norm generalizes this notion of length to any vector space as follows: 
 
 <span style="color:#0060C6">**Definition 1 (normed vector space):** A **normed vector space** is vector space $(\mathcal{V}, \mathcal{F})$ associated with a function $\|\|.\|\| : \mathcal{V} \rightarrow \mathbb{R}$, called a **norm**, that obeys the following axioms:</span>
 
@@ -25,10 +25,7 @@ The definition of a norm, however, generalizes this notion of length to any vect
 2. <span style="color:#0060C6">$\forall \boldsymbol{v} \in \mathcal{V}, \forall \alpha \in \mathcal{F}, \ \ \|\|\alpha\boldsymbol{v}\|\| = |\alpha| \|\|\boldsymbol{v}\|\|$</span>  
 3. <span style="color:#0060C6">$\forall \boldsymbol{v}, \boldsymbol{u} \in \mathcal{V}, \ \ \|\|\boldsymbol{u} + \boldsymbol{v}\|\| \leq \|\|\boldsymbol{u}\|\| + \|\|\boldsymbol{v}\|\|$</span>   
 
-Intuition
----------
-
-The norm of a vector captures the a notion of "length" for a vector.  Below we outline the intuition behind each axiom in the definition above and describe how these axioms capture this idea of length:
+Here, we outline the intuition behind each axiom in the definition above and describe how these axioms capture this idea of length:
 
 * Axiom 1 says that all vectors should have a positive length.  This enforces our intuition that a "length'' is a positive quantity.
 * Axiom 2 says that if we multiply a vector by a scalar, it's length should increase by the magnitude (i.e. the absolute) value of that scalar. This axiom ties together the notion of scaling vectors (Axiom 6 in the definition of a vector space) to the notion of "length" for a vector.  It essentially says that to scale a vector is to stretch the vector.
