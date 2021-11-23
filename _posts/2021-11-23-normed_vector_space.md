@@ -63,17 +63,25 @@ Examples of norms
 
 Notably, a norm is a function that satisfies a set of axioms and thus, one may consider multiple norms when looking at a vector space. For example, there are multiple norms that are commonly associated with Euclidean vector spaces. Here are just a few examples:
 
-**L2 (Euclidean) norm**
+**L2 norm**
+
+The L2 norm is the most common norm as it is simply the Euclidean distance between points in a coordinate vector space:
 
 $$\vert\vert \boldsymbol{x} \vert\vert_2 := \sqrt{\sum_{i=1}^n x_i^2}$$
 
-**L1 (Manhattan) norm** 
+**L1 norm** 
+
+The L1 norm is simply a sum of the of the absolute values of the elements of the vector:
 
 $$\vert\vert \boldsymbol{x} \vert\vert_2 := \sum_{i=1}^n \vert x_i \vert$$
 
-**L0 norm** 
+The L1 norm is also alled the **Manhattan norm** or **taxicab norm** because it calculates distances as if one has take streets around city blocks to get from one point to another:
 
-$$\vert\vert \boldsymbol{x} \vert\vert_2 := \sum_{i=1}^n \mathbb{I}(x_i \neq 0)$$
+**Infinity norm** 
+
+The infinity norm is simply the maximum value among the elements of a vector:
+
+$$\vert\vert \boldsymbol{x} \vert\vert_{\infty} := \text{max}\{x_1, x_2, \dots, x_n\}$$
 
 
 Appendix
