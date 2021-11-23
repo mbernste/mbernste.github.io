@@ -69,7 +69,7 @@ Appendix
 
 **Proof:**
 
-$$\begin{align*}\vert\vert \boldsymbol{0} \vert\vert &= \vert\vert 0 \boldsymbol{v} \vert\vert && \text{for any vector $\boldsymbol{v} \in \mathcal{V}$} \\
+$$\begin{align*}\vert\vert \boldsymbol{0} \vert\vert &= \vert\vert 0 \boldsymbol{v} \vert\vert && \text{for any $\boldsymbol{v} \in \mathcal{V}$ by Theorem 2 in this [blog post](https://mbernste.github.io/posts/vector_spaces/)} \\
 &= \vert 0 \vert \vert\vert \boldsymbol{v} \vert\vert  && \text{by Axiom 2} \\ &= 0\end{align*}$$
 
 $\square$
