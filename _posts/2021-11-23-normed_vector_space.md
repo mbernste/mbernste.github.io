@@ -28,7 +28,7 @@ The more abstract, rigorous definition of a norm generalizes this notion of leng
 Here, we outline the intuition behind each axiom in the definition above and describe how these axioms capture this idea of length:
 
 * Axiom 1 says that all vectors should have a positive length.  This enforces our intuition that a "length'' is a positive quantity.
-* Axiom 2 says that if we multiply a vector by a scalar, it's length should increase by the magnitude (i.e. the absolute) value of that scalar. This axiom ties together the notion of scaling vectors (Axiom 6 in the definition of a vector space) to the notion of "length" for a vector.  It essentially says that to scale a vector is to stretch the vector.
+* Axiom 2 says that if we multiply a vector by a scalar, it's length should increase by the magnitude (i.e. the absolute value) of that scalar. This axiom ties together the notion of scaling vectors (Axiom 6 in the [definition of a vector space](https://mbernste.github.io/posts/vector_spaces/)) to the notion of "length" for a vector.  It essentially says that to scale a vector is to stretch the vector.
 * Axiom 3 says that the length of the sum of two vectors should not exceed the sum of the lengths of each vector.  This enforces our intuition that if we add together two objects that each have a "length", the resultant object should not exceed the sum of the lengths of the original objects.
 
 Following the axioms for a normed vector space, one can also show that only the zero vector has zero length (Theorem 1 in the Appendix to this post).
