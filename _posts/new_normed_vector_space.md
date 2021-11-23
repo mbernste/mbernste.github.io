@@ -43,11 +43,10 @@ In a normed vector space, a **unit vector** is a vector with norm equal to 1. Gi
  
 Unit vectors are important because they generalize the idea of "direction" in Euclidean spaces to vector spaces that are not Euclidean. In a Euclidean space, the unit vectors all fall in a sphere of radius one around the origin:
 
-Thus, the set of all unit vectors form the set of all "directions" that vectors can point in the vector space. 
- 
-Unit vectors are often used to abstract the idea of a "direction" in a vector space. This is because in a Euclidean vector space, the relevant information encoded in the vector is the direction in which it points:
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/UnitVectors.png" alt="drawing" width="200"/></center>
 
-  
+Thus, the set of all unit vectors can be used to define the set of all "directions" that vectors can point in the vector space. Because of this, one can form any vector by decomposing it into a unit vector multiplied by some scalar.  In this way, unit vectors generalize the notion of "direction" in a Euclidean vector space to non-Euclidean vector spaces.
+ 
 Normed vector spaces are also metric spaces
 -------------------------------------------
   
