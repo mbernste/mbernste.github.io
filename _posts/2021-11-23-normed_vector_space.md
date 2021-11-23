@@ -96,7 +96,7 @@ $$\begin{align*} d(\boldsymbol{x}, \boldsymbol{y}) = 0 \implies & \vert\vert\bol
 
 The last line follows from Theorem 4 in my [previous blog post](https://mbernste.github.io/posts/vector_spaces/) on vector spaces. Going the other direction, we assume that $$\boldsymbol{x} = \boldsymbol{y}$$. Then
 
-$$\begin{align*} \vert\vert \boldsymbol{y} - \boldsymbol{x} \vert\vert &= \vert\vert \boldsymbol{x} - \boldsymbol{x} \vert\vert \\ &= \vert\vert \\ \boldsymbol{0} \vert\vert \\ &= 0 \text{by Theorem 1}\end{align*}$$
+$$\begin{align*} \vert\vert \boldsymbol{y} - \boldsymbol{x} \vert\vert &= \vert\vert \boldsymbol{x} - \boldsymbol{x} \vert\vert \\ &= \vert\vert \boldsymbol{0} \vert\vert \\ &= 0 \ \text{by Theorem 1}\end{align*}$$
 
 Second, we need to show that 0$d(\boldsymbol{x}, \boldsymbol{y}) \geq 0$. This fact is already evident based on Axiom 1 in Definition 1 above. 
 
