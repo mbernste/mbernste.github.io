@@ -48,7 +48,7 @@ All normed vector spaces are also metric spaces -- that is, the norm function in
 
 $$d(\boldsymbol{x}, \boldsymbol{y}) := \|\boldsymbol{x} - \boldsymbol{y}\|$$
 
-That is, if one subtracts one vector from the other, then the "length" of the resultant vector can be interpreted as the "distance" between those vectors:
+That is, if one subtracts one vector from the other, then the "length" of the resultant vector can be interpreted as the "distance" between those vectors. In the figure below we show how the norm can be used to form a metric between Euclidean vectors. On the left, we depict two vectors, $\boldsymbol{v}$ and $\boldsymbol{u}$, as arrows. On the right we depict these vectors as points in Euclidean space. The distance between these points is given by the norm of the difference vector between $\boldsymbol{u}$ and $\boldsymbol{v}$.  
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/NormAsMetric.png" alt="drawing" width="400"/></center>
 
