@@ -1,6 +1,6 @@
 ---
 title: 'Normed vector spaces'
-date: 2021-11-08
+date: 2021-11-23
 permalink: /posts/normed_vector_space/
 tags:
   - tutorial
@@ -13,7 +13,11 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 ------------
 
-A **normed vector** space is a vector space in which each vector is associated with a scalar value called a **norm**.  A norm generalizes the idea of vector-lengths in standard Euclidean vector spaces to any vector space.  
+A **normed vector** space is a vector space in which each vector is associated with a scalar value called a **norm**.  In a standard Euclidean vector spaces, the lengths of each vector is a norm:
+
+
+
+The definition of a norm, however, generalizes this notion of length to any vector space.  
 
 <span style="color:#0060C6">**Definition 1 (normed vector space):** A **normed vector space** is vector space $(\mathcal{V}, \mathcal{F})$ associated with a function $\|\|.\|\| : \mathcal{V} \rightarrow \mathbb{R}$ that obeys the following axioms:</span>
 
