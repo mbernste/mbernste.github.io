@@ -26,7 +26,7 @@ We can verify this pretty easily geometrically:
 
 So far, this isn't too confusing, but things get more difficult when moving to matrices of higher dimensions. Unintuitively, the generali definition of the determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as
 
-$$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1}, a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) $$
+$$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) $$
 
 where $\boldsymbol{A}_{-1}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$.
 
