@@ -45,7 +45,7 @@ Second, we will often represent the determinant $$\text{Det}$$ of a matrix as a 
 
 $$\text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,1}) := \text{Det}(\boldsymbol{A})$$
 
-where $\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,1}$ are the columns of $\boldsymbol{A}$.
+where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
 
 With this bit of notation out of the way, let's get to it.
 
