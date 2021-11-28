@@ -51,4 +51,8 @@ $$\text{Det}(\boldsymbol{I}) = 1$$
 **2. If two columns are equal, then the determinant is zero**  
 
 
+Deriving the formula for a determinant
+--------------------------------------
 
+What is meant by "signed volume"?
+---------------------------------
