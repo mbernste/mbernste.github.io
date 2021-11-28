@@ -14,10 +14,10 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Of all of the topics taught in introductory linear algebra, I found the **determinant** to be one of the most confusing. When introduced to determinants, one is taught that the determinant of a matrix $\boldysmbol{A}$ is the area of the parallelapiped formed by columns of $\boldsymbold{A}$. For example, if $\boldysmbol{A}$ is a 2x2 matrix, we can depict the area as follows:
+Of all of the topics taught in introductory linear algebra, I found the **determinant** to be one of the most confusing. When introduced to determinants, one is taught that the determinant of a matrix $\boldysmbol{A}$ is the area of the parallelapiped formed by columns of $\boldsymbold{A}$. For example, if $\boldysmbol{A}$ is a $2 \times 2$ matrix, we can depict the area as follows:
 
 
-Furthermore, for a 2x2 matrix, this area can be computed via:
+Furthermore, for a $2 \times 2$ matrix, this area can be computed via:
 
 $$\text{Det}(\boldsymbol{A}) := ac - bd$$
 
@@ -30,12 +30,12 @@ $$\text{Det}(\boldsymbol{A}) := \sum_{i \in S_m}$$
 
 If you're like me, this equation is very opaque. How on earth does this calculate the volumne of a m-dimensional parallelapiped? 
 
-In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to define the notion of "volume" in an m-dimensional space. From this axiomization, we derive the equation for the determinant above!
+In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to capture the notion of "volume" in an $m$-dimensional space. From this axiomization, we derive the equation for the determinant above!
 
 Abstracting the concept of volume: the axioms for a determinant
 ---------------------------------------------------------------
 
-The definition of a determinant does not actually start with the calculation of of volume in the usual sense, but rather, we will start in a more abstract place: axiomizing the properties that "volume" should have. 
+The definition of a determinant does not actually start with the calculation of of volume in the usual sense, but rather, we will begin by trying to abstract the fundamental properties of "geometric volume". 
 
 **1. The determinant of the identity matrix is one**  
 
@@ -47,8 +47,13 @@ $$\text{Det}(\boldsymbol{I}) = 1$$
 
 **2. If two columns of a matrix are equal, then its determinant is zero**  
 
-First, let's consider what we mean by "volume" in an m-dimensional space. To illustrate volume, let's consider the cube
+If two columns of a matrix are equal, then the parallelapipde formed by their columns is flat. Intuitively, the volume of a flat parallelapided should be zero. To can visualize this intuition in three dimensions below:
 
+Here we see that when two of the three column vectors are equal, the parallapided lies in a hyperplane. Clearly, its geometric volume is zero. We can generalize this to any dimensions by simply making this property an axiom of the determinant: if two colum vectors are equal, high-dimensional parallelapide is "flat" and thus has a volume of zero. 
+
+**2. The determinant of a matrix is linear with respect to each column vector**
+
+  
 
 Deriving the formula for a determinant
 --------------------------------------
