@@ -32,8 +32,8 @@ If you're like me, this equation is very opaque. How on earth does this calculat
 
 In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to capture the notion of "volume" in an $m$-dimensional space. From this axiomization, we derive the equation for the determinant above!
 
-Abstracting the concept of volume: the axioms for a determinant
----------------------------------------------------------------
+Axioms for a determinant: abstracting the notion of geometric volume
+--------------------------------------------------------------------
 
 The definition of a determinant does not actually start with the calculation of of volume in the usual sense, but rather, we will begin by trying to abstract the fundamental properties of "geometric volume". 
 
