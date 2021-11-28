@@ -19,16 +19,18 @@ Of all of the topics taught in introductory linear algebra, I found the **determ
 
 Furthermore, for a $2 \times 2$ matrix, this area can be computed via:
 
-$$\text{Det}(\boldsymbol{A}) := ac - bd$$
+$$\text{Det}(\boldsymbol{A}) := ad - bc$$
 
 We can verify this pretty easily geometrically:
 
 
 So far, this isn't so confusing, but things get worse when you move to higher dimensions. Specifically, it turns out that the determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as follows:
 
-$$\text{Det}(\boldsymbol{A}) := \sum_{i \in S_m}$$
+$$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1}, a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) $$
 
-If you're like me, this equation is very opaque. How on earth does this calculate the volumne of a m-dimensional parallelapiped? 
+where $\boldsymbol{A}_{-1}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$.
+
+If you're like me, this equation is very opaque. How on earth does this equation calculate the volumne of an $m$-dimensional parallelapiped? Moreover, why is it recursive? 
 
 In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to capture the notion of "volume" in an $m$-dimensional space. From this axiomization, we derive the equation for the determinant above!
 
