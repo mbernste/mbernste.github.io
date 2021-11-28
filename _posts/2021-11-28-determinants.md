@@ -35,15 +35,19 @@ In this post, I am going to attempt to demystify this definition. To do so, we w
 Abstracting the concept of volume: the axioms for a determinant
 ---------------------------------------------------------------
 
-The definition of a determinant does not actually start with the calculation of of volume in the usual sense, but rather, we will start in a more abstract place: axiomizing the properties that "volume" should have:
+The definition of a determinant does not actually start with the calculation of of volume in the usual sense, but rather, we will start in a more abstract place: axiomizing the properties that "volume" should have. 
 
 **1. The determinant of the identity matrix is one**  
 
-This makes intuitive sense: the parallelopided formed by the columns of the identity matrix form a hypercube in $m$-dimensional space. The volume of a cube is simply the product of the sides of the cube; in this case, they're all of length one so the volume should be one:That is, we have 
+This makes intuitive sense: the parallelopided formed by the columns of the identity matrix form a hypercube in $m$-dimensional space. The volume of a cube is simply the product of the sides of the cube; in this case, they're all of length one so the volume should be one:
+
+That is, we have 
 
 $$\text{Det}(\boldsymbol{I}) = 1$$
 
-**2. If two columns are equal, then the determinant is zero**  
+**2. If two columns of a matrix are equal, then its determinant is zero**  
+
+First, let's consider what we mean by "volume" in an m-dimensional space. To illustrate volume, let's consider the cube
 
 
 Deriving the formula for a determinant
