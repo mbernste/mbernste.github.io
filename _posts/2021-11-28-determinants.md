@@ -14,7 +14,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Of all of the topics taught in introductory linear algebra, I found the **determinant** to be one of the most confusing. When introduced to determinants, one is taught that the determinant of a matrix $\boldysmbol{A}$ is the area of the parallelapiped formed by columns of $\boldsymbold{A}$. For example, if $\boldysmbol{A}$ is a $2 \times 2$ matrix, we can depict the area as follows:
+Of all of the topics taught in introductory linear algebra, I found the **determinant** to be one of the most confusing. When introduced to determinants, one is taught that the determinant of a matrix $\boldsymbol{A}$ is the area of the parallelapiped formed by columns of $\boldsymbol{A}$. For example, if $\boldsymbol{A}$ is a $2 \times 2$ matrix, we can depict the area as follows:
 
 
 Furthermore, for a $2 \times 2$ matrix, this area can be computed via:
