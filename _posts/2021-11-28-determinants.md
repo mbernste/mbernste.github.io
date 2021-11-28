@@ -14,21 +14,19 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-When first learning linear algebra, I found the **determinant** to be one of the more confusing topics.  When introduced to determinants, one is taught that the determinant of a matrix $\boldsymbol{A}$ is the area of the parallelapiped formed by columns of $\boldsymbol{A}$. For example, if $\boldsymbol{A}$ is a $2 \times 2$ matrix, we can depict the area as follows:
+When first learning linear algebra, I found the **determinant** to be one of the more confusing topics.  When introduced to determinants, one is taught that the the determinant of a matrix $\boldsymbol{A}$ is the "signed" area of the parallelapiped formed by columns of $\boldsymbol{A}$.  That is, the absolute value of the determinant is the volume of the parallelapided, but this volume can be negative. 
+
+For example, for a $2 \times 2$ matrix $\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$, one can compute the determinant via the equation
+$$\text{Det}(\boldsymbol{A}) := ad - bc$$.
+
+We can verify that this equation gives us the area of the parallelapiped pretty easily by drawing it out:
 
 
-Furthermore, for a $2 \times 2$ matrix, this area can be computed via:
-
-$$\text{Det}(\boldsymbol{A}) := ad - bc$$
-
-We can verify this pretty easily geometrically:
-
-
-So far, this isn't too confusing, but things get more difficult when moving to matrices of higher dimensions. Unintuitively, the generali definition of the determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as
+So far, this isn't too confusing, but things get more difficult when moving to matrices of higher dimensions. Unintuitively, the general definition of the determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as
 
 $$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) $$
 
-where $\boldsymbol{A}_{-1}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$.
+where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$.
 
 If you're like me, this equation is very opaque. How on earth does this equation calculate the volumne of an $m$-dimensional parallelapiped? Moreover, why is it recursive? 
 
