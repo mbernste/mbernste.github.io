@@ -14,7 +14,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Of all of the topics taught in introductory linear algebra, I found the **determinant** to be one of the most confusing. When introduced to determinants, one is taught that the determinant of a matrix $\boldsymbol{A}$ is the area of the parallelapiped formed by columns of $\boldsymbol{A}$. For example, if $\boldsymbol{A}$ is a $2 \times 2$ matrix, we can depict the area as follows:
+When first learning linear algebra, I found the **determinant** to be one of the more confusing topics.  When introduced to determinants, one is taught that the determinant of a matrix $\boldsymbol{A}$ is the area of the parallelapiped formed by columns of $\boldsymbol{A}$. For example, if $\boldsymbol{A}$ is a $2 \times 2$ matrix, we can depict the area as follows:
 
 
 Furthermore, for a $2 \times 2$ matrix, this area can be computed via:
@@ -24,7 +24,7 @@ $$\text{Det}(\boldsymbol{A}) := ad - bc$$
 We can verify this pretty easily geometrically:
 
 
-So far, this isn't so confusing, but things get worse when you move to higher dimensions. Specifically, it turns out that the determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as follows:
+So far, this isn't too confusing, but things get more difficult when moving to matrices of higher dimensions. Unintuitively, the generali definition of the determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as
 
 $$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1}, a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) $$
 
@@ -33,6 +33,21 @@ where $\boldsymbol{A}_{-1}$ denotes the matrix formed by deleting the first row 
 If you're like me, this equation is very opaque. How on earth does this equation calculate the volumne of an $m$-dimensional parallelapiped? Moreover, why is it recursive? 
 
 In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to capture the notion of "volume" in an $m$-dimensional space. From this axiomization, we derive the equation for the determinant above!
+
+Notation
+--------
+
+Before getting into the thick of it, let's define a bit of notation that we'll use in this blog post.  It is common to denote the determinant using two bars around a matrx as follows:
+
+$$\begin{vmatrix*}a_{1,1} && \dots && a_{1,m} \\ vdots && \ddots && \vots \\ a_{m,1} && \dots && a_{m,m} \end{vmatrix*} := \text{Det}(\boldsymbol{A})$$
+
+Second, we will often represent the determinant $$\text{Det}$$ of a matrix as a function with either a single matrix argument or with multiple vector arguments:
+
+$$\text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,1}) := \text{Det}(\boldsymbol{A})$$
+
+where $\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,1}$ are the columns of $\boldsymbol{A}$.
+
+With this bit of notation out of the way, let's get to it.
 
 Axioms for a determinant: abstracting the notion of geometric volume
 --------------------------------------------------------------------
