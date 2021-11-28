@@ -35,19 +35,13 @@ In this post, I am going to attempt to demystify this definition. To do so, we w
 Notation
 --------
 
-Before getting into the thick of it, let's define a bit of notation that we'll use in this blog post.  First, we note that the determinant $\text{Det}$ is a function that maps square matrices to real numbers:
+Before getting into the thick of it, let's define a bit of notation that we'll use in this blog post.  First, we note that the determinant, $\text{Det}$, is a function that maps square matrices to real numbers:
 
 $$\text{Det} : \mathbb{R}^m \rightarrow \mathbb{R}$$ 
 
-We will often represent the determinant $$\text{Det}$$ of a matrix as a function with either a single matrix argument or with multiple vector arguments:
-
-$$\text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,1}) := \text{Det}(\boldsymbol{A})$$
-
-where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
+We will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,1})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
 
 For other notation related to matrices that we will use in this post, see my [previous post on matrices](https://mbernste.github.io/posts/matrices/). 
-
-With this bit of notation out of the way, let's get to it.
 
 Axioms for a determinant: abstracting the notion of geometric volume
 --------------------------------------------------------------------
