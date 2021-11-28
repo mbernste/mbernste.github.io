@@ -14,7 +14,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Of all of the topics in linear algebra, I found the **determinant** to be the most confusing. When introduced to determinants, one is taught that the determinant of a matrix $\boldysmbol{A}$ is the area of the parallelapiped formed by columns of $\boldsymbold{A}$. For example, if $\boldysmbol{A}$ is a 2x2 matrix, we can depict the area as follows:
+Of all of the topics taught in introductory linear algebra, I found the **determinant** to be one of the most confusing. When introduced to determinants, one is taught that the determinant of a matrix $\boldysmbol{A}$ is the area of the parallelapiped formed by columns of $\boldsymbold{A}$. For example, if $\boldysmbol{A}$ is a 2x2 matrix, we can depict the area as follows:
 
 
 Furthermore, for a 2x2 matrix, this area can be computed via:
@@ -24,12 +24,7 @@ $$\text{Det}(\boldsymbol{A}) := ac - bd$$
 We can verify this pretty easily geometrically:
 
 
-So far, this introduction is simple enough, but things get confusing when you move to 3x3 matrix. Given a 3x3 matrix $\boldsymbol{A}$, its determinant can be computed via the following equation:
-
-
-Already the geometric intuition of the 2x2 matrix is less clear. Where does this equation come from?
-
-Unfortunately, this is not the end. The determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as follows:
+So far, this isn't so confusing, but things get worse when you move to higher dimensions. Specifically, it turns out that the determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as follows:
 
 $$\text{Det}(\boldsymbol{A}) := \sum_{i \in S_m}$$
 
