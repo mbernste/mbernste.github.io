@@ -37,15 +37,17 @@ In this post, I am going to attempt to demystify this definition. To do so, we w
 Notation
 --------
 
-Before getting into the thick of it, let's define a bit of notation that we'll use in this blog post.  It is common to denote the determinant using two bars around a matrx as follows:
+Before getting into the thick of it, let's define a bit of notation that we'll use in this blog post.  First, we note that the determinant $\text{Det}$ is a function that maps square matrices to real numbers:
 
-$$\begin{vmatrix} a_{1,1} & \dots & a_{1,m} \\ vdots & \ddots & \vots \\ a_{m,1} & \dots & a_{m,m} \end{vmatrix} := \text{Det}(\boldsymbol{A})$$
+$$\text{Det} : \mathbb{R}^m \rightarrow \mathbb{R}$$ 
 
-Second, we will often represent the determinant $$\text{Det}$$ of a matrix as a function with either a single matrix argument or with multiple vector arguments:
+We will often represent the determinant $$\text{Det}$$ of a matrix as a function with either a single matrix argument or with multiple vector arguments:
 
 $$\text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,1}) := \text{Det}(\boldsymbol{A})$$
 
 where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
+
+For other notation related to matrices that we will use in this post, see my [previous post on matrices](https://mbernste.github.io/posts/matrices/). 
 
 With this bit of notation out of the way, let's get to it.
 
