@@ -39,7 +39,7 @@ Notation
 
 Before getting into the thick of it, let's define a bit of notation that we'll use in this blog post.  It is common to denote the determinant using two bars around a matrx as follows:
 
-$$\begin{vmatrix*}a_{1,1} & \dots & a_{1,m} \\ vdots & \ddots & \vots \\ a_{m,1} & \dots & a_{m,m} \end{vmatrix*} := \text{Det}(\boldsymbol{A})$$
+$$\begin{vmatrix} a_{1,1} & \dots & a_{1,m} \\ vdots & \ddots & \vots \\ a_{m,1} & \dots & a_{m,m} \end{vmatrix} := \text{Det}(\boldsymbol{A})$$
 
 Second, we will often represent the determinant $$\text{Det}$$ of a matrix as a function with either a single matrix argument or with multiple vector arguments:
 
