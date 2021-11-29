@@ -56,13 +56,14 @@ The definition of a determinant does not actually start with the calculation of 
 
 **1. The determinant of the identity matrix is one**  
 
+The first axiom states that
+
+$$\text{Det}(\boldsymbol{I}) := 1$$
+
 This makes intuitive sense: the parallelopided formed by the columns of the identity matrix form a hypercube in $m$-dimensional space. The volume of a cube is simply the product of the sides of the cube; in this case, they're all of length one so the volume should be one:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DeterminantIdentityMatrix.png" alt="drawing" width="400"/></center>
 
-That is, we have 
-
-$$\text{Det}(\boldsymbol{I}) := 1$$
 
 **2. If two columns of a matrix are equal, then its determinant is zero**  
 
