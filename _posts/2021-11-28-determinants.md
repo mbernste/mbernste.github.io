@@ -73,11 +73,13 @@ We would like our notion of "geometric volume" to match our common intuition tha
 
 For a given matrix $\boldsymbol{A}$, if any two columns $\boldsymbol{a}_{*,i}$ and $\boldsymbol{a}_{*,j}$ are equal, then determinant of $\boldsymbol{A}$ should be zero.
 
-Why do we want this to be an axiom? We first note that if two columns of a matrix are equal, then the parallelapipde formed by their columns is flat:
+Why do we want this to be an axiom? We first note that if two columns of a matrix are equal, then the parallelapipde formed by their columns is flat. For example, here's a depiction of a parallelepided formed by the columns of a $3 \times 3$ matrix with two columns that are equal:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/FlatParallelepiped.png" alt="drawing" width="400"/></center>
+
+We see that the parallelepided is flat and lies within a hyperplane.
 
 We would like our notion of "geometric volume" to match our common intuition that the volume of a flat object is zero. Thus, when any two columns of a matrix are equal, we would like the determinant to be zero.
-
 
 **2. The determinant of a matrix is linear with respect to each column vector**
 
