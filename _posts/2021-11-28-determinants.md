@@ -16,10 +16,15 @@ Introduction
 
 When first learning linear algebra, I found the **determinant** to be one of the more confusing topics.  When introduced to determinants, one is taught that the the determinant of a matrix $\boldsymbol{A}$ is the "signed" area of the parallelepided formed by the columns of $\boldsymbol{A}$.  That is, the absolute value of the determinant is the volume of the parallelepided. 
 
-For example, for a $2 \times 2$ matrix $\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$, one can compute the determinant via the equation
-$$\text{Det}(\boldsymbol{A}) := ad - bc$$.
+For example, for a $2 \times 2$ matrix, 
 
-We can verify that this equation gives us the area of the two-dimensional parallelogram pretty easily by drawing it out and seeing that the area can be obtained by computing the area of the rectangle that encompasses the parallelogram and subtracting the areas of the triangles around the parallelepided:
+$$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
+
+one can compute the determinant via the equation
+
+$$\text{Det}(\boldsymbol{A}) := ad - bc$$
+
+We can verify that this equation gives us the area of the two-dimensional parallelogram formed by $\boldsymbol{A}$'s columns pretty easily by realizing that the area can be obtained by computing the area of the rectangle that encompasses the parallelogram and subtracting the areas of the triangles around it:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/TwoByTwoDeterminant.png" alt="drawing" width="700"/></center>
 
