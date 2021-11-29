@@ -54,10 +54,7 @@ $$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\bold
 
 How on earth does this formula calculate volume? 
 
-The definition of a determinant does not actually start with the calculation of of volume in the usual sense, but rather, we will begin by trying to abstract the fundamental properties of "geometric volume". 
-
-Note, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
-
+The easiest way to see how this formula calculates volume, is to first begin by formulating, in a very abstract sense, a set of three axioms that attempt to capture our notion of "geometric volume". Then, we can show that the formula above is the only formula that satisfies these axioms! These axioms are as follows:
 
 **1. The determinant of the identity matrix is one**  
 
@@ -78,7 +75,13 @@ Here we see that when two of the three column vectors are equal, the parallapide
 
 **2. The determinant of a matrix is linear with respect to each column vector**
 
-  
+
+
+Note, for the remainder of this blog post, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
+
+
+
+
 
 Deriving the formula for a determinant
 --------------------------------------
