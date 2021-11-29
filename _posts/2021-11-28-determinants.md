@@ -18,26 +18,25 @@ When first learning linear algebra, I found the **determinant** to be one of the
 
 More precisly, the determinant of an $m \times m$ matrix is defined as:
 
-$$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = $} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}$$
+$$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}$$
 
 where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$.
 
+Note that this is a [recursive definition](https://en.wikipedia.org/wiki/Recursive_definition) where the base case is a $2 \times 2$ matrix. 
 
-For example, for a $2 \times 2$ matrix, 
+Before digging into the full definition, let's just look at the $m > 2$ case and verify that this equation computes the area of the parallelogram formed by the matrix's columns. Let's say we have a matrix
 
 $$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 
-We can verify that this equation gives us the area of the two-dimensional parallelogram formed by $\boldsymbol{A}$'s columns pretty easily by realizing that the area can be obtained by computing the area of the rectangle that encompasses the parallelogram and subtracting the areas of the triangles around it:
+Then the area can be obtained by computing the area of the rectangle that encompasses the parallelogram and subtracting the areas of the triangles around it:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/TwoByTwoDeterminant.png" alt="drawing" width="700"/></center>
 
-So far, this isn't too confusing, but things get more difficult when moving to matrices of higher dimensions. Unintuitively, the general definition of the determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as
+Simplifying the equation above we get
 
-$$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) $$
+$$\text{Det}(\boldsymbol{A}) = ad - bc$$
 
-where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$.
-
-If you're like me, this equation is very opaque. How on earth does this equation calculate the volumne of an $m$-dimensional parallelepided? Moreover, why is it recursive? 
+Now what happens when $m > 2$? If you're like me, this equation is very opaque. How on earth does this equation calculate the volumne of an $m$-dimensional parallelepided? Moreover, why is it recursive?
 
 In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to capture the notion of "volume" in an $m$-dimensional space. From this axiomization, we derive the equation for the determinant above!
 
