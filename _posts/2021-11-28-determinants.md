@@ -18,9 +18,7 @@ When first learning linear algebra, I found the **determinant** to be one of the
 
 $$\text{Det} : \mathbb{R}^m \rightarrow \mathbb{R}$$ 
 
-More specifically, the the absolute value of a matrix's determinant is the area of the parallelepided formed by its columns.  
-
-More precisely, the determinant of an $m \times m$ matrix is defined as:
+More specifically, the the absolute value of a matrix's determinant is the area of the parallelepided formed by its columns. While conceptually, this is fairly straightforward, the analytical form of the determinant is quite confusing. Specifically, the determinant of an $m \times m$ matrix is defined as:
 
 $$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$$
 
@@ -28,7 +26,7 @@ where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first 
 
 Note that this is a [recursive definition](https://en.wikipedia.org/wiki/Recursive_definition) where the base case is a $2 \times 2$ matrix. 
 
-Before digging into the full definition, let's just look at the $m = 2$ case and verify that this equation computes the area of the parallelogram formed by the matrix's columns. Let's say we have a matrix
+Let's first only look at the $m = 2$ case and verify that this equation computes the area of the parallelogram formed by the matrix's columns. Let's say we have a matrix
 
 $$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 
