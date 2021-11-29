@@ -14,13 +14,14 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-When first learning linear algebra, I found the **determinant** to be one of the more confusing topics.  When introduced to determinants, one is taught that the the determinant of a matrix $\boldsymbol{A}$ is the "signed" area of the parallelapiped formed by columns of $\boldsymbol{A}$.  That is, the absolute value of the determinant is the volume of the parallelapided, but this volume can be negative. 
+When first learning linear algebra, I found the **determinant** to be one of the more confusing topics.  When introduced to determinants, one is taught that the the determinant of a matrix $\boldsymbol{A}$ is the "signed" area of the parallelepided formed by the columns of $\boldsymbol{A}$.  That is, the absolute value of the determinant is the volume of the parallelepided. 
 
 For example, for a $2 \times 2$ matrix $\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$, one can compute the determinant via the equation
 $$\text{Det}(\boldsymbol{A}) := ad - bc$$.
 
-We can verify that this equation gives us the area of the parallelapiped pretty easily by drawing it out:
+We can verify that this equation gives us the area of the two-dimensional parallelogram pretty easily by drawing it out and seeing that the area can be obtained by computing the area of the rectangle that encompasses the parallelogram and subtracting the areas of the triangles around the parallelepided:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/TwoByTwoDeterminant.png" alt="drawing" width="700"/></center>
 
 So far, this isn't too confusing, but things get more difficult when moving to matrices of higher dimensions. Unintuitively, the general definition of the determinant for a $m \times m$ matrix $\boldsymbol{A}$ is defined as
 
@@ -28,7 +29,7 @@ $$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\bold
 
 where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$.
 
-If you're like me, this equation is very opaque. How on earth does this equation calculate the volumne of an $m$-dimensional parallelapiped? Moreover, why is it recursive? 
+If you're like me, this equation is very opaque. How on earth does this equation calculate the volumne of an $m$-dimensional parallelepided? Moreover, why is it recursive? 
 
 In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to capture the notion of "volume" in an $m$-dimensional space. From this axiomization, we derive the equation for the determinant above!
 
