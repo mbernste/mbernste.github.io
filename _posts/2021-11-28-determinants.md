@@ -16,13 +16,16 @@ Introduction
 
 When first learning linear algebra, I found the **determinant** to be one of the more confusing topics.  When introduced to determinants, one is taught that the the determinant of a matrix $\boldsymbol{A}$ is the "signed" area of the parallelepided formed by the columns of $\boldsymbol{A}$.  That is, the absolute value of the determinant is the volume of the parallelepided. 
 
+More precisly, the determinant of an $m \times m$ matrix is defined as:
+
+$$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = $} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}$$
+
+where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$.
+
+
 For example, for a $2 \times 2$ matrix, 
 
 $$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
-
-one can compute the determinant via the equation
-
-$$\text{Det}(\boldsymbol{A}) := ad - bc$$
 
 We can verify that this equation gives us the area of the two-dimensional parallelogram formed by $\boldsymbol{A}$'s columns pretty easily by realizing that the area can be obtained by computing the area of the rectangle that encompasses the parallelogram and subtracting the areas of the triangles around it:
 
