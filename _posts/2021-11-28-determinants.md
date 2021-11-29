@@ -28,7 +28,7 @@ Somehow this formula calculates the volume of an $m$-dimensional parallelepided.
 
 In this post, I am going to attempt to demystify this definition. We will start with the base case of a $2 \times 2$ matrix, verify that it indeed computes the volume of the parallelogram formed by the columns of the matrix, and then move on to the determinant for larger matrices. 
 
-$2 \times 2 matrices$
+$2 \times 2$ matrices
 ---------------------
 
 Let's first only look at the $m = 2$ case and verify that this equation computes the area of the parallelogram formed by the matrix's columns. Let's say we have a matrix
