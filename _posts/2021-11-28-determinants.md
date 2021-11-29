@@ -40,11 +40,15 @@ Simplifying the equation above we get
 
 $$\text{Det}(\boldsymbol{A}) = ad - bc$$
 
-Now what happens when $m > 2$? If you're like me, this equation is very opaque. How on earth does this equation calculate the volumne of an $m$-dimensional parallelepided? Moreover, why is it recursive?
+Now what about for $m > 2$? For this case,
+
+$$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i})$$
+
+When taught determinants one is told that this confusing equation computes the volumne of an $m$-dimensional parallelepided. If you're like, this equation seems quite opaque. How on earth does this equation calculate volume? Moreover, why is it recursive?
 
 In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to capture the notion of "volume" in an $m$-dimensional space. From this axiomization, we derive the equation for the determinant above!
 
-Note, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,1})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
+Note, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
 
 Axioms for a determinant: abstracting the notion of geometric volume
 --------------------------------------------------------------------
