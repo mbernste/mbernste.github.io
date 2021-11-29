@@ -48,7 +48,7 @@ which is exactly the definition for the $2 \times 2$ determinant.  So far so goo
 Defining the determinant for $m \times m$ matrices: abstracting the notion of geometric volume
 ----------------------------------------------------------------------------------------------
 
-Now what about for $m > 2$? For this, the definition of the determinant states that
+Moving on to $m > 2$, the definition of the determinant is
 
 $$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i})$$
 
