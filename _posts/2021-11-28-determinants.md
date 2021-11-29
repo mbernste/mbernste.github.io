@@ -56,7 +56,7 @@ This makes intuitive sense: the parallelopided formed by the columns of the iden
 
 That is, we have 
 
-$$\text{Det}(\boldsymbol{I}) = 1$$
+$$\text{Det}(\boldsymbol{I}) := 1$$
 
 **2. If two columns of a matrix are equal, then its determinant is zero**  
 
