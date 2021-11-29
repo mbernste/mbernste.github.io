@@ -62,7 +62,7 @@ The first axiom states that
 
 $$\text{Det}(\boldsymbol{I}) := 1$$
 
-This makes intuitive sense: the parallelopided formed by the columns of the identity matrix form a hypercube in $m$-dimensional space. We know that the volume of a cube is simply the product of the sides of the cube. in this case, they're all of length one so the volume should be one:
+Why do we want this to be an axiom? First, we note that the parallelepided formed by the columns of the identity matrix, $\boldsymbol{I}$, is a hypercube in $m$-dimensional space. Furthermore, we would like our notion of "geometric volume" to match our common intuition that the volume of a cube is simply the product of the sides of the cube. In this case, they're all of length one so the volume, and thus the determinant, should be one:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DeterminantIdentityMatrix.png" alt="drawing" width="400"/></center>
 
