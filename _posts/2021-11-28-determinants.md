@@ -16,7 +16,7 @@ Introduction
 
 In introductory linear algebra, one is taught that the the **determinant**, $\text{Det}$, is a function that maps square [matrices](https://mbernste.github.io/posts/matrices/) to real numbers,
 
-$$\text{Det} : \mathbb{R}^m \rightarrow \mathbb{R}$$ 
+$$\text{Det} : \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$$ 
 
 for which the absolute value of each matrix's determinant is the area of the parallelepided formed by its columns. While conceptually, this is fairly straightforward, the analytical form of the determinant is quite confusing. Specifically, the determinant of an $m \times m$ matrix is defined as:
 
