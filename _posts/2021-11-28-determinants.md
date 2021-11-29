@@ -18,13 +18,13 @@ In introductory linear algebra, one is taught that the the **determinant**, $\te
 
 $$\text{Det} : \mathbb{R}^m \rightarrow \mathbb{R}$$ 
 
-More specifically, the the absolute value of a matrix's determinant is the area of the parallelepided formed by its columns. While conceptually, this is fairly straightforward, the analytical form of the determinant is quite confusing. Specifically, the determinant of an $m \times m$ matrix is defined as:
+for which the absolute value of each matrix's determinant is the area of the parallelepided formed by its columns. While conceptually, this is fairly straightforward, the analytical form of the determinant is quite confusing. Specifically, the determinant of an $m \times m$ matrix is defined as:
 
 $$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$$
 
 where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$. Note that this is a [recursive definition](https://en.wikipedia.org/wiki/Recursive_definition) where the base case is a $2 \times 2$ matrix. 
 
-Somehow this formula calculates the volume of an $m$-dimensional parallelepided. If you're like me, this is not at all obvious. How on earth does this equation calculate volume? Moreover, why is it recursive?
+One is usually taught, without much explanation, that this formula calculates the volume of an $m$-dimensional parallelepided. If you're like me, this is not at all obvious. How on earth does this equation calculate volume? Moreover, why is it recursive?
 
 In this post, I am going to attempt to demystify this definition. We will start with the base case of a $2 \times 2$ matrix, verify that it indeed computes the volume of the parallelogram formed by the columns of the matrix, and then move on to the determinant for larger matrices. 
 
