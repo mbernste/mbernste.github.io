@@ -28,11 +28,11 @@ where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first 
 
 Note that this is a [recursive definition](https://en.wikipedia.org/wiki/Recursive_definition) where the base case is a $2 \times 2$ matrix. 
 
-Before digging into the full definition, let's just look at the $m > 2$ case and verify that this equation computes the area of the parallelogram formed by the matrix's columns. Let's say we have a matrix
+Before digging into the full definition, let's just look at the $m = 2$ case and verify that this equation computes the area of the parallelogram formed by the matrix's columns. Let's say we have a matrix
 
 $$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 
-Then the area can be obtained by computing the area of the rectangle that encompasses the parallelogram and subtracting the areas of the triangles around it:
+Then we see that the area can be obtained by computing the area of the rectangle that encompasses the parallelogram and subtracting the areas of the triangles around it:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/TwoByTwoDeterminant.png" alt="drawing" width="700"/></center>
 
@@ -40,11 +40,11 @@ Simplifying the equation above we get
 
 $$\text{Det}(\boldsymbol{A}) = ad - bc$$
 
-Now what about for $m > 2$? For this case,
+which is exactly the definition for the $2 \times 2$ determinant. Now what about for $m > 2$? For this, the definition states that
 
 $$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i})$$
 
-When taught determinants one is told that this confusing equation computes the volumne of an $m$-dimensional parallelepided. If you're like, this equation seems quite opaque. How on earth does this equation calculate volume? Moreover, why is it recursive?
+When taught determinants one is told that this equation somehow computes the volumne of an $m$-dimensional parallelepided. If you're like me, this is not at all obvious. How on earth does this equation calculate volume? Moreover, why is it recursive?
 
 In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to capture the notion of "volume" in an $m$-dimensional space. From this axiomization, we derive the equation for the determinant above!
 
