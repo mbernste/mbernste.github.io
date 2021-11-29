@@ -14,7 +14,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-When first learning linear algebra, I found the **determinant** to be one of the more confusing topics.  When introduced to determinants, one is taught that the the determinant, $\text{Det}$, is a function that maps square [matrices](https://mbernste.github.io/posts/matrices/) to real numbers:
+In introductory linear algebra, one is taught that the the **determinant**, $\text{Det}$, is a function that maps square [matrices](https://mbernste.github.io/posts/matrices/) to real numbers:
 
 $$\text{Det} : \mathbb{R}^m \rightarrow \mathbb{R}$$ 
 
@@ -22,9 +22,14 @@ More specifically, the the absolute value of a matrix's determinant is the area 
 
 $$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$$
 
-where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$.
+where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first row and $i$th column of $\boldsymbol{A}$. Note that this is a [recursive definition](https://en.wikipedia.org/wiki/Recursive_definition) where the base case is a $2 \times 2$ matrix. 
 
-Note that this is a [recursive definition](https://en.wikipedia.org/wiki/Recursive_definition) where the base case is a $2 \times 2$ matrix. 
+Somehow this formula calculates the volume of an $m$-dimensional parallelepided. If you're like me, this is not at all obvious. How on earth does this equation calculate volume? Moreover, why is it recursive?
+
+In this post, I am going to attempt to demystify this definition. We will start with the base case of a $2 \times 2$ matrix, verify that it indeed computes the volume of the parallelogram formed by the columns of the matrix, and then move on to the determinant for larger matrices. 
+
+$2 \times 2 matrices$
+---------------------
 
 Let's first only look at the $m = 2$ case and verify that this equation computes the area of the parallelogram formed by the matrix's columns. Let's say we have a matrix
 
@@ -38,20 +43,21 @@ Simplifying the equation above we get
 
 $$\text{Det}(\boldsymbol{A}) = ad - bc$$
 
-which is exactly the definition for the $2 \times 2$ determinant. Now what about for $m > 2$? For this, the definition states that
+which is exactly the definition for the $2 \times 2$ determinant.  So far so good. 
+
+Defining the determinant for $m \times m$ matrices: abstracting the notion of geometric volume
+----------------------------------------------------------------------------------------------
+
+Now what about for $m > 2$? For this, the definition of the determinant states that
 
 $$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i})$$
 
-Somehow this formula calculates the volume of an $m$-dimensional parallelepided. If you're like me, this is not at all obvious. How on earth does this equation calculate volume? Moreover, why is it recursive?
+How on earth does this formula calculate volume? 
 
-In this post, I am going to attempt to demystify this definition. To do so, we will begin with a set of axioms that seek to capture the notion of "volume" in an $m$-dimensional space. From this axiomization, we derive the equation for the determinant above!
+The definition of a determinant does not actually start with the calculation of of volume in the usual sense, but rather, we will begin by trying to abstract the fundamental properties of "geometric volume". 
 
 Note, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
 
-Axioms for a determinant: abstracting the notion of geometric volume
---------------------------------------------------------------------
-
-The definition of a determinant does not actually start with the calculation of of volume in the usual sense, but rather, we will begin by trying to abstract the fundamental properties of "geometric volume". 
 
 **1. The determinant of the identity matrix is one**  
 
