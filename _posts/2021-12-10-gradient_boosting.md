@@ -57,9 +57,9 @@ In the previous section, we assumed that each model $f \in \mathcal{H}$ is param
 
 Now, what happens if each $f \in \mathcal{H}$ is not parameterized by a real-valued vector $\theta$. For example, what if $\mathcal{H}$ is a space of [decision trees](https://en.wikipedia.org/wiki/Decision_tree)? Can we still apply gradient descent?
 
-In fact, it turns out that we can indeed derive an approximate gradient descent algorithm called **gradient boosting**. At a high level, this works the same way as traditional gradient descent: we start with an initial model $f_0$ and iteratively update $f_0$ by following an approxiamte gradient that will improve the current estimate.
+In fact, it turns out that we can indeed derive an approximate gradient descent algorithm called **gradient boosting**. At a high level, this works the same way as traditional gradient descent: we start with an initial model $f_0$ and iteratively update $f_0$ by following an approxiamte gradient that will improve the current estimate. However, in important ways, and as will be shown shortly, this gradient descent algorithm differs significantly from traditional gradient descent.
 
-Now, what does this gradient look like? Mathematically, we might be tempted to write the gradient as $\nabla L(f)$; however, because each $f$ is not characterized by a real-valued vector (and even if they were, we explicitly mentioned that we don't have a gaurantee of differentiability), this gradient is not defined! Is there another way?  
+Now, the first question we must answer is, what does the gradient that we follow look like? Mathematically, we might be tempted to write "$\nabla L(f)$"; however, because each $f$ is not characterized by a real-valued vector (and even if they were, we explicitly mentioned that we don't have a gaurantee of differentiability), this gradient is not defined! Is there another way?  
 
 It works as follows: we start with our best guess function $f_0$ and at each iteration $t$, we calculate the derivative of the $L$ with respect to each $f(x_i)$: 
 
