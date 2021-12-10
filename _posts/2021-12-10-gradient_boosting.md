@@ -59,9 +59,11 @@ Now, what happens if each $f \in \mathcal{H}$ is not parameterized by a real-val
 
 In fact, it turns out that we can indeed derive an approximate gradient descent algorithm called **gradient boosting**. At a high level, this works the same way as traditional gradient descent: we start with an initial model $f_0$ and iteratively update $f_0$ by following an approxiamte gradient that will improve the current estimate. That is, at iteration $t$, we update our current estimate $f_t$ by
 
-$$f_t := f_{t-1} + h$$
+$$f_t := f_{t-1} + h_t$$
 
-where $h$ is a function in $\mathcal{H}$ that represents a "gradient" akin to $\nabla L(\theta)$ from traditional gradient descent. Now, what is this $h$ function and how do we find it?   
+where $h_t$ is a function in $\mathcal{H}$ that represents a "gradient" akin to $\nabla L(\theta)$ from traditional gradient descent. Notice that instead of performing gradient descent in a real-valued coordinate vector space, like we described previously, we are now performing gradient descent within the function space itself!
+
+Now, the question we must answer is, what is this $h_t$ function and how do we find it?   
 
 It works as follows: we start with our best guess function $f_0$ and at each iteration $t$, we calculate the derivative of the $L$ with respect to each $f(x_i)$: 
 
