@@ -81,13 +81,15 @@ $$\begin{align*}\nabla L(\theta) &= \partial \frac{1}{n} \sum_{i=1}^n \ell(y_i, 
 
 **Here's the crucial insight:** if we want a function $h_t$ that acts like the gradient of $L(f_{t-1})$, then for all $x_i$, it should hold that
 
-$$h_t(x_i) = \frac{\partial \ell(f(x_i))}{\partial f(x_i)}$$
+$$h_t(x_i) = \frac{\partial \ell(y_i, f(x_i))}{\partial f(x_i)}$$
+
+That is, for any given $x_i$, $$h_t(x_i)$$ gives you the 
 
 For simplicity of notation, let
 
 $$r_i := \frac{\partial \ell(y_i, f(x_i)}{\partial f(x_i)}$$
 
-Then, we simply need a function $h_t$ for which $h_t(x_i) = r_i$. We can find such a function by training a model to fit the pairs $(x_i, r_i)$! Once we fit this model, we can update our current estimate $f_{t-1}$ via
+Then, we simply need a function $h_t$ for which $h_t(x_i) = r_i$. How do we actually find such a function? One idea is to train a model to fit the pairs $(x_i, r_i)$! Once we fit this model, we can update our current estimate $f_{t-1}$ via
 
 $$f_t := f_{t-1} + h_t$$
 
