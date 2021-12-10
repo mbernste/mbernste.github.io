@@ -53,4 +53,14 @@ Gradient boosting
 
 In the previous section, we assumed that each model $f \in \mathcal{H}$ is parameterized by $\theta$. Furthermore, we assumed that $f(x; \theta)$ were differentiable with respect to $\theta$. With these two assumptions, we discussed how gradient descent could be applied over $\theta$.
 
-Now, what happens if each $f \in \mathcal{H}$ is not parameterized by a real-valued vector $\theta$. For example, what if $\mathcal{H}$ is a space of [decision trees](https://en.wikipedia.org/wiki/Decision_tree)?
+Now, what happens if each $f \in \mathcal{H}$ is not parameterized by a real-valued vector $\theta$. For example, what if $\mathcal{H}$ is a space of [decision trees](https://en.wikipedia.org/wiki/Decision_tree)? Can we still apply gradient descent?
+
+In fact, it turns out that we can indeed derive an approximate gradient descent algorithm. This algorithm is called *gradient boosting*. 
+
+It works as follows: we start with our best guess function $f_0$ and at each iteration $t$, we calculate the derivative of the $L$ with respect to each $f(x_i)$: 
+
+$$r_i := \frac{\partial \ell(y_i, f(x_i)}{\partial f(x_i)}$$
+
+These values, are often called _pseudo residuals_ as will be explained later in this post. For now, note that $r_i$ is the gradient of our function $L$ with respect to the functions output at each input $x_i$. 
+
+
