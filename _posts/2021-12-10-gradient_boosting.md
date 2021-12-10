@@ -44,13 +44,13 @@ $$\theta_t := \theta_{t-1} - \alpha \nabla L(\theta)$$
 
 where $\alpha$ is called the [learning rate]() and simply dictates how far we will step in the direction of the negative gradient.
 
-In machine learning, it is common to search over a set of models, $\mathcal{H}$, that are each characterized by a set of parameters $\theta \in \mathbb{R}^p$. That is, we can write each $f \in \mathcal{H}$ as $f(x; \theta)$. For example, if $\mathcal{H}$ is the set of all [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) with a specific architecture, then $\theta$ are the weights of the neural network. 
+In machine learning, it is common to search over a set of models, $\mathcal{H}$, that are each characterized by a set of parameters $\theta \in \mathbb{R}^p$. That is, we can write each $f \in \mathcal{H}$ as $f(x; \theta)$. For example, if $\mathcal{H}$ is the set of all [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) with a specific architecture, then $\theta$ may represent the numerical weights of the neural network. 
 
-Then, if $f(x; \theta)$ is differentiable with respect to $\theta$, we can let 
+If $f(x; \theta)$ is differentiable with respect to $\theta$, we can let 
 
 $$L(\theta) := \frac{1}{n}\sum_{i=1}^n \ell(y_i, f(x_i; \theta))$$
 
-and, with help from the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), we can apply gradient descent as described above to find the $\theta$ that minimizes $L(\theta)$. 
+and with help from the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), we can apply gradient descent as described above to find the $\theta$ that minimizes $L(\theta)$. 
 
 The gradient boosting algorithm
 -------------------------------
