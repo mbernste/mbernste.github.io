@@ -41,8 +41,8 @@ Then, we can update our current solution
 $$\theta_{t+1} := \theta_t + \gamma \frac{\partial \sum_{i=1}^n L(y_i, f(x_i; \theta)))}{\partial \theta}$$
 
 
-Overview of boosting
---------------------
+Boosting
+--------
 
 
 Gradient boosting
