@@ -28,7 +28,7 @@ To perform this approximation, we search a space of functions $\mathcal{H}$ for 
 
 Then, we seek to find an $f \in \mathcal{H}$ that minimizes the average loss over all of the samples:
 
-$$\hat{f}(x) := \text{arg min}_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
+$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
 
 Boosting
 --------
@@ -40,37 +40,67 @@ Gradient descent is a numerical approach for solving an optimization problem tha
 
 Specifically, let's say we are attempting to minimize the function $L(\theta)$ where $\theta \in \mathbb{R}^p$ and $L(\theta)$ is differentiable. Then, gradient descent starts by choosing an initial guess of the solution $\theta_0 \in \mathbb{R}^p$ and iteratively updates our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient). Specifically, at the $t$th iteration, the update is
 
-$$\theta_t := \theta_{t-1} - \nabla L(\theta)$$
+$$\theta_t := \theta_{t-1} - \alpha \nabla L(\theta)$$
 
-In machine learning, it is common to search over a set of models, $\mathcal{H}$, that are each characterized by a set of parameters $\phi \in \mathbb{R}^p$. That is, we can write each $f \in \mathcal{H}$ as $f(x; \theta)$. For example, if $\mathcal{H}$ is the set of all [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) with a specific architecture, then $\theta$ are the weights of the neural network. 
+where $\alpha$ is called the [learning rate]() and simply dictates how far we will step in the direction of the negative gradient.
+
+In machine learning, it is common to search over a set of models, $\mathcal{H}$, that are each characterized by a set of parameters $\theta \in \mathbb{R}^p$. That is, we can write each $f \in \mathcal{H}$ as $f(x; \theta)$. For example, if $\mathcal{H}$ is the set of all [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) with a specific architecture, then $\theta$ are the weights of the neural network. 
 
 Then, if $f(x; \theta)$ is differentiable with respect to $\theta$, we can let 
 
-$$L(\theta) := \frac{1}{n}\sum_{i=1}^n \ell(y_i, f(x_i; \phi))$$
+$$L(\theta) := \frac{1}{n}\sum_{i=1}^n \ell(y_i, f(x_i; \theta))$$
 
 and, with help from the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), we can apply gradient descent as described above to find the $\theta$ that minimizes $L(\theta)$. 
 
-Gradient boosting
------------------
+The gradient boosting algorithm
+-------------------------------
 
 In the previous section, we assumed that each model $f \in \mathcal{H}$ is parameterized by $\theta$. Furthermore, we assumed that $f(x; \theta)$ were differentiable with respect to $\theta$. With these two assumptions, we discussed how gradient descent could be applied to find the $\theta$ that minimized $L(\theta)$.
 
-Now, what happens if each $f \in \mathcal{H}$ is not parameterized by a real-valued vector $\theta$. For example, what if $\mathcal{H}$ is a space of [decision trees](https://en.wikipedia.org/wiki/Decision_tree)? Can we still apply gradient descent?
+Now, what happens if each $f \in \mathcal{H}$ is not parameterized by a real-valued vector $\theta$. For example, what if $\mathcal{H}$ is a space of [decision trees](https://en.wikipedia.org/wiki/Decision_tree)? Now, we seek to minimize the function 
 
-In fact, it turns out that we can indeed derive an approximate gradient descent algorithm called **gradient boosting**. At a high level, this works the same way as traditional gradient descent: we start with an initial model $f_0$ and iteratively update $f_0$ by following an approxiamte gradient that will improve the current estimate. That is, at iteration $t$, we update our current estimate $f_t$ by
+$$L(f) := \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
 
-$$f_t := f_{t-1} + h_t$$
+that is, we seek 
 
-where $h_t$ is a function in $\mathcal{H}$ that represents a "gradient function" akin to $\nabla L(\theta)$ from traditional gradient descent. Notice that instead of performing gradient descent in a real-valued coordinate vector space over parameters $\theta \in \mathbb{R}^p$, we are now performing gradient descent within the function space $\mathcal{H}$ itself!
+$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} L(f)$$
 
-The question we now must answer is, how do we derive this "gradient function" $h_t$?
+Can we still apply gradient descent?
 
-   
+In fact, it turns out that we can indeed derive a gradient descent-like algorithm called **gradient boosting**. At a high level, this algorithm is analogous to gradient descent in the following way: we start with an initial model $f_0$ and iteratively update $f_0$ by taking small steps that improve $L(f)$. That is, at iteration $t$, we update our current estimate $f_t$ by
 
-It works as follows: we start with our best guess function $f_0$ and at each iteration $t$, we calculate the derivative of the $L$ with respect to each $f(x_i)$: 
+$$f_t := f_{t-1} + \alpha h_t$$
+
+where $h_t$ is a function in $\mathcal{H}$ that represents a function that improves $L(f)$ the most. That is, $h_t$ is analogous to the gradient, $\nabla L(\theta)$, from traditional gradient descent. 
+
+Notice that instead of performing gradient descent in a real-valued coordinate vector space over parameters $\theta \in \mathbb{R}^p$, we are now performing a gradient-descent-like process within the function space $\mathcal{H}$ itself!
+
+The question we now must answer is, how do we derive this "gradient function" $h_t$? 
+
+**Here's the crucial insight:** if we want a function $h_t$ that acts like the gradient of $L(f_{t-1})$, then for all $x_i$, it should hold that
+
+$$h_t(x_i) = \frac{\partial \ell(f(x_i))}{\partial f(x_i)}$$
+
+For simplicity of notation, let
 
 $$r_i := \frac{\partial \ell(y_i, f(x_i)}{\partial f(x_i)}$$
 
-These values, are often called _pseudo residuals_ as will be explained later in this post. For now, note that $r_i$ is the gradient of our function $L$ with respect to the functions output at each input $x_i$. 
+Then, we simply need a function $h_t$ for which $h_t(x_i) = r_i$. We can find such a function by training a model to fit the pairs $(x_i, r_i)$! Once we fit this model, we can update our current estimate $f_{t-1}$ via
 
+$$f_t := f_{t-1} + h_t$$
+
+At the end of $T$ iterations, our full model $\hat{f}$ will have the form
+
+$$\hat{f}(x) = \sum_{t=1}^T \alpha h_t(x)$$
+
+Notice that $f(x)$ is actually an ensemble of models $h_1, \dots, h_T$! As we will show in the next section, this process can be viewed as a boosting algorithm!
+
+
+Viewing gradient boosting as a boosting process
+-----------------------------------------------
+
+
+
+Calculating the pseudo-residuals for common loss functions
+----------------------------------------------------------
 
