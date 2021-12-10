@@ -38,15 +38,17 @@ Gradient descent in machine learning
 
 Gradient descent is a numerical approach for solving an optimization problem that involves iteratively improving our solution by taking small steps along the direction of steepest descent down the objective function's surface.
 
-Specifically, let's say we are attempting to minimize the function $L(\theta)$ where $\phi \in \mathbb{R}^p$ and $F(\theta)$ is differentiable. Then, gradient descent starts by choosing an initial guess of the solution $\phi_0 \in \mathbb{R}^p$ and iteratively updates our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient). Specifically, at the $t$th iteration, the update is
+Specifically, let's say we are attempting to minimize the function $L(\theta)$ where $\theta \in \mathbb{R}^p$ and $L(\theta)$ is differentiable. Then, gradient descent starts by choosing an initial guess of the solution $\theta_0 \in \mathbb{R}^p$ and iteratively updates our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient). Specifically, at the $t$th iteration, the update is
 
-$$\phi_t := \phi_{t-1} - \nabla F(\theta)$$
+$$\theta_t := \theta_{t-1} - \nabla L(\theta)$$
 
-In machine learning, it is common optimize the loss function using models that are characterized by a set of parameters $\phi \in \mathbb{R}^p$. That is, we can write each $f \in \mathcal{H}$ as $f(x; \theta)$. Then, if $f(x; \theta)$ is differentiable with respect to $\theta$, we can let 
+In machine learning, it is common to search over a set of models, $\mathcal{H}$, that are each characterized by a set of parameters $\phi \in \mathbb{R}^p$. That is, we can write each $f \in \mathcal{H}$ as $f(x; \theta)$. For example, if $\mathcal{H}$ is the set of all [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) with a specific architecture, then $\theta$ are the weights of the neural network. 
 
-$$L(\phi) := \frac{1}{n}\sum_{i=1}^n \ell(y_i, f(x_i; \phi))$$
+Then, if $f(x; \theta)$ is differentiable with respect to $\theta$, we can let 
 
-and, with help from the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), can apply gradient descent as described above to find the $\theta$ that minimizes $L(\phi)$. 
+$$L(\theta) := \frac{1}{n}\sum_{i=1}^n \ell(y_i, f(x_i; \phi))$$
+
+and, with help from the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), we can apply gradient descent as described above to find the $\theta$ that minimizes $L(\theta)$. 
 
 Gradient boosting
 -----------------
