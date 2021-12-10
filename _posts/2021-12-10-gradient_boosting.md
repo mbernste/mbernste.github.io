@@ -53,7 +53,7 @@ and, with help from the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), 
 Gradient boosting
 -----------------
 
-In the previous section, we assumed that each model $f \in \mathcal{H}$ is parameterized by $\theta$. Furthermore, we assumed that $f(x; \theta)$ were differentiable with respect to $\theta$. With these two assumptions, we discussed how gradient descent could be applied over $\theta$.
+In the previous section, we assumed that each model $f \in \mathcal{H}$ is parameterized by $\theta$. Furthermore, we assumed that $f(x; \theta)$ were differentiable with respect to $\theta$. With these two assumptions, we discussed how gradient descent could be applied to find the $\theta$ that minimized $L(\theta)$.
 
 Now, what happens if each $f \in \mathcal{H}$ is not parameterized by a real-valued vector $\theta$. For example, what if $\mathcal{H}$ is a space of [decision trees](https://en.wikipedia.org/wiki/Decision_tree)? Can we still apply gradient descent?
 
@@ -61,9 +61,11 @@ In fact, it turns out that we can indeed derive an approximate gradient descent 
 
 $$f_t := f_{t-1} + h_t$$
 
-where $h_t$ is a function in $\mathcal{H}$ that represents a "gradient" akin to $\nabla L(\theta)$ from traditional gradient descent. Notice that instead of performing gradient descent in a real-valued coordinate vector space, like we described previously, we are now performing gradient descent within the function space itself!
+where $h_t$ is a function in $\mathcal{H}$ that represents a "gradient function" akin to $\nabla L(\theta)$ from traditional gradient descent. Notice that instead of performing gradient descent in a real-valued coordinate vector space over parameters $\theta \in \mathbb{R}^p$, we are now performing gradient descent within the function space $\mathcal{H}$ itself!
 
-Now, the question we must answer is, what is this $h_t$ function and how do we find it?   
+The question we now must answer is, how do we derive this "gradient function" $h_t$?
+
+   
 
 It works as follows: we start with our best guess function $f_0$ and at each iteration $t$, we calculate the derivative of the $L$ with respect to each $f(x_i)$: 
 
