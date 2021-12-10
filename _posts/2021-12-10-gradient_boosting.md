@@ -75,7 +75,9 @@ where $h_t$ is a function in $\mathcal{H}$ that represents a function that impro
 
 Notice that instead of performing gradient descent in a real-valued coordinate vector space over parameters $\theta \in \mathbb{R}^p$, we are now performing a gradient-descent-like process within the function space $\mathcal{H}$ itself!
 
-The question we now must answer is, how do we derive this "gradient function" $h_t$? 
+The question we now must answer is, how do we derive this "gradient function" $h_t$? Let's take a step back and take a look at traditional gradient descent. Specifically, let's look at the gradient:
+
+$$\begin{align*}\nabla L(\theta) &= \partial \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i; \theta)) \end{align*}$$
 
 **Here's the crucial insight:** if we want a function $h_t$ that acts like the gradient of $L(f_{t-1})$, then for all $x_i$, it should hold that
 
