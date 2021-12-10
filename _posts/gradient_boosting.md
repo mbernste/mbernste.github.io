@@ -19,8 +19,11 @@ To perform this approximation, we search a space of functions $\mathcal{H}$ for 
 
 $$\hat{f}(x) := \text{arg min}_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n L(y_i, f(x_i))$$
 
-Gradient descent
-----------------
+Boosting
+--------
+
+Traditional gradient descent in machine learning
+------------------------------------------------
 
 Gradient descent is a numerical approach for solving an optimization problem that involves iteratively improving our solution by taking small steps along the direction of steepest descent down the loss function's surface. Recall, the direction of steepest ascent of a continuous function is given by the [gradient vector]() at a given point and thus, gradient descent entails iteratively computing the gradient of the objective function at the current solution and then slightly changing the solution in the direction of the gradient. 
 
@@ -39,10 +42,6 @@ $$\frac{\partial \sum_{i=1}^n L(y_i, f(x_i; \theta)))}{\partial \theta}$$
 Then, we can update our current solution 
 
 $$\theta_{t+1} := \theta_t + \gamma \frac{\partial \sum_{i=1}^n L(y_i, f(x_i; \theta)))}{\partial \theta}$$
-
-
-Boosting
---------
 
 
 Gradient boosting
