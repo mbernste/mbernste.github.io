@@ -1,4 +1,11 @@
-
+---
+title: 'Gradient boosting'
+date: 2021-12-10
+permalink: /posts/gradient_boosting/
+tags:
+  - tutorial
+  - machine learning
+---
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
