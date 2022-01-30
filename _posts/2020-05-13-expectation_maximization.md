@@ -44,7 +44,7 @@ Each step works as follows: On the $t$th E-step, the algorithm formulates a func
 
 This alternation between formulating a Q-function and maximizing that Q-function are repeated until the estimate of $\theta$ converges. As we will prove later, not only is this process guaranteed to converge, but it will converge to a local maximum of $l(\theta)$.
 
-Moe specifically, the E-Step and M-Step work as follows:
+More specifically, the E-Step and M-Step work as follows:
 
 **E-Step**
 
@@ -133,7 +133,7 @@ When to use the EM algorithm
 
 The EM algorithm is just one choice of many for tackling the optimization problem:
 
-$$\text{argmax}_\theta \log p(x)$$
+$$\text{argmax}_\theta \log p(x; \theta)$$
 
 When would EM be preferred over other optimization algorithms out there?  
 
