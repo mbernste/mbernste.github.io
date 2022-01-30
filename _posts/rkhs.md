@@ -13,7 +13,7 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 ------------
 
-If you're a practitioner of machine learning, then there is little doubt you have seen or used an algorithm that falls into the general category of [kernel methods](https://en.wikipedia.org/wiki/Kernel_method). The premier example of such a method being the [support vector machine](https://en.wikipedia.org/wiki/Support-vector_machine). When introduced to these algorithms, one is taught that one must provide the algorithm with a **kernel function** that, intuitively, computes a degree of "similarity" between the objects you are classifying (e.g., images or text documents).  
+If you're a practitioner of machine learning, then there is little doubt you have seen or used an algorithm that falls into the general category of [kernel methods](https://en.wikipedia.org/wiki/Kernel_method). The premier example of such methods is the [support vector machine](https://en.wikipedia.org/wiki/Support-vector_machine). When introduced to these algorithms, one is taught that one must provide the algorithm with a **kernel function** that, intuitively, computes a degree of "similarity" between the objects you are classifying (e.g., images or text documents).  
 
 A slightly deeper introduction will explain that what a kernel is really doing is projecting the given objects into some (possibly infinite dimensional) [vector space](https://mbernste.github.io/posts/vector_spaces/) and then performing an inner product on those vectors. That is, if $$\mathcal{X}$$ is the set of objects we are classifying, then a kernel, $K$, is a function:
 
@@ -27,7 +27,7 @@ where $\phi(x)$ is a vector associated with object $x$ in some [vector space](ht
 
 To use a kernel method in practice, one can get pretty far with only this understanding; however, it is incomplete and to me, unsatisfying. What space are these objects projected into? How is a kernel function derived? 
 
-To answer these questions, one must understand a mathematical object called a **reproducing kernel Hilbert space** (RKHS). This object was a bit challenging for me to intuit, so in this post, I will explain the definition of a RKHS and exactly how they produce the kernels used in kernel methods and what the kernel trick is really doing. 
+To answer these questions, one must understand a mathematical object called a **reproducing kernel Hilbert space** (RKHS). This object was a bit challenging for me to intuit, so in this post, I will explain the definition of a RKHS and exactly how they produce the kernels used in kernel methods thereby laying a rigorous foundation for a deeper understanding of the kernel trick. 
 
 The reproducing kernel Hilbert space
 ------------------------------------
