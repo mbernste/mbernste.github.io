@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-_When first introduced to Euclidean vectors, one is taught that the length of the vector's arrow is called the norm of the vector. In this post, we present the more rigorous and abstract definition of a norm and show how it generalizes the notion of "length" to non-Euclidean vector spaces. We also discuss how the norm induces a metric function on pairs vectors so that one can discuss distances between vectors._
+_When first introduced to Euclidean vectors, one is taught that the length of the vector's arrow is called the norm of the vector. In this post, we present the more rigorous and abstract definition of a norm and show how it generalizes the notion of "length" to non-Euclidean vector spaces. We also discuss how the norm induces a metric function on pairs of vectors so that one can discuss distances between vectors._
 
 Introduction
 ------------
