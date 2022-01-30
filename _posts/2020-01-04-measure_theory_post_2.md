@@ -50,7 +50,7 @@ Measurable functions
 
 A measurable function is defined as follows:
 
-<span style="color:#0060C6">**Definition 7:** Given measure spaces $(F, \mathcal{F})$ and $(H, \mathcal{H})$, a function</span>
+<span style="color:#0060C6">**Definition 7:** Given measurable spaces $(F, \mathcal{F})$ and $(H, \mathcal{H})$, a function</span>
 
 <center><span style="color:#0060C6">$$f : F \rightarrow H$$</span></center>
 
