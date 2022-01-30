@@ -57,7 +57,7 @@ Given our object/set $F$, we then need a way to describe how $F$ can be broken i
 <span style="color:#0060C6">**Definition 2:** Given a set $F$ and a collection of subsets $\mathcal{F}$, the collection $\mathcal{F}$ is called a **$\sigma$-algebra** if it satisfies the following conditions:</span>
 1. <span style="color:#0060C6">$\emptyset \in \mathcal{F}$</span>
 2. <span style="color:#0060C6">$A \in \mathcal{F} \implies A^c \in \mathcal{F}$</span>
-3. <span style="color:#0060C6">$A_1, A_2, \dots \in \mathcal{F} \implies \bigcup_{i=1}^\infty \in \mathcal{F}$</span>
+3. <span style="color:#0060C6">$A_1, A_2, \dots \in \mathcal{F} \implies \bigcup_{i=1}^\infty A_i \in \mathcal{F}$</span>
 
 Intuitively, each element of the $\sigma$-algebra (i.e. a subset of F), represents a "piece" of the object. The first criteria in the definition above establishes a "null piece" (i.e. a piece of zero size) can be considered a piece of the object.  The second criteria establishes the fact that if we break off a piece, $A$, of the object, then the remaining object $A^c$ (the compliment of $A$) is also a valid piece. Finally, the third criteria establishes the fact that if we glue a countable set of pieces together, the resultant piece is also a piece of the object.
 
