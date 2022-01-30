@@ -54,9 +54,9 @@ Moving on to $m > 2$, the definition of the determinant is
 
 $$\text{Det}(\boldsymbol{A}) := \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i})$$
 
-How on earth does this formula calculate volume? 
+Before understanding this equation, we must first ask ourselves what we even mean by "volume" in $m$-dimensional space. In fact, it is through answering this very question that will arrive at the equation above. Specifically, we will formulate a set of three axioms that attempt to capture our notion of "geometric volume" in a very abstract way. Then, we will show that the only formula that satisfies these axioms is the formula for the determinant shown above! 
 
-The easiest way to see how this formula calculates volume, is to first begin by formulating, in a very abstract sense, a set of three axioms that attempt to capture our notion of "geometric volume". Then, we can show that the formula above is the only formula that satisfies these axioms! These axioms are as follows:
+These axioms are as follows:
 
 **1. The determinant of the identity matrix is one**  
 
