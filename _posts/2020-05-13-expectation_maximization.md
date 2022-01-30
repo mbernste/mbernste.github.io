@@ -139,7 +139,7 @@ When would EM be preferred over other optimization algorithms out there?
 
 First, the EM algorithm might be a good choice when $l(\theta)$ is challenging to optimize, but the Q-function is easier.  The likelihood function is often difficult to optimize due to the presence of the log of an integral:
 
-$$l(\theta) := log \int p(x, z ; \theta) \ dz$$
+$$l(\theta) := \log \int p(x, z ; \theta) \ dz$$
 
 Taking the derivative/gradient of this function with respect to $\theta$, setting it to zero, and then solving for $\theta$ is often very difficult to do analytically.
 
