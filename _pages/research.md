@@ -10,7 +10,7 @@ The goal of my research is to turn these challenges into strengths – that is, 
 
 ## Identifying spatially varying correlation between genes in spatial transcriptomics data
 
-Recent advances in spatially resolved transcriptomics technologies enable both the measurement of genome-wide gene expression profiles and their mapping to spatial locations within a tissue. We present SpatialCorr, a method for identifying sets of genes with spatially varying correlation structure. Given a collection of gene sets pre-defined by a user, SpatialCorr tests for spatially induced differences in the correlation of each gene set within tissue regions, as well as between and among regions. 
+Recent advances in [spatially resolved transcriptomics](https://en.wikipedia.org/wiki/Spatial_transcriptomics) technologies enable both the measurement of genome-wide gene expression profiles and their mapping to spatial locations within a tissue. We present [SpatialCorr](https://github.com/mbernste/spatialcorr), a method for identifying sets of genes with spatially varying correlation structure. Given a collection of gene sets pre-defined by a user, SpatialCorr tests for spatially induced differences in the correlation of each gene set within tissue regions, as well as between and among regions. 
 
 * Bernstein, M.N., Ni, Z., Prasad, A., Brown, J., Mohanty, C., Stewart, R., Newton, M.A., and Kendziorski, C. (2022). [SpatialCorr: Identifying gene sets with spatially varying correlation structure](https://doi.org/10.1101/2022.02.04.479191). _bioRxiv_.
 
