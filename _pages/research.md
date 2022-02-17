@@ -8,7 +8,7 @@ The size and complexity of publicly available genomics data is immense, and repr
 
 The goal of my research is to turn these challenges into strengths – that is, to develop statistical and computational methods that leverage the scale and heterogeneity of publicly available data in order to bring the power of this data to the biomedical research community and, in so doing, maximize the new knowledge that can be obtained from this invaluable resource. 
 
-## Identifying spatially varying correlation of gene expression in spatial transcriptomics
+## Identifying spatially varying correlation between genes in spatial transcriptomics data
 
 Recent advances in spatially resolved transcriptomics technologies enable both the measurement of genome-wide gene expression profiles and their mapping to spatial locations within a tissue. We present SpatialCorr, a method for identifying sets of genes with spatially varying correlation structure. Given a collection of gene sets pre-defined by a user, SpatialCorr tests for spatially induced differences in the correlation of each gene set within tissue regions, as well as between and among regions. 
 
