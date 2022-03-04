@@ -11,6 +11,11 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
 Boosting is a machine learning paradigm that entails constructing an ensemble of models in an iterative fashion where upon each iteration, a new model is added to the ensemble that compensates for the weaknesses of the previously selected models. 
 
+Introduction
+------------
+
+Gradient boosting is a machine learning paradigm that involves training an ensemble of weak models to form a strong model. To understand gradient boosting, one must understand two central ideas: gradient descent and boosting.  In this post, we will first review the supervised learning task, boosting, and gradient descent. Then we will discuss how these ideas come together in gradient boosting. Lastly, we will contrast the gradient boosting paradigm with the standard gradient descent learning algorithm for fitting model parameters; they are actually quite different! 
+
 Review of the supervised learning task
 --------------------------------------
 
@@ -100,8 +105,8 @@ Notice that $f(x)$ is actually an ensemble of models $h_1, \dots, h_T$! As we wi
 Viewing gradient boosting as a boosting process
 -----------------------------------------------
 
-Comparing gradient boosting to the standard gradient descent learning algorithm
--------------------------------------------------------------------------------
+Comparing gradient boosting to the standard gradient descent learning algorithm for fitting model parameters
+------------------------------------------------------------------------------------------------------------
 
 Gradient descent is a numerical approach for solving an optimization problem that involves iteratively improving our solution by taking small steps along the direction of steepest descent down the objective function's surface.
 
