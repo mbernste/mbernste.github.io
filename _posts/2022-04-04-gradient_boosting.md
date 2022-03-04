@@ -1,6 +1,6 @@
 ---
 title: 'Gradient boosting'
-date: 2021-12-10
+date: 2022-04-04
 permalink: /posts/gradient_boosting/
 tags:
   - tutorial
