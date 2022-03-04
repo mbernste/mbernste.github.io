@@ -33,24 +33,21 @@ $$\hat{f} := \text{arg min}_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n \ell(y_
 Boosting
 --------
 
-Gradient descent in machine learning
-------------------------------------
+Gradient descent
+----------------
 
 Gradient descent is a numerical approach for solving an optimization problem that involves iteratively improving our solution by taking small steps along the direction of steepest descent down the objective function's surface.
 
-Specifically, let's say we are attempting to minimize the function $L(\theta)$ where $\theta \in \mathbb{R}^p$ and $L(\theta)$ is differentiable. Then, gradient descent starts by choosing an initial guess of the solution $\theta_0 \in \mathbb{R}^p$ and iteratively updates our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient). Specifically, at the $t$th iteration, the update is
+Say we have a function $g : \mathcal{\mathbb{R}^m} \rightarrow \mathbb{R}$ and we wish to find the argument that minimizes $g$. Thta is, we wish to find the solution to the optimization problem
 
-$$\theta_t := \theta_{t-1} - \alpha \nabla L(\theta)$$
+$$\hat{\boldsymbol{x}} := \text{arg min}_{\boldsymbol{x} \in \mathbb{R}^m} g(x)$$
 
-where $\alpha$ is called the [learning rate]() and simply dictates how far we will step in the direction of the negative gradient.
+If $g$ is differentiable, then we can apply gradient descent. It works as follows. We start with an initial guess of the solution $\\boldsymbol{x}_0 \in \mathbb{R}^m$ and iteratively update our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient), $\nabla g(\boldsymbol{x})$ Specifically, at the $t$th iteration, the update is
 
-In machine learning, it is common to search over a set of models, $\mathcal{H}$, that are each characterized by a set of parameters $\theta \in \mathbb{R}^p$. That is, we can write each $f \in \mathcal{H}$ as $f(x; \theta)$. For example, if $\mathcal{H}$ is the set of all [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) with a specific architecture, then $\theta$ may represent the numerical weights of the neural network. 
+$$\boldsymbol{x}_t := \boldsymbol{x}_{t-1} - \alpha \nabla g(\boldsymbol{x})$$
 
-If $f(x; \theta)$ is differentiable with respect to $\theta$, we can let 
+The parameter, $\alpha$, is called the **learning rate** and simply dictates how far we will step in the direction of the negative gradient at each iteration.
 
-$$L(\theta) := \frac{1}{n}\sum_{i=1}^n \ell(y_i, f(x_i; \theta))$$
-
-and with help from the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), we can apply gradient descent as described above to find the $\theta$ that minimizes $L(\theta)$. 
 
 The gradient boosting algorithm
 -------------------------------
@@ -103,7 +100,24 @@ Notice that $f(x)$ is actually an ensemble of models $h_1, \dots, h_T$! As we wi
 Viewing gradient boosting as a boosting process
 -----------------------------------------------
 
+Comparing gradient boosting to the standard gradient descent learning algorithm
+-------------------------------------------------------------------------------
 
+Gradient descent is a numerical approach for solving an optimization problem that involves iteratively improving our solution by taking small steps along the direction of steepest descent down the objective function's surface.
+
+Specifically, let's say we are attempting to minimize the function $L(\theta)$ where $\theta \in \mathbb{R}^p$ and $L(\theta)$ is differentiable. Then, gradient descent starts by choosing an initial guess of the solution $\theta_0 \in \mathbb{R}^p$ and iteratively updates our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient). Specifically, at the $t$th iteration, the update is
+
+$$\theta_t := \theta_{t-1} - \alpha \nabla L(\theta)$$
+
+where $\alpha$ is called the [learning rate]() and simply dictates how far we will step in the direction of the negative gradient.
+
+In machine learning, it is common to search over a set of models, $\mathcal{H}$, that are each characterized by a set of parameters $\theta \in \mathbb{R}^p$. That is, we can write each $f \in \mathcal{H}$ as $f(x; \theta)$. For example, if $\mathcal{H}$ is the set of all [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) with a specific architecture, then $\theta$ may represent the numerical weights of the neural network. 
+
+If $f(x; \theta)$ is differentiable with respect to $\theta$, we can let 
+
+$$L(\theta) := \frac{1}{n}\sum_{i=1}^n \ell(y_i, f(x_i; \theta))$$
+
+and with help from the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), we can apply gradient descent as described above to find the $\theta$ that minimizes $L(\theta)$. 
 
 Calculating the pseudo-residuals for common loss functions
 ----------------------------------------------------------
