@@ -14,15 +14,15 @@ Boosting is a machine learning paradigm that entails constructing an ensemble of
 Review of the supervised learning task
 --------------------------------------
 
-Before getting into the meat of gradient boosting, let's review the basic supervised learning task so that we are on the same page regarding both the problem setting and mathematical notation. 
+Before we get started, let's review the basic supervised learning task so that we are on the same page regarding both the problem setting and mathematical notation. 
 
-In supervised learning, our goal is to map each element in a set $\mathcal{X}$ to a target variable in a set $\mathcal{Y}$. That is, we seek a specific function 
+In supervised learning, our goal is to learn a function $F$ that maps each element in a set $\mathcal{X}$ to a target element in a set $\mathcal{Y}$. That is, we seek a specific function 
 
 $$F: \mathcal{X} \rightarrow \mathcal{Y}$$
 
 The space of objects $\mathcal{X}$ depends on the problem being solved. It may consist of text numerical vectors, documents, images, or graphs. The space $\mathcal{Y}$ usually consists of real numbers (in the case of regression) or a set of finite labels (in the case of classification). 
 
-We don't have access to the optimal function, $F$, directly. Instead, we have access to a finite set of pairs $\{(x_i, y_i)}_{i=1, \dots, n}$ where $x_i \in \mathcal{X}$ and $y_i \in \mathcal{Y}$ such that $F(x_i) = y_i$.  Our goal is to approximate $F$ from this finite sample. 
+We don't have access to the optimal function, $F$, directly. Instead, we have access to a finite set of pairs $\{(x_i, y_i)}_{i=1, \dots, n}$ where $x_i \in \mathcal{X}$ and $y_i \in \mathcal{Y}$ such that $F(x_i) = y_i$.  Our goal is to approximate the true $F$ by leveraging this finite sample. 
 
 To perform this approximation, we search a space of functions $\mathcal{H}$ for a function $f \in \mathcal{H}$ that minimizes a function, called the [loss function](https://en.wikipedia.org/wiki/Loss_function), that tracks the correspondence between each $y_i$ and each $F(y_i)$. That is, the loss function $\ell(y_i, f(x_i))$ tells us how much $f(x_i)$ deviates from $y_i$.
 
