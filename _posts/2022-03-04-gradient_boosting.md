@@ -69,7 +69,7 @@ where
 
 $$L(f) := \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
 
-Now this may seem a bit weird. In our explanation of gradient descent above, it was assumed that the objective function was numeric. That is, $g$ maps vectors of real numbers to a number: $g: \mathbb{R}^m \rightarrwo \mathbb{R}$. Here, our objective function $L$ maps abstract functions to real numbers: $L : \mathcal{H} \rightarrow \mathbb{R}$. So how dow we compute gradients and how do we derive a gradient descent algorithm?
+Now this may seem a bit weird. In our explanation of gradient descent above, it was assumed that the objective function was numeric. That is, $g$ maps vectors of real numbers to a number: $g: \mathbb{R}^m \rightarrow \mathbb{R}$. Here, our objective function $L$ maps abstract functions to real numbers: $L : \mathcal{H} \rightarrow \mathbb{R}$. So how dow we compute gradients and how do we derive a gradient descent algorithm?
 
 The answer to these questions requires a brief forray into functional analysis and the calculus of various. We will seek to derive a sort of generalization of gradient descent on spaces of functions that we will refer to as "functional gradient descent". 
 
