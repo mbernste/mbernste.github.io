@@ -61,9 +61,9 @@ Notice that gradient descent can really only be applied when $g$ is differentiab
 Functional gradient descent
 ---------------------------
 
-As we will show in the next section, gradient boosting can be understood as a gradient descent algorithm for solving for 
+As we will see, gradient boosting can be understood as a gradient descent algorithm for solving for 
 
-$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} L(f)
+$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} L(f)$$
 
 where 
 
