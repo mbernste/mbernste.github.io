@@ -53,9 +53,9 @@ In gradient descent, we find the $\boldsymbol{x}$ that minimizes $g$ by "walking
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gradient_descent_error_surface.png" alt="drawing" width="500"/></center>
 
-More rigorously, gradient descent works as follows: We start with an initial guess of the solution $\boldsymbol{x}_0 \in \mathbb{R}^m$ and iteratively update our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient), $\nabla g(\boldsymbol{x})$. At the $t$th iteration, the updated solution is given by
+More rigorously, gradient descent works as follows: We start with an initial guess of the solution $\boldsymbol{x}\_0 \in \mathbb{R}^m$ and iteratively update our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient), $\nabla g(\boldsymbol{x})$. At the $t$th iteration, the updated solution is given by
 
-$$\boldsymbol{x}_t := \boldsymbol{x}_{t-1} - \alpha \nabla g(\boldsymbol{x})$$
+$$\boldsymbol{x}_t := \boldsymbol{x}_{t-1} - \alpha \nabla g(\boldsymbol{x}_{t-1})$$
 
 The parameter, $\alpha$, is called the **learning rate** and simply dictates how far we will step in the direction of the negative gradient at each iteration.
 
