@@ -136,5 +136,5 @@ Calculating the pseudo-residuals for common loss functions
 References
 ----------
 
-Mason, L. __et al.__ (1999). [Boosting Algorithms as Gradient Descent](https://proceedings.neurips.cc/paper/1999/file/96a93ba89a5b5c6c226e49b88973f46e-Paper.pdf). Proceedings of the 12th International Conference on Neural Information Processing Systems.
+Mason, L. _et al._ (1999). [Boosting Algorithms as Gradient Descent](https://proceedings.neurips.cc/paper/1999/file/96a93ba89a5b5c6c226e49b88973f46e-Paper.pdf). Proceedings of the 12th International Conference on Neural Information Processing Systems.
 
