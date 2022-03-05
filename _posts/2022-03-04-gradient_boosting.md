@@ -35,15 +35,17 @@ Then, we seek to find an $f \in \mathcal{H}$ that minimizes the average loss ove
 
 $$\hat{f} := \text{arg min}_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
 
+The hope is then that $\hat{f}$ is a good approximation to the "true" latent function $F$.
+
 Boosting
 --------
 
 Gradient descent
 ----------------
 
-Gradient descent is a numerical approach for solving an optimization problem that involves starting with an initial guess of the solution to the optimization problem and then iteratively improving that solution by taking small in the direction of steepest descent down the objective function's surface.
+Gradient descent is a numerical approach for solving an optimization problem that involves starting with an initial guess of the solution to the problem and then iteratively improving that solution by taking small steps in the direction of steepest descent down the objective function's surface.
 
-Say we have a function $g : \mathcal{\mathbb{R}^m} \rightarrow \mathbb{R}$ and we wish to find the argument that minimizes $g$. That is, we wish to find the solution to the optimization problem
+Say we have an objective function $g : \mathcal{\mathbb{R}^m} \rightarrow \mathbb{R}$ and we wish to find the argument that minimizes $g$. That is, we wish to find the solution to the optimization problem
 
 $$\hat{\boldsymbol{x}} := \text{arg min}_{\boldsymbol{x} \in \mathbb{R}^m} g(x)$$
 
