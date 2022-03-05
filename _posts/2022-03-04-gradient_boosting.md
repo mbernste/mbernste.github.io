@@ -61,35 +61,38 @@ The parameter, $\alpha$, is called the **learning rate** and simply dictates how
 
 Notice that gradient descent can really only be applied when $g$ is differentiable. Otherwise, we cannot compute a gradient and therefore do not how to update the solution!
 
+Functional gradient descent
+---------------------------
+
+As we will show in the next section, gradient boosting can be understood as a gradient descent algorithm for solving for 
+
+$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} L(f)
+
+where 
+
+$$L(f) := \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
+
+Now this may seem a bit weird. In our explanation of gradient descent above, it was assumed that the objective function was numeric. That is, $g$ maps vectors of real numbers to a number: $g: \mathbb{R}^m \rightarrwo \mathbb{R}$. Here, our objective function $L$ maps abstract functions to real numbers: $L : \mathcal{H} \rightarrow \mathbb{R}$. So how dow we compute gradients and how do we derive a gradient descent algorithm?
+
+The answer to these questions requires a brief forray into functional analysis and the calculus of various. We will seek to derive a sort of generalization of gradient descent on spaces of functions that we will refer to as "functional gradient descent". 
 
 The gradient boosting algorithm
 -------------------------------
 
-Gradient boosting can be understood as an application of gradient descent to the space of functions $\mathcal{H}$. That is, we solve the optimization problem
+Gradient boosting can be understood as a generalization of gradient descent to the space of functions $\mathcal{H}$. That is, we solve the optimization problem
 
-$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
+$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} L(f)
 
-using gradient descent over $\mathcal{H}$.
+where 
 
-Now this may be a bit weird
+$$L(f) := \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
 
-
-Now, what happens if each $f \in \mathcal{H}$ is not parameterized by a real-valued vector $\theta$. For example, what if $\mathcal{H}$ is a space of [decision trees](https://en.wikipedia.org/wiki/Decision_tree)? Now, we seek to minimize the function 
-
-
-that is, we seek 
-
-$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} L(f)$$
-
-Can we still apply gradient descent?
-
-In fact, it turns out that we can indeed derive a gradient descent-like algorithm called **gradient boosting**. At a high level, this algorithm is analogous to gradient descent in the following way: we start with an initial model $f_0$ and iteratively update $f_0$ by taking small steps that improve $L(f)$. That is, at iteration $t$, we update our current estimate $f_t$ by
+using gradient descent over $\mathcal{H}$. That is, we start with an initial model $f_0$ and iteratively update $f_0$ by taking small steps that improve $L(f)$. That is, at iteration $t$, we update our current estimate $f_t$ by
 
 $$f_t := f_{t-1} + \alpha h_t$$
 
 where $h_t$ is a function in $\mathcal{H}$ that represents a function that improves $L(f)$ the most. That is, $h_t$ is analogous to the gradient, $\nabla L(\theta)$, from traditional gradient descent. 
 
-Notice that instead of performing gradient descent in a real-valued coordinate vector space over parameters $\theta \in \mathbb{R}^p$, we are now performing a gradient-descent-like process within the function space $\mathcal{H}$ itself!
 
 The question we now must answer is, how do we derive this "gradient function" $h_t$? Let's take a step back and take a look at traditional gradient descent. Specifically, let's look at the gradient:
 
