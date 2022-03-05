@@ -77,9 +77,9 @@ Here, our objective function $L$ maps abstract functions to real numbers:
 
 $$L : \mathcal{H} \rightarrow \mathbb{R}$$ 
 
-So how dow we compute gradients and how do we derive a gradient descent algorithm?
+So how dow we compute gradients of $L$ in order to derive a gradient descent algorithm?
 
-The answer to these questions requires a brief forray into functional analysis and the calculus of various. We will seek to derive a sort of generalization of gradient descent on spaces of functions that we will refer to as "functional gradient descent". 
+The answer to this question requires a brief forray into functional analysis and the calculus of various. We will seek to derive a sort of generalization of gradient descent on spaces of functions that we will refer to as "functional gradient descent". 
 
 The gradient boosting algorithm
 -------------------------------
