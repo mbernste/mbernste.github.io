@@ -56,7 +56,7 @@ $$\boldsymbol{x}_t := \boldsymbol{x}_{t-1} - \alpha \nabla g(\boldsymbol{x}_{t-1
 
 The parameter, $\alpha$, is called the **learning rate** and simply dictates how far we will step in the direction of the negative gradient at each iteration.
 
-Notice that gradient descent can really only be applied when $g$ is differentiable. Otherwise, we cannot compute a gradient and therefore do not how to update the solution!
+Notice that gradient descent can really only be applied when $g$ is differentiable. Otherwise, we cannot compute a gradient and therefore do not how to update the solution! (A variant of gradient descent called [subgradient descent](https://en.wikipedia.org/wiki/Subgradient_method) can be applied to cases where $g$ is not differentiable, but we'll save that discussion for later.)
 
 Functional gradient descent
 ---------------------------
