@@ -14,7 +14,7 @@ Boosting is a machine learning paradigm that entails constructing an ensemble of
 Introduction
 ------------
 
-Gradient boosting is a machine learning paradigm that involves training an ensemble of weak models to form a strong model. To understand gradient boosting, one must understand two central ideas: gradient descent and boosting.  In this post, we will first review the supervised learning task, boosting, and gradient descent. Then we will discuss how these ideas come together in gradient boosting. Lastly, we will contrast the gradient boosting paradigm with the standard gradient descent learning algorithm for fitting model parameters; they are actually quite different! 
+Gradient boosting is a machine learning paradigm that involves training an ensemble of weak models to form a strong model. To understand gradient boosting, one must understand two central ideas: **gradient descent** and **boosting**.  In this post, we will first review the supervised learning task, boosting, and gradient descent. Then we will discuss how these ideas come together in gradient boosting. Lastly, we will contrast the gradient boosting paradigm with the standard gradient descent learning algorithm for fitting model parameters; they are actually quite different! 
 
 Review of the supervised learning task
 --------------------------------------
@@ -29,7 +29,7 @@ The space of objects $\mathcal{X}$ depends on the problem being solved. It may c
 
 We don't have access to the optimal function, $F$, directly. Instead, we have access to a finite set of pairs $\{(x_i, y_i)}_{i=1, \dots, n}$ where $x_i \in \mathcal{X}$ and $y_i \in \mathcal{Y}$ such that $F(x_i) = y_i$.  Our goal is to approximate the true $F$ by leveraging this finite sample. 
 
-To perform this approximation, we search a space of functions $\mathcal{H}$ for a function $f \in \mathcal{H}$ that minimizes a function, called the [loss function](https://en.wikipedia.org/wiki/Loss_function), that tracks the correspondence between each $y_i$ and each $F(y_i)$. That is, the loss function $\ell(y_i, f(x_i))$ tells us how much $f(x_i)$ deviates from $y_i$.
+To perform this approximation, we search a space of functions $\mathcal{H}$ for a function $f \in \mathcal{H}$ that minimizes a function, called the [loss function](https://en.wikipedia.org/wiki/Loss_function), that tracks the correspondence between each $y_i$ and each $f(y_i)$. That is, the loss function $\ell(y_i, f(x_i))$ tells us how much $f(x_i)$ deviates from $y_i$.
 
 Then, we seek to find an $f \in \mathcal{H}$ that minimizes the average loss over all of the samples:
 
@@ -41,27 +41,39 @@ Boosting
 Gradient descent
 ----------------
 
-Gradient descent is a numerical approach for solving an optimization problem that involves iteratively improving our solution by taking small steps along the direction of steepest descent down the objective function's surface.
+Gradient descent is a numerical approach for solving an optimization problem that involves starting with an initial guess of the solution to the optimization problem and then iteratively improving that solution by taking small in the direction of steepest descent down the objective function's surface.
 
 Say we have a function $g : \mathcal{\mathbb{R}^m} \rightarrow \mathbb{R}$ and we wish to find the argument that minimizes $g$. That is, we wish to find the solution to the optimization problem
 
 $$\hat{\boldsymbol{x}} := \text{arg min}_{\boldsymbol{x} \in \mathbb{R}^m} g(x)$$
 
-If $g$ is differentiable, then we can apply gradient descent. It works as follows. We start with an initial guess of the solution $\\boldsymbol{x}_0 \in \mathbb{R}^m$ and iteratively update our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient), $\nabla g(\boldsymbol{x})$ Specifically, at the $t$th iteration, the update is
+In gradient descent, we find the $\boldsymbol{x}$ that minimizes $g$ by "walking" down $g$'s surface:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gradient_descent_error_surface.png" alt="drawing" width="500"/></center>
+
+More rigorously, gradient descent works as follows: We start with an initial guess of the solution $\boldsymbol{x}_0 \in \mathbb{R}^m$ and iteratively update our estimate by following the direction of steepest descent.  Recall, the direction of steepest _ascent_ is given by the function's [gradient](https://en.wikipedia.org/wiki/Gradient), $\nabla g(\boldsymbol{x})$. At the $t$th iteration, the updated solution is given by
 
 $$\boldsymbol{x}_t := \boldsymbol{x}_{t-1} - \alpha \nabla g(\boldsymbol{x})$$
 
 The parameter, $\alpha$, is called the **learning rate** and simply dictates how far we will step in the direction of the negative gradient at each iteration.
 
+Notice that gradient descent can really only be applied when $g$ is differentiable. Otherwise, we cannot compute a gradient and therefore do not how to update the solution!
+
 
 The gradient boosting algorithm
 -------------------------------
 
-In the previous section, we assumed that each model $f \in \mathcal{H}$ is parameterized by $\theta$. Furthermore, we assumed that $f(x; \theta)$ were differentiable with respect to $\theta$. With these two assumptions, we discussed how gradient descent could be applied to find the $\theta$ that minimized $L(\theta)$.
+Gradient boosting can be understood as an application of gradient descent to the space of functions $\mathcal{H}$. That is, we solve the optimization problem
+
+$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
+
+using gradient descent over $\mathcal{H}$.
+
+Now this may be a bit weird
+
 
 Now, what happens if each $f \in \mathcal{H}$ is not parameterized by a real-valued vector $\theta$. For example, what if $\mathcal{H}$ is a space of [decision trees](https://en.wikipedia.org/wiki/Decision_tree)? Now, we seek to minimize the function 
 
-$$L(f) := \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
 
 that is, we seek 
 
