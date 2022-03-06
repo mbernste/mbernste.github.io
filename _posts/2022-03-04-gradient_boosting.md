@@ -57,7 +57,7 @@ The most common category of simple functions, $\mathcal{H}_{\text{simple}}$, tha
 Gradient descent
 ----------------
 
-Gradient descent is a numerical approach for solving an optimization problem that involves starting with an initial guess of the solution to the problem and then iteratively improving that solution by taking small steps in the direction of steepest descent down the objective function's surface.
+Now, we'll review the basic ideas behind **gradient descent**. Gradient descent is a numerical approach for solving an optimization problem that involves starting with an initial guess of the solution to the problem and then iteratively improving that solution by taking small steps in the direction of steepest descent down the objective function's surface.
 
 Say we have an objective function $g : \mathcal{\mathbb{R}^m} \rightarrow \mathbb{R}$ and we wish to find the argument that minimizes $g$. That is, we wish to find the solution to the optimization problem
 
@@ -78,7 +78,7 @@ Notice that gradient descent can really only be applied when $g$ is differentiab
 Functional gradient descent
 ---------------------------
 
-As we will see, gradient boosting can be understood as a gradient descent algorithm for solving for 
+Before introducing "functional gradient descent", let me spoil the punchline: gradient boosting can be understood as a gradient descent algorithm for solving for 
 
 $$\hat{f} := \text{arg min}_{f \in \mathcal{H}} L(f)$$
 
@@ -86,21 +86,23 @@ where
 
 $$L(f) := \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
 
-Now this may seem a bit weird. In our explanation of gradient descent above, it was assumed that the objective function was numeric. That is, $g$ maps vectors of real numbers to a number: 
+Now this may seem a bit weird. In our review of gradient descent above, it was assumed that the objective function was numeric. That is, $g$ mapped vectors of real numbers to numbers: 
 
 $$g: \mathbb{R}^m \rightarrow \mathbb{R}$$ 
 
-Here, our objective function $L$ maps abstract functions to real numbers: 
+Here, our objective function $L$ maps functions to real numbers: 
 
 $$L : \mathcal{H} \rightarrow \mathbb{R}$$ 
 
-So how do we derive a gradient descent algorithm for $L$? What does it even mean to compute a "gradient" on a function of functions like $L$?
+So how do we perform gradient descent on $L$? What does it even mean to compute a "gradient" on a function of functions like $L$?
 
-In order to answer to this question we must take a brief forray into functional analysis and the [calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations). The calculus of variations is all about the study of generalizing calculus from functions of numbers to functions of functions. Functions of functions are referred to as [functionals](https://en.wikipedia.org/wiki/Functional_(mathematics)) and the derivative of a functional is called a **functional derivative**.
+This is where functional gradient descent comes in. As you may have guessed, functional gradient descent is a generalization of gradient descent from functions of numbers to functions of functions. 
+
+To undestand functional gradient descent, we must take a brief forray into an area called the [calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations). The calculus of variations is all about generalizing the ideas in calculus from functions of numbers to functions of functions. In the calculus of variations, functions are referred to as [functionals](https://en.wikipedia.org/wiki/Functional_(mathematics)). The derivative of a functional is called a **functional derivative**.
 
 Functionals? Functional derivatives? Let's step through this slowly.
 
-As previously stated, a functional is a function of functions. Specifically, it is a function that maps functions to real numbers. The function $L$ above can be viewed as a functional because it takes a function $f \in \mathcal{H}$ and maps it to a real number. That real number, of course, corresponds to the average value of the loss function when evaluating $f$ on all of the $(x_i, y_)$ pairs.
+As previously stated, a functional is a function of functions. Specifically, it is a function that maps functions to real numbers. The function $L$ above can be viewed as a functional because it takes a function $f \in \mathcal{H}$ and maps it to a real number. That real number, of course, corresponds to the average value of the loss function when evaluating $f$ on all of the $(x_i, y_i)$ pairs.
 
 Now, we need a way to think about the derivative of $L$ at a given $f$. Recall that for a plain old function on the real numbers $g: \mathbb{R} \rightarrow \mathbb{R}$, the derivative of $g$ at $x$, denoted $g'(x)$ tells us how much $g$ is changing at $f$. Said differently, it asks, if we change $x$ by an infinitesimal amount, how much does $g$ change? The functional derivative of $L$ addresses this same question. That is, if we change $f$ by an infinitesimal amount, how does $L$ change? This concept is rigorously addressed by the functional derivative, denoted $\nabla L(f)$.
 
