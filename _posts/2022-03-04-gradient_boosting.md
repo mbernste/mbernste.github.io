@@ -41,10 +41,10 @@ $$\hat{f} := \text{arg min}_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n \ell(y_
 
 The hope is then that $\hat{f}$ is a good approximation to the "true" latent function $f^*$.
 
-Boosting
---------
+The gradient boosting algorithm
+-------------------------------
 
-**Boosting** is a machine learning paradigm that involves constructing an accurate function $f^*$ from a set of innacurate functions. Specifically, we consider a space of simple, innacurate models $\mathcal{H}\text{simple}$, and then let the $\mathcal{H}$ be the set of all linear combinations of functions in $\mathcal{H}\_{\text{simple}}$, which we denote as $\text{lin} \ \mathcal{H}\_{\text{simple}}$.  Said more succintly, we let $\mathcal{H} := \text{lin} \ \mathcal{H}\_{\text{simple}}$. 
+Before explaining the gradient boosting algorithm itself, let's review the concept of **boosting**. Boosting is a machine learning paradigm that involves constructing an accurate function $f^*$ from a set of innacurate functions. Specifically, we consider a space of simple, innacurate models $\mathcal{H}\text{simple}$, and then let the $\mathcal{H}$ be the set of all linear combinations of functions in $\mathcal{H}\_{\text{simple}}$, which we denote as $\text{lin} \ \mathcal{H}\_{\text{simple}}$.  Said more succintly, we let $\mathcal{H} := \text{lin} \ \mathcal{H}\_{\text{simple}}$. 
 
 Said differently, each function $f \in \mathcal{H}$ has the form:
 
@@ -53,6 +53,28 @@ $$f(x) = \sum_{t=1}^T \alpha_t h_t(x)$$
 where for each $t = 1, \dots, T$, $h_t \in \mathcal{H}_{\text{simple}}$ and $T$ is some arbitrary number of inaccurate functions that we select from $\mathcal{H}\_{\text{simple}}$.
 
 The most common category of simple functions, $\mathcal{H}_{\text{simple}}$, that are considered in practice are sets of very small [decision trees](https://en.wikipedia.org/wiki/Decision_tree) with low depth or few features. Generally, as will be discussed below, each model in $\mathcal{H}\_{\text{simple}}$ should perform very poorly on its own. Our goal then is to add a set of weak models together in order to form a strong model. 
+
+Gradient boosting is a specific boosting paradigm that entails constructing $f$ iteratively by adding a new function from $\mathcal{H}_{\text{simple}}$ to $f$ one at a time. 
+
+
+$$h_t(x_i) = \frac{\partial \ell(y_i, f(x_i))}{\partial f(x_i)}$$
+
+That is, for any given $x_i$, $$h_t(x_i)$$ gives you the 
+
+For simplicity of notation, let
+
+$$r_i := \frac{\partial \ell(y_i, f(x_i)}{\partial f(x_i)}$$
+
+Then, we simply need a function $h_t$ for which $h_t(x_i) = r_i$. How do we actually find such a function? One idea is to train a model to fit the pairs $(x_i, r_i)$! Once we fit this model, we can update our current estimate $f_{t-1}$ via
+
+$$f_t := f_{t-1} + h_t$$
+
+At the end of $T$ iterations, our full model $\hat{f}$ will have the form
+
+$$\hat{f}(x) = \sum_{t=1}^T \alpha h_t(x)$$
+
+Notice that $f(x)$ is actually an ensemble of models $h_1, \dots, h_T$!
+
 
 Gradient descent
 ----------------
@@ -96,9 +118,9 @@ $$L : \mathcal{H} \rightarrow \mathbb{R}$$
 
 So how do we perform gradient descent on $L$? What does it even mean to compute a "gradient" on a function of functions like $L$?
 
-This is where functional gradient descent comes in. As you may have guessed, functional gradient descent is a generalization of gradient descent from functions of numbers to functions of functions. 
+This is where functional gradient descent comes in. As you may have guessed, functional gradient descent is a generalization of gradient descent from functions of numbers to functions of functions. To undestand functional gradient descent, we must take a brief forray into an area called the [calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations). 
 
-To undestand functional gradient descent, we must take a brief forray into an area called the [calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations). The calculus of variations is all about generalizing the ideas in calculus from functions of numbers to functions of functions. In the calculus of variations, functions are referred to as [functionals](https://en.wikipedia.org/wiki/Functional_(mathematics)). The derivative of a functional is called a **functional derivative**.
+The calculus of variations is all about generalizing the ideas in calculus from functions of numbers to functions of functions. In the calculus of variations, functions are referred to as [functionals](https://en.wikipedia.org/wiki/Functional_(mathematics)). The derivative of a functional is called a **functional derivative**.
 
 Functionals? Functional derivatives? Let's step through this slowly.
 
@@ -111,54 +133,6 @@ Now, to define the functional derivative, we must ask the question, what does it
 $$L(f + \epsilon \eta)$$
 
 Notice that $f + \epsilon \eta$ is a function and thus, can be "fed" to $L$. Let's now go a step further and consder $f$ and $\eta$ to be fixed, but we'll let $\epsilon$ vary. That is, we will let $\epsilon$ be a variable that is free to be changed. We thus see that $L(f + \epsilon \eta)$ is a function of $epsilon$ and thus, an ordinary function mapping numbers to numbers. That is, we can let $\mathcal{L}(\epsilon) := L(f + \epsilon \eta)$ and realize that $\mathcal{L} : \mathbb{R} \rightarrow \mathbb{R}$.  
-
-
-
-The gradient boosting algorithm
--------------------------------
-
-Gradient boosting can be understood as a generalization of gradient descent to the space of functions $\mathcal{H}$. That is, we solve the optimization problem
-
-$$\hat{f} := \text{arg min}_{f \in \mathcal{H}} L(f)
-
-where 
-
-$$L(f) := \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i))$$
-
-using gradient descent over $\mathcal{H}$. That is, we start with an initial model $f_0$ and iteratively update $f_0$ by taking small steps that improve $L(f)$. That is, at iteration $t$, we update our current estimate $f_t$ by
-
-$$f_t := f_{t-1} + \alpha h_t$$
-
-where $h_t$ is a function in $\mathcal{H}$ that represents a function that improves $L(f)$ the most. That is, $h_t$ is analogous to the gradient, $\nabla L(\theta)$, from traditional gradient descent. 
-
-
-The question we now must answer is, how do we derive this "gradient function" $h_t$? Let's take a step back and take a look at traditional gradient descent. Specifically, let's look at the gradient:
-
-$$\begin{align*}\nabla L(\theta) &= \partial \frac{1}{n} \sum_{i=1}^n \ell(y_i, f(x_i; \theta)) \end{align*}$$
-
-**Here's the crucial insight:** if we want a function $h_t$ that acts like the gradient of $L(f_{t-1})$, then for all $x_i$, it should hold that
-
-$$h_t(x_i) = \frac{\partial \ell(y_i, f(x_i))}{\partial f(x_i)}$$
-
-That is, for any given $x_i$, $$h_t(x_i)$$ gives you the 
-
-For simplicity of notation, let
-
-$$r_i := \frac{\partial \ell(y_i, f(x_i)}{\partial f(x_i)}$$
-
-Then, we simply need a function $h_t$ for which $h_t(x_i) = r_i$. How do we actually find such a function? One idea is to train a model to fit the pairs $(x_i, r_i)$! Once we fit this model, we can update our current estimate $f_{t-1}$ via
-
-$$f_t := f_{t-1} + h_t$$
-
-At the end of $T$ iterations, our full model $\hat{f}$ will have the form
-
-$$\hat{f}(x) = \sum_{t=1}^T \alpha h_t(x)$$
-
-Notice that $f(x)$ is actually an ensemble of models $h_1, \dots, h_T$! As we will show in the next section, this process can be viewed as a boosting algorithm!
-
-
-Viewing gradient boosting as boosting
---------------------------------------
 
 
 
