@@ -44,7 +44,7 @@ The hope is then that $\hat{f}$ is a good approximation to the "true" latent fun
 Boosting
 --------
 
-**Boosting** is a machine learning paradigm that involves constructing an accurate function $f^*$ from a set of innacurate functions. Specifically, we consider a space of simple, innacurate models $\mathcal{H}\text{simple}$, and then let the $\mathcal{H}$ be the set of all linear combinations of functions in $\mathcal{H}_{\text{simple}}$, which we denote as $\text{lin} \ \mathcal{H}_{\text{simple}}$.  Said more succintly, we let $\mathcal{H} := \text{lin} \ \mathcal{H}_{\text{simple}}$. 
+**Boosting** is a machine learning paradigm that involves constructing an accurate function $f^*$ from a set of innacurate functions. Specifically, we consider a space of simple, innacurate models $\mathcal{H}\text{simple}$, and then let the $\mathcal{H}$ be the set of all linear combinations of functions in $\mathcal{H}\_{\text{simple}}$, which we denote as $\text{lin} \ \mathcal{H}_{\text{simple}}$.  Said more succintly, we let $\mathcal{H} := \text{lin} \ \mathcal{H}_{\text{simple}}$. 
 
 Said differently, each function $f \in \mathcal{H}$ has the form:
 
@@ -94,7 +94,7 @@ Here, our objective function $L$ maps abstract functions to real numbers:
 
 $$L : \mathcal{H} \rightarrow \mathbb{R}$$ 
 
-So how do we derive a gradient descent algorithm for $L$? What does it mean to compute a "gradient" on a function of functions like $L$?
+So how do we derive a gradient descent algorithm for $L$? What does it even mean to compute a "gradient" on a function of functions like $L$?
 
 In order to answer to this question we must take a brief forray into functional analysis and the [calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations). The calculus of variations is all about the study of generalizing calculus from functions of numbers to functions of functions. Functions of functions are referred to as [functionals](https://en.wikipedia.org/wiki/Functional_(mathematics)) and the derivative of a functional is called a **functional derivative**.
 
@@ -104,11 +104,11 @@ As previously stated, a functional is a function of functions. Specifically, it 
 
 Now, we need a way to think about the derivative of $L$ at a given $f$. Recall that for a plain old function on the real numbers $g: \mathbb{R} \rightarrow \mathbb{R}$, the derivative of $g$ at $x$, denoted $g'(x)$ tells us how much $g$ is changing at $f$. Said differently, it asks, if we change $x$ by an infinitesimal amount, how much does $g$ change? The functional derivative of $L$ addresses this same question. That is, if we change $f$ by an infinitesimal amount, how does $L$ change? This concept is rigorously addressed by the functional derivative, denoted $\nabla L(f)$.
 
-Now, to define the functional derivative, we must ask the question, what does it mean to "change $f$ by an infinitesimal amount"? We'll consider the following: given functional $L$, a function $f$, we'll consider a constant $\epsilon$ and an arbitrary function $\eta: \mathcal{X} \rightarrow \mathcal{Y}$. Then, we'll consider the functional evaluated at $f + \epsilon\eta$:
+Now, to define the functional derivative, we must ask the question, what does it mean to "change $f$ by an infinitesimal amount"? To define this rigorously, we'll consider an arbitrary real number $\epsilon \in \mathbb{R}$ and an arbitrary function $\eta: \mathcal{X} \rightarrow \mathcal{Y}$. Then, we'll consider the functional evaluated at $f + \epsilon\eta$:
 
 $$L(f + \epsilon \eta)$$
 
-Notice that $f + \epsilon \eta$ is a function. It is not necessarily a function in $\mathcal{H}$, but it is still a function. Let's now fix $f$ and $\eta$, but not $\epsilon$. That is, we will let $\epsilon$ be a variable that is free to be changed. We thus see that $L(f + \epsilon \eta)$ is a function of $eta$ and thus, an ordinary function mapping numbers to numbers. That is, we can let $\mathcal{L}(\eta) := L(f + \epsilon \eta)$ and realize that $\mathcal{L} : \mathbb{R} \rightarrow \mathbb{R}$.  
+Notice that $f + \epsilon \eta$ is a function and thus, can be "fed" to $L$. Let's now go a step further and consder $f$ and $\eta$ to be fixed, but we'll let $\epsilon$ vary. That is, we will let $\epsilon$ be a variable that is free to be changed. We thus see that $L(f + \epsilon \eta)$ is a function of $epsilon$ and thus, an ordinary function mapping numbers to numbers. That is, we can let $\mathcal{L}(\epsilon) := L(f + \epsilon \eta)$ and realize that $\mathcal{L} : \mathbb{R} \rightarrow \mathbb{R}$.  
 
 
 
