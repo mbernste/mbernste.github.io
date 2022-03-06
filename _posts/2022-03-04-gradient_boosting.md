@@ -37,6 +37,17 @@ $$\hat{f} := \text{arg min}_{f \in \mathcal{H}} \frac{1}{n} \sum_{i=1}^n \ell(y_
 
 The hope is then that $\hat{f}$ is a good approximation to the "true" latent function $F$.
 
+Boosting
+--------
+
+**Boosting** is a machine learning paradigm that involves constructing a strong model from a set of weak models. Specifically, given a space of simple models $\mathcal{H}_s$, we consider the full function space through which we are searching to be the set of all linear combinations in $\mathcal{H}_{\text{simple}}$, which we denote $\text{lin} \ \mathcal{H}_{\text{simple}}$.  Then we search for a function $f$ of the form:
+
+$$\hat{f}(x) = \sum_{t=1}^T \alpha_t h_t(x)$$
+
+where for each $t = 1, \dots, T$, $h_t \in \mathcal{H}_{\text{simple}}$ and $T$ is some arbitrary number of functions that we select from $\mathcal{H}_{\text{simple}}$.
+
+The most common type of $\mathcal{H}_{\text{simple}}$ that are used in practice are spaces of very small decision trees with some low depth or low numbers of used features. Generally, as will be discussed below, each model in $\mathcal{H}_{\text{simple}}$ should perform very poorly on its own. Our goal then is to add a set of weak models together in order to form a strong model. 
+
 Gradient descent
 ----------------
 
@@ -79,7 +90,9 @@ $$L : \mathcal{H} \rightarrow \mathbb{R}$$
 
 So how dow we compute gradients of $L$ in order to derive a gradient descent algorithm?
 
-The answer to this question requires a brief forray into functional analysis and the calculus of various. We will seek to derive a sort of generalization of gradient descent on spaces of functions that we will refer to as "functional gradient descent". 
+The answer to this question requires a brief forray into functional analysis and the calculus of variations. We will seek to derive a sort of generalization of gradient descent on spaces of functions that is refered to as **functional gradient descent**. 
+
+First, recall that [vectors spaces can be formed out of functions](https://mbernste.github.io/posts/vector_spaces/). This will be crucial for our derivation of functional gradient descent. Specifically, we will assume a space of functions $$\mathcal{M}$$ of which $\mathcal{H} \subset \mathcal{M}$. That is, the space of functions that we are searching over is a subspace of a broader set of functions $\mathcal{M}$. Let us further assume that $\mathcal{M}$ is smooth. What do we mean by smooth? Specifically, 
 
 The gradient boosting algorithm
 -------------------------------
