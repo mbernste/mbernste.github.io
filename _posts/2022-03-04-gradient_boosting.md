@@ -23,7 +23,7 @@ Before we get started, let's review the basic supervised learning task so that w
 
 In supervised learning, our goal is to learn a function $F$ that maps each element in a set $\mathcal{X}$ to a target element in a set $\mathcal{Y}$. That is, we seek a specific function 
 
-$$F: \mathcal{X} \rightarrow \mathcal{Y}$$
+$$f^\*: \mathcal{X} \rightarrow \mathcal{Y}$$
 
 The space of objects $\mathcal{X}$ depends on the problem being solved. It may consist of text numerical vectors, documents, images, or graphs. The space $\mathcal{Y}$ usually consists of real numbers (in the case of regression) or a set of finite labels (in the case of classification). 
 
