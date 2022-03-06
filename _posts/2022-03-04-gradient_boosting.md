@@ -21,15 +21,15 @@ Review of the supervised learning task
 
 Before we get started, let's review the basic supervised learning task so that we are on the same page regarding both the problem setting and mathematical notation. 
 
-In supervised learning, our goal is to learn a function $F$ that maps each element in a set $\mathcal{X}$ to a target element in a set $\mathcal{Y}$. That is, we seek a specific function 
+In supervised learning, we assume that there exists a function $f^*$ that maps each element in a set $\mathcal{X}$ to a target element in a set $\mathcal{Y}$. That is,
 
 $$f^\*: \mathcal{X} \rightarrow \mathcal{Y}$$
 
 The space of objects $\mathcal{X}$ depends on the problem being solved. It may consist of text numerical vectors, documents, images, or graphs. The space $\mathcal{Y}$ usually consists of real numbers (in the case of regression) or a set of finite labels (in the case of classification). 
 
-We don't have access to the optimal function, $F$, directly. Instead, we have access to a finite set of pairs $\{(x_i, y_i)}_{i=1, \dots, n}$ where $x_i \in \mathcal{X}$ and $y_i \in \mathcal{Y}$ such that $F(x_i) = y_i$.  Our goal is to approximate the true $F$ by leveraging this finite sample. 
+Importantly, we don't have access to this "latent" function $f^*$, but rather, we have access to a finite set of pairs $\{(x_i, y_i))}_{i=1, \dots, n}$ where $x_i \in \mathcal{X}$ and $y_i := f^*(x_i) \in \mathcal{Y}$.  Our goal is to approximate the true $f^*$ by leveraging this finite sample. 
 
-To perform this approximation, we search a space of functions $\mathcal{H}$ for a function $f \in \mathcal{H}$ that minimizes a function, called the [loss function](https://en.wikipedia.org/wiki/Loss_function), that tracks the correspondence between each $y_i$ and each $f(y_i)$. That is, the loss function $\ell(y_i, f(x_i))$ tells us how much $f(x_i)$ deviates from $y_i$.
+To perform this approximation, we search a space of functions $\mathcal{H}$ for a function $f \in \mathcal{H}$ that minimizes a function, called the [loss function](https://en.wikipedia.org/wiki/Loss_function), which tracks the correspondence between each $y_i$ and each $f(y_i)$. That is, the loss function $\ell(y_i, f(x_i))$ tells us how much $f(x_i)$ deviates from $y_i$.
 
 Then, we seek to find an $f \in \mathcal{H}$ that minimizes the average loss over all of the samples:
 
