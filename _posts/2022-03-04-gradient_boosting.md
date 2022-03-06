@@ -31,7 +31,7 @@ $$f^*: \mathcal{X} \rightarrow \mathcal{Y}$$
 
 For example, $\mathcal{X}$ may be the set of images of animals and $\mathcal{Y}$ may be the set of animal labels (e.g., "tiger" or "snake").  More specifically, the set of objects $\mathcal{X}$ and labels $\mathcal{Y}$ completely depend on the problem being solved. Other examples of $\mathcal{X}$ are text documents (e.g., articles),  numerical vectors (e.g.,those describing scientific measurements), or images. The space $\mathcal{Y}$ usually consists of a set of finite labels (in the case of classification, such as the aforementioned scenario in which we are classifying images according the animal label) or real numbers (in the case of regression).
 
-Importantly, we don't have access to this "latent" function $f^\*$, but rather, we have access to a finite set of pairs $\{(x_i, y_i))}_{i=1, \dots, n}$ where $x_i \in \mathcal{X}$ and $y_i := f^*(x_i) \in \mathcal{Y}$.  Our goal is to approximate the true $f^*$ by leveraging this finite sample. 
+Importantly, we don't have access to this "latent" function $f^\*$, but rather, we have access to a finite set of pairs $\{(x_i, y_i)}_{i=1, \dots, n}$ where $x_i \in \mathcal{X}$ and $y_i := f^\*(x_i) \in \mathcal{Y}$.  Our goal is to approximate the true $f^*$ by leveraging this finite sample. 
 
 To perform this approximation, we conser a space of functions $\mathcal{H}$ and search for a function $f \in \mathcal{H}$ that minimizes another function, $\ell$, called the [loss function](https://en.wikipedia.org/wiki/Loss_function), which tracks the correspondence between each $y_i$ and each $f(y_i)$. That is, $L$function $\ell(y_i, f(x_i))$ tells us how much $f(x_i)$ deviates from $y_i$.
 
