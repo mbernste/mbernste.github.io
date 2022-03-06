@@ -94,11 +94,14 @@ Here, our objective function $L$ maps abstract functions to real numbers:
 
 $$L : \mathcal{H} \rightarrow \mathbb{R}$$ 
 
-So how dow we compute gradients of $L$ in order to derive a gradient descent algorithm?
+So how do we derive a gradient descent algorithm for $L$? What does it mean to compute a "gradient" on a function of functions like $L$?
 
-The answer to this question requires a brief forray into functional analysis and the calculus of variations. We will seek to derive a sort of generalization of gradient descent on spaces of functions that is refered to as **functional gradient descent**. 
+In order to answer to this question we must take a brief forray into functional analysis and the [calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations). The calculus of variations is all about the study of generalizing the ideas in calculus to functions of functions, often referred to as [functionals](https://en.wikipedia.org/wiki/Functional_(mathematics)).  Specifically, we will need some mathematical machinery called the **functional derivative**.
 
-First, recall that [vectors spaces can be formed out of functions](https://mbernste.github.io/posts/vector_spaces/). This will be crucial for our derivation of functional gradient descent. Specifically, we will assume a space of functions $$\mathcal{M}$$ of which $\mathcal{H} \subset \mathcal{M}$. That is, the space of functions that we are searching over is a subspace of a broader set of functions $\mathcal{M}$. Let us further assume that $\mathcal{M}$ is smooth. What do we mean by smooth? Specifically, 
+Functionals? Functional derivatives? Let's step through this slowly.
+
+As previously stated, a functional is a function of functions. Specifically, it is a function that maps functions to real numbers. The function $L$ above can be viewed as a functional because it takes a function $f \in \mathcal{H}$ and maps it to a real number. That real number, of course, corresponds to the average value of the loss function when evaluating $f$ on all of the $(x_i, y_)$ pairs.
+
 
 The gradient boosting algorithm
 -------------------------------
