@@ -44,15 +44,15 @@ The hope is then that $\hat{f}$ is a good approximation to the "true" latent fun
 Boosting
 --------
 
-**Boosting** is a machine learning paradigm that involves constructing an accurate function $f^*$ from a set of innacurate functions. Specifically, we consider a space of simple, innacurate models $\mathcal{H}\text{simple}$, and then let the $\mathcal{H}$ be the set of all linear combinations of functions in $\mathcal{H}\_{\text{simple}}$, which we denote as $\text{lin} \ \mathcal{H}_{\text{simple}}$.  Said more succintly, we let $\mathcal{H} := \text{lin} \ \mathcal{H}_{\text{simple}}$. 
+**Boosting** is a machine learning paradigm that involves constructing an accurate function $f^*$ from a set of innacurate functions. Specifically, we consider a space of simple, innacurate models $\mathcal{H}\text{simple}$, and then let the $\mathcal{H}$ be the set of all linear combinations of functions in $\mathcal{H}\_{\text{simple}}$, which we denote as $\text{lin} \ \mathcal{H}\_{\text{simple}}$.  Said more succintly, we let $\mathcal{H} := \text{lin} \ \mathcal{H}\_{\text{simple}}$. 
 
 Said differently, each function $f \in \mathcal{H}$ has the form:
 
 $$f(x) = \sum_{t=1}^T \alpha_t h_t(x)$$
 
-where for each $t = 1, \dots, T$, $h_t \in \mathcal{H}_{\text{simple}}$ and $T$ is some arbitrary number of inaccurate functions that we select from $\mathcal{H}_{\text{simple}}$.
+where for each $t = 1, \dots, T$, $h_t \in \mathcal{H}_{\text{simple}}$ and $T$ is some arbitrary number of inaccurate functions that we select from $\mathcal{H}\_{\text{simple}}$.
 
-The most common category of simple functions, $\mathcal{H}_{\text{simple}}$, that are considered in practice are sets of very small [decision trees](https://en.wikipedia.org/wiki/Decision_tree) with low depth or few features. Generally, as will be discussed below, each model in $\mathcal{H}_{\text{simple}}$ should perform very poorly on its own. Our goal then is to add a set of weak models together in order to form a strong model. 
+The most common category of simple functions, $\mathcal{H}_{\text{simple}}$, that are considered in practice are sets of very small [decision trees](https://en.wikipedia.org/wiki/Decision_tree) with low depth or few features. Generally, as will be discussed below, each model in $\mathcal{H}\_{\text{simple}}$ should perform very poorly on its own. Our goal then is to add a set of weak models together in order to form a strong model. 
 
 Gradient descent
 ----------------
