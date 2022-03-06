@@ -44,9 +44,9 @@ The hope is then that $\hat{f}$ is a good approximation to the "true" latent fun
 Boosting
 --------
 
-**Boosting** is a machine learning paradigm that involves constructing an accurate function $f^*$ from a set of innacurate functions. Specifically, we consider a space of simple, innacurate models $\mathcal{H}_s$, and then let the $\mathcal{H}$ be the set of all linear combinations of functions in $\mathcal{H}_{\text{simple}}$, which we denote $\text{lin} \ \mathcal{H}_{\text{simple}}$.  Said more succintly, we let $\mathcal{H} := \text{lin} \mathcal{H}_\text{simple}$. 
+**Boosting** is a machine learning paradigm that involves constructing an accurate function $f^*$ from a set of innacurate functions. Specifically, we consider a space of simple, innacurate models $\mathcal{H}\text{simple}$, and then let the $\mathcal{H}$ be the set of all linear combinations of functions in $\mathcal{H}_{\text{simple}}$, which we denote as $\text{lin} \ \mathcal{H}_{\text{simple}}$.  Said more succintly, we let $\mathcal{H} := \text{lin} \ \mathcal{H}_{\text{simple}}$. 
 
-Each function $f \in \mathcal{H}$ thus has the form:
+Said differently, each function $f \in \mathcal{H}$ has the form:
 
 $$f(x) = \sum_{t=1}^T \alpha_t h_t(x)$$
 
