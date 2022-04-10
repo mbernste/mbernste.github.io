@@ -15,7 +15,7 @@ Introduction
 
 Multivariate calculus, as taught in most high school and undergraduate courses, concerns itself with infitesimal changes either in the input or output of numerical functions. That is, functions that accept a vector of real-numbers and output a real number:
 
-$$f : \mathbb{R}^n \rightarrow mathbb{R}$$
+$$f : \mathbb{R}^n \rightarrow \mathbb{R}$$
 
 In this blog post, we discuss the **calculus of variations**, a field of mathematics that generalizes the ideas in multivariate calculus from traditional numeric functions to _functions of functions_.  Functions of functions are called **functionals**. That is, if $\mathcal{F}$ is a set of functions, then 
 
@@ -31,10 +31,19 @@ where $\mathcal{X}$ is the [support](https://en.wikipedia.org/wiki/Support_(math
 
 Another example of a functional is the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), a function that, like entropy, operates on probability distributions. The ELBO is a foundational quantity used in the popular [EM algorithm](https://mbernste.github.io/posts/em/) and [variational inference](https://mbernste.github.io/posts/variational_inference/), two frameworks used to perform  statistical inference with probabilistic models. 
 
-The **calculus of variations** is the field of mathematics that generalizes the ideas in calculus from traditional numeric functions to functionals. In this blog post, we will review some concepts in traditional calculus such as partial derivatives, gradients, and directional derivatives in order to introduce the definition of the **functional derivative**, which is simply the generalization of the derivative of numeric functions to functionals!
+In this blog post, we will review some concepts in traditional calculus such as partial derivatives, gradients, and directional derivatives in order to introduce the definition of the **functional derivative**, which is simply the generalization of the derivative of numeric functions to functionals!
 
-A review of gradients and directional derivatives
--------------------------------------------------
+A review of partial derivatives, gradients, and directional derivatives
+-----------------------------------------------------------------------
+
+In this section, we will introduce a few important concepts in multivariate calculus: partial derivatives, gradients, and directional derivatives. Let, $f$ be a continuous, multivariate function:
+
+$$f: \mathbb{R}^n \rightarrow \mathbb{R}$$
+
+Given $\boldsymbol{x} \in \mathbb{R}^n$, the **partial derivative** of $f$ with respect to the $i$th component of $\boldsymbol{x}$, denoted $\frac{\partial f(\boldsymbol{x})}{\partial x_i}$ is simply the derivative of $f$ if we hold all the components of $\boldsymbol{x}$ fixed, except for the $i$the component. Said differently, it tells us the rate of change of $f$ with respect to the $i$th dimension of the vector space in which $\boldsymbol{x}$ resides! This can be visualized below:
+
+ 
+
 
 Functional derivatives
 ----------------------
