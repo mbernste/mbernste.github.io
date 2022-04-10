@@ -46,6 +46,8 @@ Now, let's get started.
 
 Given $\boldsymbol{x} \in \mathbb{R}^n$, the **partial derivative** of $f$ with respect to the $i$th component of $\boldsymbol{x}$, denoted $\frac{\partial f(\boldsymbol{x})}{\partial x_i}$ is simply the derivative of $f$ if we hold all the components of $\boldsymbol{x}$ fixed, except for the $i$the component. Said differently, it tells us the rate of change of $f$ with respect to the $i$th dimension of the vector space in which $\boldsymbol{x}$ resides! This can be visualized below:
 
+partial_derivative.png
+
 #### Gradients
 
 #### Directional derivatives
