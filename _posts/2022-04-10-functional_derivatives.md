@@ -60,7 +60,7 @@ Geometrically, we can view the $i$th partial derivative of $f(\boldsymbol{x})$ a
 
 Thinking along these lines, there is nothing stopping us from generalizing this idea to _any_ vector rather than just the standard basis vectors. Given some vector $\boldsymbol{v}$, we define the **directional derivative** of $f(\boldsymbol{x})$ along vector $\boldsymbol{v}$ as
 
-$$\frac{\partial D_{\boldsymbol{v}}f(\boldsymbol{x})} := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$$
+$$ D_{\boldsymbol{v}}f(\boldsymbol{x}) := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$$
 
 Geometrically, this is simply the rate of change of $f$ along the direction at which $\boldsymbol{v}$ is pointing! This can be viewed geometrically below:
 
@@ -70,9 +70,7 @@ For a given vector $\boldsymbol{v}$, we can derive a formula for $D_{\boldsymbol
 
 $$D_{\boldsymbol{v}}f(\boldsymbol{x}) = \sum_{i=1}^n \left( \frac{\partial f(\boldsymbol{x})}{\partial x_i} \right) v_i$$
 
-See Theorem 1 in the Appendix of this post for a proof of this equation.
-
-Now, if we define the vector of all partial derivatives $f(\boldsymbol{x})$ as
+See Theorem 1 in the Appendix of this post for a proof of this equation.  Now, if we define the vector of all partial derivatives $f(\boldsymbol{x})$ as
 
 $$\nabla f(\boldsymbol{x}) := \begin{bmatrix}\frac{\partial f(\boldsymbol{x})}{\partial x_1} & \frac{\partial f(\boldsymbol{x})}{\partial x_2} & \dots & \frac{\partial f(\boldsymbol{x})}{\partial x_n} \end{bmatrix}$$
 
