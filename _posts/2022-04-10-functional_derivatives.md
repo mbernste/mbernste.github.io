@@ -72,7 +72,7 @@ $$D_{\boldsymbol{v}}f(\boldsymbol{x}) = \sum_{i=1}^n \left( \frac{\partial f(\bo
 
 See Theorem 1 in the Appendix of this post for a proof of this equation.
 
-Now, iff we define the vector of all partial derivatives $f(\boldsymbol{x})$ as
+Now, if we define the vector of all partial derivatives $f(\boldsymbol{x})$ as
 
 $$\nabla f(\boldsymbol{x}) := \begin{bmatrix}\frac{\partial f(\boldsymbol{x})}{\partial x_1} & \frac{\partial f(\boldsymbol{x})}{\partial x_2} & \dots & \frac{\partial f(\boldsymbol{x})}{\partial x_n} \end{bmatrix}$$
 
@@ -107,5 +107,18 @@ Notice that $f + \epsilon \eta$ is a function and thus, can be "fed" to $L$. Let
 Appendix
 --------
 
+<span style="color:#0060C6">**Theorem 1: Given a differentiable function $f : \mathbb{R}^n \rightarrow \mathbb{R}$, vectors $\boldsymbol{x}, \boldsymbol{v} \in \mathbb{R}^n$, where $\boldsymbol{v}$ is a unit vector, the directional derivative,  $\frac{\partial D_{\boldsymbol{v}}f(\boldsymbol{x})} := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$, is equal to $\sum_{i=1}^n \left( \frac{\partial f(\boldsymbol{x})}{\partial x_i} \right) v_i$</span>
+
+**Proof:**
+
+Consider $\boldsymbol{x}$ and $\boldsymbol{v}$ to be fixed and let $g(z) := f(\boldsymbol{x} + z\boldsymbol{v})$. Then,
+
+$$\frac{dg(z)}{dz} = \lim_{h \rightarrow 0} \frac{g(z+h) - g(z)}{h}$$
+
+Evaluating this derivative at $z = 0$, we see that 
+
+$$\begin{align*} \frac{dg(z)}{dz}\bigg\rvert_{z=0} &= \frac{g(h) - g(0)}{h} \\ &= \frac{g(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h} \\ &= D_{\boldsymbol{v}} f(\boldsymbol{x})  \end{align*}$$
+
+$\square$
 
 
