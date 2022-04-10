@@ -92,15 +92,32 @@ We prove this property of the gradient vector in Theorem 2 of the Appendix to th
 Functional derivatives
 ----------------------
 
-As previously stated, a functional is a function of functions. Specifically, it is a function that maps functions to real numbers. The function $L$ above can be viewed as a functional because it takes a function $f \in \mathcal{H}$ and maps it to a real number. That real number, of course, corresponds to the average value of the loss function when evaluating $f$ on all of the $(x_i, y_i)$ pairs.
+Now, we will seek to generalize the notion of the directional derivative to functionals. We'll let $\mathcal{F}$ be some set of functions, and for simplicity, we'll let each $f$ be a continuous real-valued function. That is, for each $f \in \mathcal{F}$, we have $f: \mathbb{R} \rightarrow \mathbb{R}$.  Then, we'll consider a functional $F$ that maps each $f \in \mathcal{F}$ to a number. That is,
 
-Now, we need a way to think about the derivative of $L$ at a given $f$. Recall that for a plain old function on the real numbers $g: \mathbb{R} \rightarrow \mathbb{R}$, the derivative of $g$ at $x$, denoted $g'(x)$ tells us how much $g$ is changing at $f$. Said differently, it asks, if we change $x$ by an infinitesimal amount, how much does $g$ change? The functional derivative of $L$ addresses this same question. That is, if we change $f$ by an infinitesimal amount, how does $L$ change? This concept is rigorously addressed by the functional derivative, denoted $\nabla L(f)$.
+$$F: \mathcal{F} \rightarrow \mathbb{R}$$
 
-Now, to define the functional derivative, we must ask the question, what does it mean to "change $f$ by an infinitesimal amount"? To define this rigorously, we'll consider an arbitrary real number $\epsilon \in \mathbb{R}$ and an arbitrary function $\eta: \mathcal{X} \rightarrow \mathcal{Y}$. Then, we'll consider the functional evaluated at $f + \epsilon\eta$:
+Now, we're going to spoil the punchline. Given a function $f \in \mathcal{F}$ and arbitrary function $\phi \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the quantity such that:
 
-$$L(f + \epsilon \eta)$$
+$$\int \frac{\partial F}{\partial f}(x) \phi(x) \ dx = \lim_{\epsilon \rightarrow 0}\frac{F(f + \epsilon \eta) - F(f)}{\epsilon}\bigg\rvert_{\epsilon=0}$$
 
-Notice that $f + \epsilon \eta$ is a function and thus, can be "fed" to $L$. Let's now go a step further and consder $f$ and $\eta$ to be fixed, but we'll let $\epsilon$ vary. That is, we will let $\epsilon$ be a variable that is free to be changed. We thus see that $L(f + \epsilon \eta)$ is a function of $epsilon$ and thus, an ordinary function mapping numbers to numbers. That is, we can let $\mathcal{L}(\epsilon) := L(f + \epsilon \eta)$ and realize that $\mathcal{L} : \mathbb{R} \rightarrow \mathbb{R}$.  
+where $\epsilon$ is a scalar and $\eta$ is an arbitrary function in $\mathcal{F}$.
+
+Woah. What is going on here? How on earth does this define the functional derivative? And why is the functional derivative, $\frac{\partial{F}}{\partial f}$ buried inside this complex equation?
+
+Let's break it down.
+
+Recall that for a plain old function on the real numbers $g: \mathbb{R} \rightarrow \mathbb{R}$, the derivative of $\frac{dg(x)}{dx}$ tells us how much $g$ is changing at $x$. Said differently, it asks, if we change $x$ by an infinitesimal amount, how much does $g$ change? The functional derivative of $F$ at a given input function $f$ should answer this same question. That is, if we change $f$ by an infinitesimal amount, how does $F$ change?
+
+Now, this just leads to the question: what does it mean to "change $f$ by an infinitesimal amount"? To define this rigorously, we'll consider an arbitrary real number $\epsilon \in \mathbb{R}$ and an arbitrary function $\eta: \mathbb{R} \rightarrow \mathbb{R}$. 
+
+
+Intuitively, what we're going to do is we're going to shrink $\epsilon$ down to an infinitesimaly small number. This will make make the function $f + \epsilon \eta$ arbitrarily close to $f$. We depict this schematically below:
+
+
+
+Notice that $f + \epsilon \eta$ is a function that can be "fed" to $F$. Thus, we can see that $f + \epsilon \eta$ is the "infinitesimal" change to $f$ that we're looking for. The quantity $\epsilon \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
+
+Let's now go a step further and consder $f$ and $\eta$ to be fixed, but we'll let $\epsilon$ vary. That is, we will let $\epsilon$ be a variable that is free to be changed. We thus see that $F(f + \epsilon \eta)$ is a function of $epsilon$ and thus, is simply an ordinary numerical function mapping numbers to numbers. That is, we can let $L(\epsilon) := F(f + \epsilon \eta)$ and realize that $L : \mathbb{R} \rightarrow \mathbb{R}$.  
 
 Appendix
 --------
