@@ -46,7 +46,11 @@ Given $\boldsymbol{x} \in \mathbb{R}^n$, the **partial derivative** of $f$ with 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/partial_derivative.png" alt="drawing" width="450"/></center>
 
-As seen above, the partial derivative $f(\boldsymbol{x})}{\partial x_1}$ is simply the derivative of the function $f(x_1, x_2)$ when holding $x_1$ as fixed. That is, it is the slope of the line tangent to the function of $f(x_1, x_2)$ when $x_1$ is fixed.
+As seen above, the partial derivative $\frac{f(\boldsymbol{x})}{\partial x_1}$ is simply the derivative of the function $f(x_1, x_2)$ when holding $x_1$ as fixed. That is, it is the slope of the line tangent to the function of $f(x_1, x_2)$ when $x_1$ is fixed.
+
+### Directional derivatives
+
+The partial derivative of $\mathcal{X}$
 
 ### Gradients
 
@@ -57,7 +61,6 @@ $$\nabla f(\boldsymbol{x}) := \begin{bmatrix}\frac{\partial f(\boldsymbol{x})}{\
 That is, it is the vector formed by taking the partial derivatives of $f$ with respect to each dimension! Geometrically, this vector will point in the direction of _steepest ascent_ along $f$'s surface at $\boldsymbol{x}$. 
 
 
-### Directional derivatives
 
 
 
