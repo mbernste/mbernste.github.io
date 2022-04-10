@@ -96,7 +96,7 @@ Now, we will seek to generalize the notion of the directional derivative to func
 
 $$F: \mathcal{F} \rightarrow \mathbb{R}$$
 
-Now, we're going to spoil the punchline. Given a function $f \in \mathcal{F}$ and arbitrary function $\phi \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the quantity such that:
+Now, we're going to spoil the punchline. Given a function $f \in \mathcal{F}$ and arbitrary function $\phi \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which:
 
 $$\int \frac{\partial F}{\partial f}(x) \phi(x) \ dx = \lim_{\epsilon \rightarrow 0}\frac{F(f + \epsilon \eta) - F(f)}{\epsilon}\bigg\rvert_{\epsilon=0}$$
 
@@ -136,11 +136,11 @@ $$\begin{align*} \frac{dg(z)}{dz}\bigg\rvert_{z=0} &= \frac{g(h) - g(0)}{h} \\ &
 
 We can then apply the [multivariate chain rule](https://en.wikipedia.org/wiki/Chain_rule#Multivariable_case) and see that
 
-$$\frac{dg'(z)}{dz} = \sum_{i=1}^n D_i f(\boldsymbol{x} + \boldsymbol{v}) \frac{d (x_i + zv_i)}{dz}$$
+$$\frac{dg'(z)}{dz} = \sum_{i=1}^n D_i f(\boldsymbol{x} + z\boldsymbol{v}) \frac{d (x_i + zv_i)}{dz}$$
 
-where $D_i f(\boldsymbol{x} + \boldsymbol{v})$ is the partial derivative of $f$ with respect to its argument's $i$th value when evaluated at $\boldsymbol{x} + \boldsymbol{v}$.
+where $D_i f(\boldsymbol{x} + z\boldsymbol{v})$ is the partial derivative of $f$ with respect to it's $i$th argument when evaluated at $\boldsymbol{x} + z\boldsymbol{v}$.
 
-Now, evaluating this form of the derivative at $z = 0$, we see that
+Now, evaluating this derivative at $z = 0$, we see that
 
 $$\begin{align*} \frac{dg(z)}{dz}\bigg\rvert_{z=0} &= \sum_{i=1}^n D_i f(\boldsymbol{x}) v_i \\ &= \sum_{i=1}^n \frac{f(\boldsymbol{x})}{\partial \boldsymbol{x}_i} v_i \end{align*}$$ 
 
