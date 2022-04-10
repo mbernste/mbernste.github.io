@@ -106,7 +106,15 @@ Woah. What is going on here? How on earth does this define the functional deriva
 
 Let's break it down.
 
-Recall that for a plain old function on the real numbers $g: \mathbb{R} \rightarrow \mathbb{R}$, the derivative of $\frac{dg(x)}{dx}$ tells us how much $g$ is changing at $x$. Said differently, it asks, if we change $x$ by an infinitesimal amount, how much does $g$ change? The functional derivative of $F$ at a given input function $f$ should answer this same question. That is, if we change $f$ by an infinitesimal amount, how does $F$ change?
+Recall that for a plain old function on the real numbers $g: \mathbb{R} \rightarrow \mathbb{R}$, the derivative of $\frac{dg(x)}{dx}$ tells us how much $g$ is changing at $x$. Said differently, it asks, if we change $x$ by an infinitesimal amount, how much does $g$ change? Rigorously it is defined as
+
+$$\frac{d g(x)}{dx} = \lim_{h \rightarrow 0} \frac{g(x+h) - g(x)}{h}$$
+
+which can be depicted schematically as:
+
+
+
+The functional derivative of $F$ at a given input function $f$ should answer this same question. That is, if we change $f$ by an infinitesimal amount, how does $F$ change?
 
 Now, this just leads to the question: what does it mean to "change $f$ by an infinitesimal amount"? To define this rigorously, we'll consider an arbitrary real number $\epsilon \in \mathbb{R}$ and an arbitrary function $\eta: \mathbb{R} \rightarrow \mathbb{R}$. 
 
@@ -115,7 +123,7 @@ Intuitively, what we're going to do is we're going to shrink $\epsilon$ down to 
 
 
 
-Notice that $f + \epsilon \eta$ is a function that can be "fed" to $F$. Thus, we can see that $f + \epsilon \eta$ is the "infinitesimal" change to $f$ that we're looking for. The quantity $\epsilon \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
+Notice that $f + \epsilon \eta$ is a function that can be "fed" to $F$ and is thus analogous to the $x+h$ term in the standard definition of the derivative above. Thus, we can see that $f + \epsilon \eta$ is the "infinitesimal" change to $f$ that we're looking for. The quantity $\epsilon \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
 
 Let's now go a step further and consder $f$ and $\eta$ to be fixed, but we'll let $\epsilon$ vary. That is, we will let $\epsilon$ be a variable that is free to be changed. We thus see that $F(f + \epsilon \eta)$ is a function of $epsilon$ and thus, is simply an ordinary numerical function mapping numbers to numbers. That is, we can let $L(\epsilon) := F(f + \epsilon \eta)$ and realize that $L : \mathbb{R} \rightarrow \mathbb{R}$.  
 
