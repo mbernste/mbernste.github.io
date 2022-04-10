@@ -105,7 +105,7 @@ Notice that $f + \epsilon \eta$ is a function and thus, can be "fed" to $L$. Let
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1: Given a differentiable function $f : \mathbb{R}^n \rightarrow \mathbb{R}$, vectors $\boldsymbol{x}, \boldsymbol{v} \in \mathbb{R}^n$, where $\boldsymbol{v}$ is a unit vector, the directional derivative,  $\frac{\partial D_{\boldsymbol{v}}f(\boldsymbol{x})} := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$, is equal to $\sum_{i=1}^n \left( \frac{\partial f(\boldsymbol{x})}{\partial x_i} \right) v_i$</span>
+<span style="color:#0060C6">**Theorem 1:** Given a differentiable function $f : \mathbb{R}^n \rightarrow \mathbb{R}$, vectors $\boldsymbol{x}, \boldsymbol{v} \in \mathbb{R}^n$, where $\boldsymbol{v}$ is a unit vector, then $D_{\boldsymbol{v}} f(\boldsymbol{x}) = \sum_{i=1}^n \left( \frac{\partial f(\boldsymbol{x})}{\partial x_i} \right) v_i$.</span>
 
 **Proof:**
 
