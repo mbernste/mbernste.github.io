@@ -36,11 +36,9 @@ In this blog post, we will review some concepts in traditional calculus such as 
 A review of partial derivatives, gradients, and directional derivatives
 -----------------------------------------------------------------------
 
-In this section, we will introduce a few important concepts in multivariate calculus: partial derivatives, gradients, and directional derivatives. Let, $f$ be a continuous, multivariate function:
+In this section, we will introduce a few important concepts in multivariate calculus: partial derivatives, gradients, and directional derivatives. For the remainder of this section, we will consider a continous function $f$ that maps real-valued vectors $\mathcal{x} \in \mathbb{R}^n$ to real-numbers. That is,
 
 $$f: \mathbb{R}^n \rightarrow \mathbb{R}$$
-
-Now, let's get started.
 
 #### Partial derivatives
 
