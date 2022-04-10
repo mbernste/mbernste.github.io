@@ -44,11 +44,18 @@ Now, let's get started.
 
 #### Partial derivatives
 
-Given $\boldsymbol{x} \in \mathbb{R}^n$, the **partial derivative** of $f$ with respect to the $i$th component of $\boldsymbol{x}$, denoted $\frac{\partial f(\boldsymbol{x})}{\partial x_i}$ is simply the derivative of $f$ if we hold all the components of $\boldsymbol{x}$ fixed, except for the $i$the component. Said differently, it tells us the rate of change of $f$ with respect to the $i$th dimension of the vector space in which $\boldsymbol{x}$ resides! This can be visualized below:
+Given $\boldsymbol{x} \in \mathbb{R}^n$, the **partial derivative** of $f$ with respect to the $i$th component of $\boldsymbol{x}$, denoted $\frac{\partial f(\boldsymbol{x})}{\partial x_i}$ is simply the derivative of $f$ if we hold all the components of $\boldsymbol{x}$ fixed, except for the $i$the component. Said differently, it tells us the rate of change of $f$ with respect to the $i$th dimension of the vector space in which $\boldsymbol{x}$ resides! This can be visualized below for a function $f : \mathbb{R}^2 \rightarrow \mathbb{R}:
 
-partial_derivative.png
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/partial_derivative.png" alt="drawing" width="500"/></center>
 
 #### Gradients
+
+The **gradient** of $f$ at $\boldsymbol{x}$, denoted $\nabla \boldsymbol{x}$ is simply the vector 
+
+$$\nabla f(\boldsymbol{x}) := [\frac{\partial f(\boldsymbol{x})}{\partial x_1}, \frac{\partial f(\boldsymbol{x})}{\partial x_2} \dots \frac{\partial f(\boldsymbol{x})}{\partial x_n}]$$
+
+That is, it is the vector formed by taking the partial derivatives of $f$ with respect to each dimension! Geometrically, this vector will point in the direction of _steepest ascent_ along $f$'s surface at $\boldsymbol{x}$. 
+
 
 #### Directional derivatives
 
