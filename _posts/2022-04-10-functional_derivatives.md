@@ -98,7 +98,7 @@ $$F: \mathcal{F} \rightarrow \mathbb{R}$$
 
 Now, we're going to spoil the punchline. Given a function $f \in \mathcal{F}$ and arbitrary function $\phi \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which:
 
-$$\int \frac{\partial F}{\partial f}(x) \phi(x) \ dx = \lim_{\epsilon \rightarrow 0}\frac{F(f + \epsilon \eta) - F(f)}{\epsilon}\bigg\rvert_{\epsilon=0}$$
+$$\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx = \lim_{\epsilon \rightarrow 0}\frac{F(f + \epsilon \eta) - F(f)}{\epsilon}\bigg\rvert_{\epsilon=0}$$
 
 where $\epsilon$ is a scalar and $\eta$ is an arbitrary function in $\mathcal{F}$.
 
