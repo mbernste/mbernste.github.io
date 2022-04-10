@@ -58,9 +58,9 @@ where $\boldsymbol{e}_i$ is the $i$th [standard basis vector](https://en.wikiped
 
 Geometrically, we can view the $i$th partial derivative of $f(\boldsymbol{x})$ as $f$'s rate of change along the direction of the $i$th standard basis vector of the vector space.  
 
-Thinking along these lines, there is nothing stopping us from generalizing this idea to _any_ vector rather than just the standard basis vectors. Given some vector $\boldsymbol{v}$, we define the **directional derivative** of $f(\boldsymbol{x})$ along vector $\boldsymbol{v}$ as
+Thinking along these lines, there is nothing stopping us from generalizing this idea to _any unit vector_ rather than just the standard basis vectors. Given some unit vector $\boldsymbol{v}$, we define the **directional derivative** of $f(\boldsymbol{x})$ along the direction of $\boldsymbol{v}$ as
 
-$$ D_{\boldsymbol{v}}f(\boldsymbol{x}) := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$$
+$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$$
 
 Geometrically, this is simply the rate of change of $f$ along the direction at which $\boldsymbol{v}$ is pointing! This can be viewed geometrically below:
 
