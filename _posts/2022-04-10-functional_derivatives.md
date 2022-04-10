@@ -68,7 +68,7 @@ Geometrically, this is simply the rate of change of $f$ along the direction at w
 
 For a given vector $\boldsymbol{v}$, we can derive a formula for $D_{\boldsymbol{v}}f(\boldsymbol{x})$. That is, we can show that (see Theorem 1 in the Appendix):
 
-$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \sum_{i=1}^n \left( \frac{\partial f(\boldsymbol{x})}{\partial x_n} \right) v_i$$
+$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \sum_{i=1}^n \left( \frac{\partial f(\boldsymbol{x})}{\partial x_i} \right) v_i$$
 
 If we define the vector of all partial derivatives $f(\boldsymbol{x})$ as
 
@@ -76,7 +76,7 @@ $$\nabla f(\boldsymbol{x}) := \begin{bmatrix}\frac{\partial f(\boldsymbol{x})}{\
 
 Then we see that the directional derivative is simply the [dot product](https://en.wikipedia.org/wiki/Dot_product) between $\nabla f(\boldsymbol{x})$ and $\boldsymbol{v}$:
 
-$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \nabla f(\boldsymbol{x}) \cdot \boldsymbol{v}$
+$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \nabla f(\boldsymbol{x}) \cdot \boldsymbol{v}$$
 
 
 ### Gradients
