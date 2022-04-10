@@ -46,11 +46,13 @@ Given $\boldsymbol{x} \in \mathbb{R}^n$, the **partial derivative** of $f$ with 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/partial_derivative.png" alt="drawing" width="350"/></center>
 
+As seen above, the partial derivative $f(\boldsymbol{x})}{\partial x_1}$ is simply the derivative of the function $f(x_1, x_2)$ when holding $x_1$ as fixed. That is, it is the slope of the line tangent to the function of $f(x_1, x_2)$ when $x_1$ is fixed.
+
 ### Gradients
 
 The **gradient** of $f$ at $\boldsymbol{x}$, denoted $\nabla \boldsymbol{x}$ is simply the vector 
 
-$$\nabla f(\boldsymbol{x}) := [\frac{\partial f(\boldsymbol{x})}{\partial x_1}, \frac{\partial f(\boldsymbol{x})}{\partial x_2} \dots \frac{\partial f(\boldsymbol{x})}{\partial x_n}]$$
+$$\nabla f(\boldsymbol{x}) := \begin{bmatrix}\frac{\partial f(\boldsymbol{x})}{\partial x_1} & \frac{\partial f(\boldsymbol{x})}{\partial x_2} & \dots & \frac{\partial f(\boldsymbol{x})}{\partial x_n}] \end{bmatrix}$$
 
 That is, it is the vector formed by taking the partial derivatives of $f$ with respect to each dimension! Geometrically, this vector will point in the direction of _steepest ascent_ along $f$'s surface at $\boldsymbol{x}$. 
 
