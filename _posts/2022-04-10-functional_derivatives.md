@@ -62,7 +62,10 @@ Thinking along these lines, there is nothing stopping us from generalizing this 
 
 $$\frac{\partial D_{\boldsymbol{v}}f(\boldsymbol{x})} := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$$
 
-Geometrically, this is simply the rate of change of $f$ along the direction at which $\boldsymbol{v}$ is pointing!
+Geometrically, this is simply the rate of change of $f$ along the direction at which $\boldsymbol{v}$ is pointing! This can be viewed geometrically below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/directional_derivative.png" alt="drawing" width="450"/></center>
+
 
 ### Gradients
 
