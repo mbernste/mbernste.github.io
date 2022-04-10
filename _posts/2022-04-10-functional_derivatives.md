@@ -33,7 +33,7 @@ Another example of a functional is the [evidence lower bound (ELBO)](https://mbe
 
 In this blog post, we will review some concepts in traditional calculus such as partial derivatives, gradients, and directional derivatives in order to introduce the definition of the **functional derivative**, which is simply the generalization of the derivative of numeric functions to functionals!
 
-A review of partial derivatives, gradients, and directional derivatives
+A review of partial derivatives, directional derivatives, and gradients
 -----------------------------------------------------------------------
 
 In this section, we will introduce a few important concepts in multivariate calculus: partial derivatives, gradients, and directional derivatives. For the remainder of this section, we will consider a continous function $f$ that maps real-valued vectors $\mathcal{x} \in \mathbb{R}^n$ to real-numbers. That is,
