@@ -13,11 +13,11 @@ _The calculus of variations is a field of mathematics that deals with the optimi
 Introduction
 ------------
 
-Multivariate calculus, as taught in most high school and undergraduate courses, concerns itself with infitesimal changes either in the input or output of numerical functions. That is, functions that accept a vector of real-numbers and output a real number:
+Multivariate calculus concerns itself with infitesimal changes of numerical functions -- that is, functions that accept a vector of real-numbers and output a real number:
 
 $$f : \mathbb{R}^n \rightarrow \mathbb{R}$$
 
-In this blog post, we discuss the **calculus of variations**, a field of mathematics that generalizes the ideas in multivariate calculus from traditional numeric functions to _functions of functions_.  Functions of functions are called **functionals**. That is, if $\mathcal{F}$ is a set of functions, then 
+In this blog post, we discuss the **calculus of variations**, a field of mathematics that generalizes the ideas in multivariate calculus relating to infinitesimal changes of traditional numeric functions to _functions of functions_.  Such functions of functions are called **functionals**. That is, if $\mathcal{F}$ is a set of functions, then 
 
 $$F : \mathcal{F} \rightarrow \mathbb{R}$$
 
