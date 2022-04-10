@@ -13,22 +13,31 @@ _The calculus of variations is a field of mathematics that deals with the optimi
 Introduction
 ------------
 
-Calculus, as taught in most high school and undergraduate courses, concerns itself with infitesimal changes either in the input or output of numerical functions. That is, functions that accept a vector of real-numbers and output a real number:
+Multivariate calculus, as taught in most high school and undergraduate courses, concerns itself with infitesimal changes either in the input or output of numerical functions. That is, functions that accept a vector of real-numbers and output a real number:
 
 $$f : \mathbb{R}^n \rightarrow mathbb{R}$$
 
-In this blog post, we discuss a different category of function: the set of functions that accept as input _a function_ and output a real number. Such functions are called **functionals**. Functionals are quite prevalent in machine learning and statistical inference. For example, [Shannon entropy]() can be considered a functional on probability mass functions. Recall, entropy is a function that, for a given [discrete random variable](), $X$, accepts as input a probability mass function and outputs a real number:
+In this blog post, we discuss the **calculus of variations**, a field of mathematics that generalizes the ideas in multivariate calculus from traditional numeric functions to _functions of functions_.  Functions of functions are called **functionals**. That is, if $\mathcal{F}$ is a set of functions, then 
+
+$$F : \mathcal{F} \rightarrow \mathbb{R}$$
+
+is a functional.
+
+Functionals are quite prevalent in machine learning and statistical inference. For example, [information entropy](https://mbernste.github.io/posts/entropy/) can be considered a functional on probability mass functions. For a given [discrete random variable](https://mbernste.github.io/posts/measure_theory_2/), $X$, entropy can be thought about as a function that accepts as input $X$'s probability mass function, $p_X$, and outputs a real number:
 
 $$H(p_X) := -\sum_{x \in \mathcal{X}} p_X(x) \log p_X(x)$$
 
-where $p_X$ is the probability mass function for $X$ and $\mathcal{X}$ is the [support](https://en.wikipedia.org/wiki/Support_(mathematics)) of $p_X$.
+where $\mathcal{X}$ is the [support](https://en.wikipedia.org/wiki/Support_(mathematics)) of $p_X$. 
 
-The **calculus of variations** is the field of mathematics that generalizes the ideas in calculus from traditional numeric functions to functionals.
+Another example of a functional is the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), a function that, like entropy, operates on probability distributions. The ELBO is a foundational quantity used in the popular [EM algorithm](https://mbernste.github.io/posts/em/) and [variational inference](https://mbernste.github.io/posts/variational_inference/) used in  statistical inference with probabilistic models. 
 
+The **calculus of variations** is the field of mathematics that generalizes the ideas in calculus from traditional numeric functions to functionals. In this blog post, we will review some concepts in traditional calculus such as partial derivatives, gradients, and directional derivatives in order to introduce the definition of the **functional derivative**, which is simply the generalization of the derivative of numeric functions to functionals!
 
-In the calculus of variations, functions of functions are referred to as [functionals](https://en.wikipedia.org/wiki/Functional_(mathematics)). The derivative of a functional is called a **functional derivative**.
+A review of gradients and directional derivatives
+-------------------------------------------------
 
-Functionals? Functional derivatives? Let's step through this slowly.
+Functional derivatives
+----------------------
 
 As previously stated, a functional is a function of functions. Specifically, it is a function that maps functions to real numbers. The function $L$ above can be viewed as a functional because it takes a function $f \in \mathcal{H}$ and maps it to a real number. That real number, of course, corresponds to the average value of the loss function when evaluating $f$ on all of the $(x_i, y_i)$ pairs.
 
