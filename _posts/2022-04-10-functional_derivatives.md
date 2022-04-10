@@ -117,6 +117,20 @@ Evaluating this derivative at $z = 0$, we see that
 
 $$\begin{align*} \frac{dg(z)}{dz}\bigg\rvert_{z=0} &= \frac{g(h) - g(0)}{h} \\ &= \frac{g(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h} \\ &= D_{\boldsymbol{v}} f(\boldsymbol{x})  \end{align*}$$
 
+We can then apply the [multivariate chain rule](https://en.wikipedia.org/wiki/Chain_rule#Multivariable_case) and see that
+
+$$\frac{dg'(z)}{dz} = \sum_{i=1}^n D_i f(\boldsymbol{x} + \boldsymbol{v}) \frac{d (x_i + zv_i)}{dz}$$
+
+where $D_i f(\boldsymbol{x} + \boldsymbol{v})$ is the partial derivative of $f$ with respect to its argument's $i$th value when evaluated at $\boldsymbol{x} + \boldsymbol{v}$.
+
+Now, evaluating this form of the derivative at $z = 0$, we see that
+
+$$\begin{align*} \frac{dg(z)}{dz}\bigg\rvert_{z=0} &= \sum_{i=1}^n D_i f(\boldsymbol{x}) v_i \\ &= \sum_{i=1}^n \frac{f(\boldsymbol{x})}{\partial \boldsymbol{x}_i} v_i \end{align*}$$ 
+
+Putting these two results together, we see that
+
+$$D_{\boldsymbol{v}} f(\boldsymbol{x}) = \sum_{i=1}^n \frac{f(\boldsymbol{x})}{\partial \boldsymbol{x}_i} v_i$$
+
 $\square$
 
 
