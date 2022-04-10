@@ -66,17 +66,27 @@ Geometrically, this is simply the rate of change of $f$ along the direction at w
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/directional_derivative.png" alt="drawing" width="450"/></center>
 
+For a given vector $\boldsymbol{v}$, we can derive a formula for $D_{\boldsymbol{v}}f(\boldsymbol{x})$. That is, we can show that (see Theorem 1 in the Appendix):
 
-### Gradients
+$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \sum_{i=1}^n \left( \frac{\partial f(\boldsymbol{x})}{\partial x_n} \right) v_i$$
 
-The **gradient** of $f$ at $\boldsymbol{x}$, denoted $\nabla \boldsymbol{x}$ is simply the vector 
+If we define the vector of all partial derivatives $f(\boldsymbol{x})$ as
 
 $$\nabla f(\boldsymbol{x}) := \begin{bmatrix}\frac{\partial f(\boldsymbol{x})}{\partial x_1} & \frac{\partial f(\boldsymbol{x})}{\partial x_2} & \dots & \frac{\partial f(\boldsymbol{x})}{\partial x_n}] \end{bmatrix}$$
 
-That is, it is the vector formed by taking the partial derivatives of $f$ with respect to each dimension! Geometrically, this vector will point in the direction of _steepest ascent_ along $f$'s surface at $\boldsymbol{x}$. 
+Then we see that the directional derivative is simply the [dot product](https://en.wikipedia.org/wiki/Dot_product) between $\nabla f(\boldsymbol{x})$ and $\boldsymbol{v}$:
+
+$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \nabla f(\boldsymbol{x}) \cdot \boldsymbol{v}$
 
 
+### Gradients
 
+The vector of partial derivatives, $\nabla f(\boldsymbol{x})$, as defined above is the called the **gradient vector** of $f$ at $\boldsymbol{x}$. It turns out that the gradient vector points in the _direction of steepest ascent_ along $f$'s surface at $\boldsymbol{x}$. This can be shown geometrically below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gradient.png" alt="drawing" width="450"/></center>
+
+
+We prove this property of the gradient vector in Theorem 2 of the Appendix to this post.
 
 
 Functional derivatives
