@@ -50,7 +50,19 @@ As seen above, the partial derivative $\frac{f(\boldsymbol{x})}{\partial x_1}$ i
 
 ### Directional derivatives
 
-The partial derivative of $\mathcal{X}$
+We can see that the partial derivative of $f(\boldsymbol{x})$ with respect to the $i$th dimension of the vector space can be expressed as
+
+$$\frac{\partial f(\boldsymbol{x})}{\partial x_i} := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{e}_i) - f(\boldsymbol{x})}{h}$$
+
+where $\boldsymbol{e}_i$ is the $i$th [standard basis vector](https://en.wikipedia.org/wiki/Standard_basis) -- that is, the vector of all zeroes except for a one in the $i$th position.
+
+Geometrically, we can view the $i$th partial derivative of $f(\boldsymbol{x})$ as $f$'s rate of change along the direction of the $i$th standard basis vector of the vector space.  
+
+Thinking along these lines, there is nothing stopping us from generalizing this idea to _any_ vector rather than just the standard basis vectors. Given some vector $\boldsymbol{v}$, we define the **directional derivative** of $f(\boldsymbol{x})$ along vector $\boldsymbol{v}$ as
+
+$$\frac{\partial D_{\boldsymbol{v}}f(\boldsymbol{x})} := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$$
+
+Geometrically, this is simply the rate of change of $f$ along the direction at which $\boldsymbol{v}$ is pointing!
 
 ### Gradients
 
