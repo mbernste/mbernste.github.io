@@ -126,13 +126,18 @@ Woah. What is going on here? How on earth does this define the functional deriva
 
 Let's break it down.
 
-First, notice the similarity of the right-hand side of the equation of Definition 1 to the definition of the directional gradient. For reference, we state it again below:
+First, notice the similarity of the right-hand side of the equation of Definition 1 to the definition of the directional gradient:
 
-$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$$
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/directional_gradient_functional_derivative.png" alt="drawing" width="350"/></center>
 
-Indeed, the equation in Definition 1 describes the precise analogy of the directional gradient for functionals! Intuitively, it describes the rate of change of $F$ at $f$ in the direction of the arbitrary function $\eta$.  That is, as we shrink $\epsilon$ down to an infinitesimaly small number, $f + \epsilon \eta$ will become arbitrarily close to $f$. as depicted below:
+Indeed, the equation in Definition 1 describes the analogy of the directional gradient for functionals! That is, it describes the rate of change of $F$ at $f$ in the direction of the arbitrary function $\eta$.  
+
+How does this work? As we shrink $\epsilon$ down to an infinitesimaly small number, $f + \epsilon \eta$ will become arbitrarily close to $f$ as depicted below:
 
 Thus, we see that $f + \epsilon \eta$ is the "infinitesimal" change to $f$ that is analogous to the infinitesimal change to $\boldsymbol{x}$ that we describe by $\boldsymbol{x} + h\boldsymbol{v}$ in the definition of the directional gradient. The quantity $\epsilon \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
+
+Now, so far we have only shown that the equation in Definition 1 describes something analogous to the directional derivative for multivariate numerical functions. We showed this by comparing the right-hand side of the equation to the definition of the directional gradient. As the definition states, the functional derivative itself is defined to be the function $\frac{\partial F}{\partial f}$ in the integral on the left-hand side of the equation. What is going on here? Why is _this_ the functional derivative?
+
 
 
 
