@@ -31,10 +31,10 @@ Another example of a functional is the [evidence lower bound (ELBO)](https://mbe
 
 In this blog post, we will review some concepts in traditional calculus such as partial derivatives, gradients, and directional derivatives in order to introduce the definition of the **functional derivative**, which is simply the generalization of the derivative of numeric functions to functionals!
 
-A review of partial derivatives, directional derivatives, and gradients
+A review of derivatives and gradients
 -----------------------------------------------------------------------
 
-In this section, we will introduce a few important concepts in multivariate calculus: derivatives, partial derivatives,  directional derivatives, and gradients. 
+In this section, we will introduce a few important concepts in multivariate calculus: derivatives, partial derivatives, directional derivatives, and gradients. 
 
 ### Derivatives
 
@@ -114,13 +114,13 @@ $$F: \mathcal{F} \rightarrow \mathbb{R}$$
 
 Now, we're going to spoil the punchline with the definition for the functional derivative:
 
-<span style="color:#0060C6">**Definition 1 (Functional derivative):** Given a function $f \in \mathcal{F}$ and arbitrary function $\eta \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which: </span>
+<span style="color:#0060C6">**Definition 1 (Functional derivative):** Given a function $f \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which: </span>
 
 <span style="color:#0060C6">$$\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx = \lim_{h \rightarrow 0}\frac{F(f + h \eta) - F(f)}{h}$$</span>
 
 <span style="color:#0060C6">where $h$ is a scalar and $\eta$ is an arbitrary function in $\mathcal{F}$.</span>
 
-Woah. What is going on here? How on earth does this define the functional derivative? And why is the functional derivative, $\frac{\partial{F}}{\partial f}$ buried inside this complex equation?
+Woah. What is going on here? How on earth does this define the functional derivative? And why is the functional derivative, $\frac{\partial{F}}{\partial f}$ buried inside such a seemingly complicated equation?
 
 Let's break it down.
 
@@ -128,19 +128,19 @@ First, notice the similarity of the right-hand side of the equation of Definitio
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/directional_gradient_functional_derivative.png" alt="drawing" width="350"/></center>
 
-Indeed, the equation in Definition 1 describes the analogy of the directional gradient for functionals! That is, it describes the rate of change of $F$ at $f$ in the direction of the arbitrary function $\eta$.  
+Indeed, the equation in Definition 1 describes the analogy of the directional derivative for functionals! That is, it describes the rate of change of $F$ at $f$ in the direction of the arbitrary function $\eta$!  
 
-How does this work? As we shrink $\epsilon$ down to an infinitesimaly small number, $f + h \eta$ will become arbitrarily close to $f$ as depicted below:
+How does this work? As we shrink $h$ down to an infinitesimaly small number, $f + h \eta$ will become arbitrarily close to $f$ as depicted below:
 
-Thus, we see that $f + h \eta$ is the "infinitesimal" change to $f$ that is analogous to the infinitesimal change to $\boldsymbol{x}$ that we describe by $\boldsymbol{x} + h\boldsymbol{v}$ in the definition of the directional gradient. The quantity $h \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
+Thus, we see that $f + h \eta$ is the "infinitesimal" change to $f$ that is analogous to the infinitesimal change to $\boldsymbol{x}$ that we describe by $\boldsymbol{x} + h\boldsymbol{v}$ in the definition of the directional derivative. The quantity $h \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
 
-Now, so far we have only shown that the equation in Definition 1 describes something analogous to the directional derivative for multivariate numerical functions. We showed this by comparing the right-hand side of the equation to the definition of the directional gradient. However, as Definition 1 states, the functional derivative itself is defined to be the function $\frac{\partial F}{\partial f}$ in the integral on the left-hand side of the equation. What is going on here? Why is _this_ the functional derivative?
+Now, so far we have only shown that the equation in Definition 1 describes something analogous to the directional derivative for multivariate numerical functions. We showed this by comparing the right-hand side of the equation in Definition 1 to the definition of the directional gradient. However, as Definition 1 states, the functional derivative itself is defined to be the function $\frac{\partial F}{\partial f}$ within the integral on the left-hand side of the equation. What is going on here? Why is _this_ the functional derivative?
 
-Now, it is time to evoke the of the gradient for traditional multivariate functions. Specifically, notice the similarity between the alternative formulation of the directional derivative using the gradient and the left-hand side of the equation in Definition 1:
+Now, it is time to recall the gradient for traditional multivariate functions. Specifically, notice the similarity between the alternative formulation of the directional derivative, which uses the gradient, and the left-hand side of the equation in Definition 1:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/functional_derivative_gradient.png" alt="drawing" width="450"/></center>
 
-Notice, that these equations have similar forms. Instead of a summation in the definition of the directional derivative, we have an integral in the eqation for Definition 1. Moreover, instead of elements of the vector $\boldsymbol{v}$, we have each value of $\eta(x)$. Lastly, instead of partial derivatives of $f$, we now have the each value of the function $\frac{\partial F}{\partial f}(x)$. This function is the functional gradient, also called, the functional derivative!
+Notice, that these equations have similar forms. Instead of a summation in the definition of the directional derivative, we have an integral in the eqation for Definition 1. Moreover, instead of summing over elements of the vector $\boldsymbol{v}$, we "sum" (using an integral) each value of $\eta(x)$. Lastly, instead of each partial derivative of $f$, we now have the each value of the function $\frac{\partial F}{\partial f}(x)$. This function, $\frac{\partial F}{\partial f}(x)$, is analogous to the gradient! It is thus called the functional derivative!
 
 To drive this home further, recall that we can represent the directional derivative as the dot product between the gradient vector and $\boldysmbol{v}$:
 
