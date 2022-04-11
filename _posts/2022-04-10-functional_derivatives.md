@@ -8,7 +8,7 @@ tags:
   - calculus of variations
 ---
 
-_The calculus of variations is a field of mathematics that deals with the optimization of functions of functions, called functionals, not often taught in computer science curricula, but lays the foundation for a number of important concepts and algorithms in machine learning and statistical inference. In this post, I will provide a high-level overview of functionals and the definition of the functional derivative._
+_The calculus of variations is a field of mathematics that deals with the optimization of functions of functions, called functionals. This topic is not often taught in computer science curricula, but it lies at the foundation for a number of important concepts and algorithms in the data sciences such as gradient boosting and variational inference. In this post, I will provide an explanation of the definition of the functional derivative and how it relates to the gradient of an ordinary multivariate function._
 
 Introduction
 ------------
