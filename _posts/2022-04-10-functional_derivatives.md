@@ -17,11 +17,9 @@ Multivariate calculus concerns itself with infitesimal changes of numerical func
 
 $$f : \mathbb{R}^n \rightarrow \mathbb{R}$$
 
-In this blog post, we discuss the **calculus of variations**, a field of mathematics that generalizes the ideas in multivariate calculus relating to infinitesimal changes of traditional numeric functions to _functions of functions_.  Such functions of functions are called **functionals**. That is, if $\mathcal{F}$ is a set of functions, then 
+In this blog post, we discuss the **calculus of variations**, a field of mathematics that generalizes the ideas in multivariate calculus relating to infinitesimal changes of traditional numeric functions to _functions of functions_, called _functionals_.  Specifically, given a set of functions, $\mathcal{F}$, a **functional** is a mapping between $\mathcal{F}$ and the real-numbers: 
 
 $$F : \mathcal{F} \rightarrow \mathbb{R}$$
-
-is a functional.
 
 Functionals are quite prevalent in machine learning and statistical inference. For example, [information entropy](https://mbernste.github.io/posts/entropy/) can be considered a functional on probability mass functions. For a given [discrete random variable](https://mbernste.github.io/posts/measure_theory_2/), $X$, entropy can be thought about as a function that accepts as input $X$'s probability mass function, $p_X$, and outputs a real number:
 
