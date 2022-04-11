@@ -52,7 +52,7 @@ Geometrically, $\frac{dg(x)}{dx}$ is the slope of the line that is tangential to
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/derivative.png" alt="drawing" width="550"/></center>
 
-In this schematic, we depict the $h$ getting smaller and smaller. As it does, the slope of the line approaches that of the line that is tangential to $g$ at x.
+In this schematic, we depict the value of $h$ getting smaller and smaller. As it does, the slope of the line approaches that of the line that is tangential to $g$ at x. This slope is the derivative $\frac{dg(x)}{dx}$.
 
 ### Partial derivatives
 
