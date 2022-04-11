@@ -144,7 +144,19 @@ Now, it is time to evoke the of the gradient for traditional multivariate functi
 
 Notice, that these equations have similar forms. Instead of a summation in the definition of the directional derivative, we have an integral in the eqation for Definition 1. Moreover, instead of elements of the vector $\boldsymbol{v}$, we have each value of $\eta(x)$. Lastly, instead of partial derivatives of $f$, we now have the each value of the function $\frac{\partial F}{\partial f}(x)$. This function is the functional gradient, also called, the functional derivative!
 
-In fact, 
+To drive this home further, recall that we can represent the directional derivative as the dot product between the gradient vector and $\boldysmbol{v}$:
+
+$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \nabla f(\boldsymbol{x}) \cdot \boldsymbol{v}$$
+
+To generalize this relation, we note that the dot product is an [inner product](https://en.wikipedia.org/wiki/Inner_product_space). Thus, we can generalize this definition to non-Euclidean vectors as 
+
+$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \langle \nabla f(\boldsymbol{x}), \boldsymbol{v} \rangle$$
+
+We also recall that an inner product between continuous functions $f$ and $g$ is 
+
+$$\langle f, g \rangle := \int f(x)g(x) dx$$
+
+Thus,
 
 Appendix
 --------
