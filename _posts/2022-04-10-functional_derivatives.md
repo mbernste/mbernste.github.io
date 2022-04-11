@@ -50,7 +50,9 @@ $$\frac{dg(x)}{dx} := \lim_{h \rightarrow 0}\frac{g(x+h)-g(x)}{h}$$
 
 Geometrically, $\frac{dg(x)}{dx}$ is the slope of the line that is tangential to $g$ at $x$ as depicted below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/partial_derivative.png" alt="drawing" width="450"/></center>
 
+In this schematic, we depict the $h$ getting smaller and smaller. As it does, the slope of the line approaches that of the line that is tangential to $g$ at x.
 
 ### Partial derivatives
 
