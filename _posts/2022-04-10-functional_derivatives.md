@@ -116,7 +116,7 @@ $$F: \mathcal{F} \rightarrow \mathbb{R}$$
 
 Now, we're going to spoil the punchline with the definition for the functional derivative:
 
-<span style="color:#0060C6">**Definition 1 (Functional derivative):** Given a function $f \in \mathcal{F}$ and arbitrary function $\phi \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which: </span>
+<span style="color:#0060C6">**Definition 1 (Functional derivative):** Given a function $f \in \mathcal{F}$ and arbitrary function $\eta \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which: </span>
 
 <span style="color:#0060C6">$$\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx = \lim_{\epsilon \rightarrow 0}\frac{F(f + \epsilon \eta) - F(f)}{\epsilon}$$</span>
 
