@@ -118,9 +118,9 @@ Now, we're going to spoil the punchline with the definition for the functional d
 
 <span style="color:#0060C6">**Definition 1 (Functional derivative):** Given a function $f \in \mathcal{F}$ and arbitrary function $\eta \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which: </span>
 
-<span style="color:#0060C6">$$\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx = \lim_{\epsilon \rightarrow 0}\frac{F(f + \epsilon \eta) - F(f)}{\epsilon}$$</span>
+<span style="color:#0060C6">$$\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx = \lim_{h \rightarrow 0}\frac{F(f + h \eta) - F(f)}{h}$$</span>
 
-<span style="color:#0060C6">where $\epsilon$ is a scalar and $\eta$ is an arbitrary function in $\mathcal{F}$.</span>
+<span style="color:#0060C6">where $h$ is a scalar and $\eta$ is an arbitrary function in $\mathcal{F}$.</span>
 
 Woah. What is going on here? How on earth does this define the functional derivative? And why is the functional derivative, $\frac{\partial{F}}{\partial f}$ buried inside this complex equation?
 
@@ -132,9 +132,9 @@ First, notice the similarity of the right-hand side of the equation of Definitio
 
 Indeed, the equation in Definition 1 describes the analogy of the directional gradient for functionals! That is, it describes the rate of change of $F$ at $f$ in the direction of the arbitrary function $\eta$.  
 
-How does this work? As we shrink $\epsilon$ down to an infinitesimaly small number, $f + \epsilon \eta$ will become arbitrarily close to $f$ as depicted below:
+How does this work? As we shrink $\epsilon$ down to an infinitesimaly small number, $f + h \eta$ will become arbitrarily close to $f$ as depicted below:
 
-Thus, we see that $f + \epsilon \eta$ is the "infinitesimal" change to $f$ that is analogous to the infinitesimal change to $\boldsymbol{x}$ that we describe by $\boldsymbol{x} + h\boldsymbol{v}$ in the definition of the directional gradient. The quantity $\epsilon \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
+Thus, we see that $f + h \eta$ is the "infinitesimal" change to $f$ that is analogous to the infinitesimal change to $\boldsymbol{x}$ that we describe by $\boldsymbol{x} + h\boldsymbol{v}$ in the definition of the directional gradient. The quantity $h \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
 
 Now, so far we have only shown that the equation in Definition 1 describes something analogous to the directional derivative for multivariate numerical functions. We showed this by comparing the right-hand side of the equation to the definition of the directional gradient. As the definition states, the functional derivative itself is defined to be the function $\frac{\partial F}{\partial f}$ in the integral on the left-hand side of the equation. What is going on here? Why is _this_ the functional derivative?
 
