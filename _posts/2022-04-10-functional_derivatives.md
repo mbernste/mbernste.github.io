@@ -36,11 +36,27 @@ In this blog post, we will review some concepts in traditional calculus such as 
 A review of partial derivatives, directional derivatives, and gradients
 -----------------------------------------------------------------------
 
-In this section, we will introduce a few important concepts in multivariate calculus: partial derivatives, gradients, and directional derivatives. For the remainder of this section, we will consider a continous function $f$ that maps real-valued vectors $\mathcal{x} \in \mathbb{R}^n$ to real-numbers. That is,
+In this section, we will introduce a few important concepts in multivariate calculus: derivatives, partial derivatives,  directional derivatives, and gradients. 
 
-$$f: \mathbb{R}^n \rightarrow \mathbb{R}$$
+### Derivatives
+
+Before going further, let's quickly review the basic definition of the derivative for a univariate function $g$ that maps real numbers to real numbers. That is, 
+
+$$g : \mathbb{R} \rightarrow \mathbb{R}$$
+
+The derivative of $g$ at input $x$, denoted $\frac{dg(x)}{dx}$, describes the rate of change of $g$ at $x$.  It is defined rigorously as 
+
+$$\frac{dg(x)}{dx} := \lim_{h \rightarrow 0}\frac{g(x+h)-g(x)}{h}$$
+
+Geometrically, $\frac{dg(x)}{dx}$ is the slope of the line that is tangential to $g$ at $x$ as depicted below:
+
+
 
 ### Partial derivatives
+
+We will now consider a continous _multivariate_ function $f$ that maps real-valued vectors $\mathcal{x} \in \mathbb{R}^n$ to real-numbers. That is,
+
+$$f: \mathbb{R}^n \rightarrow \mathbb{R}$$
 
 Given $\boldsymbol{x} \in \mathbb{R}^n$, the **partial derivative** of $f$ with respect to the $i$th component of $\boldsymbol{x}$, denoted $\frac{\partial f(\boldsymbol{x})}{\partial x_i}$ is simply the derivative of $f$ if we hold all the components of $\boldsymbol{x}$ fixed, except for the $i$the component. Said differently, it tells us the rate of change of $f$ with respect to the $i$th dimension of the vector space in which $\boldsymbol{x}$ resides! This can be visualized below for a function $f : \mathbb{R}^2 \rightarrow \mathbb{R}:
 
