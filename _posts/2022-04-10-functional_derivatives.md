@@ -152,7 +152,7 @@ To generalize this relation, we note that the dot product is an [inner product](
 
 $$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \langle \nabla f(\boldsymbol{x}), \boldsymbol{v} \rangle$$
 
-We also recall that an inner product between continuous functions $f$ and $g$ is 
+We also recall that a valid inner product between continuous functions $f$ and $g$ is 
 
 $$\langle f, g \rangle := \int f(x)g(x) dx$$
 
