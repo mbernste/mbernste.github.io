@@ -114,36 +114,27 @@ Now, we will seek to generalize the notion of the directional derivative to func
 
 $$F: \mathcal{F} \rightarrow \mathbb{R}$$
 
-Now, we're going to spoil the punchline. Given a function $f \in \mathcal{F}$ and arbitrary function $\phi \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which:
+Now, we're going to spoil the punchline with the definition for the functional derivative:
 
-$$\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx = \lim_{\epsilon \rightarrow 0}\frac{F(f + \epsilon \eta) - F(f)}{\epsilon}\bigg\rvert_{\epsilon=0}$$
+<span style="color:#0060C6">**Definition 1 (Functional derivative):** Given a function $f \in \mathcal{F}$ and arbitrary function $\phi \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which: </span>
 
-where $\epsilon$ is a scalar and $\eta$ is an arbitrary function in $\mathcal{F}$.
+<span style="color:#0060C6">$$\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx = \lim_{\epsilon \rightarrow 0}\frac{F(f + \epsilon \eta) - F(f)}{\epsilon}$$</span>
+
+<span style="color:#0060C6">where $\epsilon$ is a scalar and $\eta$ is an arbitrary function in $\mathcal{F}$.</span>
 
 Woah. What is going on here? How on earth does this define the functional derivative? And why is the functional derivative, $\frac{\partial{F}}{\partial f}$ buried inside this complex equation?
 
 Let's break it down.
 
-Recall that for a plain old function on the real numbers $g: \mathbb{R} \rightarrow \mathbb{R}$, the derivative of $\frac{dg(x)}{dx}$ tells us how much $g$ is changing at $x$. Said differently, it asks, if we change $x$ by an infinitesimal amount, how much does $g$ change? Rigorously it is defined as
+First, notice the similarity of the right-hand side of the equation of Definition 1 to the definition of the directional gradient. For reference, we state it again below:
 
-$$\frac{d g(x)}{dx} = \lim_{h \rightarrow 0} \frac{g(x+h) - g(x)}{h}$$
+$$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \lim_{h \rightarrow 0} \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h}$$
 
-which can be depicted schematically as:
+Indeed, the equation in Definition 1 describes the precise analogy of the directional gradient for functionals! Intuitively, it describes the rate of change of $F$ at $f$ in the direction of the arbitrary function $\eta$.  That is, as we shrink $\epsilon$ down to an infinitesimaly small number, $f + \epsilon \eta$ will become arbitrarily close to $f$. as depicted below:
 
-
-
-The functional derivative of $F$ at a given input function $f$ should answer this same question. That is, if we change $f$ by an infinitesimal amount, how does $F$ change?
-
-Now, this just leads to the question: what does it mean to "change $f$ by an infinitesimal amount"? To define this rigorously, we'll consider an arbitrary real number $\epsilon \in \mathbb{R}$ and an arbitrary function $\eta: \mathbb{R} \rightarrow \mathbb{R}$. 
+Thus, we see that $f + \epsilon \eta$ is the "infinitesimal" change to $f$ that is analogous to the infinitesimal change to $\boldsymbol{x}$ that we describe by $\boldsymbol{x} + h\boldsymbol{v}$ in the definition of the directional gradient. The quantity $\epsilon \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
 
 
-Intuitively, what we're going to do is we're going to shrink $\epsilon$ down to an infinitesimaly small number. This will make make the function $f + \epsilon \eta$ arbitrarily close to $f$. We depict this schematically below:
-
-
-
-Notice that $f + \epsilon \eta$ is a function that can be "fed" to $F$ and is thus analogous to the $x+h$ term in the standard definition of the derivative above. Thus, we can see that $f + \epsilon \eta$ is the "infinitesimal" change to $f$ that we're looking for. The quantity $\epsilon \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
-
-Let's now go a step further and consder $f$ and $\eta$ to be fixed, but we'll let $\epsilon$ vary. That is, we will let $\epsilon$ be a variable that is free to be changed. We thus see that $F(f + \epsilon \eta)$ is a function of $epsilon$ and thus, is simply an ordinary numerical function mapping numbers to numbers. That is, we can let $L(\epsilon) := F(f + \epsilon \eta)$ and realize that $L : \mathbb{R} \rightarrow \mathbb{R}$.  
 
 Appendix
 --------
