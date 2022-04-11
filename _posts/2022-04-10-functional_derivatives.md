@@ -140,6 +140,7 @@ Now, so far we have only shown that the equation in Definition 1 describes somet
 
 Now, it is time to evoke the of the gradient for traditional multivariate functions. Specifically, notice the similarity between the alternative formulation of the directional derivative using the gradient and the left-hand side of the equation in Definition 1:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/functional_derivative_gradient.png" alt="drawing" width="450"/></center>
 
 
 
