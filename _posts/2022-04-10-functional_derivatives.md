@@ -136,7 +136,9 @@ How does this work? As we shrink $\epsilon$ down to an infinitesimaly small numb
 
 Thus, we see that $f + h \eta$ is the "infinitesimal" change to $f$ that is analogous to the infinitesimal change to $\boldsymbol{x}$ that we describe by $\boldsymbol{x} + h\boldsymbol{v}$ in the definition of the directional gradient. The quantity $h \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
 
-Now, so far we have only shown that the equation in Definition 1 describes something analogous to the directional derivative for multivariate numerical functions. We showed this by comparing the right-hand side of the equation to the definition of the directional gradient. As the definition states, the functional derivative itself is defined to be the function $\frac{\partial F}{\partial f}$ in the integral on the left-hand side of the equation. What is going on here? Why is _this_ the functional derivative?
+Now, so far we have only shown that the equation in Definition 1 describes something analogous to the directional derivative for multivariate numerical functions. We showed this by comparing the right-hand side of the equation to the definition of the directional gradient. However, as Definition 1 states, the functional derivative itself is defined to be the function $\frac{\partial F}{\partial f}$ in the integral on the left-hand side of the equation. What is going on here? Why is _this_ the functional derivative?
+
+Now, it is time to evoke the of the gradient for traditional multivariate functions. Specifically, notice the similarity between the alternative formulation of the directional derivative using the gradient and the left-hand side of the equation in Definition 1:
 
 
 
