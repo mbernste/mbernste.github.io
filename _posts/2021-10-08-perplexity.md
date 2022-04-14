@@ -40,7 +40,7 @@ Appendix
 
 $$\begin{align*}
 \text{Perplexity}(X) &:= 2^{H(X)} \\
-&= 2^{\frac{1}{K} \sum_{i=1}^K \log_2 \frac{1}{K}} \\
+&= 2^{\frac{1}{K} -\sum_{i=1}^K \log_2 \frac{1}{K}} \\
 &= 2^{-\log_2 \frac{1}{K}} \\
 &= \frac{1}{2^{\log_2 \frac{1}{K}}} \\
 &= K
