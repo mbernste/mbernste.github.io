@@ -131,7 +131,7 @@ Indeed, the equation in Definition 1 describes the analogy of the directional de
 
 How does this work? As we shrink $h$ down to an infinitesimaly small number, $f + h \eta$ will become arbitrarily close to $f$ as depicted below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/function_variationn.png" alt="drawing" width="400"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/function_variationn.png" alt="drawing" width="450"/></center>
 
 In the illustration above, we see an example function $f$ (red) and another function $\eta$ (blue). As $h$ gets smaller, the function $f + h\eta$ (purple) becomes similar to $f$. Thus, we see that $f + h \eta$ is the "infinitesimal" change to $f$ that is analogous to the infinitesimal change to $\boldsymbol{x}$ that we describe by $\boldsymbol{x} + h\boldsymbol{v}$ in the definition of the directional derivative. The quantity $h \eta$ is called a **variation** of $f$ (hence the word "variational" in the name "calculus of variations"). 
 
@@ -176,9 +176,18 @@ $$\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) = \frac{d 
 
 Let's simplify this equation:
 
-$$\begin{align*}\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) &= \frac{d H(p_X + h\eta)}{dh}\bigg\rvert_{h=0}  \\ &= \frac{d}{dh} \sum_{x \in \mathcal{X}} -(p_X(x) + h\eta(x))\log(p_X(x) + h\eta(x))\bigg\rvert_{h=0}  \\ &= \sum_{x \in \mathcal{X}} - \eta(x)\log(p_X(x) + h\eta(x)) + \eta(x) \\ &= \sum_{x \ in \mathcal{X}} (-1 - p_X(x))\eta(x)\end{align*}$$
+$$\begin{align*}
+\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) 
 
-Now we see that $\frac{\partial H}{\partial p_X}(x) = -1 - p_X(x)$ and thus, this is the functional derivative!
+&= \frac{d H(p_X + h\eta)}{dh}\bigg\rvert_{h=0}  \\ 
+
+&= \frac{d}{dh} \sum_{x \in \mathcal{X}} -(p_X(x) + h\eta(x))\log(p_X(x) + h\eta(x))\bigg\rvert_{h=0}  \\ 
+
+&= \sum_{x \in \mathcal{X}} - \eta(x)\log(p_X(x) + h\eta(x)) + \eta(x)\bigg\rvert_{h=0} \\ 
+
+&= \sum_{x \ in \mathcal{X}} (-1 - \log p_X(x))\eta(x)\end{align*}$$
+
+Now we see that $\frac{\partial H}{\partial p_X}(x) = -1 - \log(p_X(x))$ and thus, this is the functional derivative!
 
 Appendix
 --------
