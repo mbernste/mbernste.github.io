@@ -195,7 +195,7 @@ $$\begin{align*} \frac{dg(z)}{dz}\bigg\rvert_{z=0} &= \frac{g(h) - g(0)}{h} \\ &
 
 We can then apply the [multivariate chain rule](https://en.wikipedia.org/wiki/Chain_rule#Multivariable_case) and see that
 
-$$\frac{dg'(z)}{dz} = \sum_{i=1}^n D_i f(\boldsymbol{x} + z\boldsymbol{v}) \frac{d (x_i + zv_i)}{dz}$$
+$$\frac{dg(z)}{dz} = \sum_{i=1}^n D_i f(\boldsymbol{x} + z\boldsymbol{v}) \frac{d (x_i + zv_i)}{dz}$$
 
 where $D_i f(\boldsymbol{x} + z\boldsymbol{v})$ is the partial derivative of $f$ with respect to it's $i$th argument when evaluated at $\boldsymbol{x} + z\boldsymbol{v}$.
 
