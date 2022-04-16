@@ -116,7 +116,9 @@ Now, we're going to spoil the punchline with the definition for the functional d
 
 <span style="color:#0060C6">**Definition 1 (Functional derivative):** Given a function $f \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which: </span>
 
-<span style="color:#0060C6">$$begin{align*}\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx &= \lim_{h \rightarrow 0}\frac{F(f + h \eta) - F(f)}{h} \\ &= \frac{d F(f + h\eta)}{dh}\bigg\rvert_{h=0} \end{align*}$$</span>
+<span style="color:#0060C6">$$begin{align*}\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx &= \lim_{h \rightarrow 0}\frac{F(f + h \eta) - F(f)}{h} \\ &= x\end{align*}$$</span>
+
+$$\frac{d F(f + h\eta)}{dh}\bigg\rvert_{h=0}$$
 
 <span style="color:#0060C6">where $h$ is a scalar and $\eta$ is an arbitrary function in $\mathcal{F}$.</span>
 
