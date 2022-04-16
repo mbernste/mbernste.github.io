@@ -156,7 +156,7 @@ $$\langle f, g \rangle := \int f(x)g(x) dx$$
 
 Thus, we see that
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/functional_derivative_gradient_w_inner_product.png.png" alt="drawing" width="450"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/functional_derivative_gradient_w_inner_product.png" alt="drawing" width="450"/></center>
 
 Said differently, the functional gradient of a functional, $F$, at a function $f$, denoted $\frac{\partial F}{\partial f}$ is the function for which given any arbitrary function $\eta$, the inner product between $\frac{\partial F}{\partial f}$ and $\eta$ is the directional derivative of $F$ in the direction of $\eta$!
 
