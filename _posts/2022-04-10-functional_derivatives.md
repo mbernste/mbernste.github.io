@@ -233,7 +233,7 @@ The dot product can be computed as
 
 $$\nabla f(\boldsymbol{x}) \cdot \boldsymbol{v} = ||\nabla f(\boldsymbol{x})|| ||\boldsymbol{v}|| \cos \theta $$
 
-where $\theta$ is the angle between the two vectors. The $\cos$ function is maximized (and equals 1) when $\theta = 0$ and thus, directional derivative is maximized when $\theta = 0$. Thus, the unit vector that maximizes the directional derivative is the vector pointing in the same direction as the gradient thus proving that the gradient points in the direction nof steepest ascent.
+where $\theta$ is the angle between the two vectors. The $\cos$ function is maximized (and equals 1) when $\theta = 0$ and thus, directional derivative is maximized when $\theta = 0$. Thus, the unit vector that maximizes the directional derivative is the vector pointing in the same direction as the gradient thus proving that the gradient points in the direction of steepest ascent.
 
 $\square$
 
