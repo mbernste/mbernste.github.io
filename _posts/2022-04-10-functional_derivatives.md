@@ -173,10 +173,11 @@ Let's derive it's functional derivative. Let's start with an arbitrary probabili
 
 $$\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) = \frac{d H(p_X + h\eta)}{dh}\bigg\rvert_{h=0} $$
 
-First, let's calculate $\frac{d H(p_X + h\eta)}{dh}$:
+Let's simplify this equation:
 
-$$\begin{align*}\frac{d H(p_X + h\eta)}{dh} &= \frac{d}{{dh}} \sum_{x \in \mathcal{X}} -(p_X(x) + h\eta(x))\log(p_X(x) + h\eta(x)) \end{align*} \\ &= \sum_{x \in \mathcal{X}} - \eta(x)\log(p_X(x) + h\eta(x)) + h(\eta(x))\frac{1}{p_X(x) + h\eta(x)}  $$
+$$\begin{align*}\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) &= \frac{d H(p_X + h\eta)}{dh}\bigg\rvert_{h=0}  \\ &= \frac{d}{{dh}} \sum_{x \in \mathcal{X}} -(p_X(x) + h\eta(x))\log(p_X(x) + h\eta(x))\bigg\rvert_{h=0}  \\ &= \sum_{x \in \mathcal{X}} - \eta(x)\log(p_X(x) + h\eta(x)) + \eta(x) \\ &= \sum_{x \ in \mathcal{X}} (-1 - p_X(x))\eta(x)\end{align*}$$
 
+Now
 
 Appendix
 --------
