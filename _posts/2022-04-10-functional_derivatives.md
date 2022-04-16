@@ -116,7 +116,7 @@ Now, we're going to spoil the punchline with the definition for the functional d
 
 <span style="color:#0060C6">**Definition 1 (Functional derivative):** Given a function $f \in \mathcal{F}$, the **functional derivative** of $F$ at $f$, denoted $\frac{\partial{F}}{\partial f}$, is defined to be the function for which: </span>
 
-<span style="color:#0060C6">$$\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx = \lim_{h \rightarrow 0}\frac{F(f + h \eta) - F(f)}{h}$$</span>
+<span style="color:#0060C6">$$begin{align*}\int \frac{\partial F}{\partial f}(x) \eta(x) \ dx &= \lim_{h \rightarrow 0}\frac{F(f + h \eta) - F(f)}{h} \\ &= \frac{d F(f + h\eta)}{dh} \end{align*}$$</span>
 
 <span style="color:#0060C6">where $h$ is a scalar and $\eta$ is an arbitrary function in $\mathcal{F}$.</span>
 
@@ -157,6 +157,22 @@ $$\langle f, g \rangle := \int f(x)g(x) dx$$
 Thus, we see that
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/functional_derivative_gradient_w_inner_product.png.png" alt="drawing" width="450"/></center>
+
+Said differently, the functional gradient of a functional, $F$, at a function $f$, denoted $\frac{\partial F}{\partial f}$ is the function for which given any arbitrary function $\eta$, the inner product between $\frac{\partial F}{\partial f}$ and $\eta$ is the directional derivative of $F$ in the direction of $\eta$!
+
+An example
+----------
+
+As a toy example, let's derive the functional derivative of [information entropy](https://mbernste.github.io/posts/entropy/). Recall at the beginning of this post, the entropy $H$ of a discrete random variable $X$ can be viewed as a function on $X$'s probability mass function $p_X$. More specifically, $H$ is defined as
+
+$$H(p_X) := \sum_{x \in \mathcal{X}} - p_X(x) \log p_X(x)$$
+
+where $\mathcal{X}$ is the support of $p_X$. 
+
+Let's derive it's functional derivative. Let's start with an arbitrary probability mass function $\eta : \mathcal{X} \rightarrow [0,1]$. Then, we can write out the equation that defines the functional derivative:
+
+$$\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) = \frac{d H(p_X + h\eta)}{dh} $$
+
 
 
 Appendix
