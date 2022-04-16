@@ -188,7 +188,7 @@ $$\begin{align*}
 
 &= \sum_{x \ in \mathcal{X}} (-1 - \log p_X(x))\eta(x)\end{align*}$$
 
-Now we see that $\frac{\partial H}{\partial p_X}(x) = -1 - \log(p_X(x))$ and thus, this is the functional derivative!
+Now we see that $\frac{\partial H}{\partial p_X}(x) = -1 - \log p_X(x)$ and thus, this is the functional derivative!
 
 Appendix
 --------
