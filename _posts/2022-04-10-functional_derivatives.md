@@ -101,7 +101,6 @@ The vector of partial derivatives, $\nabla f(\boldsymbol{x})$, as defined above 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gradient.png" alt="drawing" width="450"/></center>
 
-
 We prove this property of the gradient vector in Theorem 2 of the Appendix to this post.
 
 
@@ -175,7 +174,7 @@ $$\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) = \frac{d 
 
 Let's simplify this equation:
 
-$$\begin{align*}\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) &= \frac{d H(p_X + h\eta)}{dh}\bigg\rvert_{h=0}  \\ &= \frac{d}{{dh}} \sum_{x \in \mathcal{X}} -(p_X(x) + h\eta(x))\log(p_X(x) + h\eta(x))\bigg\rvert_{h=0}  \\ &= \sum_{x \in \mathcal{X}} - \eta(x)\log(p_X(x) + h\eta(x)) + \eta(x) \\ &= \sum_{x \ in \mathcal{X}} (-1 - p_X(x))\eta(x)\end{align*}$$
+$$\begin{align*}\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) &= \frac{d H(p_X + h\eta)}{dh}\bigg\rvert_{h=0}  \\ &= \frac{d}{dh} \sum_{x \in \mathcal{X}} -(p_X(x) + h\eta(x))\log(p_X(x) + h\eta(x))\bigg\rvert_{h=0}  \\ &= \sum_{x \in \mathcal{X}} - \eta(x)\log(p_X(x) + h\eta(x)) + \eta(x) \\ &= \sum_{x \ in \mathcal{X}} (-1 - p_X(x))\eta(x)\end{align*}$$
 
 Now
 
