@@ -146,7 +146,7 @@ To drive this home further, recall that we can represent the directional derivat
 
 $$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \nabla f(\boldsymbol{x}) \cdot \boldsymbol{v}$$
 
-To generalize this relation, we note that the dot product is an [inner product](https://en.wikipedia.org/wiki/Inner_product_space). Thus, we can generalize this definition to non-Euclidean vectors as 
+To make this relationship clearer, we note that the dot product is an [inner product](https://en.wikipedia.org/wiki/Inner_product_space). Thus, we can write this definition in a more general way as 
 
 $$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \langle \nabla f(\boldsymbol{x}), \boldsymbol{v} \rangle$$
 
@@ -154,7 +154,10 @@ We also recall that a valid inner product between continuous functions $f$ and $
 
 $$\langle f, g \rangle := \int f(x)g(x) dx$$
 
-Thus,
+Thus, we see that
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/functional_derivative_gradient_w_inner_product.png.png" alt="drawing" width="450"/></center>
+
 
 Appendix
 --------
