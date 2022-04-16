@@ -142,7 +142,7 @@ Now, it is time to recall the gradient for traditional multivariate functions. S
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/functional_derivative_gradient.png" alt="drawing" width="450"/></center>
 
-Notice, that these equations have similar forms. Instead of a summation in the definition of the directional derivative, we have an integral in the eqation for Definition 1. Moreover, instead of summing over elements of the vector $\boldsymbol{v}$, we "sum" (using an integral) each value of $\eta(x)$. Lastly, instead of each partial derivative of $f$, we now have the each value of the function $\frac{\partial F}{\partial f}(x)$. This function, $\frac{\partial F}{\partial f}(x)$, is analogous to the gradient! It is thus called the functional derivative!
+Notice, that these equations have similar forms. Instead of a summation in the definition of the directional derivative, we have an integral in the eqation for Definition 1. Moreover, instead of summing over elements of the vector $\boldsymbol{v}$, we "sum" (using an integral) each value of $\eta(x)$. Lastly, instead of each partial derivative of $f$, we now have each value of the function $\frac{\partial F}{\partial f}$ for each $x$. This function, $\frac{\partial F}{\partial f}(x)$, is analogous to the gradient! It is thus called the functional derivative!
 
 To drive this home further, recall that we can represent the directional derivative as the dot product between the gradient vector and $\boldsymbol{v}$:
 
