@@ -27,9 +27,9 @@ $$H(p_X) := -\sum_{x \in \mathcal{X}} p_X(x) \log p_X(x)$$
 
 where $\mathcal{X}$ is the [support](https://en.wikipedia.org/wiki/Support_(mathematics)) of $p_X$. 
 
-Another example of a functional is the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), a function that, like entropy, operates on probability distributions. The ELBO is a foundational quantity used in the popular [EM algorithm](https://mbernste.github.io/posts/em/) and [variational inference](https://mbernste.github.io/posts/variational_inference/), two frameworks used to perform  statistical inference with probabilistic models. 
+Another example of a functional is the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/): a function that, like entropy, operates on probability distributions. The ELBO is a foundational quantity used in the popular [EM algorithm](https://mbernste.github.io/posts/em/) and [variational inference](https://mbernste.github.io/posts/variational_inference/) used for performing  statistical inference with probabilistic models. 
 
-In this blog post, we will review some concepts in traditional calculus such as partial derivatives, gradients, and directional derivatives in order to introduce the definition of the **functional derivative**, which is simply the generalization of the derivative of numeric functions to functionals!
+In this blog post, we will review some concepts in traditional calculus such as partial derivatives, directional derivatives, and gradients in order to introduce the definition of the **functional derivative**, which is simply the generalization of the gradient of numeric functions to functionals!
 
 A review of derivatives and gradients
 -----------------------------------------------------------------------
