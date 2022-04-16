@@ -94,10 +94,11 @@ Then we can represent the directional derivative as simply the [dot product](htt
 
 $$D_{\boldsymbol{v}}f(\boldsymbol{x}) := \nabla f(\boldsymbol{x}) \cdot \boldsymbol{v}$$
 
+This vector $\nabla f(\boldsymbol{x})$, is called the **gradient vector** of $f$ at $\boldsymbol{x}$. 
 
 ### Gradients
 
-The vector of partial derivatives, $\nabla f(\boldsymbol{x})$, as defined above is the called the **gradient vector** of $f$ at $\boldsymbol{x}$. It turns out that the gradient vector points in the _direction of steepest ascent_ along $f$'s surface at $\boldsymbol{x}$. This can be shown geometrically below:
+As described above, the **gradient vector**,$\nabla f(\boldsymbol{x})$ is the vector constructed by taking the partial derivative of $f$ at $\boldsymbol{x}$ along each basis vector. It turns out that the gradient vector points in the _direction of steepest ascent_ along $f$'s surface at $\boldsymbol{x}$. This can be shown schematically below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/gradient.png" alt="drawing" width="450"/></center>
 
