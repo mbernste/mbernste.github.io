@@ -176,7 +176,7 @@ Let's simplify this equation:
 
 $$\begin{align*}\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) &= \frac{d H(p_X + h\eta)}{dh}\bigg\rvert_{h=0}  \\ &= \frac{d}{dh} \sum_{x \in \mathcal{X}} -(p_X(x) + h\eta(x))\log(p_X(x) + h\eta(x))\bigg\rvert_{h=0}  \\ &= \sum_{x \in \mathcal{X}} - \eta(x)\log(p_X(x) + h\eta(x)) + \eta(x) \\ &= \sum_{x \ in \mathcal{X}} (-1 - p_X(x))\eta(x)\end{align*}$$
 
-Now
+Now we see that $\frac{\partial H}{\partial p_X}(x) = -1 - p_X(x)$ and thus, this is the functional derivative!
 
 Appendix
 --------
