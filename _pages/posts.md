@@ -45,7 +45,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 ## The calculus of variations
 
-[Functionals and functional derivatives](https://mbernste.github.io/posts/functionals/)
+[Functionals and functional derivatives](https://mbernste.github.io/posts/functionals/) 
 
 ## Quantities related to probabilistic models
 
