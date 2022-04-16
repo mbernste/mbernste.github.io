@@ -162,8 +162,8 @@ Thus, we see that
 
 Said differently, the functional gradient of a functional, $F$, at a function $f$, denoted $\frac{\partial F}{\partial f}$ is the function for which given any arbitrary function $\eta$, the inner product between $\frac{\partial F}{\partial f}$ and $\eta$ is the directional derivative of $F$ in the direction of $\eta$!
 
-An example
-----------
+An example: the functional derivative of entropy
+------------------------------------------------
 
 As a toy example, let's derive the functional derivative of [information entropy](https://mbernste.github.io/posts/entropy/). Recall at the beginning of this post, the entropy $H$ of a discrete random variable $X$ can be viewed as a function on $X$'s probability mass function $p_X$. More specifically, $H$ is defined as
 
