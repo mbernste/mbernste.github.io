@@ -173,6 +173,9 @@ Let's derive it's functional derivative. Let's start with an arbitrary probabili
 
 $$\sum_{x \in \mathcal{X}} \frac{\partial H}{\partial p_X}(x) \eta(x) = \frac{d H(p_X + h\eta)}{dh}\bigg\rvert_{h=0} $$
 
+First, let's calculate $\frac{d H(p_X + h\eta)}{dh}$:
+
+$$\begin{align*}\frac{d H(p_X + h\eta)}{dh} &= \frac{d \sum_{x \in \mathcal{X}} -(p_X(x) + h\eta(x))\log(p_X(x) + h\eta(x))}{dh} \end{align*}$$
 
 
 Appendix
