@@ -62,7 +62,7 @@ Given $\boldsymbol{x} \in \mathbb{R}^n$, the **partial derivative** of $f$ with 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/partial_derivative.png" alt="drawing" width="450"/></center>
 
-As seen above, the partial derivative $\frac{f(\boldsymbol{x})}{\partial x_1}$ is simply the derivative of the function $f(x_1, x_2)$ when holding $x_1$ as fixed. That is, it is the slope of the line tangent to the function of $f(x_1, x_2)$ when $x_1$ is fixed.
+As seen above, the partial derivative $\frac{f(\boldsymbol{x})}{\partial x_1}$ is simply the derivative of the function $f(x_1, x_2)$ when holding $x_1$ as fixed. That is, it is the slope of the line tangent to the function of $f(x_1, x_2)$ when $x_1$ fixed.
 
 ### Directional derivatives
 
