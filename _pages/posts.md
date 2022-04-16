@@ -43,6 +43,10 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Shannon’s Source Coding Theorem (Foundations of information theory: Part 3)](https://mbernste.github.io/posts/sourcecoding/)  
 [Perplexity: a more intuitive measure of uncertainty than entropy](https://mbernste.github.io/posts/perplexity/)  
 
+## The calculus of variations
+
+[Functionals and functional derivatives](https://mbernste.github.io/posts/functionals/)
+
 ## Quantities related to probabilistic models
 
 [The evidence lower bound](https://mbernste.github.io/posts/elbo/)
