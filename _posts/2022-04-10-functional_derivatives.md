@@ -220,4 +220,19 @@ $$D_{\boldsymbol{v}} f(\boldsymbol{x}) = \sum_{i=1}^n \frac{f(\boldsymbol{x})}{\
 
 $\square$
 
+<span style="color:#0060C6">**Theorem 2:** Given a differentiable function $f : \mathbb{R}^n \rightarrow \mathbb{R}$ and vector $\boldsymbol{x} \in \mathbb{R}^n$, $f$'s direction of steepest ascent is the direction pointed to by the gradient $\nabla f(\boldsymbol{x})$.</span>
+
+**Proof:**
+
+As shown in Theorem 1, given an arbitrary unit vector $\boldsymbol{v} \in \mathbb{R}^n$, the directional derivative $D_{\boldsymbol{v}} f(\boldsymbol{x})$ can be calculated by taking the dot product of the gradient vector with $\boldsymbol{v}$:
+
+$$D_{\boldsymbol{v}} f(\boldsymbol{x}) = \nabla f(\boldsymbol{x}) \cdot \boldsymbol{v}$$
+
+The dot product can be computed as
+
+$$\nabla f(\boldsymbol{x}) \cdot \boldsymbol{v} = ||\nabla f(\boldsymbol{x})|| ||\boldsymbol{v}|| \cos \theta $$
+
+where $\theta$ is the angle between the two vectors. The $\cos$ function is maximized (and equals 1) when $\theta = 0$ and thus, directional derivative is maximized when $\theta = 0$. Thus, the unit vector that maximizes the directional derivative is the vector pointing in the same direction as the gradient thus proving that the gradient points in the direction nof steepest ascent.
+
+$\square$
 
