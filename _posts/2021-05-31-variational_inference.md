@@ -60,9 +60,9 @@ Because $\log p(x)$ does not depend on $q$, one can treat the ELBO as a function
 Conceptually, variational inference allows us to formulate our approximate Bayesian inference problem as an optimization problem.  By formulating the problem as such, we can approach this optimization problem using the full toolkit available to us from the field of [mathematical optimization](https://en.wikipedia.org/wiki/Mathematical_optimization)!
 
 Why is this method called "variational" inference?
---------
+--------------------------------------------------
 
-The term "variational" in "variational inference" comes from the mathematical area of [the calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations).  The calculus of variations is all about optimization problems that optimize *functions of functions* (called **functionals**).  
+The term "variational" in "variational inference" comes from the mathematical area of [the calculus of variations](https://en.wikipedia.org/wiki/Calculus_of_variations).  The calculus of variations is all about optimization problems that optimize *functions of functions*, called [functionals](https://mbernste.github.io/posts/functionals/).  
 
 More specifically, let's say we have some set of functions $\mathcal{F}$ where each $f \in \mathcal{F}$ maps items from some set $A$ to some set $B$. That is,
 
