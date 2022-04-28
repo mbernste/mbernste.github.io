@@ -25,11 +25,11 @@ The Gaussian mixture model (GMM) is a family of distributions over real-valued v
 
 $$Z \sim \text{Cat}(\alpha_1, \dots, \alpha_K)$$
 
-where $$Z \in \{1, 2, \dots, K\}$$ tells us which Gaussian to pick (i.e., if $$Z = 2$$, then we choose the 2nd Gaussian) and $$\alpha_k$$ is the probability of choosing the $$k$$th Gaussian. Then, we sample $$\boldsymbol{X}$$ from that $$z$$th Gaussian.  That is,
+where $$Z \in \{1, 2, \dots, K\}$$ tells us which Gaussian to pick (i.e., if $$Z = 2$$, then we choose the 2nd Gaussian) and $$\alpha_k$$ is the probability of choosing the $$k$$th Gaussian. If $Z = z$, we sample $$\boldsymbol{X}$$ from that $$z$$th Gaussian.  That is,
 
-$$\boldsymbol{X} \sim N(\boldsymbol{\mu}_k, \boldsymbol{\Sigma}_k)$$
+$$\boldsymbol{X} \sim N(\boldsymbol{\mu}_z, \boldsymbol{\Sigma}_z)$$
 
-where $$\boldsymbol{\mu}_k$$ is the $$k$$th Gaussian's mean, and $$\boldsymbol{\Sigma}_k$$ is its covariance matrix.
+where $$\boldsymbol{\mu}_z$$ is the $$z$$th Gaussian's mean, and $$\boldsymbol{\Sigma}_z$$ is its covariance matrix.
 
 This model is depicted by the following graphical model:
 
