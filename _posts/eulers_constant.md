@@ -15,4 +15,6 @@ To spoil the punchline, Euler's constant is used to express exponential function
 The nature of exponentials
 --------------------------
 
+As we know, exponential functions are functions that not only grow, but whose _growth_ grows. They look like the following:
+
 
