@@ -1,5 +1,5 @@
 ---
-title: 'Systems of linear equations'
+title: 'Systems of linear equations and elementary row operations'
 date: 2022-06-11
 permalink: /posts/systems of linear equations/
 tags:
