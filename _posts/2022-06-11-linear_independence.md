@@ -3,8 +3,7 @@
 Introduction
 ------------
 
-An extremely important concept in the study of vector spaces is that of _linear independence_. At a high level, a set of vectors are linearly 
-
+An extremely important concept in the study of vector spaces is that of _linear independence_. At a high level, a set of vectors are said to be **linearly independent** if you cannot form any vector in the set using a weighted sum of any combination of the other vectors in the set. If a set of vectors does not have this quality -- that is, a vector in the set can be formed from some combination of other vectors in the set -- then the set is said to be **linearly dependent**.
 
 Linear independence
 -------------------
