@@ -1,18 +1,29 @@
 
+_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
 Introduction
 ------------
 
-An extremely important concept in the study of vector spaces is that of _linear independence_. At a high level, a set of vectors are said to be **linearly independent** if you cannot form any vector in the set using a weighted sum of any combination of the other vectors in the set. If a set of vectors does not have this quality -- that is, a vector in the set can be formed from some combination of other vectors in the set -- then the set is said to be **linearly dependent**.
+An extremely important concept in the study of vector spaces is that of _linear independence_. At a high level, a set of vectors are said to be **linearly independent** if you cannot form any vector in the set using any combination of the other vectors in the set. If a set of vectors does not have this quality -- that is, a vector in the set can be formed from some combination of others -- then the set is said to be **linearly dependent**.
 
-In this post, we will present the definition for linear independence and show a few examples. Finally, we will discuss a high-level intuition for why this concept is so important.
+In this post, we will present a more foundatioanl concept, the _span_ of a set of vectors, and then move on to the definition for linear independence. Finally, we will discuss a high-level intuition for why the concept of linearly independence is so important.
+
+Span
+----
+
+Given a set of vectors $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$ the set of all vectors that can be formed via a weighted sum of the vectors, called a **linear combination** of these vectors is called the **span** of these vectors. 
+
+That is, the span of  $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$ is the set 
+
+$$S := \left\{\sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathbb{R} \right\}$$
+
 
 Linear independence
 -------------------
 
-A set of vectors $\boldsymbol{v}_1, \boldsymbol{v}_2, \dots, \boldsymbol{v}_n \in \mathcal{V}$ are said to be **linearly independent** if you cannot form any of the vectors in the set using a weighted combination of any of the other vectors.
+A set of vectors $\boldsymbol{v}_1, \boldsymbol{v}_2, \dots, \boldsymbol{v}_n \in \mathcal{V}$ are said to be **linearly independent** if you cannot form any of the vectors in the set using a weighted combination, or **linear combination**, of any of the other vectors.
 
-For example, say we have three vectors in a Euclidean space:
+For example, say we have a set of three vectors, $$\boldsymbol{x}_1, \boldsymbol{x}_2, \boldsymbol{x}_3\ \in \mathbb{R}^3$$ where:
 
 $$\boldsymbol{x}_1 := \begin{bmatrix}1 \\ 2 \\ 3\end{bmatrix}$$
 
@@ -24,7 +35,10 @@ These vectors are NOT linearly independent becase we can see that $\boldsymbol{x
 
 $$\begin{align*}\boldsymbol{x}_3 &= \boldsymbol{x}_1 + 2\boldsymbol{x}_3 \\ \begin{bmatrix}5 \\ 4 \\ 9\end{bmatrix} &= \begin{bmatrix}1 \\ 2 \\ 3\end{bmatrix} + 2 \begin{bmatrix}2 \\ 1 \\ 3\end{bmatrix}\end{align*}$$
 
-A set of vectors are not linearly independent are called **linearly dependent**.
+Geometrically, we see that these vectors span a plan in three dimensional space.
+
+In contrast
+
 
 Intuition
 ---------
