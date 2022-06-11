@@ -19,10 +19,10 @@ In this blog post, we will begin by taking a step back from the very abstract an
 
 Let's dig in!
 
-How matrices can represent systems of linear equations
-------------------------------------------------------
+Systems of linear equations
+---------------------------
 
-To review, a system of linear equation is a set of linear equations that all utilize the same set of variables, $x_1, x_2, \dots, x_n$, but each equation differs by the coefficients that multiply each variable. 
+A **system of linear equation** is a set of linear equations that all utilize the same set of variables, $x_1, x_2, \dots, x_n$, but each equation differs by the coefficients that multiply each variable. 
 
 For example, say we have three variables, $x_1, x_2$, and $x_3$. A system of linear equations involving these three variables can be written as:
 
@@ -36,20 +36,29 @@ $$\begin{align*}a_{1,1}x_1 + a_{1,2}x_2 + a_{1,3}x_3 &= b_1 \\ a_{2,1}x_1 + a_{2
 
 where $a_{1,1}, \dots, a_{3,3}$ are the coefficients and $b_1, b_2,$ and $b_3$ are the constant terms, all treated as fixed.
 
+Representing systems of linear equations using matrices
+-------------------------------------------------------
+
 Notice, we can can write this system of linear equations much more succinctly using [matrix-vector](https://mbernste.github.io/posts/matrix_vector_mult/) multiplication. That is,
 
 $$\begin{bmatrix}a_{1,1} && a_{1,2} && a_{1,3} \\ a_{2,1} && a_{2,2} && a_{2,3} \\ a_{3,1} && a_{3,2} && a_{3,3} \end{bmatrix}  \begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}b_1 \\ b_2 \\ b_3\end{bmatrix}$$
 
-This is the first important point: any system of linear equations can be written succintly as an equation using matrix-vector multiplication!
+If we let the matrix of coefficients be $\boldsymbol{A}$, the vector of variables be $\boldsymbol{x}$, and the vector of constants be $\boldsymbol{b}$, the we could write this even more succinctly as:
 
-The relationship between invertible matrices and the solutions to systems of linear equations
---------------------------------------------------------------------------------------------
+$$\boldsymbol{Ax} = \boldsymbol{b}$$
 
-Now, a natural question to ask is, given a system of linear equations, how many solutions does it have? 
+This is an important point: any system of linear equations can be written succintly as an equation using matrix-vector multiplication!
 
-In some cases, the system could have one solution as in the example described previously; however, in other cases, it could have an infinitely large number of solutions. For example, the system below has an infinite number of solutions:
+The solutions to a system of linear equations
+---------------------------------------------
 
-In still other cases, the system could have no solutions at all! That is, 
+Now, a natural question is: given a system of linear equations, how many solutions does it have? 
+
+In some cases, the system could have one solution. In the example described previously, there was only one solution; however, in other cases, this may not hold.
+
+Some systems of linear equations have an infinite number of solutions. Take for example, the following system:
+
+In still other cases, the system could have no solutions at all! For example:
 
 
 
