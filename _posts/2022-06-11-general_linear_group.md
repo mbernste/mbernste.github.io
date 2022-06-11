@@ -1,7 +1,7 @@
 ---
 title: 'Systems of linear equations and elementary row operations'
 date: 2022-06-11
-permalink: /posts/systems of linear equations/
+permalink: /posts/systems_linear_equations/
 tags:
   - tutorial
   - mathematics
