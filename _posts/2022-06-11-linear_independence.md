@@ -65,7 +65,7 @@ There are two ways I think about linear independence: in terms of information co
 
 First, if a set of vectors is linearly dependent, then in a sense there is "reduntant information" within the vectors. What do we mean by redundant? By removing a vector from a linearly dependent set of vectors, the span of the set of vectors will remain the same! On the other hand, for a linearly dependent set of vectors, each vector is vital for defining the span of the set's vectors. If you remove even one vector, the span of the vectors will change!
 
-At a more geometric level of thinking, a set of $n$ linearly independent vectors $$S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$$ spans a space with an [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of $n$ because in order to specify any vector $\boldsymbol{v}$ in the span of these vectors, one must specify the coefficients $c_1, \dots, c_n$ to construct $\boldsymbol{v}$ from the vectors in $S$. That is,  
+At a more geometric level of thinking, a set of $n$ linearly independent vectors $S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$ spans a space with an [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of $n$ because in order to specify any vector $\boldsymbol{v}$ in the span of these vectors, one must specify the coefficients $c_1, \dots, c_n$ to construct $\boldsymbol{v}$ from the vectors in $S$. That is,  
 
 $$\boldsymbol{v} = c_1\boldsymbol{x}_1 + \dots + c_n\boldsymbol{x}_n$$ 
 
