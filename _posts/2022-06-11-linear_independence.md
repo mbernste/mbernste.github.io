@@ -1,5 +1,13 @@
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+---
+title: 'Span and linear independence'
+date: 2022-06-11
+permalink: /posts/linear_independence/
+tags:
+  - tutorial
+  - mathematics
+  - linear algebra
+---
 
 Introduction
 ------------
