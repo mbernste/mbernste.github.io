@@ -44,23 +44,14 @@ This time, $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ don't span all of $\mathbb{
 Linear independence
 -------------------
 
-A set of vectors $\boldsymbol{v}_1, \boldsymbol{v}_2, \dots, \boldsymbol{v}_n \in \mathcal{V}$ are said to be **linearly independent** if you cannot form any of the vectors in the set using a weighted combination, or **linear combination**, of any of the other vectors.
+Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$, and a set of vectors $S := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$, the vectors are said to be **linearly independent** if each vector lies outside the span of the remaining vectors.
 
-For example, say we have a set of three vectors, $$\boldsymbol{x}_1, \boldsymbol{x}_2, \boldsymbol{x}_3\ \in \mathbb{R}^3$$ where:
+Said differently, a set of vectors are linearly independent if you cannot form any of the vectors in the set using a linear combination of any of the other vectors.
 
-$$\boldsymbol{x}_1 := \begin{bmatrix}1 \\ 2 \\ 3\end{bmatrix}$$
+Below we demonstrate a set of linearly independent vectors (left) and a set of linearly dependent vectors (right):
 
-$$\boldsymbol{x}_2 := \begin{bmatrix}2 \\ 1 \\ 3\end{bmatrix}$$
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence.png" alt="drawing" width="300"/></center>
 
-$$\boldsymbol{x}_3 := \begin{bmatrix}5 \\ 4 \\ 9\end{bmatrix}$$
-
-These vectors are NOT linearly independent becase we can see that $\boldsymbol{x}_3$ is simply a weighted sum of $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$:
-
-$$\begin{align*}\boldsymbol{x}_3 &= \boldsymbol{x}_1 + 2\boldsymbol{x}_3 \\ \begin{bmatrix}5 \\ 4 \\ 9\end{bmatrix} &= \begin{bmatrix}1 \\ 2 \\ 3\end{bmatrix} + 2 \begin{bmatrix}2 \\ 1 \\ 3\end{bmatrix}\end{align*}$$
-
-Geometrically, we see that these vectors span a plan in three dimensional space.
-
-In contrast
 
 
 Intuition
