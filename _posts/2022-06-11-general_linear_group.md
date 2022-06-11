@@ -34,19 +34,6 @@ $$\begin{align*}a_{1,1}x_1 + a_{1,2}x_2 + a_{1,3}x_3 &= b_1 \\ a_{2,1}x_1 + a_{2
 
 where $a_{1,1}, \dots, a_{3,3}$ are the coefficients and $b_1, b_2,$ and $b_3$ are the constant terms, all treated as fixed.
 
-Representing systems of linear equations using matrices
--------------------------------------------------------
-
-Notice, we can can write this system of linear equations much more succinctly using [matrix-vector](https://mbernste.github.io/posts/matrix_vector_mult/) multiplication. That is,
-
-$$\begin{bmatrix}a_{1,1} && a_{1,2} && a_{1,3} \\ a_{2,1} && a_{2,2} && a_{2,3} \\ a_{3,1} && a_{3,2} && a_{3,3} \end{bmatrix}  \begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}b_1 \\ b_2 \\ b_3\end{bmatrix}$$
-
-If we let the matrix of coefficients be $\boldsymbol{A}$, the vector of variables be $\boldsymbol{x}$, and the vector of constants be $\boldsymbol{b}$, then we could write this even more succinctly as:
-
-$$\boldsymbol{Ax} = \boldsymbol{b}$$
-
-This is an important point: any system of linear equations can be written succintly as an equation using matrix-vector multiplication!
-
 The solutions to a system of linear equations
 ---------------------------------------------
 
@@ -66,12 +53,31 @@ In still other cases, the system could have no solutions at all! For example:
 
 $$\begin{align*}3 x_1 + 2 x_2 + 0x_3 &= 1 \\ 2 x_1 + -2 x_2 + 0x_3 &= -2 \\ -x_1 + 0.5 x_2 + + 0x_3 &= 0 \end{align*}$$
 
-How can we tell how many solutions a given system of linear equations has?
+How can we tell how many solutions a given system of linear equations has? 
+
+Representing systems of linear equations using matrices
+-------------------------------------------------------
+
+First, note that we can write a system of linear equations much more succinctly using [matrix-vector](https://mbernste.github.io/posts/matrix_vector_mult/) multiplication. That is,
+
+$$\begin{bmatrix}a_{1,1} && a_{1,2} && a_{1,3} \\ a_{2,1} && a_{2,2} && a_{2,3} \\ a_{3,1} && a_{3,2} && a_{3,3} \end{bmatrix}  \begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}b_1 \\ b_2 \\ b_3\end{bmatrix}$$
+
+If we let the matrix of coefficients be $\boldsymbol{A}$, the vector of variables be $\boldsymbol{x}$, and the vector of constants be $\boldsymbol{b}$, then we could write this even more succinctly as:
+
+$$\boldsymbol{Ax} = \boldsymbol{b}$$
+
+This is an important point: any system of linear equations can be written succintly as an equation using matrix-vector multiplication. By viewing systems of linear equations through this lense, we can reason about the number of solutions to a system of linear equations using properties of the matrix $\boldsymbol{A}$!
 
 The geometry of systems of linear equations
 -------------------------------------------
 
-Given our newfound insight that systems of linear equations can be written equations involving matrix-vector multipliation, let us employ the geometric insights that we have gained from our study of [matrix-vector multiplication in a previous blog post](https://mbernste.github.io/posts/matrix_vector_mult/). As we saw, matrix-vector multiplication between a matrix $\boldsymbol{A}$ and vector $\boldsymbol{x}$ can be understood as taking a linear combination of the column vectors of $\boldsymbol{A}$ using the elements of $\boldsymbol{x}$ as the coefficients. 
+Given our newfound insight that systems of linear equations can be written a equations that involve matrix-vector multipliation, let us employ the geometric insights that we have gained from our study of [matrix-vector multiplication in a previous blog post](https://mbernste.github.io/posts/matrix_vector_mult/). 
+
+As we saw, matrix-vector multiplication between a matrix $\boldsymbol{A}$ and vector $\boldsymbol{x}$ can be understood as taking a linear combination of the column vectors of $\boldsymbol{A}$ using the elements of $\boldsymbol{x}$ as the coefficients. 
+
+Now, we write a system of linear equations using matrix notation, $\boldsymbol{Ax} = \boldsymbol{b}$, we can ask how many solutions this system has by geometrically reasoning about how many vectors $\boldsymbol{x}$ can be inserted into this equation for it to hold.
+
+
 
 
 
