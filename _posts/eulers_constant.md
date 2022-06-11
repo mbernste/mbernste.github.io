@@ -24,5 +24,12 @@ for some constant $a$. Exponential functions do not only grow, but their _growth
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/exponential.png" alt="drawing" width="400"/></center>
 
+A crucial characteristic of exponentials is that their growth grows in a linear rate. That is, the derivative of an exponential function _is proportional_ to the function itself. That is:
 
+$$\frac{da^x}{dx} = Ka^x$
 
+for some particular constant $K$ that is determined by $a$. To see why this is true, let's start with the definition of the derivative of $a^x$:
+
+$$\begin{align*}\frac{da^x}{dx} := \lim h \rightarrow 0 \frac{a^{x+h} - a^x}{h} \\ &:= \lim h \rightarrow 0 \frac{a^xa^h} - a^x}{h} \\ &:= a^x \lim h \rightarrow 0 \frac{a^{h} - 1}{h} \end{align*}$$
+
+Note, that the derivative of $a^x$ is simply $a^x$ scaled by some value equal to $\lim h \rightarrow 0 \frac{a^{h} - 1}{h}$. What is this value exactly?
