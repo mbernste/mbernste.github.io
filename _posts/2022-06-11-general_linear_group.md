@@ -52,9 +52,13 @@ The solutions to a system of linear equations
 
 Now, a natural question is: given a system of linear equations, how many solutions does it have? 
 
-In some cases, the system could have one solution. In the example described previously, there was only one solution; however, in other cases, this may not hold.
+In some cases, the system could have one solution. For example, the following system has only one solution:
 
-Some systems of linear equations have an infinite number of solutions. Take for example, the following system:
+$$\begin{align*}3 x_1 + 2 x_2 - x_3 &= 1 \\ 2 x_1 + -2 x_2 + 4 x_3 &= -2 \\ -x_1 + 0.5 x_2 + - x_3 &= 0 \end{align*}$$
+
+That solution, as mentioned in the previous section, is $(x_1, x_2, x_3) = (1, -2, -2)$.
+
+However, in other cases, a system may not only have one solution.  Some systems of linear equations have an infinite number of solutions. Take for example, the following system:
 
 $$\begin{align*}3 x_1 + 2 x_2 + 0x_3 &= 1 \\ 2 x_1 + -2 x_2 + 0x_3 &= -2 \\ -x_1 + 0.5 x_2 + + 0x_3 &= 0 \end{align*}$$
 
@@ -62,6 +66,7 @@ In still other cases, the system could have no solutions at all! For example:
 
 $$\begin{align*}3 x_1 + 2 x_2 + 0x_3 &= 1 \\ 2 x_1 + -2 x_2 + 0x_3 &= -2 \\ -x_1 + 0.5 x_2 + + 0x_3 &= 0 \end{align*}$$
 
+How can we tell how many solutions a given system of linear equations has?
 
 The geometry of systems of linear equations
 -------------------------------------------
