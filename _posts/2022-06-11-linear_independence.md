@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-_An extremely important concept in the study of vector spaces is that of linear independence. In this blog post we present the definition for the span of a set of vectors. Then, we use this definition to discuss the definition of linear independence. Finally, we discuss some intuition into this fundamental idea._
+_An extremely important concept linear algebra is that of linear independence. In this blog post we present the definition for the span of a set of vectors. Then, we use this definition to discuss the definition for linear independence. Finally, we discuss some intuition into this fundamental idea._
 
 Introduction
 ------------
