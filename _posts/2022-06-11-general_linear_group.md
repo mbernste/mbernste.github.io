@@ -20,7 +20,7 @@ In this blog post, we will begin by taking a step back from the very abstract an
 Systems of linear equations
 ---------------------------
 
-A **system of linear equations** is a set of [linear equations](https://en.wikipedia.org/wiki/Linear_equation) that all utilize the same set of variables, but each equation differs by the coefficients that multiply each variable. 
+A **system of linear equations** is a set of [linear equations](https://en.wikipedia.org/wiki/Linear_equation) that all utilize the same set of variables, but each equation differs by the coefficients that multiply those variables. 
 
 For example, say we have three variables, $x_1, x_2$, and $x_3$. A system of linear equations involving these three variables can be written as:
 
