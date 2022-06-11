@@ -56,9 +56,15 @@ In some cases, the system could have one solution. In the example described prev
 
 Some systems of linear equations have an infinite number of solutions. Take for example, the following system:
 
+$$\begin{align*}3 x_1 + 2 x_2 + 0x_3 &= 1 \\ 2 x_1 + -2 x_2 + 0x_3 &= -2 \\ -x_1 + 0.5 x_2 + + 0x_3 &= 0 \end{align*}$$
+
 In still other cases, the system could have no solutions at all! For example:
 
+$$\begin{align*}3 x_1 + 2 x_2 + 0x_3 &= 1 \\ 2 x_1 + -2 x_2 + 0x_3 &= -2 \\ -x_1 + 0.5 x_2 + + 0x_3 &= 0 \end{align*}$$
 
+
+The geometry of systems of linear equations
+-------------------------------------------
 
 
 
