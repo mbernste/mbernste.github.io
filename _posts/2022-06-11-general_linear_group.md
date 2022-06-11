@@ -20,7 +20,7 @@ In this blog post, we will begin by taking a step back from the very abstract an
 Systems of linear equations
 ---------------------------
 
-A **system of linear equation** is a set of linear equations that all utilize the same set of variables, $x_1, x_2, \dots, x_n$, but each equation differs by the coefficients that multiply each variable. 
+A **system of linear equation** is a set of [linear equations](https://en.wikipedia.org/wiki/Linear_equation) that all utilize the same set of variables, but each equation differs by the coefficients that multiply each variable. 
 
 For example, say we have three variables, $x_1, x_2$, and $x_3$. A system of linear equations involving these three variables can be written as:
 
@@ -41,7 +41,7 @@ Notice, we can can write this system of linear equations much more succinctly us
 
 $$\begin{bmatrix}a_{1,1} && a_{1,2} && a_{1,3} \\ a_{2,1} && a_{2,2} && a_{2,3} \\ a_{3,1} && a_{3,2} && a_{3,3} \end{bmatrix}  \begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}b_1 \\ b_2 \\ b_3\end{bmatrix}$$
 
-If we let the matrix of coefficients be $\boldsymbol{A}$, the vector of variables be $\boldsymbol{x}$, and the vector of constants be $\boldsymbol{b}$, the we could write this even more succinctly as:
+If we let the matrix of coefficients be $\boldsymbol{A}$, the vector of variables be $\boldsymbol{x}$, and the vector of constants be $\boldsymbol{b}$, then we could write this even more succinctly as:
 
 $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
