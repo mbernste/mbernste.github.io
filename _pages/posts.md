@@ -21,6 +21,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 ## Linear algebra
 
 [Vector spaces](https://mbernste.github.io/posts/vector_spaces/)  
+[Span and linear independence](https://mbernste.github.io/posts/linear_independence/)  
 [Normed vector spaces](https://mbernste.github.io/posts/normed_vector_space/)  
 [Introducing matrices](https://mbernste.github.io/posts/matrices/)  
 [Matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/)  
