@@ -39,7 +39,7 @@ In the figure below, we show another example:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors_2.png" alt="drawing" width="600"/></center>
 
-This time, $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ don't span all of $\mathbb{R}^2, but rather, only the line on which $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ lie.
+This time, $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ don't span all of $\mathbb{R}^2$, but rather, only the line on which $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ lie.
 
 Linear independence
 -------------------
@@ -61,4 +61,12 @@ This example illustrates an important point about linear dependence: it is a qua
 Intuition
 ---------
 
-At an intuitive level, if a set of vectors is linearly dependent, then in a sense there is no "reduntancy" in the set of vectors. What do we mean by redundancy? By removing a vector from a linearly dependent set of vectors, the span of the set of vectors will remain the same! On the other hand, for a linearly dependent set of vectors, each vector is vital for defining the span of the set's vectors. If you remove even one vector, the span of the vectors will change -- in fact, it will get smaller!
+There are two ways I think about linear independence: in terms of information content and in terms of [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/). Let me explain.
+
+First, if a set of vectors is linearly dependent, then in a sense there is "reduntant information" within the vectors. What do we mean by redundant? By removing a vector from a linearly dependent set of vectors, the span of the set of vectors will remain the same! On the other hand, for a linearly dependent set of vectors, each vector is vital for defining the span of the set's vectors. If you remove even one vector, the span of the vectors will change!
+
+At a more geometric level of thinking, a set of $n$ linearly independent vectors $$S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$$ spans a space with an [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of $n$ because in order to specify any vector $\boldsymbol{v}$ in the span of these vectors, one must specify the coefficients $c_1, \dots, c_n$ to construct $\boldsymbol{v}$ from the vectors in $S$. That is,  
+
+$$\boldsymbol{v} = c_1\boldsymbol{x}_1 + \dots + c_n\boldsymbol{x}_n$$ 
+
+However, if $S$ is linearly dependent, then we can throw away "redundant" vectors in $S$.  In fact, we see that the intrinsic dimensionality of a linearly dependent set $S$ is the maximum sized subset of $S$ that is linearly independent!
