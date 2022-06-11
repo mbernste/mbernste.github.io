@@ -19,13 +19,20 @@ In this post, we will present a more foundatioanl concept, the _span_ of a set o
 Span
 ----
 
-Given a set of vectors $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$ the set of all vectors that can be formed via a weighted sum of the vectors, called a **linear combination** of these vectors is called the **span** of these vectors. 
+Specifically, given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$
+and a set of vectors $S := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$ the set of all vectors that can be formed via a weighted sum of the vectors is called the **span** of these vectors. 
 
-Specifically, given a vector space $(\mathcal{V}, \mathcal{F})$
+That is, the span of a set of vectors $S$ is the set 
 
-That is, the span of a set of vectors $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$ is the set 
+$$\text{Span}(S) := \left\{ \sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathcal{F} \right\}$$
 
-$$S := \left\{ \sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathcal{F} \right\}$$
+Intuitively, you can think of $\text{Span}(S)$ as the set of all vectors that can be "constructed" by the vectors in $S$. 
+
+In the figure below, we show two vectors, $\boldsymbol{x}_1 and $\boldsymbol{x}_2$ (left), and two examples of vectors in the span of $\boldsymbol{x}_1 and $\boldsymbol{x}_2$: 
+
+Note, we can see that in the example above we could construct _ANY_ two dimensional vector from $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$. Thus, the span of these two vectors is all of $\mathbb{R}^2$!
+
+
 
 
 Linear independence
