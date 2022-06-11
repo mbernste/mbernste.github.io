@@ -1,4 +1,3 @@
-
 ---
 title: 'Span and linear independence'
 date: 2022-06-11
@@ -52,9 +51,13 @@ Below we demonstrate a set of linearly independent vectors (left) and a set of l
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence.png" alt="drawing" width="300"/></center>
 
+Why is the set on the right linearly dependent? As you can see below, we can use any of the two vectors to construct the third:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence_symmetry.png" alt="drawing" width="300"/></center>
+
+This example illustrates an important point about linear dependence: it is a quality that pertains to a _set of vectors_ rather than any particular vector within the set. That is, if a set of vectors are linearly dependent, then ANY of the vectors can be constructed using the remaining vectors. 
 
 Intuition
 ---------
 
-At an intuitive level, if a set of vectors is linearly independent, then in a sense there is no "redundancy" in the set of vectors. Each vector contributes something unique to the set of vectors. On the other hand, a linearly dependent set of vectors has some amount of redundancy: if you can form one of the vectors using the other vectors, then why not just remove that vector? We could recover it from the reduced set of vectors any!
+At an intuitive level, if a set of vectors is linearly dependent, then in a sense there is no "reduntancy" in the set of vectors. What do we mean by redundancy? By removing a vector from a linearly dependent set of vectors, the span of the set of vectors will remain the same! On the other hand, for a linearly dependent set of vectors, each vector is vital for defining the span of the set's vectors. If you remove even one vector, the span of the vectors will change -- in fact, it will get smaller!
