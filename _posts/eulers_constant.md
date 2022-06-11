@@ -32,4 +32,8 @@ for some particular constant $K$ that is determined by $a$. To see why this is t
 
 $$\begin{align*}\frac{da^x}{dx} := \lim h \rightarrow 0 \frac{a^{x+h} - a^x}{h} \\ &:= \lim h \rightarrow 0 \frac{a^xa^h} - a^x}{h} \\ &:= a^x \lim h \rightarrow 0 \frac{a^{h} - 1}{h} \end{align*}$$
 
-Note, that the derivative of $a^x$ is simply $a^x$ scaled by some value equal to $\lim h \rightarrow 0 \frac{a^{h} - 1}{h}$. What is this value exactly?
+Note, that the derivative of $a^x$ is simply $a^x$ scaled by some constant,
+
+$$K := \lim h \rightarrow 0 \frac{a^{h} - 1}{h}$$
+
+We see that this constant is determined by the value of $a$. 
