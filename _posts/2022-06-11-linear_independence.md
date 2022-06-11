@@ -13,9 +13,11 @@ Span
 
 Given a set of vectors $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$ the set of all vectors that can be formed via a weighted sum of the vectors, called a **linear combination** of these vectors is called the **span** of these vectors. 
 
-That is, the span of  $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n$ is the set 
+Specifically, given a vector space $(\mathcal{V}, \mathcal{F})$
 
-$$S := \left\{\sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathbb{R} \right\}$$
+That is, the span of a set of vectors $\boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$ is the set 
+
+$$S := \left\{ \sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathcal{F} \right\}$$
 
 
 Linear independence
