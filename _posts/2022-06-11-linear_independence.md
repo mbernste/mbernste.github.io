@@ -27,7 +27,7 @@ $$\text{Span}(S) := \left\{ \sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_
 
 Intuitively, you can think of $\text{Span}(S)$ as the set of all vectors that can be "constructed" by the vectors in $S$. 
 
-In the figure below, we show two vectors, $\boldsymbol{x}_1 and $\boldsymbol{x}_2$ (left), and two examples of vectors in the span of $\boldsymbol{x}_1 and $\boldsymbol{x}_2$: 
+In the figure below, we show two vectors, $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$ (left), and two examples of vectors in their span: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors.png" alt="drawing" width="300"/></center>
 
@@ -36,7 +36,6 @@ Note, we can see that in the example above we could construct _ANY_ two dimensio
 In the figure below, we show another example:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors_2.png" alt="drawing" width="450"/></center>
-
 
 This time, $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ don't span all of $\mathbb{R}^2, but rather, only the line on which $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ lie.
 
