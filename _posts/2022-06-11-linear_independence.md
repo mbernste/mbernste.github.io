@@ -30,9 +30,9 @@ Intuitively, you can think of $\text{Span}(S)$ as the set of all vectors that ca
 
 In the figure below, we show two vectors, $\boldsymbol{x}_1 and $\boldsymbol{x}_2$ (left), and two examples of vectors in the span of $\boldsymbol{x}_1 and $\boldsymbol{x}_2$: 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors.png" alt="drawing" width="300"/></center>
+
 Note, we can see that in the example above we could construct _ANY_ two dimensional vector from $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$. Thus, the span of these two vectors is all of $\mathbb{R}^2$!
-
-
 
 
 Linear independence
