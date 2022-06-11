@@ -35,7 +35,7 @@ Note, we can see that in the example above we could construct _ANY_ two dimensio
 
 In the figure below, we show another example:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors_2.png" alt="drawing" width="300"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors_2.png" alt="drawing" width="450"/></center>
 
 
 This time, $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ don't span all of $\mathbb{R}^2, but rather, only the line on which $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ lie.
@@ -49,11 +49,11 @@ Said differently, a set of vectors are linearly independent if you cannot form a
 
 Below we demonstrate a set of linearly independent vectors (left) and a set of linearly dependent vectors (right):
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence.png" alt="drawing" width="300"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence.png" alt="drawing" width="450"/></center>
 
 Why is the set on the right linearly dependent? As you can see below, we can use any of the two vectors to construct the third:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence_symmetry.png" alt="drawing" width="300"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence_symmetry.png" alt="drawing" width="450"/></center>
 
 This example illustrates an important point about linear dependence: it is a quality that pertains to a _set of vectors_ rather than any particular vector within the set. That is, if a set of vectors are linearly dependent, then ANY of the vectors can be constructed using the remaining vectors. 
 
