@@ -20,8 +20,9 @@ To review, exponential functions are functions of the form:
 
 $$f(x) := a^x$$
 
-for some constant $a$. Exponential functions are do not only grow, but their _growth_ grows. They look like the following:
+for some constant $a$. Exponential functions do not only grow, but their _growth_ also grows. They look like the following:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/exponential.png" alt="drawing" width="400"/></center>
+
 
 
