@@ -53,7 +53,7 @@ In still other cases, the system could have no solutions at all! For example:
 
 $$\begin{align*}3 x_1 + 2 x_2 + 0x_3 &= 1 \\ 2 x_1 + -2 x_2 + 0x_3 &= -2 \\ -x_1 + 0.5 x_2 + + 0x_3 &= 0 \end{align*}$$
 
-How can we tell how many solutions a given system of linear equations has? 
+How can we tell how many solutions a given system of linear equations has? We will use the theory of linear algebra to answer this question!
 
 Representing systems of linear equations using matrices
 -------------------------------------------------------
@@ -68,14 +68,14 @@ $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
 This is an important point: any system of linear equations can be written succintly as an equation using matrix-vector multiplication. By viewing systems of linear equations through this lense, we can reason about the number of solutions to a system of linear equations using properties of the matrix $\boldsymbol{A}$!
 
-The geometry of systems of linear equations
--------------------------------------------
+Given this newfound representation for systems of linear equations, let us employ the insights that we have gained from our study of [matrix-vector multiplication from a previous blog post](https://mbernste.github.io/posts/matrix_vector_mult/). 
 
-Given our newfound insight that systems of linear equations can be written a equations that involve matrix-vector multipliation, let us employ the geometric insights that we have gained from our study of [matrix-vector multiplication in a previous blog post](https://mbernste.github.io/posts/matrix_vector_mult/). 
+As we saw, matrix-vector multiplication between a matrix $\boldsymbol{A}$ and vector $\boldsymbol{x}$ can be understood as taking a linear combination of the column vectors of $\boldsymbol{A}$ using the elements of $\boldsymbol{x}$ as the coefficients:
 
-As we saw, matrix-vector multiplication between a matrix $\boldsymbol{A}$ and vector $\boldsymbol{x}$ can be understood as taking a linear combination of the column vectors of $\boldsymbol{A}$ using the elements of $\boldsymbol{x}$ as the coefficients. 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="700"/></center>
 
-Now, we write a system of linear equations using matrix notation, $\boldsymbol{Ax} = \boldsymbol{b}$, we can ask how many solutions this system has by geometrically reasoning about how many vectors $\boldsymbol{x}$ can be inserted into this equation for it to hold.
+Thus, we see that the solution to a system of linear equations is any set of weights for which, if we take a weighted sum of the columns of $\boldsymbol{A}$, we get the vector $\boldsymbol{b}$!
+
 
 
 
