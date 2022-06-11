@@ -23,8 +23,8 @@ Before we start, we will review a few important concepts. First, we will discuss
 
 Let's dig in!
 
-Systems of linear equations
----------------------------
+How matrices can represent systems of linear equations
+------------------------------------------------------
 
 To review, a system of linear equation is a set of linear equations that all utilize the same set of variables, $x_1, x_2, \dots, x_n$, but each equation differs by the coefficients that multiply each variable. 
 
@@ -44,8 +44,8 @@ Notice, we can can write this system of linear equations much more succinctly us
 
 $$\begin{bmatrix}a_{1,1} && a_{1,2} && a_{1,3} \\ a_{2,1} && a_{2,2} && a_{2,3} \\ a_{3,1} && a_{3,2} && a_{3,3} \end{bmatrix} = \begin{bmatrix}b_1 \\ b_2 \\ b_3\end{bmatrix}$$
 
-
-
+The relationship between invertible matrices and the solutions to systems of linear equations
+--------------------------------------------------------------------------------------------
 
 
 
