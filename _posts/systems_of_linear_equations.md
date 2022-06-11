@@ -74,8 +74,11 @@ As we saw, matrix-vector multiplication between a matrix $\boldsymbol{A}$ and ve
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="700"/></center>
 
-Thus, we see that the solution to a system of linear equations is any set of weights for which, if we take a weighted sum of the columns of $\boldsymbol{A}$, we get the vector $\boldsymbol{b}$!
+Thus, we see that the solution to a system of linear equations is any set of weights for which, if we take a weighted sum of the columns of $\boldsymbol{A}$, we get the vector $\boldsymbol{b}$! Here we see that if $\boldsymbol{b}$ lies outside the [span](https://mbernste.github.io/posts/linear_independence/) of the columns of $\boldsymbol{A}$, then the system will have **no solutions**. This is because there is no way to construct $\boldsymbol{b}$ from the columns of $\boldsymbol{A}$.
 
+Now, what if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbol{A}$? How many solutions will the system have? Recall that an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/) maps each vector $\boldsymbol{x}$ to a unique vector $\boldsymbol{b}$ and each $\boldsymbol{b}$ corresponds to a unique input vector $\boldsymbol{x}$. Said more succintly, an invertible matrix one-to-one and onto. Thus, we see that if $\boldsymbol{A}$ is invertible, there will be exactly **one solution** to the system of linear equations.
+
+Finally, what if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbol{A}$, but $\boldsymbol{A}$ is singular. How many solutions will the system have? 
 
 
 
