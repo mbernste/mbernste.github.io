@@ -13,7 +13,7 @@ _In this blog post, we will discuss the relationship between matrices and system
 Introduction
 ------------
 
-In this blog post, we will discuss the relationship between matrices and systems of linear equations. Specifically, we will show how systems of linear equations can be represented as a single matrix equation. Solutions to the system of linear equations can be reasoned about by examining the characteristics of the matrices and vectors in that matrix equation.
+In this blog post, we will discuss the relationship between [matrices](https://mbernste.github.io/posts/matrices/) and systems of linear equations. Specifically, we will show how systems of linear equations can be represented as a single matrix equation. Solutions to the system of linear equations can be reasoned about by examining the characteristics of the matrices and vectors involved in that matrix equation.
 
 Systems of linear equations
 ---------------------------
