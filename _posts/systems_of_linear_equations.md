@@ -1,6 +1,6 @@
 ---
-title: 'Systems of linear equations and elementary row operations'
-date: 2022-06-11
+title: 'Systems of linear equations'
+date: 2022-06-12
 permalink: /posts/systems_linear_equations/
 tags:
   - tutorial
@@ -8,14 +8,12 @@ tags:
   - linear algebra
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+_In this blog post, we will discuss the relationship between matrices and systems of linear equations. Specifically, we will show how systems of linear equations can be represented as a single matrix equation. Solutions to the system of linear equations can be reasoned about by examining the characteristics of the matrices and vectors in that matrix equation._
 
 Introduction
 ------------
 
-Many curricula in linear algebra begin by introducing systems of linear equations. In my [blog posts on linear agebra](https://mbernste.github.io/posts/), I take an alternative pedogocial route that is a bit more abstract. Instead of starting with systems of linear equations, I start with [vector spaces](https://mbernste.github.io/posts/vector_spaces/), [matrices](https://mbernste.github.io/posts/matrices/), and [linear transformations](https://mbernste.github.io/posts/matrices_linear_transformations/). Advantages to this approach are 1) right from the start, we delve into the deep mathematical structures at the heart of linear algebra and 2) we keep everything abstract and thus, very generalizable to specific applications and problems. 
-
-In this blog post, we will begin by taking a step back from the very abstract and discuss the relationship between matrices and systems of linear equations. Specifically, we will show how many ideas we have discussed so far, such as invertible matrices, relate to description of solutions to systems of linear equations.  Let's dig in!
+In this blog post, we will discuss the relationship between matrices and systems of linear equations. Specifically, we will show how many ideas we have discussed so far in previous linear algebra blog posts, such as [span](https://mbernste.github.io/posts/linear_independence/), [linear independence](https://mbernste.github.io/posts/linear_independence/), and the [invertibility of matrices](https://mbernste.github.io/posts/inverse_matrices/), relate to the solutions of systems of linear equations.  
 
 Systems of linear equations
 ---------------------------
