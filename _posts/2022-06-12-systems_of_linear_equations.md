@@ -35,7 +35,7 @@ where $a_{1,1}, \dots, a_{3,3}$ are the coefficients and $b_1, b_2,$ and $b_3$ a
 Reasoning about the solutions to a system of linear equations by respresenting the system as a matrix equation
 --------------------------------------------------------------------------------------------------------------
 
-Now, a natural question is: given a system of linear equations, how many solutions does it have? We will use concepts from linear algebra to help address this question.
+Now, a natural question is: given a system of linear equations, how many solutions does it have? Will a system always have a solution? If did does have a solution will it only be one solution? We will use concepts from linear algebra to help address this question.
 
 First, note that we can write a system of linear equations much more succinctly using [matrix-vector](https://mbernste.github.io/posts/matrix_vector_mult/) multiplication. That is,
 
@@ -57,8 +57,7 @@ Now, what if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbo
 1. Recall that an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/) maps each vector $\boldsymbol{x}$ to a unique vector $\boldsymbol{b}$ and each $\boldsymbol{b}$ corresponds to a unique input vector $\boldsymbol{x}$. Said more succintly, an invertible matrix one-to-one and onto. Thus, we see that if $\boldsymbol{A}$ is invertible, there will be exactly **one solution** to the system of linear equations.
 2. What if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbol{A}$, but $\boldsymbol{A}$ is singular. How many solutions will the system have? In this scenario, we see that there are an infinite number of ways to construct $\boldsymbol{b}$ from the columns of $\boldsymbol{A}$ and thus there are an infinite number of solutions to the system of linear equations.
 
-
-
+Thus, in summary, we see that a system of linear equations can have either 1) no solution, 2) exactly one solution, or 3) infinitely many solutions. Which category the system falls into depends on the properties $\boldsymbol{A}$!
 
 
 
