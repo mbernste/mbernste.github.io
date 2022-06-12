@@ -1,5 +1,5 @@
 ---
-Euler's number
+title: "Euler's number"
 date: 2022-06-11
 permalink: /posts/eulers_number/
 tags:
