@@ -1,5 +1,5 @@
 ---
-title: 'Systems of linear equations'
+title: 'Reasoning about systems of linear equations using linear algebra'
 date: 2022-06-12
 permalink: /posts/systems_linear_equations/
 tags:
@@ -13,7 +13,7 @@ _In this blog post, we will discuss the relationship between matrices and system
 Introduction
 ------------
 
-In this blog post, we will discuss the relationship between matrices and systems of linear equations. Specifically, we will show how many ideas we have discussed so far in previous linear algebra blog posts, such as [span](https://mbernste.github.io/posts/linear_independence/), [linear independence](https://mbernste.github.io/posts/linear_independence/), and the [invertibility of matrices](https://mbernste.github.io/posts/inverse_matrices/), relate to the solutions of systems of linear equations.  
+In this blog post, we will discuss the relationship between matrices and systems of linear equations. Specifically, we will show how systems of linear equations can be represented as a single matrix equation. Solutions to the system of linear equations can be reasoned about by examining the characteristics of the matrices and vectors in that matrix equation.
 
 Systems of linear equations
 ---------------------------
