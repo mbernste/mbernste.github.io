@@ -1,3 +1,12 @@
+---
+Euler's number'
+date: 2022-06-11
+permalink: /posts/eulers_number/
+tags:
+  - tutorial
+  - mathematics
+---
+
 _For many people I've talked to, Euler's number $e := 2.71828$ is a somewhat mysterious number one sort of just forced to take for granted. Thanks to an excellent explanation by [Grant Sanderson](Grant Sanderson)'s [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I know better understand this constant.  In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on Sanderson's explanation._
 
 Introduction
@@ -24,7 +33,7 @@ for some constant $a$. Exponential functions do not only grow, but their _growth
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/exponential.png" alt="drawing" width="400"/></center>
 
-A crucial characteristic of exponentials is that their growth grows in a linear rate. That is, the derivative of an exponential function _is proportional_ to the function itself. That is:
+A crucial characteristic of exponentials is that the derivative of an exponential function _is proportional_ to the function itself. That is:
 
 $$\frac{da^x}{dx} = Ka^x$
 
