@@ -26,7 +26,7 @@ Given a set of vectors, the **span** of the set of vectors are all of the vector
 
 <center><span style="color:#0060C6">$$\text{Span}(S) := \left\{ \sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathcal{F} \right\}$$ </span></center>
 
-Intuitively, you can think of $S$ as the set of "building blocks" and the $\text{Span}(S)$ as the set of all vectors that can be "constructed" from the building blocks in $S$. To illustrate this point, we show in the figure below two vectors, $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$ (left), and two examples of vectors in their span (right): 
+Intuitively, you can think of $S$ as a set of "building blocks" and the $\text{Span}(S)$ as the set of all vectors that can be "constructed" from the building blocks in $S$. To illustrate this point, we show in the figure below two vectors, $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$ (left), and two examples of vectors in their span (right): 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors.png" alt="drawing" width="600"/></center>
 
@@ -39,11 +39,11 @@ This time, $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ don't span all of $\mathbb{
 Linear independence
 -------------------
 
-Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$, and a set of vectors $S := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$, the vectors are said to be **linearly independent** if each vector lies outside the span of the remaining vectors.
+Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$, and a set of vectors $S := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$, the vectors are said to be **linearly independent** if each vector lies outside the span of the remaining vectors. More rigorously,
 
-Said differently, a set of vectors are linearly independent if you cannot form any of the vectors in the set using a linear combination of any of the other vectors.
+<span style="color:#0060C6">**Definition 2 (linear independence):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$, $S$ is called **linearly independent** if for each vector $\boldsymbol{x_i} \in S$, it holds that $\boldsymbol{x}_i \notin \text{Span}(S \setmminus \{\boldsymbol{x}_i\})$.</span>
 
-Below we demonstrate a set of linearly independent vectors (left) and a set of linearly dependent vectors (right):
+Said differently, a set of vectors are linearly independent if you cannot form any of the vectors in the set using a linear combination of any of the other vectors. Below we demonstrate a set of linearly independent vectors (left) and a set of linearly dependent vectors (right):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence.png" alt="drawing" width="600"/></center>
 
