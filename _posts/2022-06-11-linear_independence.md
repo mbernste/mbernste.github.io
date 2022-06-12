@@ -26,7 +26,7 @@ Given a set of vectors, the **span** of the set of vectors are all of the vector
 
 <center><span style="color:#0060C6">$$\text{Span}(S) := \left\{ \sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathcal{F} \right\}$$ </span></center>
 
-Intuitively, you can think of $S$ as the set of "building blocks" and the $\text{Span}(S)$ as the set of all vectors that can be "constructed" from the building blocks in $S$. To illustrate this point, we show in the figure below two vectors, $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$ (left), and two examples of vectors in their span: 
+Intuitively, you can think of $S$ as the set of "building blocks" and the $\text{Span}(S)$ as the set of all vectors that can be "constructed" from the building blocks in $S$. To illustrate this point, we show in the figure below two vectors, $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$ (left), and two examples of vectors in their span (right): 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors.png" alt="drawing" width="600"/></center>
 
