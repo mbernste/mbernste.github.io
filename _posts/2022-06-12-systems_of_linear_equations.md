@@ -55,7 +55,7 @@ Thus, we see that the solution to a system of linear equations is any set of wei
 
 Now, what if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbol{A}$? How many solutions will the system have? In this case there are two possible scenarios:
 1. Recall that an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/) maps each vector $\boldsymbol{x}$ to a unique vector $\boldsymbol{b}$ and each $\boldsymbol{b}$ corresponds to a unique input vector $\boldsymbol{x}$. Said more succintly, an invertible matrix one-to-one and onto. Thus, we see that if $\boldsymbol{A}$ is invertible, there will be exactly **one solution** to the system of linear equations.
-2. What if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbol{A}$, but $\boldsymbol{A}$ is singular. How many solutions will the system have? In this scenario, we see that there are an infinite number of ways to construct $\boldsymbol{b}$ from the columns of $\boldsymbol{A}$ and thus there are an infinite number of solutions to the system of linear equations.
+2. What if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbol{A}$, but $\boldsymbol{A}$ is singular? How many solutions will the system have? In this scenario, we see that there are an infinite number of ways to construct $\boldsymbol{b}$ from the columns of $\boldsymbol{A}$ and thus there are an infinite number of solutions to the system of linear equations.
 
 Thus, in summary, we see that a system of linear equations can have either 1) no solution, 2) exactly one solution, or 3) infinitely many solutions. Which category the system falls into depends on the properties $\boldsymbol{A}$!
 
