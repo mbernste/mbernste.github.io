@@ -20,16 +20,13 @@ In this post, we will present a more foundatioanl concept, the _span_ of a set o
 Span
 ----
 
-Specifically, given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$
-and a set of vectors $S := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$ the set of all vectors that can be formed via a weighted sum of the vectors is called the **span** of these vectors. 
+Given a set of vectors, the **span** of the set of vectors are all of the vectors that can be "constructed" by taking linear combinations of vectors in that set. More rigorously,
 
-That is, the span of a set of vectors $S$ is the set 
+<span style="color:#0060C6">**Definition 1 (span):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$, the **span** of $S$, denoted $\text{Span}(S)$ is the set of all vectors that can be formed by taking a linear combination of vectors in $S$. That is,</span>
 
-$$\text{Span}(S) := \left\{ \sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathcal{F} \right\}$$
+<center><span style="color:#0060C6">$$\text{Span}(S) := \left\{ \sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathcal{F} \right\}$$ </span></center>
 
-Intuitively, you can think of $\text{Span}(S)$ as the set of all vectors that can be "constructed" by the vectors in $S$. 
-
-In the figure below, we show two vectors, $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$ (left), and two examples of vectors in their span: 
+Intuitively, you can think of $S$ as the set of "building blocks" and the $\text{Span}(S)$ as the set of all vectors that can be "constructed" from the building blocks in $S$. To illustrate this point, we show in the figure below two vectors, $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$ (left), and two examples of vectors in their span: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors.png" alt="drawing" width="600"/></center>
 
