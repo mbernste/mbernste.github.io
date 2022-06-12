@@ -30,7 +30,7 @@ More abstractly, we could write a system of linear equations as
 
 $$\begin{align*}a_{1,1}x_1 + a_{1,2}x_2 + a_{1,3}x_3 &= b_1 \\ a_{2,1}x_1 + a_{2,2}x_2 + a_{2,3}x_3 &= b_2 \\ a_{3,1}x_1 + a_{3,2}x_2 + a_{3,3}x_3 &= b_3 \end{align*}$$
 
-where $a_{1,1}, \dots, a_{3,3}$ are the coefficients and $b_1, b_2,$ and $b_3$ are the constant terms, all treated as fixed.
+where $a_{1,1}, \dots, a_{3,3}$ are the coefficients and $b_1, b_2,$ and $b_3$ are the constant terms, all treated as _fixed_. By "fixed", we mean that we assume that $a_{1,1}, \dots, a_{3,3}$ and $b_1, b_2,$ and $b_3$ are known. In contrast, $x_1, x_2,$ and $x_3$ are unknown. We can try different values for $x_1, x_2,$ and $x_3$ and test whether or not that assignment is a solution to the system. 
 
 Reasoning about the solutions to a system of linear equations by respresenting the system as a matrix equation
 --------------------------------------------------------------------------------------------------------------
