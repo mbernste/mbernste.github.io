@@ -28,7 +28,8 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Matrices as functions](https://mbernste.github.io/posts/matrices_as_functions/)  
 [Matrices characterize linear transformations](https://mbernste.github.io/posts/matrices_linear_transformations/)  
 [Matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/)  
-[Invertible matrices](https://mbernste.github.io/posts/inverse_matrices/)  
+[Invertible matrices](https://mbernste.github.io/posts/inverse_matrices/) 
+[Reasoning about systems of linear equations using linear algebra](https://mbernste.github.io/posts/systems_linear_equations/)  
 
 ## Probability
 
