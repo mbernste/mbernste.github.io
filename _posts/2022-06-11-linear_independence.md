@@ -51,8 +51,6 @@ Why is the set on the right linearly dependent? As you can see below, we can use
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence_symmetry.png" alt="drawing" width="600"/></center>
 
-This example illustrates an important point about linear dependence: it is a quality that pertains to a _set of vectors_ rather than any particular vector within the set. That is, if a set of vectors are linearly dependent, then ANY of the vectors can be constructed using the remaining vectors. 
-
 Intuition
 ---------
 
