@@ -1,6 +1,6 @@
 ---
 title: 'Elementary matrices and the general linear group'
-date: 2022-06-12
+date: 2022-08-07
 permalink: /posts/elementary_matrices/
 tags:
   - tutorial
