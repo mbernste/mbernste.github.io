@@ -81,9 +81,9 @@ $$\begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix}\begin{bmatr
 
 When solving the system using the elementary row operations, we needn't write out all of the equations. Really, all we need to do is keep track of how $\boldsymbol{A}$ and $$\boldsymbol{b}$$ are being transformed upon each iteration. For ease of notation, we can join $\boldsymbol{A}$ and $\boldsymbol{b}$ into a single matrix, called an **augmented matrix**. In our example, this augmented matrix would look like:
 
-Then, our performance of the row operations needs only to update the augmented matrix:
-
 $$\begin{bmatrix}-1 & -2 & 1 & \bigm| & -3 \\ 0 & 3 & 0 & \bigm| & 3 \\ 2 & 4 & 0 & \bigm| & 10 \end{bmatrix}$$
+
+Then, our performance of the row operations needs only to update the augmented matrix. This is how we would do it:
 
 _Row swap_ the first and third equations:
 
