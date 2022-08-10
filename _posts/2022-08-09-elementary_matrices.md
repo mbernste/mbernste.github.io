@@ -1,5 +1,5 @@
 ---
-title: 'From elementary row operations to the general linear group'
+title: 'Elementary matrices and the general linear group'
 date: 2022-08-09
 permalink: /posts/elementary_matrices/
 tags:
