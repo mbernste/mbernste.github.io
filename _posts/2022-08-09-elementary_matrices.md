@@ -1,6 +1,6 @@
 ---
 title: 'Solving systems of linear equations using elementary row operations'
-date: 2022-08-07
+date: 2022-08-09
 permalink: /posts/elementary_matrices/
 tags:
   - tutorial
