@@ -28,11 +28,11 @@ In this post, we will discuss how one can solve for this exact solution using a 
 Elementary row operations
 --------------------------
 
-Before digging into matrices, let's first discuss how one can go about solving a system of linear equations:
+Before digging into matrices, let's first discuss how one can go about solving a system of linear equations. Say we have a system with three equations and three variables:
 
 $$\begin{align*}a_{1,1}x_1 + a_{1,2}x_2 + a_{1,3}x_3 &= b_1 \\ a_{2,1}x_1 + a_{2,2}x_2 + a_{2,3}x_3 &= b_2 \\ a_{3,1}x_1 + a_{3,2}x_2 + a_{3,3}x_3 &= b_3 \end{align*}$$
 
-To solve such a system, our goal is perform simple algebraic operations on each of these equations until we convert the system to one with the following form:
+To solve such a system, our goal is perform simple algebraic operations on these equations until we convert the system to one with the following form:
 
 $$\begin{align*}x_1 &= c_1 \\ x_2 &= c_2 \\ x_3 &= c_3 \end{align*}$$
 
