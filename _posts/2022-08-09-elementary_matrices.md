@@ -91,3 +91,48 @@ Perform a _row sum_ and add the first row to the third:
 Perform _scalar multiplication_ and multiply the second equation by 1/3:
 
 Perform a _row sum_ and add -2 multiplied by the second row to the first:
+
+Now, let's re-write this in matrix form:
+
+Note that $$\boldsymbol{A}$$ has been _transformed_ to the identity matrix $$\boldsymbol{I}$$. This will be a key observation as we move into the next section.
+
+Elementary matrices
+-------------------
+
+Notice on each elementary row operation, we transformed the matrix $\boldsymbol{A}$ using a series of steps until it became the identity matrix $\boldsymbol{I}$. In fact, each of these elementary row operations can be represented as a matrix that is operating on $\boldsymbol{I}$. Such a matrix that represents an elementary row operation is called an **elementary matrix**. 
+
+To demonstrate, that our elementary row operations can be performed using matrix multiplication, let's look back at our example. We start with the matrix 
+
+$$\boldsymbol{A} := $$
+
+Then, first we _row swap_ the first and third equations:
+
+
+
+Then perform _scalar multiplication_ and multiply the first equation by 1/2:
+
+Then perform a _row sum_ and add the first row to the third:
+
+Then perform _scalar multiplication_ and multiply the second equation by 1/3:
+
+Then perform a _row sum_ and add -2 multiplied by the second row to the first:
+
+
+More generally, the elementary matrices take the following form: An elementary matrix that represents a scalar multiplication by $c$ can be written as:
+
+An elementary matrix that represents a row swap can be written as:
+
+An elementary matrix that represents a row sum can be written as:
+
+This may seem cumbersome, but in the next section we'll show something quite elegant that emerges from using elementary matrices to represent elementary row operations: invertible matrices form a [mathematical group](https://en.wikipedia.org/wiki/Group_(mathematics))!
+
+The general linear group
+------------------------
+
+Note that the elementary matrices all all invertible. The inverse to an elementary matrix representing scalar multiplication by a constant $c$ is simply the elementary matrix that scales by $\frac{1}{c}$. The inverse to an elementary matrix representing a row swap is simply the elementary matrix that swaps the rows back to their original configuration. The inverse to an elementary matrix representing a row sum is simply the elementary matrix that performs a row sum but performs the subtraction.
+
+From this fact, we can see that we can go from any invertible matrix to another by multiplying the matrix with some series of elementary matrices. That is, if we have two invertible matrices $\boldsymbol{A}$ and $\boldsymbol{B}$, then there exists a sequence of elementary matrices $\boldsymbol{E}_1, \dots, \boldsymbol{E}_n$ such that 
+
+$\boldsymbol{B} = $\boldsymbol{A}\boldsymbol{E}_1, \dots, \boldsymbol{E}_n$
+
+How do we know this is true?
