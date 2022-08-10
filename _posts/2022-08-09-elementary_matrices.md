@@ -1,5 +1,5 @@
 ---
-title: 'Elementary row operations, elementary matrices, and the general linear group'
+title: 'From elementary row operations to the general linear group'
 date: 2022-08-09
 permalink: /posts/elementary_matrices/
 tags:
@@ -23,7 +23,7 @@ $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
 where $\boldsymbol{A}$ is the matrix of coefficients $a_{1,1}, a_{1,2}, \dots, a_{3,3}$ and $\boldsymbol{b}$ is the matrix of coefficients of $b_1, b_2,$ and $b_3$.  Furthermore, we noted that this system will have exactly one solution if $\boldsymbol{A}$ is an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/). 
 
-In this post, we will discuss how one can solve for this exact solution using a series of operations of the system that involve a particular class of invertible matrices called the **elementary matrices**. We will show that any invertible matrix can be converted to another invertible matrix by performing some sequence of matrix multiplications with elementary matrices. 
+In this post, we will discuss how one can solve for this exact solution using a series of operations of the system that involve a particular class of invertible matrices called the **elementary matrices**. We will show that any invertible matrix can be converted to another invertible matrix by performing some sequence of matrix multiplications with elementary matrices. In fact, this reveals a deep mathematical structure regarding invertible matrices: they form a **group**. That is, you can always go from any invertible matrix to another via a series of multipliciations by elementary row operations!
 
 Elementary row operations
 --------------------------
@@ -68,7 +68,7 @@ Finally, let's perform a _row sum_ and add -2 multiplied by the second row to th
 
 $$\begin{align*}x_1 &= 3  \\ x_2 &= 1 \\ x_3 &= 2\end{align*}$$
 
-And there we go, we've solved the system using these three kinds of operations.
+And there we go, we've solved the system using these elementary row operations.
 
 Elementary row operations in matrix notation
 --------------------------------------------
