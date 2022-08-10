@@ -129,7 +129,7 @@ This may seem cumbersome, but in the next section we'll show something quite ele
 The general linear group
 ------------------------
 
-Note that the elementary matrices all all invertible. The inverse to an elementary matrix representing scalar multiplication by a constant $c$ is simply the elementary matrix that scales by $\frac{1}{c}$. The inverse to an elementary matrix representing a row swap is simply the elementary matrix that swaps the rows back to their original configuration. The inverse to an elementary matrix representing a row sum is simply the elementary matrix that performs a row sum but performs the subtraction.
+Note that the elementary matrices all all invertible. The inverse to an elementary matrix representing scalar multiplication by a constant $c$ is simply the elementary matrix that scales by $\frac{1}{c}$. The inverse to an elementary matrix representing a row swap is simply the elementary matrix that swaps the rows back to their original configuration. The inverse to an elementary matrix representing a row sum is simply the elementary matrix that represents a row sum but performs the corresponding subtraction.
 
 From this fact, we can see that we can go from any invertible matrix to another by multiplying the matrix with some series of elementary matrices. That is, if we have two invertible matrices $\boldsymbol{A}$ and $\boldsymbol{B}$, then there exists a sequence of elementary matrices $\boldsymbol{E}_1, \dots, \boldsymbol{E}_n$ such that 
 
