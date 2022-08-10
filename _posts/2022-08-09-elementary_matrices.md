@@ -81,19 +81,19 @@ $$\begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix}\begin{bmatr
 
 When solving the system using the elementary row operations, we needn't write out all of the equations. Really, all we need to do is keep track of how $\boldsymbol{A}$ and $$\boldsymbol{b}$$ are being transformed upon each iteration. For ease of notation, we can join $\boldsymbol{A}$ and $\boldsymbol{b}$ into a single matrix, called an **augmented matrix**. In our example, this augmented matrix would look like:
 
-$$\begin{bmatrix}-1 & -2 & 1 & \bigm| & -3 \\ 0 & 3 & 0 & \bigm| & 3 \\ 2 & 4 & 0 & \bigm| & 10 \end{bmatrix}$$
+$$\begin{bmatrix}-1 & -2 & 1 & -3 \\ 0 & 3 & 0 & 3 \\ 2 & 4 & 0 & 10 \end{bmatrix}$$
 
-Then, our performance of the row operations needs only to update the augmented matrix. This is how we would do it:
+In the augmented matrix, the final column stores $\boldsymbol{b}$ and all of the previous columns store the columns of $\boldsymbol{A}$. Our execution of the row operations can now operate only on this augmented matrix as follows:
 
-_Row swap_ the first and third equations:
+1. _Row swap_: swap the first and third equations:
 
-Perform _scalar multiplication_ and multiply the first equation by 1/2:
+2. _Scalar multiplication_: Multiply the first equation by 1/2:
 
-Perform a _row sum_ and add the first row to the third:
+3. _Row sum_: add the first row to the third:
 
-Perform _scalar multiplication_ and multiply the second equation by 1/3:
+4. _Scalar multiplication_: Multiply the second equation by 1/3:
 
-Perform a _row sum_ and add -2 multiplied by the second row to the first:
+5. _Row sum_ and add -2 multiplied by the second row to the first:
 
 Now, let's re-write this in matrix form:
 
