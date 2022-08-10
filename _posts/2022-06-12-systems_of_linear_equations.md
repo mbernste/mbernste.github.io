@@ -35,7 +35,7 @@ where $a_{1,1}, \dots, a_{3,3}$ are the coefficients and $b_1, b_2,$ and $b_3$ a
 Reasoning about the solutions to a system of linear equations by respresenting the system as a matrix equation
 --------------------------------------------------------------------------------------------------------------
 
-Now, a natural question is: given a system of linear equations, how many solutions does it have? Will a system always have a solution? If did does have a solution will it only be one solution? We will use concepts from linear algebra to help address this question.
+Now, a natural question is: given a system of linear equations, how many solutions does it have? Will a system always have a solution? If did does have a solution will it only be one solution? We will use concepts from linear algebra to address these questions.
 
 First, note that we can write a system of linear equations much more succinctly using [matrix-vector](https://mbernste.github.io/posts/matrix_vector_mult/) multiplication. That is,
 
