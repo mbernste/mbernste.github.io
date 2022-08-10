@@ -57,8 +57,12 @@ Now, what if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbo
 1. Recall that an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/) maps each vector $\boldsymbol{x}$ to a unique vector $\boldsymbol{b}$ and each $\boldsymbol{b}$ corresponds to a unique input vector $\boldsymbol{x}$. Said more succintly, an invertible matrix characterizes a one-to-one and onto [linear tranformation](https://mbernste.github.io/posts/matrices_linear_transformations/). Thus, we see that if $\boldsymbol{A}$ is invertible, there will be exactly **one solution** to the system of linear equations.
 2. What if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbol{A}$, but $\boldsymbol{A}$ is singular? How many solutions will the system have? In this scenario, we see that there are an infinite number of ways to construct $\boldsymbol{b}$ from the columns of $\boldsymbol{A}$ and thus there are an infinite number of solutions to the system of linear equations.
 
-Thus, in summary, we see that a system of linear equations can have either 1) no solution, 2) exactly one solution, or 3) infinitely many solutions. Which category the system falls into depends on the properties $\boldsymbol{A}$!
+In summary, we see that a system of linear equations can have either:
+1. **No solution.** This will occur if $$\boldsymbol{A}$$ is singular and $$\boldsymbol{b}$$ lies _outside_ the span of the columns of $\boldsymbol{A}$.
+2. **Exactly one solution.** This will occur if $$\boldsymbol{A}$$ is invertible.
+3. **Infinitely many solutions.** This will occur if $$\boldsymbol{A}$$ is singular and $$\boldsymbol{b}$$ lies _inside_ the span of the columns of $\boldsymbol{A}$.
 
+Thus, we see that we can reason about systems of linear equations, which are fairly straightforward mathematical objects, using the fairly abstract properties of the matrices and vectors used to represent them.
 
 
 
