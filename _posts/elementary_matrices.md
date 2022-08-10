@@ -47,7 +47,8 @@ Let's solve it step-by-step with simple algebra. First,
 Now, what kinds of algebraic operations can we perform on the equations of the system to solve it? There are three main categories:
 
 1. **Scalar multiplication**: Simply multiply both sides of one of the equations by a scalar. 
-2. **Row swap**: You can move one equation above or below another. Note, the order the equations are written is irrevalent to t
+2. **Row swap**: You can move one equation above or below another. Note, the order the equations are written is irrevalent to the solution, so swapping rows is really just changing how we organize the formulas. Nonetheless, this organization will be important as we demonstrate how elementary matrices can be used to solve the system.
+3. **XXXXX**
 
 
 Note that we can also write this final form of the system of linear equations as follows:
