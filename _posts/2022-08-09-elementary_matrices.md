@@ -78,6 +78,16 @@ Recall, we can represent a system of linear equations as a [matrix equation](htt
 The linear system that we just solved can be written as:
 
 
-When solving the system using the elementary row operations, we needn't write out all of the equations. Really, all we need to do is keep track of how $$\boldsymbol{A}$$ and $$\boldsymbol{b}$$ are being transformed upon each iteration. For ease of notation, we can join $$\boldsymbol{A}$$ and $$\boldsymbol{b}$$ into a single matrix, called an **augmented matrix**. In our example, this augmented matrix would look like:
+When solving the system using the elementary row operations, we needn't write out all of the equations. Really, all we need to do is keep track of how $\boldsymbol{A}$ and $$\boldsymbol{b}$$ are being transformed upon each iteration. For ease of notation, we can join $\boldsymbol{A}$ and $\boldsymbol{b}$ into a single matrix, called an **augmented matrix**. In our example, this augmented matrix would look like:
 
+Then, our performance of the row operations needs only to update the augmented matrix:
 
+_Row swap_ the first and third equations:
+
+Perform _scalar multiplication_ and multiply the first equation by 1/2:
+
+Perform a _row sum_ and add the first row to the third:
+
+Perform _scalar multiplication_ and multiply the second equation by 1/3:
+
+Perform a _row sum_ and add -2 multiplied by the second row to the first:
