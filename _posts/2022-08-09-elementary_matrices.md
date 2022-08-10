@@ -77,10 +77,13 @@ Recall, we can represent a system of linear equations as a [matrix equation](htt
 
 The linear system that we just solved can be written as:
 
+$$\begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}-3 \\ 3 \\ 10\end{bmatrix}$$
 
 When solving the system using the elementary row operations, we needn't write out all of the equations. Really, all we need to do is keep track of how $\boldsymbol{A}$ and $$\boldsymbol{b}$$ are being transformed upon each iteration. For ease of notation, we can join $\boldsymbol{A}$ and $\boldsymbol{b}$ into a single matrix, called an **augmented matrix**. In our example, this augmented matrix would look like:
 
 Then, our performance of the row operations needs only to update the augmented matrix:
+
+$$\begin{bmatrix}-1 & -2 & 1 & \bigm| & -3 \\ 0 & 3 & 0 & \bigm| & 3 \\ 2 & 4 & 0 & \bigm| & 10 \end{bmatrix}$$
 
 _Row swap_ the first and third equations:
 
