@@ -1,5 +1,5 @@
 ---
-title: 'Solving systems of linear equations using elementary row operations'
+title: 'Elementary row operations, elementary matrices, and the general linear group'
 date: 2022-08-09
 permalink: /posts/elementary_matrices/
 tags:
