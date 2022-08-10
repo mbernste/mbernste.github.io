@@ -51,19 +51,12 @@ Given this newfound representation for systems of linear equations, recall from 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="700"/></center>
 
-Thus, we see that the solution to a system of linear equations is any set of weights for which, if we take a weighted sum of the columns of $\boldsymbol{A}$, we get the vector $\boldsymbol{b}$! Here we see that if $\boldsymbol{b}$ lies outside the [span](https://mbernste.github.io/posts/linear_independence/) of the columns of $\boldsymbol{A}$, then the system will have **no solutions**. This is because there is no way to construct $\boldsymbol{b}$ from the columns of $\boldsymbol{A}$.
+Thus, we see that the solution to a system of linear equations, $\boldsymbol{x}$, is any set of weights for which, if we take a weighted sum of the columns of $\boldsymbol{A}$, we get the vector $\boldsymbol{b}$. That is, $\boldsymbol{x}$ is a vector that lies in the [span](https://mbernste.github.io/posts/linear_independence/) of the columns of $\boldsymbol{A}$!
 
-Now, what if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbol{A}$? How many solutions will the system have? In this case there are two possible scenarios:
-1. Recall that an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/) maps each vector $\boldsymbol{x}$ to a unique vector $\boldsymbol{b}$ and each $\boldsymbol{b}$ corresponds to a unique input vector $\boldsymbol{x}$. Said more succintly, an invertible matrix characterizes a one-to-one and onto [linear tranformation](https://mbernste.github.io/posts/matrices_linear_transformations/). Therefore, if $\boldsymbol{A}$ is invertible, then for any given $\boldsymbol{b}$, there will be exactly one vector, $\boldsymbol{x}$, that solves the equation. 
-2. What if $\boldsymbol{b}$ lies within the span of the columns of $\boldsymbol{A}$, but $\boldsymbol{A}$ is singular? How many solutions will the system have? In this scenario, we see that there are an infinite number of ways to construct $\boldsymbol{b}$ from the columns of $\boldsymbol{A}$ and thus there are an infinite number of solutions to the system of linear equations.
+From this observation, we can begin to draw some conclusions about the number of solutions a given system of linear equations will have based on the properties of $$\boldsymbol{A}$$. Specifically, the system will either have:
 
-In summary, we see that a system of linear equations can have either:
-1. **No solution.** This will occur if $$\boldsymbol{A}$$ is singular and $$\boldsymbol{b}$$ lies _outside_ the span of the columns of $\boldsymbol{A}$.
-2. **Exactly one solution.** This will occur if $$\boldsymbol{A}$$ is invertible.
-3. **Infinitely many solutions.** This will occur if $$\boldsymbol{A}$$ is singular and $$\boldsymbol{b}$$ lies _inside_ the span of the columns of $\boldsymbol{A}$.
-
-Thus, we see that we can reason about systems of linear equations, which are fairly straightforward mathematical objects, using the fairly abstract properties of the matrices and vectors used to represent them.
-
-
+1. **No solution.** This will occur if $$\boldsymbol{b}$$ lies _outside_ the span of the columns of $\boldsymbol{A}$. Note, this can only occur if $$\boldsymbol{b}$$ is singular. Why? Recall that an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/) maps each vector $\boldsymbol{x}$ to a unique vector $\boldsymbol{b}$ and each $\boldsymbol{b}$ corresponds to a unique input vector $\boldsymbol{x}$. Said more succintly, an invertible matrix characterizes a one-to-one and onto [linear tranformation](https://mbernste.github.io/posts/matrices_linear_transformations/). Therefore, if $\boldsymbol{A}$ is invertible, then for any given $\boldsymbol{b}$, there will _must_ exist a vector, $\boldsymbol{x}$, that solves the equation $\boldsymbol{Ax} = \boldsymbol{b}$. If such a vector does not exist, the $\boldsymbol{A}$ must not be invertible.
+2. **Exactly one solution.** This will occur if $$\boldsymbol{A}$$ is invertible. As discussed above, an invertible matrix characterizes a one-to-one and onto linear transformation and thus, for any given $\boldsymbol{b}$, there will be exactly one vector, $\boldsymbol{x}$, that solves the equation $\boldsymbol{Ax} = \boldsymbol{b}$. 
+3. **Infinitely many solutions.** This will occur if $$\boldsymbol{b}$$ lies _inside_ the span of the columns of $\boldsymbol{A}$, but $\boldsymbol{A}$ is _not_ invertible. Why would there be an infinite number of solutions? [Recall](https://mbernste.github.io/posts/inverse_matrices/) that if $\boldsymbol{A}$ is not invertible, then the columns of $\boldsymbol{A}$ are [linearly dependent](https://mbernste.github.io/posts/linear_independence/), meaning that there are an infinite number of ways to take a weighted sum of the columns of $\boldsymbol{A}$ to get $\boldsymbol{b}$.
 
 
