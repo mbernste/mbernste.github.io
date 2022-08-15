@@ -107,6 +107,8 @@ $$\begin{bmatrix}1 & 0 & 0 & 3 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2  \end{bmatrix}$
 
 Now, let's re-write this in matrix form:
 
+$$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}3 \\ 1 \\ 2\end{bmatrix}$$
+
 Note that $$\boldsymbol{A}$$ has been _transformed_ to the identity matrix $$\boldsymbol{I}$$. This will be a key observation as we move into the next section.
 
 Elementary matrices
