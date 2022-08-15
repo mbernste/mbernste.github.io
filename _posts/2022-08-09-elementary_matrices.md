@@ -87,13 +87,23 @@ In the augmented matrix, the final column stores $\boldsymbol{b}$ and all of the
 
 1. _Row swap_: swap the first and third equations:
 
+$$\begin{bmatrix}2 & 4 & 0 & 10 \\ 0 & 3 & 0 & 3 \\ -1 & -2 & 1 & -3  \end{bmatrix}$$
+
 2. _Scalar multiplication_: Multiply the first equation by 1/2:
+
+$$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 3 & 0 & 3 \\ -1 & -2 & 1 & -3  \end{bmatrix}$$
 
 3. _Row sum_: add the first row to the third:
 
+$$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 3 & 0 & 3 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
+
 4. _Scalar multiplication_: Multiply the second equation by 1/3:
 
+$$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
+
 5. _Row sum_ and add -2 multiplied by the second row to the first:
+
+$$\begin{bmatrix}1 & 0 & 0 & 3 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
 
 Now, let's re-write this in matrix form:
 
