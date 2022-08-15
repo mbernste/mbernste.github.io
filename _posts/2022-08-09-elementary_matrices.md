@@ -105,7 +105,7 @@ $$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2  \end{bmatrix}$
 
 $$\begin{bmatrix}1 & 0 & 0 & 3 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
 
-Now, let's re-write this in matrix form:
+Now, let's re-write the augmented matrix as a matrix equation:
 
 $$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}3 \\ 1 \\ 2\end{bmatrix}$$
 
