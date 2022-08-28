@@ -145,7 +145,7 @@ Notice, we've derived a series of matrices that when multiplied by $\boldsymbol{
 
 $$\boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1\boldsymbol{A} = \boldsymbol{I}$$
 
-By the [definition of an inverse matrix](https://mbernste.github.io/posts/inverse_matrices/), we see that the matrix formed by $$\boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$ is the inverse of $\boldsymbol{A}$! That is,
+By the [definition of an inverse matrix](https://mbernste.github.io/posts/inverse_matrices/), we see that the matrix formed by $\boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$ is the inverse of $\boldsymbol{A}$! That is,
 
 $$\boldsymbol{A}^{-1} = \boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$$
 
