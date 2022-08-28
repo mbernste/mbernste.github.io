@@ -141,10 +141,21 @@ Then perform a _row sum_ and add -2 multiplied by the second row to the first:
 
 $$\underbrace{\begin{bmatrix}1 & -2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{\boldsymbol{E}_5} \underbrace{\begin{bmatrix}1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}}_{\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1\boldsymbol{A}} = \begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}$$
 
-This may seem cumbersome, but in the next section we'll show something quite elegant that emerges from using elementary matrices to represent elementary row operations: invertible matrices form a [mathematical group](https://en.wikipedia.org/wiki/Group_(mathematics))!
+Notice, we've derived a series of matrices that when multiplied by $\boldsymbol{A}$ produces the identity matrix:
+
+$$\boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1\boldsymbol{A} = \boldsymbol{I}$$
+
+By the [definition of an inverse matrix](https://mbernste.github.io/posts/inverse_matrices/), we see that the matrix formed by $$\boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$ is the inverse of $\boldsymbol{A}$! That is,
+
+$$\boldsymbol{A}^-1 = \boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$$
+
+Thus, we have found a way to decompose the inverse of $\boldsymbol{A}$ into a set of matrices that when multiplied together yield its inverse. Each of these matrices represents a transformation on $\boldsymbol{A}$ equivalent to an elementary row operation that one would use to solve an equation of the form $\boldsymbol{Ax} = \boldsymbol{b}$!
 
 The general linear group
 ------------------------
+
+This may seem cumbersome, but in the next section we'll show something quite elegant that emerges from using elementary matrices to represent elementary row operations: invertible matrices form a [mathematical group](https://en.wikipedia.org/wiki/Group_(mathematics))!
+
 
 Note that the elementary matrices all all invertible. The inverse to an elementary matrix representing scalar multiplication by a constant $c$ is simply the elementary matrix that scales by $\frac{1}{c}$. The inverse to an elementary matrix representing a row swap is simply the elementary matrix that swaps the rows back to their original configuration. The inverse to an elementary matrix representing a row sum is simply the elementary matrix that represents a row sum but performs the corresponding subtraction.
 
