@@ -132,7 +132,7 @@ $$\begin{bmatrix}0.5 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmat
 Then perform a _row sum_ and add the first row to the third:
 
 
-$$\begin{bmatrix}1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ -1 & -2 & 1  \end{bmatrix} = \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+$$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ -1 & -2 & 1  \end{bmatrix} = \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
 
 Then perform _scalar multiplication_ and multiply the second equation by 1/3:
 
