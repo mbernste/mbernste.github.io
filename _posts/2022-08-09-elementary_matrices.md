@@ -137,15 +137,9 @@ Then perform _scalar multiplication_ and multiply the second equation by 1/3:
 
 $$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1/3 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix}1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}$$
 
-
 Then perform a _row sum_ and add -2 multiplied by the second row to the first:
 
-
-More generally, the elementary matrices take the following form: An elementary matrix that represents a scalar multiplication by $c$ can be written as:
-
-An elementary matrix that represents a row swap can be written as:
-
-An elementary matrix that represents a row sum can be written as:
+$$\begin{bmatrix}1 & -2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix} = \begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}$$
 
 This may seem cumbersome, but in the next section we'll show something quite elegant that emerges from using elementary matrices to represent elementary row operations: invertible matrices form a [mathematical group](https://en.wikipedia.org/wiki/Group_(mathematics))!
 
