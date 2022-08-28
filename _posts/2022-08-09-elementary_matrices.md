@@ -118,11 +118,11 @@ Notice on each elementary row operation, we transformed the matrix $\boldsymbol{
 
 To demonstrate, that our elementary row operations can be performed using matrix multiplication, let's look back at our example. We start with the matrix 
 
-$$\boldsymbol{A} := $$
+$$\boldsymbol{A} := \begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix}$$
 
 Then, first we _row swap_ the first and third equations:
 
-
+$$\begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix}\begin{bmatrix}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{bmatrix} = \begin{bmatrix}2 & 4 & 0 & 10 \\ 0 & 3 & 0 & 3 \\ -1 & -2 & 1 & -3  \end{bmatrix}$$
 
 Then perform _scalar multiplication_ and multiply the first equation by 1/2:
 
