@@ -147,7 +147,7 @@ $$\boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}
 
 By the [definition of an inverse matrix](https://mbernste.github.io/posts/inverse_matrices/), we see that the matrix formed by $$\boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$ is the inverse of $\boldsymbol{A}$! That is,
 
-$$\boldsymbol{A}^-1 = \boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$$
+$$\boldsymbol{A}^{-1} = \boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$$
 
 Thus, we have found a way to decompose the inverse of $\boldsymbol{A}$ into a set of matrices that when multiplied together yield its inverse. Each of these matrices represents a transformation on $\boldsymbol{A}$ equivalent to an elementary row operation that one would use to solve an equation of the form $\boldsymbol{Ax} = \boldsymbol{b}$!
 
