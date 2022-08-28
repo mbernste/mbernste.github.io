@@ -122,7 +122,7 @@ $$\boldsymbol{A} := \begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bm
 
 Then, first we _row swap_ the first and third equations:
 
-$$\begin{bmatrix}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{bmatrix}\begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix} = \begin{bmatrix}2 & 4 & 0  \\ 0 & 3 & 0  \\ -1 & -2 & 1  \end{bmatrix}$$
+$$\underbrace{\begin{bmatrix}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{bmatrix}}{E_1} \begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix} = \begin{bmatrix}2 & 4 & 0  \\ 0 & 3 & 0  \\ -1 & -2 & 1  \end{bmatrix}$$
 
 Then perform _scalar multiplication_ and multiply the first equation by 1/2:
 
