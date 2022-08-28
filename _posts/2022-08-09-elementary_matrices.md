@@ -122,15 +122,17 @@ $$\boldsymbol{A} := \begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bm
 
 Then, first we _row swap_ the first and third equations:
 
-$$\begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix}\begin{bmatrix}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{bmatrix} = \begin{bmatrix}2 & 4 & 0  \\ 0 & 3 & 0  \\ -1 & -2 & 1  \end{bmatrix}$$
+$$\begin{bmatrix}0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 0 & 0 \end{bmatrix}\begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix} = \begin{bmatrix}2 & 4 & 0  \\ 0 & 3 & 0  \\ -1 & -2 & 1  \end{bmatrix}$$
 
 Then perform _scalar multiplication_ and multiply the first equation by 1/2:
 
 
-$$\begin{bmatrix}2 & 4 & 0 \\ 0 & 3 & 0 \\ -1 & -2 & 1  \end{bmatrix} \begin{bmatrix}0.5 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ -1 & -2 & 1  \end{bmatrix}$$
-
+$$\begin{bmatrix}0.5 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}2 & 4 & 0 \\ 0 & 3 & 0 \\ -1 & -2 & 1  \end{bmatrix}  = \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ -1 & -2 & 1  \end{bmatrix}$$
 
 Then perform a _row sum_ and add the first row to the third:
+
+
+$$\begin{bmatrix}1 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ -1 & -2 & 1  \end{bmatrix} = \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
 
 Then perform _scalar multiplication_ and multiply the second equation by 1/3:
 
