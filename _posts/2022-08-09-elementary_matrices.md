@@ -131,15 +131,15 @@ $$\underbrace{\begin{bmatrix}1/2 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}
 
 Then perform a _row sum_ and add the first row to the third:
 
-$$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ -1 & -2 & 1  \end{bmatrix} = \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
+$$\underbrace{\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 0 & 1 \end{bmatrix}}_{\boldsymbol{E}_3} \underbrace{\begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ -1 & -2 & 1  \end{bmatrix}}_{\boldsymbol{E}_2\boldsymbol{E}_1\boldsymbol{A}} = \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}$$
 
 Then perform _scalar multiplication_ and multiply the second equation by 1/3:
 
-$$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1/3 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix}1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}$$
+$$\underbrace{\begin{bmatrix}1 & 0 & 0 \\ 0 & 1/3 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{\boldsymbol{E}_4} \underbrace{\begin{bmatrix}1 & 2 & 0 \\ 0 & 3 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1\boldsymbol{A}} = \begin{bmatrix}1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}$$
 
 Then perform a _row sum_ and add -2 multiplied by the second row to the first:
 
-$$\begin{bmatrix}1 & -2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix}1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix} = \begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}$$
+$$\underbrace{\begin{bmatrix}1 & -2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}}_{\boldsymbol{E}_5} \underbrace{\begin{bmatrix}1 & 2 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}}_{\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1\boldsymbol{A}} = \begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1  \end{bmatrix}$$
 
 This may seem cumbersome, but in the next section we'll show something quite elegant that emerges from using elementary matrices to represent elementary row operations: invertible matrices form a [mathematical group](https://en.wikipedia.org/wiki/Group_(mathematics))!
 
