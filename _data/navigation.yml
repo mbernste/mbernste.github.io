@@ -1,10 +1,10 @@
 # main links links
 main:
-  - title: "Research"
-    url: /research/
+  - title: "Publications"
+    url: /publications/
 
-  - title: "Software"
-    url: /software/
+  - title: "Projects"
+    url: /projects/
     
 #  - title: "Publications"
 #    url: /publications/
@@ -24,17 +24,17 @@ main:
 #  - title: "Notes"
 #    url: /notes/
     
-  - title: "Blog"
-    url: /posts/
+  - title: "Medium"
+    url: /medium/
  
-  - title: "Art"
-    url: /art/
+#   - title: "Art"
+#     url: /art/
     
   - title: "CV"
-    url: http://mbernste.github.io/files/CV.pdf
+    url: http://trantony.github.io/files/CV_TrungThanhTran.pdf
     
-  - title: "Quotes"
-    url: /quotes/
+#   - title: "Quotes"
+#     url: /quotes/
    
 #  - title: "Guide"
 #    url: /markdown/
