@@ -199,13 +199,21 @@ Recall, a group is a set $S$ together with a function $f$ that operates on pairs
 
 $$f: S \times S \rightarrow S$$
 
-such that $f$ is [associative](), there exists an object in $S$ called the **identity** object, denoted $s_{\text{identity}}$, and for each object in $s$, there is another object $s^{-1}$, called its inverse such that 
+such that $f$ is [associative](), there exists an object in $S$ called the **identity** object, denoted $s_{\text{identity}}$, and for each object $s \in S$, there exists another object $s^{-1} \in S$, called its **inverse** such that 
 
 $$f(s, s^{-1}) = $s_{\text{identity}}$$
 
-For example, the real numbers $\mathbb{R}$ together with the multiplication operation form a group. In this case, the identity object is simply 1. That is, $s_{\text{identity}} := 1$ and the inverse for any number $x \in \mathbb{R}$ is simply its reciprocal $1 / x$. That is because 
+For example, the real numbers $\mathbb{R}$ together with the multiplication operation form a group. The operator $f$ in this case is simply 
 
-$$f(x, 1/x) = x * 1/x = 1$$
+$$f(x, y) := xy$$
 
-Now, in the case of invertible matrices, we have shown that 
+The identity object is simply 1. That is, $s_{\text{identity}} := 1$ and the inverse for any number $x \in \mathbb{R}$ is simply its reciprocal $1 / x$. That is because 
+
+$$f(x, 1/x) = x(1/x) = 1$$
+
+Now, in the case of invertible matrices, we have shown that every invertible matrix, $\boldsymbol{A}$, can be multiplied by a second invertible matrix $\boldsymbol{C}$ to produce a third $\boldsymbol{B}$. Thus, $f$ in the general linear group is simply matrix multiplication. That is, given two matrices $\boldsymbol{A}$ and $\boldsymbol{B}$, we have
+
+$$f(\boldsymbol{A}, \boldsymbol{B}) := \boldsymbol{AB}$$
+
+The identity of the general linear group is simply the identity matrix $\boldsymbol{I}. Finally, the general linear group's inverse for an invertible matrix $\boldsymbol{A}$ is simply its inverse matrix $\boldsymbol{A}^{-1}$.
 
