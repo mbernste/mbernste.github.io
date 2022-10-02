@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+In this post we discuss the row reduction algorithm for solving a system of linear equations that have exactly one solution. We will then show how the row reduction algorithm can be represented as a process involving a sequence of matrix multiplications involving a special class of matrices called elementary matrices. That is, each elementary matrix represents a single elementary row operation in the row reduction algorithm. 
 
 Introduction
 ------------
