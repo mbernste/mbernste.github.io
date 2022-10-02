@@ -187,3 +187,6 @@ Then, we see that
 $$\boldsymbol{B} = \boldsymbol{CA}$$
 
 Notably, $\boldsymbol{C}$ is also an invertible matrix because all of the elementary matrices we multiplied together to produce $\boldsymbol{C}$ are all invertible! 
+
+The general linear group
+------------------------
