@@ -1,5 +1,5 @@
 ---
-title: 'Row reduction, elementary matrices, and the general linear group'
+title: 'Row reduction and elementary matrices'
 date: 2022-10-02
 permalink: /posts/row_reduction/
 tags:
@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-_In this post we discuss the row reduction algorithm for solving a system of linear equations that have exactly one solution. We will then show how the row reduction algorithm can be represented as a process involving a sequence of matrix multiplications involving a special class of matrices called elementary matrices. That is, each elementary matrix represents a single elementary row operation in the row reduction algorithm. By viewing row reduction through the lense of matrix multiplication, we can reveal an interesting relationship between invertible matrices: that is, one can transform one invertible matrix into another by matrix multiplying by a third invertible matrix._
+_In this post we discuss the row reduction algorithm for solving a system of linear equations that have exactly one solution. We will then show how the row reduction algorithm can be represented as a process involving a sequence of matrix multiplications involving a special class of matrices called elementary matrices. That is, each elementary matrix represents a single elementary row operation in the row reduction algorithm. By viewing row reduction through the lense of matrix multiplication, we can reveal an interesting relationship between invertible matrices: one can transform one invertible matrix into another by matrix multiplying by a third invertible matrix._
 
 Introduction
 ------------
