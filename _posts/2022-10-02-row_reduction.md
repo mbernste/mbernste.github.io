@@ -205,7 +205,7 @@ $$f(s, s^{-1}) = $s_{\text{identity}}$$
 
 For example, the real numbers $\mathbb{R}$ together with the multiplication operation form a group. In this case, the identity object is simply 1. That is, $s_{\text{identity}} := 1$ and the inverse for any number $x \in mathbb{R}$ is simply its reciprocal $1 / x$. That is because 
 
-$$f(x, 1\x) = x * 1/x = 1$$
+$$f(x, 1\\x) = x * 1/x = 1$$
 
 Now, in the case of invertible matrices, we have shown that 
 
