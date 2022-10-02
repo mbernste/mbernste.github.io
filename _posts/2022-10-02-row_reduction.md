@@ -1,5 +1,5 @@
 ---
-title: 'Row reduction and elementary matrices'
+title: 'Row reduction, elementary matrices, and the general linear group'
 date: 2022-10-02
 permalink: /posts/row_reduction/
 tags:
@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-In this post we discuss the row reduction algorithm for solving a system of linear equations that have exactly one solution. We will then show how the row reduction algorithm can be represented as a process involving a sequence of matrix multiplications involving a special class of matrices called elementary matrices. That is, each elementary matrix represents a single elementary row operation in the row reduction algorithm. 
+In this post we discuss the row reduction algorithm for solving a system of linear equations that have exactly one solution. We will then show how the row reduction algorithm can be represented as a process involving a sequence of matrix multiplications involving a special class of matrices called elementary matrices. That is, each elementary matrix represents a single elementary row operation in the row reduction algorithm. By viewing row reduction through the lense of matrix multiplication, we can reveal an interesting relationship between invertible matrices: that is, invertible matrices form a mathematical group called the "general linear group".
 
 Introduction
 ------------
@@ -24,6 +24,8 @@ $$\boldsymbol{Ax} = \boldsymbol{b}$$
 where $\boldsymbol{A}$ is the matrix of coefficients $a_{1,1}, a_{1,2}, \dots, a_{3,3}$ and $\boldsymbol{b}$ is the matrix of coefficients of $b_1, b_2,$ and $b_3$.  Furthermore, we noted that this system will have exactly one solution if $\boldsymbol{A}$ is an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/). 
 
 In this post, we will discuss how one can solve for this exact solution using a process called called **row reduction** which entails performing a series of algebraic operations on the system. We will then show how the row reduction algorithm can be represented as a process that entails multiplying $\boldsymbol{A}$ by a series of matrices called **elementary matrices** in order to convert $\boldsymbol{A}$ to the identity matrix. Each elementary matrix represents a single step of the row reduction algorithm.  
+
+Finally, we will discuss how viewing row reduction this way, we can reveal an elegant mathematical structure regarding invertible matrices: they form a [mathematical group](https://en.wikipedia.org/wiki/Group_(mathematics)). That is, you can always convert one invertible matrix to another by multiplying it by some third invertible matrix! Importantly, this third invertible matrix can be recovered from the row reduction algorithm.
 
 Row reduction
 --------------
@@ -150,3 +152,11 @@ By the [definition of an inverse matrix](https://mbernste.github.io/posts/invers
 $$\boldsymbol{A}^{-1} = \boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$$
 
 Thus, we have found a way to decompose the inverse of $\boldsymbol{A}$ into a set of matrices that when multiplied together yield its inverse. Each of these matrices represents a transformation on $\boldsymbol{A}$ equivalent to an elementary row operation that one would use to solve an equation of the form $\boldsymbol{Ax} = \boldsymbol{b}$!
+
+The general linear group
+------------------------
+
+Viewing the row reduction algorithm through the lense of matrix multiplication provides insight into invertible matrices in general. Specifically, we can show that any invertible matrix $\boldsymbol{A}$ can be converted to another invertible matrix $\boldsymbol{B}$ by multiplying $\boldsymbol{A}$ by a third invertible matrix $\boldsymbol{C}$. 
+
+First, notice that each elementary matrix is invertible. The inverse of an elementary matrix that row-scales by a constant $c$ is simply the elementary matrix that scales the row by $\frac{1}{c}$. The inverse of an elementary matrix that row swaps is simply the elementary matrix that swaps the rows back to their original configuration. The inverse of an elementary matrix that performs a row sum is simply the elementary matrix that performs the subtraction. Thus we see that not only are elementary matrices invertible, but their inverses are also elementary matrices!
+
