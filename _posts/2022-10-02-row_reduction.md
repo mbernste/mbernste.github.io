@@ -1,5 +1,5 @@
 ---
-title: 'Row reduction, elementary matrices, and the general linear group'
+title: 'Row reduction and elementary matrices'
 date: 2022-10-02
 permalink: /posts/row_reduction/
 tags:
@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-In this post we discuss the row reduction algorithm for solving a system of linear equations that have exactly one solution. We will then show how the row reduction algorithm can be represented as a process involving a sequence of matrix multiplications involving a special class of matrices called elementary matrices. That is, each elementary matrix represents a single elementary row operation in the row reduction algorithm. By viewing row reduction through the lense of matrix multiplication, we can reveal an interesting relationship between invertible matrices: that is, invertible matrices form a mathematical group called the "general linear group".
+_In this post we discuss the row reduction algorithm for solving a system of linear equations that have exactly one solution. We will then show how the row reduction algorithm can be represented as a process involving a sequence of matrix multiplications involving a special class of matrices called elementary matrices. That is, each elementary matrix represents a single elementary row operation in the row reduction algorithm. By viewing row reduction through the lense of matrix multiplication, we can reveal an interesting relationship between invertible matrices: that is, one can transform one invertible matrix into another by matrix multiplying by a third invertible matrix._
 
 Introduction
 ------------
@@ -23,9 +23,7 @@ $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
 where $\boldsymbol{A}$ is the matrix of coefficients $a_{1,1}, a_{1,2}, \dots, a_{3,3}$ and $\boldsymbol{b}$ is the matrix of coefficients of $b_1, b_2,$ and $b_3$.  Furthermore, we noted that this system will have exactly one solution if $\boldsymbol{A}$ is an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/). 
 
-In this post, we will discuss how one can solve for this exact solution using a process called called **row reduction** which entails performing a series of algebraic operations on the system. We will then show how the row reduction algorithm can be represented as a process that entails [multiplying](https://mbernste.github.io/posts/matrix_multiplication/) $\boldsymbol{A}$ by a series of matrices called **elementary matrices** in order to convert $\boldsymbol{A}$ to the identity matrix. Each elementary matrix represents a single step of the row reduction algorithm.  
-
-Finally, we will discuss how viewing row reduction this way, we can reveal an elegant mathematical structure regarding invertible matrices: they form a [mathematical group](https://en.wikipedia.org/wiki/Group_(mathematics)). That is, you can always convert one invertible matrix to another by multiplying it by some third invertible matrix! The group formed by invertible matrices is called the **general linear group**.
+In this post, we will discuss how one can solve for this exact solution using a process called called **row reduction** which entails performing a series of algebraic operations on the system. We will then show how the row reduction algorithm can be represented as a process that entails [multiplying](https://mbernste.github.io/posts/matrix_multiplication/) $\boldsymbol{A}$ by a series of matrices called **elementary matrices** in order to convert $\boldsymbol{A}$ to the identity matrix. Each elementary matrix represents a single step of the row reduction algorithm.  Finally, we will show that by viewing row reduction this way, we reveal that one can always convert one invertible matrix to another by multiplying it by some third invertible matrix! 
 
 Row reduction
 --------------
@@ -87,23 +85,23 @@ $$\begin{bmatrix}-1 & -2 & 1 & -3 \\ 0 & 3 & 0 & 3 \\ 2 & 4 & 0 & 10 \end{bmatri
 
 In the augmented matrix, the final column stores $\boldsymbol{b}$ and all of the previous columns store the columns of $\boldsymbol{A}$. Our execution of the row operations can now operate only on this augmented matrix as follows:
 
-1/. _Row swap_: swap the first and third equations:
+1\. _Row swap_: swap the first and third equations:
 
 $$\begin{bmatrix}2 & 4 & 0 & 10 \\ 0 & 3 & 0 & 3 \\ -1 & -2 & 1 & -3  \end{bmatrix}$$
 
-2/. _Scalar multiplication_: Multiply the first equation by 1/2:
+2\. _Scalar multiplication_: Multiply the first equation by 1/2:
 
 $$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 3 & 0 & 3 \\ -1 & -2 & 1 & -3  \end{bmatrix}$$
 
-3/. _Row sum_: add the first row to the third:
+3\. _Row sum_: add the first row to the third:
 
 $$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 3 & 0 & 3 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
 
-4/. _Scalar multiplication_: Multiply the second equation by 1/3:
+4\. _Scalar multiplication_: Multiply the second equation by 1/3:
 
 $$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
 
-5/. _Row sum_ and add -2 multiplied by the second row to the first:
+5\. _Row sum_ and add -2 multiplied by the second row to the first:
 
 $$\begin{bmatrix}1 & 0 & 0 & 3 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
 
@@ -189,11 +187,3 @@ Then, we see that
 $$\boldsymbol{B} = \boldsymbol{CA}$$
 
 Notably, $\boldsymbol{C}$ is also an invertible matrix because all of the elementary matrices we multiplied together to produce $\boldsymbol{C}$ are all invertible! 
-
-The general linear group
-------------------------
-
-Now we can see that the set of all invertible matrices of shape $n \times n$, together with the matrix multiplication operation, form a [group](https://en.wikipedia.org/wiki/Group_(mathematics)).
-
-
-
