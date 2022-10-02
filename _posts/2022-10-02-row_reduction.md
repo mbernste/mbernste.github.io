@@ -48,23 +48,23 @@ Let's use these operations to solve the following system:
 
 $$\begin{align*}-x_1 - 2 x_2 + x_3 &= -3 \\  3 x_2 &= 3 \\ 2 x_1 + 4 x_2  &= 10\end{align*}$$
 
-1. First, we _row swap_ the first and third equations:
+1/. First, we _row swap_ the first and third equations:
 
 $$\begin{align*}2 x_1 + 4 x_2 &= 10  \\ 3 x_2  &= 3 \\ -x_1 - 2 x_2 + x_3 &= -3\end{align*}$$
 
-2. Next, let's perform _scalar multiplication_ and multiply the first equation by 1/2:
+2/. Next, let's perform _scalar multiplication_ and multiply the first equation by 1/2:
 
 $$\begin{align*}x_1 + 2 x_2 &= 5  \\ 3 x_2 &= 3 \\ -x_1 - 2 x_2 + x_3 &= -3\end{align*}$$
 
-3. Next, let's perform a _row sum_ and add the first row to the third:
+3/. Next, let's perform a _row sum_ and add the first row to the third:
 
 $$\begin{align*}x_1 + 2 x_2 &= 5  \\  3 x_2  &= 3 \\ x_3 &= 2\end{align*}$$
 
-4. Next, let's perform _scalar multiplication_ and multiply the second equation by 1/3:
+4/. Next, let's perform _scalar multiplication_ and multiply the second equation by 1/3:
 
 $$\begin{align*}x_1 + 2 x_2 &= 5  \\ x_2 &= 1 \\  x_3 &= 2\end{align*}$$
 
-5. Finally, let's perform a _row sum_ and add -2 multiplied by the second row to the first:
+5/. Finally, let's perform a _row sum_ and add -2 multiplied by the second row to the first:
 
 $$\begin{align*}x_1 &= 3  \\ x_2 &= 1 \\ x_3 &= 2\end{align*}$$
 
@@ -85,23 +85,23 @@ $$\begin{bmatrix}-1 & -2 & 1 & -3 \\ 0 & 3 & 0 & 3 \\ 2 & 4 & 0 & 10 \end{bmatri
 
 In the augmented matrix, the final column stores $\boldsymbol{b}$ and all of the previous columns store the columns of $\boldsymbol{A}$. Our execution of the row operations can now operate only on this augmented matrix as follows:
 
-1. _Row swap_: swap the first and third equations:
+1/. _Row swap_: swap the first and third equations:
 
 $$\begin{bmatrix}2 & 4 & 0 & 10 \\ 0 & 3 & 0 & 3 \\ -1 & -2 & 1 & -3  \end{bmatrix}$$
 
-2. _Scalar multiplication_: Multiply the first equation by 1/2:
+2/. _Scalar multiplication_: Multiply the first equation by 1/2:
 
 $$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 3 & 0 & 3 \\ -1 & -2 & 1 & -3  \end{bmatrix}$$
 
-3. _Row sum_: add the first row to the third:
+3/. _Row sum_: add the first row to the third:
 
 $$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 3 & 0 & 3 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
 
-4. _Scalar multiplication_: Multiply the second equation by 1/3:
+4/. _Scalar multiplication_: Multiply the second equation by 1/3:
 
 $$\begin{bmatrix}1 & 2 & 0 & 5 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
 
-5. _Row sum_ and add -2 multiplied by the second row to the first:
+5/. _Row sum_ and add -2 multiplied by the second row to the first:
 
 $$\begin{bmatrix}1 & 0 & 0 & 3 \\ 0 & 1 & 0 & 1 \\ 0 & 0 & 1 & 2  \end{bmatrix}$$
 
