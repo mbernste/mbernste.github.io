@@ -23,7 +23,7 @@ $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
 where $\boldsymbol{A}$ is the matrix of coefficients $a_{1,1}, a_{1,2}, \dots, a_{3,3}$ and $\boldsymbol{b}$ is the matrix of coefficients of $b_1, b_2,$ and $b_3$.  Furthermore, we noted that this system will have exactly one solution if $\boldsymbol{A}$ is an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/). 
 
-In this post, we will discuss how one can solve for this exact solution using a process called called **row reduction** which entails performing a series of algebraic operations on the system. We will then show how the row reduction algorithm can be represented as a process that entails multiplying $\boldsymbol{A}$ by a series of matrices called **elementary matrices** in order to convert $\boldsymbol{A}$ to the identity matrix. Each elementary matrix represents a single step of the row reduction algorithm.  
+In this post, we will discuss how one can solve for this exact solution using a process called called **row reduction** which entails performing a series of algebraic operations on the system. We will then show how the row reduction algorithm can be represented as a process that entails [multiplying](https://mbernste.github.io/posts/matrix_multiplication/) $\boldsymbol{A}$ by a series of matrices called **elementary matrices** in order to convert $\boldsymbol{A}$ to the identity matrix. Each elementary matrix represents a single step of the row reduction algorithm.  
 
 Finally, we will discuss how viewing row reduction this way, we can reveal an elegant mathematical structure regarding invertible matrices: they form a [mathematical group](https://en.wikipedia.org/wiki/Group_(mathematics)). That is, you can always convert one invertible matrix to another by multiplying it by some third invertible matrix! The group formed by invertible matrices is called the **general linear group**.
 
@@ -153,8 +153,8 @@ $$\boldsymbol{A}^{-1} = \boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsym
 
 Thus, we have found a way to decompose the inverse of $\boldsymbol{A}$ into a set of matrices that when multiplied together yield its inverse. Each of these matrices represents a transformation on $\boldsymbol{A}$ equivalent to an elementary row operation that one would use to solve an equation of the form $\boldsymbol{Ax} = \boldsymbol{b}$!
 
-The general linear group
-------------------------
+Transforming one invertible matrix to another via a third invertible matrix
+---------------------------------------------------------------------------
 
 Viewing the row reduction algorithm through the lense of matrix multiplication provides insight into invertible matrices in general. Specifically, we can show that any invertible matrix $\boldsymbol{A}$ can be converted to another invertible matrix $\boldsymbol{B}$ by multiplying $\boldsymbol{A}$ by a third invertible matrix $\boldsymbol{C}$. 
 
@@ -189,3 +189,11 @@ Then, we see that
 $$\boldsymbol{B} = \boldsymbol{CA}$$
 
 Notably, $\boldsymbol{C}$ is also an invertible matrix because all of the elementary matrices we multiplied together to produce $\boldsymbol{C}$ are all invertible! 
+
+The general linear group
+------------------------
+
+Now we can see that the set of all invertible matrices of shape $n \times n$, together with the matrix multiplication operation, form a [group](https://en.wikipedia.org/wiki/Group_(mathematics)).
+
+
+
