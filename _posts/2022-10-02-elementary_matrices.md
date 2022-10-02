@@ -1,7 +1,7 @@
 ---
-title: 'Elementary matrices and the general linear group'
-date: 2022-08-09
-permalink: /posts/elementary_matrices/
+title: 'Row reduction and elementary matrices'
+date: 2022-10-02
+permalink: /posts/row_reduction/
 tags:
   - tutorial
   - mathematics
@@ -23,10 +23,10 @@ $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
 where $\boldsymbol{A}$ is the matrix of coefficients $a_{1,1}, a_{1,2}, \dots, a_{3,3}$ and $\boldsymbol{b}$ is the matrix of coefficients of $b_1, b_2,$ and $b_3$.  Furthermore, we noted that this system will have exactly one solution if $\boldsymbol{A}$ is an [invertible matrix](https://mbernste.github.io/posts/inverse_matrices/). 
 
-In this post, we will discuss how one can solve for this exact solution using a series of operations of the system that involve a particular class of invertible matrices called the **elementary matrices**. We will show that any invertible matrix can be converted to another invertible matrix by performing some sequence of matrix multiplications with elementary matrices. In fact, this reveals an elegant mathematical structure regarding invertible matrices: they form a **group**. That is, you can always go from one invertible matrix to another via a series of multipliciations by elementary row matrices!
+In this post, we will discuss how one can solve for this exact solution using a series of algebraic operations of the system called **row reduction**. We will then show how the row reduction can be performed by multiplying $\boldsymbol{A}$ by a series of matrices called **elementary matrices**. Each elementary matrix represents a single step of the row reduction algorithm.  
 
-Elementary row operations
---------------------------
+Row reduction
+--------------
 
 Before digging into matrices, let's first discuss how one can go about solving a system of linear equations. Say we have a system with three equations and three variables:
 
@@ -68,7 +68,7 @@ $$\begin{align*}x_1 + 2 x_2 &= 5  \\ x_2 &= 1 \\  x_3 &= 2\end{align*}$$
 
 $$\begin{align*}x_1 &= 3  \\ x_2 &= 1 \\ x_3 &= 2\end{align*}$$
 
-And there we go, we've solved the system using these elementary row operations.
+And there we go, we've solved the system using these elementary row operations. This process of using elementary row operations to solve a system of linear equations is called **row reduction**.
 
 Elementary row operations in matrix notation
 --------------------------------------------
@@ -150,41 +150,3 @@ By the [definition of an inverse matrix](https://mbernste.github.io/posts/invers
 $$\boldsymbol{A}^{-1} = \boldsymbol{E}_5\boldsymbol{E}_4\boldsymbol{E}_3\boldsymbol{E}_2\boldsymbol{E}_1$$
 
 Thus, we have found a way to decompose the inverse of $\boldsymbol{A}$ into a set of matrices that when multiplied together yield its inverse. Each of these matrices represents a transformation on $\boldsymbol{A}$ equivalent to an elementary row operation that one would use to solve an equation of the form $\boldsymbol{Ax} = \boldsymbol{b}$!
-
-The general linear group
-------------------------
-
-Now, we will note a few important observations about elementary row matrices and invertible matrices in general:
-
-First, notice that each elementary matrix is invertible. The inverse of an elementary matrix that row-scales by a constant $c$ is simply the elementary matrix that scales the row by $\frac{1}{c}$. The inverse of an elementary matrix that row swaps is simply the elementary matrix that swaps the rows back to their original configuration. The inverse of an elementary matrix that performs a row sum is simply the elementary matrix that performs the subtraction. Thus we see that not only are elementary matrices invertible, but their inverses are also elementary matrices!
-
-Because these elementary row matrices are invertible, instead of starting with some invertible matrix $\boldsymbol{A}$ and producing the identity matrix $\boldsymbol{I}$ via some sequence of multiplications, 
-
-$$\boldsymbol{I} = \boldsymbol{E}_n \dots, \boldsymbol{E}_1\boldsymbol{A}$$
-
-we can instead start with the identity matrix and produce $\boldsymbol{A}$:
-
-$$\boldsymbol{A} = \boldsymbol{E}^{-1}_1 \dots \boldsymbol{E}^{-1}_n\boldsymbol{I} $$
-
-From this fact, we can see that we can go from any invertible matrix to another by multiplying the matrix with some series of elementary matrices. For example, say we have two different invertible matrices $\boldsymbol{A}$ and $\boldsymbol{B}$. Then we can transform $\boldsymbol{A}$ into the identity matrix via some some sequence of multiplications by elementary matrices:
-
-$$\boldsymbol{I} = \boldsymbol{E}_n \dots, \boldsymbol{E}_1\boldsymbol{A}$$
-
-We can also transform $\boldsymbol{B}$ into the identity matrix via some some sequence of multiplications by elementary matrices:
-
-$$\boldsymbol{I} = \boldsymbol{E}_{n+m} \dots, \boldsymbol{E}_{n+1}\boldsymbol{B}$$
-
-We can convert $\boldsymbol{A}$ to $\boldsymbol{B}$ by converting $\boldsymbol{A}$ to $\boldsymbol{I}$ and then convert $\boldsymbol{I}$ to $\boldsymbol{B}$ via the inverses of the elementary matrices used to convert $\boldsymbol{B}$ to $\boldsymbol{I}$:
-
-$$\boldsymbol{B} = \boldsymbol{E}^{-1}_{n+1} \dots \boldsymbol{E}^{-1}_{n+m}\boldsymbol{E}_n \dots, \boldsymbol{E}_1\boldsymbol{A}
-
-Let's let the matrix $\boldsymbol{C}$ be defined as:
-
-$$\boldsymbol{C} := \boldsymbol{E}^{-1}_{n+1} \dots \boldsymbol{E}^{-1}_{n+m}\boldsymbol{E}_n \dots, \boldsymbol{E}_1$$
-
-Then, we see that 
-
-$$\boldsymbol{B} = \boldsymbol{CA}$$
-
-Notably, $\boldsymbol{C}$ is also an invertible matrix because all of the elementary matrices we multiplied together to produce $\boldsymbol{C}$ are all invertible! 
-
