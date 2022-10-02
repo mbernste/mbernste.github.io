@@ -193,4 +193,15 @@ Notably, $\boldsymbol{C}$ is also an invertible matrix because all of the elemen
 The general linear group
 ------------------------
 
-Now we can see that the set of all invertible matrices of shape $n \times n$, together with the matrix multiplication operation, form a [group](https://en.wikipedia.org/wiki/Group_(mathematics)).
+Now we can see that the set of all invertible matrices of shape $n \times n$, together with the matrix multiplication operation, form a [group](https://en.wikipedia.org/wiki/Group_(mathematics)). 
+
+Recall, a group is a set $S$ together with a function $f$ that operates on pairs of objects in $S$ to produce a third object in $S$
+
+$$f: S \times S \rightarrow S$$
+
+such that $f$ is [associative](), there exists an object in $S$ called the **identity** object, denoted $s_{\text{identity}}$, and for each object in $s$, there is another object $s^{-1}$, called its inverse such that 
+
+$$f(s, s^{-1}) = $s_{\text{identity}}$$$
+
+
+
