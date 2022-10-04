@@ -73,9 +73,7 @@ And there we go, we've solved the system using these elementary row operations. 
 Elementary row operations in matrix notation
 --------------------------------------------
 
-Recall, we can represent a system of linear equations as a [matrix equation](https://mbernste.github.io/posts/systems_linear_equations/), we showed how systems of linear equations can be represented as a matrix equation.
-
-The linear system that we just solved can be written as:
+Recall, we can represent a system of linear equations as a [matrix equation](https://mbernste.github.io/posts/systems_linear_equations/). For example, the linear system that we just solved can be written as:
 
 $$\begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}-3 \\ 3 \\ 10\end{bmatrix}$$
 
