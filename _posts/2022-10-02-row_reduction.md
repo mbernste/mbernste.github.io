@@ -107,14 +107,14 @@ Now, let's re-write the augmented matrix as a matrix equation:
 
 $$\begin{bmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\begin{bmatrix}x_1 \\ x_2 \\ x_3\end{bmatrix} = \begin{bmatrix}3 \\ 1 \\ 2\end{bmatrix}$$
 
-Note that $$\boldsymbol{A}$$ has been _transformed_ to the identity matrix $$\boldsymbol{I}$$. This will be a key observation as we move into the next section.
+Note that $$\boldsymbol{A}$$ has been _transformed_ into the identity matrix $$\boldsymbol{I}$$. This will be a key observation as we move into the next section.
 
 Elementary matrices
 -------------------
 
-Notice on each elementary row operation, we transformed the matrix $\boldsymbol{A}$ using a series of steps until it became the identity matrix $\boldsymbol{I}$. In fact, each of these elementary row operations can be represented as a matrix that is operating on $\boldsymbol{I}$. Such a matrix that represents an elementary row operation is called an **elementary matrix**. 
+Notice how during the row reduction process we transformed the matrix $\boldsymbol{A}$ using a series of steps until it became the identity matrix $\boldsymbol{I}$. In fact, each of these elementary row operations can be represented as a matrix. Such a matrix that represents an elementary row operation is called an **elementary matrix**. 
 
-To demonstrate, that our elementary row operations can be performed using matrix multiplication, let's look back at our example. We start with the matrix 
+To demonstrate how our elementary row operations can be performed using matrix multiplication, let's look back at our example. We start with the matrix 
 
 $$\boldsymbol{A} := \begin{bmatrix}-1 & -2 & 1 \\ 0 & 3 & 0 \\ 2 & 4 & 0 \end{bmatrix}$$
 
