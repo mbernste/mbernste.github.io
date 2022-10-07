@@ -30,7 +30,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/)  
 [Invertible matrices](https://mbernste.github.io/posts/inverse_matrices/)  
 [Reasoning about systems of linear equations using linear algebra](https://mbernste.github.io/posts/systems_linear_equations/)  
-[Row reduction and elementary matrices](https://mbernste.github.io/posts/row_reduction)  
+[Row reduction with elementary matrices](https://mbernste.github.io/posts/row_reduction)  
 
 ## Probability
 
