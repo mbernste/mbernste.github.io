@@ -1,5 +1,5 @@
 ---
-title: 'Row reduction and elementary matrices'
+title: 'Row reduction with elementary matrices'
 date: 2022-10-02
 permalink: /posts/row_reduction/
 tags:
