@@ -47,7 +47,7 @@ The reparameterization gradient
 
 [Gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent) is a straightforward method for solving optimization problems for continuous functions and is a very heavily studied method in machine learning. Thus, it is natural to attempt to optimize the ELBO via gradient ascent. Applying gradient ascent to the ELBO would entail iteratively computing the [gradient](https://en.wikipedia.org/wiki/Gradient) of the ELBO with respect to $\phi$ and then  updating our estimate of $\phi$ via this gradient. That is, at each iteration $t$, we have some estimate of $\phi$, denoted $\phi_t$ that we will update as follows:
 
-$$\phi_{t+1} \rightarrow \phi_t + \alpha \nabla_\phi \text{ELBO}(\phi_t)$$
+$$\phi_{t+1} := \phi_t + \alpha \nabla_\phi \text{ELBO}(\phi_t)$$
 
 where $\alpha$ is the learning rate. This step is repeated until we converge on a local optimum of the ELBO. Now, the question becomes how do we compute the gradient of the ELBO? The key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. One idea to get around this is to compute Monte Carlo estimates of the expectation by sampling $L$ values from $q_\phi$ as follows
 
