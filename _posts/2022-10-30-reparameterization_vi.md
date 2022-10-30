@@ -47,17 +47,19 @@ The reparameterization gradient
 
 [Gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent) is a straightforward method for solving optimization problems for continuous functions and is a very heavily studied method in machine learning. Thus, it is natural to attempt to optimize the ELBO via gradient ascent. Applying gradient ascent to the ELBO would entail iteratively computing the [gradient](https://en.wikipedia.org/wiki/Gradient) of the ELBO with respect to $\phi$ and then  updating our estimate of $\phi$ via this gradient. That is, at each iteration $t$, we have some estimate of $\phi$, denoted $\phi_t$ that we will update as follows:
 
-$$\phi_{t+1} := \phi_t + \alpha \nabla_\phi \text{ELBO}(\phi_t)$$
+$$\phi_{t+1} := \phi_t + \alpha \nabla_\phi \left. \text{ELBO}(\phi) \rvert_{\phi_t}$$
 
-where $\alpha$ is the learning rate. This step is repeated until we converge on a local optimum of the ELBO. Now, the question becomes how do we compute the gradient of the ELBO? The key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. One idea to get around this is to compute Monte Carlo estimates of the expectation by sampling $L$ values from $q_\phi$ as follows
+where $\alpha$ is the learning rate. This step is repeated until we converge on a local optimum of the ELBO. Now, the question becomes how do we compute the gradient of the ELBO? The key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. 
+
+One idea to get around is to approximate the ELBO using Monte Carlo estimates of the expectation by sampling $L$ values from $q_\phi$ as follows
 
 $z'_1, \dots, z'_L \overset{\text{i.i.d.}}{\sim}q_\phi$
 
-and the estimate the expectation via:
+and then estimate the expectation via:
 
 $$\begin{align*}\text{ELBO}(\phi) := E_{Z \sim q_phi}\left[\log p(x, Z) - \log q_\phi(Z) \right] \\ \approx \frac{1}{L} \sum_{l=1}^L \left[\log p(x, z'_l) - \log q_\phi(z'_l) \right] \end{align*}$$
 
-We'll use $\text{ELBO}'$ to denote the Monte Carlo estimate of the ELBO. Now, it may be tempting to simply compute the gradient of $\text{ELBO}'$ with respect to $\phi$ and use this in our gradient ascent algorithm. 
+We'll use $\text{ELBO}'$ to denote the Monte Carlo estimate of the ELBO. Now, it may be tempting to simply compute the gradient of $\text{ELBO}'$ with respect to $\phi$ and use this in our gradient ascent algorithm. Unfortunately, this would not be correct due to the fact that 
 
 
 
