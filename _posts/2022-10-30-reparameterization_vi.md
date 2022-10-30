@@ -1,6 +1,6 @@
 ---
-title: 'Blackbox variation inference via the reparameterization gradient'
-date: 2022-10-10
+title: 'Blackbox variational inference via the reparameterization gradient'
+date: 2022-10-20
 permalink: /posts/reparameterization_vi/
 tags:
   - tutorial
