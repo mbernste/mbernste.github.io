@@ -49,7 +49,18 @@ The reparameterization gradient
 
 $$\phi_{t+1} \rightarrow \nabla_\phi \text{ELBO}(\phi_t)$$
 
-This step is repeated until we converge on a local optimum of the ELBO. Unfortunately, computing the gradient of the ELBO 
+This step is repeated until we converge on a local optimum of the ELBO. Now, the question becomes how do we compute the gradient of the ELBO? The key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. One idea to get around this is to compute Monte Carlo estimates of the expectation by sampling $L$ values from $q_\phi$ as follows
+
+$z_1, \dots, z_L \undertext{\sim}{\text{i.i.d.}}q_\phi(z)$
+
+and the estimate the expectation via:
+
+$$\begin{align*}\text{ELBO}(\phi) := E_{Z \sim q_phi}\left[\log p(x, Z) - \log q_\phi(Z) \right] \\ \approx \frac{1}{L} \sum_{l=1}^L \log p(x, z_l) - \log q_\phi(z)_l) \end{align*}$$
+
+
+
+
+
 
 
 Example: Bayesian linear regression
