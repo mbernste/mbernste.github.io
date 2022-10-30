@@ -14,80 +14,10 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Variational autoencoders (VAEs), introduced by [Kingma and Welling (2013)](https://arxiv.org/abs/1312.6114_) are a class of probabilistic models that model latent, low-dimensional representations of data. There are two complimentary ways of viewing variational autoencoders:
-1. **Probabilistic generative model:** VAEs can be viewed as a probabilistic generative model of independent, identically distributed samples, $\boldsymbol{x}_1, \dots, \boldsymbol{x}_m$. Each sample, $\boldsymbol{x}_i$, is associated with a latent (i.e. unobserved), lower-dimensional representation $\boldsymbol{z}_i$. Notably, each observed sample $\boldsymbol{x}_i$ is of higher dimension than its associated lower dimensional representation $\boldsymbol{z}_i$.  Variational autoencoders define a joint distribution $p(\boldsymbol{x}, \boldsymbol{z})$ and enables efficient computation of:
-  * An approximation to the posterior $p(\boldsymbol{z} \mid \boldsymbol{x})$
-  * The conditional distribution $p(\boldsymbol{x} \mid \boldsymbol{z})$
-2. **Autoencoder:** As their name suggests, a VAE can be viewed as an autoencoder. Unlike standard autoencoders, which are deterministic, VAEs are probabilistic; Given an input sample, $\boldsymbol{x}_i$, its encoded, latent representation $\boldsymbol{z}_i$ is randomly generated.
+In a [previous blog post](), we presented the variational inference paradigm for estimating posterior distributions when computing is intractable. To review, variational inference is used in situations in which we have a model that involves hidden random variables $Z$, observed data $X$, and some posited probabilistic model over the hidden and observed random variables $$P(Z, X)$$. Our goal is to compute the posterior distribution $P(Z \mid X)$. Under an ideal situation, we would do so by using Bayes theorem:
 
-In this blog post we will present VAEs through both of these lenses. We will present an example of running VAEs on MNIST. Finally, we will discuss applications of VAEs in computational biology. Specfically, we will discuss the [scVI method](https://docs.scvi-tools.org/en/stable/user_guide/models/scvi.html) by [Lopez et al. (2018)](https://www.nature.com/articles/s41592-018-0229-2), which is a VAE-based tool used to analyze [single-cell RNA-seq](https://en.wikipedia.org/wiki/Single_cell_sequencing) data.
+$$p(z \mid x) = \frac{p(x \mid z)p(z)}{p(x)}$$
 
-VAEs as probabilistic generative models
----------------------------------------
+where $$z$$ and $$x$$ are realizations of $$Z$$ and $$X$$ respectively and $$p(.)$$ are probability mass/density functions for the distributions implied by their arguments.  In practice, it is often difficult to compute $p(z \mid x)$ via Bayes theorem because the denominator $p(x)$ does not have a closed form. 
 
-At their core, VAEs describe families of probability distributions over real-valued vectors in $\mathbb{R}^J$.  The generative process behind the VAE is as follows: to generate a given sample $\boldsymbol{x} \in \mathbb{R}^J$, we first generate a latent sample  $\boldsymbol{z} \in \mathbb{R}^{D}$ of lower dimension (i.e.,  $D < J$) which will be used to construct $\boldsymbol{x}$. Typically, $\boldsymbol{z}$ is made to follow a standard normal distribution:
-
-$$\boldsymbol{z} \sim N(\boldsymbol{0}, \boldsymbol{I})$$
-
-Then, we use $\boldsymbol{z}$ to construct the parameters, $\boldsymbol{\psi}$, of another distribution used to sample $\boldsymbol{x}$. Crucially, we construct $\psi$ from $\boldsymbol{z}$ using neural networks:
-
-$$\begin{align*} \boldsymbol{\psi} &:= f_{\theta}(\boldsymbol{z}) \\ \boldsymbol{x} &\sim \mathcal{D}(\boldsymbol{\psi}) \end{align*}$$
-
-where $\mathcal{D}$ is a parametric distribution and $f$ is a neural network parameterized by a set of parameters $\theta$. As one example, $\mathcal{D}$ may be a Gaussian distribution with unit variance and $\psi$ is the mean of this distribution.  Here's a schematic illustration of the generative process:
-
-&nbsp;
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/VAE_generative_process_shapes.png" alt="drawing" width="700"/></center>
-
-&nbsp;
-
-This generative process can be visualized graphically below:
-
-&nbsp;
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/VAE_generative_process.png" alt="drawing" width="700"/></center>
-
-&nbsp;
-
-Interestingly, this model enables use to fit very complicated distributions! That's because although the distribution over $\boldsymbol{z}$ and the conditional distribution of $\boldsymbol{x}$ given $\boldsymbol{z}$ may be simple (e.g., both simply normal distributions), the marginal distribution of $\boldsymbol{x}$ becomes complex:
-
-&nbsp;
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/VAE_marginal.png" alt="drawing" width="350"/></center>
-
-&nbsp;
-
-This complexity is a result of the non-linear mapping between $\boldsymbol{z}$ and $\psi$ implemented via the neural network!
-
-Inference
----------
-
-Now, let's say we are given a dataset consisting of data points $\boldsymbol{x}_1, \dots, \boldsymbol{x}_m \in \mathbb{R}^J$ that we assume was generated by a VAE. We may be interested in two central tasks:
-1. For fixed $\theta$, for each $\boldsymbol{x}\_i$, compute the posterior distribution $p_{\theta}(\boldsymbol{z}_i \mid \boldsymbol{x}_i)$
-2. Find the maximum likelihood estimates of $\theta$
-
-Unfortunately, for a fixed $\theta$, solving for the posterior $p_{\theta}(\boldsymbol{z}_i \mid \boldsymbol{x}_i)$ using Bayes Theorem is intractible due the denominator in the formula for Bayes Theorem requires marginalizing over $\boldsymbol{z}_i$:
-
-$$p_\theta(\boldsymbol{z}_i \mid \boldsymbol{x}_i) = \frac{p_\theta(\boldsymbol{x}_i \mid \boldsymbol{z}_i)p(\boldsymbol{z}_i)}{\int p_\theta(\boldsymbol{x}_i, \boldsymbol{z}_i) \ d\boldsymbol{z}_i }$$
-
-Similarly, it is difficult to estimate the values for $\theta$ by maximizing the data likelihood due to the need to marginalize over each $\boldsymbol{z}\_i$:
-
-$$\begin{align*}\hat{\theta} &:= \text{argmax}_\theta \prod_{i=1}^m p_\theta(\boldsymbol{x}_i) \\ &= \text{argmax}_\theta \prod_{i=1}^m \int p_\theta(\boldsymbol{x}_i, \boldsymbol{z}_i) \ d\boldsymbol{z}_i  \end{align*}$$
-
-Variatonal autoencoders find approximate solutions to these intractible inference problems using [variational inference](https://mbernste.github.io/posts/variational_inference/). 
-
-First, let's assume that $\theta$ is fixed and attempt to approximate $p\_\theta(\boldsymbol{z}\_i \mid \boldsymbol{x}\_i)$. Variational inference is a method for performing such approximations by first choosing a set of probability distributions, $\mathcal{Q}$, called the _variational family_, and then finding the distribution $q(\boldsymbol{z}) \in \mathcal{Q}$ that is "closest to" $p_\theta(\boldsymbol{z} \mid \boldsymbol{x})$. Variational inference uses the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) between $q(\boldsymbol{z})$ and $p_\theta(\boldsymbol{z} \mid \boldsymbol{x})$ as its measure of "closeness". Thus, the goal of variational inference is to minimize the KL-divergence. It turns out that the task of minimizing the KL-divergence is equivalent to the task of maximizing a quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), which is defined as
-
-$$\begin{align*} \text{ELBO}(q) &:= E_{\boldsymbol{z} \sim q}\left[ \sum_{i=1}^m \log p_\theta(\boldsymbol{x}_i, \boldsymbol{z}_i) - \sum_{i=1}^m \log q(\boldsymbol{z}_i) \right] \\ &= \sum_{i=1}^m E_{\boldsymbol{z} \sim q} \left[\log p_\theta(\boldsymbol{x}_i, \boldsymbol{z}_i) - \log q(\boldsymbol{z}_i) \right] \end{align*}$$
-
-Thus, variational inference entails finding
-
-$$\hat{q} := \text{arg max}_{q \in \mathcal{Q}} \ \text{ELBO}(q)$$
-
-Now, so far we have assumed that $\theta$ is fixed. Is it possible to find both $q$ and $\theta$ jointly? It turns out the answer is yes! We can simply define the ELBO to be a function of _both_ $q$ and $\theta$ and then maximize the ELBO jointly:
-
-$$\hat{q}, \hat{\theta} := \text{arg max}_{q, \theta} \ \text{ELBO}(q, \theta)$$
-
-Why does this work? Recall the evidence lower bound is a lower bound for $\log p_\theta(\boldsymbol{x})$ TODO!!!!!!!
-
-### Variational family used by VAEs
+Variational inference estimates the posterior by 
