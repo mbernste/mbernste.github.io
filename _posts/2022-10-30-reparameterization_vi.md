@@ -53,7 +53,7 @@ where $\alpha$ is the learning rate. This step is repeated until we converge on 
 
 One idea to get around is to approximate the ELBO using Monte Carlo estimates of the expectation by sampling $L$ values from $q_\phi$ as follows
 
-$z'_1, \dots, z'_L \overset{\text{i.i.d.}}{\sim}q_\phi$
+$$z'_1, \dots, z'_L \overset{\text{i.i.d.}}{\sim}q_\phi$$
 
 and then estimate the expectation via:
 
