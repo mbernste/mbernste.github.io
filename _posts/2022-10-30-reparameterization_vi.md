@@ -51,6 +51,14 @@ $$\phi_{t+1} := \phi_t + \alpha \nabla_\phi \left. \text{ELBO}(\phi) \right|_{\p
 
 where $\alpha$ is the learning rate. This step is repeated until we converge on a local optimum of the ELBO. Now, the question becomes how do we compute the gradient of the ELBO? The key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. 
 
+We can get around this via the **reparameterization trick** co-invented in 2014 by []. The reparameterization trick entails re-formulating the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$, and a determinstic function $g$ as follows
+
+$$\begin{align*}\epsilon \sim X \\ z := g_\phi(\epsilon)\end{align*}$$
+
+such that $z \sim q_\phi$. That is, instead of sampling $z$ directly from $q_\phi$, we instead generate $z$ by sampling a surrogate random variable $\epsilon$ from some distribution $X$ and then plug $\epsilon$ into a function $g$ that is parameterized by $\phi$. We define $X$ and $g_\phi$ in such a way that the distribution of $z$ resulting from this generative is the distribution $q_\phi$.
+
+
+
 One idea to get around is to approximate the ELBO using Monte Carlo estimates of the expectation by sampling $L$ values from $q_\phi$ as follows
 
 $$z'_1, \dots, z'_L \overset{\text{i.i.d.}}{\sim}q_\phi$$
@@ -59,7 +67,7 @@ and then estimate the expectation via:
 
 $$\begin{align*}\text{ELBO}(\phi) := E_{Z \sim q_phi}\left[\log p(x, Z) - \log q_\phi(Z) \right] \\ \approx \frac{1}{L} \sum_{l=1}^L \left[\log p(x, z'_l) - \log q_\phi(z'_l) \right] \end{align*}$$
 
-We'll use $\text{ELBO}'$ to denote the Monte Carlo estimate of the ELBO. Now, it may be tempting to simply compute the gradient of $\text{ELBO}'$ with respect to $\phi$ and use this in our gradient ascent algorithm. Unfortunately, this would not be correct due to the fact that 
+We'll use $\text{ELBO}'$ to denote the Monte Carlo estimate of the ELBO. Now, it may be tempting to simply compute the gradient of $\text{ELBO}'$ -- that is, compute $\nabal_\phi \text{ELBO}'(\phi)$ with respect to $\phi$ and use this in our gradient ascent algorithm. Unfortunately, this would not be correct due to the fact that we _sampled_ from $q_\phi$ which itself includes the parameters $\phi$. That i 
 
 
 
