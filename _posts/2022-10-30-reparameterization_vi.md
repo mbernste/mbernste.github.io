@@ -28,7 +28,7 @@ Thus, our goal is to solve the following maximization problem:
 
 $$\hat{q} := \text{arg max}_{q \in \mathcal{Q}} \text{ELBO}(q)$$
 
-In this post, we will present a flexible method, called **blackbox variational inference via the reparameterization gradient** (also called the "pathwise gradient") for solving this optimization problem under the following conditions:
+In this post, we will present a flexible method, called **blackbox variational inference via the reparameterization gradient**, co-invented by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082), for solving this optimization problem under the following conditions:
 1. $p(x, z)$ is parameterized by some set of parameters $\theta$ and is continuous with respect to these parameters. We'll denote this distribution as $p_\theta(x, z)$.
 2. $q(z)$ is paramterized by some set of variational parameters $\phi$ and is continuous with respect to these paramters. We'll denote this distribution as $q_\phi(z)$
 3. Sampling from $q(z)$ can be performed via the **reparameterization trick** (to be discussed)
