@@ -51,7 +51,7 @@ $$\phi_{t+1} \rightarrow \nabla_\phi \text{ELBO}(\phi_t)$$
 
 This step is repeated until we converge on a local optimum of the ELBO. Now, the question becomes how do we compute the gradient of the ELBO? The key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. One idea to get around this is to compute Monte Carlo estimates of the expectation by sampling $L$ values from $q_\phi$ as follows
 
-$z_1, \dots, z_L \underset{\sim}{\text{i.i.d.}}q_\phi(z)$
+$z_1, \dots, z_L \overset{\text{i.i.d.}}{\sim}q_\phi(z)$
 
 and the estimate the expectation via:
 
