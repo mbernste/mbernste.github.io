@@ -51,15 +51,20 @@ $$\phi_{t+1} := \phi_t + \alpha \nabla_\phi \left. \text{ELBO}(\phi) \right|_{\p
 
 where $\alpha$ is the learning rate. This step is repeated until we converge on a local optimum of the ELBO. Now, the question becomes how do we compute the gradient of the ELBO? The key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. 
 
-We can get around this via the **reparameterization trick** co-invented in 2014 by []. The reparameterization trick entails re-formulating the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$, and a determinstic function $g$ as follows
+We can get around this via the **reparameterization trick** co-invented by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082). The reparameterization trick entails re-formulating the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$, and a determinstic function $g$ as follows
 
-$$\begin{align*}\epsilon \sim X \\ z := g_\phi(\epsilon)\end{align*}$$
+$$\begin{align*}\epsilon \sim \mathcal{D} \\ z := g_\phi(\epsilon)\end{align*}$$
 
-such that $z \sim q_\phi$. That is, instead of sampling $z$ directly from $q_\phi$, we instead generate $z$ by sampling a surrogate random variable $\epsilon$ from some distribution $X$ and then plug $\epsilon$ into a function $g$ that is parameterized by $\phi$. We define $X$ and $g_\phi$ in such a way that the distribution of $z$ resulting from this generative is the distribution $q_\phi$.
+such that $z \sim q_\phi$. 
 
+That is, instead of sampling $z$ directly from $q_\phi$, we instead generate $z$ by sampling a surrogate random variable $\epsilon$ from some distribution $\mathcal{D}$ and then plug $\epsilon$ into a function $g$ that is parameterized by $\phi$. We define $X$ and $g_\phi$ in such a way that the distribution of $z$ resulting from this generative is the distribution $q_\phi$.
 
+Then, we can write the ELBO as
 
-One idea to get around is to approximate the ELBO using Monte Carlo estimates of the expectation by sampling $L$ values from $q_\phi$ as follows
+$$\text{ELBO}(\phi) := E_{\epsilon \sim \mathcal{D}} \left[ \log p(x, g_\phi(\epsilon)) - \log q_\phi(g_\phi(\epsilon)) \right]$$
+
+What does this reformulation get us exactly? That is, why perform this reparameterization? It turns out, this reformulation allows us to approximate the ELBO via Monte Carlo simulation.
+
 
 $$z'_1, \dots, z'_L \overset{\text{i.i.d.}}{\sim}q_\phi$$
 
