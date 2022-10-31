@@ -67,7 +67,9 @@ $$\text{ELBO}(\phi) := E_{\epsilon \sim \mathcal{D}} \left[ \log p(x, g_\phi(\ep
 
 What does this reformulation get us exactly? By performing this reparameterization we can sample stochastic gradients! That is, we sample a stochastic gradient via the following generative process:
 
-$$\begin{align*}\epsilon_1, \dots, \epsilon_L &\sim \mathcal{D} \\ \tilde{ELBO}(\phi) := \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right] \end{align*}$$ 
+$$\begin{align*}\epsilon_1, \dots, \epsilon_L &\sim \mathcal{D} \\ \tilde{ELBO}(\phi) &:= \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right] \\ \nabla_\phi \tilde{ELBO}(\phi) &:= \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right] \end{align*}$$ 
+
+Notice here that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$.  Moreover, the expectation of $\nabla_\phi \tilde{\text{ELBO}}(\phi)$ is equal to $\nabla_\phi \text{ELBO}(\phi)$
 
 
 
