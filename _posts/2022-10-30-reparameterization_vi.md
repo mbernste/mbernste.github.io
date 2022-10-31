@@ -37,8 +37,9 @@ Then, the optimziation problem reduces to optimizing over $\phi$:
 $$\hat{\phi} := \text{arg max}_{\phi} \text{ELBO}(\phi)$$
 
 In this post, we will present a flexible method, called **blackbox variational inference via the reparameterization gradient**, co-invented by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082), for solving this optimization problem under the following conditions:
-1. $q$ is paramterized by some set of variational parameters $\phi$ and is continuous with respect to these paramters
+1. $q$ is paramterized by some set of variational parameters $\phi$ and is continuous with respect to these parameters
 2. Sampling from $q_\phi$ can be performed via the **reparameterization trick** (to be discussed)
+3. $p$ is continuous with respect to $z$ 
 
 The method is often called "blackbox" VI because it works for a large set of models $p$ and $q$ and it acts as a "blackbox" for which $p$ and $q$ can simply be plugged into the algorithm thereby avoiding the tedious model-specific, mathematical derivations that developing a variational inference algorithm often requires (See the [Appendix](https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf) to the original paper presenting [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) for an example of such a model-specific VI derivation).
 
@@ -53,11 +54,11 @@ where $\alpha$ is the learning rate. This step is repeated until we converge on 
 
 Now, the question becomes how do we compute the gradient of the ELBO? A key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. One approach called the **reparameterization gradient** method, co-proposed by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082), entails performing [stochastic gradient ascent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) using computationally tractable random gradients instead of using the computationally _intractable_ exact gradient.
 
-Stochastic gradient ascent works as follows: Instead of computing the exact gradient of the ELBO with respect to $\phi$, we formulate a random variable $G(\phi)$, whose expectation is the gradient of the ELBO at $\phi$ -- that is, for which $E[G(\phi)] = \nabla_\phi ELBO(\phi)$. Then, we sample approximate gradients from this distribution and take small steps in the direction of these approximations:
+Stochastic gradient ascent works as follows: Instead of computing the exact gradient of the ELBO with respect to $\phi$, we formulate a random variable $G(\phi)$, whose expectation is the gradient of the ELBO at $\phi$ -- that is, for which $E[G(\phi)] = \nabla_\phi ELBO(\phi)$. Then, we sample approximate gradients from this distribution and take small steps in the direction of these random gradients:
 
 $$\begin{align*} \boldsymbol{g} &\sim G(\phi_t) \\ \phi_{t+1} &:= \phi_t + \alpha \boldsymbol{g} \end{align*}$$
 
-The reparameterization gradient samples stochastic gradients by employing the **reparameterization trick**. The reparameterization trick works as follows: we re-formulate the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$, and a determinstic function $g$ as follows:
+How does the reparameterization gradient method compute these random gradients? It does so by employing the **reparameterization trick**. The reparameterization trick works as follows: we re-formulate the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$, and a determinstic function $g$ as follows:
 
 $$\begin{align*}\epsilon &\sim \mathcal{D} \\ z &:= g_\phi(\epsilon)\end{align*}$$
 
@@ -65,21 +66,17 @@ Then, we can write the ELBO as
 
 $$\text{ELBO}(\phi) := E_{\epsilon \sim \mathcal{D}} \left[ \log p(x, g_\phi(\epsilon)) - \log q_\phi(g_\phi(\epsilon)) \right]$$
 
-What does this reformulation get us exactly? By performing this reparameterization we can sample stochastic gradients! That is, we sample a stochastic gradient via the following generative process:
+It turns out that by performing this reparameterization we can sample stochastic gradients! Specifically, we sample a stochastic gradient via the following process:
 
 $$\begin{align*}\epsilon_1, \dots, \epsilon_L &\sim \mathcal{D} \\ \tilde{ELBO}(\phi) &:= \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right] \\ \nabla_\phi \tilde{ELBO}(\phi) &:= \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right] \end{align*}$$ 
 
-Notice here that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$.  Moreover, the expectation of $\nabla_\phi \tilde{\text{ELBO}}(\phi)$ is equal to $\nabla_\phi \text{ELBO}(\phi)$
+where $\tilde{ELBO}(\phi)$ is a Monte Carlo approximation of the ELBO. Notice here that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$.  Moreover, it can be proven that 
 
+$$E[\nabla_\phi \tilde{\text{ELBO}}(\phi)] = \nabla_\phi \text{ELBO}(\phi)$$
 
+That is, the expectation of a random gradient generated via this process is the exact gradient of the ELBO! 
 
-and then estimate the expectation via:
-
-
-We'll use $\text{ELBO}'$ to denote the Monte Carlo estimate of the ELBO. Now, it may be tempting to simply compute the gradient of $\text{ELBO}'$ -- that is, compute $\nabla_\phi \text{ELBO}'(\phi)$ with respect to $\phi$ and use this in our gradient ascent algorithm. Unfortunately, this would not be correct due to the fact that we _sampled_ from $q_\phi$ which itself includes the parameters $\phi$. That i 
-
-
-
+So long as $g_\phi$ is continuous with respect to $\phi$ (i.e., $q_\phi$ is continuous with respect to $\phi$) and $p$ is continuous with respect to $z$, then the random gradient $\nabla_\phi \tilde{\text{ELBO}}(\phi)$ exists. In practice, this gradient can be computed via [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) algorithm thereby making implementations of this approach quite simple! 
 
 Example: Bayesian linear regression
 -----------------------------------
