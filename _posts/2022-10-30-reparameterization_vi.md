@@ -55,7 +55,7 @@ Now, the question becomes how do we compute the gradient of the ELBO? A key chal
 
 Stochastic gradient ascent works as follows: Instead of computing the exact gradient of the ELBO with respect to $\phi$, we formulate a random variable $G(\phi)$, whose expectation is the gradient of the ELBO at $\phi$ -- that is, for which $E[G(\phi)] = \nabla_\phi ELBO(\phi)$. Then, we sample approximate gradients from this distribution and take small steps in the direction of these approximations:
 
-$$\begin{align*} \boldsymbol{g} &\sim G(\phi_t) \\ \phi_{t+1} := \phi_t + \alpha \nabla_\phi \boldsymbol{g}$$
+$$\begin{align*} \boldsymbol{g} &\sim G(\phi_t) \\ \phi_{t+1} &:= \phi_t + \alpha \nabla_\phi \boldsymbol{g} \end{align*}$$
 
 The reparameterization gradient samples stochastic gradients by employing the **reparameterization trick**. The reparameterization trick works as follows: we re-formulate the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$, and a determinstic function $g$ as follows:
 
