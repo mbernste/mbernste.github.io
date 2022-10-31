@@ -86,19 +86,21 @@ $$E[\nabla_\phi \tilde{\text{ELBO}}(\phi)] = \nabla_\phi \text{ELBO}(\phi)$$
 
 That is, the expectation of this random gradient is the exact gradient of the ELBO! 
 
-So long as $g_\phi$ is continuous with respect to $\phi$ (i.e., $q_\phi$ is continuous with respect to $\phi$) and $p$ is continuous with respect to $z$,  the random gradient $\nabla_\phi \tilde{\text{ELBO}}(\phi)$ exists. In practice, we don't even need to derive the gradient ourselves as it often be computed via [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) algorithms. 
+So long as $g_\phi$ is continuous with respect to $\phi$ (i.e., $q_\phi$ is continuous with respect to $\phi$) and $p$ is continuous with respect to $z$,  the random gradient $\nabla_\phi \tilde{\text{ELBO}}(\phi)$ exists. 
 
 Reparameterization gradients in practice
 ----------------------------------------
 
-Implementing the reparameterization gradient for a given model $p(x, z)$ (that is continuous with respect to $z$) can be quite simple in practice using modern machine learning libraries like [pytorch](https://pytorch.org/) and [tensorflow](https://www.tensorflow.org/) that enable implementations of gradient-based optimization and automatic differentiation. We really need to specificy just a few things:
+Implementing the reparameterization gradient for a given model $p(x, z)$ (that is continuous with respect to $z$) can be quite simple in practice. We really need to specificy just a few things:
 
 1. **Variational distribution $q_\phi(z)$**: The form of the variational posterior depends on the problem at hand. In many cases, one can assume the exact posterior $p(z \mid x)$ is approximately normal, and thus let $q_\phi(z)$ be a normal distribution parameterized by a mean $\mu$ and variance $\sigma^2$. Note, we only require that $q_\phi(z)$ be continuous with respect to $\boldsymbol{z}$.
-2. **Reparameterization of $q_\phi(z)$**: This can be tricky depending on chosen $q_\phi(z)$. However, if $q_\phi(z)$ is a [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family) distribution then it is quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution where the variational parameters are simply $\phi := \{\mu, \sigma^2\}$ (i.e., the  mean $\mu$ and variance $\sigma^2$), we can reparameterize $q_\phi(z)$ as:
+2. **Reparameterization of $q_\phi(z)$**: This _can_ be tricky depending on chosen $q_\phi(z)$; however, for many common choices of variational families, it can be quite easy. For example, if $q_\phi(z)$ is a [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family) distribution then reparameterization becomes quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution where the variational parameters are simply $\phi := \{\mu, \sigma^2\}$ (i.e., the  mean $\mu$ and variance $\sigma^2$), we can reparameterize $q_\phi(z)$ as:
 
 $$\begin{align*}\epsilon \sim N(0, 1) \\ z = \mu + \sigma \epsilon\end{align*}$$
 
-Here, the surrogate random variable is a simple standard normal distribution. The deterministic function $g$ is the function that simply shifts $\epsilon$ by $\mu$ and scales it by $\sigma$.
+Here, the surrogate random variable is a simple standard normal distribution. The deterministic function $g$ is the function that simply shifts $\epsilon$ by $\mu$ and scales it by $\sigma$. Note that $z \sim N(\mu, \sigma^2) = q_\phi(z)$ and thus, this is a valid reparameterization.
+
+Once the variational family and reparameterization are specified, we can use [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) algorithms, such as those implemented in modern machine learning libraries like [pytorch](https://pytorch.org/) or [tensorflow](https://www.tensorflow.org/) to compute the gradient of the approximate ELBO. Moreover, we can perform steps along the gradient using gradient-based optimziation methods implemented in these libraries as well!. 
 
 Example: Bayesian linear regression
 -----------------------------------
