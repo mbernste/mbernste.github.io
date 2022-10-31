@@ -49,30 +49,32 @@ The reparameterization gradient
 
 $$\phi_{t+1} := \phi_t + \alpha \nabla_\phi \left. \text{ELBO}(\phi) \right|_{\phi_t}$$
 
-where $\alpha$ is the learning rate. This step is repeated until we converge on a local optimum of the ELBO. Now, the question becomes how do we compute the gradient of the ELBO? The key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. 
+where $\alpha$ is the learning rate. This step is repeated until we converge on a local optimum of the ELBO. 
 
-We can get around this via the **reparameterization trick** co-invented by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082). The reparameterization trick entails re-formulating the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$, and a determinstic function $g$ as follows
+Now, the question becomes how do we compute the gradient of the ELBO? A key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. One approach called the **reparameterization gradient** method, co-proposed by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082), entails performing [stochastic gradient ascent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) using computationally tractable random gradients instead of using the computationally _intractable_ exact gradient.
 
-$$\begin{align*}\epsilon \sim \mathcal{D} \\ z := g_\phi(\epsilon)\end{align*}$$
+Stochastic gradient ascent works as follows: Instead of computing the exact gradient of the ELBO with respect to $\phi$, we formulate a random variable $G(\phi)$, whose expectation is the gradient of the ELBO at $\phi$ -- that is, for which $E[G(\phi)] = \nabla_\phi ELBO(\phi)$. Then, we sample approximate gradients from this distribution and take small steps in the direction of these approximations:
 
-such that $z \sim q_\phi$. 
+$$\begin{align*} \boldsymbol{g} &\sim G(\phi_t) \\ \phi_{t+1} := \phi_t + \alpha \nabla_\phi \boldsymbol{g}$$
 
-That is, instead of sampling $z$ directly from $q_\phi$, we instead generate $z$ by sampling a surrogate random variable $\epsilon$ from some distribution $\mathcal{D}$ and then plug $\epsilon$ into a function $g$ that is parameterized by $\phi$. We define $X$ and $g_\phi$ in such a way that the distribution of $z$ resulting from this generative is the distribution $q_\phi$.
+The reparameterization gradient samples stochastic gradients by employing the **reparameterization trick**. The reparameterization trick works as follows: we re-formulate the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$, and a determinstic function $g$ as follows:
+
+$$\begin{align*}\epsilon &\sim \mathcal{D} \\ z &:= g_\phi(\epsilon)\end{align*}$$
 
 Then, we can write the ELBO as
 
 $$\text{ELBO}(\phi) := E_{\epsilon \sim \mathcal{D}} \left[ \log p(x, g_\phi(\epsilon)) - \log q_\phi(g_\phi(\epsilon)) \right]$$
 
-What does this reformulation get us exactly? That is, why perform this reparameterization? It turns out, this reformulation allows us to approximate the ELBO via Monte Carlo simulation.
+What does this reformulation get us exactly? By performing this reparameterization we can sample stochastic gradients! That is, we sample a stochastic gradient via the following generative process:
+
+$$\begin{align*}\epsilon_1, \dots, \epsilon_L &\sim \mathcal{D} \\ \tilde{ELBO}(\phi) := \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right] \end{align*}$$ 
 
 
-$$z'_1, \dots, z'_L \overset{\text{i.i.d.}}{\sim}q_\phi$$
 
 and then estimate the expectation via:
 
-$$\begin{align*}\text{ELBO}(\phi) := E_{Z \sim q_phi}\left[\log p(x, Z) - \log q_\phi(Z) \right] \\ \approx \frac{1}{L} \sum_{l=1}^L \left[\log p(x, z'_l) - \log q_\phi(z'_l) \right] \end{align*}$$
 
-We'll use $\text{ELBO}'$ to denote the Monte Carlo estimate of the ELBO. Now, it may be tempting to simply compute the gradient of $\text{ELBO}'$ -- that is, compute $\nabal_\phi \text{ELBO}'(\phi)$ with respect to $\phi$ and use this in our gradient ascent algorithm. Unfortunately, this would not be correct due to the fact that we _sampled_ from $q_\phi$ which itself includes the parameters $\phi$. That i 
+We'll use $\text{ELBO}'$ to denote the Monte Carlo estimate of the ELBO. Now, it may be tempting to simply compute the gradient of $\text{ELBO}'$ -- that is, compute $\nabla_\phi \text{ELBO}'(\phi)$ with respect to $\phi$ and use this in our gradient ascent algorithm. Unfortunately, this would not be correct due to the fact that we _sampled_ from $q_\phi$ which itself includes the parameters $\phi$. That i 
 
 
 
