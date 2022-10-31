@@ -80,13 +80,26 @@ $$\tilde{ELBO}(\phi) := \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsil
 
 $$\nabla_\phi \tilde{ELBO}(\phi) := \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$ 
 
-where $\tilde{ELBO}(\phi)$ is a Monte Carlo approximation of the ELBO. Notice here that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$.  Moreover, it can be proven that 
+Notice here that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector (previously denoted by $\boldsymbol{g}$ in the general case) where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$.  Moreover, it can be proven that 
 
 $$E[\nabla_\phi \tilde{\text{ELBO}}(\phi)] = \nabla_\phi \text{ELBO}(\phi)$$
 
-That is, the expectation of a random gradient generated via this process is the exact gradient of the ELBO! 
+That is, the expectation of this random gradient is the exact gradient of the ELBO! 
 
-So long as $g_\phi$ is continuous with respect to $\phi$ (i.e., $q_\phi$ is continuous with respect to $\phi$) and $p$ is continuous with respect to $z$, then the random gradient $\nabla_\phi \tilde{\text{ELBO}}(\phi)$ exists. In practice, this gradient can be computed via [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) algorithm thereby making implementations of this approach quite simple! 
+So long as $g_\phi$ is continuous with respect to $\phi$ (i.e., $q_\phi$ is continuous with respect to $\phi$) and $p$ is continuous with respect to $z$,  the random gradient $\nabla_\phi \tilde{\text{ELBO}}(\phi)$ exists. In practice, we don't even need to derive the gradient ourselves as it often be computed via [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) algorithms. 
+
+Reparameterization gradients in practice
+----------------------------------------
+
+Implementing the reparameterization gradient for a given model $p(x, z)$ can be quite simple in practice using modern machine learning libraries like [pytorch](https://pytorch.org/) and [tensorflow](https://www.tensorflow.org/) that enable implementations of gradient-based optimization and automatic differentiation. We really need to specificy just a few things:
+
+1. **The variational distribution $q_\phi(z)$**: The form of the variational posterior depends on the problem at hand. In many cases, one can assume the exact posterior $p(z \mid x)$ is approximately normal, and thus let $q_\phi(z)$ be a normal distribution parameterized by $\
+2. **The reparameterization of $q_\phi(z)$**: This can be the tricky part depending on $q_\phi(z)$. However, if $q_\phi(z)$ is a location-scale family distribution then it is quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution where the variational parameters are simply $\phi := \{\mu, \sigma\}$, the  mean $\mu$ and variance $\sigma^2$, we can reparameterize $q_\phi(z)$ as:
+
+$$\begin{align*}\epsilon \sim N(0, 1) \\ z = \mu + \sigma \epsilon\end{align*}$$
+
+Here, the surrogate random variable is a simple standard normal distribution. The deterministic function $g$ is the function that simply shifts $\epsilon$ by the $\mu$ and scales it by $\sigma$.
+
 
 Example: Bayesian linear regression
 -----------------------------------
