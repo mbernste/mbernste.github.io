@@ -68,7 +68,17 @@ $$\text{ELBO}(\phi) := E_{\epsilon \sim \mathcal{D}} \left[ \log p(x, g_\phi(\ep
 
 It turns out that by performing this reparameterization we can sample stochastic gradients! Specifically, we sample a stochastic gradient via the following process:
 
-$$\begin{align*}\epsilon_1, \dots, \epsilon_L &\sim \mathcal{D} \\ \tilde{ELBO}(\phi) &:= \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right] \\ \nabla_\phi \tilde{ELBO}(\phi) &:= \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right] \end{align*}$$ 
+1. Sample random variables from our surrogate distribution:
+
+$$\epsilon_1, \dots, \epsilon_L &\sim \mathcal{D}$$
+
+2. Compute a Monte Carlo approximation to the ELBO:
+
+$$\tilde{ELBO}(\phi) &:= \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$ 
+
+3. Compute the gradient to this Monte Carlo approximation:
+
+$$\nabla_\phi \tilde{ELBO}(\phi) &:= \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$ 
 
 where $\tilde{ELBO}(\phi)$ is a Monte Carlo approximation of the ELBO. Notice here that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$.  Moreover, it can be proven that 
 
