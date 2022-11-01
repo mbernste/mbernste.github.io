@@ -75,7 +75,7 @@ Reparmaterizing $q_\phi(z)$ can be tricky; however, for many common choices of v
 
 $$q_\phi := N(\mu, \sigma^2)$$
 
-where the variational parameters are simply $\phi := \left\{\mu, \sigma^2\right\}$ (i.e., the  mean $\mu$ and variance $\sigma^2$), we can reparameterize $q_\phi(z)$ such that sampling $z$ is done as follows:
+where the variational parameters are simply $\phi := \left\\{\mu, \sigma^2\right\\}$ (i.e., the  mean $\mu$ and variance $\sigma^2$), we can reparameterize $q_\phi(z)$ such that sampling $z$ is done as follows:
 
 $$\begin{align*}\epsilon \sim N(0, 1) \\ z = \mu + \sigma \epsilon\end{align*}$$
 
