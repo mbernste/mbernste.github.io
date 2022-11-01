@@ -65,13 +65,17 @@ The question now becomes, how do formulate a distribution $V(\phi)$ whose expect
 The reparameterization trick
 ----------------------------
 
-Before discussing how we formulate our distribution of stochastic gradients $V(\phi_t)$, let us first present the reparameterization trick, which was co-invented by co-invented by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082).  It works as follows: we "reparameterize" the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$ distributed according to some "simple" distribution $\mathcal{D}$ that we can easily sample from (e.g., a standard normal distribution), and a determinstic function $g$ as follows such that sampling $z$ from $q_\phi(z)$ can be performed as follows:
+Before discussing how we formulate our distribution of stochastic gradients $V(\phi)$, let us first present the reparameterization trick, which was co-invented by co-invented by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082).  It works as follows: we "reparameterize" the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$ distributed according to some "simple" distribution $\mathcal{D}$ that we can easily sample from (e.g., a standard normal distribution), and a determinstic function $g$ in such a way that sampling $z$ from $q_\phi(z)$ is performed as follows:
 
 $$\begin{align*}\epsilon &\sim \mathcal{D} \\ z &:= g_\phi(\epsilon)\end{align*}$$
 
 One way to think about this is that instead of sampling $z$ directly from our variational posterior $q_\phi(z)$, we "re-design" the generative process of $z$ such that we first sample a surrogate random variable $\epsilon$ and then transform $\epsilon$ into $z$ all while ensuring that in the end, the distribution of $z$ still follows $q_\phi$.
 
-Reparmaterizing $q_\phi(z)$ can be tricky; however, for many common choices of variational families, it can made to be easy. For example, if $q_\phi(z)$ is a [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family) distribution then reparameterization becomes quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution where the variational parameters are simply $\phi := \{\mu, \sigma^2\}$ (i.e., the  mean $\mu$ and variance $\sigma^2$), we can reparameterize $q_\phi(z)$ as:
+Reparmaterizing $q_\phi(z)$ can be tricky; however, for many common choices of variational families, it can made to be easy. For example, if $q_\phi(z)$ is a [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family) distribution then reparameterization becomes quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution 
+
+$$q_\phi := N(\mu, \sigma^2)$$
+
+where the variational parameters are simply $\phi := \left\{\mu, \sigma^2\right\}$ (i.e., the  mean $\mu$ and variance $\sigma^2$), we can reparameterize $q_\phi(z)$ such that sampling $z$ is done as follows:
 
 $$\begin{align*}\epsilon \sim N(0, 1) \\ z = \mu + \sigma \epsilon\end{align*}$$
 
