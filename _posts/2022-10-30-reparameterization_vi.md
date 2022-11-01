@@ -71,31 +71,37 @@ $$\begin{align*}\epsilon &\sim \mathcal{D} \\ z &:= g_\phi(\epsilon)\end{align*}
 
 One way to think about this is that instead of sampling $z$ directly from our variational posterior $q_\phi(z)$, we "re-design" the generative process of $z$ such that we first sample a surrogate random variable $\epsilon$ and then transform $\epsilon$ into $z$ all while ensuring that in the end, the distribution of $z$ still follows $q_\phi$.
 
-What does this reparameterization trick get us? How does it enable us to compute random gradients of the ELBO? First, we note that via the reparameterization trick, we can re-write the ELBO as follows:
+Reparmaterizing $q_\phi(z)$ can be tricky; however, for many common choices of variational families, it can made to be easy. For example, if $q_\phi(z)$ is a [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family) distribution then reparameterization becomes quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution where the variational parameters are simply $\phi := \{\mu, \sigma^2\}$ (i.e., the  mean $\mu$ and variance $\sigma^2$), we can reparameterize $q_\phi(z)$ as:
+
+$$\begin{align*}\epsilon \sim N(0, 1) \\ z = \mu + \sigma \epsilon\end{align*}$$
+
+Here, the surrogate random variable is a simple standard normal distribution. The deterministic function $g$ is the function that simply shifts $\epsilon$ by $\mu$ and scales it by $\sigma$. Note that $z \sim N(\mu, \sigma^2) = q_\phi(z)$ and thus, this is a valid reparameterization.
+
+Now, what does this reparameterization trick get us? How does it enable us to compute random gradients of the ELBO? First, we note that following the reparameterization trick, we can re-write the ELBO as follows:
 
 $$\text{ELBO}(\phi) := E_{\epsilon \sim \mathcal{D}} \left[ \log p(x, g_\phi(\epsilon)) - \log q_\phi(g_\phi(\epsilon)) \right]$$
 
-It turns out that by performing this reparameterization we can sample stochastic gradients! Specifically, we sample a stochastic gradient via the following process:
-
-1. Sample random variables from our surrogate distribution:
+This formulation enables us to now approxiamte the ELBO via Monte Carlo Sampling. That we first sample random variables from our surrogate distribution:
 
 $$\epsilon_1, \dots, \epsilon_L \sim \mathcal{D}$$
 
-2. Compute a Monte Carlo approximation to the ELBO:
+Then compute a Monte Carlo approximation to the ELBO:
 
 $$\tilde{ELBO}(\phi) := \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$ 
 
-3. Compute the gradient to this Monte Carlo approximation:
+Finally, we can take gradient of this approximation:
 
-$$\nabla_\phi \tilde{ELBO}(\phi) := \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$ 
+$$\nabla_\phi \tilde{ELBO}(\phi) := \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$
 
-Notice here that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector (previously denoted by $\boldsymbol{g}$ in the general case) where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$.  Moreover, it can be proven that 
+So long as $g_\phi$ is continuous with respect to $\phi$ (i.e., $q_\phi$ is continuous with respect to $\phi$) and $p$ is continuous with respect to $z$,  the random gradient $\nabla_\phi \tilde{\text{ELBO}}(\phi)$ exists. 
+
+
+Notice that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector (previously denoted by $\boldsymbol{g}$ in the general case) where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$.  Moreover, it can be proven that 
 
 $$E[\nabla_\phi \tilde{\text{ELBO}}(\phi)] = \nabla_\phi \text{ELBO}(\phi)$$
 
-That is, the expectation of this random gradient is the exact gradient of the ELBO! 
+Thus, the process of sampling $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$, computing the approximate ELBO, and then calculating the gradient to this approximation is equivalent to sampling from a distribution of random gradients $V(\phi)$ whose expectation is the gradient of the ELBO!
 
-So long as $g_\phi$ is continuous with respect to $\phi$ (i.e., $q_\phi$ is continuous with respect to $\phi$) and $p$ is continuous with respect to $z$,  the random gradient $\nabla_\phi \tilde{\text{ELBO}}(\phi)$ exists. 
 
 Reparameterization gradients in practice
 ----------------------------------------
@@ -103,11 +109,7 @@ Reparameterization gradients in practice
 Implementing the reparameterization gradient for a given model $p(x, z)$ (that is continuous with respect to $z$) can be quite simple in practice. We really only need to specificy two things:
 
 1. **Variational distribution $q_\phi(z)$**: The form of the variational posterior depends on the problem at hand, but in many cases, one can assume the exact posterior $p(z \mid x)$ is approximately normal, and thus let $q_\phi(z)$ be a normal distribution parameterized by a mean $\mu$ and variance $\sigma^2$. Note, we only require that $q_\phi(z)$ be continuous with respect to $\boldsymbol{z}$.
-2. **Reparameterization of $q_\phi(z)$**: This _can_ be tricky depending on chosen $q_\phi(z)$; however, for many common choices of variational families, it can be quite easy. For example, if $q_\phi(z)$ is a [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family) distribution then reparameterization becomes quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution where the variational parameters are simply $\phi := \{\mu, \sigma^2\}$ (i.e., the  mean $\mu$ and variance $\sigma^2$), we can reparameterize $q_\phi(z)$ as:
-
-$$\begin{align*}\epsilon \sim N(0, 1) \\ z = \mu + \sigma \epsilon\end{align*}$$
-
-Here, the surrogate random variable is a simple standard normal distribution. The deterministic function $g$ is the function that simply shifts $\epsilon$ by $\mu$ and scales it by $\sigma$. Note that $z \sim N(\mu, \sigma^2) = q_\phi(z)$ and thus, this is a valid reparameterization.
+2. **Reparameterization of $q_\phi(z)$**: 
 
 Once the variational family and reparameterization are specified, we can formulate the approximate ELBO:
 
