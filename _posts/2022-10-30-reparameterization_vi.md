@@ -149,7 +149,7 @@ $$\phi := \\{\boldsymbol{\mu}, \boldsymbol{\sigma}^2 \\}$$
 
 Now, we must derive a reparameterization of $q_\phi$. This can be done quite easily as follows:
 
-$$\begin{align*}\boldsymbol{\epsilon} &\sim N(\boldsymbol{0}, \boldsymbol{I}) \\ \boldsymbol{beta} &= \boldsymbol{\mu} + \boldsymbol{\epsilon} \sun \boldsymbol{\sigma} \end{align*}$$
+$$\begin{align*}\boldsymbol{\epsilon} &\sim N(\boldsymbol{0}, \boldsymbol{I}) \\ \boldsymbol{beta} &= \boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\sigma} \end{align*}$$
 
 where $\sun$ represent element-wise multiplication between two vectors.  Finally, the reparameterized ELBO for this model and variational posterior is:
 
