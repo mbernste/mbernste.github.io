@@ -71,7 +71,11 @@ $$\begin{align*}\epsilon &\sim \mathcal{D} \\ z &:= g_\phi(\epsilon)\end{align*}
 
 One way to think about this is that instead of sampling $z$ directly from our variational posterior $q_\phi(z)$, we "re-design" the generative process of $z$ such that we first sample a surrogate random variable $\epsilon$ and then transform $\epsilon$ into $z$ all while ensuring that in the end, the distribution of $z$ still follows $q_\phi$. This process can be depicted below:
 
+&nbsp;
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/reparameterization_example_ring.png" alt="drawing" width="700"/></center>
+
+&nbsp;
 
 Reparmaterizing $q_\phi(z)$ can be tricky; however, for many common choices of variational families, it can made to be easy. For example, if $q_\phi(z)$ is a [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family) distribution then reparameterization becomes quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution 
 
