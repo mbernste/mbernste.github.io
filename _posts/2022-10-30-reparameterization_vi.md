@@ -115,7 +115,7 @@ Example: Bayesian linear regression
 
 The reparameterized gradient method can be applied to a wide variety of models. Here, we'll apply it to Bayesian linear regression. Let's first describe the probabilistic model behind linear regression. Our data consists of covariates $\boldsymbol{x}_1, \dots, \boldsymbol{x}_n \in \mathbb{R}^J$ paired with response variables $y_1, \dots, y_n \in \mathbb{R}^n$. Our data model is then defined as
 
-$$p(y_1, \dots, y_n \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{i=1}^n N(y_i; \boldsymbol{beta}^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
+$$p(y_1, \dots, y_n \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
 
 where $N(.; a, b)$ is the probability density function parameterized by mean $a$ and variance $b$.
 
@@ -129,7 +129,7 @@ $$p(\boldsymbol{\beta}, \beta_0) := N(\beta_0; 0, 10)\prod_{j=1}^J N(\beta_j; 0,
 
 Then, our complete data likelihood is given by
 
-$$p(y_1, \dots, y_n, \boldsymbol{\beta}, \beta_0 \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := N(\beta_0; 0, 10)\prod_{j=1}^J N(\beta_j; 0, 10)\prod_{i=1}^n N(y_i; \boldsymbol{beta)^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
+$$p(y_1, \dots, y_n, \boldsymbol{\beta}, \beta_0 \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := N(\beta_0; 0, 10)\prod_{j=1}^J N(\beta_j; 0, 10)\prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
 
 We will treat $\sigma^2$ as a parameter to the model rather than a random variable. Our goal is to compute the posterior distribution of $\boldsymbol{\beta}$ and $\beta_0$:
 
