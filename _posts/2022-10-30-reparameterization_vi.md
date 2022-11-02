@@ -248,4 +248,4 @@ for iter in range(N_ITERS):
   optimizer.step()
 ```
 
-There are a few points to note regarding the above implementation. First, instead of taking the gradient with respect to $\boldsymbol{\sigma}^2$, we will take it with respect to $\log \boldsymbol{\sigma}^2$ in order to ensure that $\sigma$ is always positive throughout the procedure. Second, we use the [Adam](https://arxiv.org/abs/1412.6980) optimizer to choose the step size rather than use a fixed step size as would be done in standard gradient ascent.
+There are a few points to note regarding the above implementation. First, instead of taking the gradient with respect to $\boldsymbol{\sigma}^2$, we will take it with respect to $\log \boldsymbol{\sigma}$ in order to ensure that $\sigma$ is always positive throughout the procedure. Second, we use the [Adam](https://arxiv.org/abs/1412.6980) optimizer to choose the step size rather than use a fixed step size as would be done in standard gradient ascent.
