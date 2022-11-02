@@ -115,51 +115,43 @@ Example: Bayesian linear regression
 
 The reparameterized gradient method can be applied to a wide variety of models. Here, we'll apply it to Bayesian linear regression. Let's first describe the probabilistic model behind linear regression. Our data consists of covariates $\boldsymbol{x}_1, \dots, \boldsymbol{x}_n \in \mathbb{R}^J$ paired with response variables $y_1, \dots, y_n \in \mathbb{R}^n$. Our data model is then defined as
 
-$$p(y_1, \dots, y_n \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
+$$p(y_1, \dots, y_n \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i, \sigma^2)$$
 
-where $N(.; a, b)$ is the probability density function parameterized by mean $a$ and variance $b$.
+where $N(.; a, b)$ is the probability density function parameterized by mean $a$ and variance $b$. We will assume that the first covariate for each $\boldsymbol{x}_i$ is defined to be 1 and thus, the first coefficient of $\boldsymbol{\beta}$ is the intercept term.
 
 That is, we assume that each $y_i$ is "generated" from its $\boldsymbol{x}_i$ via the following process:
 
-$$\begin{align*}\mu_i & := \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0 \\ y_i &\sim N(\mu, \sigma^2)\end{align*}$$
+$$\begin{align*}\mu_i & := \boldsymbol{\beta}^T\boldsymbol{x}_i \\ y_i &\sim N(\mu, \sigma^2)\end{align*}$$
 
-We are only given the pairs $(\boldsymbol{x}_1, y_1), \dots, (\boldsymbol{x}_n, y_n)$, but don't know $\boldsymbol{\beta}, \beta_0$, or $\sigma^2$. We can infer the value of these variables using Bayesian inference! Specifically, we will define a prior distribution over $\boldsymbol{\beta}$ and $\beta$, denoted $p(\boldsymbol{\beta}, \beta_0)$. For simplicity, let us assume that all parameters are independently and normally distributed with each parameter's prior mean being zero with a large variance of 10 (because we are unsure apriori, what the parameters are). That is, let
+We are only given the pairs $(\boldsymbol{x}_1, y_1), \dots, (\boldsymbol{x}_n, y_n)$, but don't know $\boldsymbol{\beta}$ or $\sigma^2$. We can infer the value of these variables using Bayesian inference! Specifically, we will define a prior distribution over $\boldsymbol{\beta}$, denoted $p(\boldsymbol{\beta})$. For simplicity, let us assume that all parameters are independently and normally distributed with each parameter's prior mean being zero with a large variance of 10 (because we are unsure apriori, what the parameters are). That is, let
 
-$$p(\boldsymbol{\beta}, \beta_0) := \prod_{j=0}^J N(\beta_j; 0, 10)$$
+$$p(\boldsymbol{\beta}) := \prod_{j=1}^J N(\beta_j; 0, 10)$$
 
-Note, the product includes the intercept term $\beta_0$ in addition to the coefficients $\beta_1, \dots, \beta_J$ (for each of the $J$ covariates). Then, our complete data likelihood is given by
+Then, our complete data likelihood is given by
 
-$$p(y_1, \dots, y_n, \boldsymbol{\beta}, \beta_0 \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{j=0}^J N(\beta_j; 0, 10)\prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
+$$p(y_1, \dots, y_n, \boldsymbol{\beta} \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{j=1}^J N(\beta_j; 0, 10)\prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
 
-We will treat $\sigma^2$ as a parameter to the model rather than a random variable. Our goal is to compute the posterior distribution of $\boldsymbol{\beta}$ and $\beta_0$:
+We will treat $\sigma^2$ as a parameter to the model rather than a random variable. Our goal is to compute the posterior distribution of $\boldsymbol{\beta}$:
 
-$$p(\boldsymbol{\beta}, \beta_0 \mid y_1, \dots, y_n, \boldsymbol{x}_1, \dots, \boldsymbol{x}_n)$$
+$$p(\boldsymbol{\beta} \mid y_1, \dots, y_n, \boldsymbol{x}_1, \dots, \boldsymbol{x}_n)$$
 
-We can approximate this posterior using blackbox VI via the reparameterization gradient! To do so, we must first specify our approximate posterior distribution. For simplicity, we will assume that $q_\phi(\boldsymbol{\beta}, \beta_0)$ factors into independent normal distributions (like the prior):
+We can approximate this posterior using blackbox VI via the reparameterization gradient! To do so, we must first specify our approximate posterior distribution. For simplicity, we will assume that $q_\phi(\boldsymbol{\beta})$ factors into independent normal distributions (like the prior):
 
-$$q_\phi(\boldsymbol{\beta}, \beta_0) := \prod_{j=0}^J N(\beta_j; \mu_j, \sigma^2_j)$$
+$$q_\phi(\boldsymbol{\beta}) := \prod_{j=1}^J N(\beta_j; \mu_j, \sigma^2_j)$$
 
-Note the full set of variational parameters $\phi$ are the collection of mean and variance parameters for all of the normal distributions:
+Note the full set of variational parameters $\phi$ are the collection of mean and variance parameters for all of the normal distributions. Let us represent these means and variances as vectors:
 
-$$\phi := \\{\mu_0, \mu_1, \dots, \mu_J, \sigma^2_0, \sigma^2_1, \dots, \sigma^2_J \\}$$
+$$\begin{align*}\boldsymbol{\mu} &:= [\mu_0, \mu_1, \dots, \mu_J] \\\boldsymbol{\sigma^2} &:= [\sigma^2_0, \sigma^2_1, \dots, \sigma^2_J] \end{align*}$$ 
 
-Let us represent these means and variances as vectors:
+Then the variational parameters are:
 
-$$\begin{align*}\boldsymbol{\mu} &:= [\mu_0, \mu_1, \dots, \mu_J] \\\boldsymbol{\sigma^2} &:= [\sigma^2_0, \sigma^2_1, \dots, \sigma^2_J]$$ 
+$$\phi := \\{\boldsymbol{\mu}, \boldsymbol{\sigma}^2 \\}$$
 
-Then,
+Now, we must derive a reparameterization of $q_\phi$. This can be done quite easily as follows:
 
-$$\phi := \\{\boldsymbol{\mu}, \boldsymbol{\sigma}^2 \\}
+$$\begin{align*}\boldsymbol{\epsilon} &\sim N(\boldsymbol{0}, \boldsymbol{I}) \\ \boldsymbol{beta} &= \boldsymbol{\mu} + \boldsymbol{\epsilon} \bigdot \boldsymbol{\sigma} \end{align*}$$
 
-Now, we must derive a reparameterization of $q_\phi$. This can be done quite easily for any given parameter $\beta_j$ by sampling 
-
-$$\epsilon_j \sim N(0, 1) \\ \beta_j := \mu_j + \epsilon_j \sigma^2_j$$
-
-We can abbreviate this reparameterization by encoding all of $\epsilon_0, \dots, \epsilon_J$ into a vector, $\boldsymbol{\epsilon}$. The reparameterization is then written as 
-
-$$\boldsymbol{\epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})$$
-
-Finally, the reparameterized ELBO for this model and variational posterior is:
+where $\bigdot$ represent element-wise multiplication between two vectors.  Finally, the reparameterized ELBO for this model and variational posterior is:
 
 $$ELBO(\boldsymbol{\beta}, \beta_0) := E_{\boldsymbol{epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\beta_j; 0, 10)\sum_{i=1}^n \log N(y_i; \boldsymbol{\boldsymbol{mu} + \boldsymbol{\epsilon} \dot \boldsymbol{\sigma^2}}^T\boldsymbol{x}_i + \beta_0, \sigma^2) - \sum_{j=0}^J \log N(\beta_j; \mu_j, \sigma^2_j)\right]$$
 
