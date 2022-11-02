@@ -141,7 +141,7 @@ $$q_\phi(\boldsymbol{\beta}) := \prod_{j=1}^J N(\beta_j; \mu_j, \sigma^2_j)$$
 
 Note the full set of variational parameters $\phi$ are the collection of mean and variance parameters for all of the normal distributions. Let us represent these means and variances as vectors:
 
-$$\begin{align*}\boldsymbol{\mu} &:= [\mu_0, \mu_1, \dots, \mu_J] \\\boldsymbol{\sigma^2} &:= [\sigma^2_0, \sigma^2_1, \dots, \sigma^2_J] \end{align*}$$ 
+$$\begin{align*}\boldsymbol{\mu} &:= [\mu_0, \mu_1, \dots, \mu_J] \\ \boldsymbol{\sigma}^2 &:= [\sigma^2_0, \sigma^2_1, \dots, \sigma^2_J] \end{align*}$$ 
 
 Then the variational parameters are:
 
@@ -149,11 +149,11 @@ $$\phi := \\{\boldsymbol{\mu}, \boldsymbol{\sigma}^2 \\}$$
 
 Now, we must derive a reparameterization of $q_\phi$. This can be done quite easily as follows:
 
-$$\begin{align*}\boldsymbol{\epsilon} &\sim N(\boldsymbol{0}, \boldsymbol{I}) \\ \boldsymbol{beta} &= \boldsymbol{\mu} + \boldsymbol{\epsilon} \bigdot \boldsymbol{\sigma} \end{align*}$$
+$$\begin{align*}\boldsymbol{\epsilon} &\sim N(\boldsymbol{0}, \boldsymbol{I}) \\ \boldsymbol{beta} &= \boldsymbol{\mu} + \boldsymbol{\epsilon} \sun \boldsymbol{\sigma} \end{align*}$$
 
-where $\bigdot$ represent element-wise multiplication between two vectors.  Finally, the reparameterized ELBO for this model and variational posterior is:
+where $\sun$ represent element-wise multiplication between two vectors.  Finally, the reparameterized ELBO for this model and variational posterior is:
 
-$$ELBO(\boldsymbol{\beta}, \beta_0) := E_{\boldsymbol{epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\beta_j; 0, 10)\sum_{i=1}^n \log N(y_i; \boldsymbol{\boldsymbol{mu} + \boldsymbol{\epsilon} \dot \boldsymbol{\sigma^2}}^T\boldsymbol{x}_i + \beta_0, \sigma^2) - \sum_{j=0}^J \log N(\beta_j; \mu_j, \sigma^2_j)\right]$$
+$$ELBO(\boldsymbol{\beta}, \beta_0) := E_{\boldsymbol{epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\beta_j; 0, 10)\sum_{i=1}^n \log N(y_i; (\boldsymbol{mu} + \boldsymbol{\epsilon} \sun \boldsymbol{\sigma})^T\boldsymbol{x}_i + \beta_0, \sigma^2) - \sum_{j=0}^J \log N(\mu_j + \epsilon_j \sigma; \mu_j, \sigma^2_j)\right]$$
 
 
 
