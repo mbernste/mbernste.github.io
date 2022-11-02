@@ -157,7 +157,14 @@ $$ELBO(\boldsymbol{\beta}) := E_{\boldsymbol{\epsilon} \sim N(\boldsymbol{0}, \b
 
 Now, we can use this reparameterized ELBO to perform stochastic gradient descent! This may appear daunting, but can be done automatically with the help of automatic differentiation algorithms! 
 
-Here is an implementation of this algorithm for univariate linear regression in Python using [PyTorch](https://pytorch.org/). For ease of understanidng, the ELBO is broken up into small chunks:
+In the Appendix to this blog post, we show an implementation for univariate linear regression in Python using [PyTorch](https://pytorch.org/). This implementation can also be run on [Google Colab](). Below, we show the output of method when run on a dataset consisting of four data points. In the left-most figure, we show the four data points (blue dots), the true model (red line), the posterior mean (black line), and five samples from the posterior (grey lines).
+
+&nbsp;
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Bayesian_linear_regression_example1.png" alt="drawing" width="700"/></center>
+
+&nbsp;
+
 
 ```
 N_ITERS = 500
