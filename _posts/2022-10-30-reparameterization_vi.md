@@ -157,3 +157,93 @@ $$ELBO(\boldsymbol{\beta}) := E_{\boldsymbol{\epsilon} \sim N(\boldsymbol{0}, \b
 
 Now, we must compute the gradient to this function $\nabla_{\boldsymbol{\mu}, \boldsymbol{\sigma}^2} \text{ELBO}(\boldsymbol{\beta})$. This may look like a pretty gnarly calculation, but can be done automatically with the help of automatic differentiation algorithms! 
 
+Here is an implementation of this algorithm for univariate linear regression in Python using [PyTorch](https://pytorch.org/). For ease of understanidng, the ELBO is broken up into small chunks:
+
+```
+N_ITERS = 500
+N_MONTE_CARLO = 5000
+PRIOR_BETA_MEAN = [0,0]
+PRIOR_STD = 100.
+STD_OF_Y = 10.
+
+q_mean = torch.tensor([0., 0.], requires_grad=True)
+q_logstd = torch.ones_like(X[0], requires_grad=True)
+
+losses = []
+q_means = []
+q_logstds = []
+optimizer = optim.Adam([q_mean, q_logstd], lr=0.25)
+for iter in range(N_ITERS):
+  # Generate L monte carlo samples
+  eps = torch.randn(size=(N_MONTE_CARLO, n_dims))
+  
+  # Construct random betas from these samples
+  beta = q_mean + torch.exp(q_logstd) * eps
+
+  # An LxN matrix storing each the mean
+  # of each dot(beta_l, x_i) 
+  y_means = torch.matmul(beta, X.T)
+
+  # The distribution N(dot(beta_l, x_i), 1)
+  # This is the error of the residuals
+  y_dist =  torch.distributions.normal.Normal(
+      y_means,
+      torch.ones_like(y_means)*STD_OF_Y
+  )
+
+  # An LxN matrix of the probabilities 
+  # p(y_i \mid x_i, beta_l)
+  y_probs = y_dist.log_prob(
+      Y.repeat(y_means.shape[0],1)
+  )
+
+  # An L-length array storing the probabilities
+  # \sum_{i=1}^N p(y_i \mid x_i, beta_l)
+  # for all L Monte Carlo samples
+  y_prob_per_l = torch.sum(y_probs, axis=1)
+
+  # The prior distribution of each parameter p(\beta)
+  # given by N(PRIOR_BETA_MEAN, PRIOR_STD)
+  prior_beta_mean = torch.zeros_like(beta[0]).repeat(y_prob_per_l.shape[0], 1) + torch.tensor(PRIOR_BETA_MEAN)
+  prior_beta_std = (torch.ones_like(beta[1]) * PRIOR_STD).repeat(y_prob_per_l.shape[0],1)
+  prior_beta_dist = torch.distributions.normal.Normal(
+    prior_beta_mean,
+    prior_beta_std
+  )
+
+  # An LxD length matrix of \log p(\beta_{l,d}), which is
+  # the prior log probabilities of each parameter" 
+  prior_beta_probs = prior_beta_dist.log_prob(beta)
+
+  # An L-length array of probabilities
+  # \log p(\beta_l) = \sum_{d=1}^D \log p(\beta_{l,d})
+  prior_beta_per_l = X.shape[0] * torch.sum(prior_beta_probs, axis=1)
+
+  # An L-length array of probabilities
+  # \log p(\beta_l) + \sum_{i=1}^N \log p(y_i \mid \beta_l, x_i)
+  y_beta_prob_per_l = y_prob_per_l + prior_beta_per_l 
+
+  # The variational distribution over beta approximating the posterior
+  # N(q_mean, q_std)
+  beta_dist = torch.distributions.normal.Normal(
+    q_mean, 
+    torch.exp(q_logstd)
+  )
+
+  # An LxD-length matrix of the variational log probabilities of each parameter
+  # \log q(beta_{l,d})
+  q_beta_probs = beta_dist.log_prob(beta)
+
+  # An L-length array of \log q(beta_l)
+  q_beta_prob_per_l = torch.sum(q_beta_probs, axis=1)
+
+  # An L-length array of the ELBO value for each Monte Carlo sample
+  elbo_per_l = y_beta_prob_per_l - q_beta_prob_per_l
+
+  # The final loss value! 
+  loss = -1 * torch.mean(elbo_per_l)
+
+  optimizer.zero_grad()
+  loss.backward()
+  optimizer.step()
+```
