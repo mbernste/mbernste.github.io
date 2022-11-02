@@ -113,21 +113,29 @@ Thus, the process of sampling $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$
 Example: Bayesian linear regression
 -----------------------------------
 
-The reparameterized gradient method can be applied to a wide variety of models. Here, we'll apply it to Bayesian linear regression. Let's first describe the probabilistic model behind linear regression. Our data consists of covariates $\boldsymbol{x}_1, \dots, \boldsymbol{x}_n \in \mathbb{R}^J$ paired with response variables $y_1, \dots, y_n \in \mathbb{R}^n$. We assume that each $y_i$ is "generated" from its $\boldsymbol{x}_i$ via the following process:
+The reparameterized gradient method can be applied to a wide variety of models. Here, we'll apply it to Bayesian linear regression. Let's first describe the probabilistic model behind linear regression. Our data consists of covariates $\boldsymbol{x}_1, \dots, \boldsymbol{x}_n \in \mathbb{R}^J$ paired with response variables $y_1, \dots, y_n \in \mathbb{R}^n$. Our data model is then defined as
 
-$$\begin{align*}\mu_i && := \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0\end{align*} \\ y_i \sim N(\mu, \sigma^2)$$
+$$p(y_1, \dots, y_n \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{i=1}^n N(y_i; \boldsymbol{beta)^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
 
-That is, we compute the mean of $y_i$ via an affine transformation of $\boldsymbol{x}_i$ and then sample from a normal distribution with that given mean. We assume that the variance of $y_i$, $\sigma^2$ is shared across all of the data points.
+where $N(.; a, b)$ is the probability density function parameterized by mean $a$ and variance $b$.
 
-We are only given the pairs $(\boldsymbol{x}_1, y_1), \dots, (\boldsymbol{x}_n, y_n)$, but don't know $\boldsymbol{\beta}, \beta_0$, or $\sigma^2$. We can infer the value of these variables using Bayesian inference! 
+That is, we assume that each $y_i$ is "generated" from its $\boldsymbol{x}_i$ via the following process:
 
-To implement it we really only need to specificy two things:
+$$\begin{align*}\mu_i & := \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0\end{align*} \\ y_i &\sim N(\mu, \sigma^2)$$
 
-1. **Variational distribution $q_\phi(z)$**: The form of the variational posterior depends on the problem at hand, but in many cases, one can assume the exact posterior $p(z \mid x)$ is approximately normal, and thus let $q_\phi(z)$ be a normal distribution parameterized by a mean $\mu$ and variance $\sigma^2$. Note, we only require that $q_\phi(z)$ be continuous with respect to $\boldsymbol{z}$.
-2. **Reparameterization of $q_\phi(z)$**: 
+We are only given the pairs $(\boldsymbol{x}_1, y_1), \dots, (\boldsymbol{x}_n, y_n)$, but don't know $\boldsymbol{\beta}, \beta_0$, or $\sigma^2$. We can infer the value of these variables using Bayesian inference! Specifically, we will define a prior distribution over $\boldsymbol{\beta}$ and $\beta$, denoted $p(\boldsymbol{\beta}, \beta_0)$. For simplicity, let us assume that all parameters are independently and normally distributed with each parameter's prior mean being zero with a large variance of 10 (because we are unsure apriori, what the parameters are). That is, let
 
-Once the variational family and reparameterization are specified, we can formulate the approximate ELBO:
+$$p(\boldsymbol{\beta}, \beta_0) := N(\beta_0; 0, 10)\prod_{j=1}^J N(\beta_j; 0, 10)$$
 
-$$\tilde{ELBO}(\phi) := \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$ 
+Then, our complete data likelihood is given by
 
-Then, we can use [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) algorithms, such as those implemented in modern machine learning libraries like [pytorch](https://pytorch.org/) or [tensorflow](https://www.tensorflow.org/) to compute the gradient $\nabla_\phi \tilde{ELBO}(\phi)$. Moreover, we can perform steps along the gradient using gradient-based optimziation methods implemented in these libraries as well!.
+$$p(y_1, \dots, y_n, \boldsymbol{\beta}, \beta_0 \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := N(\beta_0; 0, 10)\prod_{j=1}^J N(\beta_j; 0, 10)\prod_{i=1}^n N(y_i; \boldsymbol{beta)^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
+
+We will treat $\sigma^2$ as a parameter to the model rather than a random variable. Our goal is to compute the posterior distribution of $\boldsymbol{\beta}$ and $\beta_0$:
+
+$$(p(\boldsymbol{\beta}, \beta_0 \mid y_1, \dots, y_n, \boldsymbol{x}_1, \dots, \boldsymbol{x}_n)$$
+
+We can approximate this posterior using blackbox VI via the reparameterization gradient! To do so, we must first specify our approximate posterior distribution. For simplicity, we will assume that $q_\phi(\boldsymbol{\beta}, \beta_0)$ factors into independent normal distributions (like the prior):
+
+
+
