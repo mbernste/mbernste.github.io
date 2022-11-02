@@ -115,13 +115,13 @@ Example: Bayesian linear regression
 
 The reparameterized gradient method can be applied to a wide variety of models. Here, we'll apply it to Bayesian linear regression. Let's first describe the probabilistic model behind linear regression. Our data consists of covariates $\boldsymbol{x}_1, \dots, \boldsymbol{x}_n \in \mathbb{R}^J$ paired with response variables $y_1, \dots, y_n \in \mathbb{R}^n$. Our data model is then defined as
 
-$$p(y_1, \dots, y_n \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{i=1}^n N(y_i; \boldsymbol{beta)^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
+$$p(y_1, \dots, y_n \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{i=1}^n N(y_i; \boldsymbol{beta}^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
 
 where $N(.; a, b)$ is the probability density function parameterized by mean $a$ and variance $b$.
 
 That is, we assume that each $y_i$ is "generated" from its $\boldsymbol{x}_i$ via the following process:
 
-$$\begin{align*}\mu_i & := \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0\end{align*} \\ y_i &\sim N(\mu, \sigma^2)$$
+$$\begin{align*}\mu_i & := \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0 \\ y_i &\sim N(\mu, \sigma^2)\end{align*}$$
 
 We are only given the pairs $(\boldsymbol{x}_1, y_1), \dots, (\boldsymbol{x}_n, y_n)$, but don't know $\boldsymbol{\beta}, \beta_0$, or $\sigma^2$. We can infer the value of these variables using Bayesian inference! Specifically, we will define a prior distribution over $\boldsymbol{\beta}$ and $\beta$, denoted $p(\boldsymbol{\beta}, \beta_0)$. For simplicity, let us assume that all parameters are independently and normally distributed with each parameter's prior mean being zero with a large variance of 10 (because we are unsure apriori, what the parameters are). That is, let
 
