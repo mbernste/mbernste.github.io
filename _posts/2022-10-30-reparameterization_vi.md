@@ -129,7 +129,7 @@ $$p(\boldsymbol{\beta}) := \prod_{j=1}^J N(\beta_j; 0, 10)$$
 
 Then, our complete data likelihood is given by
 
-$$p(y_1, \dots, y_n, \boldsymbol{\beta} \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{j=1}^J N(\beta_j; 0, 10)\prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0, \sigma^2)$$
+$$p(y_1, \dots, y_n, \boldsymbol{\beta} \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{j=1}^J N(\beta_j; 0, 10) \prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i, \sigma^2)$$
 
 We will treat $\sigma^2$ as a parameter to the model rather than a random variable. Our goal is to compute the posterior distribution of $\boldsymbol{\beta}$:
 
