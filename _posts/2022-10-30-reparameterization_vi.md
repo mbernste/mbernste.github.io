@@ -143,13 +143,25 @@ Note the full set of variational parameters $\phi$ are the collection of mean an
 
 $$\phi := \\{\mu_0, \mu_1, \dots, \mu_J, \sigma^2_0, \sigma^2_1, \dots, \sigma^2_J \\}$$
 
+Let us represent these means and variances as vectors:
+
+$$\begin{align*}\boldsymbol{\mu} &:= [\mu_0, \mu_1, \dots, \mu_J] \\\boldsymbol{\sigma^2} &:= [\sigma^2_0, \sigma^2_1, \dots, \sigma^2_J]$$ 
+
+Then,
+
+$$\phi := \\{\boldsymbol{\mu}, \boldsymbol{\sigma}^2 \\}
+
 Now, we must derive a reparameterization of $q_\phi$. This can be done quite easily for any given parameter $\beta_j$ by sampling 
 
 $$\epsilon_j \sim N(0, 1) \\ \beta_j := \mu_j + \epsilon_j \sigma^2_j$$
 
-The ELBO for this model is thus:
+We can abbreviate this reparameterization by encoding all of $\epsilon_0, \dots, \epsilon_J$ into a vector, $\boldsymbol{\epsilon}$. The reparameterization is then written as 
 
-$$ELBO(\boldsymbol{\beta}, \beta_0) := E_{\epsilon_0, \dots, \epsilon_J \sim N(0,1)}\left[\sum_{j=0}^J \log N(\beta_j; 0, 10)\sum_{i=1}^n \logN(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i + \beta_0, \sigma^2) - \sum_{j=0}^J \log N(\beta_j; \mu_j, \sigma^2_j)\right]$$
+$$\boldsymbol{\epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})$$
+
+Finally, the reparameterized ELBO for this model and variational posterior is:
+
+$$ELBO(\boldsymbol{\beta}, \beta_0) := E_{\boldsymbol{epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\beta_j; 0, 10)\sum_{i=1}^n \log N(y_i; \boldsymbol{\boldsymbol{mu} + \boldsymbol{\epsilon} \dot \boldsymbol{\sigma^2}}^T\boldsymbol{x}_i + \beta_0, \sigma^2) - \sum_{j=0}^J \log N(\beta_j; \mu_j, \sigma^2_j)\right]$$
 
 
 
