@@ -155,5 +155,5 @@ where $\odot$ represent element-wise multiplication between two vectors.  Finall
 
 $$ELBO(\boldsymbol{\beta}, \beta_0) := E_{\boldsymbol{epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\beta_j; 0, 10)\sum_{i=1}^n \log N(y_i; (\boldsymbol{mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\sigma})^T\boldsymbol{x}_i + \beta_0, \sigma^2) - \sum_{j=0}^J \log N(\mu_j + \epsilon_j \sigma_j; \mu_j, \sigma^2_j)\right]$$
 
-Now, we must compute the gradient to this function. This may look pretty gnarly, but with the help of automatic differentiation algorithms, one does not need to derive the gradient manually (which would be quite tedious)! 
+Now, we must compute the gradient to this function $\nabla_{\boldsymbol{\mu}, \boldsymbol{\sigma}^2} \text{ELBO}(\boldsymbol{\beta})$. This may look like a pretty gnarly calculation, but can be done automatically with the help of automatic differentiation algorithms! 
 
