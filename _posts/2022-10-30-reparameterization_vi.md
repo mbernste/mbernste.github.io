@@ -155,7 +155,7 @@ where $\odot$ represent element-wise multiplication between two vectors.  Finall
 
 $$ELBO(\boldsymbol{\beta}) := E_{\boldsymbol{\epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\beta_j; 0, 10) + \sum_{i=1}^n \log N(y_i; (\boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\sigma})^T\boldsymbol{x}_i, \sigma^2) - \sum_{j=0}^J \log N(\mu_j + \epsilon_j \sigma_j; \mu_j, \sigma^2_j)\right]$$
 
-Now, we must compute the gradient to this function $\nabla_{\boldsymbol{\mu}, \boldsymbol{\sigma}^2} \text{ELBO}(\boldsymbol{\beta})$. This may look like a pretty gnarly calculation, but can be done automatically with the help of automatic differentiation algorithms! 
+Now, we can use this reparameterized ELBO to perform stochastic gradient descent! This may appear daunting, but can be done automatically with the help of automatic differentiation algorithms! 
 
 Here is an implementation of this algorithm for univariate linear regression in Python using [PyTorch](https://pytorch.org/). For ease of understanidng, the ELBO is broken up into small chunks:
 
@@ -247,3 +247,5 @@ for iter in range(N_ITERS):
   loss.backward()
   optimizer.step()
 ```
+
+There are a few points to note regarding the above implementation. First, instead of taking the gradient with respect to $\boldsymbol{\sigma}^2$, we will take it with respect to $\log \boldsymbol{\sigma}^2$ in order to ensure that $\sigma$ is always positive throughout the procedure. Second, we use the [Adam](https://arxiv.org/abs/1412.6980) optimizer to choose the step size rather than use a fixed step size as would be done in standard gradient ascent.
