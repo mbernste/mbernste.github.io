@@ -161,7 +161,7 @@ In the Appendix to this blog post, we show an implementation for univariate line
 
 &nbsp;
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Bayesian_linear_regression_example1.png" alt="drawing" width="850"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Bayesian_linear_regression_example1.png" alt="drawing" width="1000"/></center>
 
 &nbsp;
 
