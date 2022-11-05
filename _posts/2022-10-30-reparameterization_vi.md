@@ -339,3 +339,41 @@ def bayesian_linear_regression_blackbox_vi(
   return q_mean, q_logstd, q_means, q_logstds, losses
 ```
 
+Here is code implementing Bayesian linear regression in Stan via PyStan:
+
+```
+import stan
+
+
+STAN_MODEL = """
+data {
+    int<lower=0> N;
+    vector[N] X;
+    vector[N] Y;
+}
+parameters {
+    real logsigma;
+    real intercept;
+    real slope;
+}
+model {
+    intercept ~ normal(0, 100);
+    slope ~ normal(0, 100);
+    Y ~ normal(intercept + slope * X, exp(logsigma));
+}
+"""
+
+data = {
+    "N": X.shape[0],
+    "X": X.T[0],
+    "Y": Y
+}
+posterior = stan.build(STAN_MODEL, data=data)
+fit = posterior.sample(
+    num_chains=4, 
+    num_samples=1000
+)
+slopes = fit["slope"]
+intercepts = fit["intercept"]
+logsigmas = fit["logsigma"]
+```
