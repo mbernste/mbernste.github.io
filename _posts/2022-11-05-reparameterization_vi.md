@@ -201,7 +201,7 @@ As you can see, the two results are very similar!
 Appendix
 --------
 
-Below, we show our implementation of Bayesian linear regression via the reparameterized gradient method. There are a few points to note regarding this implementation. First, instead of taking the gradient with respect to $\boldsymbol{\sigma}^2$, we will take it with respect to $\log \boldsymbol{\sigma}$ in order to ensure that $\sigma$ is always positive throughout the procedure. Second, we use the [Adam](https://arxiv.org/abs/1412.6980) optimizer to choose the step size rather than use a fixed step size as would be done in standard gradient ascent.
+Below, we show our implementation of Bayesian linear regression via the reparameterized gradient method. There are a few points to note regarding this implementation. First, we  break apart the terms of the ELBO to make the code clear, but the number of lines could be reduced. Second, instead of taking the gradient with respect to $\boldsymbol{\sigma}^2$, we will take it with respect to $\log \boldsymbol{\sigma}$ in order to ensure that $\sigma$ is always positive throughout the optimization procedure. Second, we use the [Adam](https://arxiv.org/abs/1412.6980) optimizer to choose the step size rather than use a fixed step size as would be done in standard gradient ascent.
 
 ```
 import torch
@@ -341,7 +341,7 @@ def bayesian_linear_regression_blackbox_vi(
   return q_mean, q_logstd, q_means, q_logstds, losses
 ```
 
-Here is code implementing Bayesian linear regression in Stan via PyStan:
+Here is code implementing Bayesian linear regression in Stan via [PyStan](https://pystan.readthedocs.io/en/latest/):
 
 ```
 import stan
