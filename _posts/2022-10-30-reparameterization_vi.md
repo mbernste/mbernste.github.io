@@ -113,11 +113,21 @@ Thus, the process of sampling $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$
 Joint optimization of both variational and model parameters
 -----------------------------------------------------------
 
-In many cases, not only do we have a model with latent variables $z$, but we also have model parameters $\theta$. That is, our joint distribution $p(x, z)$ is parameterized by some set of parameters $\theta$. Thus, we denote the full joint distribution as $p_\theta(x, z)$. In this scenario, how do we estimate the posterior $p_\theta(z \mid z)$ if we don't know the true value of $\theta$?
+In many cases, not only do we have a model with latent variables $z$, but we also have model parameters $\theta$. That is, our joint distribution $p(x, z)$ is parameterized by some set of parameters $\theta$. Thus, we denote the full joint distribution as $p_\theta(x, z)$. In this scenario, how do we estimate the posterior $p_\theta(z \mid x)$ if we don't know the true value of $\theta$?
 
 One idea would be to place a prior distribution over $\theta$ and consider $\theta$ to be a latent variable like $z$ (that is, let $z$ include both latent variables _and_ model parameters). However, this may not always be desirable. First, we may not need to a full posterior distribution over $\theta$. Moreover, as we've seen in this blog post, estimating posteriors is challenging! Is it possible to infer a point estimate of $\theta$ while _jointly_ estimating $p_\theta(z \mid x)$?
 
+It turns out that inference of $\theta$ can be performed by simply maximizing the ELBO in terms of _both_ the variational parameters $\phi$ _and_ the model parameters $\theta$. That is, to cast the inference task as
 
+$$\hat{\phi}, \hat{\theta} := \argmax_{\phi, \theta} \ \text{ELBO}(\phi, \theta)$$
+
+where the ELBO now becomes a function of both $\phi$ and $\theta$:
+
+$$\text{ELBO}(\phi, \theta) :=  E_{Z \sim q_\phi}\left[\log p_\theta(x, Z) - \log q_\phi(Z) \right]$$
+
+Why is a valid inference? Recall the [origin of the ELBO](https://mbernste.github.io/posts/variational_inference/) as the _lower bound_ of the log-likelihood $\log p_\theta(x)$. Thus, if we maximize the ELBO in terms of $\theta$ we are maximizing the lower of the log-likelihood! By optimizing the ELBO in terms of _both_ $\phi$ and $\theta$, we see that we are simultenously minimizing the KL-divergence between $q_\phi(z)$ and $p_\theta(z \mid x)$ while also maximizing the lower bound of the log-likelihood. 
+
+This may remind you of the [EM algorithm](https://mbernste.github.io/posts/em/), where we iterative optimize the ELBO in terms of a surrogate distribution $q$ (which in VI is the variatonal posterior) and the model parameters $\theta$. 
 
 Example: Bayesian linear regression
 -----------------------------------
