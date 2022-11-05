@@ -54,22 +54,23 @@ $$\phi_{t+1} := \phi_t + \alpha \nabla_\phi \left. \text{ELBO}(\phi) \right|_{\p
 
 where $\alpha$ is the learning rate. This step is repeated until we converge on a local maximum of the ELBO. 
 
-Now, the question becomes how do we compute the gradient of the ELBO? A key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. At its core, the reparameterization gradient method entails performing [stochastic gradient ascent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) using computationally tractable random gradients instead of using the computationally _intractable_ exact gradient.
+Now, the question becomes, how do we compute the gradient of the ELBO? A key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. The reparameterization gradient method addresses this challenge by performing [stochastic gradient ascent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) using _computationally tractable_ random gradients instead of the computationally _intractable_ exact gradients.
 
-Stochastic gradient ascent works as follows: Instead of computing the exact gradient of the ELBO with respect to $\phi$, we formulate a random variable $V(\phi)$, whose expectation is the gradient of the ELBO at $\phi$ -- that is, for which $E[V(\phi)] = \nabla_\phi ELBO(\phi)$. Then, at iteration $t$, we sample approximate gradients from $V(\phi_t)$ and take a small step in the direction of this random gradients:
+To review, stochastic gradient ascent works as follows: Instead of computing the exact gradient of the ELBO with respect to $\phi$, we formulate a random variable $V(\phi)$, whose expectation is the gradient of the ELBO at $\phi$ -- that is, for which $E[V(\phi)] = \nabla_\phi ELBO(\phi)$. Then, at iteration $t$, we sample approximate gradients from $V(\phi_t)$ and take a small step in the direction of this random gradients:
 
 $$\begin{align*} v &\sim V(\phi_t) \\ \phi_{t+1} &:= \phi_t + \alpha v \end{align*}$$
 
-The question now becomes, how do formulate a distribution $V(\phi)$ whose expectation is the gradient of the ELBO, $\nabla_\phi \text{ELBO}(\phi)$? As discussed in the next section, the reparameterization trick will enable one approach towards formulating such a distribution.
+The question now becomes, how do we formulate a distribution $V(\phi)$ whose expectation is the gradient of the ELBO, $\nabla_\phi \text{ELBO}(\phi)$? As discussed in the next section, the reparameterization trick will enable one approach towards formulating such a distribution.
 
 The reparameterization trick
 ----------------------------
 
-Before discussing how we formulate our distribution of stochastic gradients $V(\phi)$, let us first present the reparameterization trick, which was co-invented by co-invented by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082).  It works as follows: we "reparameterize" the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon$ distributed according to some "simple" distribution $\mathcal{D}$ that we can easily sample from (e.g., a standard normal distribution), and a determinstic function $g$ in such a way that sampling $z$ from $q_\phi(z)$ is performed as follows:
+Before discussing how we formulate our distribution of stochastic gradients $V(\phi)$, let us first present the reparameterization trick ([Kingma and Welling, 2014](https://arxiv.org/abs/1312.6114); [Rezende, Mohamed, and Wierstra, 2014](https://arxiv.org/abs/1401.4082)).  It works as follows: we "reparameterize" the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon \sim \mathcal{D}$ and a determinstic function $g$ in such a way that sampling $z$ from $q_\phi(z)$ is performed as follows:
 
 $$\begin{align*}\epsilon &\sim \mathcal{D} \\ z &:= g_\phi(\epsilon)\end{align*}$$
 
-One way to think about this is that instead of sampling $z$ directly from our variational posterior $q_\phi(z)$, we "re-design" the generative process of $z$ such that we first sample a surrogate random variable $\epsilon$ and then transform $\epsilon$ into $z$ all while ensuring that in the end, the distribution of $z$ still follows $q_\phi$. Below we depict an example of this process for a hypothetical case where $q_\phi$ looks like a ring. We first sample from a unimodal distribution $\mathcal{D}$ and then transform these samples via $g_\phi$ into samples drawn from $q_\phi$ that form a ring:
+One way to think about this is that instead of sampling $z$ directly from our variational posterior $q_\phi(z)$, we "re-design" the generative process of $z$ such that we first sample a surrogate random variable $\epsilon$ and then transform $\epsilon$ into $z$ all while ensuring that in the end, the distribution of $z$ still follows $q_\phi$. Crucially, $\mathcal{D}$ must be something we can easily sample from such as a standard normal distribution.
+ Below we depict an example of this process for a hypothetical case where $q_\phi$ looks like a ring. We first sample from a unimodal distribution $\mathcal{D}$ and then transform these samples via $g_\phi$ into samples drawn from $q_\phi$ that form a ring:
 
 &nbsp;
 
@@ -77,7 +78,7 @@ One way to think about this is that instead of sampling $z$ directly from our va
 
 &nbsp;
 
-Reparmaterizing $q_\phi(z)$ can be tricky; however, for many common choices of variational families, it can made to be easy. For example, if $q_\phi(z)$ is a [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family) distribution then reparameterization becomes quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution 
+Reparameterizing $q_\phi(z)$ can sometimes be difficult, but with the right variational family can be made easy. For example, if $q_\phi(z)$ is a [location-scale family](https://en.wikipedia.org/wiki/Location%E2%80%93scale_family) distribution then reparameterization becomes quite simple. For example, if $q_\phi(z)$ is a Gaussian distribution 
 
 $$q_\phi := N(\mu, \sigma^2)$$
 
@@ -176,7 +177,7 @@ where $\odot$ represent element-wise multiplication between two vectors.  Finall
 
 $$ELBO(\boldsymbol{\beta}) := E_{\boldsymbol{\epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\mu_j + \epsilon_j \tau; 0, 10) + \sum_{i=1}^n \log N(y_i; (\boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\tau})^T\boldsymbol{x}_i, \tau^2) - \sum_{j=0}^J \log N(\mu_j + \epsilon_j \sigma_j; \mu_j, \tau^2_j)\right]$$
 
-Now, we can use this reparameterized ELBO to perform stochastic gradient descent! This may appear daunting, but can be done automatically with the help of automatic differentiation algorithms! 
+Now, we can use this reparameterized ELBO to perform stochastic gradient ascent! This may appear daunting, but can be done automatically with the help of automatic differentiation algorithms! 
 
 In the Appendix to this blog post, we show an implementation for univariate linear regression in Python using [PyTorch](https://pytorch.org/). This implementation can also be run on [Google Colab](https://colab.research.google.com/drive/1xCFRHMXhwXisZal9yeBp3TdRmFj2Z1Jg?usp=sharing). To test the method, we will simulate a few datasets. Below, we show a small toy dataset consisting of five data points:
 
