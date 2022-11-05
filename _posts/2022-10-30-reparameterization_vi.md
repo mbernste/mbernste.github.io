@@ -202,91 +202,140 @@ Appendix
 Below, we show our implementation of Bayesian linear regression via the reparameterized gradient method. There are a few points to note regarding this implementation. First, instead of taking the gradient with respect to $\boldsymbol{\sigma}^2$, we will take it with respect to $\log \boldsymbol{\sigma}$ in order to ensure that $\sigma$ is always positive throughout the procedure. Second, we use the [Adam](https://arxiv.org/abs/1412.6980) optimizer to choose the step size rather than use a fixed step size as would be done in standard gradient ascent.
 
 ```
-N_ITERS = 500
-N_MONTE_CARLO = 5000
-PRIOR_BETA_MEAN = [0,0]
-PRIOR_STD = 100.
-STD_OF_Y = 10.
+import torch
+import torch.optim as optim
+import numpy as np
+import numpy as np
 
-q_mean = torch.tensor([0., 0.], requires_grad=True)
-q_logstd = torch.ones_like(X[0], requires_grad=True)
+def bayesian_linear_regression_blackbox_vi(
+    X, y, prior_mean, prior_std,
+    n_iters=2000, lr=0.1, n_monte_carlo=1000,
+  ):
+  """
+  Parameters
+  ----------
+  X
+    NxJ matrix of covariates where the final covariate is a dummy variable
+    consisting of all ones that correspond to the intercept
+  y
+    N-length array of response variables
+  prior_mean
+    J-length array of the prior means of the parameters \beta and 
+    intercept (final coeffient)
+  prior_std
+    J-length array of the prior standard deviations of the parameters 
+    \beta and intercept (final coeffient)
+  n_iters
+    Number of iterations
+  lr
+    Learning rate
+  n_monte_carlo:
+    Number of Monte Carlo samples to use to approximate the ELBO 
+  """
 
-losses = []
-q_means = []
-q_logstds = []
-optimizer = optim.Adam([q_mean, q_logstd], lr=0.25)
-for iter in range(N_ITERS):
-  # Generate L monte carlo samples
-  eps = torch.randn(size=(N_MONTE_CARLO, n_dims))
+  # Instantiate input tensors
+  n_dims = X[0].shape[0]
+  X = torch.tensor(X)
+  y = torch.tensor(y)
+
+  # Variational parameters
+  q_mean = torch.tensor([0., 0.], requires_grad=True)
+  q_logstd = torch.ones_like(X[0], requires_grad=True)
+
+  # Model parameters
+  logsigma = torch.tensor(1.0, requires_grad=True)
+
+  # Data structures to keep track of learning
+  losses = []
+  q_means = []
+  q_logstds = []
+  q_logsigma_means = []
+  q_logsigma_logstds = []
+
+  # Instantiate Adam optimizer
+  optimizer = optim.Adam([q_mean, q_logstd, logsigma], lr=lr)
   
-  # Construct random betas from these samples
-  beta = q_mean + torch.exp(q_logstd) * eps
+  # Perform blackbox VI
+  for iter in range(n_iters):
 
-  # An LxN matrix storing each the mean
-  # of each dot(beta_l, x_i) 
-  y_means = torch.matmul(beta, X.T)
+    # Generate L monte carlo samples
+    eps_beta = torch.randn(size=(n_monte_carlo, n_dims))
 
-  # The distribution N(dot(beta_l, x_i), 1)
-  # This is the error of the residuals
-  y_dist =  torch.distributions.normal.Normal(
-      y_means,
-      torch.ones_like(y_means)*STD_OF_Y
-  )
+    # Construct random betas and sigma from these samples
+    beta = q_mean + torch.exp(q_logstd) * eps_beta
 
-  # An LxN matrix of the probabilities 
-  # p(y_i \mid x_i, beta_l)
-  y_probs = y_dist.log_prob(
-      Y.repeat(y_means.shape[0],1)
-  )
+    # An LxN matrix storing each the mean
+    # of each dot(beta_l, x_i) 
+    y_means = torch.matmul(beta, X.T)
 
-  # An L-length array storing the probabilities
-  # \sum_{i=1}^N p(y_i \mid x_i, beta_l)
-  # for all L Monte Carlo samples
-  y_prob_per_l = torch.sum(y_probs, axis=1)
+    # The distribution N(dot(beta_l, x_i), 1)
+    # This is the distribution of the residuals
+    y_dist =  torch.distributions.normal.Normal(
+        y_means,
+        torch.exp(logsigma.repeat(y_means.shape[1], 1).T)
+    )
 
-  # The prior distribution of each parameter p(\beta)
-  # given by N(PRIOR_BETA_MEAN, PRIOR_STD)
-  prior_beta_mean = torch.zeros_like(beta[0]).repeat(y_prob_per_l.shape[0], 1) + torch.tensor(PRIOR_BETA_MEAN)
-  prior_beta_std = (torch.ones_like(beta[1]) * PRIOR_STD).repeat(y_prob_per_l.shape[0],1)
-  prior_beta_dist = torch.distributions.normal.Normal(
-    prior_beta_mean,
-    prior_beta_std
-  )
+    # An LxN matrix of the probabilities 
+    # p(y_i \mid x_i, beta_l)
+    y_probs = y_dist.log_prob(
+        y.repeat(y_means.shape[0],1)
+    )
 
-  # An LxD length matrix of \log p(\beta_{l,d}), which is
-  # the prior log probabilities of each parameter" 
-  prior_beta_probs = prior_beta_dist.log_prob(beta)
+    # An L-length array storing the probabilities
+    # \sum_{i=1}^N p(y_i \mid x_i, beta_l)
+    # for all L Monte Carlo samples
+    y_prob_per_l = torch.sum(y_probs, axis=1)
 
-  # An L-length array of probabilities
-  # \log p(\beta_l) = \sum_{d=1}^D \log p(\beta_{l,d})
-  prior_beta_per_l = X.shape[0] * torch.sum(prior_beta_probs, axis=1)
+    # The prior distribution of each parameter \beta
+    # given by N(prior_mean, prior_std)
+    prior_beta_mean = torch.zeros_like(beta[0]).repeat(y_prob_per_l.shape[0], 1) + torch.tensor(prior_mean)
+    prior_beta_std = (torch.ones_like(beta[1]) * prior_std).repeat(y_prob_per_l.shape[0],1)
+    prior_beta_dist = torch.distributions.normal.Normal(
+      prior_beta_mean,
+      prior_beta_std
+    )
 
-  # An L-length array of probabilities
-  # \log p(\beta_l) + \sum_{i=1}^N \log p(y_i \mid \beta_l, x_i)
-  y_beta_prob_per_l = y_prob_per_l + prior_beta_per_l 
+    # An LxD length matrix of \log p(\beta_{l,d}), which is
+    # the prior log probabilities of each parameter" 
+    prior_beta_probs = prior_beta_dist.log_prob(beta)
 
-  # The variational distribution over beta approximating the posterior
-  # N(q_mean, q_std)
-  beta_dist = torch.distributions.normal.Normal(
-    q_mean, 
-    torch.exp(q_logstd)
-  )
+    # An L-length array of probabilities
+    # \log p(\beta_l) = \sum_{d=1}^D \log p(\beta_{l,d})
+    prior_beta_per_l = X.shape[0] * torch.sum(prior_beta_probs, axis=1)
 
-  # An LxD-length matrix of the variational log probabilities of each parameter
-  # \log q(beta_{l,d})
-  q_beta_probs = beta_dist.log_prob(beta)
+    # An L-length array of probabilities
+    y_beta_prob_per_l = y_prob_per_l + prior_beta_per_l
 
-  # An L-length array of \log q(beta_l)
-  q_beta_prob_per_l = torch.sum(q_beta_probs, axis=1)
+    # The variational distribution over beta approximating the posterior
+    # N(q_mean, q_std)
+    beta_dist = torch.distributions.normal.Normal(
+      q_mean, 
+      torch.exp(q_logstd)
+    )
 
-  # An L-length array of the ELBO value for each Monte Carlo sample
-  elbo_per_l = y_beta_prob_per_l - q_beta_prob_per_l
+    # An LxD-length matrix of the variational log probabilities of each parameter
+    # \log q(beta_{l,d})
+    q_beta_probs = beta_dist.log_prob(beta)
 
-  # The final loss value! 
-  loss = -1 * torch.mean(elbo_per_l)
+    # An L-length array of \log q(beta_l)
+    q_beta_prob_per_l = torch.sum(q_beta_probs, axis=1)
 
-  optimizer.zero_grad()
-  loss.backward()
-  optimizer.step()
+    # An L-length array of the ELBO value for each Monte Carlo sample
+    elbo_per_l = y_beta_prob_per_l - q_beta_prob_per_l 
+
+    # The final loss value! 
+    loss = -1 * torch.mean(elbo_per_l)
+
+    # Take gradient step
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    # Store values related to current optimization step
+    losses.append(float(loss.detach().numpy()))
+    q_means.append(np.array(q_mean.detach().numpy()))
+    q_logstds.append(np.array(q_logstd.detach().numpy()))
+
+  return q_mean, q_logstd, q_means, q_logstds, losses
 ```
 
