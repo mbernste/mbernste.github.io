@@ -58,6 +58,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [Expectation-maximization: theory and intuition](https://mbernste.github.io/posts/em/)  
 [Variational inference](https://mbernste.github.io/posts/variational_inference/)  
+[Blackbox variational inference via the reparameterization gradient](https://mbernste.github.io/posts/reparameterization_vi/)  
 
 ## Probabilistic models
 
