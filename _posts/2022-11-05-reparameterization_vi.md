@@ -183,7 +183,7 @@ In the Appendix to this blog post, we show an implementation for univariate line
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Bayesian_linear_regression_example1_data.png" alt="drawing" width="300"/></center>
 
-Below is the output of the reparameterization gradient method when fit on these data. In the left-most figure, we show the four data points (blue dots), the true model (red line), the posterior mean (black line), and five samples from the posterior (grey lines). In the middle and right-hand panels we show the density function of the variational posteriors for the slope, $q(\boldsymbol{\beta_1})$, and the intercept $q(\boldsymbol{\beta_0})$ respectively (black line). The grey vertical lines show the randomly sampled slopes and intercepts used shown in the left-most figure:
+Below is the output of the reparameterization gradient method when fit on these data. In the left-most figure, we show the five data points (blue dots), the true model (red line), the posterior mean (black line), and five samples from the posterior (grey lines). In the middle and right-hand panels we show the density function of the variational posteriors for the slope, $q(\boldsymbol{\beta_1})$, and the intercept $q(\boldsymbol{\beta_0})$ respectively (black line). The grey vertical lines show the randomly sampled slopes and intercepts used shown in the left-most figure:
 
 &nbsp;
 
