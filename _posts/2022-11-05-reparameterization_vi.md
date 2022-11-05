@@ -1,6 +1,6 @@
 ---
 title: 'Blackbox variational inference via the reparameterization gradient'
-date: 2022-10-30
+date: 2022-11-05
 permalink: /posts/reparameterization_vi/
 tags:
   - tutorial
@@ -9,7 +9,7 @@ tags:
   - machine learning
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+_Variational inference (VI) is a mathematical framework for doing Bayesian inference by approximating the posterior distribution of latent variable model when the true posterior is intractable. In this post, we will discuss a flexible variational inference algorithm called blackbox VI via the reparameterization gradient that works "out of the box" for a wide variaty of models with minimal need for the tedious mathematical derivations that deriving VI algorithms usually require. We will then use this method to do Bayesian linear regression._ 
 
 Introduction
 ------------
@@ -38,10 +38,10 @@ $$\hat{\phi} := \text{arg max}_{\phi} \text{ELBO}(\phi)$$
 
 In this post, we will present a flexible method, called **blackbox variational inference via the reparameterization gradient**, co-invented by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082), for solving this optimization problem under the following conditions:
 1. $q$ is paramterized by some set of variational parameters $\phi$ and is continuous with respect to these parameters
-2. Sampling from $q_\phi$ can be performed via the **reparameterization trick** (to be discussed)
-3. $p$ is continuous with respect to $z$ 
+2. $p$ is continuous with respect to $z$ 
+3. Sampling from $q_\phi$ can be performed via the **reparameterization trick** (to be discussed)
 
-The method is often called "blackbox" VI because it works for a large set of models $p$ and $q$ and it acts as a "blackbox" for which $p$ and $q$ can simply be plugged into the algorithm thereby avoiding the tedious model-specific, mathematical derivations that developing a variational inference algorithm often requires (See the [Appendix](https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf) to the original paper presenting [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) for an example of such a model-specific VI derivation).
+The method is often called "blackbox" VI because it works for a large set of models $p$ and $q$ and it acts as a "blackbox" for which $p$ and $q$ can simply be plugged into the algorithm thereby avoiding the tedious model-specific, mathematical derivations that developing a variational inference algorithm often requires (As an example of such a tedious derivation, see the [Appendix](https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf) to the original paper presenting [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation)).
 
 At its core the reparameterization gradient method is a method for performing stochastic gradient ascent on the ELBO. It does so by employing a reformulation of the ELBO using the reparameterization trick. In this post, we will review stochastic gradient descent, present the reparameterization gradient method, and finally, dig into an example of implementing this method in [PyTorch](https://pytorch.org/) for performing Bayesian linear regression.
 
