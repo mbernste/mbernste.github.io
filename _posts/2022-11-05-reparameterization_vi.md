@@ -41,9 +41,9 @@ In this post, we will present a flexible method, called **blackbox variational i
 2. $p$ is continuous with respect to $z$ 
 3. Sampling from $q_\phi$ can be performed via the **reparameterization trick** (to be discussed)
 
-The method is often called "blackbox" VI because it works for a large set of models $p$ and $q$ and it acts as a "blackbox" for which $p$ and $q$ can simply be plugged into the algorithm thereby avoiding the tedious model-specific, mathematical derivations that developing a variational inference algorithm often requires (As an example of such a tedious derivation, see the [Appendix](https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf) to the original paper presenting [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation)).
+The method is often called "blackbox" VI because it enables practitioners to avoid the tedious model-specific, mathematical derivations that developing VI algorithms often require (As an example of such a tedious derivation, see the [Appendix](https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf) to the original paper presenting [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation)). That is, blackbox VI works for a large set of models $p$ and $q$ acting as a "blackbox" in which one needs only to input $p$ and $q$ and the algorithm performs VI automatically. 
 
-At its core the reparameterization gradient method is a method for performing stochastic gradient ascent on the ELBO. It does so by employing a reformulation of the ELBO using the reparameterization trick. In this post, we will review stochastic gradient descent, present the reparameterization gradient method, and finally, dig into an example of implementing this method in [PyTorch](https://pytorch.org/) for performing Bayesian linear regression.
+At its core, the reparameterization gradient method is a method for performing stochastic gradient ascent on the ELBO. It does so by employing a reformulation of the ELBO using a clever technique called the "reparameterization trick". In this post, we will review stochastic gradient ascent, present the reparameterization trick, and finally, dig into an example of implementing the reparameterization gradient method in [PyTorch](https://pytorch.org/) in order to perform Bayesian linear regression.
 
 Stochastic gradient ascent of the ELBO
 --------------------------------------
@@ -142,7 +142,9 @@ That is, we assume that each $y_i$ is "generated" from its $\boldsymbol{x}_i$ vi
 
 $$\begin{align*}\mu_i & := \boldsymbol{\beta}^T\boldsymbol{x}_i \\ y_i &\sim N(\mu_i, \sigma^2)\end{align*}$$
 
-Notice that the variance $\sigma^2$ is constant across all data points and thus, our model assumes [homoscedasticity](https://en.wikipedia.org/wiki/Homoscedasticity_and_heteroscedasticity). Furthmore, our data only consists of the pairs $(\boldsymbol{x}_1, y_1), \dots, (\boldsymbol{x}_n, y_n)$, but we don't know $\boldsymbol{\beta}$ or $\sigma^2$. We can infer the value of these variables using Bayesian inference! Specifically, we will define a prior distribution over $\boldsymbol{\beta}$, denoted $p(\boldsymbol{\beta})$. For simplicity, let us assume that all parameters are independently and normally distributed with each parameter's prior mean being zero with a large variance of 10 (because we are unsure apriori, what the parameters are). That is, let
+Notice that the variance $\sigma^2$ is constant across all data points and thus, our model assumes [homoscedasticity](https://en.wikipedia.org/wiki/Homoscedasticity_and_heteroscedasticity). Furthmore, our data only consists of the pairs $(\boldsymbol{x}_1, y_1), \dots, (\boldsymbol{x}_n, y_n)$, but we don't know $\boldsymbol{\beta}$ or $\sigma^2$. We can infer the value of these variables using Bayesian inference! Note, Bayesian linear regression _can_ be performed exactly (no need for VI) with a specific [conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior) over both $\boldsymbol{\beta}$ and $\sigma^2$, but we will use VI to demonstrate the approach.
+
+Specifically, we will define a prior distribution over $\boldsymbol{\beta}$, denoted $p(\boldsymbol{\beta})$. For simplicity, let us assume that all parameters are independently and normally distributed with each parameter's prior mean being zero with a large variance of 10 (because we are unsure apriori, what the parameters are). That is, let
 
 $$p(\boldsymbol{\beta}) := \prod_{j=1}^J N(\beta_j; 0, 10)$$
 
@@ -189,12 +191,11 @@ Below is the output of the reparameterization gradient method when fit on these 
 
 &nbsp;
 
-Finally, let's compare our variational posterior to the approximate posterior we would get if we ran an alternative method for approximating the posterior. Specifically, let's compare our results to the results we'd get from [Markov Chain Monte Carlo (MCMC)](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo). In MCMC, instead of using an analytical form of a probability distribution to approximate the posterior (as done in VI), we instead _sample_ from the posterior use these samples to estimate the posterior. We will use [Stan](https://mc-stan.org/) to run MCMC. Below, we show the approximate posterior from MCMC (blue) along with the approximate posterior from our VI algorithm (red):
+Finally, let's compare our variational posterior to the posterior we would get if we ran an alternative method for approximating it. Specifically, let's compare our results to the results we'd get from [Markov Chain Monte Carlo (MCMC)](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo). In MCMC, instead of using an analytical form of a probability distribution to approximate the posterior (as done in VI), we instead _sample_ from the posterior use these samples to estimate the posterior. We will use [Stan](https://mc-stan.org/) to run MCMC (code shown in the Appendix to this blog post). Below, we show the approximate posterior from MCMC (blue) along with the approximate posterior from our VI algorithm (red):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Bayesian_linear_regression_example1_VI_vs_MCMC.png" alt="drawing" width="1200"/></center>
 
-As you can see, the two approximations are pretty similar! The posteriors from the MCMC algorithm have slightly larger tails, which may indicate that our use of a Gaussian distribution to approximate the posterior in our VI algorithm is not _quite_ correct, but nonetheless there is pretty good correspondence.
-
+As you can see, the two approximations are pretty similar!
 
 Appendix
 --------
