@@ -169,7 +169,7 @@ Then the variational parameters are:
 
 $$\phi := \{\boldsymbol{\mu}, \boldsymbol{\tau}^2 \}$$
 
-As stated previously, we will treat the variance $\sigma^2$. That is, $\theta := \sigma^2$. We will now attempt to find $q_\phi$ and $\theta$ jointly via blackbox VI. First, we must derive a reparameterization of $q_\phi$. This can be done quite easily as follows:
+We will treat the variance $\sigma^2$ as a model parameter. That is, $\theta := \sigma^2$. We will now attempt to find $q_\phi$ and $\theta$ jointly via blackbox VI. First, we must derive a reparameterization of $q_\phi$. This can be done quite easily as follows:
 
 $$\begin{align*}\boldsymbol{\epsilon} &\sim N(\boldsymbol{0}, \boldsymbol{I}) \\ \boldsymbol{\beta} &= \boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\tau} \end{align*}$$
 
