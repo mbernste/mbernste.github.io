@@ -195,7 +195,7 @@ Finally, let's compare our variational posterior to the posterior we would get i
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Bayesian_linear_regression_example1_VI_vs_MCMC.png" alt="drawing" width="1200"/></center>
 
-As you can see, the two approximations are pretty similar!
+As you can see, the two results are very similar!
 
 Appendix
 --------
