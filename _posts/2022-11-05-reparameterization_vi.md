@@ -145,13 +145,13 @@ $$\begin{align*}\mu_i & := \boldsymbol{\beta}^T\boldsymbol{x}_i \\ y_i &\sim N(\
 
 Notice that the variance $\sigma^2$ is constant across all data points and thus, our model assumes [homoscedasticity](https://en.wikipedia.org/wiki/Homoscedasticity_and_heteroscedasticity). Furthermore, our data only consists of the pairs $(\boldsymbol{x}\_1, y\_1), \dots, (\boldsymbol{x}\_n, y\_n)$, but we don't know $\boldsymbol{\beta}$ or $\sigma^2$. We can infer the value of these variables using Bayesian inference! Note, Bayesian linear regression _can_ be performed exactly (no need for VI) with a specific [conjugate prior](https://en.wikipedia.org/wiki/Conjugate_prior) over both $\boldsymbol{\beta}$ and $\sigma^2$, but we will use VI to demonstrate the approach.
 
-Specifically, we will define a prior distribution over $\boldsymbol{\beta}$, denoted $p(\boldsymbol{\beta})$. For simplicity, let us assume that all parameters are independently and normally distributed with each parameter's prior mean being zero with a large variance of 10 (because we are unsure apriori, what the parameters are). That is, let
+Specifically, we will define a prior distribution over $\boldsymbol{\beta}$, denoted $p(\boldsymbol{\beta})$. For simplicity, let us assume that all parameters are independently and normally distributed with each parameter's prior mean being zero with a large variance of $C$ (because we are unsure apriori, what the parameters are). That is, let
 
-$$p(\boldsymbol{\beta}) := \prod_{j=1}^J N(\beta_j; 0, 10)$$
+$$p(\boldsymbol{\beta}) := \prod_{j=1}^J N(\beta_j; 0, C)$$
 
 Then, our complete data likelihood is given by
 
-$$p(y_1, \dots, y_n, \boldsymbol{\beta} \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{j=1}^J N(\beta_j; 0, 10) \prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i, \sigma^2)$$
+$$p(y_1, \dots, y_n, \boldsymbol{\beta} \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{j=1}^J N(\beta_j; 0, C) \prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i, \sigma^2)$$
 
 We will treat $\sigma^2$ as a parameter to the model rather than a random variable. Our goal is to compute the posterior distribution of $\boldsymbol{\beta}$:
 
@@ -171,11 +171,11 @@ $$\phi := \{\boldsymbol{\mu}, \boldsymbol{\tau}^2 \}$$
 
 As stated previously, we will treat the variance $\sigma^2$. That is, $\theta := \sigma^2$. We will now attempt to find $q_\phi$ and $\theta$ jointly via blackbox VI. First, we must derive a reparameterization of $q_\phi$. This can be done quite easily as follows:
 
-$$\begin{align*}\boldsymbol{\epsilon} &\sim N(\boldsymbol{0}, \boldsymbol{I}) \\ \boldsymbol{\beta} &= \boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\sigma} \end{align*}$$
+$$\begin{align*}\boldsymbol{\epsilon} &\sim N(\boldsymbol{0}, \boldsymbol{I}) \\ \boldsymbol{\beta} &= \boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\tau} \end{align*}$$
 
 where $\odot$ represent element-wise multiplication between two vectors.  Finally, the reparameterized ELBO for this model and variational posterior is:
 
-$$ELBO(\boldsymbol{\beta}) := E_{\boldsymbol{\epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\mu_j + \epsilon_j \tau; 0, 10) + \sum_{i=1}^n \log N(y_i; (\boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\tau})^T\boldsymbol{x}_i, \tau^2) - \sum_{j=0}^J \log N(\mu_j + \epsilon_j \sigma_j; \mu_j, \tau^2_j)\right]$$
+$$ELBO(\boldsymbol{\beta}) := E_{\boldsymbol{\epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\mu_j + \epsilon_j \tau; 0, C) + \sum_{i=1}^n \log N(y_i; (\boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\tau})^T\boldsymbol{x}_i, \tau^2) - \sum_{j=0}^J \log N(\mu_j + \epsilon_j \sigma_j; \mu_j, \tau^2_j)\right]$$
 
 Now, we can use this reparameterized ELBO to perform stochastic gradient ascent! This may appear daunting, but can be done automatically with the help of automatic differentiation algorithms! 
 
