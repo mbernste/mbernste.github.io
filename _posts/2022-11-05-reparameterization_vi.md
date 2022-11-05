@@ -92,7 +92,7 @@ Now, what does this reparameterization trick get us? How does it enable us to co
 
 $$\text{ELBO}(\phi) := E_{\epsilon \sim \mathcal{D}} \left[ \log p(x, g_\phi(\epsilon)) - \log q_\phi(g_\phi(\epsilon)) \right]$$
 
-This formulation enables us to now approxiamte the ELBO via Monte Carlo Sampling. That is, we can first sample random variables from our surrogate distribution $\mathcal{D}$:
+This formulation enables us to now approximate the ELBO via Monte Carlo sampling. That is, we can first sample random variables from our surrogate distribution $\mathcal{D}$:
 
 $$\epsilon_1, \dots, \epsilon_L \sim \mathcal{D}$$
 
@@ -100,7 +100,7 @@ Then we can compute a Monte Carlo approximation to the ELBO:
 
 $$\tilde{ELBO}(\phi) := \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$ 
 
-So long as $g_\phi$ is continuous with respect to $\phi$ (i.e., $q_\phi$ is continuous with respect to $\phi$) and $p$ is continuous with respect to $z$, we can take gradient of this approximation:
+So long as $g_\phi$ is continuous with respect to $\phi$ and $p$ is continuous with respect to $z$, we can take gradient of this approximation:
 
 $$\nabla_\phi \tilde{ELBO}(\phi) := \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$
 
