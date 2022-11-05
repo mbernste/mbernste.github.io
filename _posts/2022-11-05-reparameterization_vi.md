@@ -37,7 +37,7 @@ Then, the optimziation problem reduces to optimizing over $\phi$:
 $$\hat{\phi} := \text{arg max}_{\phi} \text{ELBO}(\phi)$$
 
 In this post, we will present a flexible method, called **blackbox variational inference via the reparameterization gradient**, co-invented by [Kingma and Welling (2014)](https://arxiv.org/abs/1312.6114) and [Rezende, Mohamed, and Wierstra (2014)](https://arxiv.org/abs/1401.4082), for solving this optimization problem under the following conditions:
-1. $q$ is paramterized by some set of variational parameters $\phi$ and is continuous with respect to these parameters
+1. $q$ is parameterized by some set of variational parameters $\phi$ and is continuous with respect to these parameters
 2. $p$ is continuous with respect to $z$ 
 3. Sampling from $q_\phi$ can be performed via the **reparameterization trick** (to be discussed)
 
