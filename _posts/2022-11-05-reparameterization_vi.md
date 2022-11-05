@@ -191,7 +191,7 @@ Below is the output of the reparameterization gradient method when fit on these 
 
 &nbsp;
 
-Finally, let's compare our variational posterior to the posterior we would get if we ran an alternative method for approximating it. Specifically, let's compare our results to the results we'd get from [Markov Chain Monte Carlo (MCMC)](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo). In MCMC, instead of using an analytical form of a probability distribution to approximate the posterior (as done in VI), we instead _sample_ from the posterior use these samples to estimate the posterior. We will use [Stan](https://mc-stan.org/) to run MCMC (code shown in the Appendix to this blog post). Below, we show the approximate posterior from MCMC (blue) along with the approximate posterior from our VI algorithm (red):
+Finally, let's compare our variational posterior to the posterior we would get if we ran an alternative method for approximating it. Specifically, let's compare our results to the results we'd get from [Markov Chain Monte Carlo (MCMC)](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo). In MCMC, instead of using an analytical form of a probability distribution to approximate the posterior (as done in VI), we instead _sample_ from the posterior and use these samples to form our approximation. We will use [Stan](https://mc-stan.org/) to implement an MCMC approach for this model (code shown in the Appendix to this blog post). Below, we show the approximate posterior from MCMC (blue) along with the approximate posterior from our VI algorithm (red):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Bayesian_linear_regression_example1_VI_vs_MCMC.png" alt="drawing" width="1200"/></center>
 
