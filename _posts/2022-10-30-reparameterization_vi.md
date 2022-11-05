@@ -170,11 +170,11 @@ Below is the output of the reparameterization gradient method when fit on these 
 
 &nbsp;
 
-Finally, let's compare our variational posterior to the approximate posterior we would get if we ran an alternative method for approximating the posterior. Specifically, let's compare our results to the results we'd get from [Markov Chain Monte Carlo (MCMC)](). In MCMC, instead of using an analytical form of a probability distribution to approximate the posterior (as done in VI), we instead _sample_ from the posterior use these samples to estimate the posterior. We will use [Stan](https://mc-stan.org/) to run MCMC. Below, we show the approximate posterior from MCMC (blue) along with the approximate posterior from our VI algorithm (red):
+Finally, let's compare our variational posterior to the approximate posterior we would get if we ran an alternative method for approximating the posterior. Specifically, let's compare our results to the results we'd get from [Markov Chain Monte Carlo (MCMC)](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo). In MCMC, instead of using an analytical form of a probability distribution to approximate the posterior (as done in VI), we instead _sample_ from the posterior use these samples to estimate the posterior. We will use [Stan](https://mc-stan.org/) to run MCMC. Below, we show the approximate posterior from MCMC (blue) along with the approximate posterior from our VI algorithm (red):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Bayesian_linear_regression_example1_VI_vs_MCMC.png" alt="drawing" width="1200"/></center>
 
-As you can see, the two approximations are pretty similar! The posterior from the MCMC algorithm has slightly larger tails, which may indicate that our use of a Gaussian distribution to approximate the posterior in our VI algorithm may not be _quite_ correct, but nonetheless there is pretty good correspondence.
+As you can see, the two approximations are pretty similar! The posteriors from the MCMC algorithm have slightly larger tails, which may indicate that our use of a Gaussian distribution to approximate the posterior in our VI algorithm is not _quite_ correct, but nonetheless there is pretty good correspondence.
 
 
 Appendix
