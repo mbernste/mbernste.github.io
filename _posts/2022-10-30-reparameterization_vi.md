@@ -110,8 +110,8 @@ $$E[\nabla_\phi \tilde{\text{ELBO}}(\phi)] = \nabla_\phi \text{ELBO}(\phi)$$
 Thus, the process of sampling $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$, computing the approximate ELBO, and then calculating the gradient to this approximation is equivalent to sampling from a distribution of random gradients $V(\phi)$ whose expectation is the gradient of the ELBO!
 
 
-Joint inference of both variational and model parameters
---------------------------------------------------------
+Joint optimization of both variational and model parameters
+-----------------------------------------------------------
 
 TODO!!!!!!!!!!!!!!!!!!!!!
 
