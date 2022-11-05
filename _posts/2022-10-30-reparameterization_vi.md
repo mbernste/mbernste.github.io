@@ -52,7 +52,7 @@ Stochastic gradient ascent of the ELBO
 
 $$\phi_{t+1} := \phi_t + \alpha \nabla_\phi \left. \text{ELBO}(\phi) \right|_{\phi_t}$$
 
-where $\alpha$ is the learning rate. This step is repeated until we converge on a local optimum of the ELBO. 
+where $\alpha$ is the learning rate. This step is repeated until we converge on a local maximum of the ELBO. 
 
 Now, the question becomes how do we compute the gradient of the ELBO? A key challenge here is dealing with the expectation (i.e., the integral) in the ELBO. At its core, the reparameterization gradient method entails performing [stochastic gradient ascent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) using computationally tractable random gradients instead of using the computationally _intractable_ exact gradient.
 
@@ -103,7 +103,7 @@ So long as $g_\phi$ is continuous with respect to $\phi$ (i.e., $q_\phi$ is cont
 
 $$\nabla_\phi \tilde{ELBO}(\phi) := \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$
 
-Notice that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector (previously denoted by $\boldsymbol{g}$ in the general case) where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$.  Moreover, it can be proven that 
+Notice that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector (which we previously denoted by $v$ in the general case) where the randomness comes from sampling of $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$.  Moreover, it can be proven that 
 
 $$E[\nabla_\phi \tilde{\text{ELBO}}(\phi)] = \nabla_\phi \text{ELBO}(\phi)$$
 
