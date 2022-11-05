@@ -119,7 +119,7 @@ One idea would be to place a prior distribution over $\theta$ and consider $\the
 
 It turns out that inference of $\theta$ can be performed by simply maximizing the ELBO in terms of _both_ the variational parameters $\phi$ _and_ the model parameters $\theta$. That is, to cast the inference task as
 
-$$\hat{\phi}, \hat{\theta} := \argmax_{\phi, \theta} \ \text{ELBO}(\phi, \theta)$$
+$$\hat{\phi}, \hat{\theta} := \text{arg max}_{\phi, \theta} \ \text{ELBO}(\phi, \theta)$$
 
 where the ELBO now becomes a function of both $\phi$ and $\theta$:
 
