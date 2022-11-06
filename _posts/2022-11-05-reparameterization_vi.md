@@ -94,7 +94,7 @@ $$\text{ELBO}(\phi) := E_{\epsilon \sim \mathcal{D}} \left[ \log p(x, g_\phi(\ep
 
 This formulation enables us to now approximate the ELBO via Monte Carlo sampling. That is, we can first sample random variables from our surrogate distribution $\mathcal{D}$:
 
-$$\epsilon_1, \dots, \epsilon_L \sim \mathcal{D}$$
+$$\epsilon'_1, \dots, \epsilon'_L \sim \mathcal{D}$$
 
 Then we can compute a Monte Carlo approximation to the ELBO:
 
@@ -133,7 +133,7 @@ This may remind you of the [EM algorithm](https://mbernste.github.io/posts/em/),
 Example: Bayesian linear regression
 -----------------------------------
 
-The reparameterized gradient method can be applied to a wide variety of models. Here, we'll apply it to Bayesian linear regression. Let's first describe the probabilistic model behind linear regression. Our data consists of covariates $\boldsymbol{x}_1, \dots, \boldsymbol{x}_n \in \mathbb{R}^J$ paired with response variables $y_1, \dots, y_n \in \mathbb{R}^n$. Our data model is then defined as
+The reparameterized gradient method can be applied to a wide variety of models. Here, we'll apply it to Bayesian linear regression. Let's first describe the probabilistic model behind linear regression. Our data consists of covariates $\boldsymbol{x}_1, \dots, \boldsymbol{x}_n \in \mathbb{R}^J$ paired with response variables $y_1, \dots, y_n \in \mathbb{R}$. Our data model is then defined as
 
 $$p(y_1, \dots, y_n \mid \boldsymbol{x}_1, \dots, \boldsymbol{x}_n) := \prod_{i=1}^n N(y_i; \boldsymbol{\beta}^T\boldsymbol{x}_i, \sigma^2)$$
 
