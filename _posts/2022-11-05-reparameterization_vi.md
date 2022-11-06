@@ -9,7 +9,7 @@ tags:
   - machine learning
 ---
 
-_Variational inference (VI) is a mathematical framework for doing Bayesian inference by approximating the posterior distribution of latent variables in a latent variable model when the true posterior is intractable. In this post, we will discuss a flexible variational inference algorithm, called blackbox VI via the reparameterization gradient, that works "out of the box" for a wide variety of models with minimal need for the tedious mathematical derivations that deriving VI algorithms usually require. We will then use this method to do Bayesian linear regression._ 
+_Variational inference (VI) is a mathematical framework for doing Bayesian inference by approximating the posterior distribution over the latent variables in a latent variable model when the true posterior is intractable. In this post, we will discuss a flexible variational inference algorithm, called blackbox VI via the reparameterization gradient, that works "out of the box" for a wide variety of models with minimal need for the tedious mathematical derivations that deriving VI algorithms usually require. We will then use this method to do Bayesian linear regression._ 
 
 Introduction
 ------------
