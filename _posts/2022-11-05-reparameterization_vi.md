@@ -108,8 +108,7 @@ Notice that $\nabla_\phi \tilde{ELBO}(\phi)$ is a random vector (which we previo
 
 $$E[\nabla_\phi \tilde{\text{ELBO}}(\phi)] = \nabla_\phi \text{ELBO}(\phi)$$
 
-Thus, the process of sampling $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$, computing the approximate ELBO, and then calculating the gradient to this approximation is equivalent to sampling from a distribution of random gradients $V(\phi)$ whose expectation is the gradient of the ELBO.
-
+Thus, the process of sampling $\epsilon_1, \dots, \epsilon_L$ from $\mathcal{D}$, computing the approximate ELBO, and then calculating the gradient to this approximation is equivalent to sampling from a distribution of random gradients $V(\phi)$ whose expectation is the gradient of the ELBO. Here we also see why when implementing the reparameterization trick, $\mathcal{D}$ must be easy to sample from: we use samples from this distribution to form samples from $V(\phi)$.
 
 Joint optimization of both variational and model parameters
 -----------------------------------------------------------
