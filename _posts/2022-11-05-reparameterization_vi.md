@@ -173,7 +173,7 @@ We will treat the variance $\sigma^2$ as a model parameter. That is, $\theta := 
 
 $$\begin{align*}\boldsymbol{\epsilon} &\sim N(\boldsymbol{0}, \boldsymbol{I}) \\ \boldsymbol{\beta} &= \boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\tau} \end{align*}$$
 
-where $\odot$ represent element-wise multiplication between two vectors.  Finally, the reparameterized ELBO for this model and variational posterior is:
+where $\odot$ represent element-wise multiplication between two vectors.  Finally, the reparameterized ELBO for this model is:
 
 $$ELBO(\boldsymbol{\beta}) := E_{\boldsymbol{\epsilon} \sim N(\boldsymbol{0}, \boldsymbol{I})}\left[\sum_{j=0}^J \log N(\mu_j + \epsilon_j \tau; 0, C) + \sum_{i=1}^n \log N(y_i; (\boldsymbol{\mu} + \boldsymbol{\epsilon} \odot \boldsymbol{\tau})^T\boldsymbol{x}_i, \tau^2) - \sum_{j=0}^J \log N(\mu_j + \epsilon_j \sigma_j; \mu_j, \tau^2_j)\right]$$
 
