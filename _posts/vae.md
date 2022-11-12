@@ -12,7 +12,9 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Variational autoencoders (VAEs), introduced by [Kingma and Welling (2013)](https://arxiv.org/abs/1312.6114_) are a class of probabilistic models that model latent, low-dimensional representations of data. There are two complimentary ways of viewing variational autoencoders:
+Variational autoencoders (VAEs), introduced by [Kingma and Welling (2013)](https://arxiv.org/abs/1312.6114_) are a class of probabilistic models that find latent, low-dimensional representations of data. VAEs are thus a method for performing [dimensionality reduction](https://en.wikipedia.org/wiki/Dimensionality_reduction) to reduce data down to their [intrinsice dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/). 
+
+There are two complimentary ways of viewing variational autoencoders:
 1. **Probabilistic generative model:** VAEs can be viewed as a probabilistic generative model of independent, identically distributed samples, $\boldsymbol{x}_1, \dots, \boldsymbol{x}_m$. Each sample, $\boldsymbol{x}_i$, is associated with a latent (i.e. unobserved), lower-dimensional representation $\boldsymbol{z}_i$. Notably, each observed sample $\boldsymbol{x}_i$ is of higher dimension than its associated lower dimensional representation $\boldsymbol{z}_i$.  Variational autoencoders define a joint distribution $p(\boldsymbol{x}, \boldsymbol{z})$ and enables efficient computation of:
   * An approximation to the posterior $p(\boldsymbol{z} \mid \boldsymbol{x})$
   * The conditional distribution $p(\boldsymbol{x} \mid \boldsymbol{z})$
