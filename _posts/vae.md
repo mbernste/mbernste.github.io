@@ -82,11 +82,12 @@ Thus, variational inference entails finding
 
 $$\hat{q} := \text{arg max}_{q \in \mathcal{Q}} \ \text{ELBO}(q)$$
 
-Now, so far we have assumed that $\theta$ is fixed. Is it possible to find both $q$ and $\theta$ jointly? It turns out the answer is yes! We can simply define the ELBO to be a function of _both_ $q$ and $\theta$ and then maximize the ELBO jointly:
+Now, so far we have assumed that $\theta$ is fixed. Is it possible to find both $q$ and $\theta$ jointly? As we discuss in a [previous post on variational inference](https://mbernste.github.io/posts/reparameterization_vi/), it is valid to define the ELBO as a function of _both_ $q$ and $\theta$ and then maximize the ELBO with respect to both of these parameters:
 
 $$\hat{q}, \hat{\theta} := \text{arg max}_{q, \theta} \ \text{ELBO}(q, \theta)$$
 
-Why does this work? Recall the evidence lower bound is a lower bound for $\log p_\theta(\boldsymbol{x})$ TODO!!!!!!!
+The reason for this is that the ELBO is a _lower bound_ on the marginal log-likelihood $p_\theta(x_1, \dots, x_n}$ and thus, optimizing the ELBO with respect to $\theta$ increases the lower bound of the log-likelihood. 
+
 
 ### Variational family used by VAEs
 
@@ -120,29 +121,12 @@ Now that we've set up the optimization problem, we need to solve it. Unfortunate
 
 $$\begin{align*}\text{ELBO}(\phi, \theta) &= \sum_{i=1}^m E_{\boldsymbol{z} \sim q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[ \log p_\theta(\boldsymbol{x}_i, \boldsymbol{z}_i) - \log q_\phi(\boldsymbol{z}_i \mid \boldsymbol{x}_i) \right] \\ &= \sum_{i=1}^m \int_{\boldsymbol{z}_i}   q_\phi(\boldsymbol{z}_i \mid \boldsymbol{x}_i) \left[ \log p_\theta(\boldsymbol{x}_i, \boldsymbol{z}_i) - \log q_\phi(\boldsymbol{z}_i \mid \boldsymbol{x}_i) \right] \ d\boldsymbol{z}_i \end{align*}$$
 
-Instead of computing the exact ELBO, we can approximate it via Monte Carlo sampling. That is, for each item $\boldsymbol{x}_i$, we will sample $L$ samples from q_\phi(\boldsymbol{z} \mid \boldsymbol{x}):
+We address this challenge by using the **reparameterization gradient** method. We will briefly review this method; however, see my [previous blog post](https://mbernste.github.io/posts/reparameterization_vi/) for a detailed explanation. In brief, the reparameterization method maximizes the ELBO via stochastic gradient ascent in which stochastic gradients are formulated by first performing the **reparameterization trick** followed by Monte Carlo sampling.  The reparameterization trick works as follows: we "reparameterize" the distribution $q_\phi(z)$ in terms of a surrogate random variable $\epsilon \sim \mathcal{D}$ and a determinstic function $g$ in such a way that sampling $z$ from $q_\phi(z)$ is performed as follows:
 
-$$\boldsymbol{z}'_{i,1}, \dots, \boldsymbol{z}'_{i,L} \sim q_\phi(\boldsymbol{z} \mid \boldsymbol{x})$$
+$$\begin{align*}\epsilon &\sim \mathcal{D} \\ z &:= g_\phi(\epsilon)\end{align*}$$
 
-Then, we can approximate the ELBO using these samples as follows:
 
-$$\begin{align*} \text{ELBO}(\phi, \theta) &\approx \sum_{i=1}^m \frac{1}{L} \sum_{l=1}^L \left[ \log p_\theta(\boldsymbol{x}_i, \boldsymbol{z}'_{i,l}) -  \log q_\phi(\boldsymbol{z}'_{i,l} \mid \boldsymbol{x}_i) \right] \end{align*}$$
 
-So far we've made some progress towards maximizing the ELBO by ridding it of the integral. Intuitively this should be easier to maximize. An appealing idea is to now apply gradient ascent, as is used for training most neural network-based models to maximize it. While this is an appealing idea, there is a crucial problem: Notice how the ELBO takes an expectation with respect to $q_\phi(\boldsymbol{z} \mid \boldsymbol{x})$, which obviously includes the parameters $\phi$. Taking the gradient of the approximate ELBO shown above with respect to $\phi$ would _not_ be an approximate gradient to the ELBO because it would not incorporate the fact that the distribution we sampled from to obtain this formula also includes $\phi$. 
-
-To get around this, Kingma and Welling proposed the **reparameterization trick**. The idea here is that instead of sampling each $\boldsymbol{z}\_i \sim q\_\phi(\boldsymbol{z} \mid \boldsymbol{x})$, we instead sample 
-
-$$\epsilon_{i,l} \sim N(0, 1)$$
-
-and then transform $\epsilon$ into $\boldsymbol{z}_i$ via:
-
-$$\boldsymbol{z}'_{i,l} := g_\phi(\boldsymbol{x}) + h_\phi(\boldsymbol{x})\epsilon_{i,l}$$
-
-Notice how this preserves the fact that
-
-$$\boldsymbol{z}'_{i,l} \sim  q_\phi(\boldsymbol{z} \mid \boldsymbol{x})$$
-
-The key idea here is that the samples we draw to form our Monte Carlo approximation uses a distribution that doesn't include $\phi$! Stated more explicitly, the approximate ELBO becomes:
 
 $$\begin{align*} \text{ELBO}(\phi, \theta) &\approx \sum_{i=1}^m \frac{1}{L} \sum_{l=1}^L \left[ \log p_\theta(\boldsymbol{x}_i, \boldsymbol{z}'_{i,l}) -  \log q_\phi(\boldsymbol{z}'_{i,l} \mid \boldsymbol{x}_i) \right] \\ &= \sum_{i=1}^m \frac{1}{L} \sum_{l=1}^L \left[ \log p_\theta(\boldsymbol{x}_i, g_\phi(\boldsymbol{x}) + h_\phi(\boldsymbol{x})\epsilon_{i,l}) -  \log q_\phi(g_\phi(\boldsymbol{x}) + h_\phi(\boldsymbol{x})\epsilon_{i,l} \mid \boldsymbol{x}_i) \right] \end{align*}$$
 
