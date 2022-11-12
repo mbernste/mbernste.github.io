@@ -125,18 +125,29 @@ We address this challenge by using the **reparameterization gradient** method. W
 
 $$\begin{align*}\epsilon &\sim \mathcal{D} \\ z &:= g_\phi(\epsilon)\end{align*}$$
 
+One way to think about this is that instead of sampling $z$ directly from our variational posterior $q_\phi(z)$, we "re-design" the generative process of $z$ such that we first sample a surrogate random variable $\epsilon$ and then transform $\epsilon$ into $z$ all while ensuring that in the end, the distribution of $z$ still follows $q_\phi$. Crucially, $\mathcal{D}$ must be something we can easily sample from such as a standard normal distribution. Following the reparameterization trick, we can re-write the ELBO as follows:
 
+$$\text{ELBO}(\phi) := E_{\epsilon \sim \mathcal{D}} \left[ \log p(x, g_\phi(\epsilon)) - \log q_\phi(g_\phi(\epsilon)) \right]$$
 
+We then approximate the ELBO via Monte Carlo sampling. That is, we can first sample random variables from our surrogate distribution $\mathcal{D}$:
 
-$$\begin{align*} \text{ELBO}(\phi, \theta) &\approx \sum_{i=1}^m \frac{1}{L} \sum_{l=1}^L \left[ \log p_\theta(\boldsymbol{x}_i, \boldsymbol{z}'_{i,l}) -  \log q_\phi(\boldsymbol{z}'_{i,l} \mid \boldsymbol{x}_i) \right] \\ &= \sum_{i=1}^m \frac{1}{L} \sum_{l=1}^L \left[ \log p_\theta(\boldsymbol{x}_i, g_\phi(\boldsymbol{x}) + h_\phi(\boldsymbol{x})\epsilon_{i,l}) -  \log q_\phi(g_\phi(\boldsymbol{x}) + h_\phi(\boldsymbol{x})\epsilon_{i,l} \mid \boldsymbol{x}_i) \right] \end{align*}$$
+$$\epsilon'_1, \dots, \epsilon'_L \sim \mathcal{D}$$
 
-Now, taking gradients of this function _is_ an approximate gradient to the ELBO. Thus, we can apply [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) algorithms in combination with [gradient descent](https://en.wikipedia.org/wiki/Gradient_descent)-based optimization, thus enabling us to utilize the full deep learning optimization toolkit! 
+Then we can compute a Monte Carlo approximation to the ELBO:
 
-While the approximate ELBO above can be optimized at is, there is yet another trick we can do to decrease the variance of this estimate. As proven in Theorem 1 of the Appendix to this blog post, the ELBO can written in two ways:
+$$\tilde{ELBO}(\phi) := \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$ 
 
-$$\begin{align*}\text{ELBO}(\phi, \theta) &= \sum_{i=1}^m E_{ \boldsymbol{z} \sim q_\phi(\boldsymbol{z} \mid \boldsymbol{x}) } \left[ \log p_\theta(\boldsymbol{x}_i, \boldsymbol{z}_i) - \log q_\phi(\boldsymbol{z}_i \mid \boldsymbol{x}_i) \right] \\ &= - KL(q_\phi(\boldsymbol{z}_i \mid \boldsymbol{x}_i) \ || \ p(\boldsymbol{z})) + E_{\boldsymbol{z} \sim q_\phi(\boldsymbol{z} \mid \boldsymbol{x})} \left[\log p_\theta(\boldsymbol{x}_i \mid \boldsymbol{z}_i)  \right] \end{align*}$$
+So long as $g_\phi$ is continuous with respect to $\phi$ and $p$ is continuous with respect to $z$, we can take gradient of this approximation:
 
-The VAEs we have considered in this blog post have defined $p(\boldsymbol{z})$ to be the standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$. In this particular case, it turns out that the KL-divergence term above can be expressed analytically (See Theorem 2 in the Appendix to this post):
+$$\nabla_\phi \tilde{ELBO}(\phi) := \nabla_\phi \frac{1}{L} \sum_{l=1}^L \left[  \log p(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$
+
+This gradient can then be used to perform gradient ascent. In VAE's we also have model parameters $\theta$ and this stochastic gradient becomes:
+
+$$\nabla_{\phi, \theta} \tilde{ELBO}(\phi, \theta) := \nabla_{\phi, \theta} \frac{1}{L} \sum_{l=1}^L \left[  \log p_\theta(x, g_\phi(\epsilon'_l)) - \log q_\phi(g_\phi(\epsilon'_l)) \right]$$
+
+To compute this gradient, we can apply [automatic differentiation](https://en.wikipedia.org/wiki/Automatic_differentiation) algorithms in combination with [gradient descent](https://en.wikipedia.org/wiki/Gradient_descent)-based optimization, thus enabling us to utilize the full deep learning optimization toolkit! 
+
+For the VAE model there are a few additional modifications we can make to reduce variance of the Monte Carlo gradients. Recall the VAEs we have considered in this blog post have defined $p(\boldsymbol{z})$ to be the standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$. In this particular case, it turns out that the KL-divergence term above can be expressed analytically (See Theorem 1 in the Appendix to this post):
 
 $$KL(q_\phi(\boldsymbol{z}_i \mid \boldsymbol{x}_i) \mid\mid p(\boldsymbol{z})) = -\frac{1}{2} \sum_{j=1}^J \left(1 + h_\phi(\boldsymbol{x}_i)_j - g_\phi(\boldsymbol{x}_i)_j^2 - h_\phi(\boldsymbol{x}_i)_j \right)$$
 
@@ -144,11 +155,9 @@ Note above the KL-divergence is calculated by summing over each dimension in the
 
 $$\begin{align*} \text{ELBO}(\phi, \theta) &= \sum_{i=1}^m \left[\frac{1}{2} \sum_{j=1}^J \left(1 + h_\phi(\boldsymbol{x}_i)_j - g_\phi(\boldsymbol{x}_i)_j^2 - h_\phi(\boldsymbol{x}_i)_j \right) + E_{\boldsymbol{z} \sim q_\phi(\boldsymbol{z} \mid \boldsymbol{x})} \left[\log p_\theta(\boldsymbol{x}_i \mid \boldsymbol{z}_i) \right]\right] \end{align*}$$
 
-Now, we can approximate the expectation above using Monte Carlo approximation and the reparameterization trick:
+Then,
 
 $$\begin{align*}\text{ELBO}(\phi, \theta) &\approx \sum_{i=1}^m \left[\frac{1}{2} \sum_{j=1}^J \left(1 + h_\phi(\boldsymbol{x}_i)_j - g_\phi(\boldsymbol{x}_i)_j^2 - h_\phi(\boldsymbol{x}_i)_j \right) + \frac{1}{L} \sum_{l=1}^L \left[\log p_\theta(\boldsymbol{x}_i \mid \boldsymbol{z}'_{i,l}) \right] \right] \\ &= \sum_{i=1}^m \left[\frac{1}{2} \sum_{j=1}^J \left(1 + h_\phi(\boldsymbol{x}_i)_j - g_\phi(\boldsymbol{x}_i)_j^2 - h_\phi(\boldsymbol{x}_i)_j \right) + \frac{1}{L} \sum_{l=1}^L \left[\log p_\theta(\boldsymbol{x}_i \mid g_\phi(\boldsymbol{x}_{i}) + h_\phi(\boldsymbol{x}_i)\epsilon_{i,l}) \right] \right]\end{align*}$$
-
-This version of the ELBO, which is specific to the case where $p(\boldsymbol{z})$ is a standard normal distribution, has lower variance than the general form discussed previously.
 
 
 VAEs as autoencoders
