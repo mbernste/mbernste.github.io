@@ -68,7 +68,7 @@ This is illustrated schematically below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_as_function.png" alt="drawing" width="600"/></center>
 
-In fact, as we show in a later post, such a matrix-defined function is a [linear function](https://en.wikipedia.org/wiki/Linear_map).  Even more importantly, *any* linear function between finite-dimensional vector spaces is uniquely defined by some matrix.
+In fact, as we show in a later post, such a matrix-defined function is a [linear function](https://mbernste.github.io/posts/matrices_linear_transformations/).  Even more importantly, *any* linear function between finite-dimensional vector spaces is uniquely defined by some matrix.
 
 Appendix
 -----------
