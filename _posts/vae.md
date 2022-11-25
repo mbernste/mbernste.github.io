@@ -1,6 +1,6 @@
 ---
 title: 'Variational autoencoders'
-date: 2022-11-12
+date: 2022-11-25
 permalink: /posts/vae/
 tags:
   - tutorial
