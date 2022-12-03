@@ -141,7 +141,7 @@ $$K^TK = D - A$$
 
 Why is this case? Recall that for matrix multiplication $$AB$$, where $$A$$ and $$B$$ are matrices, we can compute element $$i,j$$ of the resultant matrix by taking the dot product of the $$i$$th row of $$A$$ with the $$j$$th column of $$B$$. In our case, $$A$$ is the transpose of $$B$$ and thus, the $$i$$th row of $$A$$ is equivalent to the $$j$$th column of $$B$$.  Thus, computing element $$i,j$$ of $$K^TK$$ is simply taking the dot product between columns $$i$$ and $$j$$ of $$K$$.
 
-What does each column of $$K$$ represent?  Well, first, we know that each column of $$K$$ corresponds to a vector. Each row corresponds to an edge.  Thus, the value of the $$t$$th entry of the $$i$$th column can be understood as an indicator of whether edge $$e_t$$ is incident upon vector $$v_i$$.  That is, edge $$e_t$$ is incident upon $$v_i$$ if $$K_{t,i} \neq 0$$. 
+What does each column of $$K$$ represent?  Well, first, we know that each column of $$K$$ corresponds to a vertex. Each row corresponds to an edge.  Thus, the value of the $$t$$th entry of the $$i$$th column can be understood as an indicator of whether edge $$e_t$$ is incident upon vector $$v_i$$.  That is, edge $$e_t$$ is incident upon $$v_i$$ if $$K_{t,i} \neq 0$$. 
 
 With this in mind, let's look at what the diagonal entries of $$K^TK$$ would be.  That is, what would be element $$i,i$$ of $$K^TK$$?  Well, we would simply take the dot product of the $$i$$th column of $$K$$ with itself:
 
