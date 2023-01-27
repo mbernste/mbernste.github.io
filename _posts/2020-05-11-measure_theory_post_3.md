@@ -44,7 +44,7 @@ Recall that measure-theoretic probability defines a random variable $X$ as a mea
 
  $$E(X) := \int_{\Omega} X \ dP$$
  
-This may look pretty strange -- nothing like the Reimann integral that is usually taught in introductory calculus classes. Let's dig in.
+This may look pretty strange -- nothing like the Riemann integral that is usually taught in introductory calculus classes. Let's dig in.
 
 Intuition behind Lebesgue integration
 ---------
