@@ -98,7 +98,7 @@ Before defining the general Lebesgue integral, we first create a more narrow def
 
 <span style="color:#0060C6">**Definition 9:** Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$, and a measurable simple function</span>
 
-<center><span style="color:#0060C6">$$g : F \rightarrow H$$</span></center>
+<center><span style="color:#0060C6">$$f : F \rightarrow H$$</span></center>
 
 <span style="color:#0060C6">with codomain</span>
 
