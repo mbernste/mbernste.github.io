@@ -40,7 +40,7 @@ where $c_1, c_2$, and $c_3$ are the solutions to the system -- that is, they are
 
 Now, what kinds of algebraic operations can we perform on the equations of the system to solve it? There are three main categories, called **elementary row operations** (we'll see soon, why they have this name):
 
-1. **Scalar multiplication**: Simply multiply both sides of one of the equations by a scalar. For example, 
+1. **Scalar multiplication**: Simply multiply both sides of one of the equations by a scalar.
 2. **Row swap**: You can move one equation above or below another. Note, the order the equations are written is irrevalent to the solution, so swapping rows is really just changing how we organize the formulas. Nonetheless, this organization will be important as we demonstrate how elementary matrices can be used to solve the system.
 3. **Row sum**: Add a multiple of one equation to another. Note, this is a perfectly valid operation because, if the equality truly holds, then this equations to simply adding the same quantity to both sides of a given equation.
 
