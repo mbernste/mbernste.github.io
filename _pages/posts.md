@@ -18,6 +18,25 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [On cell types and cell states](https://mbernste.github.io/posts/cell_types_cell_states/)  
 [Three strategies for cataloging cell types](https://mbernste.github.io/posts/cell_type_cataloging/)  
 
+## Probabilistic models
+
+[Gaussian mixture models](https://mbernste.github.io/posts/gmm_em/)  
+[Variational autoencoders](https://mbernste.github.io/posts/vae/)
+
+## Algorithms for statistical inference
+
+[Expectation-maximization: theory and intuition](https://mbernste.github.io/posts/em/)  
+[Variational inference](https://mbernste.github.io/posts/variational_inference/)  
+[Blackbox variational inference via the reparameterization gradient](https://mbernste.github.io/posts/reparameterization_vi/)  
+
+## Quantities related to probabilistic models
+
+[The evidence lower bound](https://mbernste.github.io/posts/elbo/)
+
+## Graph theory
+
+[The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)
+
 ## Linear algebra
 
 [Vector spaces](https://mbernste.github.io/posts/vector_spaces/)  
@@ -50,27 +69,10 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [Functionals and functional derivatives](https://mbernste.github.io/posts/functionals/) 
 
-## Quantities related to probabilistic models
 
-[The evidence lower bound](https://mbernste.github.io/posts/elbo/)
 
-## Algorithms for statistical inference
 
-[Expectation-maximization: theory and intuition](https://mbernste.github.io/posts/em/)  
-[Variational inference](https://mbernste.github.io/posts/variational_inference/)  
-[Blackbox variational inference via the reparameterization gradient](https://mbernste.github.io/posts/reparameterization_vi/)  
 
-## Probabilistic models
-
-[Gaussian mixture models](https://mbernste.github.io/posts/gmm_em/)
-
-## Algorithms for clustering
-
-[Gaussian mixture models](https://mbernste.github.io/posts/gmm_em/)
-
-## Graph theory
-
-[The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)
 
 
 
