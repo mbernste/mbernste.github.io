@@ -6,6 +6,26 @@ author_profile: true
 
 Here are some of the software products to come out of my research:
 
+### SpatialCorr
+
+Identify gene sets with spatially varying correlation structure.
+
+* GitHub: [https://github.com/mbernste/SpatialCorr](https://github.com/mbernste/SpatialCorr)
+* Documentation: [https://spatialcorr.readthedocs.io/en/latest/index.html](https://spatialcorr.readthedocs.io/en/latest/index.html)
+
+### CellO
+
+Cell type classification of single-cell RNA-seq data against the Cell Ontology.
+
+* GitHub: [https://github.com/deweylab/CellO](https://github.com/deweylab/CellO)
+
+### CellO Viewer
+
+Explore cell type-specific gene expression signatures across the Cell Ontology.
+
+* Website: [https://uwgraphics.github.io/CellOViewer/](https://uwgraphics.github.io/CellOViewer/)
+* GitHub: [https://github.com/uwgraphics/CellOViewer](https://github.com/uwgraphics/CellOViewer)
+
 ### MetaSRA Website
 
 Search for public RNA-seq data within the Sequence Read Archive using biomedical ontologies.
@@ -20,20 +40,6 @@ Search for public RNA-seq data within the Sequence Read Archive using biomedical
 Standardize biomedical metadata that are encoded as key-value pairs.
 
 * GitHub: [https://github.com/deweylab/MetaSRA-pipeline](https://github.com/deweylab/MetaSRA-pipeline)
-
-
-### CellO
-
-Cell type classification of single-cell RNA-seq data against the Cell Ontology.
-
-* GitHub: [https://github.com/deweylab/CellO](https://github.com/deweylab/CellO)
-
-### CellO Viewer
-
-Explore cell type-specific gene expression signatures across the Cell Ontology.
-
-* Website: [https://uwgraphics.github.io/CellOViewer/](https://uwgraphics.github.io/CellOViewer/)
-* GitHub: [https://github.com/uwgraphics/CellOViewer](https://github.com/uwgraphics/CellOViewer)
 
 ### CHARTS
 
