@@ -2,36 +2,18 @@
 main:
   - title: "Research"
     url: /research/
-
-  - title: "Software"
-    url: /software/
-    
-#  - title: "Publications"
-#    url: /publications/
-
-#  - title: "Talks"
-#    url: /talks/    
-
-#  - title: "Teaching"
-#    url: /teaching/    
-    
-#  - title: "Portfolio"
-#    url: /portfolio/
-        
-#  - title: "Blog Posts"
-#    url: /posts/
-
-#  - title: "Notes"
-#    url: /notes/
     
   - title: "Blog"
     url: /posts/
- 
-  - title: "Art"
-    url: /art/
+    
+  - title: "Software"
+    url: /software/
     
   - title: "CV"
     url: http://mbernste.github.io/files/CV.pdf
+    
+  - title: "Art"
+    url: /art/
     
   - title: "Quotes"
     url: /quotes/
