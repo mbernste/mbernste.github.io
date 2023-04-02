@@ -33,9 +33,19 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [The evidence lower bound](https://mbernste.github.io/posts/elbo/)
 
-## Graph theory
+## Probability
 
-[The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)
+[Demystifying measure-theoretic probability theory (part 1: probability spaces)](https://mbernste.github.io/posts/measure_theory_1/)  
+[Demystifying measure-theoretic probability theory (part 2: random variables)](https://mbernste.github.io/posts/measure_theory_2/)  
+[Demystifying measure-theoretic probability theory (part 3: expectation)](https://mbernste.github.io/posts/measure_theory_3/)  
+[Visualizing covariance](https://mbernste.github.io/posts/viz_cov/)  
+
+## Information theory
+
+[What is information? (Foundations of information theory: Part 1)](https://mbernste.github.io/posts/self_info/)  
+[Information entropy (Foundations of information theory: Part 2)](https://mbernste.github.io/posts/entropy/)  
+[Shannon’s Source Coding Theorem (Foundations of information theory: Part 3)](https://mbernste.github.io/posts/sourcecoding/)  
+[Perplexity: a more intuitive measure of uncertainty than entropy](https://mbernste.github.io/posts/perplexity/)  
 
 ## Linear algebra
 
@@ -51,19 +61,9 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Reasoning about systems of linear equations using linear algebra](https://mbernste.github.io/posts/systems_linear_equations/)  
 [Row reduction with elementary matrices](https://mbernste.github.io/posts/row_reduction)  
 
-## Probability
+## Graph theory
 
-[Demystifying measure-theoretic probability theory (part 1: probability spaces)](https://mbernste.github.io/posts/measure_theory_1/)  
-[Demystifying measure-theoretic probability theory (part 2: random variables)](https://mbernste.github.io/posts/measure_theory_2/)  
-[Demystifying measure-theoretic probability theory (part 3: expectation)](https://mbernste.github.io/posts/measure_theory_3/)  
-[Visualizing covariance](https://mbernste.github.io/posts/viz_cov/)  
-
-## Information theory
-
-[What is information? (Foundations of information theory: Part 1)](https://mbernste.github.io/posts/self_info/)  
-[Information entropy (Foundations of information theory: Part 2)](https://mbernste.github.io/posts/entropy/)  
-[Shannon’s Source Coding Theorem (Foundations of information theory: Part 3)](https://mbernste.github.io/posts/sourcecoding/)  
-[Perplexity: a more intuitive measure of uncertainty than entropy](https://mbernste.github.io/posts/perplexity/)  
+[The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)
 
 ## The calculus of variations
 
