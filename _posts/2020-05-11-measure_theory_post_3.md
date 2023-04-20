@@ -112,7 +112,7 @@ Before defining the general Lebesgue integral, we first create a more narrow def
 
 <center><span style="color:#0060C6">$$A_1, A_2, \dots, A_n \in \mathcal{F}$$</span></center>
 
-<span style="color:#0060C6">where $A_i := g^{-1}(\{ h_1 \} )$, the **Lebesgue integral of this simple function** is defined as</span> 
+<span style="color:#0060C6">where $A_i := g^{-1}(\{ h_i \} )$, the **Lebesgue integral of this simple function** is defined as</span> 
 
 <center><span style="color:#0060C6">$$\int_F f \ d\mu := \sum_{i=1}h_i \mu(A_i)$$</span></center>
 
