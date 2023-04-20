@@ -142,7 +142,7 @@ Since $g$ is always bounded above by $f$, we can arbitrarly make $g$ more fine-g
 
 We also notice here that $f$ *has* to be positive for this all to work out. If $f$ can be negative, then it would be difficult to find a limit of simple-functions that approach $f$.  We need $f$ to be positive so that we can bound ever-fine-grained simple-functions from above by $f$. 
 
-**3. The Lebesgue integral**
+**4. The Lebesgue integral**
 
 At last we come to finally defining the Lebesgue integral. If you have followed along so far, then this last step is relatively easy.  Given that we have a definition for a Lebesgue integral over positive measurable functions, it's not too difficult to concoct a definition for functions that can be negative too -- we simply need to consider the positive and negative parts of the function separately:
 
