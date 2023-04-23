@@ -120,16 +120,20 @@ We would like the generalized definition of a determinant to also be linear with
 Deriving the formula for a determinant
 --------------------------------------
 
-In the previous section, we described three fundamental ways in which the volume of a parallelogram is related to the vectors that form its sides. Now, we will assume that $\text{Det}$ on arbitrary $m \times m$ matrices satisfies the three properties. Through a series of lemmas we will show that there is only one equation that can define $\text{Det}:
+In the previous section, we outlined three axioms that define fundamental ways in which the volume of a parallelogram is related to the vectors that form its sides. We will show that there is only one equation for the determinant that satisfies these axioms. That equation is:
 
 $$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$$
 
-For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$ that satisfies the three properties described in the previous section. We can now prove the following facts about this function:
-
+For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$ that satisfies the three properties described in the previous section. Given the assumption that it exists, we will prove a series of lemmas that will build up to this final defintion. Let's get started.
 
 <span style="color:#0060C6">**Lemma 1:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, if we exchange any two column-vectors of $\boldsymbol{A}$ to form a new matrix $\boldsymbol{A}'$, then $\text{Det}(\boldsymbol{A}') = -\text{Det}(\boldsymbol{A})$</span>
 
 **Proof:**
+
+<span style="color:#0060C6">**Lemma 2:** Given an upper-triangular matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, its determinant can be computed by multiplying its diagonal entries.</span>
+
+**Proof:**
+
 
 
 What is meant by "signed volume"?
