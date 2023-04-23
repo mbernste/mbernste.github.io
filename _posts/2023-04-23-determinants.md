@@ -127,7 +127,7 @@ $$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & 
 For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$ that satisfies the three properties described in the previous section. We can now prove the following facts about this function:
 
 
-<span style="color:#0060C6">**Lemma 1:**Given a matrix $\boldsymbol{A} \in mathbb{R}^{m \times m}$, if we exchange any two column-vectors of $\boldsymbol{A}$ to form a new matrix $\boldsymbol{A}'$, then $\text{Det}(\boldsymbol{A}') = -\text{Det}(\boldsymbol{A})$</span>
+<span style="color:#0060C6">**Lemma 1:** Given a matrix $\boldsymbol{A} \in mathbb{R}^{m \times m}$, if we exchange any two column-vectors of $\boldsymbol{A}$ to form a new matrix $\boldsymbol{A}'$, then $\text{Det}(\boldsymbol{A}') = -\text{Det}(\boldsymbol{A})$</span>
 
 **Proof:**
 
