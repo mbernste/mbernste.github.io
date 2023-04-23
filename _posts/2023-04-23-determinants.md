@@ -73,7 +73,9 @@ We would like our notion of "geometric volume" to match our common intuition tha
 
 **2. If two columns of a matrix are equal, then its determinant is zero**  
 
-For a given matrix $\boldsymbol{A}$, if any two columns $\boldsymbol{a}\_{*,i}$ and $\boldsymbol{a}\_{*,j}$ are equal, then the determinant of $\boldsymbol{A}$ should be zero.
+For a given matrix $\boldsymbol{A}$, 
+
+if any two columns $\boldsymbol{a}\_{*,i}$ and $\boldsymbol{a}\_{*,j}$ are equal, then the determinant of $\boldsymbol{A}$ should be zero.
 
 Why do we want this to be an axiom? We first note that if two columns of a matrix are equal, then the parallelapipde formed by their columns is flat. For example, here's a depiction of a parallelepided formed by the columns of a $3 \times 3$ matrix with two columns that are equal:
 
@@ -93,7 +95,7 @@ $$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{\*,1}, \dots, k\boldsymbol{a}_
 
 where $k$ is a constant. Furthermore, 
 
-$$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,j} + \boldsymbol{v}, \dots  \boldsymbol{a}_{\*,n}) = \text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,j}, \dots  \boldsymbol{a}_{\*,n}) + \text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{v}, \dots  \boldsymbol{a}_{\*,n})$$
+$$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j} + \boldsymbol{v}, \dots  \boldsymbol{a}_{*,n}) = \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j}, \dots  \boldsymbol{a}_{*,n}) + \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{v}, \dots  \boldsymbol{a}_{*,n})$$
 
 Why do we wish this to be an axiom for volume? Let's consider the first property of a linear function and how it would imply that multiplying one of the sides of a parallelapiped by $k$ multiplies the area of the entire parallelapiped by $k$. Again, let's start with a parallelapiped in two dimensions defined by the columns of the following matrix:
 
@@ -115,7 +117,7 @@ $$\boldsymbol{A}' := \begin{bmatrix}a + v_1 & b \\ c + v_2 & d\end{bmatrix}$$
 
 Its determinant is 
 
-$$\begin{align*}\text{Det}(\boldsymbol{A}') &:= (a + v_1)d - b(c + v_2) \\ &= ad + v_1d - bc - bv_2 \\ &= (ad -  bc) + (v_1d - bv_2) \\ &= \text{Det}\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix}v_1 & b \\ v_2 & d\end{bmatrix} \right)$$
+$$\begin{align*}\text{Det}(\boldsymbol{A}') &:= (a + v_1)d - b(c + v_2) \\ &= ad + v_1d - bc - bv_2 \\ &= (ad -  bc) + (v_1d - bv_2) \\ &= \text{Det}\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix}v_1 & b \\ v_2 & d\end{bmatrix} \right) \end{align*}$$
 
 Again, we would like the generalized definition of a determinant to more than two dimensions to also follow the fact that the volume of a parallelogram is linear with respect to the vectors formed by each side.
 
