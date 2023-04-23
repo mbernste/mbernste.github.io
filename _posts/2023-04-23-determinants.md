@@ -11,6 +11,8 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
+_Much of my understanding of this material comes from [these lecture notes](http://faculty.fairfield.edu/mdemers/linearalgebra/documents/2019.03.25.detalt.pdf) by Mark Demers re-written in my own words._
+
 Introduction
 ------------
 
@@ -128,29 +130,17 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 
 <span style="color:#0060C6">**Theorem 1:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, if we exchange any two column-vectors of $\boldsymbol{A}$ to form a new matrix $\boldsymbol{A}'$, then $\text{Det}(\boldsymbol{A}') = -\text{Det}(\boldsymbol{A})$</span>
 
-<span style="color:#0060C6">**Lemma 1:** Given an elementary matrix that represents row-scaling, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$, where $\boldsymbol{E}$ scales the $j$th row of a system of linear equations by $k$, its determinant is simply $k$.</span>
+<span style="color:#0060C6">**Lemma 1:** Given a triangular matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, its determinant can be computed by multiplying its diagonal entries.</span>
 
-<span style="color:#0060C6">**Lemma 2:** Given an elementary matrix that represents row-swapping, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$ that swaps the $i$th and $j$th rows of a system of linear equations, its determinant is simply -1.</span>
+<span style="color:#0060C6">**Lemma 2:** Given an elementary matrix that represents row-scaling, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$, where $\boldsymbol{E}$ scales the $j$th row of a system of linear equations by $k$, its determinant is simply $k$.</span>
 
-<span style="color:#0060C6">**Lemma 3:** Given an elementary matrix that represents a row-sum, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$ that multiplies row $j$ by $k$ times row $i$, its determinant is simply 1.</span>
+<span style="color:#0060C6">**Lemma 3:** Given an elementary matrix that represents row-swapping, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$ that swaps the $i$th and $j$th rows of a system of linear equations, its determinant is simply -1.</span>
+
+<span style="color:#0060C6">**Lemma 4:** Given an elementary matrix that represents a row-sum, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$ that multiplies row $j$ by $k$ times row $i$, its determinant is simply 1.</span>
 
 <span style="color:#0060C6">**Theorem 2:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T).</span>
 
 <span style="color:#0060C6">**Theorem 3:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
-
-**Proof:**
-
-We will start with a simpler case where $\boldsymbol{A}$ is an [elementary matrix](https://mbernste.github.io/posts/row_reduction/). We thus, must consider the three scenarios where $\boldsymbol{A}$ is either a row-scaling matrix, row-swapping matrix, or a row-sum matrix. First, let's consider the case where $\boldsymbol{A}$ is a row-scaling matrix that scales the $j$th row of an [system of linear equations](https://mbernste.github.io/posts/row_reduction/) by a constant $k$. Because we are scaling 
-
-
-
-
-
-
-
-<span style="color:#0060C6">**Lemma 2:** Given an upper-triangular matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, its determinant can be computed by multiplying its diagonal entries.</span>
-
-**Proof:**
 
 
 If determinants capture the notion of volume, then why can it be negative?
@@ -179,6 +169,25 @@ $$\begin{align*} \text{Det}_{i,j}(\boldsymbol{a}_{*,i}, \boldsymbol{a}_{*,j}) &=
 
 $\square$
 
+
+<span style="color:#0060C6">**Lemma 1:** Given a triangular matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, its determinant can be computed by multiplying its diagonal entries.</span>
+
+**Proof:**
+
+We will start with an upper triangular $3 \times 3$ matrix:
+
+$$\boldsymbol{A} := \begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} \\ 0 & a_{2,2} & a_{2,3} \\ & 0 & 0 & a_{3,3}\end{bmatrix}$$
+
+Now, we will take the second column-vector and decompose it into the sum of two vectors. Because the determinant is linear by Axiom 3, we can rewrite the determinant as follows:
+
+$$\text{Det}(\boldsymbol{A}) = \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} \\ 0 & 0 & a_{2,3} \\ & 0 & 0 & a_{3,3}\end{bmatrix} \right) + \text{Det}\left(\begin{bmatrix} a_{1,1} & 0 & a_{1,3} \\ 0 & a_{2,2} & a_{2,3} \\ & 0 & 0 & a_{3,3}\end{bmatrix}\right)$$
+
+Note that in the first term of this sum, the column vectors are _linearly dependent_ because the second column-vector can be re-written as a multiple of the first. Thus, this matrix is singular and thus, according to Theorem XXXX, its determinant is zero. Hence, the entire first term is zero. Thus, we have:
+
+$$\text{Det}(\boldsymbol{A}) = \text{Det}\left(\begin{bmatrix} a_{1,1} & 0 & a_{1,3} \\ 0 & a_{2,2} & a_{2,3} \\ & 0 & 0 & a_{3,3}\end{bmatrix}\right)$$
+
+
+$\square$
 
 
 <span style="color:#0060C6">**Theorem 2:** Given an elementary matrix that represents row-scaling, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$, where $\boldsymbol{E}$ scales the $j$th row of a system of linear equations by $k$, its determinant is simply $k$.</span>
