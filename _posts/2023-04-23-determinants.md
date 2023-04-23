@@ -186,6 +186,8 @@ Note that in the first term of this sum, the column vectors are _linearly depend
 
 $$\text{Det}(\boldsymbol{A}) = \text{Det}\left(\begin{bmatrix} a_{1,1} & 0 & a_{1,3} \\ 0 & a_{2,2} & a_{2,3} \\ & 0 & 0 & a_{3,3}\end{bmatrix}\right)$$
 
+We can repeat this process with the third column vector by decomposing it into the sum of two vectors and then utilizing the fact that the determinant is linear:
+
 
 $\square$
 
