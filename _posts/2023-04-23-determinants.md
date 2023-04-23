@@ -73,7 +73,7 @@ We would like our notion of "geometric volume" to match our common intuition tha
 
 **2. If two columns of a matrix are equal, then its determinant is zero**  
 
-For a given matrix $\boldsymbol{A}$, if any two columns $\boldsymbol{a}_{*,i}$ and $\boldsymbol{a}_{*,j}$ are equal, then determinant of $\boldsymbol{A}$ should be zero.
+For a given matrix $\boldsymbol{A}$, if any two columns $\boldsymbol{a}\_{*,i}$ and $\boldsymbol{a}\_{*,j}$ are equal, then the determinant of $\boldsymbol{A}$ should be zero.
 
 Why do we want this to be an axiom? We first note that if two columns of a matrix are equal, then the parallelapipde formed by their columns is flat. For example, here's a depiction of a parallelepided formed by the columns of a $3 \times 3$ matrix with two columns that are equal:
 
@@ -87,11 +87,13 @@ We would like our notion of "geometric volume" to match our common intuition tha
 
 Note, for the remainder of this blog post, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n}$ are the $n$ columns of $\boldsymbol{A}$.
 
-Now, using this notation, the final axiom for the determinant is that $$\text{Det}$$ is linear with respect to each argument vector. That is:
+Now, using this notation, the final axiom for the determinant is that $$\text{Det}$$ is a [linear function](https://mbernste.github.io/posts/matrices_linear_transformations/) with respect to each argument vector. That is:
 
 $$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{\*,1}, \dots, k\boldsymbol{a}_{\*,j}, \dots  \boldsymbol{a}_{\*,n}) = k\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,j}, \dots  \boldsymbol{a}_{\*,n})$$
 
-where $k$ is a constant. 
+where $k$ is a constant. Furthermore, 
+
+$$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,j} + \boldsymbol{v}, \dots  \boldsymbol{a}_{\*,n}) = \text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,j}, \dots  \boldsymbol{a}_{\*,n}) + \text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{v}, \dots  \boldsymbol{a}_{\*,n})$$
 
 Why do we wish this to be an axiom for volume? Because multiplying one of the sides of a parallelogram in two dimensions multiplies the area of the parallelogram by $k$. Again, let's consider the following matrix:
 
