@@ -89,15 +89,15 @@ We would like our notion of "geometric volume" to match our common intuition tha
 
 Note, for the remainder of this blog post, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n}$ are the $n$ columns of $\boldsymbol{A}$.
 
-Now, using this notation, the final axiom for the determinant is that $$\text{Det}$$ is a [linear function](https://mbernste.github.io/posts/matrices_linear_transformations/) with respect to each argument vector. That is:
+Now, using this notation, the final axiom for the determinant is that $$\text{Det}$$ is a [linear function](https://mbernste.github.io/posts/matrices_linear_transformations/) with respect to each argument vector. For $\text{Det}$ to be linear with respect to each argument is to imply two conditions. First, for a given constant $k$, it holds that,
 
 $$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{\*,1}, \dots, k\boldsymbol{a}_{\*,j}, \dots  \boldsymbol{a}_{\*,n}) = k\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,j}, \dots  \boldsymbol{a}_{\*,n})$$
 
-where $k$ is a constant. Furthermore, 
+and second, that
 
 $$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j} + \boldsymbol{v}, \dots  \boldsymbol{a}_{*,n}) = \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j}, \dots  \boldsymbol{a}_{*,n}) + \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{v}, \dots  \boldsymbol{a}_{*,n})$$
 
-Why do we wish this to be an axiom for volume? Let's consider the first property of a linear function and how it would imply that multiplying one of the sides of a parallelapiped by $k$ multiplies the area of the entire parallelapiped by $k$. Again, let's start with a parallelapiped in two dimensions defined by the columns of the following matrix:
+Why do we wish the linearity of $\text{Det}$ to be an axiom? As we will see it holds that the volume of a two-dimensional parallelogram is linear with respect to the vectors that form its sides. Again, let's start with a parallelogram defined by the columns of the following matrix:
 
 $$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 
