@@ -83,9 +83,9 @@ We see that the parallelepided is flat and lies within a hyperplane.
 
 We would like our notion of "geometric volume" to match our common intuition that the volume of a flat object is zero. Thus, when any two columns of a matrix are equal, we would like the determinant to be zero.
 
-**2. The determinant of a matrix is linear with respect to each column vector**
+**3. The determinant of a matrix is linear with respect to each column vector**
 
-Note, for the remainder of this blog post, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n}$ are the $n$ columns of $\boldsymbol{A}$.
+Note, for the remainder of this blog post, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}\_{\*,1}, \dots, \boldsymbol{a}\_{\*,n})$ where $\boldsymbol{a}\_{\*,1}, \dots, \boldsymbol{a}\_{\*,n}$ are the $n$ columns of $\boldsymbol{A}$.
 
 Now, using this notation, the final axiom for the determinant is that $\text{Det}$ is a [linear function](https://mbernste.github.io/posts/matrices_linear_transformations/) with respect to each argument vector. For $\text{Det}$ to be linear with respect to each argument is to imply two conditions. First, for a given constant $k$, it holds that,
 
@@ -119,6 +119,15 @@ We would like the generalized definition of a determinant to also be linear with
 
 Deriving the formula for a determinant
 --------------------------------------
+
+In the previous section, we described three fundamental ways in which the volume of a parallelogram is related to the vectors that form its sides. Now, we will assume that $\text{Det}$ on arbitrary $m \times m$ matrices satisfies the three properties. Through a series of lemmas we will show that there is only one equation that can define $\text{Det}:
+
+$$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$$
+
+For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$ that satisfies the three properties described in the previous section. We can now prove the following facts about this function:
+
+Lemma 1: For a given matrix $\boldsymbol{A} \in 
+
 
 What is meant by "signed volume"?
 ---------------------------------
