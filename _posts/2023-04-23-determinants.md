@@ -130,10 +130,19 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 
 **Proof:**
 
+Let columns $i$ and $j$ be the columns that we exchange within $\boldsymbol{A}$. For ease of notation, let us define 
+
+$$\text{Det}_{i,j}(\boldsymbol{a}_{*,i}, \boldsymbol{a}_{*,j}) := \text{Det}_{i,j}(\boldsymbol{a}_{*,i} \dots, \boldsymbol{a}_{*,i}, \dots,  \boldsymbol{a}_{*,j}, \dots, \boldsymbol{a}_{*,m})$$
+
+to be the determinant of $\boldsymbol{A}$ as a function of only the $i$th and $j$th column-vectors of $\boldsymbol{A}$ where the other column-vectors are held fixed. Then, we see that
+
+$$\begin{align*}\text{Det}_{i,j}(\boldsymbol{a}_{*,i}, \boldsymbol{a}_{*,j})\end{align*}$$
+
+$$\square$$
+
 <span style="color:#0060C6">**Lemma 2:** Given an upper-triangular matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, its determinant can be computed by multiplying its diagonal entries.</span>
 
 **Proof:**
-
 
 
 What is meant by "signed volume"?
