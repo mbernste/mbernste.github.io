@@ -1,6 +1,6 @@
 ---
 title: 'Demystifying determinants'
-date: 2021-11-28
+date: 2023-04-23
 permalink: /posts/determinants/
 tags:
   - tutorial
