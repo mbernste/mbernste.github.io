@@ -136,7 +136,7 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 
 <span style="color:#0060C6">**Theorem 2:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T).</span>
 
-<span style="color:#0060C6">**Theorem 3:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})</span>
+<span style="color:#0060C6">**Theorem 3:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
 
 **Proof:**
 
