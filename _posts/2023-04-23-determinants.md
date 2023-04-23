@@ -87,7 +87,7 @@ We would like our notion of "geometric volume" to match our common intuition tha
 
 Note, for the remainder of this blog post, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n}$ are the $n$ columns of $\boldsymbol{A}$.
 
-Now, using this notation, the final axiom for the determinant is that $$\text{Det}$$ is a [linear function](https://mbernste.github.io/posts/matrices_linear_transformations/) with respect to each argument vector. For $\text{Det}$ to be linear with respect to each argument is to imply two conditions. First, for a given constant $k$, it holds that,
+Now, using this notation, the final axiom for the determinant is that $\text{Det}$ is a [linear function](https://mbernste.github.io/posts/matrices_linear_transformations/) with respect to each argument vector. For $\text{Det}$ to be linear with respect to each argument is to imply two conditions. First, for a given constant $k$, it holds that,
 
 $$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{*,1}, \dots, k\boldsymbol{a}_{*,j}, \dots  \boldsymbol{a}_{*,n}) = k\text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j}, \dots  \boldsymbol{a}_{*,n})$$
 
@@ -95,19 +95,17 @@ and second, that
 
 $$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j} + \boldsymbol{v}, \dots  \boldsymbol{a}_{*,n}) = \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j}, \dots  \boldsymbol{a}_{*,n}) + \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{v}, \dots  \boldsymbol{a}_{*,n})$$
 
-Why do we wish the linearity of $\text{Det}$ to be an axiom? As we will see it holds that the volume of a two-dimensional parallelogram is linear with respect to the vectors that form its sides. Again, let's start with a parallelogram defined by the columns of the following matrix:
+Why do we wish the linearity of $\text{Det}$ to be an axiom? Because it turns out that the volume of a two-dimensional parallelogram is linear with respect to the vectors that form its sides. To show this, let's start with a parallelogram defined by the columns of the following matrix:
 
 $$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 
-where its determinant is $\text{Det}(\boldsymbol{A}) := ad - bc$. Let's say we multiply one of the column vectors by k to form $\boldsymbol{A}'$:
+Let's say we multiply one of the column vectors by k to form $\boldsymbol{A}'$:
 
 $$\boldsymbol{A}' := \begin{bmatrix}ka & b \\ kc & d\end{bmatrix}$$
 
 Its determinant is 
 
 $$\begin{align*}\text{Det}(\boldsymbol{A}') &:= kad - bkc \\ &= k(ad - bc) \\ &= k\text{Det}(\boldsymbol{A})\end{align*}$$
-
-We would like the generalized definition of a determinant to more than two dimensions to also follow this principle that multiplying one side by $k$ multiplies the entire area by $k$.
 
 Now let's consider another matrix formed by taking the first column or $\boldsymbol{A}$ and adding a vector $\boldsymbol{v}$:
 
@@ -117,7 +115,7 @@ Its determinant is
 
 $$\begin{align*}\text{Det}(\boldsymbol{A}') &:= (a + v_1)d - b(c + v_2) \\ &= ad + v_1d - bc - bv_2 \\ &= (ad -  bc) + (v_1d - bv_2) \\ &= \text{Det}\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix}v_1 & b \\ v_2 & d\end{bmatrix} \right) \end{align*}$$
 
-Again, we would like the generalized definition of a determinant to more than two dimensions to also follow the fact that the volume of a parallelogram is linear with respect to the vectors formed by each side.
+We would like the generalized definition of a determinant to also be linear with respect to the vectors that form its sides. 
 
 Deriving the formula for a determinant
 --------------------------------------
