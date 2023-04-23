@@ -145,8 +145,8 @@ $\square$
 **Proof:**
 
 
-What is meant by "signed volume"?
----------------------------------
+If determinants capture the notion of volume, then why can it be negative?
+--------------------------------------------------------------------------
 
 The relationship between determinants and the invertability of a matrix
 -----------------------------------------------------------------------
