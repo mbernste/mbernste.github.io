@@ -28,7 +28,7 @@ where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first 
 
 When one is usually first taught determinants, they are supposed to take it as a given that this formula calculates the volume of an $m$-dimensional parallelepided; however, if you're like me, this is not at all obvious. How on earth does this formula calculate volume? Moreover, why is it recursive?
 
-In this post, I am going to attempt to demystify this definition. We will start with the base case of a $2 \times 2$ matrix, verify that it indeed computes the volume of the parallelogram formed by the columns of the matrix, and then move on to the determinant for larger matrices. 
+In this post, I am going to attempt to demystify this definition. We will start with the base case of a $2 \times 2$ matrix, verify that it indeed computes the volume of the parallelogram formed by the columns of the matrix, and then move on to the determinant for larger matrices. We will conclude with several fundamental properties of determinants and their intuition.
 
 $2 \times 2$ matrices
 ---------------------
@@ -150,5 +150,8 @@ What is meant by "signed volume"?
 
 The relationship between determinants and the invertability of a matrix
 -----------------------------------------------------------------------
+
+The determinant of a matrix product
+-----------------------------------
 
 
