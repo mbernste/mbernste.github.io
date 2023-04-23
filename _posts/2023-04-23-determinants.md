@@ -85,12 +85,27 @@ We would like our notion of "geometric volume" to match our common intuition tha
 
 **2. The determinant of a matrix is linear with respect to each column vector**
 
+Note, for the remainder of this blog post, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,n}$ are the $n$ columns of $\boldsymbol{A}$.
 
+Now, using this notation, the final axiom for the determinant is that $$\text{Det}$$ is linear with respect to each argument vector. That is:
 
-Note, for the remainder of this blog post, we will often represent the determinant of a matrix as a function with either a single matrix argument, $\text{Det}(\boldsymbol{A})$, or with multiple vector arguments $\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1})$ where $\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,1}$ are the columns of $\boldsymbol{A}$.
+$$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{\*,1}, \dots, k\boldsymbol{a}_{\*,j}, \dots  \boldsymbol{a}_{\*,n}) = k\text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,j}, \dots  \boldsymbol{a}_{\*,n})$$
 
+where $k$ is a constant. 
 
+Why do we wish this to be an axiom for volume? Because multiplying one of the sides of a parallelogram in two dimensions multiplies the area of the parallelogram by $k$. Again, let's consider the following matrix:
 
+$$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
+
+where its determinant is $\text{Det}(\boldsymbol{A}) := ad - bc$. Let's say we multiply one of the column vectors by k to form $\boldsymbol{A}'$:
+
+$$\boldsymbol{A}' := \begin{bmatrix}ka & b \\ kc & d\end{bmatrix}$$
+
+Its determinant is 
+
+$$\begin{align*}\text{Det}(\boldsymbol{A}') &:= kad - bkc \\ &= k(ad - bc) \\ &= k\text{Det}(\boldsymbol{A})\end{align*}$$
+
+We would like the generalized definition of a determinant to more than two dimensions to also follow this principle that multiplying one side by $k$ multiplies the entire area by $k$.
 
 
 Deriving the formula for a determinant
