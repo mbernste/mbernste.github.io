@@ -134,3 +134,8 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 
 What is meant by "signed volume"?
 ---------------------------------
+
+The relationship between determinants and the invertability of a matrix
+-----------------------------------------------------------------------
+
+
