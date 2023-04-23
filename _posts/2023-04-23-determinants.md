@@ -95,7 +95,7 @@ where $k$ is a constant. Furthermore,
 
 $$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,j} + \boldsymbol{v}, \dots  \boldsymbol{a}_{\*,n}) = \text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{a}_{\*,j}, \dots  \boldsymbol{a}_{\*,n}) + \text{Det}(\boldsymbol{a}_{\*,1}, \dots, \boldsymbol{v}, \dots  \boldsymbol{a}_{\*,n})$$
 
-Why do we wish this to be an axiom for volume? Because multiplying one of the sides of a parallelogram in two dimensions multiplies the area of the parallelogram by $k$. Again, let's consider the following matrix:
+Why do we wish this to be an axiom for volume? Let's consider the first property of a linear function and how it would imply that multiplying one of the sides of a parallelapiped by $k$ multiplies the area of the entire parallelapiped by $k$. Again, let's start with a parallelapiped in two dimensions defined by the columns of the following matrix:
 
 $$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 
@@ -109,6 +109,15 @@ $$\begin{align*}\text{Det}(\boldsymbol{A}') &:= kad - bkc \\ &= k(ad - bc) \\ &=
 
 We would like the generalized definition of a determinant to more than two dimensions to also follow this principle that multiplying one side by $k$ multiplies the entire area by $k$.
 
+Now let's consider another matrix formed by taking the first column or $\boldsymbol{A}$ and adding a vector $\boldsymbol{v}$:
+
+$$\boldsymbol{A}' := \begin{bmatrix}a + v_1 & b \\ c + v_2 & d\end{bmatrix}$$
+
+Its determinant is 
+
+$$\begin{align*}\text{Det}(\boldsymbol{A}') &:= (a + v_1)d - b(c + v_2) \\ &= ad + v_1d - bc - bv_2 \\ &= (ad -  bc) + (v_1d - bv_2) \\ &= \text{Det}\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix}v_1 & b \\ v_2 & d\end{bmatrix} \right)$$
+
+Again, we would like the generalized definition of a determinant to more than two dimensions to also follow the fact that the volume of a parallelogram is linear with respect to the vectors formed by each side.
 
 Deriving the formula for a determinant
 --------------------------------------
