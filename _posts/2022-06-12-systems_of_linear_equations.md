@@ -51,7 +51,7 @@ Given this newfound representation for systems of linear equations, recall from 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="700"/></center>
 
-Thus, we see that the solution to a system of linear equations, $\boldsymbol{x}$, is any set of weights for which, if we take a weighted sum of the columns of $\boldsymbol{A}$, we get the vector $\boldsymbol{b}$. That is, $\boldsymbol{x}$ is a vector that lies in the [span](https://mbernste.github.io/posts/linear_independence/) of the columns of $\boldsymbol{A}$!
+Thus, we see that the solution to a system of linear equations, $\boldsymbol{x}$, is any set of weights for which, if we take a weighted sum of the columns of $\boldsymbol{A}$, we get the vector $\boldsymbol{b}$. That is, $\boldsymbol{b}$ is a vector that lies in the [span](https://mbernste.github.io/posts/linear_independence/) of the columns of $\boldsymbol{A}$!
 
 From this observation, we can begin to draw some conclusions about the number of solutions a given system of linear equations will have based on the properties of $$\boldsymbol{A}$$. Specifically, the system will either have:
 
