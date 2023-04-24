@@ -8,33 +8,33 @@ tags:
   - linear algebra
 ---
 
-_An extremely important concept linear algebra is that of linear independence. In this blog post we present the definition for the span of a set of vectors. Then, we use this definition to discuss the definition for linear independence. Finally, we discuss some intuition into this fundamental idea._
+_A very important concept linear algebra is that of linear independence. In this blog post we present the definition for the span of a set of vectors. Then, we use this definition to discuss the definition for linear independence. Finally, we discuss some intuition into this fundamental idea._
 
 Introduction
 ------------
 
-An extremely important concept in the study of vector spaces is that of _linear independence_. At a high level, a set of vectors are said to be **linearly independent** if you cannot form any vector in the set using any combination of the other vectors in the set. If a set of vectors does not have this quality -- that is, a vector in the set can be formed from some combination of others -- then the set is said to be **linearly dependent**.
+A very important concept in the study of vector spaces is that of _linear independence_. At a high level, a set of vectors are said to be **linearly independent** if you cannot form any vector in the set using any combination of the other vectors in the set. If a set of vectors does not have this quality -- that is, a vector in the set can be formed from some combination of others -- then the set is said to be **linearly dependent**.
 
-In this post, we will present a more foundatioanl concept, the _span_ of a set of vectors, and then move on to the definition for linear independence. Finally, we will discuss a high-level intuition for why the concept of linearly independence is so important.
+In this post, we will first present a more fundamental concept, the _span_ of a set of vectors, and then move on to the definition for linear independence. Finally, we will discuss high-level intuition for why the concept of linearly independence is so important.
 
 Span
 ----
 
-Given a set of vectors, the **span** of the set of vectors are all of the vectors that can be "constructed" by taking linear combinations of vectors in that set. More rigorously,
+Given a set of vectors, the **span** of these vectors is the set of the vectors that can be "generated" by taking linear combinations of these vectors. More rigorously,
 
 <span style="color:#0060C6">**Definition 1 (span):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \in \mathcal{V}$, the **span** of $S$, denoted $\text{Span}(S)$ is the set of all vectors that can be formed by taking a linear combination of vectors in $S$. That is,</span>
 
 <center><span style="color:#0060C6">$$\text{Span}(S) := \left\{ \sum_{i=1}^n c_i\boldsymbol{x}_i \mid c_1, \dots, c_n \in \mathcal{F} \right\}$$ </span></center>
 
-Intuitively, you can think of $S$ as a set of "building blocks" and the $\text{Span}(S)$ as the set of all vectors that can be "constructed" from the building blocks in $S$. To illustrate this point, we show in the figure below two vectors, $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$ (left), and two examples of vectors in their span (right): 
+Intuitively, you can think of $S$ as a set of "building blocks" and the $\text{Span}(S)$ as the set of all vectors that can be "constructed" from these building blocks. To illustrate this point, we illustrate two vectors, $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$ (left), and two examples of vectors in their span (right): 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors.png" alt="drawing" width="600"/></center>
 
-Note, we can see that in this example that we could construct _ANY_ two dimensional vector from $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$. Thus, the span of these two vectors is all of $\mathbb{R}^2$! This is not always the case. In the figure below, we show an example with a different span:
+In this example we see that we can construct _ANY_ two dimensional vector from $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$. Thus, the span of these two vectors is all of $\mathbb{R}^2$! This is not always the case. In the figure below, we show an example of two vectors in $\mathbb{R}^2$ with a different span:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/span_of_vectors_2.png" alt="drawing" width="600"/></center>
 
-This time, $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ don't span all of $\mathbb{R}^2$, but rather, only the line on which $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ lie.
+Here, $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ don't span all of $\mathbb{R}^2$, but rather, only the line on which $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ lie.
 
 Linear independence
 -------------------
@@ -56,9 +56,9 @@ Intuition
 
 There are two ways I think about linear independence: in terms of information content and in terms of [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/). Let me explain.
 
-First, if a set of vectors is linearly dependent, then in a sense there is "reduntant information" within the vectors. What do we mean by redundant? By removing a vector from a linearly dependent set of vectors, the span of the set of vectors will remain the same! On the other hand, for a linearly independent set of vectors, each vector is vital for defining the span of the set's vectors. If you remove even one vector, the span of the vectors will change (in fact, it will become smaller)!
+First, if a set of vectors is linearly dependent, then in a sense there is "reduntant information" within these vectors. What do I mean by "redundant information"? In a linear dependent set, there exists a vector in that set for which if we removed that vector, the span of the set would remain the same! On the other hand, for a linearly independent set of vectors, each vector is vital for defining the span of the set's vectors. If you remove even one vector, the span of the vectors will change (it will become smaller)!
 
-At a more geometric level of thinking, a set of $n$ linearly independent vectors $S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$ spans a space with an [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of $n$ because in order to specify any vector $\boldsymbol{v}$ in the span of these vectors, one must specify the coefficients $c_1, \dots, c_n$ to construct $\boldsymbol{v}$ from the vectors in $S$. That is,  
+One can also think about the concept of linear dependence/indepence in terms of [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) . That is, a set of $n$ linearly independent vectors $S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$ spans a space with an [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of $n$ because in order to specify any vector $\boldsymbol{v}$ in the span of these vectors, one must specify the coefficients $c_1, \dots, c_n$ to construct $\boldsymbol{v}$ from the vectors in $S$. That is,  
 
 $$\boldsymbol{v} = c_1\boldsymbol{x}_1 + \dots + c_n\boldsymbol{x}_n$$ 
 
