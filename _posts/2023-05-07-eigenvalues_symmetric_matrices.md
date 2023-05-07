@@ -52,13 +52,19 @@ $$\forall i \in {1 \dots, J-1}, \ \boldsymbol{u}_J^T\boldsymbol{u}_i = 0$$
 Solution
 --------
 
-We can re-write this optimization problem as 
+Let's start with the first optimization problem: 
 
-The Spectral Theorem tells us that because $\boldsymbol{S}$ is symmetric it is _orthogonally diagonalizable_, meaning that we can decompose $\boldsymbol{S}$ as:
+$$\underset{\boldsymbol{u}_1 }{\text{argmax}} \ \boldsymbol{u}_1^T\boldsymbol{S}\boldsymbol{u}_1$$
 
-$$\boldsymbol{S} = \boldsymbol{PSP^{-1}}$$
+such that 
 
-Moreover, because $P$ is orthogonal, it holds that $\boldsymbol{P}^{-1} = \boldsymbol{P}^T$. Thus we can write 
+$$\boldsymbol{u}_1^T\boldsymbol{u}_1 = 1$$
+
+The [Spectral Theorem](https://inst.eecs.berkeley.edu/~ee127/sp21/livebook/l_sym_sed.html) tells us that because $\boldsymbol{S}$ is symmetric it is _orthogonally diagonalizable_, meaning that we can decompose $\boldsymbol{S}$ as:
+
+$$\boldsymbol{S} = \boldsymbol{PDP^{-1}}$$
+
+where $boldsymbol{D}$ is a diagonal matrix with eigenvectors along the diagonal (in order of size) and $\boldsymbol{P}$ is an orthonormal matrix. Because $P$ is orthonogonal, it holds that $\boldsymbol{P}^{-1} = \boldsymbol{P}^T$. Thus we can write 
 
 $$\underset{\boldsymbol{u}}{\text{argmax}} \ \boldsymbol{u}^T\boldsymbol{PS}\boldsymbol{P}^T\boldsymbol{u}$$
 
@@ -70,7 +76,7 @@ $$\boldsymbol{z} := \boldsymbol{u}^T\boldsymbol{P} = \boldsymbol{P}^T\boldsymbol
 
 and can re-write our optimization problem as 
 
-$$\underset{\boldsymbol{z}}{\text{argmax}} \\boldsymbol{zDz}$$
+$$\underset{\boldsymbol{z}}{\text{argmax}} \ \boldsymbol{zDz}$$
 
 $$\boldsymbol{z}^T\boldsymbol{z} = 1$$
 
@@ -96,7 +102,7 @@ $$\sum_{j=1}^D z_j^2 = 1$$
 
 Now, let's reason about the solution to this problem. We see that to maximize the objective, we simply want to assign all of our available weight to the term in the summation with the largest value. That term is the term with the largest eigenvalue: the first term associated with $d_{1,1}$! Thus, our solution is simply the first basis vector:
 
-$$\boldsymbol{z} := \begin{bmatrix}1 & 0 & \dots, 0 \end{bmatrix}$$
+$$\boldsymbol{z} := \begin{bmatrix}1 & 0 & \dots & 0 \end{bmatrix}$$
 
 What does this solution mean? It is telling us that the vector $\boldsymbol{u}$ that optimizes our original objective simply the vector $\boldsymbol{u}$ such that $\boldsymbol{P}^T\boldsymbol{u}$ is the first basis vector. Recall $\boldsymbol{P}^T$ re-expresses vectors into a new basis defined by the eigenvectors of $\boldsymbol{S}$. Thus, the $\boldsymbol{u}$ that maximizes our objective is itself the first eigenvector of $\boldsymbol{S}$!
 
