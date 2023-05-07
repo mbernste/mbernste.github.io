@@ -14,7 +14,7 @@ _My understanding of this material partly arouse from the [blog posts by Peter B
 
 We may ask, which unit vector solves the following optimization function:
 
-$$\underset{\boldsymbol{u} }{\text{argmax}} \boldsymbol{u}^T\boldsymbol{Su}$$
+$$\underset{\boldsymbol{u} }{\text{argmax}} \ \boldsymbol{u}^T\boldsymbol{Su}$$
 
 such that 
 
@@ -28,7 +28,7 @@ $$\boldsymbol{S} = \boldsymbol{PSP^{-1}}$$
 
 Moreover, because $P$ is orthogonal, it holds that $\boldsymbol{P}^{-1} = \boldsymbol{P}^T$. Thus we can write 
 
-$$\underset{\boldsymbol{u}}{\text{argmax}} \boldsymbol{u}^T\boldsymbol{PS}\boldsymbol{P}^T\boldsymbol{u}$$
+$$\underset{\boldsymbol{u}}{\text{argmax}} \ \boldsymbol{u}^T\boldsymbol{PS}\boldsymbol{P}^T\boldsymbol{u}$$
 
 
 
@@ -38,7 +38,7 @@ $$\boldsymbol{z} := \boldsymbol{u}^T\boldsymbol{P} = \boldsymbol{P}^T\boldsymbol
 
 and can re-write our optimization problem as 
 
-$$\text{arg max}_\boldsymbol{z}\boldsymbol{zDz}$$
+$$\underset{\boldsymbol{z}}{\text{argmax}} \\boldsymbol{zDz}$$
 
 $$\boldsymbol{z}^T\boldsymbol{z} = 1$$
 
