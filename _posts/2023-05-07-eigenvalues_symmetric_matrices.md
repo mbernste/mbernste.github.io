@@ -14,7 +14,7 @@ _My understanding of this material partly arouse from the [blog posts by Peter B
 
 We may ask, which unit vector solves the following optimization function:
 
-$$\underscore{\boldsymbol{u} }{\text{argmax}} \boldsymbol{u}^T\boldsymbol{Su}$$
+$$\underset{\boldsymbol{u} }{\text{argmax}} \boldsymbol{u}^T\boldsymbol{Su}$$
 
 such that 
 
