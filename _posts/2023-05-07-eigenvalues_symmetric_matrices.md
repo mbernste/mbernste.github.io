@@ -14,7 +14,7 @@ _My understanding of this material partly arouse from the [blog posts by Peter B
 
 We may ask, which unit vector solves the following optimization function:
 
-$$\underwrite{\boldsymbol{u} }{\text{argmax}} \boldsymbol{u}^T\boldsymbol{Su}$$
+$$\underscore{\boldsymbol{u} }{\text{argmax}} \boldsymbol{u}^T\boldsymbol{Su}$$
 
 such that 
 
@@ -52,7 +52,7 @@ $$\sum_{j=1}^D z_j^2 = 1$$
 
 Why is this true? We are enforcing that $\boldsymbol{z}$ is a unit vector and thus:
 
-$$\begin{align*} \boldsymbol{z} &= 1 \\ \implies \sqrt{ \sum_{j=1}^D z_j^2 }  &= 1 \\ \implies \sum_{j=1}^D z_j^2 &= 1\end{align*}$$ 
+$$\begin{align*} ||\boldsymbol{z}}} &= 1 \\ \implies \sqrt{ \sum_{j=1}^D z_j^2 }  &= 1 \\ \implies \sum_{j=1}^D z_j^2 &= 1\end{align*}$$ 
 
 Thus, we can re-write our objective function as 
 
