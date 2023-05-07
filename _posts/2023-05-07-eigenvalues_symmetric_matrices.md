@@ -52,15 +52,18 @@ $$\sum_{j=1}^D z_j^2 = 1$$
 
 Why is this true? We are enforcing that $\boldsymbol{z}$ is a unit vector and thus:
 
-$$\begin{align*}||\boldsymbol{z}|| &= 1 \\ \implies \sqrt{\sum_{j=1}^D z_j^2} &= 1 \\ \implies \sum_{j=1}^D z_j^2} &= 1\end{align*}$$ 
+$$\begin{align*} ||\boldsymbol{z}|| &= 1 \\ \implies \sqrt{\sum_{j=1}^D z_j^2} &= 1 \\ \implies \sum_{j=1}^D z_j^2} &= 1\end{align*}$$ 
 
 Thus, we can re-write our objective function as 
 
 $$\text{arg max}_{z_1, \dots, z_D} \sum_{j=1}^D z_j^2 d_{j,j}$$
+
+such that
 
 $$\sum_{j=1}^D z_j^2 = 1$$
 
 Now, let's reason about the solution to this problem. We see that to maximize the objective, we simply want to assign all of our available weight to the term in the summation with the largest value. That term is the term with the largest eigenvalue: the first term associated with $d_{1,1}$! Thus, our solution is simply the first basis vector:
 
 $$\boldsymbol{z} := \begin{bmatrix}1 & 0 & \dots, 0 \end{bmatrix}$$
+
 
