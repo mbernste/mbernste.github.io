@@ -12,13 +12,40 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
 _My understanding of this material partly arouse from the [blog posts by Peter Bloem](https://peterbloem.nl/blog/pca-2) re-written here in my own words._
 
-We may ask, which unit vector solves the following optimization function:
+Problem
+-------
 
-$$\underset{\boldsymbol{u} }{\text{argmax}} \ \boldsymbol{u}^T\boldsymbol{Su}$$
+We are interested in solving a sequence of optimization problems where each solution contrains the solutions to the following problems. Given a symmetrix matrix $\boldsymbol{S}$, the first problem asks, which unit vector solves the following optimization function:
+
+$$\underset{\boldsymbol{u}_1 }{\text{argmax}} \ \boldsymbol{u}^T\boldsymbol{S}\boldsymbol{u}_1$$
 
 such that 
 
-$$\boldsymbol{u}^T\boldsymbol{u} = 1$$
+$$\boldsymbol{u}_1^T\boldsymbol{u}_1 = 1$$
+
+For the next optimization problem we want to solve:
+
+$$\underset{\boldsymbol{u}_2 }{\text{argmax}} \ \boldsymbol{u}_2^T\boldsymbol{S}\boldsymbol{u}_2$$
+
+such that 
+
+$$\boldsymbol{u}_1^T\boldsymbol{u}_1 = 1$$
+
+with the additional constraint that _the first solution is orthogonal to the second_:
+
+$$\boldsymbol{u}_1^T\boldsymbol{u}_2 = 0$$
+
+More generally, we want each successive solution to be orthogonal to all of the previous solutions. For the $J$ optimization problem we want to solve:
+
+$$\boldsymbol{u}_1^T\boldsymbol{u}_1 = 1$$
+
+with the additional constraint that _the first solution is orthogonal to the second_:
+
+$$\forall j \in {1 \dots, J-1} \boldsymbol{u}_J^T\boldsymbol{u}_j = 0$$
+
+
+Solution
+--------
 
 We can re-write this optimization problem as 
 
@@ -66,4 +93,6 @@ Now, let's reason about the solution to this problem. We see that to maximize th
 
 $$\boldsymbol{z} := \begin{bmatrix}1 & 0 & \dots, 0 \end{bmatrix}$$
 
+What does this solution mean? It is telling us that the vector $\boldsymbol{u}$ that optimizes our original objective simply the vector $\boldsymbol{u}$ such that $\boldsymbol{P}^T\boldsymbol{u}$ is the first basis vector. Recall $\boldsymbol{P}^T$ re-expresses vectors into a new basis defined by the eigenvectors of $\boldsymbol{S}$. Thus, the $\boldsymbol{u}$ that maximizes our objective is itself the first eigenvector of $\boldsymbol{S}$!
 
+Now, what about the next solutions in our iterative optimization problem?
