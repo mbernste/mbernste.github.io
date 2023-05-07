@@ -17,7 +17,7 @@ Problem
 
 We are interested in solving a sequence of optimization problems where each solution contrains the solutions to the following problems. Given a symmetrix matrix $\boldsymbol{S}$, the first problem asks, which unit vector solves the following optimization function:
 
-$$\underset{\boldsymbol{u}_1 }{\text{argmax}} \ \boldsymbol{u}^T\boldsymbol{S}\boldsymbol{u}_1$$
+$$\underset{\boldsymbol{u}_1 }{\text{argmax}} \ \boldsymbol{u}_1^T\boldsymbol{S}\boldsymbol{u}_1$$
 
 such that 
 
@@ -35,13 +35,18 @@ with the additional constraint that _the first solution is orthogonal to the sec
 
 $$\boldsymbol{u}_1^T\boldsymbol{u}_2 = 0$$
 
-More generally, we want each successive solution to be orthogonal to all of the previous solutions. For the $J$ optimization problem we want to solve:
+More generally, we want each successive solution to be orthogonal to all of the previous solutions. For the $J$th optimization problem we want to solve:
 
-$$\boldsymbol{u}_1^T\boldsymbol{u}_1 = 1$$
+$$\underset{\boldsymbol{u}_J }{\text{argmax}} \ \boldsymbol{u}_J^T\boldsymbol{S}\boldsymbol{u}_J$$
+
+
+such that
+
+$$\boldsymbol{u}_J^T\boldsymbol{u}_J = 1$$
 
 with the additional constraint that _the first solution is orthogonal to the second_:
 
-$$\forall j \in {1 \dots, J-1} \boldsymbol{u}_J^T\boldsymbol{u}_j = 0$$
+$$\forall i \in {1 \dots, J-1}, \ \boldsymbol{u}_J^T\boldsymbol{u}_i = 0$$
 
 
 Solution
