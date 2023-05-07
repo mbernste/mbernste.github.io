@@ -10,6 +10,8 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
+_My understanding of this material partly arouse from the [blog posts by Peter Bloem](https://peterbloem.nl/blog/pca-2) re-written here in my own words._
+
 We may ask, which unit vector solves the following optimization function:
 
 $$\text{arg max}_\boldsymbol{u} \boldsymbol{u^T}\boldsymbol{Su}$$
