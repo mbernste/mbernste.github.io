@@ -28,7 +28,7 @@ $$\boldsymbol{S} = \boldsymbol{PSP^{-1}}$$
 
 Moreover, because $P$ is orthogonal, it holds that $\boldsymbol{P}^{-1} = \boldsymbol{P}^T$. Thus we can write 
 
-$$\text{arg max}_\boldsymbol{u} \boldsymbol{u}^T\boldsymbol{PS}\boldsymbol{P}^T\boldsymbol{u}$$
+$$\underset{\boldsymbol{u}}{\text{argmax}} \boldsymbol{u}^T\boldsymbol{PS}\boldsymbol{P}^T\boldsymbol{u}$$
 
 
 
