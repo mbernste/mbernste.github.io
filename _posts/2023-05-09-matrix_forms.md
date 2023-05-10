@@ -17,16 +17,18 @@ Equations that include matrices and vectors can be challenging to interpret intu
 
 1. $\boldsymbol{x}^T\boldsymbol{y}$
 
-This is simply a dot product between $\boldsymbol{u}$ and $\boldsymbol{v}$, which can be interpretated as a weighted sum of $\boldsymbol{y}$ using the values in $\boldsymbol{x}$ as weights:
+This is simply a dot product between $\boldsymbol{x}$ and $\boldsymbol{y}$. Thus, if you ever see an equation like $\boldsymbol{x}^T\boldsymbol{y} = 0$, this means that \boldsymbol{x}$ is orthogonal to $\boldsymbol{y}$. 
+
+This form can also be interpretated in a more granular way as a weighted sum of $\boldsymbol{y}$ using the values in $\boldsymbol{x}$ as weights (or conversely as a weighted sum of $\boldsymbol{x}$ using the values in $\boldsymbol{y}$ as weights):
 
 $$\boldsymbol{x}^T\boldsymbol{y} = \sum_{i=1}^N x_iy_i$$
-
-It can also be interpreted as a weighted sum of $\boldsymbol{x}$ using the values in $\boldsymbol{y}$ as weights. 
 
 2. $\boldsymbol{x}^T\boldsymbol{x}$
 
 Building on the previous form, this is the dot product of a vector $\boldsymbol{x}$ with itself. We include this form separately because it has an additional interpretation: it is the square of the l2-norm of $\boldsymbol{x}$. That is,
 
 $$\begin{align*}||\boldsymbol{x}||^2 &= \left(\sqrt{\sum_{i=1}^n x_i^2}\right)^2 \\ &= \sum_{i=1}^n x_ix_i \\ &= \boldsymbol{x}^T\boldsymbol{x}\end{align*}$$
+
+Thus, if you ever see an equation like $\boldsymbol{x}^T\boldsymbol{x} = 1$, this is saying that the square of $\boldsymbol{x}$'s norm is 1, which means that the norm itself is one. This equation is simply saying that $\boldsymbol{x}$ is a unit vector!
 
 
