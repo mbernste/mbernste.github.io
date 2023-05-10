@@ -25,4 +25,8 @@ It can also be interpreted as a weighted sum of $\boldsymbol{x}$ using the value
 
 2. $\boldsymbol{x}^T\boldsymbol{x}$
 
-Building on the previous form, this is the dot product of a vector $\boldsymbol{x}$ with itself. 
+Building on the previous form, this is the dot product of a vector $\boldsymbol{x}$ with itself. We include this form separately because it has an additional interpretation: it is the square of the l2-norm of $\boldsymbol{x}$. That is,
+
+$$||\boldsymbol{x}||^2 = \boldsymbol{x}^T\boldsymbol{x}$$
+
+
