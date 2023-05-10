@@ -13,7 +13,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Analytical forms that include matrices and vectors can be challenging to interpret intuitively; however, there are certain common forms and patterns that arise across mathematical and scientific disciplines. In this post, we will catalogue and discuss some of these matrix forms.
+Equations that include matrices and vectors can be challenging to interpret intuitively; however, there are certain forms and patterns that commonly arise. Understanding these subpatterns of matrix forms within equations helps to interpret the full equation. In this post, we will catalogue and discuss some of these matrix forms.
 
 1. $\boldsymbol{x}^T\boldsymbol{y}$
 
