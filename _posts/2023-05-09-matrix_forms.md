@@ -31,4 +31,7 @@ $$\begin{align*}||\boldsymbol{x}||^2 &= \left(\sqrt{\sum_{i=1}^n x_i^2}\right)^2
 
 Thus, if you ever see an equation like $\boldsymbol{x}^T\boldsymbol{x} = 1$, this is saying that the square of $\boldsymbol{x}$'s norm is 1, which means that the norm itself is one. This equation is simply saying that $\boldsymbol{x}$ is a unit vector!
 
+2. $\boldsymbol{x}\boldsymbol{y}^T$
+
+While this looks like Form 1, it is quite different. It actually computes a full matrix of size $n \times n$ where element $i$, $j$ is $x_iy_j$. 
 
