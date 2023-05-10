@@ -17,7 +17,7 @@ Equations that include matrices and vectors can be challenging to interpret intu
 
 1. $\boldsymbol{x}^T\boldsymbol{y}$
 
-This is simply a dot product between $\boldsymbol{x}$ and $\boldsymbol{y}$. Thus, if you ever see an equation like $\boldsymbol{x}^T\boldsymbol{y} = 0$, this means that \boldsymbol{x}$ is orthogonal to $\boldsymbol{y}$. 
+This is simply a dot product between $\boldsymbol{x}$ and $\boldsymbol{y}$. Thus, if you ever see an equation like $\boldsymbol{x}^T\boldsymbol{y} = 0$, this means that $\boldsymbol{x}$ is orthogonal to $\boldsymbol{y}$. 
 
 This form can also be interpretated in a more granular way as a weighted sum of $\boldsymbol{y}$ using the values in $\boldsymbol{x}$ as weights (or conversely as a weighted sum of $\boldsymbol{x}$ using the values in $\boldsymbol{y}$ as weights):
 
