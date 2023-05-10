@@ -27,6 +27,6 @@ It can also be interpreted as a weighted sum of $\boldsymbol{x}$ using the value
 
 Building on the previous form, this is the dot product of a vector $\boldsymbol{x}$ with itself. We include this form separately because it has an additional interpretation: it is the square of the l2-norm of $\boldsymbol{x}$. That is,
 
-$$\begin{align*}||\boldsymbol{x}||^2 &= \sqrt{\sum_{i=1}^n x_i^2}^2 \\ &= \sum_{i=1}^n x_ix_i \\ &= \boldsymbol{x}^T\boldsymbol{x}\end{align*}$$
+$$\begin{align*}||\boldsymbol{x}||^2 &= \left(\sqrt{\sum_{i=1}^n x_i^2}\right)^2 \\ &= \sum_{i=1}^n x_ix_i \\ &= \boldsymbol{x}^T\boldsymbol{x}\end{align*}$$
 
 
