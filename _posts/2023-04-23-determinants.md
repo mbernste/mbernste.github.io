@@ -126,7 +126,7 @@ To prove the second axiom, we first show that if you skew one of the edges of a 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DeterminantSkewParallogramAxis.png" alt="drawing" width="500"/></center>
 
-With this concept in hand, we can now see why the second axiom holds. If we break apart one of the vectors that forms an edge of the parallelogram into two vectors we can show that they form two "sub-parallelograms" whose total area equal the original parallelogram: 
+With this observation in mind, we can now see why the second axiom of linearity holds for the determinant of a 2x2 matrix. If we break apart one of the vectors that forms an edge of the parallelogram into two vectors we can show that they form two "sub-parallelograms" whose total area equal the original parallelogram: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom2.png" alt="drawing" width="800"/></center>
 
