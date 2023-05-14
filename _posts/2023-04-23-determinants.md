@@ -117,16 +117,16 @@ Its determinant is
 
 $$\begin{align*}\text{Det}(\boldsymbol{A}') &:= (a + v_1)d - b(c + v_2) \\ &= ad + v_1d - bc - bv_2 \\ &= (ad -  bc) + (v_1d - bv_2) \\ &= \text{Det}\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix}v_1 & b \\ v_2 & d\end{bmatrix} \right) \end{align*}$$
 
-To provide more intuition about why this linearity property holds, let's look at it geometrically:
-
-
-To prove the first axiom, we see in the following visual proof that scaling one of the vectors that forms an edge of a parallelogram scales the area of the full parallogram.
-
-To prove the second axiom, we first show that if you skew one of the edges of a parallelogram along the axis of the other edge, then the area remains the same. We can see this in the figure below by noticing that the area of the yellow triangule is subtracted from the first paralellogram, but is added to the second:
+To provide more intuition about why this linearity property holds, let's look at it geometrically. As a preliminary observation, notice how if we skew one of the edges of a parallelogram along the axis of the other edge, then the area remains the same. We can see this in the figure below by noticing that the area of the yellow triangule is subtracted from the first paralellogram, but is added to the second:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DeterminantSkewParallogramAxis.png" alt="drawing" width="500"/></center>
 
-With this observation in mind, we can now see why the second axiom of linearity holds for the determinant of a 2x2 matrix. If we break apart one of the vectors that forms an edge of the parallelogram into two vectors we can show that they form two "sub-parallelograms" whose total area equal the original parallelogram: 
+With this observation in mind, we can now show why the determinant is linear from a geometric perspective. Let's start with the first axiom that says if we scale one of the sides of a parallelogram by $k$, then the area of the parallelogram is scaled by $k$.
+
+
+
+
+The second axiom of linearity states that if we break apart one of the vectors that forms an edge of the parallelogram into two vectors we can show that they form two "sub-parallelograms" whose total area equal the original parallelogram. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom2.png" alt="drawing" width="800"/></center>
 
