@@ -68,8 +68,6 @@ where $boldsymbol{D}$ is a diagonal matrix with eigenvectors along the diagonal 
 
 $$\underset{\boldsymbol{u}}{\text{argmax}} \ \boldsymbol{u}^T\boldsymbol{PS}\boldsymbol{P}^T\boldsymbol{u}$$
 
-
-
 Note that because $\boldsymbol{P}$ is an orthonormal matrix, we can interpret it as a change-of-basis matrix. Moreover, we see that $\boldsymbol{u}^T\boldsymbol{P} = \boldsymbol{P}^T\boldsymbol{u}$ and that this vector is simply $\boldsymbol{u}$ but expressed using a different basis. Thus, we can simply let 
 
 $$\boldsymbol{z} := \boldsymbol{u}^T\boldsymbol{P} = \boldsymbol{P}^T\boldsymbol{u}$$
@@ -86,24 +84,44 @@ $$\boldsymbol{zDz} := \sum_{j=1}^D z_j^2 d_{j,j}$$
 
 This is just a weighted sum of the diagonal entries of $\boldsymbol{D}$ (i.e., eigenvalues of $\boldsymbol{S}$) with weights $z_1^2, \dots, z_d^2$. Moreover, we see that that these weights sum to 1:
 
-$$\sum_{j=1}^D z_j^2 = 1$$
+$$\sum_{j=1}^D z_{1,j}^2 = 1$$
 
 Why is this true? We are enforcing that $\boldsymbol{z}$ is a unit vector and thus:
 
-$$\begin{align*} ||\boldsymbol{z}|| &= 1 \\ \implies \sqrt{ \sum_{j=1}^D z_j^2 }  &= 1 \\ \implies \sum_{j=1}^D z_j^2 &= 1\end{align*}$$ 
+$$\begin{align*} ||\boldsymbol{z}_1|| &= 1 \\ \implies \sqrt{ \sum_{j=1}^D z_{1,j}^2 }  &= 1 \\ \implies \sum_{j=1}^D z_{1,j}^2 &= 1\end{align*}$$ 
 
 Thus, we can re-write our objective function as 
 
-$$\text{arg max}_{z_1, \dots, z_D} \sum_{j=1}^D z_j^2 d_{j,j}$$
+$$\text{arg max}_{z_{1,1}, \dots, z_{1,D}} \sum_{j=1}^D z_{1,j}^2 d_{j,j}$$
 
 such that
 
-$$\sum_{j=1}^D z_j^2 = 1$$
+$$\sum_{j=1}^D z_{1,j}^2 = 1$$
 
 Now, let's reason about the solution to this problem. We see that to maximize the objective, we simply want to assign all of our available weight to the term in the summation with the largest value. That term is the term with the largest eigenvalue: the first term associated with $d_{1,1}$! Thus, our solution is simply the first basis vector:
 
-$$\boldsymbol{z} := \begin{bmatrix}1 & 0 & \dots & 0 \end{bmatrix}$$
+$$\boldsymbol{z}_1 := \begin{bmatrix}1 & 0 & \dots & 0 \end{bmatrix}$$
 
 What does this solution mean? It is telling us that the vector $\boldsymbol{u}$ that optimizes our original objective simply the vector $\boldsymbol{u}$ such that $\boldsymbol{P}^T\boldsymbol{u}$ is the first basis vector. Recall $\boldsymbol{P}^T$ re-expresses vectors into a new basis defined by the eigenvectors of $\boldsymbol{S}$. Thus, the $\boldsymbol{u}$ that maximizes our objective is itself the first eigenvector of $\boldsymbol{S}$!
 
-Now, what about the next solutions in our iterative optimization problem?
+Now, what about the next solutions in our iterative optimization problem? Using similar logic, we can write our second optimization problem as:
+
+$$\underset{\boldsymbol{z}_2}{\text{argmax}} \ \boldsymbol{z_2Dz_2}$$
+
+such that 
+
+$$\begin{align*}\boldsymbol{z}_2^T\boldsymbol{z}_2 &= 1 \\ \boldsymbol{z}_2^T\boldsymbol{z}_1 &= 0\end{align*}$$
+
+Here we've added the new constraint that our second solution vector $\boldsymbol{z}_2$ is orthogonal to the first $\boldsymbol{z}_1$. Because $\boldsymbol{z}_1$ is simply the vector with a 1 as the first element and zero for all the remaining elements, it follows that in order for $\boldsymbol{z}_2$ to be orthogonal to $\boldsymbol{z}_1$, we simply require that $\boldsymbol{z}_2$ has a zero as its first entry. With this in mind, we can now re-state our second optimization problem:
+
+$$\text{arg max}_{z_{2,1}, \dots, z_{2,D}} \sum_{j=1}^D z_{2,j}^2 d_{j,j}$$
+
+such that
+
+$$\begin{align*}\sum_{j=1}^D z_{2,j}^2 &= 1 \\ z_{2,1} &= 0\end{align*}$$
+
+We can now apply the same logic to reason abou the solution to this optimization problem: we know that the sum of the elements of $\boldsymbol{z}_2$ must sum to 1 and we we wish to maximize $\sum_{j=1}^D z_{2,j}^2 d_{j,j}$. Unlike the first optimization problem, we are not allowed to assign any weight to the first term. Thus, to maximize this summation, it follows that we must assign all of the weight to the _second largest_ term, $z_{2,2}d_{2,2}$.  Thus, the $\boldsymbol{z}_2$ to solve our optimization problem will be the vector with a 1 as the second entry and zeros as all the remaining entries:
+
+$$\boldsymbol{z}_2 := \begin{bmatrix}0 & 1 & \dots & 0 \end{bmatrix}$$
+
+
