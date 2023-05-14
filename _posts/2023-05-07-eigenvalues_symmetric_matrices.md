@@ -59,11 +59,7 @@ $$\underset{\boldsymbol{u}_J }{\text{argmax}} \ \boldsymbol{u}_J^T\boldsymbol{S}
 
 such that
 
-$$\boldsymbol{u}_J^T\boldsymbol{u}_J = 1$$
-
-with the additional constraint that _the first solution is orthogonal to the second_:
-
-$$\forall i \in {1 \dots, J-1}, \ \boldsymbol{u}_J^T\boldsymbol{u}_i = 0$$
+$$\begin{align*}\boldsymbol{u}_J^T\boldsymbol{u}_J &= 1 \\ \forall i \in {1 \dots, J-1}, \ \boldsymbol{u}_J^T\boldsymbol{u}_i &= 0\end{align*}$$
 
 
 Solution
