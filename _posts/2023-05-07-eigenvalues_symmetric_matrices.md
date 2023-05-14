@@ -1,7 +1,7 @@
 ---
-title: 'The Eigenvalues of Symmetric Matrices'
+title: 'Singular value decomposition'
 date: 2023-05-07
-permalink: /posts/eigensym/
+permalink: /posts/svd/
 tags:
   - tutorial
   - mathematics
