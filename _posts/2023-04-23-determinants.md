@@ -97,7 +97,7 @@ and second, that
 
 $$\forall j \in [n], \ \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j} + \boldsymbol{v}, \dots  \boldsymbol{a}_{*,n}) = \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j}, \dots  \boldsymbol{a}_{*,n}) + \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{v}, \dots  \boldsymbol{a}_{*,n})$$
 
-Why do we wish the linearity of $\text{Det}$ to be an axiom? Because it turns out that the volume of a two-dimensional parallelogram is linear with respect to the vectors that form its sides. To show this, let's start with a parallelogram defined by the columns of the following matrix:
+Why do we wish the linearity of $\text{Det}$ to be an axiom? Because it turns out that the volume of a two-dimensional parallelogram is linear with respect to the vectors that form its sides. We can prove this both algebraically as well as geometrically. Let's start with the algebraic proof starting with a parallelogram defined by the columns of the following matrix:
 
 $$\boldsymbol{A} := \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 
@@ -117,7 +117,13 @@ Its determinant is
 
 $$\begin{align*}\text{Det}(\boldsymbol{A}') &:= (a + v_1)d - b(c + v_2) \\ &= ad + v_1d - bc - bv_2 \\ &= (ad -  bc) + (v_1d - bv_2) \\ &= \text{Det}\left(\begin{bmatrix}a & b \\ c & d\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix}v_1 & b \\ v_2 & d\end{bmatrix} \right) \end{align*}$$
 
-We would like the generalized definition of a determinant to also be linear with respect to the vectors that form its sides. 
+To provide more intuition about why this linearity property holds, let's look at it geometrically:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom2.png" alt="drawing" width="800"/></center>
+
+
+
+
 
 Deriving the formula for a determinant
 --------------------------------------
