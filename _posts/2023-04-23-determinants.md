@@ -119,9 +119,16 @@ $$\begin{align*}\text{Det}(\boldsymbol{A}') &:= (a + v_1)d - b(c + v_2) \\ &= ad
 
 To provide more intuition about why this linearity property holds, let's look at it geometrically:
 
+
+To prove the first axiom, we see in the following visual proof that scaling one of the vectors that forms an edge of a parallelogram scales the area of the full parallogram.
+
+To prove the second axiom, we first show that if you skew one of the edges of a parallelogram along the axis of the other edge, then the area remains the same. We can see this in the figure below by noticing that the area of the yellow triangular is subtracted from the first paralellogram, but is added to the second:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DeterminantSkewParallogramAxis.png" alt="drawing" width="500"/></center>
+
+With this concept in hand, we can now see why the second axiom holds. If we break apart one of the vectors that forms and edge of the parallelogram into two vectors we can show that they form two "sub-parallelograms" whose total area equal the original parallelogram: 
+
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom2.png" alt="drawing" width="800"/></center>
-
-
 
 
 
