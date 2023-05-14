@@ -122,7 +122,7 @@ To provide more intuition about why this linearity property holds, let's look at
 
 To prove the first axiom, we see in the following visual proof that scaling one of the vectors that forms an edge of a parallelogram scales the area of the full parallogram.
 
-To prove the second axiom, we first show that if you skew one of the edges of a parallelogram along the axis of the other edge, then the area remains the same. We can see this in the figure below by noticing that the area of the yellow triangular is subtracted from the first paralellogram, but is added to the second:
+To prove the second axiom, we first show that if you skew one of the edges of a parallelogram along the axis of the other edge, then the area remains the same. We can see this in the figure below by noticing that the area of the yellow triangule is subtracted from the first paralellogram, but is added to the second:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/DeterminantSkewParallogramAxis.png" alt="drawing" width="500"/></center>
 
