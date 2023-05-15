@@ -130,7 +130,7 @@ We know its sides are of length $a$ and $kb$ by observing that the two shaded tr
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom1_part2.png" alt="drawing" width="500"/></center>
 
 
-The second axiom of linearity states that if we break apart one of the vectors that forms an edge of the parallelogram into two vectors we can show that they form two "sub-parallelograms" whose total area equal the original parallelogram.  We can see why this holds, geometrically via the following "visual proof" below:
+The second axiom of linearity states that if we break apart one of the vectors that forms an edge of the parallelogram into two vectors, we can show that they form two "sub-parallelograms" whose total area equals the area of the original parallelogram.  This is shown in the following "visual proof":
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom2.png" alt="drawing" width="800"/></center>
 
