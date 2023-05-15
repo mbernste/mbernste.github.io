@@ -147,7 +147,7 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 
 <span style="color:#0060C6">**Theorem 1:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, if we exchange any two column-vectors of $\boldsymbol{A}$ to form a new matrix $\boldsymbol{A}'$, then $\text{Det}(\boldsymbol{A}') = -\text{Det}(\boldsymbol{A})$</span>
 
-<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, $\boldsymbol{A}$'s determinant is zero if and only if it is singular.</span>
+<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, $\boldsymbol{A}$'s determinant is zero if and only if it's column-vectors are [linearly dependent](https://mbernste.github.io/posts/linear_independence/).</span>
 
 <span style="color:#0060C6">**Lemma 1:** Given a triangular matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, its determinant can be computed by multiplying its diagonal entries.</span>
 
@@ -190,9 +190,21 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, $\boldsymbol{A}$'s determinant is zero if and only if it is singular.</span>
+<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, $\boldsymbol{A}$'s determinant is zero if and only if it's column-vectors are linearly dependent.</span>
 
 **Proof:**
+
+Given a matrix $\boldsymbol{A}$ with columns,
+
+$$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{*,1}, \boldsymbol{a}_{*,2}, \dots, \boldsymbol{a}_{*,m}\end{bmatrix}$$
+
+if the column-vectors of $\boldsymbol{A}$ are [linearly dependent](https://mbernste.github.io/posts/linear_independence/), then there exists a vector $\boldsymbol{a}_{*,j}$ that can be expressed as a linear combination of the remaining vectors:
+
+$$\boldsymbol{a}_{*,j} = \sum_{i \neq j} c_i\boldsymbol{a}_{*,i}$$
+
+for some set of constants. Thus we can write the determinant as:
+
+$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{a}_{*,1}, \boldsymbol{a}_{*,2}, \dots, \boldsymbol{a}_{*,j}, \dots, \boldsymbol{a}_{*,m} \\ &= \text{Det}(\boldsymbol{a}_{*,1}, \boldsymbol{a}_{*,2}, \dots, \sum_{i \neq j} c_i\boldsymbol{a}_{*,i}, \dots, \boldsymbol{a}_{*,m}) && \text{Axiom 3} \\ &= \sum_{i \neq j} \end{align*}$$ 
 
 $\square$
 
