@@ -127,12 +127,12 @@ With this observation in mind, we can now show why the determinant is linear fro
 
 We know its sides are of length $a$ and $kb$ by observing the following two similar triangles:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom1_part2.png" alt="drawing" width="800"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom1_part2.png" alt="drawing" width="600"/></center>
 
 
 The second axiom of linearity states that if we break apart one of the vectors that forms an edge of the parallelogram into two vectors we can show that they form two "sub-parallelograms" whose total area equal the original parallelogram. 
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom2.png" alt="drawing" width="800"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom2.png" alt="drawing" width="600"/></center>
 
 
 
