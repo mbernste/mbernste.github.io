@@ -125,7 +125,7 @@ With this observation in mind, we can now show why the determinant is linear fro
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom1_part1.png" alt="drawing" width="500"/></center>
 
-We know its sides are of length $a$ and $kb$ by observing the following two similar triangles:
+We know its sides are of length $a$ and $kb$ by observing that the two shaded triangles are [similar](https://www.mathsisfun.com/geometry/triangles-similar.html):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom1_part2.png" alt="drawing" width="500"/></center>
 
