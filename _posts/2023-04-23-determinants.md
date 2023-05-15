@@ -123,11 +123,11 @@ To provide more intuition about why this linearity property holds, let's look at
 
 With this observation in mind, we can now show why the determinant is linear from a geometric perspective. Let's start with the first axiom that says if we scale one of the sides of a parallelogram by $k$, then the area of the parallelogram is scaled by $k$. Below, we show that we can skew both sides of a parallelogram to be orthogonal to one another forming a rectangle that preserves the area of the parallelogram. This rectangle has sides of length $a$ and $b$ and thus an area of $ab$. Moreover, if we scale one of the vectors, $\boldsymbol{v}$, by $k$, we can skew its sides to form a rectangle with sides of length $a$ and $kb$ and thus an area of $kab$: 
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom1_part1.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom1_part1.png" alt="drawing" width="500"/></center>
 
 We know its sides are of length $a$ and $kb$ by observing the following two similar triangles:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom1_part2.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom1_part2.png" alt="drawing" width="500"/></center>
 
 
 The second axiom of linearity states that if we break apart one of the vectors that forms an edge of the parallelogram into two vectors we can show that they form two "sub-parallelograms" whose total area equal the original parallelogram.  We can see why this holds, geometrically via the following "visual proof" below:
