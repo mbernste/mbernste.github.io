@@ -147,9 +147,9 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 
 <span style="color:#0060C6">**Theorem 1:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, if we exchange any two column-vectors of $\boldsymbol{A}$ to form a new matrix $\boldsymbol{A}'$, then $\text{Det}(\boldsymbol{A}') = -\text{Det}(\boldsymbol{A})$</span>
 
-<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, $\boldsymbol{A}$'s determinant is zero if and only if it's column-vectors are [linearly dependent](https://mbernste.github.io/posts/linear_independence/).</span>
+<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, if if it's column-vectors are [linearly dependent](https://mbernste.github.io/posts/linear_independence/), then its determinant is zero.</span>
 
-<span style="color:#0060C6">**Lemma 1:** Given a triangular matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, its determinant can be computed by multiplying its diagonal entries.</span>
+<span style="color:#0060C6">**Theorem 3:** Given a triangular matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, its determinant can be computed by multiplying its diagonal entries.</span>
 
 <span style="color:#0060C6">**Lemma 2:** Given an elementary matrix that represents row-scaling, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$, where $\boldsymbol{E}$ scales the $j$th row of a system of linear equations by $k$, its determinant is simply $k$.</span>
 
@@ -190,7 +190,7 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, $\boldsymbol{A}$'s determinant is zero if and only if it's column-vectors are linearly dependent.</span>
+<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, if if it's column-vectors are [linearly dependent](https://mbernste.github.io/posts/linear_independence/), then its determinant is zero.</span>
 
 **Proof:**
 
@@ -204,7 +204,9 @@ $$\boldsymbol{a}_{*,j} = \sum_{i \neq j} c_i\boldsymbol{a}_{*,i}$$
 
 for some set of constants. Thus we can write the determinant as:
 
-$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{a}_{*,1}, \boldsymbol{a}_{*,2}, \dots, \boldsymbol{a}_{*,j}, \dots, \boldsymbol{a}_{*,m} \\ &= \text{Det}(\boldsymbol{a}_{*,1}, \boldsymbol{a}_{*,2}, \dots, \sum_{i \neq j} c_i\boldsymbol{a}_{*,i}, \dots, \boldsymbol{a}_{*,m}) && \text{Axiom 3} \\ &= \sum_{i \neq j} \end{align*}$$ 
+$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{a}_{*,1}, \boldsymbol{a}_{*,2}, \dots, \boldsymbol{a}_{*,j}, \dots, \boldsymbol{a}_{*,m} \\ &= \text{Det}\left(\boldsymbol{a}_{*,1}, \boldsymbol{a}_{*,2}, \dots, \sum_{i \neq j} c_i\boldsymbol{a}_{*,i}, \dots, \boldsymbol{a}_{*,m}\right)  \\ &= \sum_{i \neq j} \text{Det}\left(\boldsymbol{a}_{*,1}, \boldsymbol{a}_{*,2}, \dots,  c_i\boldsymbol{a}_{*,i}, \dots, \boldsymbol{a}_{*,m}\right) && \text{Axiom 3} \\ &= \sum_{i \neq j} c_i \text{Det}\left(\boldsymbol{a}_{*,1}, \boldsymbol{a}_{*,2}, \dots,  \boldsymbol{a}_{*,i}, \dots, \boldsymbol{a}_{*,m}\right) && \text{Axiom 3} \\ &= 0 && \text{Axiom 2}  \end{align*}$$ 
+
+In the last line, we see that all of the determinants in the summation are zero because each term is the determinant of a matrix that has a duplicate column vector.
 
 $\square$
 
