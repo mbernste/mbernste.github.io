@@ -156,7 +156,7 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 
 <span style="color:#0060C6">**Theorem 6:** Given an [elementary matrix](https://mbernste.github.io/posts/row_reduction/) that represents a row-sum, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$ that multiplies row $j$ by $k$ times row $i$, its determinant is simply 1.</span>
 
-<span style="color:#0060C6">**Theorem 7:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T).</span>
+<span style="color:#0060C6">**Theorem 7:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T)$.</span>
 
 <span style="color:#0060C6">**Theorem 8:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
 
