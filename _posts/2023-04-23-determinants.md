@@ -302,3 +302,15 @@ $\square$
 
 
 
+<span style="color:#0060C6">**Theorem 8:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T)$.</span>
+
+**Proof:**
+
+First, let's assume that $\boldsymbol{A}$ is singular. This means that the column-vectors of $\boldsymbol{A}$ are linearly dependent and thus, by Theorem XXXX, $\text{Det}(\boldsymbol{A}) = 0$. In Theorem XXXX of a previous blog post on invertible matrices, it holds that the column-rank of a matrix equals the row-rank. We know that a matrix is singular if and only if it's column-rank is less than than the number of columns. Thus, 
+
+$\square$
+
+
+
+
+
