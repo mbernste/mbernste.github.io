@@ -54,7 +54,7 @@ In this schematic, we depict the value of $h$ getting smaller and smaller. As it
 
 ### Partial derivatives
 
-We will now consider a continous _multivariate_ function $f$ that maps real-valued vectors $\mathcal{x} \in \mathbb{R}^n$ to real-numbers. That is,
+We will now consider a continous _multivariate_ function $f$ that maps real-valued vectors $\boldsymbol{x} \in \mathbb{R}^n$ to real-numbers. That is,
 
 $$f: \mathbb{R}^n \rightarrow \mathbb{R}$$
 
