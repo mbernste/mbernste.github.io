@@ -108,7 +108,7 @@ We prove this property of the gradient vector in Theorem 2 of the Appendix to th
 Functional derivatives
 ----------------------
 
-Now, we will seek to generalize the notion of the gradients to functionals. We'll let $\mathcal{F}$ be some set of functions, and for simplicity, we'll let each $f$ be a continuous real-valued function. That is, for each $f \in \mathcal{F}$, we have $f: \mathbb{R} \rightarrow \mathbb{R}$.  Then, we'll consider a functional $F$ that maps each $f \in \mathcal{F}$ to a number. That is,
+Now, we will seek to generalize the notion of gradients to functionals. We'll let $\mathcal{F}$ be some set of functions, and for simplicity, we'll let each $f$ be a continuous real-valued function. That is, for each $f \in \mathcal{F}$, we have $f: \mathbb{R} \rightarrow \mathbb{R}$.  Then, we'll consider a functional $F$ that maps each $f \in \mathcal{F}$ to a number. That is,
 
 $$F: \mathcal{F} \rightarrow \mathbb{R}$$
 
