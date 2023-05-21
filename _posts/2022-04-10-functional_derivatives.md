@@ -197,7 +197,7 @@ Appendix
 
 **Proof:**
 
-Consider $\boldsymbol{x}$ and $\boldsymbol{v}$ to be fixed and let $g(z) := f(\boldsymbol{x} + z\boldsymbol{v})$. Then,
+Consider $\boldsymbol{x}$ and $\boldsymbol{v}$ to be fixed and let us define the function $g(z) := f(\boldsymbol{x} + z\boldsymbol{v})$. Then,
 
 $$\frac{dg(z)}{dz} = \lim_{h \rightarrow 0} \frac{g(z+h) - g(z)}{h}$$
 
@@ -205,17 +205,15 @@ Evaluating this derivative at $z = 0$, we see that
 
 $$\begin{align*} \frac{dg(z)}{dz}\bigg\rvert_{z=0} &= \frac{g(h) - g(0)}{h} \\ &= \frac{f(\boldsymbol{x} + h\boldsymbol{v}) - f(\boldsymbol{x})}{h} \\ &= D_{\boldsymbol{v}} f(\boldsymbol{x})  \end{align*}$$
 
-We can then apply the [multivariate chain rule](https://en.wikipedia.org/wiki/Chain_rule#Multivariable_case) and see that
+We can also express $\frac{dg(z)}{dz}$ another way by applying the [multivariate chain rule](https://en.wikipedia.org/wiki/Chain_rule#Multivariable_case). Doing so, we see that
 
 $$\frac{dg(z)}{dz} = \sum_{i=1}^n D_i f(\boldsymbol{x} + z\boldsymbol{v}) \frac{d (x_i + zv_i)}{dz}$$
 
-where $D_i f(\boldsymbol{x} + z\boldsymbol{v})$ is the partial derivative of $f$ with respect to it's $i$th argument when evaluated at $\boldsymbol{x} + z\boldsymbol{v}$.
-
-Now, evaluating this derivative at $z = 0$, we see that
+where $D_i f(\boldsymbol{x} + z\boldsymbol{v})$ is the partial derivative of $f$ with respect to it's $i$th argument when evaluated at $\boldsymbol{x} + z\boldsymbol{v}$.  Now, we again evaluate this derivative at $z = 0$ and see that
 
 $$\begin{align*} \frac{dg(z)}{dz}\bigg\rvert_{z=0} &= \sum_{i=1}^n D_i f(\boldsymbol{x}) v_i \\ &= \sum_{i=1}^n \frac{f(\boldsymbol{x})}{\partial \boldsymbol{x}_i} v_i \end{align*}$$ 
 
-Putting these two results together, we see that
+So we have no derived two equivalent forms of $\frac{dg(z)}{dz}\bigg\rvert_{z=0}$. Putting them together we see that
 
 $$D_{\boldsymbol{v}} f(\boldsymbol{x}) = \sum_{i=1}^n \frac{f(\boldsymbol{x})}{\partial \boldsymbol{x}_i} v_i$$
 
