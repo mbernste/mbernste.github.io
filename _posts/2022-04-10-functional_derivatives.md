@@ -213,7 +213,7 @@ where $D_i f(\boldsymbol{x} + z\boldsymbol{v})$ is the partial derivative of $f$
 
 $$\begin{align*} \frac{dg(z)}{dz}\bigg\rvert_{z=0} &= \sum_{i=1}^n D_i f(\boldsymbol{x}) v_i \\ &= \sum_{i=1}^n \frac{f(\boldsymbol{x})}{\partial \boldsymbol{x}_i} v_i \end{align*}$$ 
 
-So we have no derived two equivalent forms of $\frac{dg(z)}{dz}\bigg\rvert_{z=0}$. Putting them together we see that
+So we have now derived two equivalent forms of $\frac{dg(z)}{dz}\bigg\rvert_{z=0}$. Putting them together we see that
 
 $$D_{\boldsymbol{v}} f(\boldsymbol{x}) = \sum_{i=1}^n \frac{f(\boldsymbol{x})}{\partial \boldsymbol{x}_i} v_i$$
 
