@@ -306,7 +306,7 @@ $\square$
 
 **Proof:**
 
-First, let's assume that $\boldsymbol{A}$ is singular. This means that the column-vectors of $\boldsymbol{A}$ are linearly dependent and thus, by Theorem XXXX, $\text{Det}(\boldsymbol{A}) = 0$. In Theorem XXXX of a previous blog post on invertible matrices, it holds that the column-rank of a matrix equals the row-rank. We know that a matrix is singular if and only if it's column-rank is less than than the number of columns. Thus, 
+First, let's assume that $\boldsymbol{A}$ is singular. This means that the column-vectors of $\boldsymbol{A}$ are linearly dependent and thus, by Theorem 2, $\text{Det}(\boldsymbol{A}) = 0$. While not proven here, it holds that the [rank](https://en.wikipedia.org/wiki/Rank_(linear_algebra)) of the column space of a matrix equals the rank of the row space. We know that a matrix is singular if and only if it's column-rank is less than than the number of columns. Thus, 
 
 $\square$
 
