@@ -22,18 +22,23 @@ In this post, we will further dive into the deeper structures within matrices by
 2. A row space
 3. A null space
 
-We will then discuss the properties of these spaces, their relationships to one another, and how their properties determine whether or not a matrix is [invertible or singular](https://mbernste.github.io/posts/inverse_matrices/).
+These spaces are not difficult to define; however the relationships between them are not so obvious. In this post, we will then discuss the properties of these spaces, their relationships to one another, and how their properties determine whether or not a matrix is [invertible or singular](https://mbernste.github.io/posts/inverse_matrices/).
 
 The column space and row space of a matrix
 ------------------------------------------
 
-The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix. Likewise, the **row space** of a matrix is the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the row-vectors of a matrix.  
+The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix. Likewise, the **row space** of a matrix is the vector space spanned by the row-vectors of a matrix.  
 
 
 Rank: the intrinsic dimensionality of the column space and row space
 --------------------------------------------------------------------
 
-
 Nullity: the intrinsic dimensionality of the null space
 -------------------------------------------------------
+
+The null space is the orthogonal complement to the row space
+------------------------------------------------------------
+
+The spaces induced invertible matrices
+--------------------------------------
 
