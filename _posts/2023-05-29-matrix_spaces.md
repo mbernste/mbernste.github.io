@@ -94,7 +94,11 @@ Appendix
 
 **Proof:**
 
-Let $r_c$ be the column-rank of $\boldsymbol{A}$. Then, this means that there exists a **basis** of sized $r_c$ 
+Let $r_c$ be the column-rank of $\boldsymbol{A}$. Then, this means that there exists a set of basis vectors, $\{\boldsymbol{b}_1, \dots, \boldsymbol{b}_{r_c} \}$ that span the columns of $\boldsymbol{A}$. Let's encode these basis vectors into a matrix:
+
+$$\boldsymbol{B} := \begin{bmatrix} \boldsymbol{b}_1 & \dots & \boldsymbol{b}_{r_c} \end{bmatrix}$$
+
+
 
 $\square$
 
