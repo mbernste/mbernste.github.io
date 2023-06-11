@@ -33,7 +33,7 @@ The **column space** of a matrix is simply the [vector space](https://mbernste.g
 
 <span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
-**Example row space**
+**Row space**
 
 Let's use the following matrix as an example:
 
@@ -47,7 +47,7 @@ The row space is then the vector space that is spanned by these two vectors. We 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="350"/></center>
 
-**Example column space**
+**Column space**
 
 This example matrix can instead be thought about as a collection of three two-dimensional column vectors:
 
@@ -93,6 +93,8 @@ Appendix
 <span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the row rank equals the column rank</span>
 
 **Proof:**
+
+Let $r_c$ be the column-rank of $\boldsymbol{A}$. Then, this means that there exists a **basis** of sized $r_c$ 
 
 $\square$
 
