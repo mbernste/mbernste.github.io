@@ -47,11 +47,11 @@ The row space is then the vector space that is spanned by these two vectors. We 
 
 This matrix can instead be thought about as a collection of three two-dimensional column vectors:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="600"/></center>
 
 The column space is then the vector space that is spanned by these three vectors. We see that in this case, the column space is a all of $\mathbb{R}^2$ since we can form _any_ two-dimensional vector using a linear combination of these three vectors:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_space.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_space.png" alt="drawing" width="350"/></center>
 
 Rank: the intrinsic dimensionality of the column space and row space
 --------------------------------------------------------------------
