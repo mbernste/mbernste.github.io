@@ -29,6 +29,29 @@ The column space and row space of a matrix
 
 The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix. Likewise, the **row space** of a matrix is the vector space spanned by the row-vectors of a matrix.  
 
+Let's use the following matrix as an example:
+
+$$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
+
+**Row space**
+
+This matrix can be thought about as a collection of two three-dimensional row vectors (The dotted lines are visualization guides. The colored dashed lines trace each vector to the $$z = 0$$ plane. The black dashed lines depict the difference between the two vectors on the $$z=0$$ plane.):
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_vectors.png" alt="drawing" width="600"/></center>
+
+The row space is then the vector space that is spanned by these two vectors. We see that in this case, the row space is a hyperplane:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="600"/></center>
+
+**Column space**
+
+This matrix can instead be thought about as a collection of three two-dimensional column vectors:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="600"/></center>
+
+The column space is then the vector space that is spanned by these three vectors. We see that in this case, the column space is a all of $\mathbb{R}^2$ since we can form _any_ two-dimensional vector using a linear combination of these three vectors:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_space.png" alt="drawing" width="600"/></center>
 
 Rank: the intrinsic dimensionality of the column space and row space
 --------------------------------------------------------------------
