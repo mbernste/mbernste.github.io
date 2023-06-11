@@ -65,13 +65,13 @@ Rank: the intrinsic dimensionality of the column space and row space
 
 In the previous example matrix, we notice that the row space could be described by a hyperplane in $\mathbb{R}^3$ and thus, it's [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) is only two. The column space spanned all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two as well. Even though there are three column-vectors, the dimensionality of the space spanned by these three vectors is only two. The intrinsic dimensionality of a set of vectors is given by the maximal number of linearly independent vectors in a set of vectors. With this in mind, we can form the following definitions:
 
-<span style="color:#0060C6">**Definition 3 (column rank):** Given a matrix $\boldsymbol{A}$, the **column rank** of $\boldsymbol{A}$ is the maximum sized subset of the columns of $\boldsymbol{A}$ that are linearly independent.</span>
+<span style="color:#0060C6">**Definition 3 (column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **column rank** of $\boldsymbol{A}$ is the maximum sized subset of the columns of $\boldsymbol{A}$ that are linearly independent.</span>
 
-<span style="color:#0060C6">**Definition 4 (row rank):** Given a matrix $\boldsymbol{A}$, the **rank** of $\boldsymbol{A}$ is the maximum sized subset of the rows of $\boldsymbol{A}$ that are linearly independent.</span>
+<span style="color:#0060C6">**Definition 4 (row rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **rank** of $\boldsymbol{A}$ is the maximum sized subset of the rows of $\boldsymbol{A}$ that are linearly independent.</span>
 
 In this example, we saw that the column rank and the row rank are equal. Is this true for any matrix? It turns out that the anwswer is yes! *The intrinsic dimensionality of the row space and column space are always equal*. Moreover, we call the instrinsic dimensionality of the row space and column space as simply the **rank** of the matrix, without need of delineating whether we mean the row rank or the column rank. We can formalize this statement with the following theorem (proved in the Appendix to this post):
 
-<span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A}$, the row rank equals the column rank</span>
+<span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, its row rank equals its column rank.</span>
 
 
 The null space
@@ -89,7 +89,7 @@ The spaces induced by invertible matrices
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A}$, the row rank equals the column rank</span>
+<span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the row rank equals the column rank</span>
 
 **Proof:**
 
