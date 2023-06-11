@@ -22,7 +22,7 @@ In this post, we will further dive into the deeper structures within matrices by
 2. A row space
 3. A null space
 
-These spaces are not difficult to define; however the relationships between them are not so obvious. In this post, we will then discuss the properties of these spaces, their relationships to one another, and how their properties determine whether or not a matrix is [invertible or singular](https://mbernste.github.io/posts/inverse_matrices/).
+These spaces are not difficult to define; however the relationships between them are not so obvious. In this post, we will then discuss the properties of these spaces, their relationships to one another, and how their properties determine whether or not a matrix is [invertible or singular](https://mbernste.github.io/posts/inverse_matrices/). 
 
 The column space and row space of a matrix
 ------------------------------------------
@@ -49,12 +49,28 @@ This matrix can instead be thought about as a collection of three two-dimensiona
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="600"/></center>
 
-The column space is then the vector space that is spanned by these three vectors. We see that in this case, the column space is a all of $\mathbb{R}^2$ since we can form _any_ two-dimensional vector using a linear combination of these three vectors:
+The column space is then the vector space that is spanned by these three vectors. We see that in this case, the column space is all of $\mathbb{R}^2$ since we can form _any_ two-dimensional vector using a linear combination of these three vectors:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_space.png" alt="drawing" width="350"/></center>
 
+For a more in depth discussion of the concept of a **span**, see my [previous blog post](https://mbernste.github.io/posts/linear_independence/).
+
+The null space
+--------------
+
 Rank: the intrinsic dimensionality of the column space and row space
 --------------------------------------------------------------------
+
+In the previous example matrix, we notice that the row space could be described by a hyperplane in $\mathbb{R}^3$ and thus, it's [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) is only two. 
+
+The column space spanned all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two as well. Even though there are three column-vectors, the dimensionality of the space spanned by these three vectors is only two. Said another way, the maximum number of linearly independent column-vectors is two, since we can form any vector from the other two.
+
+In this example, we see that the intrinsic dimensionality of both the row space and column space are equal. It turns out that this holds for _any matrix_. That is, *the intrinsic dimensionality of the row space and column space are equal*. This instrinsic dimensionality is called the **rank** of a matrix. We can formalize this statement with the following theorem:
+
+
+A proof of this Theorem is provided in the Appendix to this post. The rank of a matrix can then be formally defined as:
+
+
 
 Nullity: the intrinsic dimensionality of the null space
 -------------------------------------------------------
@@ -62,6 +78,6 @@ Nullity: the intrinsic dimensionality of the null space
 The null space is the orthogonal complement to the row space
 ------------------------------------------------------------
 
-The spaces induced invertible matrices
---------------------------------------
+The spaces induced by invertible matrices
+-----------------------------------------
 
