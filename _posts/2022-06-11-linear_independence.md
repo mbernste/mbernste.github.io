@@ -51,8 +51,9 @@ Why is the set on the right linearly dependent? As you can see below, we can use
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence_symmetry.png" alt="drawing" width="600"/></center>
 
-Intuition
----------
+
+Intuition for linear independence
+---------------------------------
 
 There are two ways I think about linear independence: in terms of information content and in terms of [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/). Let me explain.
 
@@ -63,3 +64,4 @@ One can also think about the concept of linear dependence/indepence in terms of 
 $$\boldsymbol{v} = c_1\boldsymbol{x}_1 + \dots + c_n\boldsymbol{x}_n$$ 
 
 However, if $S$ is linearly dependent, then we can throw away "redundant" vectors in $S$.  In fact, we see that the intrinsic dimensionality of a linearly dependent set $S$ is the maximum sized subset of $S$ that is linearly independent!
+
