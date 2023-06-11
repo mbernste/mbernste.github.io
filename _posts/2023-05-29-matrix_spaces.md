@@ -33,11 +33,11 @@ The **column space** of a matrix is simply the [vector space](https://mbernste.g
 
 <span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
+**Example row space**
+
 Let's use the following matrix as an example:
 
 $$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
-
-**Row space**
 
 This matrix can be thought about as a collection of two three-dimensional row vectors (The dotted lines are visualization guides. The colored dashed lines trace each vector to the $$z = 0$$ plane. The black dashed lines depict the difference between the two vectors on the $$z=0$$ plane.):
 
@@ -47,9 +47,9 @@ The row space is then the vector space that is spanned by these two vectors. We 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="350"/></center>
 
-**Column space**
+**Example column space**
 
-This matrix can instead be thought about as a collection of three two-dimensional column vectors:
+This example matrix can instead be thought about as a collection of three two-dimensional column vectors:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="600"/></center>
 
@@ -73,9 +73,10 @@ In this example, we saw that the column rank and the row rank are equal. Is this
 
 <span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, its row rank equals its column rank.</span>
 
-
 The null space
 --------------
+
+Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undestood to be a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) from $\mathbb{R}^n$ to $\mathbb{R}^m$.
 
 Nullity: the intrinsic dimensionality of the null space
 -------------------------------------------------------
