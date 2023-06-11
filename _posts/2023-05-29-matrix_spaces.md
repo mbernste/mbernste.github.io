@@ -27,7 +27,11 @@ These spaces are not difficult to define; however the relationships between them
 The column space and row space of a matrix
 ------------------------------------------
 
-The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix. Likewise, the **row space** of a matrix is the vector space spanned by the row-vectors of a matrix.  
+The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix. Likewise, the **row space** of a matrix is the vector space spanned by the row-vectors of a matrix. Specifically,
+
+<span style="color:#0060C6">**Definition 1 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the column-vectors of $\boldsymbol{A}$</span>
+
+<span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
 Let's use the following matrix as an example:
 
@@ -69,6 +73,7 @@ In this example, we saw that the intrinsic dimensionality of both the row space 
 
 The rank of a matrix can then be formally defined as:
 
+<span style="color:#0060C6">**Definition 3 (rank):** Given a matrix $\boldsymbol{A}$, the **rank** of $\boldsymbol{A}$ is the maximum sized subset of the columns of $\boldsymbol{A}$ that are linearly independent.</span>
 
 
 Nullity: the intrinsic dimensionality of the null space
