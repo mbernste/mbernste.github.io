@@ -63,12 +63,11 @@ Rank: the intrinsic dimensionality of the column space and row space
 
 In the previous example matrix, we notice that the row space could be described by a hyperplane in $\mathbb{R}^3$ and thus, it's [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) is only two. The column space spanned all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two as well. Even though there are three column-vectors, the dimensionality of the space spanned by these three vectors is only two. 
 
-In this example, we saw that the intrinsic dimensionality of both the row space and column space are equal. Is the dimensionality of the row space and column always equal for any matrix? It turns out that the anwswer is yes! *The intrinsic dimensionality of the row space and column space are always equal*. Moreover, we call the instrinsic dimensionality of the row space and column space the **rank** of the matrix. 
-
-We can formalize this statement with the following theorem:
+In this example, we saw that the intrinsic dimensionality of both the row space and column space are equal. Is the dimensionality of the row space and column always equal for any matrix? It turns out that the anwswer is yes! *The intrinsic dimensionality of the row space and column space are always equal*. Moreover, we call the instrinsic dimensionality of the row space and column space the **rank** of the matrix. We can formalize this statement with the following theorem (proved in the Appendix to this post):
 
 
-A proof of this Theorem is provided in the Appendix to this post. The rank of a matrix can then be formally defined as:
+
+The rank of a matrix can then be formally defined as:
 
 
 
