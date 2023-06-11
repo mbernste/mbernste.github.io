@@ -41,7 +41,7 @@ This matrix can be thought about as a collection of two three-dimensional row ve
 
 The row space is then the vector space that is spanned by these two vectors. We see that in this case, the row space is a hyperplane:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="350"/></center>
 
 **Column space**
 
