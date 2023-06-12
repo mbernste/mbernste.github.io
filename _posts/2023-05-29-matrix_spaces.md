@@ -78,7 +78,7 @@ The null space
 
 Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undestood to be a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) from $\mathbb{R}^n$ to $\mathbb{R}^m$. With this concept of a matrix in mind, we can define another space on a matrix: the space of all vectors that $\boldsymbol{A}$ maps to the zero vector. This space is called the **null space**. That is, any vector, $\boldsymbol{v} \in \mathbb{R}^m$ for which $\boldsymbol{Av} = \boldsymbol{0}$ is in the null space of $\boldsymbol{A}$.
 
-<span style="color:#0060C6">**Definition 5 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{v} \in \mathbb{R}^m \mid \boldsymbol{Av} = \boldsymbol{0}\}</span>
+<span style="color:#0060C6">**Definition 5 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{v} \in \mathbb{R}^m \mid \boldsymbol{Av} = \boldsymbol{0}\}$</span>
 
 On its surface, the null space seems unrelated to the row space and column space of a matrix; however as we will see in the next sections, they are in fact  linked! 
 
