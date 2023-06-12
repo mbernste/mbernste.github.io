@@ -89,7 +89,12 @@ Nullity: the intrinsic dimensionality of the null space
 The null space is the orthogonal complement to the row space
 ------------------------------------------------------------
 
-null_space_compliment_row_space_1
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center>
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_2.png" alt="drawing" width="350"/></center>
+
+
+
 
 The spaces induced by invertible matrices
 -----------------------------------------
