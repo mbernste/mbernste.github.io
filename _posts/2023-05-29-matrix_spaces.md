@@ -76,13 +76,20 @@ In this example, we saw that the column rank and the row rank are equal. Is this
 The null space
 --------------
 
-Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undestood to be a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) from $\mathbb{R}^n$ to $\mathbb{R}^m$.
+Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undestood to be a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) from $\mathbb{R}^n$ to $\mathbb{R}^m$. With this concept of a matrix in mind, we can define another space on a matrix: the space of all vectors for which $\boldsymbol{A}$ maps to the zero vector. This space is called the **null space**.
+
+<span style="color:#0060C6">**Definition 5 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{v} \in \mathbb{R}^m \mid \boldsymbol{Av} = \boldsymbol{0}\}</span>
+
+
+
 
 Nullity: the intrinsic dimensionality of the null space
 -------------------------------------------------------
 
 The null space is the orthogonal complement to the row space
 ------------------------------------------------------------
+
+null_space_compliment_row_space_1
 
 The spaces induced by invertible matrices
 -----------------------------------------
