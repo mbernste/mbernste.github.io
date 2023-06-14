@@ -24,8 +24,8 @@ In this post, we will further dive into the deeper structures within matrices by
 
 These spaces are not difficult to define; however the relationships between them are not so obvious. In this post, we will then discuss the properties of these spaces, their relationships to one another, and how their properties determine whether or not a matrix is [invertible or singular](https://mbernste.github.io/posts/inverse_matrices/). 
 
-Column spaces, row spaces, and null spaces of a matrix
-------------------------------------------------------
+Column spaces, row spaces, and null spaces
+------------------------------------------
 
 **Row space**
 
