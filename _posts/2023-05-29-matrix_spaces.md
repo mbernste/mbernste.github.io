@@ -92,11 +92,9 @@ Using our example matrix,
 
 $$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
 
-we can visualize the null space as being comprised of all of the vectors that point along the red vector shown below:
+we can visualize the null space as being comprised of all of the vectors that point along the red vector shown below (notice that this red vector is orthogonal to the hyperplane that spans the row-vectors of $\boldsymbol{A}$):
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center>
-
-Notice, that this red vector is orthogonal to the hyperplane that spans the row-vectors of $\boldsymbol{A}$. 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center> 
 
 To illustrate another example, let's consider a different example matrix:
 
