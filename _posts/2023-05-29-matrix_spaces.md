@@ -27,8 +27,6 @@ These spaces are not difficult to define; however the relationships between them
 Column spaces, row spaces, and null spaces of a matrix
 ------------------------------------------------------
 
-
-
 **Row space**
 
 The **row space** of a matrix is the vector space spanned by the row-vectors of a matrix. Specifically,
@@ -76,9 +74,25 @@ Before going further, let us define the orthogonal complement. Given a vector sp
 
 <span style="color:#0060C6">**Definition 6 (orthogonal complement):** Given two vector spaces $(\mathcal{V}, \mathcal{F})$ and $(\mathcal{V}', \mathcal{F})$ that share the same scalar field, each is an **orthogonal complement** to the other if $\forall \boldsymbol{v} \in \mathcal{V}, \ \forall \boldsymbol{v}' \in \mathcal{V}' \ \langle \boldsymbol{v}, \boldsymbol{v}' \rangle = 0$</span>
 
-With this concept in mind, we can see that the null space is the orthogonal complement to the row space. 
+With this concept in mind, we can see that the null space is the orthogonal complement to the row space. To see this, recall that we can view matrix-vector multiplication between a matrix $\boldsymbol{A}$ and a vector $\boldsymbol{x}$ as the process of taking a dot product of each row of $\boldsymbol{A}$ with $\boldsymbol{x}$:
+
+$$\boldsymbol{Ax} := \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{x} \end{bmatrix}$$
+
+If $\boldsymbol{x}$ is in the null space of $\boldsymbol{A}$ then this means that $\boldsymbol{Ax} = \boldsymbol{0}$, which means that ever dot product shown above is zero. That is,
+
+$$\begin{align*}\boldsymbol{Ax} &= \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{x} \end{bmatrix} \\ &= \begin{bmatrix} 0 \\ 0  \\ \vdots \\ 0 \end{bmatrix} \\ &= \boldsymbol{0} \end{align*}$$
+
+Recall, the dot product between two vectors is zero means that the two vectors are orthogonal. Thus we see that if $\boldsymbol{x}$ is in the null space of $\boldsymbol{A}$ it _has_ to be orthogonal to every row-vector of $\boldsymbol{A}$. This means that the null space is the orthogonal complement to the row space!
+
+With the example matrix that we have been using, we can visualize the null space as being all of the vectors that point along the red vector shown below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center>
+
+Notice, that this red vector is orthogonal to the hyperplane that spans the row-vectors of $\boldsymbol{A}$. To illustrate another example, let's use a different example matrix:
+
+$$\begin{bmatrix}1 & 2 & 1 \\ 0 & -0.5 & 0.5\end{bmatrix}$$
+
+Here, the two row-vectors point in the same directions and thus, span a line in $\mathbb{R}^m$. The null space now is a hyperplane that is orthogonal to this line that spans the row-vectors!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_2.png" alt="drawing" width="350"/></center>
 
