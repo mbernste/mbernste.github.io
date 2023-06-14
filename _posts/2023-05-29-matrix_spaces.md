@@ -109,8 +109,8 @@ Here, the two row-vectors span a line in $\mathbb{R}^m$ rather than the hyperpla
 Notice how these two examples illustrate that if the row space is a hyperplane, then null space will be a line. Likewise, if the row space is a line, then the null space will be a hyperplane. Generalizing this further, we may hypothesize that the dimensionality of the row space and the dimensionality of the null space sum to the number of columns of the matrix. In the following sections we will prove that this is indeed true for any matrix!
 
 
-Rank: the intrinsic dimensionality of the column space and row space
---------------------------------------------------------------------
+The intrinsic dimensionality of matrix spaces
+----------------------------------------------
 
 In the previous example matrix, we notice that the row space could be described by a hyperplane in $\mathbb{R}^3$ and thus, it's [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) is only two. The column space spanned all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two as well. Recall, the intrinsic dimensionality of a set of vectors is given by the maximal number of linearly independent vectors in the set. With this in mind, we can form the following definitions:
 
@@ -121,11 +121,6 @@ In the previous example matrix, we notice that the row space could be described 
 In this example, we saw that the column rank and the row rank are equal. Is this true for any matrix? It turns out that the anwswer is yes! *The intrinsic dimensionality of the row space and column space are always equal*. Moreover, we call the instrinsic dimensionality of the row space and column space the **rank** of the matrix (no need to delinneate whether we mean the row rank or the column rank, since they are equal). We can formalize this statement with the following theorem (proved in the Appendix to this post):
 
 <span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, its row rank equals its column rank.</span>
-
-
-
-Nullity: the intrinsic dimensionality of the null space
--------------------------------------------------------
 
 
 
