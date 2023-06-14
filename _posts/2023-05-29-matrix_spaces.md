@@ -70,7 +70,9 @@ Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undest
 
 <span style="color:#0060C6">**Definition 5 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{v} \in \mathbb{R}^m \mid \boldsymbol{Av} = \boldsymbol{0}\}$</span>r
 
-On its surface, the null space seems unrelated to the row space and column spaces of a matrix; however, there is indeed a key relationship between the null space and the row space of a matrix:
+On its surface, the null space seems unrelated to the row space and column spaces of a matrix; however, there is indeed a key relationship between the null space and the row space of a matrix: the null space is the **orthogonal complement** to the row space. 
+
+Before going further, let us define the orthogonal complement. Given a vector space $(\mathcal{V}, \mathcal{F})$, the orthogonal complement is another vector space $(\mathcal{V}', \mathcal{F})$ such that all vectors in $\mathcal{V}'$ are orthogonal to all vectors in $\mathcal{V}$.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center>
 
