@@ -82,11 +82,11 @@ With this concept in mind, we can see that the null space is the orthogonal comp
 
 $$\boldsymbol{Ax} := \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{x} \end{bmatrix}$$
 
-If $\boldsymbol{x}$ is in the null space of $\boldsymbol{A}$ then this means that $\boldsymbol{Ax} = \boldsymbol{0}$, which means that ever dot product shown above is zero. That is,
+If $\boldsymbol{x}$ is in the null space of $\boldsymbol{A}$ then this means that $\boldsymbol{Ax} = \boldsymbol{0}$, which means that every dot product shown above is zero. That is,
 
 $$\begin{align*}\boldsymbol{Ax} &= \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{x} \end{bmatrix} \\ &= \begin{bmatrix} 0 \\ 0  \\ \vdots \\ 0 \end{bmatrix} \\ &= \boldsymbol{0} \end{align*}$$
 
-Recall, the dot product between two vectors is zero means that the two vectors are orthogonal. Thus we see that if $\boldsymbol{x}$ is in the null space of $\boldsymbol{A}$ it _has_ to be orthogonal to every row-vector of $\boldsymbol{A}$. This means that the null space is the orthogonal complement to the row space!
+Recall, if the dot product between a pair of vectors is zero, then the two vectors are orthogonal. Thus we see that if $\boldsymbol{x}$ is in the null space of $\boldsymbol{A}$ it _has_ to be orthogonal to every row-vector of $\boldsymbol{A}$. This means that the null space is the orthogonal complement to the row space!
 
 Using our example matrix, 
 
@@ -96,16 +96,17 @@ we can visualize the null space as being comprised of all of the vectors that po
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center>
 
-Notice, that this red vector is orthogonal to the hyperplane that spans the row-vectors of $\boldsymbol{A}$. To illustrate another example, let's use a different example matrix:
+Notice, that this red vector is orthogonal to the hyperplane that spans the row-vectors of $\boldsymbol{A}$. 
+
+To illustrate another example, let's consider a different example matrix:
 
 $$\begin{bmatrix}1 & 2 & 1 \\ 0 & -0.5 & 0.5\end{bmatrix}$$
 
-Here, the two row-vectors point in the same directions and thus, span a line in $\mathbb{R}^m$. The null space now is a hyperplane that is orthogonal to this line that spans the row-vectors!
+Here, the two row-vectors span a line in $\mathbb{R}^m$ rather than the hyperplane. Here, the null space is a hyperplane that is orthogonal to the line that represents the row space!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_2.png" alt="drawing" width="350"/></center>
 
-
-
+Notice how these two examples illustrate that if the row space is a hyperplane, then null space will be a line. Likewise, if the row space is a line, then the null space will be a hyperplane. Generalizing this further, we may hypothesize that the dimensionality of the row space and the dimensionality of the null space sum to the number of columns of the matrix. In the following sections we will prove that this is indeed true for any matrix!
 
 
 Rank: the intrinsic dimensionality of the column space and row space
