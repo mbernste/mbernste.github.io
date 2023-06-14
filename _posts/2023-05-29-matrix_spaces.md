@@ -112,6 +112,10 @@ Notice how these two examples illustrate that if the row space is a hyperplane, 
 The intrinsic dimensionality of matrix spaces
 ----------------------------------------------
 
+The intrinsic dimensionality of the row space, column space, and null space are also related to one another and tell us alot about the matrix itself. 
+
+**Rank: the intrinsic dimensionality of the row and column space**
+
 In the previous example matrix, we notice that the row space could be described by a hyperplane in $\mathbb{R}^3$ and thus, it's [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) is only two. The column space spanned all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two as well. Recall, the intrinsic dimensionality of a set of vectors is given by the maximal number of linearly independent vectors in the set. With this in mind, we can form the following definitions:
 
 <span style="color:#0060C6">**Definition 3 (column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **column rank** of $\boldsymbol{A}$ is the maximum sized subset of the columns of $\boldsymbol{A}$ that are linearly independent.</span>
@@ -122,6 +126,9 @@ In this example, we saw that the column rank and the row rank are equal. Is this
 
 <span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, its row rank equals its column rank.</span>
 
+Note, that because the row rank equals the column rank of a matrix, a matrix of shape $m \times n$ can _at most_ have a rank that is the minimum of $m$ and $n$. For example, a matrix with 3 rows and 5 columns can _at most_ be of rank 3 (but it might be less!).
+
+**Nullity: the intrinsic dimensionality of the null space**
 
 
 The spaces induced by invertible matrices
