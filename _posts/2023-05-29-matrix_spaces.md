@@ -100,11 +100,11 @@ To illustrate another example, let's consider a different example matrix:
 
 $$\begin{bmatrix}1 & 2 & 1 \\ 0 & -0.5 & 0.5\end{bmatrix}$$
 
-Here, the two row-vectors span a line in $\mathbb{R}^m$ rather than the hyperplane. Here, the null space is a hyperplane that is orthogonal to the line that represents the row space!
+Here, the two row-vectors span a line in $\mathbb{R}^m$ rather than the hyperplane. The null space is now a hyperplane that is orthogonal to the line that represents the row space!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_2.png" alt="drawing" width="350"/></center>
 
-Notice how these two examples illustrate that if the row space is a hyperplane (dimensionality = 2), then the null space will be a line (dimensionality = 1). Likewise, if the row space is a line (dimensionality = 1), then the null space will be a hyperplane (dimensionality = 1). In both cases the total dimensionality is 3, which is exactly the number of columns of $\boldsymbol{A}$.  Generalizing this further, we may hypothesize that the dimensionality of the row space and the dimensionality of the null space sum together to form the number of columns of the matrix. In the following sections we will prove that this is indeed true for any matrix!
+Notice how these two examples illustrate that if the row space is a hyperplane (dimensionality = 2), then the null space will be a line (dimensionality = 1). Likewise, if the row space is a line (dimensionality = 1), then the null space will be a hyperplane (dimensionality = 2). In both cases the sum of their dimensionalities is 3, which is exactly the number of columns of $\boldsymbol{A}$.  Generalizing this further, we may hypothesize that the dimensionality of the row space and the dimensionality of the null space sum together to form the number of columns of the matrix. In the following sections we will prove that this is indeed true for any matrix!
 
 
 The intrinsic dimensionality of matrix spaces
