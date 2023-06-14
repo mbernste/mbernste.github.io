@@ -51,7 +51,11 @@ The **column space** of a matrix is simply the [vector space](https://mbernste.g
 
 <span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
-Using the previous example matrix, we can view it as a collection of three two-dimensional column vectors:
+Let us again consider the matrix
+
+$$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
+
+We can view it as a collection of three two-dimensional column vectors:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="600"/></center>
 
@@ -84,7 +88,11 @@ $$\begin{align*}\boldsymbol{Ax} &= \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \b
 
 Recall, the dot product between two vectors is zero means that the two vectors are orthogonal. Thus we see that if $\boldsymbol{x}$ is in the null space of $\boldsymbol{A}$ it _has_ to be orthogonal to every row-vector of $\boldsymbol{A}$. This means that the null space is the orthogonal complement to the row space!
 
-With the example matrix that we have been using, we can visualize the null space as being all of the vectors that point along the red vector shown below:
+Using our example matrix, 
+
+$$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
+
+we can visualize the null space as being comprised of all of the vectors that point along the red vector shown below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center>
 
