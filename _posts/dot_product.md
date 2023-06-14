@@ -22,7 +22,7 @@ The **dot product** is a fundamental operation on two Euclidean vectors that cap
 There are three perspectives I find useful for thinking about the dot products. Ordered from the least abstract to the most abstract, these perspectives are:
 1. The dot product succinctly describes a weighted sum
 2. The dot product describes a geometric relationship between two Euclidean vectors
-3. The dot product is analogous to the product on scalars
+3. The dot product is an analogy to the product between scalars (i.e., normal multiplication between numbers)
 4. The dot describes a notion of similarity between two Euclidean vectors
 
 These perspectives are described in the remaining sections of this post.
