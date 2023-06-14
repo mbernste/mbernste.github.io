@@ -24,16 +24,16 @@ In this post, we will further dive into the deeper structures within matrices by
 
 These spaces are not difficult to define; however the relationships between them are not so obvious. In this post, we will then discuss the properties of these spaces, their relationships to one another, and how their properties determine whether or not a matrix is [invertible or singular](https://mbernste.github.io/posts/inverse_matrices/). 
 
-The column space and row space of a matrix
-------------------------------------------
+Column spaces, row spaces, and null spaces of a matrix
+------------------------------------------------------
 
-The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix. Likewise, the **row space** of a matrix is the vector space spanned by the row-vectors of a matrix. Specifically,
 
-<span style="color:#0060C6">**Definition 1 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the column-vectors of $\boldsymbol{A}$</span>
-
-<span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
 **Row space**
+
+The **row space** of a matrix is the vector space spanned by the row-vectors of a matrix. Specifically,
+
+<span style="color:#0060C6">**Definition 1 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the column-vectors of $\boldsymbol{A}$</span>
 
 Let's use the following matrix as an example:
 
@@ -49,7 +49,11 @@ The row space is then the vector space that is spanned by these two vectors. We 
 
 **Column space**
 
-This example matrix can instead be thought about as a collection of three two-dimensional column vectors:
+The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix. Likewise,
+
+<span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
+
+Using the previous example matrix, we can view it as a collection of three two-dimensional column vectors:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="600"/></center>
 
@@ -58,6 +62,22 @@ The column space is then the vector space that is spanned by these three vectors
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_space.png" alt="drawing" width="350"/></center>
 
 For a more in depth discussion of the concept of **span**, see my [previous blog post](https://mbernste.github.io/posts/linear_independence/).
+
+
+**Null space**
+
+Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undestood to be a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) from $\mathbb{R}^n$ to $\mathbb{R}^m$. With this concept of a matrix in mind, we can define another space on a matrix: the space of all vectors that $\boldsymbol{A}$ maps to the zero vector. This space is called the **null space**. That is, any vector, $\boldsymbol{v} \in \mathbb{R}^m$ for which $\boldsymbol{Av} = \boldsymbol{0}$ is in the null space of $\boldsymbol{A}$.
+
+<span style="color:#0060C6">**Definition 5 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{v} \in \mathbb{R}^m \mid \boldsymbol{Av} = \boldsymbol{0}\}$</span>r
+
+On its surface, the null space seems unrelated to the row space and column spaces of a matrix; however, there is indeed a key relationship between the null space and the row space of a matrix:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center>
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_2.png" alt="drawing" width="350"/></center>
+
+
+
 
 
 Rank: the intrinsic dimensionality of the column space and row space
@@ -73,14 +93,7 @@ In this example, we saw that the column rank and the row rank are equal. Is this
 
 <span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, its row rank equals its column rank.</span>
 
-The null space
---------------
 
-Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undestood to be a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) from $\mathbb{R}^n$ to $\mathbb{R}^m$. With this concept of a matrix in mind, we can define another space on a matrix: the space of all vectors that $\boldsymbol{A}$ maps to the zero vector. This space is called the **null space**. That is, any vector, $\boldsymbol{v} \in \mathbb{R}^m$ for which $\boldsymbol{Av} = \boldsymbol{0}$ is in the null space of $\boldsymbol{A}$.
-
-<span style="color:#0060C6">**Definition 5 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{v} \in \mathbb{R}^m \mid \boldsymbol{Av} = \boldsymbol{0}\}$</span>
-
-On its surface, the null space seems unrelated to the row space and column space of a matrix; however as we will see in the next sections, they are in fact  linked! 
 
 The null space is the orthogonal complement to the row space
 ------------------------------------------------------------
@@ -88,11 +101,6 @@ The null space is the orthogonal complement to the row space
 
 Nullity: the intrinsic dimensionality of the null space
 -------------------------------------------------------
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center>
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_2.png" alt="drawing" width="350"/></center>
-
 
 
 
