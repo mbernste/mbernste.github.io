@@ -101,10 +101,6 @@ In this example, we saw that the column rank and the row rank are equal. Is this
 
 
 
-The null space is the orthogonal complement to the row space
-------------------------------------------------------------
-
-
 Nullity: the intrinsic dimensionality of the null space
 -------------------------------------------------------
 
