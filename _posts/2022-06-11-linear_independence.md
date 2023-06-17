@@ -94,6 +94,13 @@ and that not all of the coefficients are zero and let $C$ be the set of indices 
 
 $$\sum_{i \in C} c_i\boldsymbol{x}_i = \boldsymbol{0}$$
 
+There are now two scenarios to consider: $C$ is of size 1 and $C$ is of size greater than 1. Let's first assume $C$ is of size 1 and let's let $k$ be the index of the one and only coefficient that is non-zero. Then 
+
+$$c_k\boldsymbol{x}_k = \boldsymbol{0}$$
+
+We see that $\boldsymbol{x}_k$ must be the zero vector. This implies that the zero vector is in $S$. The zero vector is in the span of the remaining vectors in $S$ (since we can form a linear combination of the remaining vectors to form $S$ by simply setting their coefficients to zero). This implies that $S$ is linearly dependent.
+
+Let's assume that $C$ is of size greater than one. Then for any $k \in C$, we can write:
 
 
 $\square$
