@@ -51,6 +51,16 @@ Why is the set on the right linearly dependent? As you can see below, we can use
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence_symmetry.png" alt="drawing" width="600"/></center>
 
+Linear independence among a set of vectors implies another key fact about these vectors: the only way to construct the zero vector from these vectors is by using coefficients that are only zeros. That is, if $S := \\{ \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \\}$ are linearly independent, then in order for the following to hold
+
+$$\boldsymbol{\sum_{i=1}^n c_i \boldsymbol{x}_i} = \boldsymbol{0}$$
+
+it must be the case that all of the coefficients are zero. That is, $c_1 = c_2 = \dots, c_n = 0$. In contrast, for a dependent set of vectors, we can construct the zero vector by canceling one vector out using a combination of the other vectors as shown below.
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_dependence_zero_vector.png" alt="drawing" width="300"/></center>
+
+This is proven formally in Theorem 1 in the Appendix to this blog post.
+
 
 Intuition for linear independence
 ---------------------------------
@@ -64,4 +74,8 @@ One can also think about the concept of linear dependence/indepence in terms of 
 $$\boldsymbol{v} = c_1\boldsymbol{x}_1 + \dots + c_n\boldsymbol{x}_n$$ 
 
 However, if $S$ is linearly dependent, then we can throw away "redundant" vectors in $S$.  In fact, we see that the intrinsic dimensionality of a linearly dependent set $S$ is the maximum sized subset of $S$ that is linearly independent!
+
+Appendix
+--------
+
 
