@@ -53,7 +53,17 @@ Why is the set on the right linearly dependent? As you can see below, we can use
 
 Linear dependence among a set of vectors implies another key fact about these vectors stated in the following theorem (proven in the Appendix to this post): 
 
+<span style="color:#0060C6">**Theorem 1 (vectors are linearly dependent if the zero vector can be formed from non-zero coefficients):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists a set of coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
 
+This Theorem essentially says that for a dependent set of vectors, we can construct the zero vector by canceling one vector out using a combination of the other vectors as shown below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_dependence_zero_vector.png" alt="drawing" width="300"/></center>
+
+While Theorem 1 focuses on linearly dependent sets of vectors, it implies a strong property about linearly independent vectors: the only way to construct the zero vector from a set of linearly independent vectors is by using coefficients that are all zero. That is, if $S := \\{ \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \\}$ are linearly independent, then in order for the following to hold
+
+$$\boldsymbol{\sum_{i=1}^n c_i \boldsymbol{x}_i} = \boldsymbol{0}$$
+
+it must be the case that all of the coefficients are zero. That is, $c_1 = c_2 = \dots, c_n = 0$. 
 
 
 Intuition for linear independence
