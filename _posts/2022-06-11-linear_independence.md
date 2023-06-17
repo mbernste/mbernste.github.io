@@ -100,7 +100,7 @@ Here we see that $\boldsymbol{x}_k$ must be the zero vector. This implies that t
 
 Let's assume that $C$ is of size greater than one. The we can see that for any $k \in C$, we can write:
 
-$$\begin{align*}&\sum_{i \in C \setminus \{k\}} c_i\boldsymbol{x}_i &= - c_k \boldsymbol{x}_k \\ &\implies -\frac{1}{c_k} \sum_{i \in C \setminus \{k\}} c_i\boldsymbol{x}_i &= \boldsymbol{x}_k \\ &\implies  \sum_{i \in C \setminus \{k\}}  -\frac{c_i}{c_k}\boldsymbol{x}_i &= \boldsymbol{x}_k \end{align}$$
+$$\begin{align*} \sum_{i \in C \setminus \{ k \} } c_i \boldsymbol{x}_i &= - c_k \boldsymbol{x}_k \\ \implies -\frac{1}{c_k} \sum_{i \in C \setminus \{ k \} } c_i\boldsymbol{x}_i &= \boldsymbol{x}_k \\ \implies  \sum_{i \in C \setminus \{k\}}  -\frac{c_i}{c_k} \boldsymbol{x}_i &= \boldsymbol{x}_k \end{align}$$
 
 Thus we see that $\boldsymbol{x}_k$ is in the span of the remaining vectors and thus $S$ is linearly dependent.
 
@@ -108,7 +108,7 @@ Now we will prove the other direction of the "if and only if": if $S$ is linearl
 
 If $S$ is linearly dependent then there exists a vector $\boldsymbol{x}_n \in S$ that we can form using a linear combination of the remaining vectors in $S$. Let $\boldsymbol{x}_1, \dots \boldsymbol{x}_{n-1}$ be these remaining vectors. There are now two scenarios to consider: $\boldsymbol{x}_n$ is the zero vector or $\boldsymbol{x}_n$ is not the zero vector. 
 
-If $\boldsymbol{x}_n$ is the zero vector, then we see that we can assign zero to the coefficients $c_1, \dots, c_n$ and _any_ non-zero value to $c_{n_1}$ and the following will hold:  
+If $\boldsymbol{x}_n$ is the zero vector, then we see that we can assign zero to the coefficients $c_1, \dots, c_{n-1}$ and _any_ non-zero value to $c_n$ and the following will hold:  
 
 $$c_n \boldsymbol{x}_n + \sum_{i=1}^{n-1} c_i \boldsymbol{x}_i = \boldsymbol{0}$$
 
