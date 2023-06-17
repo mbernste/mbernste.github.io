@@ -80,6 +80,17 @@ Appendix
 
 <span style="color:#0060C6">**Theorem 1 (vectors are linearly dependent if zero vector can be formed from non-zero coefficients):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists an assignment of values to coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
 
+**Proof:**
+
+We must prove both directions of the "if and only if". Let's start by proving that if there exists an assignment of coefficients that are not all zero for which $\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$, then $S$ is linearly dependent.
+
+Let's assume that we have a set of coefficients $c_1, \dots c_n$ such that 
+
+$$\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$$
+
+and that not all of the coefficients are zero and let $C$ be the set of indices of the coefficients that are not zero. Then, we can write
+
+$$\sum_{i \in C} c_i\boldsymbol{x}_i = \boldsymbol{0}$$
 
 
 
