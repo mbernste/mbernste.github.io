@@ -151,28 +151,6 @@ $\square$
 
 **Proof:**
 
-Let $r$ be the row rank of $\boldsymbol{A}$. Then, this means that there exists a set of basis vectors, $\{\boldsymbol{b}_1, \boldsymbol{b}_2, \dots, \boldsymbol{b}_{r} \} \in \mathbb{R}^n$ that span the rows of $\boldsymbol{A}$. Now, consider the vectors
-
-$$\boldsymbol{Ab}_1, \boldsymbol{Ab}_2, \dots, \boldsymbol{Ab}_r\$$
-
-and consider coefficients $c_1, c_2, \dots, c_r$ such that
-
-$$\boldsymbol{0} = \sum_{i=1}^r c_i \boldsymbol{Ab}_r$$
-
-Finally, let's define 
-
-$$\boldsymbol{v} := \sum_{i=1}^r c_i \boldsymbol{b}_i$$
-
-Then, we see that 
-
-$$\begina{align*} \boldsymbol{0} &= \sum_{i=1}^r c_i \boldsymbol{Ab}_i \\ &= sum_{i=1}^r  \boldsymbol{A}c_i \boldsymbol{b}_i \\ &=  \boldsymbol{A}\sum_{i=1}^r c_i \boldsymbol{b}_i  \\ &= \boldsymbol{Av}\end{align*}$$
-
-This shows that $\boldsymbol{v}$ is both in the row space of $\boldsymbol{A}$ and in the null space of $\boldsymbol{A}$. It is in the row space because it is in the span of the basis vectors of the row space. It is also in the null space of $\boldsymbol{A}$ because $\boldsymbol{Av} = \boldsymbol{0}$. By being in the null space, we know that $\boldsymbol{v}$ is orthogonal to all vectors in the row space (Theorem 1). Altogether, this implies that $\boldsymbol{v}$ is orthogogonal to itself. The only vector that is orthogonal to itself is the zero vector $\boldsymbol{0}$ and thus, $\bolsymbol{v} = \boldsymbol{0}$.
-
-Because $\boldsymbol{v}$ is a linear combination of basis vectors (i.e., $\boldsymbol{b}_1, \dots \boldsymbol{b}_r$), which are linearly independent, this implies that 
-
-$$c_1 = c_2 = \dots = c_r = 0$$
-
 
 $\square$
 
