@@ -98,7 +98,7 @@ $$ c_k\boldsymbol{x}_k = \boldsymbol{0}$$
 
 We see that $\boldsymbol{x}_k$ must be the zero vector. This implies that the zero vector is in $S$. The zero vector is in the span of the remaining vectors in $S$ (since we can form a linear combination of the remaining vectors to form $S$ by simply set their coefficients to zero). This implies that $S$ is linearly dependent.
 
-Let's assume that $C$ is of size greater than one. The for any $k \in C$, we can write:
+Let's assume that $C$ is of size greater than one. Then for any $k \in C$, we can write:
 
 $$\begin{align*} \sum_{i \in C \setminus \{ k \} } c_i \boldsymbol{x}_i &= - c_k \boldsymbol{x}_k \\ \implies -\frac{1}{c_k} \sum_{i \in C \setminus \{ k \} } c_i\boldsymbol{x}_i &= \boldsymbol{x}_k \\ \implies  \sum_{i \in C \setminus \{ k \}}  -\frac{c_i}{c_k} \boldsymbol{x}_i &= \boldsymbol{x}_k  \end{align*}$$
 
