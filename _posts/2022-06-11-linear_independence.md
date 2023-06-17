@@ -78,23 +78,34 @@ However, if $S$ is linearly dependent, then we can throw away "redundant" vector
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (linear combination of dependent vectors to form zero vector):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \\} \in \mathcal{V}$, $S$ is linearly independent if and only if the only assignment of values to coefficients $c_1, \dots c_n$ for which $\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$ is the assignment for which all the coefficients are zero. That is, $c_1 = c_2 = \dots c_n = 0$</span>
+<span style="color:#0060C6">**Theorem 1 (linear combination of dependent vectors to form zero vector):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists an assignment of values to coefficients $c_1, \dots c_n$ for which $\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
 
 **Proof:**
 
-For the sake of contradiction let us assume that $S$ is independent and that we have some set of coefficients $c_1, \dots, c_n$ for which 
+We must prove both directions of the "if and only if". Let's start by proving that if there exists an assignment of coefficients that are not all zero for which $\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$, then $S$ is linearly dependent.
 
-$$\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$$
+Let's assume that we have a set of coefficients $c_1, \dots c_n$ such that 
 
-and that some of these coefficients are non zero. Let $C$ be the set of indices of the coefficients that are not zero. Then we see that write:
+$\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$
+
+and that not all of the coefficients are zero and let $C$ be the set of indices of the coefficients that are not zero. Then we see that write:
 
 $$\sum_{i \in C} c_i\boldsymbol{x}_i = \boldsymbol{0}$$
 
-There are two scenarios to consider: if $C$ has a size of 1 and if $C$ is greater than 1. Let's first assume $C$ is of size 1 and let's let $k$ be the index of the one and only coefficient that is non-zero. Then we see that 
+There are two scenarios to consider: $C$ of 1 and $C$ is of size greater than 1. Let's first assume $C$ is of size 1 and let's let $k$ be the index of the one and only coefficient that is non-zero. Then we see that 
 
 $$ c_k\boldsymbol{x}_k = \boldsymbol{0}$$
 
-Here we see that $\boldsymbol{x}_k$ must be the zero vector. This implies that the zero vector is in $S$ and is also in the span of the remaining vectors in $S$ since we can form a linear combination of the remaining vectors to form $S$ (simply set their coefficients to zero). This implies that $S$ is _not_ linearly independent.
+Here we see that $\boldsymbol{x}_k$ must be the zero vector. This implies that the zero vector is in $S$. The zero vector is also in the span of the remaining vectors in $S$ since we can form a linear combination of the remaining vectors to form $S$ (simply set their coefficients to zero). This implies that $S$ is linearly dependent.
+
+Let's assume that $C$ is of size greater than one. The we can see that for any $k \in C$, we can write:
+
+$$\begin{align*}&\sum_{i \in C \setminus \{k\}} c_i\boldsymbol{x}_i &= - c_k \boldsymbol{x}_k \\ &\implies -\frac{1}{c_k} \sum_{i \in C \setminus \{k\}} c_i\boldsymbol{x}_i &= \boldsymbol{x}_k \\ &\implies  \sum_{i \in C \setminus \{k\}}  -\frac{c_i}{c_k}\boldsymbol{x}_i &= \boldsymbol{x}_k \end{align}$$
+
+Thus we see that $\boldsymbol{x}_k$ is in the span of the remaining vectors and thus $S$ is linearly dependent.
+
+
+
 
 
 
