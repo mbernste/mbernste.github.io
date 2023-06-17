@@ -108,7 +108,7 @@ Now we will prove the other direction of the "if and only if": if $S$ is linearl
 
 If $S$ is linearly dependent then there exists a vector $\boldsymbol{x}_n \in S$ that we can form using a linear combination of the remaining vectors in $S$. Let $\boldsymbol{x}\_1, \dots \boldsymbol{x}\_{n-1}$ be these remaining vectors. There are now two scenarios to consider: $\boldsymbol{x}\_n$ is the zero vector or $\boldsymbol{x}\_n$ is not the zero vector. 
 
-If $\boldsymbol{x}_n$ is the zero vector, then we see that we can assign zero to the coefficients $c_1, \dots, c_{n-1}$ and _any_ non-zero value to $c_n$ and the following will hold:  
+If $\boldsymbol{x}\_n$ is the zero vector, then we see that we can assign zero to the coefficients $c\_1, \dots, c\_{n-1}$ and _any_ non-zero value to $c\_n$ and the following will hold:  
 
 $$c_n \boldsymbol{x}_n + \sum_{i=1}^{n-1} c_i \boldsymbol{x}_i = \boldsymbol{0}$$
 
