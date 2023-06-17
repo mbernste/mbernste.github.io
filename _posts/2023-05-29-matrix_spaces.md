@@ -170,13 +170,13 @@ This in turn implies that $c_1, \dots, c_r$ must be zero. We know this because $
 
 By [Theorem 1 in a previous post](https://mbernste.github.io/posts/linear_independence/), this implies that $\boldsymbol{Ab}\_1, \dots, \boldsymbol{Ab}\_r$ must be linearly independent. Moreover, by the definition of matrix-vector multiplication, we know that $\boldsymbol{Ab}\_1, \dots, \boldsymbol{Ab}\_r$ are in the column space of $\boldsymbol{A}$. Thus, we have proven that there exist _at least_ $r$ independent vectors in the column space of $\boldsymbol{A}$. This means that the column rank of $\boldsymbol{A}$ is _at least_ $r$. That is,
 
-$$\text{column rank} \geq \text{row rank}$$
+$$\text{column rank of} \ \boldsymbol{A} \geq \text{row rank of} \ \boldsymbol{A}$$
 
 We can repeat this exercise on the transpose of $\boldsymbol{A}$l, which tells us that
 
-$$\text{row rank} \geq \text{column rank}$$
+$$\text{row rank of} \ \boldsymbol{A} \geq \text{column rank of} \ \boldsymbol{A}$$
 
-These statements together imply that the column rank must equal the row rank.
+These statements together imply that the column rank of $\boldsymbol{A}$ must equal the row rank of $\boldsymbol{A}$.
 
 $\square$
 
