@@ -153,7 +153,7 @@ $\square$
 
 Let $r$ be the row rank of $\boldsymbol{A}$ and let $\boldsymbol{b}_1, \dots, \boldsymbol{b}_r \in \mathbb{R}^n$ be a set of basis vectors for the row space of $\boldsymbol{A}$. Now, let  $c_1, c_2, \dots, c_r$ be coefficients such that 
 
-$$sum_{i=1}^r c_i \boldsymbol{Ab}_i = \boldsymbol{0}$$
+$$\sum_{i=1}^r c_i \boldsymbol{Ab}_i = \boldsymbol{0}$$
 
 Furthermore, let 
 
