@@ -36,8 +36,8 @@ In this example we see that we can construct _ANY_ two dimensional vector from $
 
 Here, $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ don't span all of $\mathbb{R}^2$, but rather, only the line on which $\boldsymbol{x}_1$ and $\boldsymbol{x_2}$ lie.
 
-Linear independence
--------------------
+Linear dependence and independence
+----------------------------------
 
 Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$, and a set of vectors $S := \\{ \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \\} \in \mathcal{V}$, the vectors are said to be **linearly independent** if each vector lies outside the span of the remaining vectors. More rigorously,
 
