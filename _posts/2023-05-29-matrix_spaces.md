@@ -151,6 +151,32 @@ $\square$
 
 **Proof:**
 
+Let $r$ be the row rank of $\boldsymbol{A}$ and let $\boldsymbol{b}_1, \dots, \boldsymbol{b}_r \in \mathbb{R}^n$ be a set of basis vectors for the row space of $\boldsymbol{A}$. Now, let  $c_1, c_2, \dots, c_r$ be coefficients such that 
+
+$$sum_{i=1}^r c_i \boldsymbol{Ab}_i = \boldsymbol{0}$$
+
+Furthermore, let 
+
+$$\boldsymbol{v} := \sum_{i=1}^r  c_i\boldsymbol{b}_i$$
+
+We see that 
+
+$$\begin{align*} \sum_{i=1}^r c_i \boldsymbol{Ab}_i &= \boldsymbol{0} \\ \implies \sum_{i=1}^r \boldsymbol{A}c_i \boldsymbol{b}_i  &= \boldsymbol{0} \\ \implies \boldsymbol{A} \sum_{i=1}^r  c_i\boldsymbol{b}_i  &= \boldsymbol{0} \\ \boldsymbol{Av} &= \boldsymbol{0} \end{align*}$$
+
+Here we can show that $\boldsymbol{v}$ must be the zero vector. We see this by noting $\boldsymbol{v}$ is in both the row space of $\boldsymbol{A}$ and the null space of $\boldsymbol{A}$. It is in the row space $\boldsymbol{A}$ because it is a linear combination of the basis vectors of the row space of $
+boldsymbol{A}$. It is in the null space of $\boldsymbol{A}$, because $\boldsymbol{Av} &= \boldsymbol{0}$. From Theorem 1, $\boldsymbol{v}$ must be orthogonal to all vectors in the row space of $\boldsymbol{A}$, which includes itself. The only vector that is orthogonal to itself is the zero vector and thus, $\boldsymbol{v}$ must be the zero vector.
+
+This in turn implies that $c_1, \dots, c_r$ must be zero. We know this because $\boldsymbol{b}_1, \dots, \boldsymbol{b}_r \in \mathbb{R}^n$ are basis vectors, which by definition cannot include the zero vector. Thus we have proven that the only assignment of values for $c_1, \dots, c_r$ for which $sum_{i=1}^r c_i \boldsymbol{Ab}_i = \boldsymbol{0}$ is the assignment for which they are all zero. 
+
+By [Theorem 1 in a previous post](https://mbernste.github.io/posts/linear_independence/), this implies that $\boldsymbol{Ab}\_1, \dots, \boldsymbol{Ab}\_r$ must be linearly independent. Moreover, by the definition of matrix-vector multiplication, we know that $\boldsymbol{Ab}\_1, \dots, \boldsymbol{Ab}\_r$ are in the column space of $\boldsymbol{A}$. Thus, we have proven that there exist _at least_ $r$ independent vectors in the column space of $\boldsymbol{A}$. This means that the column rank of $\boldsymbol{A}$ is _at least_ $r$. That is,
+
+$$\text{column rank} \geq \text{row rank}$$
+
+We can repeat this exercise on the transpose of $\boldsymbol{A}$l, which tells us that
+
+$$\text{row rank} \geq \text{column rank}$$
+
+These statements together imply that the column rank must equal the row rank.
 
 $\square$
 
