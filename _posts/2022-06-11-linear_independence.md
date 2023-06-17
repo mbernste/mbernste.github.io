@@ -100,14 +100,11 @@ There are now two scenarios to consider: $C$ is of size 1 and $C$ is of size gre
 
 $$c_k\boldsymbol{x}_k = \boldsymbol{0}$$
 
-We see that $\boldsymbol{x}_k$ must be the zero vector. This implies that the zero vector is in $S$. The zero vector is in the span of the remaining vectors in $S$ (since we can form a linear combination of the remaining vectors to form $S$ by simply setting their coefficients to zero). This implies that $S$ is linearly dependent.
+We see that $\boldsymbol{x}_k$ must be the zero vector (because $c_k$ is nonzero). This implies that the zero vector is in $S$. The zero vector is in the span of the remaining vectors in $S$ (since we can form a linear combination of the remaining vectors to form $S$ by simply setting their coefficients to zero). This implies that $S$ is linearly dependent.
 
 Let's assume that $C$ is of size greater than one. Then for any $k \in C$, we can write:
 
 $$\begin{align*} \sum_{i \in C \setminus \{ k \} } c_i \boldsymbol{x}_i &= - c_k \boldsymbol{x}_k \\ \implies -\frac{1}{c_k} \sum_{i \in C \setminus \{ k \} } c_i\boldsymbol{x}_i &= \boldsymbol{x}_k \\ \implies  \sum_{i \in C \setminus \{ k \}}  -\frac{c_i}{c_k} \boldsymbol{x}_i &= \boldsymbol{x}_k  \end{align*}$$
-
-
-
 
 Thus we see that $\boldsymbol{x}_k$ is in the span of the remaining vectors and thus $S$ is linearly dependent.
 
@@ -115,6 +112,20 @@ Now we will prove the other direction of the "if and only if": if $S$ is linearl
 
 If $S$ is linearly dependent then there exists a vector $\boldsymbol{x}_n \in S$ that we can form using a linear combination of the remaining vectors in $S$. Let $\boldsymbol{x}\_1, \dots \boldsymbol{x}\_{n-1}$ be these remaining vectors. There are now two scenarios to consider: $\boldsymbol{x}\_n$ is the zero vector or $\boldsymbol{x}\_n$ is not the zero vector. 
 
+
+
+
+If $\boldsymbol{x}\_n$ is the zero vector, then we see that we can assign zero to the coefficients $c\_1, \dots, c\_{n-1}$ and _any_ non-zero value to $c\_n$ and the following will hold:  
+
+$$c_n \boldsymbol{x}_n + \sum_{i=1}^{n-1} c_i \boldsymbol{x}_i = \boldsymbol{0}$$
+
+Thus there exists an assignment of coefficients that are not all zero for which $\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$. 
+
+Now let's say that $\boldsymbol{x}_n$ is the not the zero vector. Then,  
+
+$$\sum_{i=1}^{n-1} c_i \boldsymbol{x}_i = \boldsymbol{x}_n \implies \left(\sum_{i=1}^{n-1} c_i \boldsymbol{x}_i\right) - \boldsymbol{x}_n = \boldsymbol{0}$$
+
+Here, the cofficient for $\boldsymbol{x}\_n$ is -1, which is non-zero. Thus there exists an assignment of coefficients that are not all zero for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$. 
 
 $\square$
 
