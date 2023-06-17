@@ -72,7 +72,7 @@ Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undest
 
 <span style="color:#0060C6">**Definition 5 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{v} \in \mathbb{R}^m \mid \boldsymbol{Av} = \boldsymbol{0}\}$</span>r
 
-On its surface, the null space seems unrelated to the row space and column spaces of a matrix; however, there is indeed a key relationship between the null space and the row space of a matrix: the null space is the **orthogonal complement** to the row space. 
+On its surface, the null space seems unrelated to the row space and column spaces of a matrix; however, there is indeed a key relationship between the null space and the row space of a matrix: the null space is the **orthogonal complement** to the row space (Theorem 1 in the appendix to this post). 
 
 Before going further, let us define the orthogonal complement. Given a vector space $(\mathcal{V}, \mathcal{F})$, the orthogonal complement is another vector space $(\mathcal{V}', \mathcal{F})$ such that all vectors in $\mathcal{V}'$ are orthogonal to all vectors in $\mathcal{V}$.
 
@@ -135,15 +135,45 @@ The spaces induced by invertible matrices
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the row rank equals the column rank</span>
+<span style="color:#0060C6">**Theorem 1 (null space is orthogonal complement of row space):** Given a matrix $\boldsymbol{A}$, the null space of $\boldsymbol{A}$ is the orthogonal complement to the row space of $\boldsymbol{A}$.</span>
 
 **Proof:**
 
-Let $r_c$ be the column-rank of $\boldsymbol{A}$. Then, this means that there exists a set of basis vectors, $\{\boldsymbol{b}_1, \dots, \boldsymbol{b}_{r_c} \}$ that span the columns of $\boldsymbol{A}$. Let's encode these basis vectors into a matrix where each basis vector is a column-vector:
+To prove that the null space of $\boldsymbol{A}$ is the orthogonal complement of the row space, we must show that every vector in the null space is orthogonal to every vector in the row space. Consider vector $\boldsymbol{x}$ in the null space of $\boldsymbol{A}$. By the definition of the null space (Definition 5), this means that $\boldsymbol{Ax} = \boldsymbol{0}$. That is,
 
-$$\boldsymbol{B} := \begin{bmatrix} \boldsymbol{b}_1 & \dots & \boldsymbol{b}_{r_c} \end{bmatrix}$$
+$$\begin{align*}\boldsymbol{Ax} &= \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{x} \end{bmatrix} \\ &= \begin{bmatrix} 0 \\ 0  \\ \vdots \\ 0 \end{bmatrix} \\ &= \boldsymbol{0} \end{align*}$$
 
+We note that for each row $i$, we see that $\boldsymbol{a}_{i,*} \cdot \boldsymbol{x} = 0$ implies that each row vector of $\boldsymbol{A}$ is orthogonal to $\boldsymbol{x}$.
 
+$\square$
+
+<span style="color:#0060C6">**Theorem 2 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the row rank equals the column rank</span>
+
+**Proof:**
+
+Let $r$ be the row rank of $\boldsymbol{A}$. Then, this means that there exists a set of basis vectors, $\{\boldsymbol{b}_1, \boldsymbol{b}_2, \dots, \boldsymbol{b}_{r} \} \in \mathbb{R}^n$ that span the rows of $\boldsymbol{A}$. Now, consider the vectors
+
+$$\boldsymbol{Ab}_1, \boldsymbol{Ab}_2, \dots, \boldsymbol{Ab}_r\$$
+
+and consider coefficients $c_1, c_2, \dots, c_r$ such that
+
+$$\boldsymbol{0} = \sum_{i=1}^r c_i \boldsymbol{Ab}_r$$
+
+Finally, let's define 
+
+$$\boldsymbol{v} := \sum_{i=1}^r c_i \boldsymbol{b}_i$$
+
+Then, we see that 
+
+$$\begina{align*} \boldsymbol{0} &= \sum_{i=1}^r c_i \boldsymbol{Ab}_i \\ &= sum_{i=1}^r  \boldsymbol{A}c_i \boldsymbol{b}_i \\ &=  \boldsymbol{A}\sum_{i=1}^r c_i \boldsymbol{b}_i  \\ &= \boldsymbol{Av}\end{align*}$$
+
+This shows that $\boldsymbol{v}$ is both in the row space of $\boldsymbol{A}$ and in the null space of $\boldsymbol{A}$. It is in the row space because it is in the span of the basis vectors of the row space. It is also in the null space of $\boldsymbol{A}$ because $\boldsymbol{Av} = \boldsymbol{0}$. By being in the null space, we know that $\boldsymbol{v}$ is orthogonal to all vectors in the row space (Theorem 1). Altogether, this implies that $\boldsymbol{v}$ is orthogogonal to itself. The only vector that is orthogonal to itself is the zero vector $\boldsymbol{0}$ and thus, $\bolsymbol{v} = \boldsymbol{0}$.
+
+Because $\boldsymbol{v}$ is a linear combination of basis vectors (i.e., $\boldsymbol{b}_1, \dots \boldsymbol{b}_r$), which are linearly independent, this implies that 
+
+$$c_1 = c_2 = \dots = c_r = 0$$
+
+Because 
 
 $\square$
 
