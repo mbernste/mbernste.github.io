@@ -53,7 +53,7 @@ Why is the set on the right linearly dependent? As you can see below, we can use
 
 Linear dependence among a set of vectors implies another key fact about these vectors stated in the following theorem (proven in the Appendix to this post): 
 
-<span style="color:#0060C6">**Theorem 1 (vectors are linearly dependent if the zero vector can be formed from non-zero coefficients):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists a set of coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
+<span style="color:#0060C6">**Theorem 1 (relating linear dependence to the formation of the zero vector):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists a set of coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
 
 This Theorem essentially says that if a set of vectors are linearly dependent, then one can construct the zero vector using a linear combination of the remaining vectors that isn't the "trivial" linear combination of setting all of the coefficients to zero. This is illustrated below:
 
