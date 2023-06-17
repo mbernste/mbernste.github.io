@@ -43,6 +43,9 @@ Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\math
 
 <span style="color:#0060C6">**Definition 2 (linear independence):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \\} \in \mathcal{V}$, $S$ is called **linearly independent** if for each vector $\boldsymbol{x_i} \in S$, it holds that $\boldsymbol{x}_i \notin \text{Span}(S \setminus \\{ \boldsymbol{x}_i \\})$.</span>
 
+<span style="color:#0060C6">**Definition 2 (linear dependence):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \\} \in \mathcal{V}$, $S$ is called **linearly dependent** if there exists a vector  $\boldsymbol{x_i} \in S$, such that $\boldsymbol{x}_i \in \text{Span}(S \setminus \\{ \boldsymbol{x}_i \\})$.</span>
+
+
 Said differently, a set of vectors are linearly independent if you cannot form any of the vectors in the set using a linear combination of any of the other vectors. Below we demonstrate a set of linearly independent vectors (left) and a set of linearly dependent vectors (right):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence.png" alt="drawing" width="600"/></center>
