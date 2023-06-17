@@ -173,7 +173,6 @@ Because $\boldsymbol{v}$ is a linear combination of basis vectors (i.e., $\bolds
 
 $$c_1 = c_2 = \dots = c_r = 0$$
 
-Because 
 
 $\square$
 
