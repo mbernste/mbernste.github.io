@@ -118,13 +118,9 @@ Thus there exists an assignment of coefficients that are not all zero for which 
 
 Now let's say that $\boldsymbol{x}_n$ is the not the zero vector. Then,  
 
-$$\sum_{i=1}^{n-1} c_i \boldsymbol{x}_i = \boldsymbol{x}_n$$
+$$\sum_{i=1}^{n-1} c_i \boldsymbol{x}_i = \boldsymbol{x}_n \implies \left(\sum_{i=1}^{n-1} c_i \boldsymbol{x}_i\right) - \boldsymbol{x}_n = \boldsymbol{0}$$
 
-This implies that 
-
-$$\left(\sum_{i=1}^{n-1} c_i \boldsymbol{x}_i\right) - \boldsymbol{x}_n = \boldsymbol{0}$$
-
-Here, the cofficient for $\boldsymbol{x}_n$ is -1, which is non-zero. Thus there exists an assignment of coefficients that are not all zero for which $\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$. 
+Here, the cofficient for $\boldsymbol{x}\_n$ is -1, which is non-zero. Thus there exists an assignment of coefficients that are not all zero for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$. 
 
 $\square$
 
