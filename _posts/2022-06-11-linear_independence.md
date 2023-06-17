@@ -59,7 +59,9 @@ it must be the case that all of the coefficients are zero. That is, $c_1 = c_2 =
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_dependence_zero_vector.png" alt="drawing" width="300"/></center>
 
-This is proven formally in Theorem 1 in the Appendix to this blog post.
+This is stated more formally in Theorem 1, which is proven in the Appendix to this post.
+
+<span style="color:#0060C6">**Theorem 1 (vectors are linearly dependent if zero vector can be formed from non-zero coefficients):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists an assignment of values to coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
 
 
 Intuition for linear independence
