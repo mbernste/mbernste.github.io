@@ -88,17 +88,17 @@ Let's assume that we have a set of coefficients $c_1, \dots c_n$ such that
 
 $\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$
 
-and that not all of the coefficients are zero and let $C$ be the set of indices of the coefficients that are not zero. Then we see that write:
+and that not all of the coefficients are zero and let $C$ be the set of indices of the coefficients that are not zero. Then, we can write
 
 $$\sum_{i \in C} c_i\boldsymbol{x}_i = \boldsymbol{0}$$
 
-There are two scenarios to consider: $C$ of 1 and $C$ is of size greater than 1. Let's first assume $C$ is of size 1 and let's let $k$ be the index of the one and only coefficient that is non-zero. Then we see that 
+There are now two scenarios to consider: $C$ is of size 1 and $C$ is of size greater than 1. Let's first assume $C$ is of size 1 and let's let $k$ be the index of the one and only coefficient that is non-zero. Then 
 
 $$ c_k\boldsymbol{x}_k = \boldsymbol{0}$$
 
-Here we see that $\boldsymbol{x}_k$ must be the zero vector. This implies that the zero vector is in $S$. The zero vector is also in the span of the remaining vectors in $S$ since we can form a linear combination of the remaining vectors to form $S$ (simply set their coefficients to zero). This implies that $S$ is linearly dependent.
+We see that $\boldsymbol{x}_k$ must be the zero vector. This implies that the zero vector is in $S$. The zero vector is in the span of the remaining vectors in $S$ (since we can form a linear combination of the remaining vectors to form $S$ by simply set their coefficients to zero). This implies that $S$ is linearly dependent.
 
-Let's assume that $C$ is of size greater than one. The we can see that for any $k \in C$, we can write:
+Let's assume that $C$ is of size greater than one. The for any $k \in C$, we can write:
 
 $$\begin{align*} \sum_{i \in C \setminus \{ k \} } c_i \boldsymbol{x}_i &= - c_k \boldsymbol{x}_k \\ \implies -\frac{1}{c_k} \sum_{i \in C \setminus \{ k \} } c_i\boldsymbol{x}_i &= \boldsymbol{x}_k \\ \implies  \sum_{i \in C \setminus \{k\}}  -\frac{c_i}{c_k} \boldsymbol{x}_i &= \boldsymbol{x}_k \end{align}$$
 
