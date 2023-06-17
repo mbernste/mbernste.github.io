@@ -51,15 +51,17 @@ Why is the set on the right linearly dependent? As you can see below, we can use
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_independence_symmetry.png" alt="drawing" width="600"/></center>
 
-Linear dependence among a set of vectors implies another key fact about these vectors stated in the following theorem (proven in the Appendix to this post): 
+Linear dependence/independence among a set of vectors implies another key property about these vectors stated in the following theorems (proven in the Appendix to this post): 
 
-<span style="color:#0060C6">**Theorem 1 (relating linear dependence to the formation of the zero vector):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists a set of coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
+<span style="color:#0060C6">**Theorem 1 (forming the zero vector from linearly dependent vectors):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists a set of coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
 
-This Theorem essentially says that if a set of vectors are linearly dependent, then one can construct the zero vector using a linear combination of the remaining vectors that isn't the "trivial" linear combination of setting all of the coefficients to zero. This is illustrated below:
+<span style="color:#0060C6">**Corollary 1 (forming the zero vector from linearly independent vectors):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly independent if and only if the only assignment of values to coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ is the assignment for which all $c_1, \dots c_n$ are zero.</span>
+
+These theorems essentially says that if a set of vectors are linearly dependent, then one can construct the zero vector using a linear combination of the remaining vectors that isn't the "trivial" linear combination of setting all of the coefficients to zero. This is illustrated below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/linear_dependence_zero_vector.png" alt="drawing" width="300"/></center>
 
-While Theorem 1 focuses on linearly dependent sets of vectors, it implies a strong property about linearly independent vectors: the only way to construct the zero vector from a set of linearly independent vectors is by setting all of the coefficients to zero. 
+In contrast, Theorem 2 says that the only way to construct the zero vector from a set of linearly independent vectors is by setting all of the coefficients to zero. 
 
 
 Intuition for linear independence
@@ -78,7 +80,7 @@ However, if $S$ is linearly dependent, then we can throw away "redundant" vector
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (vectors are linearly dependent if zero vector can be formed from non-zero coefficients):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists an assignment of values to coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
+<span style="color:#0060C6">**Theorem 1 (forming the zero vector from linearly dependent vectors):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists an assignment of values to coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
 
 **Proof:**
 
@@ -108,9 +110,6 @@ Now we will prove the other direction of the "if and only if": if $S$ is linearl
 
 If $S$ is linearly dependent then there exists a vector $\boldsymbol{x}_n \in S$ that we can form using a linear combination of the remaining vectors in $S$. Let $\boldsymbol{x}\_1, \dots \boldsymbol{x}\_{n-1}$ be these remaining vectors. There are now two scenarios to consider: $\boldsymbol{x}\_n$ is the zero vector or $\boldsymbol{x}\_n$ is not the zero vector. 
 
-
-
-
 If $\boldsymbol{x}\_n$ is the zero vector, then we see that we can assign zero to the coefficients $c\_1, \dots, c\_{n-1}$ and _any_ non-zero value to $c\_n$ and the following will hold:  
 
 $$c_n \boldsymbol{x}_n + \sum_{i=1}^{n-1} c_i \boldsymbol{x}_i = \boldsymbol{0}$$
@@ -124,5 +123,6 @@ $$\sum_{i=1}^{n-1} c_i \boldsymbol{x}_i = \boldsymbol{x}_n \implies \left(\sum_{
 Here, the cofficient for $\boldsymbol{x}\_n$ is -1, which is non-zero. Thus there exists an assignment of coefficients that are not all zero for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$. 
 
 $\square$
+
 
 
