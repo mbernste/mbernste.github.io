@@ -86,7 +86,7 @@ We must prove both directions of the "if and only if". Let's start by proving th
 
 Let's assume that we have a set of coefficients $c_1, \dots c_n$ such that 
 
-$\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$
+$$\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$$
 
 and that not all of the coefficients are zero and let $C$ be the set of indices of the coefficients that are not zero. Then, we can write
 
