@@ -78,7 +78,7 @@ However, if $S$ is linearly dependent, then we can throw away "redundant" vector
 Appendix
 --------
 
-<span style="color:#0060C6">**Theorem 1 (linear combination of dependent vectors to form zero vector):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists an assignment of values to coefficients $c_1, \dots c_n$ for which $\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
+<span style="color:#0060C6">**Theorem 1 (linear combination of dependent vectors to form zero vector):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}\_1, \boldsymbol{x}\_2, \dots, \boldsymbol{x}\_n \\} \in \mathcal{V}$, $S$ is linearly dependent if and only if there exists an assignment of values to coefficients $c\_1, \dots c\_n$ for which $\sum_{i=1}^n c\_i\boldsymbol{x}\_i = \boldsymbol{0}$ and at least one coefficient is non-zero.</span>
 
 **Proof:**
 
@@ -106,7 +106,7 @@ Thus we see that $\boldsymbol{x}_k$ is in the span of the remaining vectors and 
 
 Now we will prove the other direction of the "if and only if": if $S$ is linearly dependent then there exists an assignment of coefficients that are not all zero for which $\sum_{i=1}^n c_i\boldsymbol{x}_i = \boldsymbol{0}$. 
 
-If $S$ is linearly dependent then there exists a vector $\boldsymbol{x}_n \in S$ that we can form using a linear combination of the remaining vectors in $S$. Let $\boldsymbol{x}_1, \dots \boldsymbol{x}_{n-1}$ be these remaining vectors. There are now two scenarios to consider: $\boldsymbol{x}_n$ is the zero vector or $\boldsymbol{x}_n$ is not the zero vector. 
+If $S$ is linearly dependent then there exists a vector $\boldsymbol{x}_n \in S$ that we can form using a linear combination of the remaining vectors in $S$. Let $\boldsymbol{x}\_1, \dots \boldsymbol{x}\_{n-1}$ be these remaining vectors. There are now two scenarios to consider: $\boldsymbol{x}\_n$ is the zero vector or $\boldsymbol{x}\_n$ is not the zero vector. 
 
 If $\boldsymbol{x}_n$ is the zero vector, then we see that we can assign zero to the coefficients $c_1, \dots, c_{n-1}$ and _any_ non-zero value to $c_n$ and the following will hold:  
 
