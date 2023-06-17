@@ -163,20 +163,20 @@ We see that
 
 $$\begin{align*} \sum_{i=1}^r c_i \boldsymbol{Ab}_i &= \boldsymbol{0} \\ \implies \sum_{i=1}^r \boldsymbol{A}c_i \boldsymbol{b}_i  &= \boldsymbol{0} \\ \implies \boldsymbol{A} \sum_{i=1}^r  c_i\boldsymbol{b}_i  &= \boldsymbol{0} \\ \boldsymbol{Av} &= \boldsymbol{0} \end{align*}$$
 
-Here we can show that $\boldsymbol{v}$ must be the zero vector. We see this by noting $\boldsymbol{v}$ is in both the row space of $\boldsymbol{A}$ and the null space of $\boldsymbol{A}$. It is in the row space $\boldsymbol{A}$ because it is a linear combination of the basis vectors of the row space of $
+With this in mind, we can prove that $\boldsymbol{v}$ must be the zero vector. To do so, we first note that $\boldsymbol{v}$ is in both the row space of $\boldsymbol{A}$ and the null space of $\boldsymbol{A}$. It is in the row space $\boldsymbol{A}$ because it is a linear combination of the basis vectors of the row space of $
 boldsymbol{A}$. It is in the null space of $\boldsymbol{A}$, because $\boldsymbol{Av} &= \boldsymbol{0}$. From Theorem 1, $\boldsymbol{v}$ must be orthogonal to all vectors in the row space of $\boldsymbol{A}$, which includes itself. The only vector that is orthogonal to itself is the zero vector and thus, $\boldsymbol{v}$ must be the zero vector.
 
-This in turn implies that $c_1, \dots, c_r$ must be zero. We know this because $\boldsymbol{b}\_1, \dots, \boldsymbol{b}\_r \in \mathbb{R}^n$ are basis vectors, which by definition cannot include the zero vector. Thus we have proven that the only assignment of values for $c\_1, \dots, c_\r$ for which $\sum_{i=1}^r c\_i \boldsymbol{Ab}\_i = \boldsymbol{0}$ is the assignment for which they are all zero. 
+This in turn implies that $c_1, \dots, c_r$ must be zero. We know this because $\boldsymbol{b}\_1, \dots, \boldsymbol{b}\_r \in \mathbb{R}^n$ are basis vectors, which by definition cannot include the zero vector. Thus we have proven that the only assignment of values for $c\_1, \dots, c_\r$ for which $\sum_{i=1}^r c\_i \boldsymbol{Ab}\_i = \boldsymbol{0}$ is the assignment for which they are all zero. By [Theorem 1 in a previous post](https://mbernste.github.io/posts/linear_independence/), this implies that $\boldsymbol{Ab}\_1, \dots, \boldsymbol{Ab}\_r$ must be linearly independent. 
 
-By [Theorem 1 in a previous post](https://mbernste.github.io/posts/linear_independence/), this implies that $\boldsymbol{Ab}\_1, \dots, \boldsymbol{Ab}\_r$ must be linearly independent. Moreover, by the definition of matrix-vector multiplication, we know that $\boldsymbol{Ab}\_1, \dots, \boldsymbol{Ab}\_r$ are in the column space of $\boldsymbol{A}$. Thus, we have proven that there exist _at least_ $r$ independent vectors in the column space of $\boldsymbol{A}$. This means that the column rank of $\boldsymbol{A}$ is _at least_ $r$. That is,
+Moreover, by the definition of matrix-vector multiplication, we know that $\boldsymbol{Ab}\_1, \dots, \boldsymbol{Ab}\_r$ are in the column space of $\boldsymbol{A}$. Thus, we have proven that there exist _at least_ $r$ independent vectors in the column space of $\boldsymbol{A}$. This means that the column rank of $\boldsymbol{A}$ is _at least_ $r$. That is,
 
 $$\text{column rank of} \ \boldsymbol{A} \geq \text{row rank of} \ \boldsymbol{A}$$
 
-We can repeat this exercise on the transpose of $\boldsymbol{A}$l, which tells us that
+We can repeat this exercise on the transpose of $\boldsymbol{A}$, which tells us that
 
 $$\text{row rank of} \ \boldsymbol{A} \geq \text{column rank of} \ \boldsymbol{A}$$
 
-These statements together imply that the column rank of $\boldsymbol{A}$ must equal the row rank of $\boldsymbol{A}$.
+These statements together imply that the column rank and row rank of $\boldsymbol{A}$ are equal.
 
 $\square$
 
