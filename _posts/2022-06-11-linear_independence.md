@@ -104,6 +104,8 @@ We see that $\boldsymbol{x}_k$ must be the zero vector. This implies that the ze
 
 Let's assume that $C$ is of size greater than one. Then for any $k \in C$, we can write:
 
+$$\begin{align*} \sum_{i \in C \setminus \{ k \} } c_i \boldsymbol{x}_i &= - c_k \boldsymbol{x}_k \\ \implies -\frac{1}{c_k} \sum_{i \in C \setminus \{ k \} } c_i\boldsymbol{x}_i &= \boldsymbol{x}_k \\ \implies  \sum_{i \in C \setminus \{ k \}}  -\frac{c_i}{c_k} \boldsymbol{x}_i &= \boldsymbol{x}_k  \end{align*}$$
+
 
 $\square$
 
