@@ -78,4 +78,6 @@ However, if $S$ is linearly dependent, then we can throw away "redundant" vector
 Appendix
 --------
 
+<span style="color:#0060C6">**Theorem 1 (linear combination of dependent vectors to form zero vector):** Given a [vector space](https://mbernste.github.io/posts/vector_spaces/), $(\mathcal{V}, \mathcal{F})$ and a set of vectors $S := \\{ \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_n \\} \in \mathcal{V}$, $S$ is linearly independent if and only if the only set of coefficients $c_1, \dots c_n$  </span>
+
 
