@@ -58,31 +58,41 @@ To gain a deeper understanding into the significance of the column space of a ma
 
 $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
-It turns out that the column space is simply the [range]() of this function! That is, it is the space of all vectors that $\boldsymbol{A}$ is capable of mapping to. To see why this is the case, recall that we can view matrix-vector multiplication between $\boldsymbol{A}$ and $\boldsymbol{x}$ as the act of taking a linear combination of the columns of $\boldsymbol{A}$ using the coefficients of $\boldsymbol{x}$ as coefficients: 
+Stated more explicitly, we can define a function $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ as:
+
+$$T(\boldsymbol{x}) := \boldsymbol{Ax}$$
+
+It turns out that the column space is simply the [range](https://en.wikipedia.org/wiki/Range_of_a_function) of $T$! That is, it is the set of all vectors that $\boldsymbol{A}$ is capable of mapping to. To see why this is the case, recall that we can view matrix-vector multiplication between $\boldsymbol{A}$ and $\boldsymbol{x}$ as the act of taking a linear combination of the columns of $\boldsymbol{A}$ using the coefficients of $\boldsymbol{x}$ as coefficients: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vector_multiplication_column_space2.png" alt="drawing" width="600"/></center>
 
-
+Here we see that the output will of this mapping will be in the span of the columns of $\boldsymbol{A}$.
 
 Row spaces
 ----------
 
-The **row space** of a matrix is the vector space spanned by the row-vectors of a matrix. Specifically,
+The **row space** of a matrix is the vector space spanned by the row-vectors of a matrix:
 
 <span style="color:#0060C6">**Definition 1 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the column-vectors of $\boldsymbol{A}$</span>
 
-Let's use the following matrix as an example:
+To understand the row space of a matrix $\boldsymbol{A}$, we will consider the matrix from Perspectives 2 and 3 -- that is, $\boldsymbol{A}$ as a list of column vectors and as a function mapping vectors from one space to another.
 
-$$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
+**Understanding the row space when viewing matrices as lists of row vectors**
 
-This matrix can be thought about as a collection of two three-dimensional row vectors (The dotted lines are visualization guides. The colored dashed lines trace each vector to the $$z = 0$$ plane. The black dashed lines depict the difference between the two vectors on the $$z=0$$ plane.):
+The least abstract way to view the row space of a matrix is when considering a matrix to be a list of row-vectors. For example:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_vectors.png" alt="drawing" width="600"/></center>
 
-The row space is then the vector space that is spanned by these two vectors. We see that in this case, the row space is a hyperplane:
+In the figure above, the dotted lines are visualization guides. The colored dashed lines trace each vector to the $$z = 0$$ plane. The black dashed lines depict the difference between the two vectors on the $$z=0$$ plane.
+
+The row space is then the vector space that is spanned by these two vectors. We see that in example, the row space is a hyperplane:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="350"/></center>
 
+
+**Understanding the row space when viewing matrices as functions**
+
+Again, we will now consider matrices from the perspective of seeing them as [functions between vector spaces](https://mbernste.github.io/posts/matrices_as_functions/). Unlike the column space, the row space cannot be interpreted as either the domain or range of the function defined by the matrix.
 
 
 
