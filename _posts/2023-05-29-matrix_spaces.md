@@ -156,10 +156,11 @@ There is a key relationship between nullity and rank: they sum to the number of 
 
 <span style="color:#0060C6">**Theorem 3 (rank-nullity theorem):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, it holds that $\text{rank} + \text{nullity} = n$.</span>
 
+Below we illustrate this theorem with two examples: 
+
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_space_null_space_orthogonal_examples.png" alt="drawing" width="700"/></center>
 
-
-
+On the left, we have a matrix whose rows span a hyperplane in $\mathbb{R}^3$, which is of dimension 2. The null space is thus a line, which has dimension 1. In contrast, on the left we have a matrix whose rows span a line in $\mathbb{R}^3$, which is of dimension 1. The null space here is a hyperplane that is orthogonal to this line.
 
 Summarizing the relationships between matrix spaces
 ---------------------------------------------------
