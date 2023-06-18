@@ -141,7 +141,7 @@ Because of the row rank and column rank are equal, the can simply talk about the
 
 Moreover, because the row rank equals the column rank of a matrix, a matrix of shape $m \times n$ can _at most_ have a rank that is the minimum of $m$ and $n$. For example, a matrix with 3 rows and 5 columns can _at most_ be of rank 3 (but it might be less!). In fact, we observed this phenomenon in our previous example matrix, which has a rank of 2:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/column_space_row_space_dimensionality.png" alt="drawing" width="350"/></center> 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/column_space_row_space_dimensionality.png" alt="drawing" width="700"/></center> 
 
 As we can see, the column space spans all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two.  The row space spans a hyperplane in $\mathbb{R}^3$ and thus, it's [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) is also two.
 
