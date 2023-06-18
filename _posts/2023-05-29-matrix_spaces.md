@@ -22,7 +22,7 @@ Matrices are one of the fundamental objects studied in linear algebra. While on 
 
 Not only will we discuss the definition for these spaces and how they relate to one another, we will also discuss how to best intuit these spaces and what their properties tell us about the matrix itself. 
 
-To understand these spaces, we will need to look at matrices from [different perspectives](https://mbernste.github.io/posts/understanding_3d/). [In a previous discussion on matrices](https://mbernste.github.io/posts/matrices/), we discussed how there are three complementary ways of viewing matrices. A matrix is at once
+To understand these spaces, we will need to look at matrices from [different perspectives](https://mbernste.github.io/posts/understanding_3d/). [In a previous discussion on matrices](https://mbernste.github.io/posts/matrices/), we discussed how there are three complementary perspectives for viewing matrices. A matrix is at once
 
 1. A **table** of numbers
 2. A **list** of vectors (both row and column vectors)
@@ -36,7 +36,7 @@ Column spaces
 
 The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix: 
 
-<span style="color:#0060C6">**Definition 2 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
+<span style="color:#0060C6">**Definition 1 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the column-vectors of $\boldsymbol{A}$</span>
 
 To understand the column space of a matrix $\boldsymbol{A}$, we will consider the matrix from Perspectives 2 and 3 -- that is, $\boldsymbol{A}$ as a list of column vectors and as a function mapping vectors from one space to another.
 
@@ -71,7 +71,7 @@ Row spaces
 
 The **row space** of a matrix is the vector space spanned by the row-vectors of a matrix:
 
-<span style="color:#0060C6">**Definition 1 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the column-vectors of $\boldsymbol{A}$</span>
+<span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
 To understand the row space of a matrix $\boldsymbol{A}$, we will consider the matrix from Perspectives -- that is, $\boldsymbol{A}$ as a list of row vectors. For example:
 
