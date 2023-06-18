@@ -145,8 +145,8 @@ Moreover, because the row rank equals the column rank of a matrix, a matrix of s
 As we can see, the column space spans all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two.  The row space spans a hyperplane in $\mathbb{R}^3$ and thus, it's intrinsic dimensionality is also two.
 
 
-Nullity
--------
+Nullity: the intrinsic dimensionality of the null space
+-------------------------------------------------------
 
 Where the rank of a matrix describes the intrinsic dimensionality of the row and column spaces of a matrix, the **nullity** describes the intrinsic dimensionality of the null space:
 
