@@ -24,7 +24,7 @@ In this post, we will further dive into the deeper structures within matrices by
 
 Not only will we discuss the definition for these spaces and how they relate to one another, we will also discuss how to best intuit these spaces and what their properties tell us about the matrix itself. 
 
-To understand these spaces, we will need to look at matrices from [different perspectives](https://mbernste.github.io/posts/understanding_3d/). Specifically, [In a previous discussion on matrices](https://mbernste.github.io/posts/matrices/), we discussed how there were three complementary ways of viewing matrices:
+To understand these spaces, we will need to look at matrices from [different perspectives](https://mbernste.github.io/posts/understanding_3d/). [In a previous discussion on matrices](https://mbernste.github.io/posts/matrices/), we discussed how there were three complementary ways of viewing matrices:
 
 1. A table of numbers
 2. A list of row vectors or list of column vectors
