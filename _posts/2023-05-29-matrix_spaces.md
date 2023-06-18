@@ -113,7 +113,7 @@ $$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
 
 The null space for this matrix is comprised of all of the vectors that point along the red vector shown below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center> 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_3.png" alt="drawing" width="350"/></center> 
 
 Notice that this red vector is orthogonal to the hyperplane that represents the row space of $\boldsymbol{A}$. 
 
