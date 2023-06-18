@@ -66,7 +66,7 @@ It turns out that the column space is simply the [range](https://en.wikipedia.or
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vector_multiplication_column_space2.png" alt="drawing" width="600"/></center>
 
-Here we see that the output will of this mapping will be in the span of the columns of $\boldsymbol{A}$.
+Here we see that the output will of this function will always be contained to the span of the column vectors of $\boldsymbol{A}$.
 
 Row spaces
 ----------
