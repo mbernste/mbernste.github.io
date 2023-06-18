@@ -73,42 +73,31 @@ The **row space** of a matrix is the vector space spanned by the row-vectors of 
 
 <span style="color:#0060C6">**Definition 1 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the column-vectors of $\boldsymbol{A}$</span>
 
-To understand the row space of a matrix $\boldsymbol{A}$, we will consider the matrix from Perspectives 2 and 3 -- that is, $\boldsymbol{A}$ as a list of column vectors and as a function mapping vectors from one space to another.
-
-**Understanding the row space when viewing matrices as lists of row vectors**
-
-The least abstract way to view the row space of a matrix is when considering a matrix to be a list of row-vectors. For example:
+To understand the row space of a matrix $\boldsymbol{A}$, we will consider the matrix from Perspectives -- that is, $\boldsymbol{A}$ as a list of row vectors. For example:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_vectors.png" alt="drawing" width="600"/></center>
 
-In the figure above, the dotted lines are visualization guides. The colored dashed lines trace each vector to the $$z = 0$$ plane. The black dashed lines depict the difference between the two vectors on the $$z=0$$ plane.
-
-The row space is then the vector space that is spanned by these two vectors. We see that in example, the row space is a hyperplane:
+The row space is then the vector space that is spanned by these vectors. We see that in example, the row space is a hyperplane:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="350"/></center>
 
-
-**Understanding the row space when viewing matrices as functions**
-
-Again, we will now consider matrices from the perspective of seeing them as [functions between vector spaces](https://mbernste.github.io/posts/matrices_as_functions/). Unlike the column space, the row space cannot be interpreted as either the domain or range of the function defined by the matrix.
-
+Unlike the column space, the row space cannot be interpreted as either the domain or range of the function defined by the matrix. So what is the geometric signicance of the row space in the context of Perspective 3 of matrices (viewing matrices as functions)? Unfortunately, this does not become evident until we discuss the _null space_, which we will discuss in the next section!
 
 
 Null space
 ----------
 
+The **null space** of a matrix is the third vector space that is induced by matrices. To understand the null space, we will need to view matrices from Perspective 3: matrices as functions between vector space.
 
-Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undestood to be a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) from $\mathbb{R}^n$ to $\mathbb{R}^m$. With this concept of a matrix in mind, we can define another space on a matrix: the space of all vectors that $\boldsymbol{A}$ maps to the zero vector. This space is called the **null space**. That is, any vector, $\boldsymbol{v} \in \mathbb{R}^m$ for which $\boldsymbol{Av} = \boldsymbol{0}$ is in the null space of $\boldsymbol{A}$.
+Specifically, the null space of a matrix is the set of all vectors that $\boldsymbol{A}$ maps to the zero vector. That is, any vector, $\boldsymbol{x} \in \mathbb{R}^n$ for which $\boldsymbol{Ax} = \boldsymbol{0}$:
 
-<span style="color:#0060C6">**Definition 5 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{v} \in \mathbb{R}^m \mid \boldsymbol{Av} = \boldsymbol{0}\}$</span>r
+<span style="color:#0060C6">**Definition 5 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{x} \in \mathbb{R}^n \mid \boldsymbol{Ax} = \boldsymbol{0}\}$</span>
 
-On its surface, the null space seems unrelated to the row space and column spaces of a matrix; however, there is indeed a key relationship between the null space and the row space of a matrix: the null space is the **orthogonal complement** to the row space (Theorem 1 in the appendix to this post). 
-
-Before going further, let us define the orthogonal complement. Given a vector space $(\mathcal{V}, \mathcal{F})$, the orthogonal complement is another vector space $(\mathcal{V}', \mathcal{F})$ such that all vectors in $\mathcal{V}'$ are orthogonal to all vectors in $\mathcal{V}$.
+It turns out that here is a key relationship between the null space and the row space of a matrix: the null space is the **orthogonal complement** to the row space (Theorem 1 in the appendix to this post). Before going further, let us define the orthogonal complement. Given a vector space $(\mathcal{V}, \mathcal{F})$, the orthogonal complement is another vector space $(\mathcal{V}', \mathcal{F})$ such that all vectors in $\mathcal{V}'$ are orthogonal to all vectors in $\mathcal{V}$:
 
 <span style="color:#0060C6">**Definition 6 (orthogonal complement):** Given two vector spaces $(\mathcal{V}, \mathcal{F})$ and $(\mathcal{V}', \mathcal{F})$ that share the same scalar field, each is an **orthogonal complement** to the other if $\forall \boldsymbol{v} \in \mathcal{V}, \ \forall \boldsymbol{v}' \in \mathcal{V}' \ \langle \boldsymbol{v}, \boldsymbol{v}' \rangle = 0$</span>
 
-With this concept in mind, we can see that the null space is the orthogonal complement to the row space. To see this, recall that we can view matrix-vector multiplication between a matrix $\boldsymbol{A}$ and a vector $\boldsymbol{x}$ as the process of taking a dot product of each row of $\boldsymbol{A}$ with $\boldsymbol{x}$:
+To see why the null space and row space are orthogonal complements, recall that we can view matrix-vector multiplication between a matrix $\boldsymbol{A}$ and a vector $\boldsymbol{x}$ as the process of taking a dot product of each row of $\boldsymbol{A}$ with $\boldsymbol{x}$:
 
 $$\boldsymbol{Ax} := \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{x} \end{bmatrix}$$
 
