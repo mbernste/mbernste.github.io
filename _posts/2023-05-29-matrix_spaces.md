@@ -167,11 +167,11 @@ Summarizing the relationships between matrix spaces
 
 We can summarize the properties between the column space, row space, and null space with the following table that is centered around Perspective 2 (matrices as lists of vectors) and Perspective 3 (matrices as functions):
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_space_column_space_summary_table.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_space_column_space_summary_table.png" alt="drawing" width="700"/></center>
 
 Moreover, we can summarize the relationships between these spaces with the following figure:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_space_column_space_summary_network.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_space_column_space_summary_network.png" alt="drawing" width="600"/></center>
 
 
 
