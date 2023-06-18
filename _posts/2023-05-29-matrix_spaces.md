@@ -115,13 +115,7 @@ The null space for this matrix is comprised of all of the vectors that point alo
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center> 
 
-Notice that this red vector is orthogonal to the hyperplane that represents the row space of $\boldsymbol{A}$. To provide another example, let's consider a different example matrix:
-
-$$\begin{bmatrix}1 & 2 & 1 \\ 0 & -0.5 & 0.5\end{bmatrix}$$
-
-Here, the row space is line in $\mathbb{R}^m$ that runs along the direction pointed by the two row vectors. Because the two row vectors point along the same line, the null space in this example becomes a hyperplane. Specifically, it is the hyperplane that is orthogonal to the line that represents the row space!
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_2.png" alt="drawing" width="350"/></center>
+Notice that this red vector is orthogonal to the hyperplane that represents the row space of $\boldsymbol{A}$. 
 
 
 Rank: the intrinsic dimensionality of the row and column space
