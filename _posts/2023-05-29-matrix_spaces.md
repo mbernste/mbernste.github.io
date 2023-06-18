@@ -127,7 +127,7 @@ Here, the row space is line in $\mathbb{R}^m$ that runs along the direction poin
 Rank: the intrinsic dimensionality of the row and column space
 --------------------------------------------------------------
 
-The intrinsic dimensionality of the row space and column space are also related to one another and tell us alot about the matrix itself. Recall, the intrinsic dimensionality of a set of vectors is given by the maximal number of linearly independent vectors in the set. With this in mind, we can form the following definitions that describe the intrinsic dimensionalities of the row space and column space:
+The [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of the row space and column space are also related to one another and tell us alot about the matrix itself. Recall, the intrinsic dimensionality of a set of vectors is given by the maximal number of linearly independent vectors in the set. With this in mind, we can form the following definitions that describe the intrinsic dimensionalities of the row space and column space:
 
 <span style="color:#0060C6">**Definition 3 (column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **column rank** of $\boldsymbol{A}$ is the maximum sized subset of the columns of $\boldsymbol{A}$ that are linearly independent.</span>
 
@@ -143,7 +143,7 @@ Moreover, because the row rank equals the column rank of a matrix, a matrix of s
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/column_space_row_space_dimensionality.png" alt="drawing" width="700"/></center> 
 
-As we can see, the column space spans all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two.  The row space spans a hyperplane in $\mathbb{R}^3$ and thus, it's [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) is also two.
+As we can see, the column space spans all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two.  The row space spans a hyperplane in $\mathbb{R}^3$ and thus, it's intrinsic dimensionality is also two.
 
 
 Nullity
