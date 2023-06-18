@@ -60,7 +60,7 @@ $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
 It turns out that the column space is simply the [range]() of this function! That is, it is the space of all vectors that $\boldsymbol{A}$ is capable of mapping to. To see why this is the case, recall that we can view matrix-vector multiplication between $\boldsymbol{A}$ and $\boldsymbol{x}$ as the act of taking a linear combination of the columns of $\boldsymbol{A}$ using the coefficients of $\boldsymbol{x}$ as coefficients: 
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="700"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vector_multiplication_column_space.png" alt="drawing" width="700"/></center>
 
 
 
