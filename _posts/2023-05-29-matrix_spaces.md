@@ -97,6 +97,11 @@ It turns out that here is a key relationship between the null space and the row 
 
 <span style="color:#0060C6">**Definition 4 (orthogonal complement):** Given two vector spaces $(\mathcal{V}, \mathcal{F})$ and $(\mathcal{V}', \mathcal{F})$ that share the same scalar field, each is an **orthogonal complement** to the other if $\forall \boldsymbol{v} \in \mathcal{V}, \ \forall \boldsymbol{v}' \in \mathcal{V}' \ \langle \boldsymbol{v}, \boldsymbol{v}' \rangle = 0$</span>
 
+Stated more formally:
+
+<span style="color:#0060C6">**Theorem 1 (null space is orthogonal complement of row space):** Given a matrix $\boldsymbol{A}$, the null space of $\boldsymbol{A}$ is the orthogonal complement to the row space of $\boldsymbol{A}$.</span>
+
+
 To see why the null space and row space are orthogonal complements, recall that we can view matrix-vector multiplication between a matrix $\boldsymbol{A}$ and a vector $\boldsymbol{x}$ as the process of taking a dot product of each row of $\boldsymbol{A}$ with $\boldsymbol{x}$:
 
 $$\boldsymbol{Ax} := \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*} \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*} \cdot \boldsymbol{x} \end{bmatrix}$$
@@ -129,7 +134,7 @@ The [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimens
 
 It turns out that intrinsic dimensionality of the row space and column space are always equal and thus the column rank will always equal the row rank:
 
-<span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, its row rank equals its column rank.</span>
+<span style="color:#0060C6">**Theorem 2 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, its row rank equals its column rank.</span>
 
 Because of the row rank and column rank are equal, the can simply talk about the **rank** of a matrix without the need to delineate whether we mean the row rank or the column rank. 
 
@@ -147,10 +152,11 @@ Where the rank of a matrix describes the intrinsic dimensionality of the row and
 
 <span style="color:#0060C6">**Definition 5 (nullity):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **nullity** of $\boldsymbol{A}$ is the maximum number of linearly independent vectors that span the null space of $\boldsymbol{A}$.</span>
 
-There is a key relationship between nullity and rank: they sum to the number of rows of $\boldsymbol{A}$!
+There is a key relationship between nullity and rank: they sum to the number of columns of $\boldsymbol{A}$! This is proven in rank-nullity theorem (proof provided in the appendix to this post):
+
+<span style="color:#0060C6">**Theorem 3 (rank-nullity theorem):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, it holds that $\text{rank} + \text{nullity} = n$.</span>
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_space_null_space_orthogonal_examples.png" alt="drawing" width="700"/></center>
-
 
 
 
