@@ -84,8 +84,8 @@ The row space is then the vector space that is spanned by these vectors. We see 
 Unlike the column space, the row space cannot be interpreted as either the domain or range of the function defined by the matrix. So what is the geometric signicance of the row space in the context of Perspective 3 of matrices (viewing matrices as functions)? Unfortunately, this does not become evident until we discuss the _null space_, which we will discuss in the next section!
 
 
-Null space
-----------
+Null spaces
+-----------
 
 The **null space** of a matrix is the third vector space that is induced by matrices. To understand the null space, we will need to view matrices from Perspective 3: matrices as functions between vector space.
 
