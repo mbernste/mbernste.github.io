@@ -34,7 +34,7 @@ By viewing matrices through these perspectives we can gain a better intuition fo
 Column spaces
 -------------
 
-The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix: 
+The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by its column-vectors: 
 
 <span style="color:#0060C6">**Definition 1 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the column-vectors of $\boldsymbol{A}$</span>
 
@@ -69,7 +69,7 @@ Here we see that the output will of this function will always be contained to th
 Row spaces
 ----------
 
-The **row space** of a matrix is the vector space spanned by the row-vectors of a matrix:
+The **row space** of a matrix is the vector space spanned by its row-vectors:
 
 <span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
