@@ -89,7 +89,7 @@ Null spaces
 
 The **null space** of a matrix is the third vector space that is induced by matrices. To understand the null space, we will need to view matrices from Perspective 3: matrices as functions between vector space.
 
-Specifically, the null space of a matrix is the set of all vectors that $\boldsymbol{A}$ maps to the zero vector. That is, any vector, $\boldsymbol{x} \in \mathbb{R}^n$ for which $\boldsymbol{Ax} = \boldsymbol{0}$:
+Specifically, the null space of a matrix is the set of all vectors that $\boldsymbol{A}$ maps to the zero vector. That is, the null space is all vectors, $\boldsymbol{x} \in \mathbb{R}^n$ for which $\boldsymbol{Ax} = \boldsymbol{0}$:
 
 <span style="color:#0060C6">**Definition 3 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{x} \in \mathbb{R}^n \mid \boldsymbol{Ax} = \boldsymbol{0}\}$</span>
 
@@ -107,45 +107,58 @@ $$\begin{align*}\boldsymbol{Ax} &= \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \b
 
 Recall, if the dot product between a pair of vectors is zero, then the two vectors are orthogonal. Thus we see that if $\boldsymbol{x}$ is in the null space of $\boldsymbol{A}$ it _has_ to be orthogonal to every row-vector of $\boldsymbol{A}$. This means that the null space is the orthogonal complement to the row space!
 
-Using our example matrix, 
+We can visualize the relationship between the row space and null space using our example matrix:
 
 $$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
 
-we can visualize the null space as being comprised of all of the vectors that point along the red vector shown below (notice that this red vector is orthogonal to the hyperplane that spans the row-vectors of $\boldsymbol{A}$):
+The null space for this matrix is comprised of all of the vectors that point along the red vector shown below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_1.png" alt="drawing" width="350"/></center> 
 
-To illustrate another example, let's consider a different example matrix:
+Notice that this red vector is orthogonal to the hyperplane that represents the row space of $\boldsymbol{A}$. To provide another example, let's consider a different example matrix:
 
 $$\begin{bmatrix}1 & 2 & 1 \\ 0 & -0.5 & 0.5\end{bmatrix}$$
 
-Here, the two row-vectors span a line in $\mathbb{R}^m$ rather than the hyperplane. The null space is now a hyperplane that is orthogonal to the line that represents the row space!
+Here, the row space is line in $\mathbb{R}^m$ that runs along the direction pointed by the two row vectors. Because the two row vectors point along the same line, the null space in this example becomes a hyperplane. Specifically, it is the hyperplane that is orthogonal to the line that represents the row space!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/null_space_compliment_row_space_2.png" alt="drawing" width="350"/></center>
 
-Notice how these two examples illustrate that if the row space is a hyperplane (dimensionality = 2), then the null space will be a line (dimensionality = 1). Likewise, if the row space is a line (dimensionality = 1), then the null space will be a hyperplane (dimensionality = 2). In both cases the sum of their dimensionalities is 3, which is exactly the number of columns of $\boldsymbol{A}$.  Generalizing this further, we may hypothesize that the dimensionality of the row space and the dimensionality of the null space sum together to form the number of columns of the matrix. In the following sections we will prove that this is indeed true for any matrix!
 
+Rank: the intrinsic dimensionality of the row and column space
+--------------------------------------------------------------
 
-The intrinsic dimensionality of matrix spaces
-----------------------------------------------
-
-The intrinsic dimensionality of the row space, column space, and null space are also related to one another and tell us alot about the matrix itself. 
-
-**Rank: the intrinsic dimensionality of the row and column space**
-
-In the previous example matrix, we notice that the row space could be described by a hyperplane in $\mathbb{R}^3$ and thus, it's [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) is only two. The column space spanned all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two as well. Recall, the intrinsic dimensionality of a set of vectors is given by the maximal number of linearly independent vectors in the set. With this in mind, we can form the following definitions:
+The intrinsic dimensionality of the row space and column space are also related to one another and tell us alot about the matrix itself. Recall, the intrinsic dimensionality of a set of vectors is given by the maximal number of linearly independent vectors in the set. With this in mind, we can form the following definitions that describe the intrinsic dimensionalities of the row space and column space:
 
 <span style="color:#0060C6">**Definition 3 (column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **column rank** of $\boldsymbol{A}$ is the maximum sized subset of the columns of $\boldsymbol{A}$ that are linearly independent.</span>
 
 <span style="color:#0060C6">**Definition 4 (row rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **row rank** of $\boldsymbol{A}$ is the maximum sized subset of the rows of $\boldsymbol{A}$ that are linearly independent.</span>
 
-In this example, we saw that the column rank and the row rank are equal. Is this true for any matrix? It turns out that the anwswer is yes! *The intrinsic dimensionality of the row space and column space are always equal*. Moreover, we call the instrinsic dimensionality of the row space and column space the **rank** of the matrix (no need to delinneate whether we mean the row rank or the column rank, since they are equal). We can formalize this statement with the following theorem (proved in the Appendix to this post):
+It turns out that intrinsic dimensionality of the row space and column space are always equal and thus the column rank will always equal the row rank:
 
 <span style="color:#0060C6">**Theorem 1 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, its row rank equals its column rank.</span>
 
-Note, that because the row rank equals the column rank of a matrix, a matrix of shape $m \times n$ can _at most_ have a rank that is the minimum of $m$ and $n$. For example, a matrix with 3 rows and 5 columns can _at most_ be of rank 3 (but it might be less!).
+Because of the row rank and column rank are equal, the can simply talk about the **rank** of a matrix without the need to delineate whether we mean the row rank or the column rank. 
 
-**Nullity: the intrinsic dimensionality of the null space**
+Moreover, because the row rank equals the column rank of a matrix, a matrix of shape $m \times n$ can _at most_ have a rank that is the minimum of $m$ and $n$. For example, a matrix with 3 rows and 5 columns can _at most_ be of rank 3 (but it might be less!). In fact, we observed this phenomenon in our previous example matrix:
+
+
+we notice that the row space could be described by a hyperplane in $\mathbb{R}^3$ and thus, it's [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) is only two. The column space spanned all of $\mathbb{R}^2$ and thus, it's intrinsic dimensionality is two as well. 
+
+Nullity
+-------
+
+Where the rank of a matrix describes the intrinsic dimensionality of the row and column spaces of a matrix, the **nullity** describes the intrinsic dimensionality of the null space:
+
+<span style="color:#0060C6">**Definition 5 (nullity):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **nullity** of $\boldsymbol{A}$ is the maximum number of linearly independent vectors that span the null space of $\boldsymbol{A}$.</span>
+
+There is a key relationship between nullity and rank: they sum to the number of rows of $\boldsymbol{A}$!
+
+
+
+Summarizing the relationships between matrix spaces
+---------------------------------------------------
+
+
 
 
 The spaces induced by invertible matrices
