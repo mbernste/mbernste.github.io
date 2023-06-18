@@ -30,7 +30,7 @@ To understand these spaces, we will need to look at matrices from [different per
 2. A list of row vectors or list of column vectors
 3. A function mapping vectors from one space to another
 
-We will make especially heavy use of Perspectives 2 and 3. For a deeper discussion, see my [previous post](https://mbernste.github.io/posts/matrices/). Let's get started.
+We will make especially heavy use of Perspectives 2 and 3. For a more in-depth discussion, see my [previous post](https://mbernste.github.io/posts/matrices/). Let's get started.
 
 
 Column spaces
@@ -44,23 +44,24 @@ To understand the column space of a matrix $\boldsymbol{A}$, we will consider th
 
 **Understanding the column space when viewing matrices as lists of column vectors**
 
-The least abstract way to view the column space of a matrix is when considering a matrix to be a simple list of column-vectors. For example, consider the matrix
-
-$$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
-
-We can view it as a collection of three two-dimensional column vectors:
+The least abstract way to view the column space of a matrix is when considering a matrix to be a simple list of column-vectors. For example:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="600"/></center>
 
-The column space is then the vector space that is [spanned](https://mbernste.github.io/posts/linear_independence/) by these three vectors. We see that in this case, the column space is all of $\mathbb{R}^2$ since we can form _any_ two-dimensional vector using a linear combination of these three vectors:
+The column space is then the vector space that is [spanned](https://mbernste.github.io/posts/linear_independence/) by these three vectors. We see that in the example above, the column space is all of $\mathbb{R}^2$ since we can form _any_ two-dimensional vector using a linear combination of these three vectors:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_space.png" alt="drawing" width="350"/></center>
 
 **Understanding the column space when viewing matrices as functions**
 
-To gain a deeper understanding into the significance of the column space of a matrix, we will now consider matrices from the perspective of seeing them as [functions between vector spaces](https://mbernste.github.io/posts/matrices_as_functions/). That is, recall for a given matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can view this matrix as a function that maps vectors from $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$ view matrix vector multiplication:
+To gain a deeper understanding into the significance of the column space of a matrix, we will now consider matrices from the perspective of seeing them as [functions between vector spaces](https://mbernste.github.io/posts/matrices_as_functions/). That is, recall for a given matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can view this matrix as a function that maps vectors from $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$. This mapping is implemented by [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/). A vector $\boldsymbol{x} \in mathbb{R}^n$ is mapped to vector $\boldsymbol{b} \ in \mathbb{R}^m$ via
 
 $$\boldsymbol{Ax} = \boldsymbol{b}$$
+
+It turns out that the column space is simply the [range]() of this function! That is, it is the space of all vectors that $\boldsymbol{A}$ is capable of mapping to. To see why this is the case, recall that we can view matrix-vector multiplication between $\boldsymbol{A}$ and $\boldsymbol{x}$ as the act of taking a linear combination of the columns of $\boldsymbol{A}$ using the coefficients of $\boldsymbol{x}$ as coefficients: 
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="700"/></center>
+
 
 
 Row spaces
