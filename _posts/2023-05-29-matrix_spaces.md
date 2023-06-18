@@ -54,7 +54,7 @@ The column space is then the vector space that is [spanned](https://mbernste.git
 
 **Understanding the column space when viewing matrices as functions**
 
-To gain a deeper understanding into the significance of the column space of a matrix, we will now consider matrices from the perspective of seeing them as [functions between vector spaces](https://mbernste.github.io/posts/matrices_as_functions/). That is, recall for a given matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can view this matrix as a function that maps vectors from $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$. This mapping is implemented by [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/). A vector $\boldsymbol{x} \in mathbb{R}^n$ is mapped to vector $\boldsymbol{b} \ in \mathbb{R}^m$ via
+To gain a deeper understanding into the significance of the column space of a matrix, we will now consider matrices from the perspective of seeing them as [functions between vector spaces](https://mbernste.github.io/posts/matrices_as_functions/). That is, recall for a given matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can view this matrix as a function that maps vectors from $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$. This mapping is implemented by [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/). A vector $\boldsymbol{x} \in \mathbb{R}^n$ is mapped to vector $\boldsymbol{b} \ in \mathbb{R}^m$ via
 
 $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
@@ -62,7 +62,7 @@ Stated more explicitly, we can define a function $T: \mathbb{R}^n \rightarrow \m
 
 $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$
 
-It turns out that the column space is simply the [range](https://en.wikipedia.org/wiki/Range_of_a_function) of $T$! That is, it is the set of all vectors that $\boldsymbol{A}$ is capable of mapping to. To see why this is the case, recall that we can view matrix-vector multiplication between $\boldsymbol{A}$ and $\boldsymbol{x}$ as the act of taking a linear combination of the columns of $\boldsymbol{A}$ using the coefficients of $\boldsymbol{x}$ as coefficients: 
+It turns out that the column space is simply the [range](https://en.wikipedia.org/wiki/Range_of_a_function) of this function $T$! That is, it is the set of all vectors that $\boldsymbol{A}$ is capable of mapping to. To see why this is the case, recall that we can view matrix-vector multiplication between $\boldsymbol{A}$ and $\boldsymbol{x}$ as the act of taking a linear combination of the columns of $\boldsymbol{A}$ using the coefficients of $\boldsymbol{x}$ as coefficients: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vector_multiplication_column_space2.png" alt="drawing" width="600"/></center>
 
