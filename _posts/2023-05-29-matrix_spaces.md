@@ -52,7 +52,7 @@ The column space is then the vector space that is [spanned](https://mbernste.git
 
 **Understanding the column space when viewing matrices as functions**
 
-To gain a deeper understanding into the significance of the column space of a matrix, we will now consider matrices from the perspective of seeing them as [functions between vector spaces](https://mbernste.github.io/posts/matrices_as_functions/). That is, recall for a given matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can view this matrix as a function that maps vectors from $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$. This mapping is implemented by [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/). A vector $\boldsymbol{x} \in \mathbb{R}^n$ is mapped to vector $\boldsymbol{b} \ in \mathbb{R}^m$ via
+To gain a deeper understanding into the significance of the column space of a matrix, we will now consider matrices from the perspective of seeing them as [functions between vector spaces](https://mbernste.github.io/posts/matrices_as_functions/). That is, recall for a given matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can view this matrix as a function that maps vectors from $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$. This mapping is implemented by [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/). A vector $\boldsymbol{x} \in \mathbb{R}^n$ is mapped to vector $\boldsymbol{b} \in \mathbb{R}^m$ via
 
 $$\boldsymbol{Ax} = \boldsymbol{b}$$
 
