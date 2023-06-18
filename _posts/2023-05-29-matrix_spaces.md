@@ -15,22 +15,20 @@ Introduction
 ------------
 
 
-Matrices are one of the fundamental objects studied in linear algebra. While on their surface they appear like simple tables of numbers, [as we have previously described](https://mbernste.github.io/posts/matrices/), there are many ways to view matrices that reveal them to be quite deep: Matrices are at once tables of numbers, sets of vectors, and perhaps most importantly, [linear functions between vector spaces](https://mbernste.github.io/posts/matrices_linear_transformations/). 
-
-In this post, we will further dive into the deeper structures within matrices by showing three vector spaces that are implicitly defined by every matrix:
+Matrices are one of the fundamental objects studied in linear algebra. While on their surface they appear like simple tables of numbers, [as we have previously described](https://mbernste.github.io/posts/matrices/), this simplicity hides deeper mathematical structures that they contain.  In this post, we will dive into the deeper structures within matrices by showing three vector spaces that are implicitly defined by every matrix:
 1. A column space
 2. A row space
 3. A null space
 
 Not only will we discuss the definition for these spaces and how they relate to one another, we will also discuss how to best intuit these spaces and what their properties tell us about the matrix itself. 
 
-To understand these spaces, we will need to look at matrices from [different perspectives](https://mbernste.github.io/posts/understanding_3d/). [In a previous discussion on matrices](https://mbernste.github.io/posts/matrices/), we discussed how there were three complementary ways of viewing matrices:
+To understand these spaces, we will need to look at matrices from [different perspectives](https://mbernste.github.io/posts/understanding_3d/). [In a previous discussion on matrices](https://mbernste.github.io/posts/matrices/), we discussed how there are three complementary ways of viewing matrices. A matrix is at once
 
-1. A table of numbers
-2. A list of row vectors or list of column vectors
-3. A function mapping vectors from one space to another
+1. A **table** of numbers
+2. A **list** of vectors (both row and column vectors)
+3. A **function** mapping vectors from one space to another
 
-We will make especially heavy use of Perspectives 2 and 3. For a more in-depth discussion, see my [previous post](https://mbernste.github.io/posts/matrices/). Let's get started.
+By viewing matrices through these perspectives we can gain a better intuition for the vector spaces induced by matrices. Let's get started.
 
 
 Column spaces
