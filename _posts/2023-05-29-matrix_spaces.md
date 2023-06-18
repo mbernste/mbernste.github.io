@@ -38,7 +38,7 @@ Column spaces
 
 The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix: 
 
-<span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
+<span style="color:#0060C6">**Definition 2 (column space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
 To understand the column space of a matrix $\boldsymbol{A}$, we will consider the matrix from Perspectives 2 and 3 -- that is, $\boldsymbol{A}$ as a list of column vectors and as a function mapping vectors from one space to another.
 
