@@ -226,4 +226,10 @@ These statements together imply that the column rank and row rank of $\boldsymbo
 
 $\square$
 
+<span style="color:#0060C6">**Theorem 3 (rank-nullity theorem):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, it holds that $\text{rank} + \text{nullity} = n$.</span>
+
+**Proof:**
+
+$\square$
+
 
