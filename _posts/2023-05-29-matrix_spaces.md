@@ -40,7 +40,7 @@ The **column space** of a matrix is simply the [vector space](https://mbernste.g
 
 <span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
-To understand the column space, let's consider a matrix from Perspectives 2 and 3 -- that is, as a list of column vectors and as a function mapping vectors from one space to another.
+To understand the column space of a matrix $\boldsymbol{A}$, we will consider the matrix from Perspectives 2 and 3 -- that is, $\boldsymbol{A}$ as a list of column vectors and as a function mapping vectors from one space to another.
 
 **Understanding the column space when viewing matrices as lists of column vectors**
 
