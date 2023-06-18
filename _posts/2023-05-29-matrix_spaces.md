@@ -33,8 +33,8 @@ To understand these spaces, we will need to look at matrices from [different per
 We will make especially heavy use of Perspectives 2 and 3. For a deeper discussion, see my [previous post](https://mbernste.github.io/posts/matrices/). Let's get started.
 
 
-Column space
-------------
+Column spaces
+-------------
 
 The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix: 
 
@@ -60,8 +60,8 @@ The column space is then the vector space that is [spanned](https://mbernste.git
 
 
 
-Row space
----------
+Row spaces
+----------
 
 The **row space** of a matrix is the vector space spanned by the row-vectors of a matrix. Specifically,
 
@@ -82,7 +82,9 @@ The row space is then the vector space that is spanned by these two vectors. We 
 
 
 
-**Null space**
+Null space
+----------
+
 
 Recall that a matrix, $\boldsymbol{A} \in \mathbb{R}^{m \times n}$ can be undestood to be a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) from $\mathbb{R}^n$ to $\mathbb{R}^m$. With this concept of a matrix in mind, we can define another space on a matrix: the space of all vectors that $\boldsymbol{A}$ maps to the zero vector. This space is called the **null space**. That is, any vector, $\boldsymbol{v} \in \mathbb{R}^m$ for which $\boldsymbol{Av} = \boldsymbol{0}$ is in the null space of $\boldsymbol{A}$.
 
