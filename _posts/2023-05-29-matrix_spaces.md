@@ -42,7 +42,7 @@ The **column space** of a matrix is simply the [vector space](https://mbernste.g
 
 To understand the column space, let's consider a matrix from Perspectives 2 and 3 -- that is, as a list of column vectors and as a function mapping vectors from one space to another.
 
-**Understanding the column space when viewing a matrix as a list of column vectors**
+**Understanding the column space when viewing matrices as lists of column vectors**
 
 The least abstract way to view the column space of a matrix is when considering a matrix to be a simple list of column-vectors. For example, consider the matrix
 
@@ -56,8 +56,11 @@ The column space is then the vector space that is [spanned](https://mbernste.git
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_space.png" alt="drawing" width="350"/></center>
 
-**Understanding the column space when viewing a matrix as a functions**
+**Understanding the column space when viewing matrices as functions**
 
+To gain a deeper understanding into the significance of the column space of a matrix, we will now consider matrices from the perspective of seeing them as [functions between vector spaces](https://mbernste.github.io/posts/matrices_as_functions/). That is, recall for a given matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can view this matrix as a function that maps vectors from $\mathbb{R}^n$ to vectors in $\mathbb{R}^m$ view matrix vector multiplication:
+
+$$\boldsymbol{Ax} = \boldsymbol{b}$$
 
 
 Row spaces
