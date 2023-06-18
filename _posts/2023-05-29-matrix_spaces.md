@@ -22,12 +22,46 @@ In this post, we will further dive into the deeper structures within matrices by
 2. A row space
 3. A null space
 
-These spaces are not difficult to define; however the relationships between them are not so obvious. In this post, we will then discuss the properties of these spaces, their relationships to one another, and how their properties determine whether or not a matrix is [invertible or singular](https://mbernste.github.io/posts/inverse_matrices/). 
+Not only will we discuss the definition for these spaces and how they relate to one another, we will also discuss how to best intuit these spaces and what their properties tell us about the matrix itself. 
 
-Column spaces, row spaces, and null spaces
-------------------------------------------
+To understand these spaces, we will need to look at matrices from [different perspectives](https://mbernste.github.io/posts/understanding_3d/). Specifically, [In a previous discussion on matrices](https://mbernste.github.io/posts/matrices/), we discussed how there were three complementary ways of viewing matrices:
 
-**Row space**
+1. A table of numbers
+2. A list of row vectors or list of column vectors
+3. A function mapping vectors from one space to another
+
+We will make especially heavy use of Perspectives 2 and 3. For a deeper discussion, see my [previous post](https://mbernste.github.io/posts/matrices/). Let's get started.
+
+
+Column space
+------------
+
+The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix: 
+
+<span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
+
+To understand the column space, let's consider a matrix from Perspectives 2 and 3 -- that is, as a list of column vectors and as a function mapping vectors from one space to another.
+
+**Understanding the column space when viewing a matrix as a list of column vectors**
+
+The least abstract way to view the column space of a matrix is when considering a matrix to be a simple list of column-vectors. For example, consider the matrix
+
+$$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
+
+We can view it as a collection of three two-dimensional column vectors:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="600"/></center>
+
+The column space is then the vector space that is [spanned](https://mbernste.github.io/posts/linear_independence/) by these three vectors. We see that in this case, the column space is all of $\mathbb{R}^2$ since we can form _any_ two-dimensional vector using a linear combination of these three vectors:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_space.png" alt="drawing" width="350"/></center>
+
+**Understanding the column space when viewing a matrix as a functions**
+
+
+
+Row space
+---------
 
 The **row space** of a matrix is the vector space spanned by the row-vectors of a matrix. Specifically,
 
@@ -45,25 +79,7 @@ The row space is then the vector space that is spanned by these two vectors. We 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="350"/></center>
 
-**Column space**
 
-The **column space** of a matrix is simply the [vector space](https://mbernste.github.io/posts/vector_spaces/) [spanned](https://mbernste.github.io/posts/linear_independence/) by the column-vectors of a matrix. Likewise,
-
-<span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
-
-Let us again consider the matrix
-
-$$\begin{bmatrix}1 & 2 & 1 \\ 0 & 1 & -1\end{bmatrix}$$
-
-We can view it as a collection of three two-dimensional column vectors:
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_vectors.png" alt="drawing" width="600"/></center>
-
-The column space is then the vector space that is spanned by these three vectors. We see that in this case, the column space is all of $\mathbb{R}^2$ since we can form _any_ two-dimensional vector using a linear combination of these three vectors:
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_column_space.png" alt="drawing" width="350"/></center>
-
-For a more in depth discussion of the concept of **span**, see my [previous blog post](https://mbernste.github.io/posts/linear_independence/).
 
 
 **Null space**
