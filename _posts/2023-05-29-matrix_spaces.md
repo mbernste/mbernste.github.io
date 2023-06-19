@@ -277,7 +277,7 @@ Now, consider a matrix
 
 $$\boldsymbol{X} := \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix}$$ 
 
-That is, $\boldsymbol{X}$ is formed by concatenated the $n-r \times n-r$ identity matrix below the $-\boldsymbol{B}$ matrix. Now, we see that $\boldsymbol{AX} = \boldsymbol{0}$:
+That is, $\boldsymbol{X}$ is formed by concatenating the $n-r \times n-r$ identity matrix below the $-\boldsymbol{B}$ matrix. Now, we see that $\boldsymbol{AX} = \boldsymbol{0}$:
 
 $$\begin{align*}\boldsymbol{AX} &= \begin{pmatrix}(\boldsymbol{A}_1 & \boldsymbol{A}_1\boldsymbol{B} \end{pmatrix}  \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} \\ &= -\boldsymbol{A}_1\boldsymbol{B} +  \boldsymbol{A}_1\boldsymbol{B} \\ &= \boldsymbol{0} \end{align*}$$
 
