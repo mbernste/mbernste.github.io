@@ -201,7 +201,7 @@ $\square$
 
 This proof is described on [Wikipedia]([https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem](https://en.wikipedia.org/wiki/Rank_(linear_algebra))), provided here in my own words.
 
-Let $r$ be the row rank of $\boldsymbol{A}$ and let $\boldsymbol{b}_1, \dots, \boldsymbol{b}_r \in \mathbb{R}^n$ be a set of basis vectors for the row space of $\boldsymbol{A}$. Now, let  $c_1, c_2, \dots, c_r$ be coefficients such that 
+Let $r$ be the row rank of $\boldsymbol{A}$ and let $\boldsymbol{b}_1, \dots, \boldsymbol{b}_r \in \mathbb{R}^n$ be a set of basis vectors for the row space of $\boldsymbol{A}$. Now, let  $c_1, c_2, \dots, c_r$ be coefficients such that
 
 $$\sum_{i=1}^r c_i \boldsymbol{Ab}_i = \boldsymbol{0}$$
 
@@ -281,8 +281,20 @@ For this to hold, we see that $\boldsymbol{u}$ must be zero:
 
 $$\begin{align*}\boldsymbol{Xu} &= \boldsymbol{0} \\ \implies \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix}\boldsymbol{u} &= \begin{pmatrix} \boldsymbol{0}_r \\ \boldsymbol{0}_{n-r} \end{pmatrix}  \\ \\ \implies \begin{pmatrix} -\boldsymbol{Bu} \\ \boldsymbol{u} \end{pmatrix} &= \begin{pmatrix} \boldsymbol{0}_r \\ \boldsymbol{0}_{n-r} \end{pmatrix} \end{align*}$$
 
-We now show that _any_ other vector in the null space of $\boldsymbol{A}$ that is not a column of $\boldsymbol{X}$ can be written as a linear combination of the columns of $\boldsymbol{X}$. 
+By [Theorem 1 in a previous post](https://mbernste.github.io/posts/linear_independence/), this proves that the columns of $\boldsymbol{X}$ are linearly independent. So we have shown that there exists $n-r$ linearly independent vectors in the null space of $\boldsymbol{A}$, so the nullity is _at least_ $n-r$. 
 
+We now show that _any_ other vector in the null space of $\boldsymbol{A}$ that is not a column of $\boldsymbol{X}$ can be written as a linear combination of the columns of $\boldsymbol{X}$. If we can prove this fact, we will have proven that the nullity is exactly equal to $n-r$.
+
+We start by again considering a vector $\boldsymbol{u} \in \mathbb{R}^n$.  We partition this vector into two segments: one segment, $\boldsymbol{u}_1$, comprising the first $r$ elements and a second segment, $\boldsymbol{u}_2$, comprising the remaining $n-r$ elements:
+
+$$\boldsymbol{u} = \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix}$$
+
+Then we'll solve for $\boldsymbol{u}$ such that $\boldsymbol{Au} = \boldsymbol{0}$. Depicted schematically: 
+
+
+Solving this equation, we see that
+
+$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatr}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} \end{align*}$$
 
 $\square$
 
