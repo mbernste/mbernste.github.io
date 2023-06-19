@@ -214,7 +214,7 @@ We see that
 $$\begin{align*} \sum_{i=1}^r c_i \boldsymbol{Ab}_i &= \boldsymbol{0} \\ \implies \sum_{i=1}^r \boldsymbol{A}c_i \boldsymbol{b}_i  &= \boldsymbol{0} \\ \implies \boldsymbol{A} \sum_{i=1}^r  c_i\boldsymbol{b}_i  &= \boldsymbol{0} \\ \boldsymbol{Av} &= \boldsymbol{0} \end{align*}$$
 
 With this in mind, we can prove that $\boldsymbol{v}$ must be the zero vector. To do so, we first note that $\boldsymbol{v}$ is in both the row space of $\boldsymbol{A}$ and the null space of $\boldsymbol{A}$. It is in the row space $\boldsymbol{A}$ because it is a linear combination of the basis vectors of the row space of $
-boldsymbol{A}$. It is in the null space of $\boldsymbol{A}$, because $\boldsymbol{Av} &= \boldsymbol{0}$. From Theorem 1, $\boldsymbol{v}$ must be orthogonal to all vectors in the row space of $\boldsymbol{A}$, which includes itself. The only vector that is orthogonal to itself is the zero vector and thus, $\boldsymbol{v}$ must be the zero vector.
+\boldsymbol{A}$. It is in the null space of $\boldsymbol{A}$, because $\boldsymbol{Av} = \boldsymbol{0}$. From Theorem 1, $\boldsymbol{v}$ must be orthogonal to all vectors in the row space of $\boldsymbol{A}$, which includes itself. The only vector that is orthogonal to itself is the zero vector and thus, $\boldsymbol{v}$ must be the zero vector.
 
 This in turn implies that $c_1, \dots, c_r$ must be zero. We know this because $\boldsymbol{b}\_1, \dots, \boldsymbol{b}\_r \in \mathbb{R}^n$ are basis vectors, which by definition cannot include the zero vector. Thus we have proven that the only assignment of values for $c\_1, \dots, c\_r$ for which $\sum_{i=1}^r c\_i \boldsymbol{Ab}\_i = \boldsymbol{0}$ is the assignment for which they are all zero. By [Theorem 1 in a previous post](https://mbernste.github.io/posts/linear_independence/), this implies that $\boldsymbol{Ab}\_1, \dots, \boldsymbol{Ab}\_r$ must be linearly independent. 
 
@@ -281,9 +281,9 @@ For this to hold, we see that $\boldsymbol{u}$ must be zero:
 
 $$\begin{align*}\boldsymbol{Xu} &= \boldsymbol{0} \\ \implies \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix}\boldsymbol{u} &= \begin{pmatrix} \boldsymbol{0}_r \\ \boldsymbol{0}_{n-r} \end{pmatrix}  \\ \\ \implies \begin{pmatrix} -\boldsymbol{Bu} \\ \boldsymbol{u} \end{pmatrix} &= \begin{pmatrix} \boldsymbol{0}_r \\ \boldsymbol{0}_{n-r} \end{pmatrix} \end{align*}$$
 
-By [Theorem 1 in a previous post](https://mbernste.github.io/posts/linear_independence/), this proves that the columns of $\boldsymbol{X}$ are linearly independent. So we have shown that there exists $n-r$ linearly independent vectors in the null space of $\boldsymbol{A}$, so the nullity is _at least_ $n-r$. 
+By [Theorem 1 in a previous post](https://mbernste.github.io/posts/linear_independence/), this proves that the columns of $\boldsymbol{X}$ are linearly independent. So we have shown that there exists $n-r$ linearly independent vectors in the null space of $\boldsymbol{A}$, which means the nullity is _at least_ $n-r$. 
 
-We now show that _any_ other vector in the null space of $\boldsymbol{A}$ that is not a column of $\boldsymbol{X}$ can be written as a linear combination of the columns of $\boldsymbol{X}$. If we can prove this fact, we will have proven that the nullity is exactly equal to $n-r$.
+We now show that _any_ other vector in the null space of $\boldsymbol{A}$ that is not a column of $\boldsymbol{X}$ can be written as a linear combination of the columns of $\boldsymbol{X}$. If we can prove this fact, we will have proven that the nullity is exactly equal to $n-r$ and is not greater.
 
 We start by again considering a vector $\boldsymbol{u} \in \mathbb{R}^n$ that we assume is in the null space of $\boldsymbol{A}$.  We partition this vector into two segments: one segment, $\boldsymbol{u}_1$, comprising the first $r$ elements and a second segment, $\boldsymbol{u}_2$, comprising the remaining $n-r$ elements:
 
@@ -297,7 +297,7 @@ Because we assume that $\boldsymbol{u}$ is in the null space, it must hold that 
 
 Solving for $\boldsymbol{u}$, we see that
 
-$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_1\boldsymbol{B} \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1\boldsymbol{u}_1 + \boldsymbol{A}_1\boldsymbol{B}\boldsymbol{u}_2 &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1 (\boldsymbol{u}_1 + \boldsymbol{Bu}_2) &= \boldsymbol{0}\end{align*} \\ implies \boldsymbol{u}_1 + \boldsymbol{Bu}_2 &= \boldsymbol{0} \\implies \boldsymbol{u}_1 = -\boldsymbol{Bu}_2$$
+$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_1\boldsymbol{B} \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1\boldsymbol{u}_1 + \boldsymbol{A}_1\boldsymbol{B}\boldsymbol{u}_2 &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1 (\boldsymbol{u}_1 + \boldsymbol{Bu}_2) &= \boldsymbol{0} \\ implies \boldsymbol{u}_1 + \boldsymbol{Bu}_2 &= \boldsymbol{0} \\implies \boldsymbol{u}_1 = -\boldsymbol{Bu}_2 \end{align*}$$
 
 Thus,
 
