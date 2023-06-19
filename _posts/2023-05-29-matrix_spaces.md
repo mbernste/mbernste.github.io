@@ -80,7 +80,7 @@ The row space is then the vector space that is spanned by these vectors. We see 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="350"/></center>
 
-Unlike the column space, the row space cannot be interpreted as either the domain or range of the function defined by the matrix. So what is the geometric signicance of the row space in the context of Perspective 3 of matrices (viewing matrices as functions)? Unfortunately, this does not become evident until we discuss the _null space_, which we will discuss in the next section!
+Unlike the column space, the row space cannot be interpreted as either the domain or range of the function defined by the matrix. So what is the geometric significance of the row space in the context of Perspective 3 (viewing matrices as functions)? Unfortunately, this does not become evident until we discuss the _null space_, which we will discuss in the next section!
 
 
 Null spaces
