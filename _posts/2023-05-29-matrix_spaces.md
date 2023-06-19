@@ -88,9 +88,9 @@ Null spaces
 
 The **null space** of a matrix is the third vector space that is induced by matrices. To understand the null space, we will need to view matrices from Perspective 3: matrices as functions between vector space.
 
-Specifically, the null space of a matrix is the set of all vectors that $\boldsymbol{A}$ maps to the zero vector. That is, the null space is all vectors, $\boldsymbol{x} \in \mathbb{R}^n$ for which $\boldsymbol{Ax} = \boldsymbol{0}$:
+Specifically, the null space of a matrix $\boldsymbol{A}$ is the set of all vectors that $\boldsymbol{A}$ maps to the zero vector. That is, the null space is all vectors, $\boldsymbol{x} \in \mathbb{R}^n$ for which $\boldsymbol{Ax} = \boldsymbol{0}$:
 
-<span style="color:#0060C6">**Definition 3 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\{\boldsymbol{x} \in \mathbb{R}^n \mid \boldsymbol{Ax} = \boldsymbol{0}\}$</span>
+<span style="color:#0060C6">**Definition 3 (null space):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **null space** of $\boldsymbol{A}$ is the set of vectors, $\\{\boldsymbol{x} \in \mathbb{R}^n \mid \boldsymbol{Ax} = \boldsymbol{0}\\}$</span>
 
 It turns out that here is a key relationship between the null space and the row space of a matrix: the null space is the **orthogonal complement** to the row space (Theorem 1 in the appendix to this post). Before going further, let us define the orthogonal complement. Given a vector space $(\mathcal{V}, \mathcal{F})$, the orthogonal complement is another vector space $(\mathcal{V}', \mathcal{F})$ such that all vectors in $\mathcal{V}'$ are orthogonal to all vectors in $\mathcal{V}$:
 
