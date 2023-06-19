@@ -314,7 +314,7 @@ Because we assume that $\boldsymbol{u}$ is in the null space, it must hold that 
 
 Solving for $\boldsymbol{u}$, we see that
 
-$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_1\boldsymbol{B} \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1\boldsymbol{u}_1 + \boldsymbol{A}_1\boldsymbol{B}\boldsymbol{u}_2 &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1 (\boldsymbol{u}_1 + \boldsymbol{Bu}_2) &= \boldsymbol{0} \\ implies \boldsymbol{u}_1 + \boldsymbol{Bu}_2 &= \boldsymbol{0} \\implies \boldsymbol{u}_1 = -\boldsymbol{Bu}_2 \end{align*}$$
+$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_1\boldsymbol{B} \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1\boldsymbol{u}_1 + \boldsymbol{A}_1\boldsymbol{B}\boldsymbol{u}_2 &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1 (\boldsymbol{u}_1 + \boldsymbol{Bu}_2) &= \boldsymbol{0} \\ \implies \boldsymbol{u}_1 + \boldsymbol{Bu}_2 &= \boldsymbol{0} \\ \implies \boldsymbol{u}_1 = -\boldsymbol{Bu}_2 \end{align*}$$
 
 Thus,
 
