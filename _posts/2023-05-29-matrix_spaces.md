@@ -291,10 +291,13 @@ $$\boldsymbol{u} = \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmat
 
 Then we'll solve for $\boldsymbol{u}$ such that $\boldsymbol{Au} = \boldsymbol{0}$. Depicted schematically: 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rank_nullity_theorem_Au.png" alt="drawing" width="500"/></center>
+
+<br>
 
 Solving this equation, we see that
 
-$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} \end{align*}$$
+$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_1\boldsymbol{B} \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1\boldsymbol{u}_1 + \boldsymbol{A}_1\boldsymbol{B}\boldsymbol{u}_2 &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1 (\boldsymbol{u}_1 + \boldsymbol{Bu}_2) &= \boldsymbol{0}\end{align*}$$
 
 $\square$
 
