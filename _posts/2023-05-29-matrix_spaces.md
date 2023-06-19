@@ -238,7 +238,7 @@ This proof is described on [Wikipedia](https://en.wikipedia.org/wiki/Rank%E2%80%
 
 Let $r$ be the rank of the matrix. This means that there are $r$ linearly independent column vectors in $\boldsymbol{A}$. Without loss of generality, we can arrange $\boldsymbol{A}$ so that the first $r$ columns are linearly independent, and the remaining $n - r$ columns can be written as a linear combination of the first $r$ columns. That is, we can write:
 
-$$\boldsymbol{A} = \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right)$$
+$$\boldsymbol{A} = \begin{pmatrix}(\boldsymbol{A}_1 & \boldsymbol{A}_2 \end{pmatrix}$$
 
 where $\boldsymbol{A}_1$ and $\boldsymbol{A}_2$ are the two partitions of the matrix as shown below:
 
@@ -262,7 +262,7 @@ $$\boldsymbol{X} := \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end
 
 That is, $\boldsymbol{X}$ is formed by concatenated the $n-r \times n-r$ identity matrix below the $-\boldsymbol{B}$ matrix. Now, we see that $\boldsymbol{AX} = \boldsymbol{0}$:
 
-$$\begin{align*}\boldsymbol{AX} &= \left(\boldsymbol{A}_1, \boldsymbol{A}_1 \boldsymbol{B}\right)  \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} \\ &= -\boldsymbol{A}_1\boldsymbol{B} +  \boldsymbol{A}_1\boldsymbol{B} \\ &= \boldsymbol{0} \end{align*}$$
+$$\begin{align*}\boldsymbol{AX} &= \begin{pmatrix}(\boldsymbol{A}_1 & \boldsymbol{A}_1\boldsymbol{B} \end{pmatrix}  \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} \\ &= -\boldsymbol{A}_1\boldsymbol{B} +  \boldsymbol{A}_1\boldsymbol{B} \\ &= \boldsymbol{0} \end{align*}$$
 
 Depicted schematically,
 
@@ -285,19 +285,30 @@ By [Theorem 1 in a previous post](https://mbernste.github.io/posts/linear_indepe
 
 We now show that _any_ other vector in the null space of $\boldsymbol{A}$ that is not a column of $\boldsymbol{X}$ can be written as a linear combination of the columns of $\boldsymbol{X}$. If we can prove this fact, we will have proven that the nullity is exactly equal to $n-r$.
 
-We start by again considering a vector $\boldsymbol{u} \in \mathbb{R}^n$.  We partition this vector into two segments: one segment, $\boldsymbol{u}_1$, comprising the first $r$ elements and a second segment, $\boldsymbol{u}_2$, comprising the remaining $n-r$ elements:
+We start by again considering a vector $\boldsymbol{u} \in \mathbb{R}^n$ that we assume is in the null space of $\boldsymbol{A}$.  We partition this vector into two segments: one segment, $\boldsymbol{u}_1$, comprising the first $r$ elements and a second segment, $\boldsymbol{u}_2$, comprising the remaining $n-r$ elements:
 
 $$\boldsymbol{u} = \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix}$$
 
-Then we'll solve for $\boldsymbol{u}$ such that $\boldsymbol{Au} = \boldsymbol{0}$. Depicted schematically: 
+Because we assume that $\boldsymbol{u}$ is in the null space, it must hold that $\boldsymbol{Au} = \boldsymbol{0}$. Depicted schematically: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rank_nullity_theorem_Au.png" alt="drawing" width="500"/></center>
 
 <br>
 
-Solving this equation, we see that
+Solving for $\boldsymbol{u}$, we see that
 
-$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_1\boldsymbol{B} \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1\boldsymbol{u}_1 + \boldsymbol{A}_1\boldsymbol{B}\boldsymbol{u}_2 &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1 (\boldsymbol{u}_1 + \boldsymbol{Bu}_2) &= \boldsymbol{0}\end{align*}$$
+$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_1\boldsymbol{B} \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1\boldsymbol{u}_1 + \boldsymbol{A}_1\boldsymbol{B}\boldsymbol{u}_2 &= \boldsymbol{0} \\ \implies \boldsymbol{A}_1 (\boldsymbol{u}_1 + \boldsymbol{Bu}_2) &= \boldsymbol{0}\end{align*} \\ implies \boldsymbol{u}_1 + \boldsymbol{Bu}_2 &= \boldsymbol{0} \\implies \boldsymbol{u}_1 = -\boldsymbol{Bu}_2$$
+
+Thus,
+
+$$\begin{align*}\boldsymbol{u} &= \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} \\ &= \begin{pmatrix} -\boldsymbol{Bu}_2 \\ \boldsymbol{u}_2 \end{pmatrix} \\ &= \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix}\boldsymbol{u}_2 \\ &= \boldsymbol{X}\boldsymbol{u}_2 \end{align*}$$
+
+Thus, we see that $\boldsymbol{u}$ must be the linear combination of the columns of $\boldsymbol{X}$! Thus we have shown that:
+
+1. There exists $n-r$ linearly independent vectors in the null space of $\boldsymbol{A}$
+2. Any vector in the null space can be expressed as a linear combination of these linearly independent vectors
+
+This proves that the nullity is $n-r$, and thus, the nullity $n-r$ plus the rank $r$, equals $n$.
 
 $\square$
 
