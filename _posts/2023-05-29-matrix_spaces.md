@@ -1,5 +1,5 @@
 ---
-title: 'Vector spaces induced by matrices: column spaces, rows spaces, and null spaces'
+title: 'Vector spaces induced by matrices: column, row, and null spaces'
 date: 2023-06-19
 permalink: /posts/matrixspaces/
 tags:
