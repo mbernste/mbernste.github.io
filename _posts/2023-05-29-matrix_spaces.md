@@ -256,7 +256,7 @@ This is depicted below:
 
 Now, consider a matrix 
 
-$$\boldsymbol{X} := \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r \times n-r} \end{pmatrix}$ 
+$$\boldsymbol{X} := \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r \times n-r} \end{pmatrix}$$ 
 
 <br>
 
