@@ -242,7 +242,13 @@ where $\boldsymbol{A}_1$ and $\boldsymbol{A}_2$ are the two partitions of the ma
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rank_nullity_theorem_partition_A.png" alt="drawing" width="500"/></center>
 
+because the columns of $\boldsymbol{A}_2$ are linear combinations of the columns of $\boldsymbol{A}_1$, there exists a matrix $\boldsymbol{B} \in \mathbb{R}^{r, n-r}$ for which
 
+$$\boldsymbol{A}_2 = \boldsymbol{A}_1 \boldsymbol{B}$$
+
+This is depicted below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rank_nullity_theorem_A2_as_A1B.png" alt="drawing" width="500"/></center>
 
 
 $\square$
