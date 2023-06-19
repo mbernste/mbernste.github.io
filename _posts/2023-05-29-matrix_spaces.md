@@ -256,7 +256,12 @@ This is depicted below:
 
 Now, consider a matrix 
 
-$$\boldsymbol{X} := \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r \times n-r} \end{pmatrix}$$ 
+$$\boldsymbol{X} := \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix}$$ 
+
+That is, $\boldsymbol{X}$ is formed by concatenated the $n-r \times n-r$ identity matrix below the $-\boldsymbol{B}$ matrix. We now consider the matrix $\boldsymbol{AX}$:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rank_nullity_theorem_AX.png" alt="drawing" width="500"/></center>
+
 
 <br>
 
