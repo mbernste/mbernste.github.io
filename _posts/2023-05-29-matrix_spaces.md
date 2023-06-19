@@ -254,17 +254,25 @@ This is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rank_nullity_theorem_A2_as_A1B.png" alt="drawing" width="500"/></center>
 
+<br>
+
 Now, consider a matrix 
 
 $$\boldsymbol{X} := \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix}$$ 
 
-That is, $\boldsymbol{X}$ is formed by concatenated the $n-r \times n-r$ identity matrix below the $-\boldsymbol{B}$ matrix. We now consider the matrix $\boldsymbol{AX}$:
+That is, $\boldsymbol{X}$ is formed by concatenated the $n-r \times n-r$ identity matrix below the $-\boldsymbol{B}$ matrix. Now, we see that $\boldsymbol{AX} = \boldsymbol{0}$:
+
+\begin{align*}\boldsymbol{AX} = \left(\boldsymbol{A}_1, \boldsymbol{A}_1 \boldsymbol{B}\right)  \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} \\ &= -\boldsymbol{A}_1\boldsymbol{B} +  \boldsymbol{A}_1\boldsymbol{B} \\ &= \boldsymbol{0} \end{align*}
+
+Depicted schematically,
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rank_nullity_theorem_AX.png" alt="drawing" width="500"/></center>
 
-
 <br>
 
+Thus, we see that every column of $\boldsymbol{X}$ is in the null space of $\boldsymbol{A}$. There are $n - r$ column vectors in $\boldsymbol{X}$. Thus, the nullity of $\boldsymbol{A}$ _is at least_ $n - r$. We now show that _any_ other vector in the null space of $\boldsymbol{A}$ that is not a column of $\boldsymbol{X}$ can be written as a linear combination of the columns of $\boldsymbol{X}$. 
+
+To prove this, we will consider a vector $\boldsymbol{v} \in \mathbb{R}^{n}$
 
 $\square$
 
