@@ -197,6 +197,8 @@ $\square$
 
 **Proof:**
 
+This proof is described on [Wikipedia]([https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem](https://en.wikipedia.org/wiki/Rank_(linear_algebra))), provided here in my own words.
+
 Let $r$ be the row rank of $\boldsymbol{A}$ and let $\boldsymbol{b}_1, \dots, \boldsymbol{b}_r \in \mathbb{R}^n$ be a set of basis vectors for the row space of $\boldsymbol{A}$. Now, let  $c_1, c_2, \dots, c_r$ be coefficients such that 
 
 $$\sum_{i=1}^r c_i \boldsymbol{Ab}_i = \boldsymbol{0}$$
@@ -229,6 +231,19 @@ $\square$
 <span style="color:#0060C6">**Theorem 3 (rank-nullity theorem):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, it holds that $\text{rank} + \text{nullity} = n$.</span>
 
 **Proof:**
+
+This proof is described on [Wikipedia](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem), provided here in my own words.
+
+Let $r$ be the rank of the matrix. This means that there are $r$ linearly independent column vectors in $\boldsymbol{A}$. Without loss of generality, we can arrange $\boldsymbol{A}$ so that the first $r$ columns are linearly independent, and the remaining $n - r$ columns can be written as a linear combination of the first $r$ columns. That is, we can write:
+
+$$\boldsymbol{A} = \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right)$$
+
+where $\boldsymbol{A}_1$ and $\boldsymbol{A}_2$ are the two partitions of the matrix as shown below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rank_nullity_theorem_partition_A.png" alt="drawing" width="500"/></center>
+
+
+
 
 $\square$
 
