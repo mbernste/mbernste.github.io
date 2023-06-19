@@ -180,13 +180,13 @@ Moreover, we can summarize the relationships between these spaces with the follo
 The spaces induced by invertible matrices
 -----------------------------------------
 
-We conclude by discussing the matrix spaces induced by [invertible matrices](https://mbernste.github.io/posts/inverse_matrices/). Recall, that a square matrix $\boldsymbol{A} \in mathbb{R}^{n \times n}$ is invertible if and only if its columns are linearly independent (see Theorem 4 in the Appendix to [this blog post](https://mbernste.github.io/posts/inverse_matrices/)). This implies that for invertible matrices it holds that:
+We conclude by discussing the matrix spaces induced by [invertible matrices](https://mbernste.github.io/posts/inverse_matrices/). Recall, that a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ is invertible if and only if its columns are linearly independent (see [Theorem 4 in the Appendix to this blog post](https://mbernste.github.io/posts/inverse_matrices/)). This implies that for invertible matrices, it holds that:
 
 1. The column space spans all of $n$, which means that the column rank is $n$
 2. The row space also spans all of $n$, since by Theorem 2 the row rank equals the column rank
 3. The nullity is zero, since by Theorem 3 the nullity plus the rank must equal the number of columns
 
-We call an invertible matrix **full rank** since the rank equals the number of rows and columns. It's rank cannot be increased any further!
+We call an invertible matrix **full rank** since the rank equals the number of rows and columns. The rank is "full" because it cannot be increased any further past the number of its columns/rows!
 
 Moreover, we see that there is only vector in the null space of an invertible matrix since its nullity is zero (a dimensionality of zero corresponds to a single point).  If we think back on our discussion of invertible matrices as characterizing [invertible functions](https://mbernste.github.io/posts/matrices_as_functions/), then this fact makes sense. For a function to be invertible, it must be [one-to-one](https://en.wikipedia.org/wiki/Injective_function) and [onto](https://en.wikipedia.org/wiki/Surjective_function). So if we use an invertible matrix $\boldsymbol{A}$ to define the function
 
