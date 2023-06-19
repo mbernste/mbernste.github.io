@@ -164,7 +164,7 @@ On the left, we have a matrix whose rows span a hyperplane in $\mathbb{R}^3$, wh
 Summarizing the relationships between matrix spaces
 ---------------------------------------------------
 
-We can summarize the properties between the column space, row space, and null space with the following table that is centered around Perspective 2 (matrices as lists of vectors) and Perspective 3 (matrices as functions):
+We can summarize the properties of the column space, row space, and null space with the following table organized around Perspective 2 (matrices as lists of vectors) and Perspective 3 (matrices as functions):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_space_column_space_summary_table.png" alt="drawing" width="700"/></center>
 
