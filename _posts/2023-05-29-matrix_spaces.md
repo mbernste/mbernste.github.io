@@ -1,6 +1,6 @@
 ---
 title: 'The spaces defined by matrices: column spaces, rows spaces, and null spaces'
-date: 2023-05-29
+date: 2023-06-19
 permalink: /posts/matrixspaces/
 tags:
   - tutorial
@@ -9,11 +9,10 @@ tags:
 ---
 
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+_Matrices are one of the fundamental objects studied in linear algebra. While on their surface they appear like simple tables of numbers, this simplicity hides deeper mathematical structures that they contain.  In this post, we will dive into the deeper structures within matrices by discussing three vector spaces that are induced by every matrix: a column space, a row space, and a null space._
 
 Introduction
 ------------
-
 
 Matrices are one of the fundamental objects studied in linear algebra. While on their surface they appear like simple tables of numbers, [as we have previously described](https://mbernste.github.io/posts/matrices/), this simplicity hides deeper mathematical structures that they contain.  In this post, we will dive into the deeper structures within matrices by showing three vector spaces that are implicitly defined by every matrix:
 1. A column space
