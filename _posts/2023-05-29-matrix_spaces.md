@@ -187,7 +187,7 @@ We conclude by discussing the vector spaces induced by [invertible matrices](htt
 
 We call an invertible matrix **full rank** since the rank equals the number of rows and columns. The rank is "full" because it cannot be increased any further past the number of its columns/rows!
 
-Moreover, we see that there is only vector in the null space of an invertible matrix since its nullity is zero (a dimensionality of zero corresponds to a single point).  If we think back on our discussion of invertible matrices as characterizing [invertible functions](https://mbernste.github.io/posts/matrices_as_functions/), then this fact makes sense. For a function to be invertible, it must be [one-to-one](https://en.wikipedia.org/wiki/Injective_function) and [onto](https://en.wikipedia.org/wiki/Surjective_function). So if we use an invertible matrix $\boldsymbol{A}$ to define the function
+Moreover, we see that there is only _one_ vector in the null space of an invertible matrix since its nullity is zero (a dimensionality of zero corresponds to a single point).  If we think back on our discussion of invertible matrices as characterizing [invertible functions](https://mbernste.github.io/posts/matrices_as_functions/), then this fact makes sense. For a function to be invertible, it must be [one-to-one](https://en.wikipedia.org/wiki/Injective_function) and [onto](https://en.wikipedia.org/wiki/Surjective_function). So if we use an invertible matrix $\boldsymbol{A}$ to define the function
 
 $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$
 
