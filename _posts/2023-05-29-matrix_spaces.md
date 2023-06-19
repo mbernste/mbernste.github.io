@@ -279,7 +279,7 @@ $$\boldsymbol{Xu} = \boldsymbol{0}$$
 
 For this to hold, we see that $\boldsymbol{u}$ must be zero:
 
-$$\begin{align*}\boldsymbol{Xu} &= \boldsymbol{0} \\ \implies \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} &= \right)} \\ \begin{pmatrix} -\boldsymbol{Bu} \\ \boldsymbol{I}_{n-r}\boldsymbol{u} \end{pmatrix} \end{align*}$$
+$$\begin{align*}\boldsymbol{Xu} &= \boldsymbol{0} \\ \implies \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix}\boldsymbol{u} &= \begin{pmatrix} \boldsymbol{0}_r \\ \boldsymbol{0}_{n-r} \end{pmatrix}  \\ \\ \implies \begin{pmatrix} -\boldsymbol{Bu} \\ \boldsymbol{u} \end{pmatrix} &= \begin{pmatrix} \boldsymbol{0}_r \\ \boldsymbol{0}_{n-r} \end{pmatrix} \end{align*}$$
 
 We now show that _any_ other vector in the null space of $\boldsymbol{A}$ that is not a column of $\boldsymbol{X}$ can be written as a linear combination of the columns of $\boldsymbol{X}$. 
 
