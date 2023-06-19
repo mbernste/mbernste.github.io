@@ -151,7 +151,7 @@ Where the rank of a matrix describes the intrinsic dimensionality of the row and
 
 <span style="color:#0060C6">**Definition 5 (nullity):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, the **nullity** of $\boldsymbol{A}$ is the maximum number of linearly independent vectors that span the null space of $\boldsymbol{A}$.</span>
 
-There is a key relationship between nullity and rank: they sum to the number of columns of $\boldsymbol{A}$! This is proven in rank-nullity theorem (proof provided in the appendix to this post):
+There is a key relationship between nullity and rank: they sum to the number of columns of $\boldsymbol{A}$! This is proven in the rank-nullity theorem (proof provided in the Appendix to this post):
 
 <span style="color:#0060C6">**Theorem 3 (rank-nullity theorem):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, it holds that $\text{rank} + \text{nullity} = n$.</span>
 
