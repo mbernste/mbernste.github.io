@@ -234,7 +234,7 @@ $\square$
 
 **Proof:**
 
-This proof is described on [Wikipedia](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem), provided here in my own words.
+This proof is described on [Wikipedia](https://en.wikipedia.org/wiki/Rank%E2%80%93nullity_theorem), provided here in my own words along with supplemental schematics of the matrices used in the proof.
 
 Let $r$ be the rank of the matrix. This means that there are $r$ linearly independent column vectors in $\boldsymbol{A}$. Without loss of generality, we can arrange $\boldsymbol{A}$ so that the first $r$ columns are linearly independent, and the remaining $n - r$ columns can be written as a linear combination of the first $r$ columns. That is, we can write:
 
