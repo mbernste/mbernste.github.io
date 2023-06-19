@@ -262,7 +262,7 @@ $$\boldsymbol{X} := \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end
 
 That is, $\boldsymbol{X}$ is formed by concatenated the $n-r \times n-r$ identity matrix below the $-\boldsymbol{B}$ matrix. Now, we see that $\boldsymbol{AX} = \boldsymbol{0}$:
 
-\begin{align*}\boldsymbol{AX} = \left(\boldsymbol{A}_1, \boldsymbol{A}_1 \boldsymbol{B}\right)  \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} \\ &= -\boldsymbol{A}_1\boldsymbol{B} +  \boldsymbol{A}_1\boldsymbol{B} \\ &= \boldsymbol{0} \end{align*}
+$$\begin{align*}\boldsymbol{AX} &= \left(\boldsymbol{A}_1, \boldsymbol{A}_1 \boldsymbol{B}\right)  \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} \\ &= -\boldsymbol{A}_1\boldsymbol{B} +  \boldsymbol{A}_1\boldsymbol{B} \\ &= \boldsymbol{0} \end{align*}$$
 
 Depicted schematically,
 
@@ -270,9 +270,19 @@ Depicted schematically,
 
 <br>
 
-Thus, we see that every column of $\boldsymbol{X}$ is in the null space of $\boldsymbol{A}$. There are $n - r$ column vectors in $\boldsymbol{X}$. Thus, the nullity of $\boldsymbol{A}$ _is at least_ $n - r$. We now show that _any_ other vector in the null space of $\boldsymbol{A}$ that is not a column of $\boldsymbol{X}$ can be written as a linear combination of the columns of $\boldsymbol{X}$. 
+Thus, we see that every column of $\boldsymbol{X}$ is in the null space of $\boldsymbol{A}$. 
 
-To prove this, we will consider a vector $\boldsymbol{v} \in \mathbb{R}^{n}$
+
+We now show that these column vectors are linearly independent. To do so, we will consider a vector $\boldsymbol{u} \in \mathbb{R}^{n-r}$ such that
+
+$$\boldsymbol{Xu} = \boldsymbol{0}$$
+
+For this to hold, we see that $\boldsymbol{u}$ must be zero:
+
+$$\begin{align*}\boldsymbol{Xu} &= \boldsymbol{0} \\ \implies \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} &= \right)} \\ \begin{pmatrix} -\boldsymbol{Bu} \\ \boldsymbol{I}_{n-r}\boldsymbol{u} \end{pmatrix} \end{align*}$$
+
+We now show that _any_ other vector in the null space of $\boldsymbol{A}$ that is not a column of $\boldsymbol{X}$ can be written as a linear combination of the columns of $\boldsymbol{X}$. 
+
 
 $\square$
 
