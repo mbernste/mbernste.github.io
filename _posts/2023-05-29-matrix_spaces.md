@@ -21,11 +21,11 @@ Matrices are one of the fundamental objects studied in linear algebra. While on 
 
 Not only will we discuss the definition for these spaces and how they relate to one another, we will also discuss how to best intuit these spaces and what their properties tell us about the matrix itself. 
 
-To understand these spaces, we will need to look at matrices from [different perspectives](https://mbernste.github.io/posts/understanding_3d/). [In a previous discussion on matrices](https://mbernste.github.io/posts/matrices/), we discussed how there are three complementary perspectives for viewing matrices. A matrix is at once
+To understand these spaces, we will need to look at matrices from [different perspectives](https://mbernste.github.io/posts/understanding_3d/). [In a previous discussion on matrices](https://mbernste.github.io/posts/matrices/), we discussed how there are three complementary perspectives for viewing matrices:
 
-1. A **table** of numbers
-2. A **list** of vectors (both row and column vectors)
-3. A **function** mapping vectors from one space to another
+* **Perspective 1:** A matrix as a table of numbers
+* **Perspective 2:** A matrix as a list of vectors (both row and column vectors)
+* **Perspective 3:** A matrix as a function mapping vectors from one space to another
 
 By viewing matrices through these perspectives we can gain a better intuition for the vector spaces induced by matrices. Let's get started.
 
