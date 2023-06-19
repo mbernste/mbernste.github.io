@@ -58,7 +58,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Matrices characterize linear transformations](https://mbernste.github.io/posts/matrices_linear_transformations/)  
 [Matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/)  
 [Invertible matrices](https://mbernste.github.io/posts/inverse_matrices/)  
-[Vector spaces induced by matrices: column spaces, rows spaces, and null spaces](https://mbernste.github.io/posts/matrixspaces/)  
+[Vector spaces induced by matrices: column, row, and null spaces](https://mbernste.github.io/posts/matrixspaces/)  
 [Reasoning about systems of linear equations using linear algebra](https://mbernste.github.io/posts/systems_linear_equations/)  
 [Row reduction with elementary matrices](https://mbernste.github.io/posts/row_reduction)  
 
