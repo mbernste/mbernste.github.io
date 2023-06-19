@@ -294,7 +294,7 @@ Then we'll solve for $\boldsymbol{u}$ such that $\boldsymbol{Au} = \boldsymbol{0
 
 Solving this equation, we see that
 
-$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatr}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} \end{align*}$$
+$$\begin{align*} \boldsymbol{Au} &= \boldsymbol{0} \\ \left(\boldsymbol{A}_1, \boldsymbol{A}_2 \right) \begin{pmatrix}\boldsymbol{u}_1 \\ \boldsymbol{u}_2 \end{pmatrix} \end{align*}$$
 
 $\square$
 
