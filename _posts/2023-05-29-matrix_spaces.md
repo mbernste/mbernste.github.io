@@ -191,7 +191,7 @@ Moreover, we see that there is only _one_ vector in the null space of an inverti
 
 $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$
 
-Then it holds that every vector, $\boldsymbol{b}$, in the range of the function $T$ has exactly one vector, $\boldsymbol{x}$ in the domain of $T$ for which $T(\boldsymbol{x}) = \boldsymbol{b}$. This must also hold for the zero vector. Thus, there must be only one vector, $\boldsymbol{x}$, for which $\boldsymbol{Ax} = \boldsymbol{0}$. Hence, the null space comprises just a single vector.
+Then it holds that every vector, $\boldsymbol{b}$, in the range of the function $T$ has exactly one vector, $\boldsymbol{x}$, in the domain of $T$ for which $T(\boldsymbol{x}) = \boldsymbol{b}$. This must also hold for the zero vector. Thus, there must be only one vector, $\boldsymbol{x}$, for which $\boldsymbol{Ax} = \boldsymbol{0}$. Hence, the null space comprises just a single vector.
 
 Now we may ask, what vector is this singular member of the null space. It turns out, it's the zero vector! We see this by applying [Theorem 1 from this previous blog post](https://mbernste.github.io/posts/linear_independence/). 
 
