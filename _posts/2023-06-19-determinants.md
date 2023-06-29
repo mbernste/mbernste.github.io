@@ -49,8 +49,8 @@ $$\text{Det}(\boldsymbol{A}) = ad - bc$$
 
 which is exactly the definition for the $2 \times 2$ determinant.  So far so good. 
 
-Defining the determinant for $m \times m$ matrices: abstracting the notion of geometric volume
-----------------------------------------------------------------------------------------------
+Defining the determinant for $m \times m$ matrices: a generalization of geometric volume
+----------------------------------------------------------------------------------------
 
 Moving on to $m > 2$, the definition of the determinant is
 
