@@ -254,7 +254,7 @@ This proof is described on [Wikipedia](https://en.wikipedia.org/wiki/Rank%E2%80%
 
 Let $r$ be the rank of the matrix. This means that there are $r$ linearly independent column vectors in $\boldsymbol{A}$. Without loss of generality, we can arrange $\boldsymbol{A}$ so that the first $r$ columns are linearly independent, and the remaining $n - r$ columns can be written as a linear combination of the first $r$ columns. That is, we can write:
 
-$$\boldsymbol{A} = \begin{pmatrix}(\boldsymbol{A}_1 & \boldsymbol{A}_2 \end{pmatrix}$$
+$$\boldsymbol{A} = \begin{pmatrix} \boldsymbol{A}_1 & \boldsymbol{A}_2 \end{pmatrix}$$
 
 where $\boldsymbol{A}_1$ and $\boldsymbol{A}_2$ are the two partitions of the matrix as shown below:
 
@@ -278,7 +278,7 @@ $$\boldsymbol{X} := \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end
 
 That is, $\boldsymbol{X}$ is formed by concatenating the $n-r \times n-r$ identity matrix below the $-\boldsymbol{B}$ matrix. Now, we see that $\boldsymbol{AX} = \boldsymbol{0}$:
 
-$$\begin{align*}\boldsymbol{AX} &= \begin{pmatrix}(\boldsymbol{A}_1 & \boldsymbol{A}_1\boldsymbol{B} \end{pmatrix}  \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} \\ &= -\boldsymbol{A}_1\boldsymbol{B} +  \boldsymbol{A}_1\boldsymbol{B} \\ &= \boldsymbol{0} \end{align*}$$
+$$\begin{align*}\boldsymbol{AX} &= \begin{pmatrix} \boldsymbol{A}_1 & \boldsymbol{A}_1\boldsymbol{B} \end{pmatrix}  \begin{pmatrix} -\boldsymbol{B} \\ \boldsymbol{I}_{n-r} \end{pmatrix} \\ &= -\boldsymbol{A}_1\boldsymbol{B} +  \boldsymbol{A}_1\boldsymbol{B} \\ &= \boldsymbol{0} \end{align*}$$
 
 Depicted schematically,
 
