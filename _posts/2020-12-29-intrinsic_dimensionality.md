@@ -13,7 +13,7 @@ tags:
 Introduction
 -------------
 
-An important concept in linear algebra and the data sciences is the idea of **intrinsic dimensionality**.  I found that in my formal education this concept was never explicitly taught; however, it undergirds so many concepts in linear algebra and data analysis. In this post I will discuss the difference between the **extrinsic dimensionality** of a space versus its **intrinsic dimensionality**.  These general ideas provides a nice framework for understanding such diverse concepts as the [rank of a matrix](https://en.wikipedia.org/wiki/Rank_(linear_algebra)) in linear algebra as well as [dimension reduction](https://en.wikipedia.org/wiki/Dimensionality_reduction) and [feature selection](https://en.wikipedia.org/wiki/Feature_extraction) in machine learning. 
+An important concept in linear algebra and the data sciences is the idea of **intrinsic dimensionality**.  I found that in my formal education this concept was never explicitly taught; however, it undergirds so many concepts in linear algebra and data analysis. In this post I will discuss the difference between the **extrinsic dimensionality** of a space versus its **intrinsic dimensionality**.  These general ideas provides a nice framework for understanding such diverse concepts as the [rank of a matrix](https://mbernste.github.io/posts/matrixspaces/) in linear algebra as well as [dimension reduction](https://en.wikipedia.org/wiki/Dimensionality_reduction) and [feature selection](https://en.wikipedia.org/wiki/Feature_extraction) in machine learning. 
 
 What exactly is a "space"?
 -------------
