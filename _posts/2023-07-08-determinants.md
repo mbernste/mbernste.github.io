@@ -203,10 +203,6 @@ Above we see a unit cube first transformed into a parallelogram by $\boldsymbol{
 
 
 
-Determinants and invertability
-------------------------------
-
-
 Interpreting the sign of the determinant
 ----------------------------------------
 
@@ -235,7 +231,7 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, if if it's column-vectors are [linearly dependent](https://mbernste.github.io/posts/linear_independence/), then its determinant is zero.</span>
+<span style="color:#0060C6">**Theorem 2:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, if it's column-vectors are [linearly dependent](https://mbernste.github.io/posts/linear_independence/), then its determinant is zero.</span>
 
 **Proof:**
 
