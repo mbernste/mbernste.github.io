@@ -205,9 +205,9 @@ Above we see a unit cube first transformed into a parallelogram by $\boldsymbol{
 Interpreting the sign of the determinant
 ----------------------------------------
 
-So far, our discussion has focused around the determinant's purpose of describing the volume of the paralellopiped formed by a matrix's columns. That is, the _absolute value_ of the determinant describes this volume; however, the determinant can be either positive or negative. What is the interpetation of a negative determinant?
+So far, we have shown how the absolute value of the determinant describes the volume of a parallelopiped formed by a matrix's columns; however, the determinant can be either positive or negative, which begs the question: what is the interpetation of a negative determinant?
 
-While the main focus of our discussion of the determinant has focused on volume, it is not the full story! The determinant also captures an additional characteristic of a matrix's linear transformation: it's ability to preserve or invert the orientation of objects that it transforms.
+Unfortunately, the determinant's ability to capture volume is not the full story! The determinant also captures an additional characteristic of a matrix's linear transformation: **it's ability to preserve or invert the orientation of objects that it transforms**.
 
 The relationship between determinants and the invertability of a matrix
 -----------------------------------------------------------------------
