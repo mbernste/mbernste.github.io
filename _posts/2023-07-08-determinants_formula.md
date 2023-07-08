@@ -300,7 +300,23 @@ $\square$
 
 **Proof:**
 
-First, let's assume that $\boldsymbol{A}$ is singular. This means that the column-vectors of $\boldsymbol{A}$ are linearly dependent and thus, by Theorem 2, $\text{Det}(\boldsymbol{A}) = 0$. While not proven here, it holds that the [rank](https://en.wikipedia.org/wiki/Rank_(linear_algebra)) of the column space of a matrix equals the rank of the row space. We know that a matrix is singular if and only if it's column-rank is less than than the number of columns. Thus, 
+First, if $\boldsymbol{A}$ is singular, then $\boldsymbol{A}^T$ [is also singular](https://en.wikipedia.org/wiki/Transpose#:~:text=The%20transpose%20of%20an%20invertible,either%20of%20these%20equivalent%20expressions.). By Theorem 2, the determinant of a singular matrix is zero and thus, $\text{Det}(\boldsymbol{A}) = text{Det}(\boldsymbol{A}^T) = 0$. 
+
+If $\boldsymbol{A}$ is invertible, then we can express $\boldsymbol{A}$ as the product of some sequence of elementary matrices:
+
+$$\boldsymbol{A} = \boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m$$
+
+Then, 
+
+$$\boldsymbol{A}^T = \boldsymbol{E}_m^T \boldsymbol{E}_{m-1}^T \dots \boldsymbol{E}_1^T$$
+
+We note that the determinant of every elementary matrix is equal to its transpose. Both scaling elementary matrices and row-swapping matrices are symmetric and thus, their transposes are equal to themselves. Thus the determinant of their transpose is equal to themselves. For a row-sum elementary matrix, the transpose is still a diagonal matrix and thus, its determinant also equals the determinant of its transpose (since by Theorem 3, the determinant of a triangular matrix can be computed by summing the diagonal entries).
+
+Thus, we see that 
+
+$$\begin{align*}\text{Det}(\boldsymbol{A}) = \boldsymbol{E}_m^T \boldsymbol{E}_{m-1}^T \dots \boldsymbol{E}_1^T\end{align}$$
+
+
 
 $\square$
 
