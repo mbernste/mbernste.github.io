@@ -301,7 +301,13 @@ $\square$
 
 **Proof:**
 
+First, if $\boldsymbol{A}$ is singular, then by Theorem 2, we know that $\text{Det}(\boldsymbol{A}) = 0$ and thus it trivially holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$ since anything multiplied by zero is zero. The same is true if $\boldsymbol{B}$ is singular. Thus, our proof will focus only on the case in which both $\boldsymbol{A}$ and $\boldsymbol{B}$ are invertible.
 
+We first begin by proving that given an elementary matrix $\boldsymbol{E}$, it holds that
+
+$$\text{Det}(EB) = \text{Det}(\boldsymbol{E})\text{Det}(\boldsymbol{B})$$
+
+To show this, let us consider each of the three types of elementary matrices individually. If $\boldsymbol{E}$ is a scaling matrix that scales the $k$the column of $\boldsymbol{B}$, then 
 
 $\square$
 
