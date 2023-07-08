@@ -211,6 +211,15 @@ So far, we have shown how the absolute value of the determinant describes the vo
 Unfortunately, the determinant's ability to capture volume is not the full story! The determinant also captures an additional characteristic of a matrix's linear transformation: **it's ability to preserve or invert the orientation of objects that it transforms**.
 
 
+Summary
+-------
+
+Our discussion of determinants have touched a number of ideas and concepts. Let's summarize these thoughts:
+
+1. The formula for the determinant of a matrix captures the notion of geometric volume in high-dimensional spaces
+
+
+
 
 Appendix
 --------
