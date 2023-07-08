@@ -305,9 +305,9 @@ First, if $\boldsymbol{A}$ is singular, then by Theorem 2, we know that $\text{D
 
 We first begin by proving that given an elementary matrix $\boldsymbol{E}$, it holds that
 
-$$\text{Det}(EB) = \text{Det}(\boldsymbol{E})\text{Det}(\boldsymbol{B})$$
+$$\text{Det}(AE) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$$
 
-To show this, let us consider each of the three types of elementary matrices individually. If $\boldsymbol{E}$ is a scaling matrix that scales the $k$the column of $\boldsymbol{B}$, then 
+To show this, let us consider each of the three types of elementary matrices individually. If $\boldsymbol{E}$ is a scaling matrix where the $i$th diagonal entry is a scalar $k$, then $\boldsymbol{AE}$ will scale the $i$th column of $\boldsymbol{A}$ by $k$. By Axiom 3 of the determinant, scaling a single column will scale the full deterimant. 
 
 $\square$
 
