@@ -311,7 +311,7 @@ $\square$
 
 **Proof:**
 
-First, if $\boldsymbol{A}$ is singular, then $\boldsymbol{A}^T$ [is also singular](https://en.wikipedia.org/wiki/Transpose#:~:text=The%20transpose%20of%20an%20invertible,either%20of%20these%20equivalent%20expressions.). By Theorem 2, the determinant of a singular matrix is zero and thus, $\text{Det}(\boldsymbol{A}) = text{Det}(\boldsymbol{A}^T) = 0$. 
+First, if $\boldsymbol{A}$ is singular, then $\boldsymbol{A}^T$ [is also singular](https://en.wikipedia.org/wiki/Transpose#:~:text=The%20transpose%20of%20an%20invertible,either%20of%20these%20equivalent%20expressions.). By Theorem 2, the determinant of a singular matrix is zero and thus, $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T) = 0$. 
 
 If $\boldsymbol{A}$ is invertible, then we can express $\boldsymbol{A}$ as the product of some sequence of elementary matrices:
 
