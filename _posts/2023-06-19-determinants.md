@@ -20,7 +20,7 @@ In introductory linear algebra, one is taught that the the **determinant**, $\te
 
 $$\text{Det} : \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$$ 
 
-for which the absolute value of a matrix's determinant is the area of the parallelepided formed by its columns. 
+for which the absolute value of a matrix's determinant is the area of the parallelepided formed by its columns.
 
 While conceptually, this is fairly straightforward, the analytical formula for the determinant is quite confusing. Specifically, the determinant of an $m \times m$ matrix is defined as:
 
@@ -134,7 +134,6 @@ The second axiom of linearity states that if we break apart one of the vectors t
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Determinant_linearity_axiom2.png" alt="drawing" width="800"/></center>
 
 
-
 Deriving the formula for a determinant
 --------------------------------------
 
@@ -163,14 +162,42 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 <span style="color:#0060C6">**Theorem 9:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
 
 
+Determinants describe how much a matrix enlarges or shrinks space
+-----------------------------------------------------------------
+
+Recall from a [previous discussion](https://mbernste.github.io/posts/matrices/), that there are three main perspectives for which one can view a matrix:
+
+1. As a table of values
+2. As a list of column vectors (or row vectors)
+3. As a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) between vector spaces
+
+So far, we have discussed how the determinant captures the volume of the paralellopiped formed by the column-vectors of a matrix. This discussion has thus primarily viewed matrices from Perspective 2: viewing matrices as a list of column vectors. Now, we will discuss what the determinant captures when viewing matrices from Perspective 3: viewing matrices as linear transformations between vector spaces.
+
+First, let's think about what a matrix, $\boldsymbol{A} \in \mathbb{R}^{2 \times 2}$ will do to the standard basis vectors in $\mathbb{R}^{2 \times 2}$. Specifically, we see that the first standard basis vector will be transformed to the first column-vector of $\boldsymbol{A}$:
+
+$$\begin{bmatrix}a & b \\ c & d\end{bmatrix}\begin{bmatrix}1 \\ 0\end{bmatrix} = \begin{bmatrix}a \\ c\end{bmatrix}$$
+
+Similarly, the second standard basis vector will be transformed to the second column of $\boldsymbol{A}$:
+
+$$\begin{bmatrix}a & b \\ c & d\end{bmatrix}\begin{bmatrix}0 \\ 1\end{bmatrix} = \begin{bmatrix}b \\ d\end{bmatrix}$$
+
+Thus, if we multiply $\boldsymbol{A}$ by the matrix we that is formed by using the two standard basis vectors as columns (which is just the identity matrix), we get back $\boldsymbol{A}$:
+
+$$\boldsymbol{AI} = \boldsymbol{A}$$
+
+Here, we are viewing the matrix $\boldsymbol{A}$ as a function and are viewing $\boldsymbol{I}$ as a list of vectors.
+
+
 If determinants capture the notion of volume, then why can it be negative?
 --------------------------------------------------------------------------
+
+So far, our discussion has focused around the determinant's purpose of describing the volume of a paralellopiped 
+
 
 The relationship between determinants and the invertability of a matrix
 -----------------------------------------------------------------------
 
-The determinant of a matrix product
------------------------------------
+
 
 Appendix
 --------
