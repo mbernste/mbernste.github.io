@@ -185,7 +185,9 @@ Thus, if we multiply $\boldsymbol{A}$ by the matrix we that is formed by using t
 
 $$\boldsymbol{AI} = \boldsymbol{A}$$
 
-Here, we are viewing the matrix $\boldsymbol{A}$ as a function and are viewing $\boldsymbol{I}$ as a list of vectors.
+Here, we are viewing the matrix $\boldsymbol{A}$ as a function and are viewing $\boldsymbol{I}$ as a list of vectors. We see that $\boldsymbol{A}$ transforms the $\boldsymbol{I}$ into $\boldsymbol{A}$. Moreover, we see that the column vectors of $\boldsymbol{I}$ form the unit cube and $\boldsymbol{A}$ transforms this unit cube into a parallelogram with an area equal to the determinant of $\boldsymbol{A}$!
+
+
 
 
 If determinants capture the notion of volume, then why can it be negative?
