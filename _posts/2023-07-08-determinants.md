@@ -162,8 +162,8 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 <span style="color:#0060C6">**Theorem 9:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
 
 
-Determinants describe how much matrices grow or shrink things
--------------------------------------------------------------
+Determinants describe how much matrices grow or shrink objects
+--------------------------------------------------------------
 
 Recall from a [previous discussion](https://mbernste.github.io/posts/matrices/), that there are three main perspectives for which one can view a matrix:
 
@@ -198,11 +198,12 @@ From this perspective, we can gain a much better intuition for Theorem 9 present
 Above we see a unit cube first transformed into a parallelogram by $\boldsymbol{B}$. It's area grows by a factor of $\lvert \text{Det}(\boldsymbol{B}) \rvert$. This parallelogram is then transformed into another paralellogram by $\boldsymbol{A}$. It's transformation grows by an additional factor of $\lvert \text{Det}(\boldsymbol{A}) \rvert$. Thus, the final scaling factor of the unit cube's area under $\boldsymbol{AB}$ is $\lvert \text{Det}(\boldsymbol{A}) \rvert \lvert \text{Det}(\boldsymbol{B})\rvert$. Equivalently, because the unit cube was transformed by $\boldsymbol{AB}$, its area grew by a factor of $\lvert \text{Det}(\boldsymbol{AB}) \rvert$.
 
 
-If determinants capture the notion of volume, then why can it be negative?
---------------------------------------------------------------------------
+If determinants capture the notion of volume, what is the interpretation of a negative determinant?
+---------------------------------------------------------------------------------------------------
 
-So far, our discussion has focused around the determinant's purpose of describing the volume of a paralellopiped 
+So far, our discussion has focused around the determinant's purpose of describing the volume of the paralellopiped formed by a matrix's columns. That is, the _absolute value_ of the determinant describes this volume; however, the determinant can be either positive or negative. What is the interpetation of a negative determinant?
 
+While the main focus of our discussion of the determinant has focused on volume, it is not the full story! The determinant also captures an additional characteristic of a matrix's linear transformation: it's ability to preserve or invert the orientation of objects that it transforms.
 
 The relationship between determinants and the invertability of a matrix
 -----------------------------------------------------------------------
