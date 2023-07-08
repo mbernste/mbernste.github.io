@@ -1,7 +1,7 @@
 ---
-title: 'Demystifying determinants'
+title: 'Demystifying the formula for the determinant'
 date: 2023-07-08
-permalink: /posts/determinants/
+permalink: /posts/determinantsformula/
 tags:
   - tutorial
   - mathematics
