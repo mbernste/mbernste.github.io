@@ -202,8 +202,8 @@ From this perspective, we can gain a much better intuition for Theorem 9 present
 Above we see a unit cube first transformed into a parallelogram by $\boldsymbol{B}$. It's area grows by a factor of $\lvert \text{Det}(\boldsymbol{B}) \rvert$. This parallelogram is then transformed into another paralellogram by $\boldsymbol{A}$. It's transformation grows by an additional factor of $\lvert \text{Det}(\boldsymbol{A}) \rvert$. Thus, the final scaling factor of the unit cube's area under $\boldsymbol{AB}$ is $\lvert \text{Det}(\boldsymbol{A}) \rvert \lvert \text{Det}(\boldsymbol{B})\rvert$. Equivalently, because the unit cube was transformed by $\boldsymbol{AB}$, its area grew by a factor of $\lvert \text{Det}(\boldsymbol{AB}) \rvert$.
 
 
-If determinants capture the notion of volume, what is the interpretation of a negative determinant?
----------------------------------------------------------------------------------------------------
+Interpreting the sign of the determinant
+----------------------------------------
 
 So far, our discussion has focused around the determinant's purpose of describing the volume of the paralellopiped formed by a matrix's columns. That is, the _absolute value_ of the determinant describes this volume; however, the determinant can be either positive or negative. What is the interpetation of a negative determinant?
 
