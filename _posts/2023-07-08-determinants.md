@@ -195,7 +195,7 @@ From this perspective, we can gain a much better intuition for Theorem 9 present
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_matrix_product.png" alt="drawing" width="800"/></center>
 
-Above we see a unit cube first transformed into a parallelogram by $\boldsymbol{B}$. It's area grows by a factor of $\lvert \text{Det}(\boldsymbol{B}) \rvert$. This parallelogram is then transformed into another paralellogram by $\boldsymbol{A}$. It's transformation grows by a factor of $\lvert \text{Det}(\boldsymbol{A}) \rvert$. Thus, the final scaling factor of the unit cube's area under $\boldsymbol{AB}$ is $\lvert \text{Det}(\boldsymbol{A}) \rvert \lvert \text{Det}(\boldsymbol{B})\rvert$.  
+Above we see a unit cube first transformed into a parallelogram by $\boldsymbol{B}$. It's area grows by a factor of $\lvert \text{Det}(\boldsymbol{B}) \rvert$. This parallelogram is then transformed into another paralellogram by $\boldsymbol{A}$. It's transformation grows by an additional factor of $\lvert \text{Det}(\boldsymbol{A}) \rvert$. Thus, the final scaling factor of the unit cube's area under $\boldsymbol{AB}$ is $\lvert \text{Det}(\boldsymbol{A}) \rvert \lvert \text{Det}(\boldsymbol{B})\rvert$. Equivalently, because the unit cube was transformed by $\boldsymbol{AB}$, its area grew by a factor of $\lvert \text{Det}(\boldsymbol{AB}) \rvert$.
 
 
 If determinants capture the notion of volume, then why can it be negative?
