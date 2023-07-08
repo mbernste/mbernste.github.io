@@ -137,7 +137,7 @@ The second axiom of linearity states that if we break apart one of the vectors t
 Deriving the formula for a determinant
 --------------------------------------
 
-In the previous section, we outlined three axioms that define fundamental ways in which the volume of a parallelogram is related to the vectors that form its sides. We will show that there is only one analytica formula for the determinant that satisfies these axioms. That formula is:
+In the previous section, we outlined three axioms that define fundamental ways in which the volume of a parallelogram is related to the vectors that form its sides. We will show that there is only one analytical formula for the determinant that satisfies these axioms. That formula is:
 
 $$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$$
 
