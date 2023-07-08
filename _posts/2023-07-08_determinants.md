@@ -8,14 +8,14 @@ tags:
   - linear algebra
 ---
 
-
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
+Introduction
+------------
 
-Determinants describe volume
-----------------------------
+In the previous post, we [derived the formula]() for the determinant by showing that the determinant is a function on matrices that generalizes our notion of geometric volume from two dimensions to arbitrarily high dimensions. From this discussion, it might have appeared that the determinant of a matrix _only_ describes the volume of the paralellopiped formed by the columns of that matrix. However, that is not the full story! In this post, we will flesh out our understanding of the determinant by going beyond 
 
-As with most topics, it helps to view determinants from [multiple perspectives](https://mbernste.github.io/posts/understanding_3d/). To understand determinants from multiple perspectives, we will also need to view matrices from multiple perspectives. Recall from a [previous post](https://mbernste.github.io/posts/matrices/) that there are three perpectives I find helpful for viewing matrices:
+As with most topics, it helps to view determinants from [multiple perspectives](https://mbernste.github.io/posts/understanding_3d/). However, to understand determinants from multiple perspectives, we will also need to view matrices from multiple perspectives. Recall from a [previous post](https://mbernste.github.io/posts/matrices/) that there are three perpectives I find helpful for viewing matrices:
 
 1. **Perspective 1:** As a table of values
 2. **Perspective 2:** As a list of column vectors (or row vectors)
