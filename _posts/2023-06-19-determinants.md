@@ -162,8 +162,8 @@ For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m 
 <span style="color:#0060C6">**Theorem 9:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
 
 
-Determinants describe how much a matrix enlarges or shrinks space
------------------------------------------------------------------
+Determinants describe how much matrices grow or shrink things
+-------------------------------------------------------------
 
 Recall from a [previous discussion](https://mbernste.github.io/posts/matrices/), that there are three main perspectives for which one can view a matrix:
 
@@ -185,9 +185,12 @@ Thus, if we multiply $\boldsymbol{A}$ by the matrix we that is formed by using t
 
 $$\boldsymbol{AI} = \boldsymbol{A}$$
 
-Here, we are viewing the matrix $\boldsymbol{A}$ as a function and are viewing $\boldsymbol{I}$ as a list of vectors. We see that $\boldsymbol{A}$ transforms the $\boldsymbol{I}$ into $\boldsymbol{A}$. Moreover, we see that the column vectors of $\boldsymbol{I}$ form the unit cube and $\boldsymbol{A}$ transforms this unit cube into a parallelogram with an area equal to the determinant of $\boldsymbol{A}$!
+Here, we are viewing the matrix $\boldsymbol{A}$ as a function and are viewing $\boldsymbol{I}$ as a list of vectors. We see that $\boldsymbol{A}$ transforms the $\boldsymbol{I}$ into $\boldsymbol{A}$. Moreover, we see that the column vectors of $\boldsymbol{I}$ form the unit cube and $\boldsymbol{A}$ transforms this unit cube into a parallelogram with an area equal to the determinant of $\boldsymbol{A}$. Thus, we see that the matrix $\boldsymbol{A}$ has, in a sense, blown up the area of the original cube to an object that has a size equal to  $|\text{Det}(\boldsymbol{A})|$. 
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_grow_unit_cube.png" alt="drawing" width="500"/></center>
 
 
+This pattern does not just hold for unit cubes nor does it hold for just $\mathbb{R}^2$. In fact, any polyhedron in any $n$ dimensional space that is transformed by some matrix $\boldsymbol{A}$ will become a new polyhedron with an area that is grown or shrunk by a factor equal $|\text{Det}(\boldsymbol{A})|$. Thus, determinants describe a very fundamental quality of a matrix's linear transformation. It describes the magnitude by which the matrix grows or shrinks things under its transformation.
 
 
 If determinants capture the notion of volume, then why can it be negative?
