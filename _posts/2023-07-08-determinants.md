@@ -30,7 +30,21 @@ where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first 
 
 When one is usually first taught determinants, they are supposed to take it as a given that this formula calculates the volume of an $m$-dimensional parallelepided; however, if you're like me, this is not at all obvious. How on earth does this formula calculate volume? Moreover, why is it recursive?  Additionally, this formula can be either positive or negative. If the absolute value of this formula captures volume, then what is the interpretation of its sign (whether it is positive or negative)?
 
-In this post, I am going to attempt to demystify this definition. We will start with the base case of a $2 \times 2$ matrix, verify that it indeed computes the volume of the parallelogram formed by the columns of the matrix, and then move on to the determinant for larger matrices. Though we will start our discussion focusing on volume, we will also move towards interpreting the sign of the determinant. 
+In this post, I am going to attempt to demystify this definition. We will start with the base case of a 2×2
+ matrix, verify that it indeed computes the volume of the parallelogram formed by the columns of the matrix, and then move on to the determinant for larger matrices. Though we will start our discussion focusing on volume, we will also move towards interpreting the sign of the determinant.
+
+Determinants describe volume
+----------------------------
+
+As with most topics, it helps to view determinants from [multiple perspectives](https://mbernste.github.io/posts/understanding_3d/). To understand determinants from multiple perspectives, we will also need to view matrices from multiple perspectives. Recall from a [previous post](https://mbernste.github.io/posts/matrices/) that there are three perpectives I find helpful for viewing matrices:
+
+1. **Perspective 1:** As a table of values
+2. **Perspective 2:** As a list of column vectors (or row vectors)
+3. **Perspective 3:** As a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) between vector spaces
+
+Let's start with viewing matrices from Perspective 2. Viewing a matrix as a list of column vectors, the determinant of a matrix can be understood to be a function that captures the geometric volume of the parallelopiped formed by the column vectors of the matrix. In fact, it is from this 
+
+
 
 $2 \times 2$ matrices
 ---------------------
@@ -214,10 +228,13 @@ Unfortunately, the determinant's ability to capture volume is not the full story
 Summary
 -------
 
-Our discussion of determinants have touched a number of ideas and concepts. Let's summarize these thoughts:
+Our discussion of determinants have touched a number of ideas and concepts. Let's summarize these thoughts by again considering the different perspectives for viewing matrices:
 
-1. The formula for the determinant of a matrix captures the notion of geometric volume in high-dimensional spaces
+1. As a table of values
+2. As a list of column vectors (or row vectors)
+3. As a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) between vector spaces
 
+From perspective 2, the determinant describes the geometric volume of the parallelopiped formed by the list of column-vectors of a matrix. 
 
 
 
