@@ -139,11 +139,13 @@ The second axiom of linearity states that if we break apart one of the vectors t
 Deriving the formula for a determinant
 --------------------------------------
 
-In the previous section, we outlined three axioms that define fundamental ways in which the volume of a parallelogram is related to the vectors that form its sides. We will show that there is only one analytical formula for the determinant that satisfies these axioms. That formula is:
+In the previous section, we outlined three axioms that define fundamental ways in which the volume of a parallelogram is related to the vectors that form its sides. It turns out that the _only_ formula that satisfies these axioms is the following:
 
 $$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$$
 
-For now, we will assume that there exists a function $\text{Det}: \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$ that satisfies our three axioms and will subsequently prove a series of theorems and lemmas that will build up to this final formula. Many of these theorems/lemmas will make heavy use of the fact that [invertible matrices can be decomposed into the product of elementary matrices](https://mbernste.github.io/posts/row_reduction/).
+We will start by assuming that there exists a function $\text{Det}: \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$ that satisfies our three axioms and will subsequently prove a series of theorems that will build up to this final formula. Many of these theorems/lemmas will make heavy use of the fact that invertible matrices can be decomposed into the product of elementary matrices. For an in-depth discussion of elementary matrices, [see my previous post](https://mbernste.github.io/posts/row_reduction/). 
+
+The Theorems required to derive this formula are outlined below. and their proofs are described in the Appendix to this post
 
 <span style="color:#0060C6">**Theorem 1:** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$, if we exchange any two column-vectors of $\boldsymbol{A}$ to form a new matrix $\boldsymbol{A}'$, then $\text{Det}(\boldsymbol{A}') = -\text{Det}(\boldsymbol{A})$</span>
 
