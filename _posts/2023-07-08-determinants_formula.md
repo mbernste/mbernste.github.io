@@ -165,9 +165,17 @@ The Theorems required to derive this formula are outlined below. and their proof
 
 <span style="color:#0060C6">**Theorem 9:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T)$.</span>
 
+With these theorems in hand we can derive the final formula for the determinant. A sketch of how the previous theorems lead up to the formula is shown below:
 
 
+Let's now prove the final theorem:
 
+<span style="color:#0060C6">**Theorem 10:** Let $\text{Det} : \mathbb{R}^{n \times n} \rightarrow \mathbb{R}$ be a function that satisfies the following three properties: a) $\text{Det}(\boldsymbol{I}) = 1$ b) Given $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, if any two columns of $\boldsymbol{A}$ are equal, then $\text{Det}(\boldsymbol{A}) = 0$ c) $\text{Det}$ is linear with respect to the column-vectors of its input. Then $\text{Det}$ is given by $\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$</span>
+
+
+**Proof:**
+
+$\square$
 
 Appendix
 --------
