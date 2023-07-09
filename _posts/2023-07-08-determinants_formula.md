@@ -307,7 +307,13 @@ We first begin by proving that given an elementary matrix $\boldsymbol{E}$, it h
 
 $$\text{Det}(AE) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$$
 
-To show this, let us consider each of the three types of elementary matrices individually. If $\boldsymbol{E}$ is a scaling matrix where the $i$th diagonal entry is a scalar $k$, then $\boldsymbol{AE}$ will scale the $i$th column of $\boldsymbol{A}$ by $k$. By Axiom 3 of the determinant, scaling a single column will scale the full deterimant. 
+To show this, let us consider each of the three types of elementary matrices individually. First, if $\boldsymbol{E}$ is a scaling matrix where the $i$th diagonal entry is a scalar $k$, then $\boldsymbol{AE}$ will scale the $i$th column of $\boldsymbol{A}$ by $k$. By Axiom 3 of the determinant, scaling a single column will scale the full deterimant. Moreover, by Theorem 5, the determinant of $\boldsymbol{E}$ is $k$. Thus,
+
+$$\begin{align*}\tedt{Det}(\boldsymbol{AE}) &= \text{Det}(\boldsymbol{A})k && \text{Axiom 3} \\ &= \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E}) && \text{Theorem 5}\end{align*}$$
+
+Now let's consider the case where $\boldsymbol{E}$ is a row-swapping matrix that swaps rows $i$ and $j$. Here, $\boldsymbol{AE}$ will swap the $i$th and $j$th columns of $\boldsymbol{A}$. By Theorem XXXX, swapping any two columns of a matrix flips the sign of the determinant. Moreover, by Theorem 6, the determinant of $\boldsymbol{E}$ is $-1$. Thus,
+
+$$\begin{align*}\tedt{Det}(\boldsymbol{AE}) &= -\text{Det}(\boldsymbol{A}) && \text{Axiom 3} \\ &= \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E}) && \text{Theorem 6}\end{align*}$$
 
 $\square$
 
