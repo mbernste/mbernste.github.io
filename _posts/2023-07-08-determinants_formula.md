@@ -333,7 +333,7 @@ $$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A}\boldsym
 
 Now we reverse the rule that $\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$ again moving going from right to left:
 
-  $$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A})\prod_{i=1}^m \text{Det}(\boldsymbol{E}_i) \\ \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{m-2}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{m-1}\boldsymbol{E}_{m}) \\ \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{m-3}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{m-2} \boldsymbol{E}_{m-1}\boldsymbol{E}_{m}) \\ \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1}\boldsymbol{E}_m) \\ &=  \text{Det}(\boldsymbol{AB})\end{align*} 
+  $$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A})\prod_{i=1}^m \text{Det}(\boldsymbol{E}_i) \\ \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{m-2}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{m-1}\boldsymbol{E}_{m}) \\ \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{m-3}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{m-2} \boldsymbol{E}_{m-1}\boldsymbol{E}_{m}) \\ \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1}\boldsymbol{E}_m) \\ &=  \text{Det}(\boldsymbol{AB})\end{align*}$$
 
 $\square$
 
