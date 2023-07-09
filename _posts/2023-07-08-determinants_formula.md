@@ -311,9 +311,27 @@ To show this, let us consider each of the three types of elementary matrices ind
 
 $$\begin{align*}\tedt{Det}(\boldsymbol{AE}) &= \text{Det}(\boldsymbol{A})k && \text{Axiom 3} \\ &= \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E}) && \text{Theorem 5}\end{align*}$$
 
-Now let's consider the case where $\boldsymbol{E}$ is a row-swapping matrix that swaps rows $i$ and $j$. Here, $\boldsymbol{AE}$ will swap the $i$th and $j$th columns of $\boldsymbol{A}$. By Theorem XXXX, swapping any two columns of a matrix flips the sign of the determinant. Moreover, by Theorem 6, the determinant of $\boldsymbol{E}$ is $-1$. Thus,
+Now let's consider the case where $\boldsymbol{E}$ is a row-swapping matrix that swaps rows $i$ and $j$. Here, $\boldsymbol{AE}$ will swap the $i$th and $j$th columns of $\boldsymbol{A}$. By Theorem 1, swapping any two columns of a matrix flips the sign of the determinant. Moreover, by Theorem 6, the determinant of $\boldsymbol{E}$ is $-1$. Thus,
 
-$$\begin{align*}\tedt{Det}(\boldsymbol{AE}) &= -\text{Det}(\boldsymbol{A}) && \text{Axiom 3} \\ &= \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E}) && \text{Theorem 6}\end{align*}$$
+$$\begin{align*}\tedt{Det}(\boldsymbol{AE}) &= -\text{Det}(\boldsymbol{A}) && \text{Theorem 1} \\ &= \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E}) && \text{Theorem 6}\end{align*}$$
+
+Finally let's consider the case where  $\boldsymbol{E}$ is an elementary matrix that adds a multiple of one row to another. Here, $\boldsymbol{AE}$ will add a multiple of one column of $\boldsymbol{A}$ to another column. By Theorem 4, this does not change the determinant. Moreover, by Theorem 7, the determinant of $\boldsymbol{E}$ determinant is simply 1. Thus,
+
+$$\begin{align*}\tedt{Det}(\boldsymbol{AE}) &= -\text{Det}(\boldsymbol{A}) && \text{Theorem 4} \\ &= \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E}) && \text{Theorem 7}\end{align*}$$
+
+Now we have proven that for an invertible matrix $\boldsymbol{A}$ and elementary matrix $\boldsymbol{E}$ it holds that $\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$. Let's now turn to the general case where we are multiplying two invertible matrices $\boldsymbol{A}$ and $\boldsymbol{B}$.
+
+As [we have shown](https://mbernste.github.io/posts/row_reduction/), any invertible matrix can be decomposed as the product of some sequence of elementary matrices. Thus, we can write,
+
+$$\boldsymbol{AB} = \boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m$$
+
+Then we apply our newly proven fact that for an elementary matrix $\boldsymbol{E}$ it holds that $\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$. We apply this fact in an iterative way from right to left as shown below:
+
+$$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1}\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1})\text{Det}(\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \text{Det}(\boldsymbol{E}_{m-2}))\text{Det}(\boldsymbol{E}_{m-1})\text{Det}(\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A})\prod_{i=1}^m \text{Det}(\boldsymbol{E}_i)  \end{align*}$$
+
+Now we reverse the rule that $\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$ going from left to right  
+
+
 
 $\square$
 
