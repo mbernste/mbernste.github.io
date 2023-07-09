@@ -329,7 +329,7 @@ $$\boldsymbol{AB} = \boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsy
 
 Then we apply our newly proven fact that for an elementary matrix $\boldsymbol{E}$ it holds that $\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$. We apply this fact in an iterative way from right to left as shown below:
 
-$$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1}\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1})\text{Det}(\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \text{Det}(\boldsymbol{E}_{m-2}))\text{Det}(\boldsymbol{E}_{m-1})\text{Det}(\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A})\prod_{i=1}^m \text{Det}(\boldsymbol{E}_i)  \end{align*}$$
+$$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1}\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1})\text{Det}(\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-2})\text{Det}(\boldsymbol{E}_{m-1})\text{Det}(\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A})\prod_{i=1}^m \text{Det}(\boldsymbol{E}_i)  \end{align*}$$
 
 Now we reverse the rule that $\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$ going from left to right  
 
