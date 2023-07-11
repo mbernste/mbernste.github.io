@@ -167,7 +167,13 @@ The Theorems required to derive this formula are outlined below. and their proof
 
 With these theorems in hand we can derive the final formula for the determinant:
 
-<span style="color:#0060C6">**Theorem 10:** Let $\text{Det} : \mathbb{R}^{n \times n} \rightarrow \mathbb{R}$ be a function that satisfies the following three properties: a) $\text{Det}(\boldsymbol{I}) = 1$ b) Given $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, if any two columns of $\boldsymbol{A}$ are equal, then $\text{Det}(\boldsymbol{A}) = 0$ c) $\text{Det}$ is linear with respect to the column-vectors of its input. Then $\text{Det}$ is given by $\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$</span>
+<span style="color:#0060C6">**Theorem 10:** Let $\text{Det} : \mathbb{R}^{n \times n} \rightarrow \mathbb{R}$ be a function that satisfies the following three properties:</span>
+
+<span style="color:#0060C6">1. $\text{Det}(\boldsymbol{I}) = 1$</span>
+<span style="color:#0060C6">2. Given $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, if any two columns of $\boldsymbol{A}$ are equal, then $\text{Det}(\boldsymbol{A}) = 0$</span>
+<span style="color:#0060C6">3. $\text{Det}$ is linear with respect to the column-vectors of its input. 
+
+<span style="color:#0060C6">Then $\text{Det}$ is given by $\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$</span>
 
 Again, this proof is left to the Appendix of this post. A sketch of how all of these theorems lead up to Theorem 10 is shown below:
 
