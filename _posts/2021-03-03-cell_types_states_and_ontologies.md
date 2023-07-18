@@ -25,7 +25,7 @@ Unfortunately, researchers found that such a fuzzy definition does not suffice a
 
 <center><img src="https://www.biorxiv.org/content/biorxiv/early/2019/10/17/742304/F5.large.jpg?width=800&height=600&carousel=1" alt="drawing" width="700"/></center>
 
-Moreover, we now know that cells are actually pretty plastic. While skin cells naturally don't morph into neurons, they can be induced to morph into neurons [using special treatments](https://www.nature.com/articles/nbt.1946).  Moreover, cells do switch their functions relatively often. A T cell floating in the blood stream can "activate" to fight an infection. Do we call transient cell states "cell types"? Do we include them in our catalog?
+Moreover, we now know that cells are actually pretty plastic. While skin cells naturally don't morph into neurons, they can be induced to morph into neurons [using special treatments](https://www.nature.com/articles/nbt.1946).  Moreover, cells do switch their functions relatively often. A T cell in a lymph node can "activate" to fight an infection. Do we call transient cell states "cell types"? Do we include them in our catalog?
 
 Lastly, there is the question of how to handle diseased cells. Is a neuron that is no longer able to perform the function that a neuron usually performs still a neuron?  Does a "diseased" neuron get its own cell type definition? What criteria do we use to determine whether a cell is "diseased"?
 
