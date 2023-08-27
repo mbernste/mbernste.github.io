@@ -313,7 +313,7 @@ $\square$
 
 **Proof:**
 
-First, if $\boldsymbol{A}$ is singular, then by Theorem 2, we know that $\text{Det}(\boldsymbol{A}) = 0$ and thus it trivially holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$ since anything multiplied by zero is zero. The same is true if $\boldsymbol{B}$ is singular. Thus, our proof will focus only on the case in which both $\boldsymbol{A}$ and $\boldsymbol{B}$ are invertible.
+First, if $\boldsymbol{A}$ is singular, then $\text{Det}(AB)$ is also singular. By Theorem 2, we know that the determinant of a singular matrix is zero and thus it trivially holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$ since both $\text{Det}(AB) = 0$ and also $\text{Det}(A)\text{Det}(B) = 0$ (since $\text{Det}(A)=0$). The same is true if $\boldsymbol{B}$ is singular. Thus, our proof will focus only on the case in which $\boldsymbol{A}$ and $\boldsymbol{B}$ are both invertible.
 
 We first begin by proving that given an elementary matrix $\boldsymbol{E}$, it holds that
 
