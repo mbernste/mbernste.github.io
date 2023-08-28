@@ -1,5 +1,5 @@
 ---
-title: 'Demystifying the formula for the determinant'
+title: 'Demystifying the determinant'
 date: 2023-07-08
 permalink: /posts/determinantsformula/
 tags:
