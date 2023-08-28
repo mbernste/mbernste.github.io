@@ -396,6 +396,21 @@ $\square$
 
 **Proof:**
 
+This proof follows from Theorem 9 and Axiom 3 of the determinant. Specifically, given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$. Let $\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,n}$ be the column vectors of $\boldsymbol{A}^T$. By Axiom 3, it holds that 
+
+$$Det(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j} + \boldsymbol{v}, \dots, \boldsymbol{a}_{*,n}) = Det(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j}, \dots, \boldsymbol{a}_{*,n}) + Det(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{v}, \dots, \boldsymbol{a}_{*,n})$$
+
+where $\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,n}$ are the column vectors of some matrix $\boldsymbol{A}$.
+
+By Theorem 9, 
+
+$$Det(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j} + \boldsymbol{v}, \dots, \boldsymbol{a}_{*,n}) = Det(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{a}_{j,*}, \dots, \boldsymbol{a}_{n,*}) + Det(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{v}, \dots, \boldsymbol{a}_{n,*})$$
+
+ Next, By Axiom 3, it holds that 
+
+ $$Det(\boldsymbol{a}_{*,1}, \dots, c\boldsymbol{a}_{*,j}, \dots, \boldsymbol{a}_{*,n}) = cDet(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,j}, \dots, \boldsymbol{a}_{*,n})$$
+
+
 $/square$
 
 
