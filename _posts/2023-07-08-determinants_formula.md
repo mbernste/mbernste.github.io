@@ -182,13 +182,13 @@ With these theorems in hand we can derive the final formula for the determinant:
 Again, this proof is left to the Appendix of this post. A sketch of how all of these theorems lead up to Theorem 10 is shown below:
 
 
-Interpreting the determinant in the context of linear transformations
----------------------------------------------------------------------
+What the determinant tells us about the linear transformation described by that matrix
+--------------------------------------------------------------------------------------
 
 We have now proved that the determinant of a matrix, $\boldsymbol{A}$, captures the volume of the parallelopiped formed by $\boldsymbol{A}$'s columns. 
 
-Interpreting negative determinants
-----------------------------------
+Interpreting the sign of the determinant
+----------------------------------------
 
 So far, we have shown how the absolute value of the determinant of a matrix captures the volume of the parallelopiped formed by that matrix's columns; however, we have glossed over the fact that this interpretation of the determinant requires taking its absolute value. What does the sign of the determinant capture? If determinants capture volume, then how can it be negative (intuitively, volume is only a positive quantity)? 
 
