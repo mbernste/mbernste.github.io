@@ -188,8 +188,9 @@ Interpreting negative determinants
 
 So far, we have shown how the absolute value of the determinant of a matrix captures the volume of the parallelopiped formed by that matrix's columns; however, we have glossed over the fact that this interpretation of the determinant requires taking its absolute value. What does the sign of the determinant capture? If determinants capture volume, then how can it be negative (intuitively, volume is only a positive quantity)? 
 
-In [some explanations](https://textbooks.math.gatech.edu/ila/determinants-volumes.html), the determinant is described as "signed volume"; however, I find this description unsatisfying. Volume, by nature, is not signed.  Rather, I prefer to think of the sign of the determinant as capturing something else about the matrix that is independent of volume: whether or not the linear transformation defined by the matrix is "inverting" space. Let's dig in.
+It turns out that the sign of the determinant captures something else about a matrix's linear transformation other than how much it grows or shrinks space: it captures whether or not a matrix "inverts" space. That is, a matrix with a positive determinant will maintain the orientation of vectors in the original space relative to one another, but a matrix with a negative determinant will invert their orientation.
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_inversion_hand.png" alt="drawing" width="700"/></center>
 
 
 Appendix
