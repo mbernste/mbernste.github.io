@@ -31,7 +31,7 @@ where $\boldsymbol{A}_{-1, -i}$ denotes the matrix formed by deleting the first 
 When one is usually first taught determinants, they are supposed to take it as a given that this formula calculates the volume of an $m$-dimensional parallelepided; however, if you're like me, this is not at all obvious. How on earth does this formula calculate volume? Moreover, why is it recursive? 
 
 In this post, I am going to attempt to demystify this definition. We will start with the base case of a 2×2
- matrix, verify that it indeed computes the volume of the parallelogram formed by the columns of the matrix, and then move on to the determinant for larger matrices. 
+ matrix, verify that it indeed computes the volume of the parallelogram formed by the columns of the matrix, and then move on to the determinant for larger matrices. We will then discuss what the volume of the parallelopiped formed by a matrix's columns informs us about the linear transformation described by that matrix. We will conclude by discussing how to interpret the sign (whether it's positive or negative) of a matrix's determinant. 
  
 
 $2 \times 2$ matrices
