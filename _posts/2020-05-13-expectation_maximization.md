@@ -96,7 +96,7 @@ I skipped over several steps in the derivation, but the idea is that maximizing 
 
 Next, if we hold $q$ fixed to $q_t := p(z \mid x ; \theta_t)$, we see that maximizing $F(q_t, \theta)$ with respect to $\theta$ is equivalent to maximizing the Q-function:
 
-$$\begin{align*}\text{argmax}_q \ F(q_t, \theta) &= \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{p(z \mid x ; \theta_t)} \right] \\ &= \text{argmax}_q \ \ E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right]\end{align*}$$
+$$\begin{align*}\text{argmax}_{\theta} \ F(q_t, \theta) &= \text{argmax}_q \ \ E_{z \sim q}\left[ \log \frac{p(Z, x ; \theta)}{p(z \mid x ; \theta_t)} \right] \\ &= \text{argmax}_{\theta} \ \ E_{Z\mid x, \theta_t}\left[ \log p(x, z ; \theta) \right]\end{align*}$$
 
 The last line in the above derivation is simply maximzing the Q-function -- exactly the M-Step!
 
