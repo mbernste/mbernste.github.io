@@ -14,4 +14,5 @@ tags:
 Introduction
 ---------
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rna_seq_ranked_ratios_real_example.png" alt="drawing" width="800"/></center>
 
