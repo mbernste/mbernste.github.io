@@ -189,6 +189,9 @@ The determinant describes how much a matrix grows or shrinks space
 
 We have now proved that the determinant of a matrix, $\boldsymbol{A}$, captures the volume of the parallelopiped formed by $\boldsymbol{A}$'s columns. 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_scales_circle.png" alt="drawing" width="700"/></center>
+
+
 Interpreting the sign of the determinant
 ----------------------------------------
 
