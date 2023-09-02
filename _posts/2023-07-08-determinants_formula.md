@@ -187,11 +187,11 @@ Again, this proof is left to the Appendix of this post. A sketch of how all of t
 The determinant describes how much a matrix grows or shrinks space
 -------------------------------------------------------------------
 
-We have now shown how the determinant of a matrix, $\boldsymbol{A}$, captures the volume of the parallelopiped formed by $\boldsymbol{A}$'s columns. However, what is the significance of this quantity? Recall, that a powerful way to [view a matrix](https://mbernste.github.io/posts/matrices/) is as a characterizing a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) between vector spaces. That is, given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can form a function $T$ that maps vectors in $\mathbb{R}^n$ to $\mathbb{R}^m$ using [matrix-vector multirplication](https://mbernste.github.io/posts/matrix_vector_mult/):
+We have now shown how the determinant of a matrix, $\boldsymbol{A}$, captures the volume of the parallelepiped formed by $\boldsymbol{A}$'s columns. However, what is the significance of this quantity? Recall, that a powerful way to [view a matrix](https://mbernste.github.io/posts/matrices/) is as a characterizing a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) between vector spaces. That is, given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can form a function $T$ that maps vectors in $\mathbb{R}^n$ to $\mathbb{R}^m$ using [matrix-vector multirplication](https://mbernste.github.io/posts/matrix_vector_mult/):
 
 $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$
 
-It turns out that the determinant tells us something fundamental about this linear transformation: it tells us how much the linear transformation "grows" or "shrinks" the vector space that it transforms.
+It turns out that the determinant tells us something fundamental about this linear transformation: it tells us how much the linear transformation "grows" or "shrinks" space. To see why this is, we will first examine what happens to the volume of a rectangle/hyperrectangle when it is transformed by an invertible matrix.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_scales_circle.png" alt="drawing" width="700"/></center>
 
@@ -199,7 +199,7 @@ It turns out that the determinant tells us something fundamental about this line
 Interpreting the sign of the determinant
 ----------------------------------------
 
-So far, we have shown how the absolute value of the determinant of a matrix captures the volume of the parallelopiped formed by that matrix's columns; however, we have glossed over the fact that this interpretation of the determinant requires taking its absolute value. What does the sign of the determinant capture? If determinants capture volume, then how can it be negative (intuitively, volume is only a positive quantity)? 
+So far, we have discussed how the absolute value of the determinant of a matrix captures the volume of the parallelopiped formed by that matrix's columns; however, we have glossed over the fact that this interpretation of the determinant requires taking its absolute value. What does the sign of the determinant capture? If determinants capture volume, then how can it be negative (intuitively, volume is only a positive quantity)? 
 
 It turns out that the sign of the determinant captures something else about a matrix's linear transformation other than how much it grows or shrinks space: it captures whether or not a matrix "inverts" space. That is, a matrix with a positive determinant will maintain the orientation of vectors in the original space relative to one another, but a matrix with a negative determinant will invert their orientation. 
 
