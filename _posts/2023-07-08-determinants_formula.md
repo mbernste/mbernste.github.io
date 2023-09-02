@@ -184,8 +184,8 @@ With these theorems in hand we can derive the final formula for the determinant:
 Again, this proof is left to the Appendix of this post. A sketch of how all of these theorems lead up to Theorem 10 is shown below:
 
 
-What the determinant tells us about the linear transformation described by that matrix
---------------------------------------------------------------------------------------
+The determinant describes how much a matrix grows or shrinks space
+-------------------------------------------------------------------
 
 We have now proved that the determinant of a matrix, $\boldsymbol{A}$, captures the volume of the parallelopiped formed by $\boldsymbol{A}$'s columns. 
 
@@ -207,6 +207,9 @@ Here we see that this matrix simply flipped the orientation of vectors across th
 This same phenomenon occurs in higher dimensions too. Here is an example in three dimensions where a 3D hand is transformed by a matrix $\boldsymbol{A}$ that again represents the identity matrix, but with the first and third columns flipped. Notice how the hand went from being a right hand to a left hand by the transformation:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_inversion_hand.png" alt="drawing" width="700"/></center>
+
+Intuiting determinants as "signed volume"
+-----------------------------------------
 
 In [some explanations](https://en.wikipedia.org/wiki/Determinant), the determinant is explained as describing a "signed volume". What is meant by signed volume? For me, it helps to think about determinants in a similar way that we think about integrals. Integrals express the "signed" area under a curve where the sign tells you whether there is more area above versus below zero. Consider a sequence of univariate functions where each function's curve approaches zero until it cross zero and becomes more negative:
 
