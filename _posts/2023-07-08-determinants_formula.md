@@ -187,7 +187,11 @@ Again, this proof is left to the Appendix of this post. A sketch of how all of t
 The determinant describes how much a matrix grows or shrinks space
 -------------------------------------------------------------------
 
-We have now proved that the determinant of a matrix, $\boldsymbol{A}$, captures the volume of the parallelopiped formed by $\boldsymbol{A}$'s columns. 
+We have now shown how the determinant of a matrix, $\boldsymbol{A}$, captures the volume of the parallelopiped formed by $\boldsymbol{A}$'s columns. However, what is the significance of this quantity? Recall, that a powerful way to [view a matrix](https://mbernste.github.io/posts/matrices/) is as a characterizing a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) between vector spaces. That is, given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can form a function $T$ that maps vectors in $\mathbb{R}^n$ to $\mathbb{R}^m$ using [matrix-vector multirplication](https://mbernste.github.io/posts/matrix_vector_mult/):
+
+$$T(\boldsymbol{x}) := \boldsymbol{Ax}$$
+
+It turns out that the determinant tells us something fundamental about this linear transformation: it tells us how much the linear transformation "grows" or "shrinks" the vector space that it transforms.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_scales_circle.png" alt="drawing" width="700"/></center>
 
