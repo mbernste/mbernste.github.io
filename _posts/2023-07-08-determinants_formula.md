@@ -194,15 +194,31 @@ Interpreting the sign of the determinant
 
 So far, we have shown how the absolute value of the determinant of a matrix captures the volume of the parallelopiped formed by that matrix's columns; however, we have glossed over the fact that this interpretation of the determinant requires taking its absolute value. What does the sign of the determinant capture? If determinants capture volume, then how can it be negative (intuitively, volume is only a positive quantity)? 
 
-It turns out that the sign of the determinant captures something else about a matrix's linear transformation other than how much it grows or shrinks space: it captures whether or not a matrix "inverts" space. That is, a matrix with a positive determinant will maintain the orientation of vectors in the original space relative to one another, but a matrix with a negative determinant will invert their orientation. Below is an illustration of what happens to a set of vectors that form the outline of a hand when transformed by the matrix $\boldsymbol{A} := \begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}$:
+It turns out that the sign of the determinant captures something else about a matrix's linear transformation other than how much it grows or shrinks space: it captures whether or not a matrix "inverts" space. That is, a matrix with a positive determinant will maintain the orientation of vectors in the original space relative to one another, but a matrix with a negative determinant will invert their orientation. 
+
+As an example, let us consider the matrix $\boldsymbol{A} := \begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}$. The determinant of $\boldsymbol{A}$ is -1. Why? By Axiom 1, the determinant of the identity matrix is 1. By Theorem 1, flipping two columns will make the determinant negative. Thus, the determinant of $\boldsymbol{A}$ is simply -1. 
+
+Below is an illustration of what happens to a set of vectors that form the outline of a hand when transformed by the matrix $\boldsymbol{A}$. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/negative_determinant_inversion_2D.png" alt="drawing" width="700"/></center>
 
-Notice that the $\boldsymbol{A}$ is simply the identity matrix with the first and second columns flipped. By Axiom 1 of the determinant, the determinant of the identity matrix is 1. By Theorem 1, flipping two columns will make the determinant negative. Thus, the determinant of $\boldsymbol{A}$ is simply -1. Here we see that this matrix simply flipped the orientation of vectors across the thick dotted line (you can see this by tracing the location of the thumb outlined by the thin dotted lines).
+Here we see that this matrix simply flipped the orientation of vectors across the thick dotted line (you can see this by tracing the location of the thumb outlined by the thin dotted lines). 
 
 This same phenomenon occurs in higher dimensions too. Here is an example in three dimensions where a 3D hand is transformed by a matrix $\boldsymbol{A}$ that again represents the identity matrix, but with the first and third columns flipped. Notice how the hand went from being a right hand to a left hand by the transformation:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_inversion_hand.png" alt="drawing" width="700"/></center>
+
+In [some explanations](https://en.wikipedia.org/wiki/Determinant), the determinant is explained as describing a "signed volume". What is meant by signed volume? For me, it helps to think about determinants in a similar way that we think about integrals. Integrals express the "signed" area under a curve where the sign tells you whether there is more area above versus below zero. Consider a sequence of univariate functions where each function's curve approaches zero until it cross zero and becomes more negative:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/integral_analogy_determinant.png" alt="drawing" width="700"/></center> 
+
+We see that the integral starts out as positive, shrinks to zero, and then becomes more negative.
+
+Analagously, we can see that as two vectors are rotated towards one another, the determinant is positive but decreases until the vectors are aligned. Once they cross one another, the determinant becomes negative:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/negative_determinant_rotate_vecs.png" alt="drawing" width="800"/></center>
+
+Thus, the "sign" of an integral is sort of like the "sign" of an integral. Where a negative integral tells you that the function has more area below zero than above zero, a negative determinant tells you that two columns vectors, in a sense, "crossed" with one another thus inverting space across those two column vectors.
 
 
 Appendix
