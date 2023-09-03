@@ -1,6 +1,6 @@
 ---
-title: 'What the determinant tells us about a matrix'
-date: 2023-07-08
+title: 'What determinants tells us about matrices'
+date: 2023-09-03
 permalink: /posts/determinants/
 tags:
   - tutorial
@@ -13,7 +13,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-In the previous post, we [derived the formula]() for the determinant by showing that the determinant is a function on matrices that generalizes our notion of geometric volume from two dimensions to arbitrarily high dimensions. From this discussion, it might have appeared that the determinant of a matrix _only_ describes the volume of the paralellopiped formed by the columns of that matrix. However, that is not the full story! In this post, we will flesh out our understanding of the determinant by going beyond 
+In the previous post, we [derived the formula](https://mbernste.github.io/posts/determinantsformula/) for the determinant by showing that the determinant is a function on matrices that generalizes our notion of geometric volume from two dimensions to arbitrarily high dimensions. From this discussion, it might have appeared that the determinant of a matrix _only_ describes the volume of the paralellopiped formed by the columns of that matrix. However, that is not the full story! In this post, we will flesh out our understanding of the determinant by going beyond 
 
 As with most topics, it helps to view determinants from [multiple perspectives](https://mbernste.github.io/posts/understanding_3d/). However, to understand determinants from multiple perspectives, we will also need to view matrices from multiple perspectives. Recall from a [previous post](https://mbernste.github.io/posts/matrices/) that there are three perpectives I find helpful for viewing matrices:
 
@@ -62,6 +62,19 @@ From this perspective, we can gain a much better intuition for Theorem 9 present
 
 Above we see a unit cube first transformed into a parallelogram by $\boldsymbol{B}$. It's area grows by a factor of $\lvert \text{Det}(\boldsymbol{B}) \rvert$. This parallelogram is then transformed into another paralellogram by $\boldsymbol{A}$. It's transformation grows by an additional factor of $\lvert \text{Det}(\boldsymbol{A}) \rvert$. Thus, the final scaling factor of the unit cube's area under $\boldsymbol{AB}$ is $\lvert \text{Det}(\boldsymbol{A}) \rvert \lvert \text{Det}(\boldsymbol{B})\rvert$. Equivalently, because the unit cube was transformed by $\boldsymbol{AB}$, its area grew by a factor of $\lvert \text{Det}(\boldsymbol{AB}) \rvert$.
 
+
+The determinant describes how much a matrix grows or shrinks space
+-------------------------------------------------------------------
+
+We have now shown how the determinant of a matrix, $\boldsymbol{A}$, captures the volume of the parallelepiped formed by $\boldsymbol{A}$'s columns. However, what is the significance of this quantity? Recall, that a powerful way to [view a matrix](https://mbernste.github.io/posts/matrices/) is as a characterizing a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) between vector spaces. That is, given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, we can form a function $T$ that maps vectors in $\mathbb{R}^n$ to $\mathbb{R}^m$ using [matrix-vector multirplication](https://mbernste.github.io/posts/matrix_vector_mult/):
+
+$$T(\boldsymbol{x}) := \boldsymbol{Ax}$$
+
+It turns out that the determinant tells us something fundamental about this linear transformation: it tells us how much the linear transformation "grows" or "shrinks" space. To see why this is, examine what happens to the unit cube/hypercube when transformed by an invertible matrix $\boldsymbol{A}$:
+
+It becomes the parallepide formed by the columns of $\boldsymbol{A}$ and thus, its area is the absolute value of $\text{Det}(\boldsymbol{A})$. 
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_scales_circle.png" alt="drawing" width="700"/></center>
 
 
 Interpreting the sign of the determinant
