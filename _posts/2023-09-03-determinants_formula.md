@@ -424,13 +424,13 @@ $\square$
 
 **Proof:**
 
-Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, let $\boldsymbol{A}_{i,j}$ be the sub-matrix of $\boldsymbol{A}$ where the $i$th and $j$th rows are deleted. For example, for a $3 \times 3$ matrix 
+Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, let $\boldsymbol{A}_{-i,-j}$ be the sub-matrix of $\boldsymbol{A}$ where the $i$th and $j$th rows are deleted. For example, for a $3 \times 3$ matrix 
 
 $$\boldsymbol{A} := \begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix}$$
 
-$\boldsymbol{A}_{1,1}$ would be 
+$\boldsymbol{A}_{-1,-1}$ would be 
 
-$$\boldsymbol{A}_{1,1} = \begin{bmatrix} e & f \\ h & i \end{bmatrix}$$
+$$\boldsymbol{A}_{-1,-1} = \begin{bmatrix} e & f \\ h & i \end{bmatrix}$$
 
 Now, consider an elementary matrix $\boldsymbol{E} \in \mathbb{R}^{m \times m}$. Let us define $\boldsymbol{E}'$ to be an elementary matrix in $\mathbb{R}^{(m+1) \times (m+1)}$ that is formed by taking $\boldsymbol{E}$, but adding a new row and column where the first element is 1. That is,
 
@@ -442,11 +442,11 @@ $$\text{Det}(\boldsymbol{E}') = \text{Det}(\boldsymbol{E})$$
 
 Let's keep this fact in the back of our mind, but now turn our attention towards $\boldsymbol{A}$. Let us say that $\boldsymbol{A}$ is a matrix where the first column-vector only has a non-zero entry in the first row. That is, let's say $\boldsymbol{A}$ looks as follows
 
-$$\boldsymbol{A} = \begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}$$
+$$\boldsymbol{A} = \begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}$$
 
-Then we can show that $\text{Det}(\boldsymbol{A}) = a_{1,1}\text{Det}(\boldsymbol{A}_{1,1})$ via the following (see notes below the derivation for more details on some of the key steps): 
+Then we can show that $\text{Det}(\boldsymbol{A}) = a_{1,1}\text{Det}(\boldsymbol{A}_{-1,-1})$ via the following (see notes below the derivation for more details on some of the key steps): 
 
-$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}\left( \begin{bmatrix}a_{1,1} & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) + \text{Det}\left( \begin{bmatrix}0 & a_{1,2} & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) + \dots + \text{Det}\left( \begin{bmatrix}0 & 0 & \dots & a_{1,m} \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) \ \text{Theorem 10} \\ &= \text{Det}\left( \begin{bmatrix}a_{1,1} & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) \ \text{by Theorem 2 (see Note 1)} \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) \ \text{by Axiom 3} \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}_1 \boldsymbol{E}_2 \dots \boldsymbol{E}_k & & \\ 0 & & & &\end{bmatrix}\right) \ \text{see Note 2} \\ &= a_{1,1}\text{Det}(\boldsymbol{E}'_1 \boldsymbol{E}'_2 \dots \boldsymbol{E}'_k) \ \text{see Note 3}  \\ &= a_{1,1}\text{Det}(\boldsymbol{E}'_1) \text{Det}(\boldsymbol{E}'_2) \dots \text{Det}(\boldsymbol{E}'_k) \ \text{Theorem 8} \\ &= a_{1,1}\text{Det}(\boldsymbol{E}_1) \text{Det}(\boldsymbol{E}_2) \dots \text{Det}(\boldsymbol{E}_k) \\ &= a_{1,1}\text{Det}(\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_k) \ \text{Theorem 8} \\ &= a_{1,1}\text{Det}(\boldsymbol{A}_{1,1}) \end{align*}$$
+$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}\left( \begin{bmatrix}a_{1,1} & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix} \right) + \text{Det}\left( \begin{bmatrix}0 & a_{1,2} & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix} \right) + \dots + \text{Det}\left( \begin{bmatrix}0 & 0 & \dots & a_{1,m} \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix} \right) \ \text{Theorem 10} \\ &= \text{Det}\left( \begin{bmatrix}a_{1,1} & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix} \right) \ \text{by Theorem 2 (see Note 1)} \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right) \ \text{by Axiom 3} \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}_1 \boldsymbol{E}_2 \dots \boldsymbol{E}_k & & \\ 0 & & & &\end{bmatrix}\right) \ \text{see Note 2} \\ &= a_{1,1}\text{Det}(\boldsymbol{E}'_1 \boldsymbol{E}'_2 \dots \boldsymbol{E}'_k) \ \text{see Note 3}  \\ &= a_{1,1}\text{Det}(\boldsymbol{E}'_1) \text{Det}(\boldsymbol{E}'_2) \dots \text{Det}(\boldsymbol{E}'_k) \ \text{Theorem 8} \\ &= a_{1,1}\text{Det}(\boldsymbol{E}_1) \text{Det}(\boldsymbol{E}_2) \dots \text{Det}(\boldsymbol{E}_k) \\ &= a_{1,1}\text{Det}(\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_k) \ \text{Theorem 8} \\ &= a_{1,1}\text{Det}(\boldsymbol{A}_{1,1}) \end{align*}$$
 
 **Note 1:** Notice in the previous line, all of the determinants except the first are zero since the first column vector of each of their matrix arguments is the zero vector. Thus, these are all singular matrices and by Theorem 2, their determinants are zero.
 
@@ -468,14 +468,11 @@ $$\begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}_1 \
 
 Finally, at along last, we can derive the formula for the determinant. Let us consider a general matrix $\boldsymbol{A}$:
 
-$$\boldsymbol{A} = \begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}$$
+$$\boldsymbol{A} = \begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ a_{m,1} & & & &\end{bmatrix}$$
 
 Then, 
 
-$$\begin{align*} \text{Det}(\boldsymbol{A}) &= \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}\right) \\ &= \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right)+ \text{Det}\left(\begin{bmatrix}0  & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} 0 & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) + \dots \ \text{Det}\left(\begin{bmatrix} 0 & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}\right) \\
-
-&= \text{Det}\left(\begin{bmatrix} a_{1,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right)+ \text{Det}\left(\begin{bmatrix}0  & 0 & 0 & \dots & 0 \\ a_{2,1} & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} 0 & 0 & 0 & \dots & 0 \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) + \dots \ \text{Det}\left(\begin{bmatrix} 0 & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}\right)
-\end{align*}$$
+$$\begin{align*} \text{Det}(\boldsymbol{A}) &= \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ a_{m,1} & & & &\end{bmatrix}\right) \\ &= \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right)+ \text{Det}\left(\begin{bmatrix}0  & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} 0 & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \dots \ \text{Det}\left(\begin{bmatrix} 0 & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ a_{m,1} & & & &\end{bmatrix}\right)\end{align*}$$
 
 For each term, we can move the row with a non-zero element in the first column to the top-row and maintain the relative order of the remaining $m-1$ rows. Performing this operation on each term in the summation will result in an alternation of addition and subtraction. The reason for this is that if the row we moving to the first row is even-numbered, this procedure will require an odd number of row swaps. On the other hand, if the row is odd-numbered, this procedure will require even number of swaps. This is illustrated by the following schematic: 
 
@@ -483,5 +480,7 @@ For each term, we can move the row with a non-zero element in the first column t
 
 Thus, we have
 
+$$
+\text{Det}(\boldsymbol{A}) &= \\ \ \ & \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix}a_{2,1}  & a_{2,2} & a_{2,3} & \dots & a_{2,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-2,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} a_{3,1} & a_{3,2} & a_{3,3} & \dots & a_{3,m} \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{-3,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \dots \ \text{Det}\left(\begin{bmatrix} a_{m,1} & a_{m,2} & a_{m,3} & \dots & a_{m,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{-m,-1} & & & &\end{bmatrix}\right)$$
 
 
