@@ -165,7 +165,7 @@ The Theorems required to derive this formula are outlined below. and their proof
 
 <span style="color:#0060C6">**Theorem 7:** Given an [elementary matrix](https://mbernste.github.io/posts/row_reduction/) that represents a row-sum, $\boldsymbol{E} \in \mathbb{R}^{m \times m}$ that multiplies row $j$ by $k$ times row $i$, its determinant is simply 1.</span>
 
-<span style="color:#0060C6">**Theorem 8:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
+<span style="color:#0060C6">**Theorem 8:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(\boldsymbol{AB}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
 
 <span style="color:#0060C6">**Theorem 9:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T)$.</span>
 
@@ -319,7 +319,7 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 8:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
+<span style="color:#0060C6">**Theorem 8:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(\boldsymbol{AB}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
 
 **Proof:**
 
@@ -388,7 +388,7 @@ $\square$
 
 This proof follows from Theorem 9 and Axiom 3 of the determinant. Specifically, given a square matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$. Let $\boldsymbol{a}\_{1,\*}, \dots, \boldsymbol{a}\_{m,\*}$ be the row vectors of $\boldsymbol{A}$. Also, let the $j$th row be represented as the sum of two vectors, $\boldsymbol{a}\_{j,*} = \boldsymbol{u} + \boldsymbol{v}$:
 
-$$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{1, *} \\ \vdots \\ \boldsymbol{u} + \boldsymbol{v} \\ \boldsymbol{a}_{m, *}\end{bmatrix}$$
+$$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{1, *} \\ \vdots \\ \boldsymbol{u} + \boldsymbol{v} \\ \vdots \\ \boldsymbol{a}_{m, *}\end{bmatrix}$$
 
 The determinant of $\boldsymbol{A}$ is then:
 
@@ -396,11 +396,11 @@ $$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \t
 
 Next, let the $j$th row be scaled by some constant $c$. That is,
 
-$$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{1, *} \\ \vdots \\ c\boldsymbol{a}_{j,*} \\ \boldsymbol{a}_{m, *}\end{bmatrix}$$
+$$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{1, *} \\ \vdots \\ c\boldsymbol{a}_{j,*} \\ \vdots \\ \boldsymbol{a}_{m, *}\end{bmatrix}$$
 
 Then, 
 
-$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \text{By Theorem 9}$$
+$$\begin{align*} \text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \text{By Theorem 9}\end{align*}$$
 
 $$\begin{align*} &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, c\boldsymbol{a_{j,*}), \dots, \boldsymbol{a}_{m,*} \right) \\ &= c\text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{a_{j,*}, \dots, \boldsymbol{a}_{m,*} \right) && \text{By Axiom 3} \end{align*}$$
 
