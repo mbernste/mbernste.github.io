@@ -190,6 +190,8 @@ Below is an illustration of how each theorem depends on the other theorems. Note
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_theorem_map.png" alt="drawing" width="400"/></center>
 
+All of the proofs are left to the Appendix below this blog post.
+
 
 Appendix
 --------
