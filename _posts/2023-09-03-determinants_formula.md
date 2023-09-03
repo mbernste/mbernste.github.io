@@ -25,7 +25,7 @@ for which the absolute value is the volume of the parallelepided formed by the m
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_overview.png" alt="drawing" width="400"/></center>
 
 
-While conceptually, this is fairly straightforward, the formula for the determinant is quite confusing:
+While this is fairly straightforward conceptually, the formula for the determinant is quite confusing:
 
 $$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$$
 
