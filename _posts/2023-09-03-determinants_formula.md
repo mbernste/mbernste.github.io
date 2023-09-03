@@ -420,7 +420,7 @@ $\square$
 
 <span style="color:#0060C6">Then $\text{Det}$ is given by</span>
 
-<span style="color:#0060C6">$$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-1,-i}) & \text{if $m > 2$}\end{cases}$$</span>
+<span style="color:#0060C6">$$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-i,-1}) & \text{if $m > 2$}\end{cases}$$</span>
 
 **Proof:**
 
@@ -483,3 +483,12 @@ Thus, we have
 $$\begin{align*}\text{Det}(\boldsymbol{A}) &= \\ \ \ & \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right) - \text{Det}\left(\begin{bmatrix}a_{2,1}  & a_{2,2} & a_{2,3} & \dots & a_{2,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-2,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} a_{3,1} & a_{3,2} & a_{3,3} & \dots & a_{3,m} \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{-3,-1} & & \\ 0 & & & &\end{bmatrix}\right) +/- \dots \ \text{Det}\left(\begin{bmatrix} a_{m,1} & a_{m,2} & a_{m,3} & \dots & a_{m,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{-m,-1} & & & &\end{bmatrix}\right)\end{align*}$$
 
 
+$$ = \text{Det}\left(\begin{bmatrix} a_{1,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right) - \text{Det}\left(\begin{bmatrix}a_{2,1}  & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-2,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} a_{3,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{-3,-1} & & \\ 0 & & & &\end{bmatrix}\right) +/- \dots \ \text{Det}\left(\begin{bmatrix} a_{m,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{-m,-1} & & & &\end{bmatrix}\right)\end{align*}$$
+
+$$= a_{1,1}\text{Det}(\boldsymbol{A}_{-1,-1}) - a_{2,1}\text{Det}(\boldsymbol{A}_{-2,-1}) + a_{3,1}\text{Det}(\boldsymbol{A}_{-3,-1}) + \dots +/- a_{-m,1}\text{Det}(\boldsymbol{A}_{-m,-1})$$
+
+Thus we have arrived at our recursive formula where, for each term (corresponding to each row), we compute the determinant of a sub-matrix. This proceeds all the way down until we reach the $2 \times 2$ matrix that is defined as $a_{1,1}a_{2,2} - a_{1,2}a_{2,1}$. That is, putting it all together we arrive at the formula for the determinant:
+
+$$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-i,-1}) & \text{if $m > 2$}\end{cases}$$
+
+$\square$
