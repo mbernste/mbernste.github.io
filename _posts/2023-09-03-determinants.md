@@ -13,18 +13,25 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-In the previous post, we [derived the formula](https://mbernste.github.io/posts/determinantsformula/) for the determinant by showing that the determinant is a function on matrices that generalizes our notion of geometric volume from two dimensions to arbitrarily high dimensions. From this discussion, it might have appeared that the determinant of a matrix _only_ describes the volume of the paralellopiped formed by the columns of that matrix. However, that is not the full story! In this post, we will flesh out our understanding of the determinant by going beyond 
+In the previous post, we [derived the formula](https://mbernste.github.io/posts/determinantsformula/) for the determinant by showing that the determinant is a function on matrices that generalizes our notion of geometric volume from two dimensions to arbitrarily high dimensions. From this discussion, it might have appeared that the determinant of a matrix _only_ describes the volume of the paralellepiped formed by the columns of that matrix. However, that is not the full story! 
 
-As with most topics, it helps to view determinants from [multiple perspectives](https://mbernste.github.io/posts/understanding_3d/). However, to understand determinants from multiple perspectives, we will also need to view matrices from multiple perspectives. Recall from a [previous post](https://mbernste.github.io/posts/matrices/) that there are three perpectives I find helpful for viewing matrices:
+As with most topics, it helps to view determinants from [multiple perspectives](https://mbernste.github.io/posts/understanding_3d/). However, to understand determinants from multiple perspectives, we will also need to view matrices from multiple perspectives. Recall from a [previous post](https://mbernste.github.io/posts/matrices/) that there are three perpectives for viewing matrices:
 
 1. **Perspective 1:** As a table of values
 2. **Perspective 2:** As a list of column vectors (or row vectors)
 3. **Perspective 3:** As a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) between vector spaces
 
-Let's start with viewing matrices from Perspective 2. Viewing a matrix as a list of column vectors, the determinant of a matrix can be understood to be a function that captures the geometric volume of the parallelopiped formed by the column vectors of the matrix. In fact, it is from this 
+In our last post, we viewed the determinant from Perspective 2. That is, the determinant of a matrix describes the geometric volume of the parallelepiped formed by the column vectors of the matrix. 
 
-Determinants describe how much matrices grow or shrink objects
---------------------------------------------------------------
+In this post, we will explore determinants from Perspective 3 and explore what the determinant tells us about the linear transformation characterized by a given matrix. To preview, the determinant tells us two things about the linear transformation:
+
+1. How much a matrix's linear transformation grows or shrinks space
+2. Whether the matrix's linear transformation inverts space
+
+We'll conclude by putting these two pieces together and describe how the determinant can be thought about as scaling a "signed volume". 
+
+The determinant describes how much a matrix grows or shrinks space
+-------------------------------------------------------------------
 
 Recall from a [previous discussion](https://mbernste.github.io/posts/matrices/), that there are three main perspectives for which one can view a matrix:
 
@@ -61,6 +68,11 @@ From this perspective, we can gain a much better intuition for Theorem 9 present
 <br>
 
 Above we see a unit cube first transformed into a parallelogram by $\boldsymbol{B}$. It's area grows by a factor of $\lvert \text{Det}(\boldsymbol{B}) \rvert$. This parallelogram is then transformed into another paralellogram by $\boldsymbol{A}$. It's transformation grows by an additional factor of $\lvert \text{Det}(\boldsymbol{A}) \rvert$. Thus, the final scaling factor of the unit cube's area under $\boldsymbol{AB}$ is $\lvert \text{Det}(\boldsymbol{A}) \rvert \lvert \text{Det}(\boldsymbol{B})\rvert$. Equivalently, because the unit cube was transformed by $\boldsymbol{AB}$, its area grew by a factor of $\lvert \text{Det}(\boldsymbol{AB}) \rvert$.
+
+
+
+
+
 
 
 The determinant describes how much a matrix grows or shrinks space
