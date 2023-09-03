@@ -191,7 +191,9 @@ We have now shown how the determinant of a matrix, $\boldsymbol{A}$, captures th
 
 $$T(\boldsymbol{x}) := \boldsymbol{Ax}$$
 
-It turns out that the determinant tells us something fundamental about this linear transformation: it tells us how much the linear transformation "grows" or "shrinks" space. To see why this is, we will first examine what happens to the volume of a rectangle/hyperrectangle when it is transformed by an invertible matrix.
+It turns out that the determinant tells us something fundamental about this linear transformation: it tells us how much the linear transformation "grows" or "shrinks" space. To see why this is, examine what happens to the unit cube/hypercube when transformed by an invertible matrix $\boldsymbol{A}$:
+
+It becomes the parallepide formed by the columns of $\boldsymbol{A}$ and thus, its area is the absolute value of $\text{Det}(\boldsymbol{A})$. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_scales_circle.png" alt="drawing" width="700"/></center>
 
