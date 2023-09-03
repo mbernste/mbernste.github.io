@@ -457,7 +457,7 @@ where $k$ is some constant.
 
 $$\begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}\boldsymbol{B} & & \\ 0 & & & &\end{bmatrix} = \boldsymbol{E}' \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{B} & & \\ 0 & & & &\end{bmatrix}$$
 
+We then apply this iteratively to 
 
-Moreover, we see that 
+$$\begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}_1 \boldsymbol{E}_2 \dots \boldsymbol{E}_k & & \\ 0 & & & &\end{bmatrix}$$
 
-$$\text{Det}(\boldsymbol{A}_{1,1}) = \text{Det}(\boldsymbol{E}_1 \boldsymbol{E}_2 \dots \boldsymbol{E}_k)$$
