@@ -460,3 +460,10 @@ $$\begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}\bol
 We then apply this iteratively to 
 
 $$\begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}_1 \boldsymbol{E}_2 \dots \boldsymbol{E}_k & & \\ 0 & & & &\end{bmatrix}$$
+
+<br>
+
+Finally, at along last, we can derive the formula for the determinant. Let us consider a general matrix $\boldsymbol{A}$:
+
+$$\boldsymbol{A} = \begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}$$
+
