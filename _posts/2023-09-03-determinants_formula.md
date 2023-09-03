@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-_The determinant is a function that maps square matrices to a value that describes the volume of the parallelepiped formed by that matrix's columns. While this idea is fairly straightforward conceptually, the formula for the determinant is quite confusing. In this post, we will derive the formula for the determinant in an effort to make it less mysterious. Much of my understanding of this material comes from [these lecture notes](http://faculty.fairfield.edu/mdemers/linearalgebra/documents/2019.03.25.detalt.pdf) by Mark Demers re-written in my own words._
+_The determinant is a function that maps each square matrix to a value that describes the volume of the parallelepiped formed by that matrix's columns. While this idea is fairly straightforward conceptually, the formula for the determinant is quite confusing. In this post, we will derive the formula for the determinant in an effort to make it less mysterious. Much of my understanding of this material comes from [these lecture notes](http://faculty.fairfield.edu/mdemers/linearalgebra/documents/2019.03.25.detalt.pdf) by Mark Demers re-written in my own words._
 
 Introduction
 ------------
