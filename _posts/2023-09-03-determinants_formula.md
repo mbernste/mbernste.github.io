@@ -429,6 +429,9 @@ $\boldsymbol{A}_{1,1}$ would be
 
 $$\boldsymbol{A}_{1,1} = \begin{bmatrix} e & f \\ h & i \end{bmatrix}$$
 
+Now, consider an elementary matrix $\boldsymbol{E} \in \mathbb{R}^{m \times m}$. Let us define $\boldsymbol{E}'$ to be an elementary matrix in $\mathbb{R}^{m+1 \times m+1}$ that is formed by taking $\boldsymbol{E}$, but adding a new row and column where the first element is 1. That is,
+
+$$\boldsymbol{E}' := \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E} & & \\ 0 & & & &\end{bmatrix}$$
 
 
 
