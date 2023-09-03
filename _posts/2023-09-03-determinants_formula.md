@@ -8,22 +8,22 @@ tags:
   - linear algebra
 ---
 
-_The determinant is a function that maps square matrices to a value that describes the volume of the parallelepiped formed by that matrix's columns. While this is fairly straightforward conceptually, the formula for the determinant is quite confusing. In this post, we will derive the formula for the determinant in an effort to make it less mysterious. Much of my understanding of this material comes from [these lecture notes](http://faculty.fairfield.edu/mdemers/linearalgebra/documents/2019.03.25.detalt.pdf) by Mark Demers re-written in my own words._
+_The determinant is a function that maps square matrices to a value that describes the volume of the parallelepiped formed by that matrix's columns. While this idea is fairly straightforward conceptually, the formula for the determinant is quite confusing. In this post, we will derive the formula for the determinant in an effort to make it less mysterious. Much of my understanding of this material comes from [these lecture notes](http://faculty.fairfield.edu/mdemers/linearalgebra/documents/2019.03.25.detalt.pdf) by Mark Demers re-written in my own words._
 
 Introduction
 ------------
 
-The **determinant**, $\text{Det}$, is a function that maps square [matrices](https://mbernste.github.io/posts/matrices/) to real numbers,
+The **determinant** is a function that maps square [matrices](https://mbernste.github.io/posts/matrices/) to real numbers:
 
 $$\text{Det} : \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$$ 
 
-for which the absolute value is the volume of the parallelepided formed by the matrix's columns. This is illustrated below:
+where the absolute value of the determinant describes the volume of the parallelepided formed by the matrix's columns. This is illustrated below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_overview.png" alt="drawing" width="550"/></center>
 
 <br>
 
-While this is fairly straightforward conceptually, the formula for the determinant is quite confusing:
+While this idea is fairly straightforward conceptually, the formula for the determinant is quite confusing:
 
 $$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-i, -1}) & \text{if $m > 2$}\end{cases}$$
 
