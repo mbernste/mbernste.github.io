@@ -13,9 +13,9 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-In the previous post, we [derived the formula](https://mbernste.github.io/posts/determinantsformula/) for the determinant by showing that the determinant is a function on matrices that generalizes our notion of geometric volume from two dimensions to arbitrarily high dimensions. From this discussion, it might have appeared that the determinant of a matrix _only_ describes the volume of the paralellepiped formed by the columns of that matrix. However, that is not the full story! 
+In the previous post, we [derived the formula](https://mbernste.github.io/posts/determinantsformula/) for the determinant by showing that the determinant describes the geometric volume of the high dimensional parallelepiped formed by the columns of a matrix. From this discussion, it might have appeared that the determinant of a matrix _only_ describes volume, but that is not the full story! 
 
-As with most topics, it helps to view determinants from [multiple perspectives](https://mbernste.github.io/posts/understanding_3d/). However, to understand determinants from multiple perspectives, we will also need to view matrices from multiple perspectives. Recall from a [previous post](https://mbernste.github.io/posts/matrices/) that there are three perpectives for viewing matrices:
+As with most topics, it helps to view determinants from [multiple perspectives](https://mbernste.github.io/posts/understanding_3d/), which we will attempt to also do here. To understand determinants from multiple perspectives, we will also need to view matrices from multiple perspectives. Recall from a [previous post](https://mbernste.github.io/posts/matrices/) that there are three perpectives for viewing matrices:
 
 1. **Perspective 1:** As a table of values
 2. **Perspective 2:** As a list of column vectors (or row vectors)
@@ -106,3 +106,5 @@ Analagously, we can see that as two vectors are rotated towards one another, the
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/negative_determinant_rotate_vecs.png" alt="drawing" width="800"/></center>
 
 Thus, the "sign" of the determinant can be thought about in a similar way as the sign of an integral. A negative integral tells you that the function has more area below zero than above zero. A negative determinant tells you that two columns vectors, in a sense, "crossed" with one another thus inverting space across those two column vectors.
+
+
