@@ -402,7 +402,7 @@ $$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \t
 
 $$\begin{align*} &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, c\boldsymbol{a_{j,*}), \dots, \boldsymbol{a}_{m,*} \right) \\ &= c\text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{a_{j,*}, \dots, \boldsymbol{a}_{m,*} \right) && \text{By Axiom 3} \end{align*}$$
 
-$/square$
+$\square$
 
 
 
