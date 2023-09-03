@@ -325,7 +325,7 @@ $\square$
 
 **Proof:**
 
-First, if $\boldsymbol{A}$ is singular, then $\text{Det}(\boldsymbol{AB})$ is also singular. By Theorem 2, we know that the determinant of a singular matrix is zero and thus it trivially holds that $\text{Det}(\boldsymbol{AB}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$ since both $\text{Det}(AB) = 0$ and also $\text{Det}(A)\text{Det}(B) = 0$ (since $\text{Det}(A)=0$). The same is true if $\boldsymbol{B}$ is singular. Thus, our proof will focus only on the case in which $\boldsymbol{A}$ and $\boldsymbol{B}$ are both invertible.
+First, if $\boldsymbol{A}$ is singular, then $\text{Det}(\boldsymbol{AB})$ is also singular. By Theorem 2, we know that the determinant of a singular matrix is zero and thus it trivially holds that $\text{Det}(\boldsymbol{AB}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$ since both $\text{Det}(\boldsymbol{AB}) = 0$ and also $\text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B}) = 0$ (since $\text{Det}(\boldsymbol{A})=0$). The same is true if $\boldsymbol{B}$ is singular. Thus, our proof will focus only on the case in which $\boldsymbol{A}$ and $\boldsymbol{B}$ are both invertible.
 
 We first begin by proving that given an elementary matrix $\boldsymbol{E}$, it holds that
 
