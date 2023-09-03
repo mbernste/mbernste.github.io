@@ -170,7 +170,7 @@ The Theorems required to derive this formula are outlined below. and their proof
 
 <span style="color:#0060C6">**Theorem 9:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T)$.</span>
 
-<span style="color:#0060C6">**Theorem 10:** Tbe determinant of matrix is linear with respect to the row vectors of the matrix</span>
+<span style="color:#0060C6">**Theorem 10:** Tbe determinant of matrix is linear with respect to the row vectors of the matrix.</span>
 
 With these theorems in hand we can derive the final formula for the determinant:
 
@@ -383,7 +383,7 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 10:** Tbe determinant of matrix is linear with respect to the row vectors of the matrix</span>
+<span style="color:#0060C6">**Theorem 10:** Tbe determinant of matrix is linear with respect to the row vectors of the matrix.</span>
 
 **Proof:**
 
