@@ -324,11 +324,11 @@ $\square$
 
 **Proof:**
 
-First, if $\boldsymbol{A}$ is singular, then $\text{Det}(AB)$ is also singular. By Theorem 2, we know that the determinant of a singular matrix is zero and thus it trivially holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$ since both $\text{Det}(AB) = 0$ and also $\text{Det}(A)\text{Det}(B) = 0$ (since $\text{Det}(A)=0$). The same is true if $\boldsymbol{B}$ is singular. Thus, our proof will focus only on the case in which $\boldsymbol{A}$ and $\boldsymbol{B}$ are both invertible.
+First, if $\boldsymbol{A}$ is singular, then $\text{Det}(\boldsymbol{AB})$ is also singular. By Theorem 2, we know that the determinant of a singular matrix is zero and thus it trivially holds that $\text{Det}(AB) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$ since both $\text{Det}(AB) = 0$ and also $\text{Det}(A)\text{Det}(B) = 0$ (since $\text{Det}(A)=0$). The same is true if $\boldsymbol{B}$ is singular. Thus, our proof will focus only on the case in which $\boldsymbol{A}$ and $\boldsymbol{B}$ are both invertible.
 
 We first begin by proving that given an elementary matrix $\boldsymbol{E}$, it holds that
 
-$$\text{Det}(AE) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$$
+$$\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$$
 
 To show this, let us consider each of the three types of elementary matrices individually. First, if $\boldsymbol{E}$ is a scaling matrix where the $i$th diagonal entry is a scalar $k$, then $\boldsymbol{AE}$ will scale the $i$th column of $\boldsymbol{A}$ by $k$. By Axiom 3 of the determinant, scaling a single column will scale the full deterimant. Moreover, by Theorem 5, the determinant of $\boldsymbol{E}$ is $k$. Thus,
 
@@ -433,9 +433,16 @@ Now, consider an elementary matrix $\boldsymbol{E} \in \mathbb{R}^{m \times m}$.
 
 $$\boldsymbol{E}' := \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E} & & \\ 0 & & & &\end{bmatrix}$$
 
+Notice that $\boldsymbol{E}'$ is an elementary row matrix that represents the same operation as $\boldsymbol{E}$, but performs this operation on a matrix in $m+1 \times m+1$ instead of a matrix $m \times m$ and leaves the first row alone. Thus, by Theorems 5, 6, and 7 it follows that:
 
+$$\text{Det}(\boldsymbol{E}') = \text{Det}(\boldsymbol{E})$$
 
+Let's keep this fact in the back of our mind, but now turn our attention towards $\boldsymbol{A}$. Let us say that $\boldsymbol{A}$ is a matrix where the first column-vector only has a non-zero entry in the first row. That is, let's say $\boldsymbol{A}$ looks as follows
 
+$$\boldsymbol{A} = \begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}$$
 
+Then, by applying Theorem 10, it holds that 
+
+$$\text{Det}(\boldsymbol{A}) = \text{Det}\left( \begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right)$$
 
 
