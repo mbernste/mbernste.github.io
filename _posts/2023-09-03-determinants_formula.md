@@ -22,7 +22,7 @@ $$\text{Det} : \mathbb{R}^{m \times m} \rightarrow \mathbb{R}$$
 
 for which the absolute value is the volume of the parallelepided formed by the matrix's columns. This is illustrated below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_overview" alt="drawing" width="400"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_overview.png" alt="drawing" width="400"/></center>
 
 
 While conceptually, this is fairly straightforward, the formula for the determinant is quite confusing:
