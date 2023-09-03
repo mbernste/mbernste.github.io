@@ -429,11 +429,11 @@ $\boldsymbol{A}_{1,1}$ would be
 
 $$\boldsymbol{A}_{1,1} = \begin{bmatrix} e & f \\ h & i \end{bmatrix}$$
 
-Now, consider an elementary matrix $\boldsymbol{E} \in \mathbb{R}^{m \times m}$. Let us define $\boldsymbol{E}'$ to be an elementary matrix in $\mathbb{R}^{m+1 \times m+1}$ that is formed by taking $\boldsymbol{E}$, but adding a new row and column where the first element is 1. That is,
+Now, consider an elementary matrix $\boldsymbol{E} \in \mathbb{R}^{m \times m}$. Let us define $\boldsymbol{E}'$ to be an elementary matrix in $\mathbb{R}^{(m+1) \times (m+1)}$ that is formed by taking $\boldsymbol{E}$, but adding a new row and column where the first element is 1. That is,
 
 $$\boldsymbol{E}' := \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E} & & \\ 0 & & & &\end{bmatrix}$$
 
-Notice that $\boldsymbol{E}'$ is an elementary row matrix that represents the same operation as $\boldsymbol{E}$, but performs this operation on a matrix in $m+1 \times m+1$ instead of a matrix $m \times m$ and leaves the first row alone. Thus, by Theorems 5, 6, and 7 it follows that:
+Notice that $\boldsymbol{E}'$ is an elementary row matrix that represents the same operation as $\boldsymbol{E}$, but performs this operation on a matrix in $(m+1) \times (m+1)$ instead of a matrix $m \times m$ and leaves the first row alone. Thus, by Theorems 5, 6, and 7 it follows that:
 
 $$\text{Det}(\boldsymbol{E}') = \text{Det}(\boldsymbol{E})$$
 
