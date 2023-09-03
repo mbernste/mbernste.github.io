@@ -472,11 +472,16 @@ $$\boldsymbol{A} = \begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m}
 
 Then, 
 
-$$begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}\right) \end{align*}$$
+$$begin{align*} \text{Det}(\boldsymbol{A}) &= \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}\right) \end{align*}$$
 
 
 $$\begin{align*}+ \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right)+ \text{Det}\left(\begin{bmatrix}0  & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} 0 & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} 0 & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}\right)
 \end{align*}$$
 
+For each term, we can move the row with a non-zero element in the first column to the top-row and maintain the relative order of the remaining $m-1$ rows. Note, that if the row we moving to the first row is even-numbered, this procedure will require an XXXX number of row swaps. On the other hand, if the row is odd-numbered, this procedure will require XXXXX number of swaps. The reason for this is illustrated by the following schematic:
+
+determinant_formula_number_swaps 
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_formula_number_swaps.png" alt="drawing" width="700"/></center>
 
 
