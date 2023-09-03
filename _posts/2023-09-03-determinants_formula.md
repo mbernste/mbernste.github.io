@@ -186,8 +186,9 @@ With these theorems in hand we can derive the final formula for the determinant:
 
 <span style="color:#0060C6">$$\text{Det}(\boldsymbol{A}) := \begin{cases} a_{1,1}a_{2,2} - a_{1,2}a_{2,1} & \text{if $m = 2$} \\ \sum_{i=1}^m (-1)^{i+1} a_{i,1} \text{Det}(\boldsymbol{A}_{-i,-1}) & \text{if $m > 2$}\end{cases}$$</span>
 
-Again, this proof is left to the Appendix of this post. A sketch of how all of these theorems lead up to Theorem 10 is illustrated below:
+Below is an illustration of how each theorem depends on the other theorems. Note, they all flow downward until we can prove the final formula for the determinant in Theorem 11:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_theorem_map.png" alt="drawing" width="400"/></center>
 
 
 Appendix
