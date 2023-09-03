@@ -346,15 +346,15 @@ Now we have proven that for an invertible matrix $\boldsymbol{A}$ and elementary
 
 As [we have shown](https://mbernste.github.io/posts/row_reduction/), any invertible matrix can be decomposed as the product of some sequence of elementary matrices. Thus, we can write,
 
-$$\boldsymbol{AB} = \boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m$$
+$$\boldsymbol{AB} = \boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_k$$
 
 Then we apply our newly proven fact that for an elementary matrix $\boldsymbol{E}$ it holds that $\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$. We apply this fact in an iterative way from right to left as shown below:
 
-$$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1}\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1})\text{Det}(\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-2})\text{Det}(\boldsymbol{E}_{m-1})\text{Det}(\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{A})\prod_{i=1}^m \text{Det}(\boldsymbol{E}_i)  \end{align*}$$
+$$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{k-1}\boldsymbol{E}_k) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{k-1})\text{Det}(\boldsymbol{E}_k) \\ &= \text{Det}(\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{k-2})\text{Det}(\boldsymbol{E}_{k-1})\text{Det}(\boldsymbol{E}_k) \\ &= \text{Det}(\boldsymbol{A})\prod_{i=1}^k \text{Det}(\boldsymbol{E}_i)  \end{align*}$$
 
 Now we reverse the rule that $\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E})$ again moving going from right to left:
 
-  $$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A})\prod_{i=1}^m \text{Det}(\boldsymbol{E}_i) \\ &= \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{m-2}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{m-1}\boldsymbol{E}_{m}) \\ &= \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{m-3}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{m-2} \boldsymbol{E}_{m-1}\boldsymbol{E}_{m}) \\ &= \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{m-1}\boldsymbol{E}_m) \\ &=  \text{Det}(\boldsymbol{AB})\end{align*}$$
+  $$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A})\prod_{i=1}^k \text{Det}(\boldsymbol{E}_i) \\ &= \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{k-2}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{k-1}\boldsymbol{E}_{k}) \\ &= \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{k-3}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{k-2} \boldsymbol{E}_{k-1}\boldsymbol{E}_{k}) \\ &= \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{k-1}\boldsymbol{E}_k) \\ &=  \text{Det}(\boldsymbol{AB})\end{align*}$$
 
 $\square$
 
@@ -371,7 +371,7 @@ $$\boldsymbol{A} = \boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m$$
 
 Then, 
 
-$$\boldsymbol{A}^T = \boldsymbol{E}_m^T \boldsymbol{E}_{m-1}^T \dots \boldsymbol{E}_1^T$$
+$$\boldsymbol{A}^T = \boldsymbol{E}_k^T \boldsymbol{E}_{k-1}^T \dots \boldsymbol{E}_1^T$$
 
 We note that the determinant of every elementary matrix is equal to its transpose. Both scaling elementary matrices and row-swapping matrices are symmetric and thus, their transposes are equal to themselves. Thus the determinant of their transpose is equal to themselves. For a row-sum elementary matrix, the transpose is still a diagonal matrix and thus, its determinant also equals the determinant of its transpose (since by Theorem 3, the determinant of a triangular matrix can be computed by summing the diagonal entries).
 
