@@ -320,6 +320,7 @@ $\square$
 
 
 
+
 <span style="color:#0060C6">**Theorem 8:** Given matrices $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{m \times m}$, it holds that $\text{Det}(\boldsymbol{AB}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$</span>
 
 **Proof:**
@@ -357,6 +358,7 @@ Now we reverse the rule that $\text{Det}(\boldsymbol{AE}) = \text{Det}(\boldsymb
   $$\begin{align*}\text{Det}(\boldsymbol{AB}) &= \text{Det}(\boldsymbol{A})\prod_{i=1}^k \text{Det}(\boldsymbol{E}_i) \\ &= \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{k-2}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{k-1}\boldsymbol{E}_{k}) \\ &= \text{Det}(\boldsymbol{A})\left( \prod_{i=1}^{k-3}\text{Det}(\boldsymbol{E}_i)\right) \text{Det}(\boldsymbol{E}_{k-2} \boldsymbol{E}_{k-1}\boldsymbol{E}_{k}) \\ &= \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_{k-1}\boldsymbol{E}_k) \\ &=  \text{Det}(\boldsymbol{AB})\end{align*}$$
 
 $\square$
+
 
 
 <span style="color:#0060C6">**Theorem 9:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T)$.</span>
@@ -404,6 +406,7 @@ Then,
 $$\begin{align*} \text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \text{By Theorem 9} \\ &= \text{Det}\left( \boldsymbol{a}_{1,*}, \dots, c\boldsymbol{a}_{j,*}, \dots, \boldsymbol{a}_{m,*} \right) \\ &= c\text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{a}_{j,*}, \dots, \boldsymbol{a}_{m,*} \right) && \text{By Axiom 3} \end{align*}$$
 
 $\square$
+
 
 
 
@@ -465,7 +468,7 @@ $$\begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}_1 \
 
 Finally, at along last, we can derive the formula for the determinant. Let us consider a general matrix $\boldsymbol{A}$:
 
-$$\boldsymbol{A} = \begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}$$
+$$\boldsymbol{A} = \begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}$$
 
 Then, 
 
