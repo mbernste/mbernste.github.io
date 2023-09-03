@@ -478,12 +478,14 @@ For each term, we can move the row with a non-zero element in the first column t
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_formula_number_swaps.png" alt="drawing" width="700"/></center>
 
+<br>
+
 Thus, we have
 
 $$\begin{align*}\text{Det}(\boldsymbol{A}) &= \\ \ \ & \text{Det}\left(\begin{bmatrix} a_{1,1} & a_{1,2} & a_{1,3} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right) - \text{Det}\left(\begin{bmatrix}a_{2,1}  & a_{2,2} & a_{2,3} & \dots & a_{2,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-2,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} a_{3,1} & a_{3,2} & a_{3,3} & \dots & a_{3,m} \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{-3,-1} & & \\ 0 & & & &\end{bmatrix}\right) +/- \dots \ \text{Det}\left(\begin{bmatrix} a_{m,1} & a_{m,2} & a_{m,3} & \dots & a_{m,m} \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{-m,-1} & & & &\end{bmatrix}\right)\end{align*}$$
 
 
-$$ = \text{Det}\left(\begin{bmatrix} a_{1,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right) - \text{Det}\left(\begin{bmatrix}a_{2,1}  & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-2,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} a_{3,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{-3,-1} & & \\ 0 & & & &\end{bmatrix}\right) - \dots +/- \ \text{Det}\left(\begin{bmatrix} a_{m,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{-m,-1} & & & &\end{bmatrix}\right)\end{align*}$$
+$$\begin{align*}= \text{Det}\left(\begin{bmatrix} a_{1,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-1,-1} & & \\ 0 & & & &\end{bmatrix}\right) - \text{Det}\left(\begin{bmatrix}a_{2,1}  & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{-2,-1} & & \\ 0 & & & &\end{bmatrix}\right) + \text{Det}\left(\begin{bmatrix} a_{3,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ a_{3,1} & & & & \\ \vdots & & \boldsymbol{A}_{-3,-1} & & \\ 0 & & & &\end{bmatrix}\right) - \dots +/- \ \text{Det}\left(\begin{bmatrix} a_{m,1} & 0 & 0 & \dots & 0 \\ 0 & & & & \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{-m,-1} & & & &\end{bmatrix}\right)\end{align*}$$
 
 $$= a_{1,1}\text{Det}(\boldsymbol{A}_{-1,-1}) - a_{2,1}\text{Det}(\boldsymbol{A}_{-2,-1}) + a_{3,1}\text{Det}(\boldsymbol{A}_{-3,-1}) - \dots +/- a_{-m,1}\text{Det}(\boldsymbol{A}_{-m,-1})$$
 
