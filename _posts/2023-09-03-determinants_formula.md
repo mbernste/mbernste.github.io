@@ -339,7 +339,7 @@ Now let's consider the case where $\boldsymbol{E}$ is a row-swapping matrix that
 
 $$\begin{align*}\text{Det}(\boldsymbol{AE}) &= -\text{Det}(\boldsymbol{A}) && \text{Theorem 1} \\ &= \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E}) && \text{Theorem 6}\end{align*}$$
 
-Finally let's consider the case where  $\boldsymbol{E}$ is an elementary matrix that adds a multiple of one row to another. Here, $\boldsymbol{AE}$ will add a multiple of one column of $\boldsymbol{A}$ to another column. By Theorem 4, this does not change the determinant. Moreover, by Theorem 7, the determinant of $\boldsymbol{E}$ determinant is simply 1. Thus,
+Finally let's consider the case where  $\boldsymbol{E}$ is an elementary matrix that adds a multiple of one row to another. Here, $\boldsymbol{AE}$ will add a multiple of one column of $\boldsymbol{A}$ to another column. By Theorem 4, this does not change the determinant. Moreover, by Theorem 7, the determinant of $\boldsymbol{E}$ is simply 1. Thus,
 
 $$\begin{align*}\text{Det}(\boldsymbol{AE}) &= -\text{Det}(\boldsymbol{A}) && \text{Theorem 4} \\ &= \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{E}) && \text{Theorem 7}\end{align*}$$
 
