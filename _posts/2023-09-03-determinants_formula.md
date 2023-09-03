@@ -284,7 +284,7 @@ Such a matrix would be a diagonal matrix with all ones along the diagonal except
 
 $$\boldsymbol{A} := \begin{bmatrix}1 & 0 & 0 & 0 \\ 0 & k & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1\end{bmatrix}$$
 
-Note that this is a triangular matrix and thus, its determinant is given by the product along its diagonals, which is simply $k$. 
+Note that this is a triangular matrix and thus, by Theorem 3, its determinant is given by the product along its diagonals, which is simply $k$. 
 
 $\square$
 
