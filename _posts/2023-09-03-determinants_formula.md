@@ -377,7 +377,7 @@ We note that the determinant of every elementary matrix is equal to its transpos
 
 Then, we apply Theorem 8 and see that
 
-$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{E}_1) \text{Det}(\boldsymbol{E}_2) \dots \text{Det}(\boldsymbol{E}_m) \\ &= \text{Det}(\boldsymbol{E}_1^T) \text{Det}(\boldsymbol{E}_2^T) \dots \text{Det}(\boldsymbol{E}_m^T) \\ &= \text{Det}(\boldsymbol{E}_{m}^T) \text{Det}(\boldsymbol{E}_{m-1}^T) \dots \text{Det}(\boldsymbol{E}_1^T) \\ &= \text{Det}(\boldsymbol{E}_m^T \boldsymbol{E}_{m-1}^T \dots \boldsymbol{E}_1^T) \\ &= \text{Det}(\boldsymbol{A}^T)\end{align*}$$
+$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_k) \\ &= \text{Det}(\boldsymbol{E}_1) \text{Det}(\boldsymbol{E}_2) \dots \text{Det}(\boldsymbol{E}_k) \\ &= \text{Det}(\boldsymbol{E}_1^T) \text{Det}(\boldsymbol{E}_2^T) \dots \text{Det}(\boldsymbol{E}_k^T) \\ &= \text{Det}(\boldsymbol{E}_{k}^T) \text{Det}(\boldsymbol{E}_{k-1}^T) \dots \text{Det}(\boldsymbol{E}_1^T) \\ &= \text{Det}(\boldsymbol{E}_k^T \boldsymbol{E}_{k-1}^T \dots \boldsymbol{E}_1^T) \\ &= \text{Det}(\boldsymbol{A}^T)\end{align*}$$
 
 $\square$
 
