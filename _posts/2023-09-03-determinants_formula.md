@@ -381,23 +381,21 @@ $\square$
 
 **Proof:**
 
-This proof follows from Theorem 9 and Axiom 3 of the determinant. Specifically, given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$. Let $\boldsymbol{a}\_{1, *}, \dots, \boldsymbol{a}\_{n,*}$ be the row vectors of $\boldsymbol{A}$. Also, let the $j$th row be represented as the sum of two vectors, $\boldsymbol{a}\_{j,*} = \boldsymbol{u} + \boldsymbol{v}$:
+This proof follows from Theorem 9 and Axiom 3 of the determinant. Specifically, given a square matrix $\boldsymbol{A} \in \mathbb{R}^{m \times m}$. Let $\boldsymbol{a}\_{1, *}, \dots, \boldsymbol{a}\_{m,*}$ be the row vectors of $\boldsymbol{A}$. Also, let the $j$th row be represented as the sum of two vectors, $\boldsymbol{a}\_{j,*} = \boldsymbol{u} + \boldsymbol{v}$:
 
-$$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{1, *} \\ \vdots \\ \boldsymbol{u} + \boldsymbol{v} \\ \boldsymbol{a}_{n, *}\end{bmatrix}$$
+$$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{1, *} \\ \vdots \\ \boldsymbol{u} + \boldsymbol{v} \\ \boldsymbol{a}_{m, *}\end{bmatrix}$$
 
 The determinant of $\boldsymbol{A}$ is then:
 
-$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \text{By Theorem 9}\end{align*}$$
-
-$$\begin{align*}&= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{v} + \boldsymbol{u}, \dots, \boldsymbol{a}_{n,*} \right) \\ &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{v}, \dots, \boldsymbol{a}_{n,*} \right) + \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{u}, \dots, \boldsymbol{a}_{n,*} \right) \text{By Axiom 3} \end{align*}$$
+$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \text{By Theorem 9} \\ &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{v} + \boldsymbol{u}, \dots, \boldsymbol{a}_{m,*} \right) \\ &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{v}, \dots, \boldsymbol{a}_{m,*} \right) + \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{u}, \dots, \boldsymbol{a}_{m,*} \right) && \text{By Axiom 3} \end{align*}$$
 
 Next, let the $j$th row be scaled by some constant $c$. That is,
 
-$$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{1, *} \\ \vdots \\ c\boldsymbol{a}_{j,*} \\ \boldsymbol{a}_{n, *}\end{bmatrix}$$
+$$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{1, *} \\ \vdots \\ c\boldsymbol{a}_{j,*} \\ \boldsymbol{a}_{m, *}\end{bmatrix}$$
 
 Then, 
 
-$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \text{By Theorem 9} \\ &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, c\boldsymbol{a_{j,*}), \dots, \boldsymbol{a}_{n,*} \right) \\ &= c\text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{a_{j,*}, \dots, \boldsymbol{a}_{n,*} \right) && \text{By Axiom 3} \end{align*}$$
+$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \text{By Theorem 9} \\ &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, c\boldsymbol{a_{j,*}), \dots, \boldsymbol{a}_{m,*} \right) \\ &= c\text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{a_{j,*}, \dots, \boldsymbol{a}_{m,*} \right) && \text{By Axiom 3} \end{align*}$$
 
 $/square$
 
