@@ -189,6 +189,12 @@ Below is an illustration of how each theorem depends on the other theorems. Note
 
 All of the proofs are left to the Appendix below this blog post.
 
+Related links
+-------------
+
+* Lecture notes by Mark Demers: [http://faculty.fairfield.edu/mdemers/linearalgebra/documents/2019.03.25.detalt.pdf]
+* Lecture notes by Dan Margalit, Joseph Rabinoff, Ben Williams: [https://personal.math.ubc.ca/~tbjw/ila/determinants-volumes.html](https://personal.math.ubc.ca/~tbjw/ila/determinants-volumes.html)
+* Explanation by 3Blue1Brown: [https://www.3blue1brown.com/lessons/determinant](https://www.3blue1brown.com/lessons/determinant)
 
 Appendix
 --------
