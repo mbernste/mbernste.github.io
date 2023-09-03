@@ -387,7 +387,9 @@ $$\boldsymbol{A} := \begin{bmatrix}\boldsymbol{a}_{1, *} \\ \vdots \\ \boldsymbo
 
 The determinant of $\boldsymbol{A}$ is then:
 
-$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \text{By Theorem 9} \\ &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{v} + \boldsymbol{u}, \dots, \boldsymbol{a}_{n,*} \right) \\ &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{v}, \dots, \boldsymbol{a}_{n,*} \right) + \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{u}, \dots, \boldsymbol{a}_{n,*} \right) \text{By Axiom 3} \end{align*}$$
+$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}(\boldsymbol{A}^T) && \text{By Theorem 9}\end{align*}$$
+
+$$\begin{align*}&= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{v} + \boldsymbol{u}, \dots, \boldsymbol{a}_{n,*} \right) \\ &= \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{v}, \dots, \boldsymbol{a}_{n,*} \right) + \text{Det}\left(\boldsymbol{a}_{1,*}, \dots, \boldsymbol{u}, \dots, \boldsymbol{a}_{n,*} \right) \text{By Axiom 3} \end{align*}$$
 
 Next, let the $j$th row be scaled by some constant $c$. That is,
 
