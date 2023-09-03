@@ -447,4 +447,8 @@ $$\text{Det}(\boldsymbol{A}) = \text{Det}\left( \begin{bmatrix}a_{1,1} & 0 & \do
 
 Notice that in the second line, all of the determinants except the first are zero since the first column vector of each of the perspective matrices is the zero vector. Thus, these are all singular matrices and by Theorem 2, their determinant is zero.
 
+Now, if $\boldsymbol{A}_{1,1}$ is invertible, then we can factor it into a product of elementary matrices:
 
+$$\boldsymbol{A}_{1,1} = \boldsymbol{E}_1 \boldsymbol{E}_2 \dots \boldsymbol{E}_k$$
+
+where $k$ is some constant.
