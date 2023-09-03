@@ -1,6 +1,6 @@
 ---
-title: 'Demystifying the determinant'
-date: 2023-07-08
+title: 'Deriving the formula for the determinant'
+date: 2023-09-03
 permalink: /posts/determinantsformula/
 tags:
   - tutorial
