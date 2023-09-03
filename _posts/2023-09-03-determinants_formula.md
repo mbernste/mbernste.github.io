@@ -443,7 +443,7 @@ $$\boldsymbol{A} = \begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ 0 & & &
 
 Then, by applying Theorem 10, it holds that 
 
-$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}\left( \begin{bmatrix}a_{1,1} & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) + \text{Det}\left( \begin{bmatrix}0 & a_{1,2} & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) + \dots + \text{Det}\left( \begin{bmatrix}0 & 0 & \dots & a_{1,m} \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) \\ &= \text{Det}\left( \begin{bmatrix}a_{1,1} & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) \ \text{by Theorem 2} \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) \ \text{by Axiom 3}\end{align*}$$
+$$\begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}\left( \begin{bmatrix}a_{1,1} & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) + \text{Det}\left( \begin{bmatrix}0 & a_{1,2} & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) + \dots + \text{Det}\left( \begin{bmatrix}0 & 0 & \dots & a_{1,m} \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) \\ &= \text{Det}\left( \begin{bmatrix}a_{1,1} & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) \ \text{by Theorem 2} \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) \ \text{by Axiom 3} \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix}\right) \\ &= a_{1,1}\text{Det}\left( \begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}_1 \boldsymbol{E}_2 \dots \boldsymbol{E}_k & & \\ 0 & & & &\end{bmatrix}\right) \\ &= a_{1,1}\text{Det}(\boldsymbol{E}'_1 \boldsymbol{E}'_2 \dots \boldsymbol{E}'_k) \\ &= a_{1,1}\text{Det}(\boldsymbol{A}_{1,1})\end{align*}$$
 
 Notice that in the second line, all of the determinants except the first are zero since the first column vector of each of the perspective matrices is the zero vector. Thus, these are all singular matrices and by Theorem 2, their determinant is zero.
 
@@ -451,4 +451,6 @@ Now, if $\boldsymbol{A}_{1,1}$ is invertible, then we can factor it into a produ
 
 $$\boldsymbol{A}_{1,1} = \boldsymbol{E}_1 \boldsymbol{E}_2 \dots \boldsymbol{E}_k$$
 
-where $k$ is some constant.
+where $k$ is some constant. Moreover, we see that 
+
+$$\text{Det}(\boldsymbol{A}_{1,1}) = \text{Det}(\boldsymbol{E}_1 \boldsymbol{E}_2 \dots \boldsymbol{E}_k)$$
