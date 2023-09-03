@@ -1,5 +1,5 @@
 ---
-title: 'What determinants tells us about matrices'
+title: 'What determinants tell us about matrices'
 date: 2023-09-03
 permalink: /posts/determinants/
 tags:
