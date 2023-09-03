@@ -170,7 +170,7 @@ The Theorems required to derive this formula are outlined below. and their proof
 
 <span style="color:#0060C6">**Theorem 9:** Given a square matrix $\boldsymbol{A}$, it holds that $\text{Det}(\boldsymbol{A}) = \text{Det}(\boldsymbol{A}^T)$.</span>
 
-<span style="color:#0060C6">**Theorem 10:** Tbe determinant of matrix is linear with respect to the row vectors of the matrix.</span>
+<span style="color:#0060C6">**Theorem 10:** The determinant of matrix is linear with respect to the row vectors of the matrix.</span>
 
 With these theorems in hand we can derive the final formula for the determinant:
 
@@ -465,5 +465,11 @@ $$\begin{bmatrix}1 & 0 & \dots & 0 \\ 0 & & & & \\ \vdots & & \boldsymbol{E}_1 \
 
 Finally, at along last, we can derive the formula for the determinant. Let us consider a general matrix $\boldsymbol{A}$:
 
-$$\boldsymbol{A} = \begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}$$
+$$\boldsymbol{A} = \begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix}$$
+
+Then, 
+
+$$begin{align*}\text{Det}(\boldsymbol{A}) &= \text{Det}\left(\begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ a_{3,1} & & & & \\  \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix} \right) \\ &= \text{Det}\left(\begin{bmatrix}a_{1,1} & a_{1,2} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\  \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) + \text{Det}\left(\begin{bmatrix}0 & a_{1,2} & \dots & a_{1,m} \\ a_{2,1} & & & & \\ 0 & & & & \\  \vdots & & \boldsymbol{A}_{1,1} & & \\ 0 & & & &\end{bmatrix} \right) + \text{Det}\left(\begin{bmatrix}0 & a_{1,2} & \dots & a_{1,m} \\ 0 & & & & \\ a_{3,1} & & & & \\  \vdots & & \boldsymbol{A}_{1,1} & & \\0 & & & &\end{bmatrix} \right) + \dots + \text{Det}\left(\begin{bmatrix}0 & a_{1,2} & \dots & a_{1,m} \\ 0 & & & & \\ 0 & & & & \\  \vdots & & \boldsymbol{A}_{1,1} & & \\ a_{m,1} & & & &\end{bmatrix} \right)\end{align*}$$
+
+
 
