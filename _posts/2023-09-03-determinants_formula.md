@@ -24,7 +24,7 @@ for which the absolute value is the volume of the parallelepided formed by the m
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_overview.png" alt="drawing" width="550"/></center>
 
-</br>
+<br>
 
 While this is fairly straightforward conceptually, the formula for the determinant is quite confusing:
 
@@ -48,7 +48,7 @@ Then we see that the area can be obtained by computing the area of the rectangle
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/TwoByTwoDeterminant.png" alt="drawing" width="700"/></center>
 
-</br>
+<br>
 
 Simplifying the equation above we get
 
