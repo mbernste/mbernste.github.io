@@ -47,11 +47,13 @@ Then we see that the area can be obtained by computing the area of the rectangle
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/TwoByTwoDeterminant.png" alt="drawing" width="700"/></center>
 
+</br>
+
 Simplifying the equation above we get
 
 $$\text{Det}(\boldsymbol{A}) = ad - bc$$
 
-which is exactly the definition for the $2 \times 2$ determinant.  So far so good. 
+This is exactly the definition for the $2 \times 2$ determinant.  So far so good. 
 
 Defining the determinant for $m \times m$ matrices: a generalization of geometric volume
 ----------------------------------------------------------------------------------------
