@@ -58,6 +58,8 @@ Thus, determinants describe a very fundamental quality of a matrix's linear tran
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_scales_circle.png" alt="drawing" width="700"/></center>
 
+<br>
+
 **Quick aside: Intuiting why $\text{Det}(\boldsymbol{AB}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$**
 
 We can now gain a much better intuition for Theorem 8 presented in [the previous post](), which states that for two square matrices, $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{n \times n}$ it holds that 
