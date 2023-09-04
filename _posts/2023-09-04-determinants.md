@@ -63,7 +63,7 @@ because each of $m$ sides is of length $m$. If we transform this hypercube by $\
 
 $$\text{Volume}(c\boldsymbol{A}) = \lvert \text{Det}(c\boldsymbol{a}_{*,1}, \dots, c\boldsymbol{a}_{*,m})\rvert$$
 
-where $\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,m}$ are the column-vectors of $\boldsymbol{A}$.Notice that $c$ is multiplying each column-vector. From the [previous post](https://mbernste.github.io/posts/determinantsformula/), recall that the determinant is linear with respect to each column-vector so we can "pull out" each $c$ coefficient:
+where $\boldsymbol{a}\_{\*,1}, \dots, \boldsymbol{a}\_{\*,m}$ are the column-vectors of $\boldsymbol{A}$. Notice that $c$ is multiplying each column-vector. From the [previous post](https://mbernste.github.io/posts/determinantsformula/), recall that the determinant is linear with respect to each column-vector so we can "pull out" each $c$ coefficient:
 
  $$\begin{align*}\text{Volume}(c\boldsymbol{A}) &= \lvert \text{Det}(c\boldsymbol{a}_{*,1}, \dots, c\boldsymbol{a}_{*,m}) \rvert \\ &= \lvert c^m \rvert \lvert  \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,m}) \rvert \\ &= \text{Volume}(c\boldsymbol{I}) \lvert \text{Det}(\boldsymbol{A}) \rvert \end{align*}$$
 
