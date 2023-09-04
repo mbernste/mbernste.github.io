@@ -13,7 +13,7 @@ _The determinant of a matrix is often taught as a function that measures the vol
 Introduction
 ------------
 
-In the previous post, we [derived the formula](https://mbernste.github.io/posts/determinantsformula/) for the determinant by showing that the determinant describes the geometric volume of the high dimensional parallelepiped formed by the columns of a matrix. From this discussion, it might have appeared that the determinant of a matrix _only_ describes volume, but that is not the full story! 
+In the previous post, we [derived the formula](https://mbernste.github.io/posts/determinantsformula/) for the determinant by showing that the determinant describes the geometric volume of the high dimensional parallelepiped formed by the columns of a matrix. But that is not the full story! 
 
 As with most topics, it helps to view determinants from [multiple perspectives](https://mbernste.github.io/posts/understanding_3d/), which we will attempt to also do here. To understand determinants from multiple perspectives, we will also need to view matrices from multiple perspectives. Recall from a [previous post](https://mbernste.github.io/posts/matrices/) that there are three perpectives for viewing matrices:
 
