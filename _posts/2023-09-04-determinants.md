@@ -21,7 +21,7 @@ As with most topics, it helps to view determinants from [multiple perspectives](
 2. **Perspective 2:** As a list of column vectors (or row vectors)
 3. **Perspective 3:** As a [linear transformation](https://mbernste.github.io/posts/matrices_linear_transformations/) between vector spaces
 
-In our last post, we viewed the determinant from Perspective 2. That is, the determinant of a matrix describes the geometric volume of the parallelepiped formed by the column vectors of the matrix. In this post, we will explore determinants from Perspective 3 and explore what the determinant tells us about the linear transformation characterized by a given matrix. To preview, the determinant tells us two things about the linear transformation:
+In our last post, we explored the determinant by viewing matrices from Perspective 2. That is, the determinant of a matrix describes the geometric volume of the parallelepiped formed by the column vectors of the matrix. In this post, we will explore determinants by viewing matrices from Perspective 3 and explore what the determinant tells us about the linear transformation characterized by a given matrix. To preview, the determinant tells us two things about the linear transformation:
 
 1. How much a matrix's linear transformation grows or shrinks space
 2. Whether the matrix's linear transformation inverts space
