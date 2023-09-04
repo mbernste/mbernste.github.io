@@ -375,7 +375,7 @@ First, if $\boldsymbol{A}$ is singular, then $\boldsymbol{A}^T$ [is also singula
 
 If $\boldsymbol{A}$ is invertible, then we can express $\boldsymbol{A}$ as the product of some sequence of elementary matrices:
 
-$$\boldsymbol{A} = \boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m$$
+$$\boldsymbol{A} = \boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_k$$
 
 Then, 
 
