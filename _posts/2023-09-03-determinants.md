@@ -8,7 +8,7 @@ tags:
   - linear algebra
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+_The determinant of a matrix is often taught as a function that measures the volume of the parallelepiped formed by that matrix's columns. In this post, we will go a step further in our understanding of the determinant and discuss what the determinant tells us about the linear transformation that is characterized by the matrix. In short, the determinant tells us how much a matrix's linear transformation grows or shrinks space. The sign of the determinant tells us whether the matrix also inverts space._
 
 Introduction
 ------------
