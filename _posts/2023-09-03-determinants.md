@@ -1,6 +1,6 @@
 ---
 title: 'What determinants tell us about linear transformations'
-date: 2023-09-03
+date: 2023-09-04
 permalink: /posts/determinants/
 tags:
   - tutorial
@@ -51,10 +51,25 @@ Here, we are viewing the matrix $\boldsymbol{A}$ as a function and are viewing $
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_grow_unit_cube.png" alt="drawing" width="700"/></center>
 
-This pattern does not just hold for the unit cube alone nor does it hold for just $\mathbb{R}^2$. In fact, any cube in $n$ dimensional space that is transformed by some matrix $\boldsymbol{A}$ will become a new hypercube with an area that is grown or shrunk by a factor equal $\lvert \text{Det}(\boldsymbol{A}) \rvert$. 
+This pattern does not just hold for the unit cube alone nor does it hold for just $\mathbb{R}^2$. In fact, any hypercube in $m$ dimensional space that is transformed by some matrix $\boldsymbol{A}$ will become a new hypercube with an area that is grown or shrunk by a factor equal $\lvert \text{Det}(\boldsymbol{A}) \rvert$. To see why, examine what happens to a hypercube with sides of length $c$, which we can represent as the matrix $c\boldsymbol{I}$:
 
+$$c\boldsymbol{I} = \begin{bmatrix}c & 0 & \dots & 0 \\ 0 & c & \dots & 0 \\ \vdots & \vdots & \dots & \vdots \\ 0 & 0 & \dots & c  \end{bmatrix}$$
 
-Thus, determinants describe a very fundamental quality of a matrix's linear transformation. It describes the magnitude by which the matrix grows or shrinks things under its transformation.
+where 
+
+$$\text{Volume}(c\boldsymbol{I}) = c^{m}$$
+
+because each of $m$ sides is of length $m$. If we transform this hypercube by $\boldsymbol{A}$, we get a parallelepiped represented by the matrix $\boldsymbol{A}c\boldsymbol{I} = c\boldsymbol{A}$. It's volume is given by the determinant $\leftvert\text{Det}(c\boldsymbol{A})\rightvert$:
+
+$$\text{Volume}(c\boldsymbol{A}) = \leftvert \text{Det}(c\boldsymbol{a}_{*,1}, \dots, c\boldsymbol{a}_{*,m})\rightvert$$
+
+where $\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,m}$ are the column-vectors of $\boldsymbol{A}$.Notice that $c$ is multiplying each column-vector. From the [previous post](https://mbernste.github.io/posts/determinantsformula/), recall that the determinant is linear with respect to each column-vector so we can "pull out" each $c$ coefficient:
+
+ $$\begin{align*}\text{Volume}(c\boldsymbol{A}) &= \leftvert \text{Det}(c\boldsymbol{a}_{*,1}, \dots, c\boldsymbol{a}_{*,m}) \rightvert \\ &= \leftvert c^m \rightvert \leftvert  \text{Det}(\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,m}) \rightvert \\ &= \text{Volume}(c\boldsymbol{I}) \leftvert \text{Det}(\boldsymbol{A}) \rightvert \end{align*}$$
+
+Thus we see that the volume of our cube was scaled by a factor $\leftvert \text{Det}(\boldsymbol{A}) \rightvert$. 
+
+Without proving it formally here, we can now see that _any_ area/object's volume will be scaled by the $\leftvert \text{Det}(\boldsymbol{A}) \rightvert$ when transformed by $\boldsymbol{A}$. This is because we can always approxiamte the area of an object by filling the object with small hypercubes. As we shrink the hypercubes ever smaller, we get a more accurate approximation of the volume. Under transformation by a matrix $\boldsymbol{A}$ all of those tiny hypercubes will be scaled by the absolute value of $\boldsymbol{A}$'s determinant and thus, the full volume of the object will be scaled by this value as well. This can be visualized below where we see the volume of a circle scaled under transformation of a matrix $\boldsymbol{A}$:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_scales_circle.png" alt="drawing" width="700"/></center>
 
