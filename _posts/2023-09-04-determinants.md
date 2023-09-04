@@ -53,7 +53,7 @@ Here, we are viewing the matrix $\boldsymbol{A}$ as a function and are viewing $
 
 This pattern does not just hold for the unit cube alone nor does it hold for just $\mathbb{R}^2$. In fact, any hypercube in $m$ dimensional space that is transformed by some matrix $\boldsymbol{A}$ will become a new hypercube with an area that is grown or shrunk by a factor equal $\lvert \text{Det}(\boldsymbol{A}) \rvert$. To see why, examine what happens to a hypercube with sides of length $c$, which we can represent as the matrix $c\boldsymbol{I}$:
 
-$$c\boldsymbol{I} = \begin{bmatrix}c & 0 & \dots & 0 \\ 0 & c & \dots & 0 \\ \vdots & \vdots & \dots & \vdots \\ 0 & 0 & \dots & c  \end{bmatrix}$$
+$$c\boldsymbol{I} = \begin{bmatrix}c & 0 & \dots & 0 \\ 0 & c & \dots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dots & c  \end{bmatrix}$$
 
 where 
 
