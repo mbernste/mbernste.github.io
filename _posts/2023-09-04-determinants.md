@@ -26,7 +26,7 @@ In our last post, we explored the determinant by viewing matrices from Perspecti
 1. How much a matrix's linear transformation grows or shrinks space
 2. Whether the matrix's linear transformation inverts space
 
-We'll conclude by putting these two pieces together and describe how the determinant can be thought about as scaling a "signed volume". 
+We'll conclude by putting these two pieces together and describe how the determinant can be thought about as describing space scaled by a "signed volume". 
 
 The determinant describes how much a matrix grows or shrinks space
 -------------------------------------------------------------------
