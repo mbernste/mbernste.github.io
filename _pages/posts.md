@@ -61,6 +61,8 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Vector spaces induced by matrices: column, row, and null spaces](https://mbernste.github.io/posts/matrixspaces/)  
 [Reasoning about systems of linear equations using linear algebra](https://mbernste.github.io/posts/systems_linear_equations/)  
 [Row reduction with elementary matrices](https://mbernste.github.io/posts/row_reduction)  
+[Deriving the formula for the determinant](https://mbernste.github.io/posts/determinantsformula/)  
+[What determinants tell us about linear transformations](https://mbernste.github.io/posts/determinants/)  
 
 ## Graph theory
 
