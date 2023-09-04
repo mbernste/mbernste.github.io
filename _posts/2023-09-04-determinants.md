@@ -69,7 +69,7 @@ where $\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,m}$ are the column-vectors
 
 Thus we see that the volume of our cube was scaled by a factor $\lvert \text{Det}(\boldsymbol{A}) \rvert$. 
 
-Without proving it formally here, we can now see that _any_ area/object's volume will be scaled by the $\lvert \text{Det}(\boldsymbol{A}) \rvert$ when transformed by $\boldsymbol{A}$. This is because we can always approxiamte the area of an object by filling the object with small hypercubes. As we shrink the hypercubes ever smaller, we get a more accurate approximation of the volume. Under transformation by a matrix $\boldsymbol{A}$ all of those tiny hypercubes will be scaled by the absolute value of $\boldsymbol{A}$'s determinant and thus, the full volume of the object will be scaled by this value as well. This can be visualized below where we see the volume of a circle scaled under transformation of a matrix $\boldsymbol{A}$:
+Without proving it formally here, we can now intuitively see that _any_ area/object's volume will be scaled by the factor $\lvert \text{Det}(\boldsymbol{A}) \rvert$ when transformed by $\boldsymbol{A}$. This is because we can always approximate the volume of an object by filling the object with small hypercubes and summing the volumes of those hypercubes together. As we shrink the hypercubes ever smaller, we get a more accurate approximation of the volume. Under transformation by a matrix, $\boldsymbol{A}$, all of those tiny hypercubes will be scaled by $\lvert \text{Det}(\boldsymbol{A})\rvert$ and thus, the full volume of the object will be scaled by this value as well. This idea can be visualized below where we see the volume of a circle scaled under transformation of a matrix $\boldsymbol{A}$:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/determinant_scales_circle.png" alt="drawing" width="700"/></center>
 
@@ -77,7 +77,7 @@ Without proving it formally here, we can now see that _any_ area/object's volume
 
 **Quick aside: Intuiting why $\text{Det}(\boldsymbol{AB}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$**
 
-We can now gain a much better intuition for Theorem 8 presented in [the previous post](), which states that for two square matrices, $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{n \times n}$ it holds that 
+We can now gain a much better intuition for Theorem 8 presented in [the previous post](https://mbernste.github.io/posts/determinantsformula/), which states that for two square matrices, $\boldsymbol{A}, \boldsymbol{B} \in \mathbb{R}^{n \times n}$ it holds that 
 
 $$\text{Det}(\boldsymbol{AB}) = \text{Det}(\boldsymbol{A})\text{Det}(\boldsymbol{B})$$
 
