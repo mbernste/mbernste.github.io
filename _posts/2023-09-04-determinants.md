@@ -103,7 +103,7 @@ As an example, let us consider the matrix:
 
 $$\boldsymbol{A} := \begin{bmatrix}0 & 1 \\ 1 & 0\end{bmatrix}$$ 
 
-The determinant of $\boldsymbol{A}$ is -1. Why? By Axiom 1, the determinant of the identity matrix is 1. By [Theorem 1 in my previous post](https://mbernste.github.io/posts/determinantsformula/), swapping two columns will make the determinant negative. Thus, the determinant of $\boldsymbol{A}$ is simply -1. (Note, if you perform _two_ swaps, the matrix no longer inverts space though this is a bit hard to visualize in high dimensions). 
+This matrix represents the identity matrix, but with its two columns flipped. The determinant of $\boldsymbol{A}$ is -1. Why? By Axiom 1, the determinant of the identity matrix is 1. By [Theorem 1 in my previous post](https://mbernste.github.io/posts/determinantsformula/), swapping two columns will make the determinant negative. Thus, the determinant of $\boldsymbol{A}$ is simply -1. (Note, if you perform _two_ swaps, the matrix no longer inverts space though this is a bit hard to visualize in high dimensions). 
 
 Below is an illustration of what happens to a set of vectors that form the outline of a hand when transformed by the matrix $\boldsymbol{A}$. 
 
