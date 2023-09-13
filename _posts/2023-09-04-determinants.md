@@ -129,6 +129,8 @@ Analagously, we can see that as two vectors are rotated towards one another, the
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/negative_determinant_rotate_vecs.png" alt="drawing" width="800"/></center>
 
+<br>
+
 Thus, the "sign" of the determinant can be thought about in a similar way as the sign of an integral. A negative integral tells you that the function has more area below zero than above zero. A negative determinant tells you that two columns vectors, in a sense, "crossed" with one another thus inverting space across those two column vectors. 
 
 
