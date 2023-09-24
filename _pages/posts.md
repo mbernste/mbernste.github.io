@@ -18,6 +18,11 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [On cell types and cell states](https://mbernste.github.io/posts/cell_types_cell_states/)  
 [Three strategies for cataloging cell types](https://mbernste.github.io/posts/cell_type_cataloging/)  
 
+## Graphs
+
+[Graph convolutional neural networks](https://mbernste.github.io/posts/gcn/)  
+[The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)
+
 ## Probabilistic models
 
 [Gaussian mixture models](https://mbernste.github.io/posts/gmm_em/)  
@@ -63,10 +68,6 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Row reduction with elementary matrices](https://mbernste.github.io/posts/row_reduction)  
 [Deriving the formula for the determinant](https://mbernste.github.io/posts/determinantsformula/)  
 [What determinants tell us about linear transformations](https://mbernste.github.io/posts/determinants/)  
-
-## Graph theory
-
-[The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)
 
 ## The calculus of variations
 
