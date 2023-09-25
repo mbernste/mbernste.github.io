@@ -35,3 +35,9 @@ Thus, if you ever see an equation like $\boldsymbol{x}^T\boldsymbol{x} = 1$, thi
 
 While this looks like Form 1, it is quite different. It actually computes a full matrix of size $n \times n$ where element $i$, $j$ is $x_iy_j$. 
 
+4. $\boldsymbol{D}\boldsymbol{X}\boldsymbol{D}$
+
+Given a square diagonal matrix $\boldsymbol{D}$ and a square matrix $\boldsymbol{X}$, this formula will compute the matrix where each element $i$, $j$ is given by $x_{i,j}d_{i,i}d_{j,j}$.
+   
+
+
