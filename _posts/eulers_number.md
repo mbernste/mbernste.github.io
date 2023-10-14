@@ -7,7 +7,7 @@ tags:
   - mathematics
 ---
 
-_For many people I've talked to, Euler's number $e := 2.71828$ is a somewhat mysterious number one sort of just forced to take for granted. Thanks to an excellent explanation by [Grant Sanderson](Grant Sanderson)'s [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I know better understand this constant.  In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on Sanderson's explanation._
+_For many people I've talked to, Euler's number $e := 2.71828\dots$ is a somewhat mysterious number one sort of just forced to take for granted. Thanks to an excellent explanation by [Grant Sanderson](Grant Sanderson)'s [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I know better understand this constant.  In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on Sanderson's explanation._
 
 Introduction
 ------------
