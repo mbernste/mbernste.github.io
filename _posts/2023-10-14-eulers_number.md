@@ -41,7 +41,6 @@ for some particular constant $K$ that is determined by $a$. Intuitively, this ma
 
  <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/exponential_proportional_to_value.png" alt="drawing" width="400"/></center>
 
-
 To see why this is true more rigorously, let's start with the definition of the derivative of $a^x$:
 
 $$\begin{align*}\frac{da^x}{dx} := \lim_{h \rightarrow 0} \frac{a^{x+h} - a^x}{h} \\ &:= \lim_{h \rightarrow 0} \frac{a^xa^h} - a^x}{h} \\ &:= a^x \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h} \end{align*}$$
