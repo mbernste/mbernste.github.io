@@ -59,9 +59,10 @@ Defining Euler's number
 
 Now, the natural question that follows from this observation is: what exponential function, $a^x$, yields a constant of 1? That is, what value of $a$ leads to $K = 1$? It's Euler's number! 
 
-That is, Euler's number is simply defined to be the base of an exponential function for which the derivative of that exponential function is the exponential function itself. To derive Euler's number, you can simply solve for $a$ in the following equation:
+That is, Euler's number is simply defined to be the base of an exponential function for which the derivative of that exponential function is the exponential function itself. To derive Euler's number, we find $a$ for which $K = 1$. That is, $e$ is the value for $a$ in the following equation:
 
 $$1 = \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
+
 
 
 Expressing exponential functions in a canonical way using Euler's number
