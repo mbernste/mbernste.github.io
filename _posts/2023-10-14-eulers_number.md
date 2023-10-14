@@ -47,7 +47,7 @@ To see why this is true more rigorously, let's start with the definition of the 
 
 $$\begin{align*}\frac{da^x}{dx} &= \lim_{h \rightarrow 0} \frac{a^{x+h} - a^x}{h} \\ &= \lim_{h \rightarrow 0} \frac{a^xa^h - a^x}{h} \\ &= a^x \underbrace{\lim_{h \rightarrow 0} \frac{a^h - 1}{h}}_{K} \end{align*}$$
 
-Note, that the derivative of $a^x$ is simply $a^x$ scaled by some constant,
+Note, that the derivative of $a^x$ is simply $a^x$ scaled by a constant:
 
 $$K := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
