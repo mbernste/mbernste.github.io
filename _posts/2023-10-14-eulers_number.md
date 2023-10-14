@@ -49,4 +49,4 @@ Note, that the derivative of $a^x$ is simply $a^x$ scaled by some constant,
 
 $$K := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
-We see that this constant is determined by the value of $a$. 
+Moreover, we see that this constant is determined by the value of $a$ (i.e., it is a function of $a$). 
