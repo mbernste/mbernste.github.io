@@ -35,9 +35,14 @@ for some constant $a$. Exponential functions do not only grow, but their _growth
 
 A crucial characteristic of exponentials is that the derivative of an exponential function _is proportional_ to the function itself. That is:
 
-$$\frac{da^x}{dx} = Ka^x$
+$$\frac{da^x}{dx} = Ka^x$$
 
-for some particular constant $K$ that is determined by $a$. To see why this is true, let's start with the definition of the derivative of $a^x$:
+for some particular constant $K$ that is determined by $a$. Intuitively, this makes sense just based on looking at the exponential function curve: the bigger we see $a^x$ the steeper the rate of change:
+
+ <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/exponential_proportional_to_value.png" alt="drawing" width="400"/></center>
+
+
+To see why this is true more rigorously, let's start with the definition of the derivative of $a^x$:
 
 $$\begin{align*}\frac{da^x}{dx} := \lim_{h \rightarrow 0} \frac{a^{x+h} - a^x}{h} \\ &:= \lim_{h \rightarrow 0} \frac{a^xa^h} - a^x}{h} \\ &:= a^x \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h} \end{align*}$$
 
