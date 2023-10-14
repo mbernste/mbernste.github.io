@@ -64,8 +64,8 @@ That is, Euler's number is simply defined to be the base of an exponential funct
 $$1 = \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
 
-Expressing exponential functions in a canonical way
----------------------------------------------------
+Expressing exponential functions in a canonical way using Euler's number
+------------------------------------------------------------------------
 
 
 
