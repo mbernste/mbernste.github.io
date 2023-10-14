@@ -49,4 +49,19 @@ Note, that the derivative of $a^x$ is simply $a^x$ scaled by some constant,
 
 $$K := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
-Moreover, we see that this constant is determined by the value of $a$ (i.e., it is a function of $a$). 
+Moreover, we see that this constant is determined by the value of $a$ (i.e., it is a function of $a$). In some sense, this is what differentiates exponential functions from other types of functions: the rate of change of the exponential function is simply the value of that function multiplied by some constant.
+
+Now, the natural question that follows from this observation is: what exponential function, $a^x$, yields a constant of 1? That is, what value of $a$ leads to $K = 1$? It's Euler's number! 
+
+That is, Euler's number is simply defined to be the base of an exponential function for which the derivative of that exponential function is the exponential function itself. To derive Euler's number, you can simply solve for $a$ in the following equation:
+
+$$1 = \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
+
+
+
+
+
+
+
+
+
