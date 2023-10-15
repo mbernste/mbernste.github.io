@@ -70,13 +70,13 @@ That is, $e$ is the value for $a$ that satisfies the following equation:
 
 $$1 = \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
-It turns out that that $e$ can be written as a different limit that enables us to compute numerical approximation to this value:
+It turns out that that $e$ can be expressed as a limit that enables us to compute numerical approximation to this value:
 
 $$e = \lim_{n \rightarrow \infty} \left(1 + \frac{1}{n}\right)^n$$
 
-See Proof 1 in the Appendix to this post proving that this number satisfies the aforementioned equation. Note that we can calculate ever close approxiamtions to $e$ by simply plugging in larger and larger values of $n$ in to the formula above. We find that $e \approx 2.71828$.
+See Proof 1 in the Appendix to this post proving that this limit satisfies the aforementioned equation. Note that we can calculate ever close approxiamtions to $e$ by simply plugging in larger and larger values for $n$ in to the formula above. We find that $e \approx 2.71828$.
 
-We see that $e$, in a sense, defines the "base" exponential function -- that is, the exponential function whose rate of change is itself (i.e., whose multiplying constant is 1).
+We see that $e$, in a sense, defines the "base" exponential function -- by "base" I mean the exponential function whose rate of change is itself (i.e., whose multiplying constant is 1).
 
 Why $e$ is ubiquitous: all exponential functions can be expressed in a more natural way with $e$
 ------------------------------------------------------------------------------------------------
@@ -84,5 +84,6 @@ Why $e$ is ubiquitous: all exponential functions can be expressed in a more natu
 The next natural question is, why do we care about $e$? What makes $e$ helpful? And why do we see so many exponential functions and logarithms involving $e$?
 
 
-
+Appendix 1: Proof of equivalence of definitions for $e$
+-------------------------------------------------------
 
