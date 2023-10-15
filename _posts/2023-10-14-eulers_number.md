@@ -1,6 +1,6 @@
 ---
 title: "Demystifying Euler's number"
-date: 2022-10-14
+date: 2023-10-14
 permalink: /posts/eulers_number/
 tags:
   - tutorial
@@ -16,7 +16,7 @@ Introduction
 
 For many people I've talked to, Euler's number $e := 2.71828$ is a somewhat mysterious number one is sort of forced to just take for granted. Sadly, it was only very recently that I finally felt like I truly understood this constant. Sure, I knew some _facts_ about $e$, but I didn't really understand its _essence_. For example, I knew that 
 
-$$\frac{de^x}{dx} = 1$$
+$$\frac{de^x}{dx} = e^x$$
 
 but did not know why this constant is so ubiqituous. Why, for example, do we choose to represent nearly every logarithm with base $e$? More puzzingly, why do we call this the "natural" logarithm? Why does it appear in the probability density function for the [normal distribution](https://en.wikipedia.org/wiki/Normal_distribution)? Or in [Euler's formula](https://en.wikipedia.org/wiki/Euler%27s_formula)? 
 
@@ -59,7 +59,11 @@ Defining Euler's number
 
 Now, the natural question that follows from this observation is: what exponential function, $a^x$, yields a constant of 1? That is, what value of $a$ leads to $K = 1$? It's Euler's number! 
 
-That is, Euler's number is simply defined to be the base of the exponential function for which the derivative of that exponential function is the exponential function itself. To derive Euler's number, we find $a$ for which $K = 1$. That is, $e$ is the value for $a$ in the following equation:
+That is, Euler's number is simply defined to be the base of the exponential function for which the derivative of that exponential function is the exponential function itself:
+
+$$\frac{da^x}{dx} = a^x$$
+
+To derive Euler's number, we find $a$ for which $K = 1$. That is, $e$ is the value for $a$ in the following equation:
 
 $$1 = \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
