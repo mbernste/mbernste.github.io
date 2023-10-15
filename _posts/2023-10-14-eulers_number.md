@@ -84,6 +84,6 @@ Why $e$ is ubiquitous: all exponential functions can be expressed in a more natu
 The next natural question is, why do we care about $e$? What makes $e$ helpful? And why do we see so many exponential functions and logarithms involving $e$?
 
 
-Appendix 1: Proof of equivalence of definitions for $e$
--------------------------------------------------------
+Appendix
+--------
 
