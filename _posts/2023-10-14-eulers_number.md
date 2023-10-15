@@ -63,11 +63,15 @@ That is, Euler's number is simply defined to be the base of the exponential func
 
 $$\frac{da^x}{dx} = a^x$$
 
-To derive Euler's number, we find $a$ for which $K = 1$. That is, $e$ is the value for $a$ in the following equation:
+That is, $e$ is the value for $a$ that satisfies the following equation:
 
 $$1 = \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
+It turns out that that $e$ can be written as a different limit that enables us to compute numerical approximation to this value:
 
+$$e = \lim_{n \rightarrow \infty} \left(1 + \frac{1}{n}\right)^n$$
+
+See Proof 1 in the Appendix to this post proving that this number satisfies the aforementioned equation.
 
 Expressing exponential functions in a canonical way using Euler's number
 ------------------------------------------------------------------------
