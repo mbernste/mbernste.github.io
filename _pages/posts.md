@@ -11,6 +11,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [True understanding is "seeing" in 3D](https://mbernste.github.io/posts/understanding_3d/)  
 [Intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/)  
 [The overloaded equals sign](https://mbernste.github.io/posts/equality_definition/)  
+[The binomial theorem](https://mbernste.github.io/posts/binomial_theorem/)  
 
 ## Computational biology
 
@@ -73,9 +74,8 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [Functionals and functional derivatives](https://mbernste.github.io/posts/functionals/) 
 
-## Fundamental math
 
-[The binomial theorem](https://mbernste.github.io/posts/binomial_theorem/)  
+
 
 
 
