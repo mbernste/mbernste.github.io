@@ -7,8 +7,6 @@ tags:
   - mathematics
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
-
 _The binomial theorem pops up in many proofs across mathematics and mathematical statistics. In this post, I will walk through a proof of this theorem._
 
 Introduction
@@ -36,5 +34,20 @@ $(a + b)$, $(c + d)$, and $(e + f)$), only one of the terms of the binomial will
 
 $$\begin{align*}(a + b)(c + d)(e + f) &= a(c+d)(e+f) + b(c+d)(e+f) \\ &= a(c(e+f) + d(e+f)) + b(c(e+f) + d(e+f)) \\ &= ace + acf + ade + adf + bce + bcf + bde + bdf\end{align*}$$
 
-To form a term in the fully expanded polynomial, we iterate over each binomial factor and choose _one_ of the terms to include. For example, from $(a+b)$, we choose either $a$ or $b$ to include in the term, but never both. This is because of how the distributive property works: as we expanded the expression, we separated the two terms in each binomial factor so that they never could appear in the same term of the expansion.
+To form a term in the fully expanded polynomial, we imagine the process of iterating over each binomial factor and choosing _one_ of the two terms to include. For example, from $(a+b)$, we choose either $a$ or $b$ to include in the term, but never both. This is because of how the distributive property works: as we expanded the expression, we separated the two terms in each binomial factor so that they never could appear in the same term of the expansion.
+
+Moreover, we see that _every_ combination of terms from each binomial factor will be used to form a term in the expanded polynomial. Again, this occurs from the process of carrying out the distributive property iteratively in the expansion: everytime we carry out the distributive property, we create two batches of terms in the expansion that will include either the first or second term from that binomial factor.
+
+With this insight,  let’s look at the following polynomial: 
+
+$$\begin{align*}(x + y) &= (x + y)(x + y)(x + y) \\ &= xxx + xyx + yxx + yyx + xxy + xyy + yxy + yyy \\ &= x^3 + 3x^2y + 3y^2x + y^3\end{align*}$$
+
+Let’s say we’re interested in all terms in the expanded polynomial that have $k$ of the $x$ values. By the previous observation, the term that has $k$ of the $x$ values must have $n − k$ of the $y$ values because we only pick a single value from each binomial factor.  How many of the terms in the expanded polynomial will have $k$ of the $x$ values? Every combination of ways of picking $k$ of the $x$ values from the binomial factors will result in a term of the form $x^ky^{n-k}$ in the expanded polynomial. Thus, there will be ${n \choose k}$ such terms.
+
+Finally, there are terms in the polynomial with $k$ values of $x$ for every value of $k$ between $0$ and $n$. This is a result of the fact that every combination of terms where each term is picked from a single binomial factor is represented. This final
+observation leads to the Binomial Theorem:
+
+$$(x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}$$
+
+$\square$
 
