@@ -75,7 +75,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 ## Fundamental math
 
-[The Binomial Theorem](https://mbernste.github.io/posts/binomial_theorem/)  
+[The binomial theorem](https://mbernste.github.io/posts/binomial_theorem/)  
 
 
 
