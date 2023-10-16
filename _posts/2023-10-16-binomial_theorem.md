@@ -1,5 +1,5 @@
 ---
-title: "The Binomial Theorem"
+title: "The binomial theorem"
 date: 2023-10-16
 permalink: /posts/binomial_theorem/
 tags:
@@ -7,7 +7,7 @@ tags:
   - mathematics
 ---
 
-_The binomial theorem pops up in many proofs across mathematics and mathematical statistics. In this post, I will walk through a proof of this theorem._
+_The binomial theorem appears up in many proofs across mathematics and mathematical statistics. In this post, I will walk through a proof of this theorem._
 
 Introduction
 ============
