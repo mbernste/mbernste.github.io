@@ -40,7 +40,7 @@ Moreover, we see that _every_ combination of terms from each binomial factor wil
 
 With this insight,  let’s look at the following polynomial: 
 
-$$\begin{align*}(x + y)^3 &= (x + y)(x + y)(x + y) \\ &= xxx + xyx + yxx + yyx + xxy + xyy + yxy + yyy \\ &= x^3 + 3x^2y + 3y^2x + y^3\end{align*}$$
+$$\begin{align*}(x + y)^3 &= (x + y)(x + y)(x + y) \\ &= x(x+y)(x+y) + y(x+y)(x+y) \\ &= x(x(x+y) + y(x+y)) + y(x(x+y) + y(x+y)) \\ &= xxx + xyx + yxx + yyx + xxy + xyy + yxy + yyy \\ &= x^3 + 3x^2y + 3y^2x + y^3\end{align*}$$
 
 Let’s say we’re interested in all terms in the expanded polynomial that have $k$ of the $x$ values. By the previous observation, any term that has $k$ of the $x$ values must have $n − k$ of the $y$ values because we only pick a single value from each binomial factor.  Now, how many of the terms in the expanded polynomial will have $k$ of the $x$ values and $n-k$ of the yvalues? Recall that every combination of ways of picking $k$ of the $x$ values from the binomial factors will result in a term of the form $x^ky^{n-k}$ in the expanded polynomial. We can think of this as computing all possible ways of choosing $k$ $x$ values from the $n$ binomial factors. Thus, there will be ${n \choose k}$ such terms.
 
