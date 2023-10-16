@@ -16,7 +16,7 @@ The **Binomial Theorem** is a basic theorem in mathematics that states that a bi
 
 $$(x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}$$
 
-This statement always appeared mysterious to me. What is the intuition for the summation? Moreover, why does the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient), "$n$ choose $k$", appear? This seems to hint that there is some combinatorial process going on when calculating $x+y$. In this post I will provide a proof that helped me better intuit thsi theorem. 
+This statement always appeared mysterious to me. What is the intuition for the summation? Moreover, why does the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient), "$n$ choose $k$", appear? In this post I will provide a proof that helped me better intuit thsi theorem. 
 
 Proof
 =====
