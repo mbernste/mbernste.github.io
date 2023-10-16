@@ -73,6 +73,11 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [Functionals and functional derivatives](https://mbernste.github.io/posts/functionals/) 
 
+## Fundamental math
+
+[The Binomial Theorem](https://mbernste.github.io/posts/binomial_theorem/)  
+
+
 
 
 
