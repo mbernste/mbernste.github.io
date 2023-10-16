@@ -42,10 +42,9 @@ With this insight,  let’s look at the following polynomial:
 
 $$\begin{align*}(x + y) &= (x + y)(x + y)(x + y) \\ &= xxx + xyx + yxx + yyx + xxy + xyy + yxy + yyy \\ &= x^3 + 3x^2y + 3y^2x + y^3\end{align*}$$
 
-Let’s say we’re interested in all terms in the expanded polynomial that have $k$ of the $x$ values. By the previous observation, the term that has $k$ of the $x$ values must have $n − k$ of the $y$ values because we only pick a single value from each binomial factor.  How many of the terms in the expanded polynomial will have $k$ of the $x$ values? Every combination of ways of picking $k$ of the $x$ values from the binomial factors will result in a term of the form $x^ky^{n-k}$ in the expanded polynomial. Thus, there will be ${n \choose k}$ such terms.
+Let’s say we’re interested in all terms in the expanded polynomial that have $k$ of the $x$ values. By the previous observation, any term that has $k$ of the $x$ values must have $n − k$ of the $y$ values because we only pick a single value from each binomial factor.  Now, how many of the terms in the expanded polynomial will have $k$ of the $x$ values and $n-k$ of the yvalues? Recall that every combination of ways of picking $k$ of the $x$ values from the binomial factors will result in a term of the form $x^ky^{n-k}$ in the expanded polynomial. We can think of this as computing all possible ways of choosing $k$ $x$ values from the $n$ binomial factors. Thus, there will be ${n \choose k}$ such terms.
 
-Finally, there are terms in the polynomial with $k$ values of $x$ for every value of $k$ between $0$ and $n$. This is a result of the fact that every combination of terms where each term is picked from a single binomial factor is represented. This final
-observation leads to the Binomial Theorem:
+Finally, there are terms in the polynomial with $k$ values of $x$ for every value of $k$ between $0$ and $n$. Again, this follows from from the fact that every combination of terms from each binomial factor will be used to form a term in the expanded polynomial. This final observation leads to the Binomial Theorem:
 
 $$(x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}$$
 
