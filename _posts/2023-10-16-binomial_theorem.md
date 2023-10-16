@@ -36,7 +36,7 @@ $$\begin{align*}(a + b)(c + d)(e + f) &= a(c+d)(e+f) + b(c+d)(e+f) \\ &= a(c(e+f
 
 To form a term in the fully expanded polynomial, we imagine the process of iterating over each binomial factor and choosing _one_ of the two terms to include. For example, from $(a+b)$, we choose either $a$ or $b$ to include in the term, but never both. This is because of how the distributive property works: as we expanded the expression, we separated the two terms in each binomial factor so that they never could appear in the same term of the expansion.
 
-Moreover, we see that _every_ combination of terms from each binomial factor will be used to form a term in the expanded polynomial. Again, this occurs from the process of carrying out the distributive property iteratively in the expansion: everytime we carry out the distributive property, we create two batches of terms in the expansion that will include either the first or second term from that binomial factor.
+Moreover, we see that _every_ combination of terms from each binomial factor will be used to form a term in the expanded polynomial. Again, this occurs from the process of carrying out the distributive property repeatedly when carrying out the expansion: everytime we perform the distributive property, we create two batches of terms in the expansion that will include either the first or second term from that binomial factor.
 
 With this insight,  let’s look at the following polynomial: 
 
