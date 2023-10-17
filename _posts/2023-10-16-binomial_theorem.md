@@ -46,7 +46,7 @@ $$\begin{align*}(x + y)^3 &= (x + y)(x + y)(x + y) \\ &= x(x+y)(x+y) + y(x+y)(x+
 
 Let’s say we’re interested in all terms in the expanded polynomial that have $k$ of the $x$ terms. By the previous observation, any term that has $k$ of the $x$ terms must have $n − k$ of the $y$ terms because we only pick a single term from each of the original binomial factors.  Now, how many of the terms in the expanded polynomial will have $k$ of the $x$ terms and $n-k$ of the $y$ terms? Recall that every combination of ways of picking $k$ of the $x$ terms from the binomial factors will result in a term in the expansion of the form $x^ky^{n-k}$. We can think of this as computing all possible ways of choosing $k$ $x$ terms from the $n$ binomial factors. Thus, there will be ${n \choose k}$ such terms.
 
-Finally, there are terms in the polynomial with $k$ $x$ terms for every value of $k$ between $0$ and $n$. Again, this follows from from the fact that every combination of terms from each binomial factor will be used to form a term in the expanded polynomial. This final observation leads to the Binomial Theorem:
+Finally, there are terms in the polynomial with $k$ $x$ terms for every value of $k$ between $0$ and $n$. Again, this follows from from the fact that every combination of terms from each of the binomial factor will be used to form a term in the expanded polynomial, and thus, there _must_ be at least one term with $k$ of the $x$ terms and $n-k$ of the $y$ terms. This final observation leads to the Binomial Theorem:
 
 $$(x+y)^n = \sum_{k=0}^n {n \choose k} x^ky^{n-k}$$
 
