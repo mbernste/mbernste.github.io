@@ -1,6 +1,6 @@
 ---
 title: "Demystifying Euler's number"
-date: 2023-10-14
+date: 2023-10-17
 permalink: /posts/eulers_number/
 tags:
   - tutorial
