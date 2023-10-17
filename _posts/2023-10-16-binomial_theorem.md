@@ -7,7 +7,7 @@ tags:
   - mathematics
 ---
 
-_The binomial theorem appears up in many proofs across mathematics and mathematical statistics. In this post, I will walk through a proof of this theorem._
+_The binomial theorem appears in many proofs across mathematics and mathematical statistics. In this post, I will walk through a proof of this theorem._
 
 Introduction
 ============
