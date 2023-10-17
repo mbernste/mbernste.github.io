@@ -11,7 +11,6 @@ There may be errors in these notes. Let me know if you find anything that can be
 ## Miscellaneous topics
 
 [Supremums and infimums](http://mbernste.github.io/files/notes/BoundsSupremumsInfimums.pdf)  
-[The binomial theorem](http://mbernste.github.io/files/notes/BinomialTheorem.pdf)  
 [Sigmoid functions](http://mbernste.github.io/files/notes/SigmoidFunction.pdf)
 
 ## Linear algebra
