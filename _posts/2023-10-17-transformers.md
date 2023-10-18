@@ -22,7 +22,7 @@ A recent blog post, [The Illustrated Transformer](http://jalammar.github.io/illu
 Inputs and outputs of a transformer
 -----------------------------------
 
-At their core, transformers 
+At their core, transformers perform a mapping sequences. That is, the transformer accepts a sequence and then outputs an embedding of that sequence.  For example, the input sequence may be a sequence of words like a sentence or a sequence of nucleic acids of DNA. Each element, or **token** of the input sequence is represented as a vector (such as a feature vector). 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_input_output.png" alt="drawing" width="350"/></center>
 
