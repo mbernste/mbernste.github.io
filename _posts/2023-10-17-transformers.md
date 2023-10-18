@@ -22,6 +22,8 @@ A recent blog post, [The Illustrated Transformer](http://jalammar.github.io/illu
 Inputs and outputs of a transformer
 -----------------------------------
 
+At their core, transformers 
+
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_input_output.png" alt="drawing" width="350"/></center>
 
 
