@@ -26,6 +26,8 @@ At their core, a transformer is a layer of a neural network that performs a mapp
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_input_output.png" alt="drawing" width="350"/></center>
 
+<br>
+
 In the next section, we will dig into the mechanics of the transformer layer and discuss how the transformer layer implements a process called **attention** when performing this sequence to sequence mapping. 
 
 Attention
