@@ -53,7 +53,7 @@ In summary, when generating each output vector, the attention mechanism consider
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_input_output_attention.png" alt="drawing" width="800"/></center>
 
-The transformer layer: a step-by-step explanation
+The attention layer: a step-by-step explanation
 -------------------------------------------------
 
 We will now dig into the details of the attention mechanism by building our understanding step-by-step. We will use the sentence, "I am hungry", going forward. 
@@ -94,20 +94,26 @@ This process is depicted below:
 
 The queries and keys are then used to construct the attention weights. Let us start by generating the single attention weight, $a_{\text{I}, \text{am}}$ that tells the model how much to weight "am" when generating the word "I". We start by taking the [dot product](https://en.wikipedia.org/wiki/Dot_product) between the query vector for $I$, $\boldsymbol{q}_{\text{I}}$, and the key vector for "am", $\boldsymbol{k}_{\text{am}}$:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_logit_dot_product.png" alt="drawing" width="300"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_score_dot_product.png" alt="drawing" width="300"/></center>
 
 <br>
 
 We'll call this value the "score" between word "I" and word "am" and it will be used to form the attention weight . Intuitively, if given a pair of words' query and key vectors have a high score (i.e., high dot product) then this means that the given query and key are similar, and consequently means we should pay attention to the second word (associated with the key) when forming the output vector associated with the first word (associated with query). 
 
-There is practical problem with using the score directly as the attention weight: there is no upper bound for the value of the dot product and thus, if we stack many transformer layers together (as we'll show later), we can encounter numerical instability as these values blow up. We thus need a way to normalize the value of this dot product. To do so, we transform the score by first scaling by a constant value, usually XXXXX, and then computing the softmax using _all_ of the scores when examining the other words in the input sequence. This forms the final attention weight. For example, for words "I" and "am", the attention weight is given by:
+There is practical problem with using the score directly as the attention weight: there is no upper bound for the value of the dot product and thus, if we stack many transformer layers together (as we'll show later), we can encounter numerical instability as these values blow up. We thus need a way to normalize the value of this dot product. To do so, we transform the score by first scaling by a constant value, usually $\sqrt{d}$ where $d$ is the dimensions of the queries and key vectors, and then computing the softmax using _all_ of the scores when examining the other words in the input sequence. This forms the final attention weight. For example, for words "I" and "am", the attention weight is given by:
 
 $$a_{\text{I}, \text{am}} &:= \text{softmax}\left( \frac{s_{\text{I},\text{I}}}{\sqrt{d}}, \frac{s_{\text{I},\text{am}}}{\sqrt{d}}, \frac{s_{\text{I},\text{hungry}}}{\sqrt{d}} \right) \\&= \frac{\exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}}}{\exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}} + \exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}} + \exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}}}$$
- 
 
-The transformer layer: putting it all together
+This is depicted in the schematic below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_generate_attention_weights.png" alt="drawing" width="300"/></center>
+
+The intuition here is that the first operation scales each score by $\sqrt{d}$ to normalize for the number of terms in the summation used to compute the dot product. The softmax then performs a final normalization that forces the sum of the attention weights to equal one!  
+
+In the next section, we will put all of these steps together and show how they can be performed in parallel using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/).
+
+The attention layer: putting it all together
 ----------------------------------------------
-
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors.png" alt="drawing" width="500"/></center>
 
@@ -116,8 +122,13 @@ The transformer layer: putting it all together
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_mechanism.png" alt="drawing" width="850"/></center>
 
 
-Stacking transformer layers
----------------------------
+Multi-headed attention
+----------------------
+
+
+Using attention layers to construct a transformer
+-------------------------------------------------
+
 
 Positional encodings
 --------------------
