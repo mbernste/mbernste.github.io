@@ -66,6 +66,8 @@ This is depicted schematically below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors_only_values.png" alt="drawing" width="500"/></center>
 
+<br>
+
 To spoil the punchline, the output vector associated with each input vector will be constructed as a weighted sum of these values vectors where the weights represent the amount of attention we pay to each input vector (for now take these weights as given, we will show how they are generated soon). For example, to generate the output vector for the word "I", which we will denote as $\boldsymbol{h}_\text{I}$, we will take a weighted sum of the value vectors associated with all the other words in the sentence:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_weighted_sum_one_word.png" alt="drawing" width="400"/></center>
@@ -86,13 +88,22 @@ $$\begin{align*}\boldsymbol{k}_\text{I} &:= \boldsymbol{W}_K\boldsymbol{x}_\text
 
 This process is depicted below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors_only_queries_keys.png" alt="drawing" width="500"/></center>
+
+<br>
 
 The queries and keys are then used to construct the attention weights. Let us start by generating the single attention weight, $a_{\text{I}, \text{am}}$ that tells the model how much to weight "am" when generating the word "I". We start by taking the [dot product](https://en.wikipedia.org/wiki/Dot_product) between the query vector for $I$, $\boldsymbol{q}_{\text{I}}$, and the key vector for "am", $\boldsymbol{k}_{\text{am}}$:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_logit_dot_product.png" alt="drawing" width="300"/></center>
 
-$$\text{I}_{\text{output}} := a_1 \text{I}_{V} + a_2 \text{am}_{V} + a_3 \text{hungry}_{V}$$
+<br>
 
-where the weights 
+We'll call this value the "score" between word "I" and word "am" and it will be used to form the attention weight . Intuitively, if given a pair of words' query and key vectors have a high score (i.e., high dot product) then this means that the given query and key are similar, and consequently means we should pay attention to the second word (associated with the key) when forming the output vector associated with the first word (associated with query). 
+
+There is practical problem with using the score directly as the attention weight: there is no upper bound for the value of the dot product and thus, if we stack many transformer layers together (as we'll show later), we can encounter numerical instability as these values blow up. We thus need a way to normalize the value of this dot product. To do so, we transform the score by first scaling by a constant value, usually XXXXX, and then computing the softmax using _all_ of the scores when examining the other words in the input sequence. This forms the final attention weight. For example, for words "I" and "am", the attention weight is given by:
+
+$$a_{\text{I}, \text{am}} &:= \text{softmax}\left( \frac{s_{\text{I},\text{I}}}{\sqrt{d}}, \frac{s_{\text{I},\text{am}}}{\sqrt{d}}, \frac{s_{\text{I},\text{hungry}}}{\sqrt{d}} \right) \\&= \frac{\exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}}}{\exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}} + \exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}} + \exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}}}$$
+ 
 
 The transformer layer: putting it all together
 ----------------------------------------------
@@ -103,3 +114,15 @@ The transformer layer: putting it all together
 <br>
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_mechanism.png" alt="drawing" width="850"/></center>
+
+
+Stacking transformer layers
+---------------------------
+
+Positional encodings
+--------------------
+
+Case study: classifying T cell receptor sequences
+-------------------------------------------------
+
+
