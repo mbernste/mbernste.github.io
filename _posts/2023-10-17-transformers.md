@@ -15,7 +15,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Transformers are a neural network architecture that have transformed the machine learning field (pun intended) as they are the key technology behind a number of breakthrough machine learning models such as [OpenAI](https://openai.com/)'s [ChatGPT](https://chat.openai.com/) and [Google Translate](https://translate.google.com/). Transformers were first introduced in the seminal paper, "[Attention Is All You Need](https://arxiv.org/abs/1706.03762)" by Vaswani _et al_. (2017). As the name of this paper suggests, transformers are built upon a mechanism called **attention**. Attention was originally introduced by [Bahdanau, Cho, and Bengio (2015)](https://arxiv.org/pdf/1409.0473.pdf) as a mechanism that was sort of "appended" onto a traditional [recurrent neural network](https://en.wikipedia.org/wiki/Recurrent_neural_network) to boost their performance. Vaswani _et al_. took this concept and used it to construct a novel neural network architecture built only out of attention mechanisms.
+Transformers are a neural network architecture that have transformed the machine learning field (pun intended) as they are the key technology behind a number of breakthrough machine learning models such as [OpenAI](https://openai.com/)'s [ChatGPT](https://chat.openai.com/) and [Google Translate](https://translate.google.com/). 
 
 A recent blog post, [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer), by Jay Alammar, provides an amazing explanation of transformers and attention. It was from this blog that I came to my understanding of these models. In this blog post, I will expound upon this foundation and provide an alternative explanation of transformers using slightly different diagrams that articulate my own mental model of how they work. Lastly, we will implement a small transformer in [PyTorch](https://pytorch.org/) to classify [T cell receptors (TCR)](https://en.wikipedia.org/wiki/T-cell_receptor) sequences as either originating from a tumor or healthy tissue. This example will provide a basic demonstration of an application of transformers in computational biology.
 
@@ -31,9 +31,28 @@ In the next section, we will dig into the mechanics of the transformer layer and
 Attention
 ---------
 
+Transformers were first introduced in the seminal paper, "[Attention Is All You Need](https://arxiv.org/abs/1706.03762)" by Vaswani _et al_. (2017). As the name of this paper suggests, transformers are built upon a mechanism called **attention**. Attention was originally introduced by [Bahdanau, Cho, and Bengio (2015)](https://arxiv.org/pdf/1409.0473.pdf) as a mechanism that was sort of "appended" onto a traditional [recurrent neural network](https://en.wikipedia.org/wiki/Recurrent_neural_network) to boost their performance. Vaswani _et al_. took this concept and used it to construct a novel neural network architecture built only out of attention mechanisms.
+
+The idea of attention when performing sequence-to-sequence mapping is that when we consider the output vector associated with a given token, we intuitively want the model to pay greater "attention" to some input tokens and less attention to others ("attention" used here in the colloquial sense). 
+
+For example, let's say we are generating output vectors for input vectors associated with the following sentence: "I really like sushi because it makes me happy." Let us consider the case in which we are generating the output token for "delicious". Intuitively, we know that "delicious" is referring to "sushi". It makes sense that when the model is generating the output token for "delicous" it should consider the word "sushi" more heavily, than say, "because". The word "delicious" is referring directly to "sushi" whereas "because" is a conjunction playing a more complicated role in the sentence joining multiple ideas together. This is depicted in the schematic below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_sushi_example1.png" alt="drawing" width="500"/></center>
+
+
+
+In contrast when generating the output vector for "happy", intuitively, we might want to place more weight on the word, "I", because "happy" is referring directly to the subject, "I". This is depicted in the schematic below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_sushi_example2.png" alt="drawing" width="500"/></center>
+
+
 
 The transformer architecture
 ----------------------------
+
+In the example, sentence, "I am hungry", when we generate the output vector for "I", we want to consider all of the input vectors to different degrees than when we generate the output vector "am" or "hungry". This is depicted schematically below:
+
+We will now dig into the details of the attention mechanism. The first step, is we generate three vectors associated with each input vector: a **query**, **key**, and **value** vector. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors.png" alt="drawing" width="500"/></center>
 
