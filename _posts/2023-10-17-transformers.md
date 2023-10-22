@@ -53,23 +53,49 @@ In summary, when generating each output vector, the attention mechanism consider
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_input_output_attention.png" alt="drawing" width="800"/></center>
 
-The transformer architecture
-----------------------------
+The transformer layer: a step-by-step explanation
+-------------------------------------------------
 
-We will now dig into the details of the attention mechanism and use the example sentence, "I am hungry", going forward. In the first step, we generate three vectors associated with each input vector: a **query**, **key**, and **value** vector. For example, for the word "I", we will generate the vectors $\text{I}_Q$, $\text{I}_K$, and $\text{I}_V$. To do so, we use three projection matrices that [map](https://mbernste.github.io/posts/matrices_as_functions/) the input vector its associated query, key, and value vectors. These three matrices, denoted $\boldsymbol{W}_Q$, $\boldsymbol{W}_K$, and $\boldsymbol{W}_V$ are parameters to the model and are learned during training.  That is, 
+We will now dig into the details of the attention mechanism by building our understanding step-by-step. We will use the sentence, "I am hungry", going forward. 
 
-$$\begin{align*}\text{I}_Q &:= \boldsymbol{W}_Q \text{I}_{\text{input}} \\ \text{I}_K &:= \boldsymbol{W}_K \text{I}_{\text{input}} \text{I}_V &:= \boldsymbol{W}_V \text{I}_{\text{input}}\end{align*}$$
+In the first step, the model generates a vector associated with each input vector called the **values** (or "value vectors") by multiplying each input vector by a weights matrix $\boldsymbol{W}_V$. Let's let $\boldsymbol{x}_\text{I}$, $\boldsymbol{x}_\text{am}$, $\boldsymbol{x}_\text{hungry}$ denote our input vectors and $\boldsymbol{v}_\text{I}$, $\boldsymbol{v}_\text{am}$, $\boldsymbol{v}_\text{hungry}$ denote the value vectors. Then, the value vectors are generated via:
+
+$$\begin{align*}\boldsymbol{v}_\text{I} &:= \boldsymbol{W}_V\boldsymbol{x}_\text{I}  \\ \boldsymbol{v}_\text{am} &:= \boldsymbol{W}_V\boldsymbol{x}_\text{am} \\ \boldsymbol{v}_\text{hungry} &:= \boldsymbol{W}_V\boldsymbol{x}_\text{hungry}$$
+
+This is depicted schematically below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors_only_values.png" alt="drawing" width="500"/></center>
+
+To spoil the punchline, the output vector associated with each input vector will be constructed as a weighted sum of these values vectors where the weights represent the amount of attention we pay to each input vector (for now take these weights as given, we will show how they are generated soon). For example, to generate the output vector for the word "I", which we will denote as $\boldsymbol{h}_\text{I}$, we will take a weighted sum of the value vectors associated with all the other words in the sentence:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_weighted_sum_one_word.png" alt="drawing" width="400"/></center>
+
+Here, the weights $a_{\text{I},\text{I}}$, $a_{\text{I},\text{am}}$, and $a_{\text{I},\text{hungry}}$ are the attention weights! They are used to weight the other words in the sentence according to how much we should use that words information (i.e., their value vectors) when constructing the output for "I".
+
+We repeat this for every word in the input sequence:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_weighted_sum_all_words.png" alt="drawing" width="800"/></center>
+
+Now, how are these attention weights calculated? 
+
+
+
 
 This process is depicted below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors.png" alt="drawing" width="500"/></center>
-
-<br>
 
 The query, key, and value vectors are then used to construct the weights used in the attention mechanism. Let's walk through this step by step and start by generating the output vector for the word "I". This output vector is generated as weighted sum of the value vectors associated with each input word. That is,
 
 $$\text{I}_{\text{output}} := a_1 \text{I}_{V} + a_2 \text{am}_{V} + a_3 \text{hungry}_{V}$$
 
 where the weights 
+
+The transformer layer: putting it all together
+----------------------------------------------
+
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors.png" alt="drawing" width="500"/></center>
+
+<br>
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_mechanism.png" alt="drawing" width="850"/></center>
