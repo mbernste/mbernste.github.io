@@ -39,20 +39,18 @@ For example, let's say we are generating output vectors for input vectors associ
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_sushi_example1.png" alt="drawing" width="500"/></center>
 
-
-
 In contrast when generating the output vector for "happy", intuitively, we might want to place more weight on the word, "I", because "happy" is referring directly to the subject, "I". This is depicted in the schematic below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_sushi_example2.png" alt="drawing" width="500"/></center>
 
+In summary, when generating each output vector, the attention mechanism considers _all_ of the input vectors and weights them according to how much "attention" to pay them when computing the output vector. We depict this process in the smaller example sentence, "I am hungry", below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_input_output_attention.png" alt="drawing" width="500"/></center>
 
 The transformer architecture
 ----------------------------
 
-In the example, sentence, "I am hungry", when we generate the output vector for "I", we want to consider all of the input vectors to different degrees than when we generate the output vector "am" or "hungry". This is depicted schematically below:
-
-We will now dig into the details of the attention mechanism. The first step, is we generate three vectors associated with each input vector: a **query**, **key**, and **value** vector. 
+We will now dig into the details of the attention mechanism and use the example sentence "I am hungry" going forward. The first step, is we generate three vectors associated with each input vector: a **query**, **key**, and **value** vector. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors.png" alt="drawing" width="500"/></center>
 
