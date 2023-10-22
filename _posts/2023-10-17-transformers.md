@@ -102,17 +102,22 @@ The queries and keys are then used to construct the attention weights. Let us st
 
 <br>
 
-We'll call this value the "score" between word "I" and word "am" and it will be used to form the attention weight . Intuitively, if given a pair of words' query and key vectors have a high score (i.e., high dot product) then this means that the given query and key are similar, and consequently means we should pay attention to the second word (associated with the key) when forming the output vector associated with the first word (associated with query). 
+We'll call this value the "score" between word "I" and word "am" and it will be used to form the attention weight . Intuitively, if a given pair of words have a high score (i.e., high dot product between the first's query and the second's key) then this means that the given query and key are similar, and consequently we should pay attention to the second word (associated with the key) when forming the output vector associated with the first word (associated with query). 
 
-There is practical problem with using the score directly as the attention weight: there is no upper bound for the value of the dot product and thus, if we stack many transformer layers together (as we'll show later), we can encounter numerical instability as these values blow up. We thus need a way to normalize the value of this dot product. To do so, we transform the score by first scaling by a constant value, usually $\sqrt{d}$ where $d$ is the dimensions of the queries and key vectors, and then computing the softmax using _all_ of the scores when examining the other words in the input sequence. This forms the final attention weight. For example, for words "I" and "am", the attention weight is given by:
+With this reasoning, it seems that the score alone would serve as a good attention weight; however there is practical problem with using the score directly: there is no upper bound for the value of the dot product and thus, if we stack many transformer layers together (as we'll show later), we can encounter numerical instability as these values blow up. We thus need a way to normalize the score. To do so, we transform the score by first scaling by a constant value, usually $\sqrt{d}$ where $d$ is the dimensions of the queries and key vectors, and then computing the softmax using _all_ of the scores when examining the other words in the input sequence. This forms the final attention weight. For example, for words "I" and "am", the attention weight is given by:
 
 $$\begin{align*}a_{\text{I}, \text{am}} &:= \text{softmax}\left( \frac{ s_{\text{I},\text{I}}}{\sqrt{d}}, \frac{s_{\text{I},\text{am}}}{\sqrt{d}}, \frac{s_{\text{I},\text{hungry}}}{\sqrt{d}} \right) \\ &= \frac{\exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}}}{\exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}} + \exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}} + \exp{\frac{s_{\text{I},\text{am}}}{\sqrt{d}}}}\end{align*}$$
 
-This is depicted in the schematic below:
+This is depicted in the schematic below for all of the attention weights when generating the output vector for "I":
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_generate_attention_weights.png" alt="drawing" width="300"/></center>
 
-The intuition here is that the first operation scales each score by $\sqrt{d}$ to normalize for the number of terms in the summation used to compute the dot product. The softmax then performs a final normalization that forces the sum of the attention weights to equal one!  
+The intuition behind this normalization procedure is that the first scaling operation that scales each score by $\sqrt{d}$ normalizes for the number of terms in the summation used to compute the dot product. The softmax then performs a final normalization that forces the sum of the attention weights to equal one!  
+
+The fully connected layer
+-------------------------
+
+The attention layer is followed by a fully connected layer. This layer is quite simple: we simply take the vectors that were produced by the attention layer and pass them through a fully connected neural network! Thus, we perform a non-linear transformation of these attention-derived vectors. This steps injects more non-linearity into the model so that, when we stack transformer layers together, we can complex functions for computing attention.
 
 In the next section, we will put all of these steps together and show how they can be performed in parallel using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/).
 
