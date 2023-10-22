@@ -53,8 +53,8 @@ In summary, when generating each output vector, the attention mechanism consider
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_input_output_attention.png" alt="drawing" width="800"/></center>
 
-The attention layer: a step-by-step explanation
--------------------------------------------------
+The attention layer
+-------------------
 
 We will now dig into the details of the attention mechanism by building our understanding step-by-step. We will use the sentence, "I am hungry", going forward. 
 
@@ -112,7 +112,7 @@ The intuition here is that the first operation scales each score by $\sqrt{d}$ t
 
 In the next section, we will put all of these steps together and show how they can be performed in parallel using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/).
 
-The attention layer: putting it all together
+Putting it all together: The transformer layer
 ----------------------------------------------
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors.png" alt="drawing" width="500"/></center>
