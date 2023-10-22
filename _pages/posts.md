@@ -19,15 +19,18 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [On cell types and cell states](https://mbernste.github.io/posts/cell_types_cell_states/)  
 [Three strategies for cataloging cell types](https://mbernste.github.io/posts/cell_type_cataloging/)  
 
+## Deep learning
+
+[Graph convolutional neural networks](https://mbernste.github.io/posts/gcn/)
+[Variational autoencoders](https://mbernste.github.io/posts/vae/)
+
 ## Graphs
 
-[Graph convolutional neural networks](https://mbernste.github.io/posts/gcn/)  
 [The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)
 
 ## Probabilistic models
 
 [Gaussian mixture models](https://mbernste.github.io/posts/gmm_em/)  
-[Variational autoencoders](https://mbernste.github.io/posts/vae/)
 
 ## Algorithms for statistical inference
 
@@ -41,7 +44,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 ## Probability
 
-[Demystifying measure-theoretic probability theory (part 1: probability spaces)](https://mbernste.github.io/posts/measure_theory_1/)  
+[Demystifying measure-theoretic probability theory (part 1: probability spaces)](https://mbernste.github.io/posts/measure_theory_1/) 
 [Demystifying measure-theoretic probability theory (part 2: random variables)](https://mbernste.github.io/posts/measure_theory_2/)  
 [Demystifying measure-theoretic probability theory (part 3: expectation)](https://mbernste.github.io/posts/measure_theory_3/)  
 [Visualizing covariance](https://mbernste.github.io/posts/viz_cov/)  
