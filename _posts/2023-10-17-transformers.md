@@ -37,7 +37,7 @@ Transformers were first introduced in the seminal paper, "[Attention Is All You 
 
 The idea of attention when performing sequence-to-sequence mapping is that when we consider the output vector associated with a given token, we intuitively want the model to pay greater "attention" to some input tokens and less attention to others ("attention" used here in the colloquial sense). 
 
-For example, let's say we are generating output vectors for input vectors associated with the following sentence: "I really like sushi because it makes me happy." Let us consider the case in which we are generating the output token for "delicious". Intuitively, we know that "delicious" is referring to "sushi". It makes sense that when the model is generating the output token for "delicous" it should consider the word "sushi" more heavily, than say, "because". The word "delicious" is referring directly to "sushi" whereas "because" is a conjunction playing a more complicated role in the sentence joining multiple ideas together. This is depicted in the schematic below:
+For example, let's say we are generating output vectors for input vectors associated with the following sentence: "I like sushi because it makes me happy." Let us consider the case in which we are generating the output token for "delicious". Intuitively, we know that "delicious" is referring to "sushi". It makes sense that when the model is generating the output token for "delicous" it should consider the word "sushi" more heavily, than say, "because". The word "delicious" is referring directly to "sushi" whereas "because" is a conjunction playing a more complicated role in the sentence joining multiple ideas together. This is depicted in the schematic below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_sushi_example1.png" alt="drawing" width="600"/></center>
 
@@ -56,10 +56,20 @@ In summary, when generating each output vector, the attention mechanism consider
 The transformer architecture
 ----------------------------
 
-We will now dig into the details of the attention mechanism and use the example sentence "I am hungry" going forward. The first step, is we generate three vectors associated with each input vector: a **query**, **key**, and **value** vector. For example, for the word "I", we will generate the vectors $\text{I}_Q$, $\text{I}_K$, and $\text{I}_V$. To do so, we use three projection matrices that [map](https://mbernste.github.io/posts/matrices_as_functions/) the input vector its associated query, key, and value vectors. These three matrices, denoted $\boldsymbol{W}_Q$, $\boldsymbol{W}_K$, and $\boldsymbol{W}_V$ are parameters to the model and are learned during training.  
+We will now dig into the details of the attention mechanism and use the example sentence, "I am hungry", going forward. In the first step, we generate three vectors associated with each input vector: a **query**, **key**, and **value** vector. For example, for the word "I", we will generate the vectors $\text{I}_Q$, $\text{I}_K$, and $\text{I}_V$. To do so, we use three projection matrices that [map](https://mbernste.github.io/posts/matrices_as_functions/) the input vector its associated query, key, and value vectors. These three matrices, denoted $\boldsymbol{W}_Q$, $\boldsymbol{W}_K$, and $\boldsymbol{W}_V$ are parameters to the model and are learned during training.  That is, 
+
+$$\begin{align*}\text{I}_Q &:= \boldsymbol{W}_Q \text{I}_{\text{input}} \\ \text{I}_K &:= \boldsymbol{W}_K \text{I}_{\text{input}} \text{I}_V &:= \boldsymbol{W}_V \text{I}_{\text{input}}\end{align*}$$
+
+This process is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_intermediate_vectors.png" alt="drawing" width="500"/></center>
 
 <br>
+
+The query, key, and value vectors are then used to construct the weights used in the attention mechanism. Let's walk through this step by step and start by generating the output vector for the word "I". This output vector is generated as weighted sum of the value vectors associated with each input word. That is,
+
+$$\text{I}_{\text{output}} := a_1 \text{I}_{V} + a_2 \text{am}_{V} + a_3 \text{hungry}_{V}$$
+
+where the weights 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_mechanism.png" alt="drawing" width="850"/></center>
