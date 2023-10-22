@@ -21,12 +21,12 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 ## Deep learning
 
-[Graph convolutional neural networks](https://mbernste.github.io/posts/gcn/)
-[Variational autoencoders](https://mbernste.github.io/posts/vae/)
+[Graph convolutional neural networks](https://mbernste.github.io/posts/gcn/)  
+[Variational autoencoders](https://mbernste.github.io/posts/vae/)  
 
 ## Graphs
 
-[The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)
+[The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)  
 
 ## Probabilistic models
 
