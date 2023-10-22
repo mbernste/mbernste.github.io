@@ -98,11 +98,15 @@ This process is depicted below:
 
 The queries and keys are then used to construct the attention weights. Let us start by generating the single attention weight, $a_{\text{I}, \text{am}}$ that tells the model how much to weight "am" when generating the word "I". We start by taking the [dot product](https://en.wikipedia.org/wiki/Dot_product) between the query vector for $I$, $\boldsymbol{q}\_{\text{I}}$, and the key vector for "am", $\boldsymbol{k}\_{\text{am}}$:
 
+$$s_{\text{I}, {am}} := \boldsymbol{q}\_{\text{I}} \boldsymbol{k}\_{\text{I}}^T$$
+
+We'll call this value the "score" between word "I" and word "am" and it will be used to form the attention weight. This is depicted schematically below:
+
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_score_dot_product.png" alt="drawing" width="300"/></center>
 
 <br>
 
-We'll call this value the "score" between word "I" and word "am" and it will be used to form the attention weight . Intuitively, if a given pair of words have a high score (i.e., high dot product between the first's query and the second's key) then this means that the given query and key are similar, and consequently we should pay attention to the second word (associated with the key) when forming the output vector associated with the first word (associated with query). 
+Intuitively, if a given pair of words have a high score (i.e., high dot product between the first's query and the second's key) then this means that the given query and key are similar, and consequently we should pay attention to the second word (associated with the key) when forming the output vector associated with the first word (associated with query). 
 
 With this reasoning, it seems that the score alone would serve as a good attention weight; however there is practical problem with using the score directly: there is no upper bound for the value of the dot product and thus, if we stack many transformer layers together (as we'll show later), we can encounter numerical instability as these values blow up. We thus need a way to normalize the score. To do so, we transform the score by first scaling by a constant value, usually $\sqrt{d}$ where $d$ is the dimensions of the queries and key vectors, and then computing the softmax using _all_ of the scores when examining the other words in the input sequence. This forms the final attention weight. For example, for words "I" and "am", the attention weight is given by:
 
