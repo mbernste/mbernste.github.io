@@ -29,7 +29,7 @@ Intuition behind median ratio normalization
 
 Let us start by defining some notation. Let,
 
-$$\begin{align*}n &:= \text{Total number of samples} \\ g &:= \text{Total number of genes} \\ c_{i,j} &:= \text{Count of reads in gene $j$ in sample $i$}\end{align*}$$
+$$\begin{align*}n &:= \text{Total number of samples} \\ g &:= \text{Total number of genes} \\ c_{i,j} &:= \text{Count of reads from gene $j$ in sample $i$}\end{align*}$$
 
 We start by computing a "baseline" expression value for each gene by computing the geometric mean of each genes counts across all samples. For gene $j$, this is computed as:
 
