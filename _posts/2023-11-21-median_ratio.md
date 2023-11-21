@@ -61,7 +61,9 @@ This is procedure is illustrated in the schematic below:
 
 Note, in practice, when computing the median ratio, we compute the median ratio using only those genes whose expression is non-zero across all samples. This is because we want to only use genes whose expression is high enough across all samples to be reliably detected. Intuitively, if a gene was failed to be detected (had zero counts), then it cannot tell us about the effect of library size so it is excluded. Stated mathematically, $s_i$ is computed as
 
-$$s_i := \text{median}\left(\left\{ r_{i,j} \mid \forall k \in 1, \dots, n, \ c_{k,j} > 0 \right\}\right)$$
+$$s_i := \text{median}\left(\left\{ r_{k,j} \mid \forall k \in [n] \ c_{k,j} > 0 \right\}\right)$$
+
+where $[n]$ are the set of integers from 1 to $n$.
 
 Exploring median ratio normalization in real data
 -------------------------------------------------
