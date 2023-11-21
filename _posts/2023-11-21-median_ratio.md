@@ -31,7 +31,7 @@ Let us start by defining some notation. Let,
 
 $$\begin{align*}n &:= \text{Total number of samples} \\ g &:= \text{Total number of genes} \\ c_{i,j} &:= \text{Count of reads from gene $j$ in sample $i$}\end{align*}$$
 
-We start by computing a "baseline" expression value for each gene by computing the geometric mean of each genes counts across all samples. For gene $j$, this is computed as:
+We start by computing a "baseline" expression value for each gene by computing the geometric mean of each genes counts across all samples. The geometric mean is used instead of the arithmetic mean because it is more robust to outlier values. For gene $j$, this is computed as:
 
 $$m_j := \left(\prod_{i=1}^n c_{i,j} \right)^{\frac{1}{n}}$$
 
@@ -41,7 +41,9 @@ $$r_{i,j} := \frac{c_{i,j}}{m_j}$$
 
 Intuitively, $r_{i,j}$ describes the deviation (more specifically the fold-change) between $c_{i,j}$ and a baseline expression value computed over all samples.  
 
-Now, median-ratio normalization makes a key assumption: most genes in any given sample do not have a "latent expression" (i.e., absolute abundance of transcripts) that differs from the baseline. That is, for any given sample, most of its genes should not be over or under expressed relative to the other samples in the dataset. With this assumption in mind, median-ratio normalization will _rank_ all of the ratios for all the genes in a given sample, $r_{i,1}, r_{i,2}, \dots, r_{i,g}$. Intuitively, if most genes are not changing significantly from baseline, then the genes that fall in the middle of this ranking represent those genes that are unchanging. An idealized scenario is illustrated in the schematic below where only a few genes are higher than baseline (red), a few genes are lower than baseline (blue), but most are unchanged (grey):
+Now, median-ratio normalization makes a key assumption: _most genes in any given sample are expressed at a common baseline level_. That is, for any given sample, most of its genes should not be over or under expressed relative to the other samples in the dataset. This key assumption must be met for median-ratio normalization to work. 
+
+Now, with this assumption in mind, median-ratio normalization will _rank_ all of the ratios for all the genes in a given sample, $r_{i,1}, r_{i,2}, \dots, r_{i,g}$. Intuitively, if most genes are not changing significantly from baseline, then the genes that fall in the middle of this ranking represent those genes that are unchanging. An idealized scenario is illustrated in the schematic below where only a few genes are higher than baseline (red), a few genes are lower than baseline (blue), but most are unchanged (grey):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_assumption.png" alt="drawing" width="500"/></center>
 
@@ -57,6 +59,7 @@ This is procedure is illustrated in the schematic below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_normalization_schematic_scaling.png" alt="drawing" width="800"/></center>
 
+Note, in practice, when computing the median ratio, we compute the median ratio using only those genes whose expression is non-zero across all samples. This is because we want to only use genes whose expression is high enough across all samples to be reliably detected. Intuitively, if a gene was failed to be detected (had zero counts), then it cannot tell us about the effect of library size so it is excluded.
 
 Exploring median ratio normalization in real data
 -------------------------------------------------
