@@ -35,7 +35,7 @@ We start by computing a "baseline" expression value for each gene by computing t
 
 $$m_j := \left(\prod_{i=1}^n c_{i,j} \right)^{\frac{1}{n}}$$
 
-Then, for each sample $i$, for each gene $j$, we compute the ratio of the counts of $j$ in sample $i$, $c_{i,j}$, to the baseline expression value for gene $j$:
+Then, for each sample $i$, for each gene $j$, we compute the ratio of the counts of gene $j$ in sample $i$ (i.e., $c_{i,j}$), to the baseline expression value for gene $j$:
 
 $$r_{i,j} := \frac{c_{i,j}}{m_j}$$
 
@@ -43,7 +43,7 @@ Intuitively, $r_{i,j}$ describes the deviation (more specifically the fold-chang
 
 Now, median-ratio normalization makes a key assumption: most genes in any given sample do not have a "latent expression" (i.e., absolute abundance of transcripts) that differs from the baseline. That is, for any given sample, most of its genes should not be over or under expressed relative to the other samples in the dataset. With this assumption in mind, median-ratio normalization will _rank_ all of the ratios for all the genes in a given sample, $r_{i,1}, r_{i,2}, \dots, r_{i,g}$. Intuitively, if most genes are not changing significantly from baseline, then the genes that fall in the middle of this ranking represent those genes that are unchanging. An idealized scenario is illustrated in the schematic below where only a few genes are higher than baseline (red), a few genes are lower than baseline (blue), but most are unchanged (grey):
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_assumption.png" alt="drawing" width="400"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_assumption.png" alt="drawing" width="500"/></center>
 
 Any deviation we see from baseline within the middle of this ranking is assumed to be driven by the total number of read counts. Thus, we can treat the median ratio as the "size factor" that we can use to re-scale the counts in the sample so that the ratios in the middle of the list are closer to the baseline. That is, we define the size factor for sample $i$ as,
 
