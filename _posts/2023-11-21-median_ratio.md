@@ -45,18 +45,17 @@ Now, median-ratio normalization makes a key assumption: most genes in any given 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_assumption.png" alt="drawing" width="400"/></center>
 
-Any deviation we see from baseline within these samples within the middle of this ranking can thus assumed to be driven by the total number of read counts.
+Any deviation we see from baseline within the middle of this ranking is assumed to be driven by the total number of read counts. Thus, we can treat the median ratio as the "size factor" that we can use to re-scale the counts in the sample so that the ratios in the middle of the list are closer to the baseline. That is, we define the size factor for sample $i$ as,
 
-We can thus assume that the magnitude of the median of these ratios is driven by the technical difference in total counts of this sample relative to the other samples! This median ratio can thus be treated as a "size factor"!
+$$s_i := \text{median}\left(r_{i,1}, r_{i,2}, \dots, r_{i,g}\right)$$
 
-To normalize the 
+and then we re-scale all of the counts in this sample by dividing by $s_i$. That is, the normalized count for gene $j$ in sample $i$ would be computed as,
 
+$$\tilde{c}_{i,j} := \frac{c_{i,j}}{s_i}$$
 
+This is procedure is illustrated in the schematic below:
 
-
-
-
-
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_normalization_schematic_scaling.png" alt="drawing" width="800"/></center>
 
 
 Exploring median ratio normalization in real data
