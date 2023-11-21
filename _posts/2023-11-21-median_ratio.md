@@ -1,6 +1,6 @@
 ---
 title: 'Median-ratio normalization for bulk RNA-seq data'
-date: 2023-09-05
+date: 2023-11-21
 permalink: /posts/median_ratio_norm/
 tags:
   - tutorial
