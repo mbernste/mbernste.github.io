@@ -69,6 +69,8 @@ Exploring median ratio normalization in real data
 -------------------------------------------------
 Let's examine the effect of median-ratio normalization on a publicly available RNA-seq dataset. We will look at a dataset from PBMC samples taken from patients hospitalized with COVID-19 published by [Overmyer et al. (2021)](https://doi.org/10.1016/j.cels.2020.10.003). Below, we look at the ranked gene-to-baseline ratios in two patients and see that for Patient C1 (left), the median ratio of the raw counts (blue) is above the baseline (brey dotted line) indicating a larger library size. In contrast, for Patient C23, we observe the median ratio below the baseline indicating a lower library size. After dividing each samples' gene counts by the median ratio, the two plots (orange) become more centered about the baseline. 
 
+We can confirm that running median-ratio normalization helps to normalize this data by examining the distribution of the $\log_2$ read counts in each sample. We observe that running median-ratio normalization effectively centers the data so that the medians are more closely matched between samples:
+
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rna_seq_ranked_ratios_real_example.png" alt="drawing" width="700"/></center>
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/count_distribution_pre_vs_post_median_ratio.png" alt="drawing" width="700"/></center>
@@ -76,3 +78,4 @@ Let's examine the effect of median-ratio normalization on a publicly available R
 
 Why median-ratio normalization cannot be applied to single-cell RNA-seq data
 ----------------------------------------------------------------------------
+
