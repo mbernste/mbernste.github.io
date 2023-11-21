@@ -24,8 +24,11 @@ Is it possible to compare the absolute expression of a given between two samples
 
 In this post, we will discuss the intuition behind median-ratio normalization and the key assumptions that this method makes about the data. We will also discuss why this method only applies to bulk RNA-seq data, but cannot work for most single-cell RNA-seq datasets.
 
-Intuition behind median ratio normalization
--------------------------------------------
+High-level intuition behind median-ratio normalization
+------------------------------------------------------
+
+Walking through the median-ratio normalization algorithm
+--------------------------------------------------------
 
 Let us start by defining some notation. Let,
 
