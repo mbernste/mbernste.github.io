@@ -71,3 +71,5 @@ Exploring median ratio normalization in real data
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/count_distribution_pre_vs_post_median_ratio.png" alt="drawing" width="700"/></center>
 
 
+Why median-ratio normalization cannot be applied to single-cell RNA-seq data
+----------------------------------------------------------------------------
