@@ -9,7 +9,7 @@ tags:
   - gene expression
 ---
 
-*THIS POST IS CURRENTLY UNDER CONSTRUCTION* 
+*In a [previous post](https://mbernste.github.io/posts/rna_seq_basics/), we discussed how RNA-seq provides measurements of _relative expression_ between genes rather than absolute measurements. In this post, we will discuss median-ratio normalization that attempts to scale each samples read counts so that differences in expression between samples better reflects differences in absolute expression. We will start by describing the underlying assumption that must be met for median-ratio normalization to work, provide a high-level intuition for the procudure, and then walk, through the details of the algorithm. We conclude by running median-ratio normalization on a publicly available dataset of PBMC samples taken from patients hospitalized with COVID-19.* 
 
 Introduction
 ------------
@@ -92,6 +92,7 @@ where $[n]$ are the set of integers from 1 to $n$.
 
 Exploring median ratio normalization in real data
 -------------------------------------------------
+
 Let's examine the effect of median-ratio normalization on a publicly available RNA-seq dataset. We will look at a dataset from PBMC samples taken from patients hospitalized with COVID-19 published by [Overmyer et al. (2021)](https://doi.org/10.1016/j.cels.2020.10.003). Below, we look at the ranked gene-to-baseline ratios in two patients and see that for Patient C1 (left), the median ratio of the raw counts (blue) is above the baseline (brey dotted line) indicating a larger library size. In contrast, for Patient C23, we observe the median ratio below the baseline indicating a lower library size. After dividing each samples' gene counts by the median ratio, the two plots (orange) become more centered about the baseline. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/rna_seq_ranked_ratios_real_example.png" alt="drawing" width="700"/></center>
