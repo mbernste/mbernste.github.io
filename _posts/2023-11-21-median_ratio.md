@@ -41,7 +41,7 @@ Given our previously stated assumption, for each sample, _most_ of its genes are
 
 <br>
 
-To normalize samples, we scale the read counts in each sample so that the identified genes that should match the reference sample do match the reference sample. This process is depicted below:
+To normalize the samples, we scale the read counts in each sample so that the identified genes that should match the reference sample do match the reference sample. This process is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_scale_to_match_reference_sample.png" alt="drawing" width="700"/></center>
 
