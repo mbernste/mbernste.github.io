@@ -101,8 +101,8 @@ We can observe that running median-ratio normalization helps to normalize this d
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/count_distribution_pre_vs_post_median_ratio.png" alt="drawing" width="700"/></center>
 
 
-Why median-ratio normalization cannot be applied to single-cell RNA-seq data
-----------------------------------------------------------------------------
+Why median-ratio normalization should not be applied to single-cell RNA-seq data
+--------------------------------------------------------------------------------
 
 Median-ratio normalization is only approprioate for bulk RNA-seq data and almost never is appropriate for single-cell RNA-seq data. There are two reasons why median-ratio normalization is innaproporiate for single-cell RNA-seq data. The first reason is theoretical and the second is practical:
 
