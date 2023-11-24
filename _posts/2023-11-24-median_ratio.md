@@ -62,7 +62,7 @@ We start by calculating the "reference sample" expression values which represent
 
 $$m_j := \left(\prod_{i=1}^n c_{i,j} \right)^{\frac{1}{n}}$$
 
-Now, we must identify which gene in each sample should match the reference sample's expression. This is performed as follows: for each sample $i$, for each gene $j$, we compute the ratio of the counts of gene $j$ in sample $i$ (i.e., $c_{i,j}$), to the baseline expression value for gene $j$:
+Now, we must identify which gene in each sample should match the reference sample's expression. For each sample $i$, for each gene $j$, we compute the ratio of the counts of gene $j$ in sample $i$ (i.e., $c_{i,j}$), to the baseline expression value for gene $j$:
 
 $$r_{i,j} := \frac{c_{i,j}}{m_j}$$
 
