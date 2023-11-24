@@ -49,7 +49,7 @@ To normalize the samples, we scale the read counts in each sample so that the id
 
 In the end, the differences in read counts between the samples better reflect differences in absolute expression between them. 
 
-Note, that this procedure will only work if we know that most genes between the different samples should show similar levels of absolute expression. This assumption _may_ be met in scenarios where similar biological specimens are being compared. For example, if we are comparing peripheral blood mononuclear cells between samples, then one may assume that most genes are not differently expressed if we assume a similar composition and ratio of immune cell types and other covariates between the samples. In contrast, if one is comparing drastically different biological samples together (say different tissue types), then this may not be a safe assumption.
+Note, this procedure will only work if we know that most genes between the different samples should show similar levels of absolute expression. This assumption _may_ be met in scenarios where similar biological specimens are being compared. For example, if we are comparing peripheral blood mononuclear cells between samples, then one may assume that most genes are not differently expressed if we assume a similar composition and ratio of immune cell types and other covariates between the samples. In contrast, if one is comparing drastically different biological samples together (say different tissue types), then this may not be a safe assumption.
 
 Walking through the median-ratio normalization algorithm
 --------------------------------------------------------
