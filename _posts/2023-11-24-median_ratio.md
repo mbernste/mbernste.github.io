@@ -66,7 +66,7 @@ Now, we must identify which gene in each sample should match the reference sampl
 
 $$r_{i,j} := \frac{c_{i,j}}{m_j}$$
 
-Intuitively, $r_{i,j}$ describes the deviation (more specifically the fold-change) between $c_{i,j}$ and a baseline expression value computed over all samples.  
+Intuitively, $r_{i,j}$ describes the deviation (more specifically the fold-change) between $c_{i,j}$ and the reference sample's expression for this gene.  
 
 As we stated previously, we assume that for any given sample, most of its genes should not be over or under expressed relative to the other samples in the dataset. Thus, _most_ genes' expression values in each sample should match the reference sample's expression. With this assumption in mind, we _rank_ all of the ratios for all the genes in a given sample, $r_{i,1}, r_{i,2}, \dots, r_{i,g}$. Intuitively, if most genes are not changing significantly from baseline, then the genes that fall in the middle of this ranking represent those genes that are unchanging. An idealized scenario is illustrated in the schematic below where only a few genes are higher than baseline (red), a few genes are lower than baseline (blue), but most are unchanged (grey):
 
