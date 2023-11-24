@@ -80,7 +80,7 @@ and then we re-scale all of the counts in this sample by dividing by $s_i$. That
 
 $$\tilde{c}_{i,j} := \frac{c_{i,j}}{s_i}$$
 
-This is procedure is illustrated in the schematic below:
+This step is illustrated in the schematic below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_normalization_schematic_scaling.png" alt="drawing" width="800"/></center>
 
