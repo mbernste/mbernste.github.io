@@ -45,7 +45,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 ## Probability
 
-[Demystifying measure-theoretic probability theory (part 1: probability spaces)](https://mbernste.github.io/posts/measure_theory_1/) 
+[Demystifying measure-theoretic probability theory (part 1: probability spaces)](https://mbernste.github.io/posts/measure_theory_1/)  
 [Demystifying measure-theoretic probability theory (part 2: random variables)](https://mbernste.github.io/posts/measure_theory_2/)  
 [Demystifying measure-theoretic probability theory (part 3: expectation)](https://mbernste.github.io/posts/measure_theory_3/)  
 [Visualizing covariance](https://mbernste.github.io/posts/viz_cov/)  
