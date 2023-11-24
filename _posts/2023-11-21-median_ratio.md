@@ -52,23 +52,21 @@ Let us start by defining some notation. Let,
 
 $$\begin{align*}n &:= \text{Total number of samples} \\ g &:= \text{Total number of genes} \\ c_{i,j} &:= \text{Count of reads from gene $j$ in sample $i$}\end{align*}$$
 
-We start by computing a "baseline" expression value for each gene by computing the geometric mean of each genes counts across all samples. The geometric mean is used instead of the arithmetic mean because it is more robust to outlier values. For gene $j$, this is computed as:
+We start by calculating the "reference sample" expression values which represent baseline expression for each gene. We do so by computing the geometric mean of each genes' counts across all samples. The geometric mean is used instead of the arithmetic mean because it is more robust to outlier values. For gene $j$, this is computed as:
 
 $$m_j := \left(\prod_{i=1}^n c_{i,j} \right)^{\frac{1}{n}}$$
 
-Then, for each sample $i$, for each gene $j$, we compute the ratio of the counts of gene $j$ in sample $i$ (i.e., $c_{i,j}$), to the baseline expression value for gene $j$:
+Now, we must identify which gene in each sample should match the reference sample's expression. This is performed as follows: for each sample $i$, for each gene $j$, we compute the ratio of the counts of gene $j$ in sample $i$ (i.e., $c_{i,j}$), to the baseline expression value for gene $j$:
 
 $$r_{i,j} := \frac{c_{i,j}}{m_j}$$
 
 Intuitively, $r_{i,j}$ describes the deviation (more specifically the fold-change) between $c_{i,j}$ and a baseline expression value computed over all samples.  
 
-Now, median-ratio normalization makes a key assumption: _most genes in any given sample are expressed at a common baseline level_. That is, for any given sample, most of its genes should not be over or under expressed relative to the other samples in the dataset. This key assumption must be met for median-ratio normalization to work. 
-
-Now, with this assumption in mind, median-ratio normalization will _rank_ all of the ratios for all the genes in a given sample, $r_{i,1}, r_{i,2}, \dots, r_{i,g}$. Intuitively, if most genes are not changing significantly from baseline, then the genes that fall in the middle of this ranking represent those genes that are unchanging. An idealized scenario is illustrated in the schematic below where only a few genes are higher than baseline (red), a few genes are lower than baseline (blue), but most are unchanged (grey):
+As we stated previously, we assume that for any given sample, most of its genes should not be over or under expressed relative to the other samples in the dataset. Thus, _most_ genes' expression values in each sample should match the reference sample's expression. With this assumption in mind, we _rank_ all of the ratios for all the genes in a given sample, $r_{i,1}, r_{i,2}, \dots, r_{i,g}$. Intuitively, if most genes are not changing significantly from baseline, then the genes that fall in the middle of this ranking represent those genes that are unchanging. An idealized scenario is illustrated in the schematic below where only a few genes are higher than baseline (red), a few genes are lower than baseline (blue), but most are unchanged (grey):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_assumption.png" alt="drawing" width="500"/></center>
 
-Any deviation we see from baseline within the middle of this ranking is assumed to be driven by the total number of read counts. Thus, we can treat the median ratio as the "size factor" that we can use to re-scale the counts in the sample so that the ratios in the middle of the list are closer to the baseline. That is, we define the size factor for sample $i$ as,
+Any deviation we see from baseline within the middle of this ranking is assumed to be driven by the library size. Thus, we can treat the median ratio as the "size factor" that we can use to re-scale the counts in the sample so that the ratios in the middle of the list are closer to the baseline. That is, we define the size factor for sample $i$ as,
 
 $$s_i := \text{median}\left(r_{i,1}, r_{i,2}, \dots, r_{i,g}\right)$$
 
