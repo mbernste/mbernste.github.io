@@ -9,7 +9,7 @@ tags:
   - gene expression
 ---
 
-*In a [previous post](https://mbernste.github.io/posts/rna_seq_basics/), we discussed how RNA-seq provides measurements of _relative expression_ between genes rather than absolute measurements. In this post, we will discuss median-ratio normalization that attempts to scale each samples read counts so that differences in expression between samples better reflects differences in absolute expression. We will start by describing the underlying assumption that must be met for median-ratio normalization to work, provide a high-level intuition for the procudure, and then walk, through the details of the algorithm. We conclude by running median-ratio normalization on a publicly available dataset of PBMC samples taken from patients hospitalized with COVID-19.* 
+*In a [previous post](https://mbernste.github.io/posts/rna_seq_basics/), we discussed how RNA-seq provides measurements of _relative expression_ between genes rather than absolute measurements. In this post, we will discuss median-ratio normalization: a procedure that attempts to scale each samples read counts so that differences in expression between samples better reflects differences in absolute expression. We will start by describing the underlying assumption that must be met for median-ratio normalization to work and then walk through the details of the algorithm. We conclude by running median-ratio normalization on a publicly available dataset of PBMC samples taken from patients hospitalized with COVID-19.* 
 
 Introduction
 ------------
