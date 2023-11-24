@@ -29,7 +29,7 @@ High-level intuition behind median-ratio normalization
 
 RNA-seq does not provide measurements of absolute expression of each gene because in the RNA-seq protocol, we lose the key information telling us how much total RNA was in each sample to begin with. Thus, it should come as no surprise that in order to compare absolute expression values between samples, we need to make some strong assumptions about our samples. For median-ratio normalization this key assumption is as follows: _most genes are expressed at equal levels across all the samples in our dataset_. That is, each sample has a small number of genes that are expressed differently from other samples (these genes may be the genes that are biologically interesting), but most genes are expressed at the same absolute level.
 
-With this key assumption, median-ratio normalization uses all the samples in the dataset to compute a "reference sample." This reference sample represents a baseline level of expression for all each gene. We depict this schematically using a toy scenario where we have just two samples and three genes. The reference sample is depicted on the right:
+With this key assumption, median-ratio normalization uses all the samples in the dataset to compute a "reference sample." This reference sample represents a baseline level of expression for each gene. We depict this schematically using a toy scenario where we have just two samples and three genes. The reference sample is depicted on the right:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_reference_sample.png" alt="drawing" width="700"/></center>
 
