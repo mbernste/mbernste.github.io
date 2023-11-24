@@ -9,7 +9,7 @@ tags:
   - gene expression
 ---
 
-*In a [previous post](https://mbernste.github.io/posts/rna_seq_basics/), we discussed how RNA-seq provides measurements of _relative expression_ between genes rather than measurements of absolute expression. In this post, we will discuss median-ratio normalization: a procedure that attempts to scale each samples read counts so that differences in the read counts between samples better reflects differences in absolute expression. We will start by describing the underlying assumption that must be met for median-ratio normalization to work and then walk through the details of the algorithm.* 
+*In a [previous post](https://mbernste.github.io/posts/rna_seq_basics/), we discussed how RNA-seq provides measurements of relative expression between genes rather than measurements of absolute expression. In this post, we will discuss median-ratio normalization: a procedure that attempts to scale each samples read counts so that differences in the read counts between samples better reflects differences in absolute expression. We will start by describing the underlying assumption that must be met for median-ratio normalization to work and then walk through the details of the algorithm.* 
 
 Introduction
 ------------
