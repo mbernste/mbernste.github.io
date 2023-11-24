@@ -22,7 +22,7 @@ Of course, this begs the question: how can we compare the expression of a given 
 
 Is it possible to compare the absolute expression of a given gene between two samples? In this post, we will describe one normalization strategy that seeks to enable such analyses: median-ratio normalization. This approach was first introduced by [Anders and Huber (2010)](https://doi.org/10.1186/gb-2010-11-10-r106) as a preprocessing step by the DESeq method for estimating differential expression. Median-ratio normalization is also the normalization approach used by the popular [DESeq2](https://doi.org/10.1186/s13059-014-0550-8) method. If you have ever used DESeq2, median-ratio normalization is the approach that the tool uses by default to calculate the "size factors" corresponding to each sample.  
 
-In this post, we will discuss the intuition behind median-ratio normalization and the key assumptions that this method makes about the data. We will also discuss why this method only applies to bulk RNA-seq data, but is not appropriate for most single-cell RNA-seq datasets.
+In this post, we will discuss the intuition behind median-ratio normalization and the key assumptions that this method makes about the data. We will also discuss why this method only applies to bulk RNA-seq data, but is not appropriate for most [single-cell RNA-seq](https://en.wikipedia.org/wiki/Single-cell_sequencing) datasets.
 
 High-level intuition behind median-ratio normalization
 ------------------------------------------------------
