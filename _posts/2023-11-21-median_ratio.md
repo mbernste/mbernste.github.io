@@ -31,15 +31,15 @@ As we noted, we do not know the absolute expression of each gene because in the 
 
 With this key assumption, median-ratio normalization uses all the samples to compute a "reference sample" that represents a baseline level of expression for all of the genes. This is represented schematically below in a toy scenario where we have just two samples and three genes. The reference sample is depicted on the right and is estimated from both Sample 1 and 2 (as will be described in more detail in the next section):
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_reference_sample.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_reference_sample.png" alt="drawing" width="700"/></center>
 
 Given our previously stated assumption, for each sample, _most_ of its genes are expressed at the baseline level described by the reference sample. To make the samples comparable, we must identify one gene that is expressed at the baseline level. If that gene deviates from this baseline level, then this means that there is a library-size effect that must be accounted for by scaling _all_ of the read counts in that sample to ensure this identified gene matches the reference sample. In the toy example below, for Sample 1, we identify Gene C as being a gene that should match the reference sample's expression. For Sample 2, we identify Gene B as being a gene that should match the reference sample's expression:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_match_reference_sample.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_match_reference_sample.png" alt="drawing" width="700"/></center>
 
 To normalize samples, we scale the read counts in each sample so that the identified genes that should match the reference sample do match the reference sample. This process is depicted below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_scale_to_match_reference_sample.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/median_ratio_scale_to_match_reference_sample.png" alt="drawing" width="700"/></center>
 
 In the end, the differences in read counts between the samples better reflect differences in absolute expression between them. 
 
