@@ -110,7 +110,7 @@ Median-ratio normalization is only approprioate for bulk RNA-seq data and is alm
 1. There are usually diverse cell types in single-cell RNA-seq datasets and the key assumption that most genes are expressed at equal level across all cells likely does not hold because the cellular states between cells are often quite different. Differences between individual cells get averaged out in bulk RNA-seq when  many cells are aggregated together.
 2. Current single-cell RNA-seq technologies do not sequence each cell's transcriptome as deeply as can be sequenced in bulk RNA-seq. Thus, for the vast majority of genes, there is at least one cell with zero read counts originating from that gene. In median-ratio normalization, we only use genes that have non-zero expression across all samples. For single-cell RNA-seq this would end up throwing away most of the genes!
 
-When aggregating single-cells together to form "pseudo-bulk" samples, median-ratio normalization _may_ be an appropriate procedure; however, I am currently unaware of guidelines around how many cells should be aggregated for median-ratio normalization to be an appropriate procedure.
+When aggregating single-cells together to form "pseudo-bulk" samples, median-ratio normalization _may_ be appropriate; however, I am currently unaware of guidelines around how many cells should be aggregated for median-ratio normalization to be an appropriate procedure.
 
 
 
