@@ -47,7 +47,7 @@ Thus, since matrix multiplication encodes a composition of the matrices' linear 
 
 **2. A singular matrix collapses vectors into a lower-dimensional subspace**
 
-A singular matrix "collapses" or "compresses" vectors into an intrinsically lower dimensional space whereas an invertible matrix preserves their [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/) of the vectors.
+A singular matrix "collapses" or "compresses" vectors into an intrinsically lower dimensional space whereas an invertible matrix preserves their [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/).
 
 This follows from the fact that a matrix is invertible if and only if its columns are linearly independent (Thoerem 4 in the Appendix). Recall a set of $n$ [linearly independent vectors](https://mbernste.github.io/posts/linear_independence/) $$S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$$ spans a space with an intrinsic dimensionality of $n$ because in order to specify any vector $\boldsymbol{b}$ in the vector space, one must specify the coefficients $c_1, \dots, c_n$ such that 
 
