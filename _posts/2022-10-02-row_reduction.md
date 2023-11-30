@@ -42,7 +42,7 @@ Now, what kinds of algebraic operations can we perform on the equations of the s
 
 1. **Scalar multiplication**: Simply multiply both sides of one of the equations by a scalar.
 2. **Row swap**: You can move one equation above or below another. Note, the order the equations are written is irrevalent to the solution, so swapping rows is really just changing how we organize the formulas. Nonetheless, this organization will be important as we demonstrate how elementary matrices can be used to solve the system.
-3. **Row sum**: Add a multiple of one equation to another. This is valid because if the equality of each equation holds, then adding a muliple of one equation to another is just adding the same quantity on each side of the equals side of the first equation to both sides of the second equation.
+3. **Row sum**: Add a multiple of one equation to another. This is valid because if the equality of each equation holds, then adding a muliple of one equation to another is just adding the quantity on each side of the equals sign of the first equation (which are the same quantity) to each side of the second equation (which are also equal) thus maintaining the equality in the second equation.
 
 Let's use these operations to solve the following system:
 
