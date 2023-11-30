@@ -15,7 +15,7 @@ Introduction
 
 A very important concept in the study of vector spaces is that of _linear independence_. At a high level, a set of vectors are said to be **linearly independent** if you cannot form any vector in the set using any combination of the other vectors in the set. If a set of vectors does not have this quality -- that is, a vector in the set can be formed from some combination of others -- then the set is said to be **linearly dependent**.
 
-In this post, we will first present a more fundamental concept, the _span_ of a set of vectors, and then move on to the definition for linear independence. Finally, we will discuss high-level intuition for why the concept of linearly independence is so important.
+In this post, we will first present a more fundamental concept, the _span_ of a set of vectors, and then move on to the definition for linear independence. Finally, we will discuss high-level intuition for why the concept of linear independence is so important.
 
 Span
 ----
