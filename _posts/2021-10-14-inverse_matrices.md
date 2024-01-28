@@ -154,11 +154,11 @@ $\square$
 
 **Proof:**
 
-To prove this, we will show that if $\boldsymbol{A}$ is invertible, then the only solution to
-$$\boldsymbol{a}_{*,1}x_1 + \dots + \boldsymbol{a}_{*,n}x_n = \boldsymbol{0}$$
-is $\boldsymbol{x} := \boldsymbol{0}$, which is the condition for linear independence.
+By Theorem 1, we know that if $\boldsymbo{A}$ is invertible, then the only solution to $\boldsymbol{Ax} = \boldsymbol{0}$ is $\boldsymbol{x} := \boldsymbol{0}$. This implies that, 
 
-$$\begin{align*}\boldsymbol{a}_{*,1}x_1 + \dots + \boldsymbol{a}_{*,n}x_n &= \boldsymbol{0} \\ \implies \boldsymbol{Ax} &= \boldsymbol{0} \\ \implies \boldsymbol{A}^{-1}\boldsymbol{Ax} &= \boldsymbol{A}^{-1}\boldsymbol{0} \\ \implies \boldsymbol{x} &= \boldsymbol{0} \end{align*}$$
+$$\boldsymbol{a}_{*,1}x_1 + \dots + \boldsymbol{a}_{*,n}x_n = \boldsymbol{0}$$
+
+which by [Theorem 1 of my previous post](https://mbernste.github.io/posts/linear_independence/) implies that the columns of $\boldsymbol{A}$ are linearly independent.
 
 $\square$
 
