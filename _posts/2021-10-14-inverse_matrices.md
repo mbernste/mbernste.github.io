@@ -150,30 +150,15 @@ which implies that $\boldsymbol{x} = \boldsymbol{x}'$. This contradicts our orig
 
 $\square$
 
-
-
-<span style="color:#0060C6">**Theorem 4 (Column vectors of invertible matrices are linearly independent):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, $\boldsymbol{A}$ is invertible if and only if $$\boldsymbol{a}_{*,1}, \dots, \boldsymbol{a}_{*,n}$$ are linearly independent. </span>
+<span style="color:#0060C6">**Theorem 4 (Column vectors of invertible matrices are linearly independent):** Given an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, $\boldsymbol{A}$, its columns are linearly independent. </span>
 
 **Proof:**
 
-We first prove the $\implies$ direction: we assume that $\boldsymbol{A}$ is invertible and show that under this assumption, the only solution to
+If $\boldsymbol{A}$ is invertible, then the only solution to
 $$\boldsymbol{a}_{*,1}x_1 + \dots + \boldsymbol{a}_{*,n}x_n = \boldsymbol{0}$$
 is $\boldsymbol{x} := \boldsymbol{0}$, which is the condition for linear independence.
 
 $$\begin{align*}\boldsymbol{a}_{*,1}x_1 + \dots + \boldsymbol{a}_{*,n}x_n &= \boldsymbol{0} \\ \implies \boldsymbol{Ax} &= \boldsymbol{0} \\ \implies \boldsymbol{A}^{-1}\boldsymbol{Ax} &= \boldsymbol{A}^{-1}\boldsymbol{0} \\ \implies \boldsymbol{x} &= \boldsymbol{0} \end{align*}$$
-
-We now prove the $\impliedby$ direction: we assume the columns of $\boldsymbol{A}$ are linearly independent and show that under this assumption there exists a matrix $\boldsymbol{C}$ such that
-
-$$\boldsymbol{CA} = \boldsymbol{AC} = \boldsymbol{I}$$
-
-Since the columns of $\boldsymbol{A}$ are linearly independent, then the [reduced row echelon form](https://en.wikipedia.org/wiki/Row_echelon_form#Reduced_row_echelon_form) of $\boldsymbol{A}$ has a [pivot](https://en.wikipedia.org/wiki/Pivot_element) in every column. This means that there exists a sequence of [elementary row matrices](https://en.wikipedia.org/wiki/Elementary_matrix) $\boldsymbol{E}_1, \dots, \boldsymbol{E}_k$ such that when multiplied by $\boldsymbol{A}$, they produce the identity matrix. That is,
-$$(\boldsymbol{E}_1\dots\boldsymbol{E}_k)\boldsymbol{A} = \boldsymbol{I}$$
-
-Though not proven formally, it can be seen that elementary row matrices are invertible.  That is, you can always "undo" the transformation imposed by an elementary row matrix (e.g. for an elementary row matrix that swaps rows, you can always swap them back). Furthermore, since the product of invertible matrices is also invertible, $(\boldsymbol{E}_1\dots\boldsymbol{E}_k)$ is invertible. Thus,
-
-$$\begin{align*} & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)\boldsymbol{A} = \boldsymbol{I} \\ \implies & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)^{-1} (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)\boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1}\boldsymbol{I} \\ \implies & \boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \boldsymbol{I} \\ \implies & \boldsymbol{A} = \boldsymbol{I}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \\ \implies & \boldsymbol{A}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k) = \boldsymbol{I}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k) \end{align*}$$ 
-
-Hence, $\boldsymbol{C} := (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)$ is the matrix for which $\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$ and is thus $\boldsymbol{A}$'s inverse.
 
 $\square$
 
