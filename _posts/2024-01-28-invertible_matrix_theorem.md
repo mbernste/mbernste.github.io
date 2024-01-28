@@ -68,6 +68,8 @@ To prove the invertible matrix theorem, we will prove the following implications
 
 **10 $\iff$ 11**: By [the discussion presented in my post on row reduction](https://mbernste.github.io/posts/row_reduction/).
 
+**11 $\implies$ 1**: By Theorem XXXX in the Appendix to this post.
+
 
 Reconsidering the definition of an invertible matrix
 ----------------------------------------------------
@@ -81,14 +83,7 @@ This follows Statement 1 of the invertible matrix theorem. However, in light of 
 Appendix
 --------
 
-We now prove the $\impliedby$ direction: we assume the columns of $\boldsymbol{A}$ are linearly independent and show that under this assumption there exists a matrix $\boldsymbol{C}$ such that
-
-$$\boldsymbol{CA} = \boldsymbol{AC} = \boldsymbol{I}$$
-
-Since the columns of $\boldsymbol{A}$ are linearly independent, then the [reduced row echelon form](https://en.wikipedia.org/wiki/Row_echelon_form#Reduced_row_echelon_form) of $\boldsymbol{A}$ has a [pivot](https://en.wikipedia.org/wiki/Pivot_element) in every column. This means that there exists a sequence of [elementary row matrices](https://en.wikipedia.org/wiki/Elementary_matrix) $\boldsymbol{E}_1, \dots, \boldsymbol{E}_k$ such that when multiplied by $\boldsymbol{A}$, they produce the identity matrix. That is,
-$$(\boldsymbol{E}_1\dots\boldsymbol{E}_k)\boldsymbol{A} = \boldsymbol{I}$$
-
-Though not proven formally, it can be seen that elementary row matrices are invertible.  That is, you can always "undo" the transformation imposed by an elementary row matrix (e.g. for an elementary row matrix that swaps rows, you can always swap them back). Furthermore, since the product of invertible matrices is also invertible, $(\boldsymbol{E}_1\dots\boldsymbol{E}_k)$ is invertible. Thus,
+Though not proven formally, it is evident that elementary row matrices are invertible.  That is, you can always "undo" the transformation imposed by an elementary row matrix (e.g. for an elementary row matrix that swaps rows, you can always swap them back). Furthermore, since the product of invertible matrices is also invertible, $(\boldsymbol{E}_1\dots\boldsymbol{E}_k)$ is invertible. Thus,
 
 $$\begin{align*} & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)\boldsymbol{A} = \boldsymbol{I} \\ \implies & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)^{-1} (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)\boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1}\boldsymbol{I} \\ \implies & \boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \boldsymbol{I} \\ \implies & \boldsymbol{A} = \boldsymbol{I}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \\ \implies & \boldsymbol{A}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k) = \boldsymbol{I}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k) \end{align*}$$ 
 
