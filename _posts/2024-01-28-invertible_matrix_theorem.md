@@ -32,7 +32,7 @@ The invertible matrix theorem is stated as follows:
 
 <span style="color:#0060C6">4. The columns of $\boldsymbol{A}$ span all of $\boldsymbol{R}^n$</span>
 
-<center><span style="color:#0060C6">5. The rows of $\boldsymbol{A}$ span all of $\boldsymbol{R}^n$</span></center>
+<span style="color:#0060C6">5. The rows of $\boldsymbol{A}$ span all of $\boldsymbol{R}^n$</span>
 
 <span style="color:#0060C6">6. The rank of $\boldsymbol{A}$ is $n$</span>
 
