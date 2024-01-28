@@ -44,7 +44,7 @@ The invertible matrix theorem is stated as follows:
 
 <span style="color:#0060C6">10. It is possible to use the row reduction algorithm to transform $\boldsymbol{A}$ into $\boldsymbol{I}$</span>
 
-<span style="color:#0060C6">11. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m = \boldsymbol{I}$</span>
+<span style="color:#0060C6">11. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$</span>
 
 <span style="color:#0060C6">12. $\text{Det}(\boldsymbol{A}) > 0$</span>
 
@@ -65,6 +65,9 @@ To prove the invertible matrix theorem, we will prove the following implications
 **7 $\iff$ 9**: By [Definition 5 (nullity) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/).
 
 **8 $\iff$ 10**: By [the discussion presented in my post on row reduction](https://mbernste.github.io/posts/row_reduction/).
+
+**10 $\iff$ 11**: By [the discussion presented in my post on row reduction](https://mbernste.github.io/posts/row_reduction/).
+
 
 Reconsidering the definition of an invertible matrix
 ----------------------------------------------------
