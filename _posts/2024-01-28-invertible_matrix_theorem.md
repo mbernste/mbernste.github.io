@@ -59,7 +59,7 @@ Recall in our [first post on invertible matrices](https://mbernste.github.io/pos
 
 <span style="color:#0060C6">**Definition 1 (Inverse matrix):** Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, it's **inverse matrix** is the matrix $\boldsymbol{C}$ that when either left or right multiplied by $\boldsymbol{A}$, yields the identity matrix. That is, if for a matrix $\boldsymbol{C}$ it holds that $$\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$$, then $\boldsymbol{C}$ is the inverse of $\boldsymbol{A}$. This inverse matrix, $\boldsymbol{C}$ is commonly denoted as $\boldsymbol{A}^{-1}$.</span>
 
-This follows Statement 1 of the invertible matrix theorem. In light of the invertible matrix theorem, _any of the statements_ about invertible matrices can be used as the definition of an invertible matrix and the rest of the statements can be proven from that definition. One can think of the definition as a "starting point" for defining the concept of the invertible matrix, but this starting point is arbitrary!
+This follows Statement 1 of the invertible matrix theorem. However, in light of the invertible matrix theorem, _any of the statements_ about invertible matrices could have been chosen as the definition of an invertible matrix. While we chose Statement 1, other texts may choose other statements. The rest of the statements would then be proven from that definition. 
 
 Appendix
 --------
