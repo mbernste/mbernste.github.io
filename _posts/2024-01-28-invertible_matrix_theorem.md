@@ -62,6 +62,9 @@ To prove the invertible matrix theorem, we will prove the following implications
 
 **7 $\iff$ 8**: By [Theorem 3 (Rank-Nullity Theorem) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/).
 
+**8 $\iff$ 10**: By [Definition 5 (nullity) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/).
+
+
 Reconsidering the definition of an invertible matrix
 ----------------------------------------------------
 
