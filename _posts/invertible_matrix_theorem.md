@@ -18,28 +18,25 @@ The invertible matrix theorem is stated as follows:
 
 <center><span style="color:#0060C6">3. The rows of $\boldsymbol{A}$ are linearly independent</span></center>
 
-<center><span style="color:#0060C6">4. $\boldsymbo{A}^T$  is an invertible matrix</span></center>
+<center><span style="color:#0060C6">4. The columns of $\boldsymbol{A}$ span all of $\boldsymbol{R}^n$</span></center>
 
-<center><span style="color:#0060C6">5. The rank of $\boldsymbol{A}$ is $n$</span></center>
+<center><span style="color:#0060C6">5. The rows of $\boldsymbol{A}$ span all of $\boldsymbol{R}^n$</span></center>
 
-<center><span style="color:#0060C6">6. The linear transformation $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is one-to-one and onto.</span></center>
+<center><span style="color:#0060C6">6. $\boldsymbo{A}^T$  is an invertible matrix</span></center>
 
-<center><span style="color:#0060C6">7. The equation $\boldsymbol{Ax} = \boldsymbol{0}$ has only the trivial solution $\boldsymbol{x} = \boldsymbol{0}$</span></center>
+<center><span style="color:#0060C6">7. The rank of $\boldsymbol{A}$ is $n$</span></center>
 
-<center><span style="color:#0060C6">8. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m = \boldsymbol{I}$</span></center>
+<center><span style="color:#0060C6">8. The linear transformation $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is one-to-one and onto.</span></center>
 
+<center><span style="color:#0060C6">9. The equation $\boldsymbol{Ax} = \boldsymbol{0}$ has only the trivial solution $\boldsymbol{x} = \boldsymbol{0}$</span></center>
 
+<center><span style="color:#0060C6">10. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m = \boldsymbol{I}$</span></center>
 
-<span style="color:#0060C6">is a **simple function** if there exists a finite sequence of sets $A_1, A_2, \dots, A_n \in \mathcal{F}$ and a finite sequence of numbers $h_1, h_2, \dots, h_n \in \mathbb{R}$ such that $g$ can be expressed as</span>
+<center><span style="color:#0060C6">11. $\text{Det}(\boldsymbol{A}) > 0$</span></center>
 
-<center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
+Note: in different texts, the invertible matrix theorem can be written somewhat differently with some texts including some statements that others don't. The _essence_ of the invertible matrix theorem is that there are many seemingly different statements that all define an invertible matrix. Any of these statements imply all of the rest.
 
-<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function that equals one if $x \in A_i$ and equals zero otherwise.</span>
-
-Axiom 2 for defining the determinant states that if two column vectors of a matrix are equal, then the determinant is zero. The intuition behind this axiom is that if a matrix has two equal column-vectors, then the parallelopided is, in a sense, flat and thus, its volume is zero. From this axiom, we derived Theorem 2, which states that any matrix whose column vectors are linearly dependent has a determinant that is zero. 
-
-Now, recall Theorem 4 from our [previous blog post](https://mbernste.github.io/posts/inverse_matrices/) that a matrix is singular (i.e., not invertible) if and only if its columns are linearly dependent. Combining these two theorems, we arrive at the following conclusion: a matrix is invertible if and only if its determinant is non-zero:
+To prove that any of these statements imply all of the rest, we will prove the following relationships between these statements:
 
 
 
-Intuitively, this makes sense. Again, recall from our [discussion of invertible and singular matrices](https://mbernste.github.io/posts/inverse_matrices/) that a singular matrix collapses vectors down into a smaller dimensional subspace. What Theorem 10 tells us is that any such matrix that performs this dimensionality reduction has column vectors that form a flat parallelopiped, which has a volume, and hence determinant, of zero!
