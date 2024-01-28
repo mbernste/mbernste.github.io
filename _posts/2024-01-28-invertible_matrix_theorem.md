@@ -109,6 +109,26 @@ $\square$
 
 
 
+<span style="color:#0060C6">**Theorem 3**: </span>
+
+**Proof:**
+
+$\square$
+
+
+<span style="color:#0060C6">**Theorem 4**: </span>
+
+**Proof:**
+
+$\square$
+
+
+<span style="color:#0060C6">**Theorem 5**: </span>
+
+**Proof:**
+
+$\square$
+
 
 <span style="color:#0060C6">**Theorem 6**: If there exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$, then there exists a square matrix $\boldsymbol{C} \in \mathbb{R}^{n \times n}$ such that $\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$ </span>
 
@@ -124,6 +144,12 @@ Thus, $\boldsymbol{C} := (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)$ is the matri
 
 $\square$
 
+
+<span style="color:#0060C6">**Theorem 7**: </span>
+
+**Proof:**
+
+$\square$
 
 
 
