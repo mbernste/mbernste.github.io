@@ -22,7 +22,7 @@ The invertible matrix therorem
 
 The invertible matrix theorem is stated as follows:
 
-<span style="color:#0060C6">**Theorem 1**: For a given square matrix $\boldsymbol{A} \in \mathbb{R}^n$, if any of the following statements are true of that matrix, then all the remaining statements are also true.</span>
+<span style="color:#0060C6">**Theorem 1 (invertible matrix theorem)**: For a given square matrix $\boldsymbol{A} \in \mathbb{R}^n$, if any of the following statements are true of that matrix, then all the remaining statements are also true.</span>
 
 <span style="color:#0060C6">1. There exists a square matrix $\boldsymbol{C} \in \mathbb{R}^{n \times n}$ such that $\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$</span>
 
