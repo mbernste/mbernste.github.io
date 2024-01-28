@@ -1,4 +1,12 @@
-
+---
+title: 'The invertible matrix theorem'
+date: 2024-01-28
+permalink: /posts/invertible_matrix_theorem/
+tags:
+  - tutorial
+  - mathematics
+  - linear algebra
+---
 
 Introduction
 ------------
@@ -30,13 +38,15 @@ The invertible matrix theorem is stated as follows:
 
 <center><span style="color:#0060C6">9. The equation $\boldsymbol{Ax} = \boldsymbol{0}$ has only the trivial solution $\boldsymbol{x} = \boldsymbol{0}$</span></center>
 
-<center><span style="color:#0060C6">10. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m = \boldsymbol{I}$</span></center>
+<center><span style="color:#0060C6">10. It is possible to use the row reduction algorithm to transform $\boldsymbol{A}$ into $\boldsymbol{I}$</span></center>
 
-<center><span style="color:#0060C6">11. $\text{Det}(\boldsymbol{A}) > 0$</span></center>
+<center><span style="color:#0060C6">11. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m = \boldsymbol{I}$</span></center>
+
+<center><span style="color:#0060C6">12. $\text{Det}(\boldsymbol{A}) > 0$</span></center>
 
 Note: in different texts, the invertible matrix theorem can be written somewhat differently with some texts including some statements that others don't. The _essence_ of the invertible matrix theorem is that there are many seemingly different statements that all define an invertible matrix. Any of these statements imply all of the rest.
 
-To prove that any of these statements imply all of the rest, we will prove the following relationships between these statements:
+To prove that any one of these statements imply all of the rest, we will prove the following relationships between these statements:
 
 
 
