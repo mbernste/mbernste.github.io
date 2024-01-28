@@ -8,6 +8,28 @@ Throughout many of my prior linear algebra posts, we have seen theorems of the f
 The invertible matrix therorem
 ------------------------------
 
+The invertible matrix theorem is stated as follows:
+
+<span style="color:#0060C6">**Theorem 1**: A square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ is an invertible matrix if and only if _any_ of the following statements hold:</span>
+
+<center><span style="color:#0060C6">1. There exists a square matrix $\boldsymbol{C} \in \in \mathbb{R}^{n \times n}$ such that $\boldsymbo{AC} = \boldsymbo{CA} = \boldsymbol{I}$</span></center>
+
+<center><span style="color:#0060C6">2. The columns of $\boldsymbol{A}$ are linearly independent</span></center>
+
+<center><span style="color:#0060C6">3. The rows of $\boldsymbol{A}$ are linearly independent</span></center>
+
+<center><span style="color:#0060C6">4. The rank of $\boldsymbol{A}$ is $n$</span></center>
+
+<center><span style="color:#0060C6">5. The linear transformation $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is one-to-one and onto.</span></center>
+
+<center><span style="color:#0060C6">6. The equation.</span></center>
+
+
+<span style="color:#0060C6">is a **simple function** if there exists a finite sequence of sets $A_1, A_2, \dots, A_n \in \mathcal{F}$ and a finite sequence of numbers $h_1, h_2, \dots, h_n \in \mathbb{R}$ such that $g$ can be expressed as</span>
+
+<center><span style="color:#0060C6">$$g(x) = \sum_{i=1}^n h_i\mathbb{I}_{A_i}(x)$$</span></center>
+
+<span style="color:#0060C6">where $\mathbb{I}_{A_i}(x)$ is an indicator function that equals one if $x \in A_i$ and equals zero otherwise.</span>
 
 Axiom 2 for defining the determinant states that if two column vectors of a matrix are equal, then the determinant is zero. The intuition behind this axiom is that if a matrix has two equal column-vectors, then the parallelopided is, in a sense, flat and thus, its volume is zero. From this axiom, we derived Theorem 2, which states that any matrix whose column vectors are linearly dependent has a determinant that is zero. 
 
