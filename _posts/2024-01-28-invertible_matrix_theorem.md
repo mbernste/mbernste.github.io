@@ -113,9 +113,9 @@ $\square$
 
 We will use a proof by contradiction. Assume for the sake of contradiction that $\vert \text{Det}(\boldsymbol{A})\vert = 0$. Then we see that
 
-$$\begin{align*} \boldsymbol{A}{A}^{-1} = \boldsymbol{I} \\ \implies & \text{Det}(\boldsymbol{A}{A}^{-1}) = \text{Det}(\boldsymbol{I}) \\ \implies & \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{A}^{-1}) &= \text{Det}(\boldsymbol{I}) \\ \implies & 0 \text{Det}(\boldsymbol{A}^{-1}) &= 1 \\ \implies & 0 = 1 \end{align*}$$
+$$\begin{align*} &\boldsymbol{A}{A}^{-1} = \boldsymbol{I} \\ \implies & \text{Det}(\boldsymbol{A}{A}^{-1}) = \text{Det}(\boldsymbol{I}) \\ \implies & \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{A}^{-1}) = \text{Det}(\boldsymbol{I}) \\ \implies & 0 \text{Det}(\boldsymbol{A}^{-1}) = 1 \\ \implies & 0 = 1 \end{align*}$$
 
-Clearly zero does not equal one. Thus, our assumption is wrong. It must be the case that if $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{I}$, then this implies that $\vert \text{Det}(\boldsymbol) \vert > 0$. This proof can be repeated trivially flipping the order of $\boldsymbol{A}$ and $\boldsymbol{A}^{-1}$ in the matrix product.  Note, lines 3 and 4 above follow from [Thoerem 8 Axiom 1 from my post on determinant](https://mbernste.github.io/posts/determinantsformula/) respectively.
+Clearly zero does not equal one. Thus, our assumption is wrong. It must be the case that if $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{I}$, then this implies that $\vert \text{Det}(\boldsymbol{A}) \vert > 0$. This proof can be repeated trivially flipping the order of $\boldsymbol{A}$ and $\boldsymbol{A}^{-1}$ in the matrix product.  Note, lines 3 and 4 above follow from [Thoerem 8 Axiom 1 from my post on determinant](https://mbernste.github.io/posts/determinantsformula/) respectively.
 
 $\square$
 
