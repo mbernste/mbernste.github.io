@@ -36,9 +36,9 @@ The invertible matrix theorem is stated as follows:
 
 <span style="color:#0060C6">6. The rank of $\boldsymbol{A}$ is $n$</span>
 
-<center><span style="color:#0060C6">7. The nully of $\boldsymbol{A}$ is $0$</span></center>
+<span style="color:#0060C6">7. The nullity of $\boldsymbol{A}$ is $0$</span>
 
-<center><span style="color:#0060C6">8. The linear transformation $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is one-to-one and onto.</span></center>
+<span style="color:#0060C6">8. The linear transformation $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is one-to-one and onto.</span>
 
 <span style="color:#0060C6">9. The equation $\boldsymbol{Ax} = \boldsymbol{0}$ has only the trivial solution $\boldsymbol{x} = \boldsymbol{0}$</span>
 
