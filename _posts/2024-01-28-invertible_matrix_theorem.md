@@ -60,11 +60,11 @@ The proofs of each of these implications are described below:
 
 **1 $\implies$ 12**: By Theorem 2 in the Appendix to this post.
 
-**2 $\implies$ 8**: By Theorem 3 in the Appendix to this post.
+**2 $\iff$ 4**: Theorem 3 in the Appendix to this post.
+
+**2 $\implies$ 8**: By Theorem 4 in the Appendix to this post.
 
 **2 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the column rank of a matrix is defined to be the maximum number of linearly independent vectors that span the column space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the column rank of a matrix equals the row rank and we refer to either as simply the "rank".
-
-**2 $\iff$ 4**: Theorem 4 in the Appendix to this post.
 
 **3 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the row rank of a matrix is defined to be the maximum number of linearly independent vectors that span the row space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the row rank of a matrix equals the column rank and we refer to either as simply the "rank".
 
