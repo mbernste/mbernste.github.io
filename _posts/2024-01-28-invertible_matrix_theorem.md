@@ -58,7 +58,7 @@ The proofs of each of these implications are described below:
 
 **1 $\implies$ 8**: This was proven by [Theorems 2 and 3 from my post on invertible matrices](https://mbernste.github.io/posts/inverse_matrices/)
 
-**1 $\implies$ 12**: By Theorem XXXX in the Appendix to this post.
+**1 $\implies$ 12**: By Theorem 2 in the Appendix to this post.
 
 **2 $\implies$ 8**: By Theorem XXXX in the Appendix to this post.
 
@@ -95,6 +95,18 @@ This follows Statement 1 of the invertible matrix theorem. However, in light of 
 Appendix
 --------
 
+<span style="color:#0060C6">**Theorem 2**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, if there exists an inverse matrix $\boldsymbol{A}^{-1} \in \mathbb{R}^{n \times n}$ such that $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{I}$, then this implies that $\vert \text{Det}(\boldsymbol{A}) \vert > 0$.</span>
+
+**Proof:**
+
+We will use a proof by contradiction. Assume for the sake of contradiction that $\vert \text{Det}(\boldsymbol{A})\vert = 0$. Then we see that
+
+$$\begin{align*} &\boldsymbol{A}{A}^{-1} = \boldsymbol{I} \\ \implies & \text{Det}(\boldsymbol{A}{A}^{-1}) = \text{Det}(\boldsymbol{I}) \\ \implies & \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{A}^{-1}) = \text{Det}(\boldsymbol{I}) \\ \implies & 0 \text{Det}(\boldsymbol{A}^{-1}) = 1 \\ \implies & 0 = 1 \end{align*}$$
+
+Clearly zero does not equal one. Thus, our assumption is wrong. It must be the case that if $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{I}$, then this implies that $\vert \text{Det}(\boldsymbol{A}) \vert > 0$. This proof can be repeated trivially flipping the order of $\boldsymbol{A}$ and $\boldsymbol{A}^{-1}$ in the matrix product.  Note, lines 3 and 4 above follow from [Thoerem 8 Axiom 1 from my post on determinant](https://mbernste.github.io/posts/determinantsformula/) respectively.
+
+$\square$
+
 <span style="color:#0060C6">**Theorem XXXX**:</span>
 
 **Proof:**
@@ -107,16 +119,6 @@ Hence, $\boldsymbol{C} := (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)$ is the matr
 
 $\square$
 
-<span style="color:#0060C6">**Theorem XXXX**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, if there exists an inverse matrix $\boldsymbol{A}^{-1} \in \mathbb{R}^{n \times n}$ such that $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{I}$, then this implies that $\vert \text{Det}(\boldsymbol{A}) \vert > 0$.</span>
 
-**Proof:**
-
-We will use a proof by contradiction. Assume for the sake of contradiction that $\vert \text{Det}(\boldsymbol{A})\vert = 0$. Then we see that
-
-$$\begin{align*} &\boldsymbol{A}{A}^{-1} = \boldsymbol{I} \\ \implies & \text{Det}(\boldsymbol{A}{A}^{-1}) = \text{Det}(\boldsymbol{I}) \\ \implies & \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{A}^{-1}) = \text{Det}(\boldsymbol{I}) \\ \implies & 0 \text{Det}(\boldsymbol{A}^{-1}) = 1 \\ \implies & 0 = 1 \end{align*}$$
-
-Clearly zero does not equal one. Thus, our assumption is wrong. It must be the case that if $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{I}$, then this implies that $\vert \text{Det}(\boldsymbol{A}) \vert > 0$. This proof can be repeated trivially flipping the order of $\boldsymbol{A}$ and $\boldsymbol{A}^{-1}$ in the matrix product.  Note, lines 3 and 4 above follow from [Thoerem 8 Axiom 1 from my post on determinant](https://mbernste.github.io/posts/determinantsformula/) respectively.
-
-$\square$
 
 
