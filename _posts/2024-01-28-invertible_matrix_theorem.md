@@ -46,7 +46,7 @@ The invertible matrix theorem is stated as follows:
 
 <span style="color:#0060C6">11. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$</span>
 
-<span style="color:#0060C6">12. $\text{Det}(\boldsymbol{A}) > 0$</span>
+<span style="color:#0060C6">12. $\vert \text{Det}(\boldsymbol{A}) \vert > 0$</span>
 
 In different texts, the invertible matrix theorem can be written somewhat differently with some texts including some statements that others don't. The _essence_ of the invertible matrix theorem is that there are many seemingly different statements that all define an invertible matrix. Any of these statements imply all of the rest.
 
