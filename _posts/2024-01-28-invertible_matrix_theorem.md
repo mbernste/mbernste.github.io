@@ -62,11 +62,11 @@ The proofs of each of these implications are described below:
 
 **2 $\implies$ 8**: By Theorem XXXX in the Appendix to this post.
 
-**2 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the column rank of a matrix is defined to be the maximum number of linearly independent vectors that span the column space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the rank of a matrix equals the column rank (since the column rank and row rank are equal, we refer to either as simply the "rank").
+**2 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the column rank of a matrix is defined to be the maximum number of linearly independent vectors that span the column space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the column rank of a matrix equals the row rank and we refer to either as simply the "rank".
 
 **2 $\iff$ 4**: Theorem XXXX in the Appendix to this post.
 
-**3 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the row rank of a matrix is defined to be the maximum number of linearly independent vectors that span the row space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the rank of a matrix equals the row rank (since the column rank and row rank are equal, we refer to either as simply the "rank").
+**3 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the row rank of a matrix is defined to be the maximum number of linearly independent vectors that span the row space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the row rank of a matrix equals the column rank and we refer to either as simply the "rank".
 
 **3 $\iff$ 5**: Theorem XXXX in the Appendix to this post.
 
