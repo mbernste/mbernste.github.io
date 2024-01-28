@@ -24,11 +24,11 @@ The invertible matrix theorem is stated as follows:
 
 <span style="color:#0060C6">**Theorem 1**: A square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ is an invertible matrix if and only if _any_ of the following statements hold:</span>
 
-<center><span style="color:#0060C6">1. There exists a square matrix $\boldsymbol{C} \in \in \mathbb{R}^{n \times n}$ such that $\boldsymbo{AC} = \boldsymbo{CA} = \boldsymbol{I}$</span></center>
+<span style="color:#0060C6">1. There exists a square matrix $\boldsymbol{C} \in \mathbb{R}^{n \times n}$ such that $\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$</span>
 
-<center><span style="color:#0060C6">2. The columns of $\boldsymbol{A}$ are linearly independent</span></center>
+<span style="color:#0060C6">2. The columns of $\boldsymbol{A}$ are linearly independent</span>
 
-<center><span style="color:#0060C6">3. The rows of $\boldsymbol{A}$ are linearly independent</span></center>
+<span style="color:#0060C6">3. The rows of $\boldsymbol{A}$ are linearly independent</span>
 
 <center><span style="color:#0060C6">4. The columns of $\boldsymbol{A}$ span all of $\boldsymbol{R}^n$</span></center>
 
