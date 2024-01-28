@@ -80,7 +80,7 @@ The proofs of each of these implications are described below:
 
 **11 $\implies$ 1**: By Theorem 6 in the Appendix to this post.
 
-**12 $\iff$ 1**: By Theorem 7 in the Appendix to this post.
+**12 $\implies$ 2**: By Theorem 7 in the Appendix to this post.
 
 
 Reconsidering the definition of an invertible matrix
@@ -145,9 +145,11 @@ Thus, $\boldsymbol{C} := (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)$ is the matri
 $\square$
 
 
-<span style="color:#0060C6">**Theorem 7**: </span>
+<span style="color:#0060C6">**Theorem 7**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, if $\vert \text{Det}(\boldsymbol{A}) \vert > 0$, this implies that the columns are linearly independent.</span>
 
 **Proof:**
+
+We will use a proof by contrapositive. We know from [Theorem 2 in my post on determinants](https://mbernste.github.io/posts/determinantsformula/) that if $\boldsymbol{A}$'s columns are linearly dependent, then its determinant is zero. Using the contrapositive, it holds that if the determinant is _not_ zero, then the columns are _not_ linearly dependent. The statement "the determinant is _not_ zero" implies that $\vert \text{Det}(\boldsymbol{A}) \vert > 0$. Moreover, if the columns are not linearly dependent, then they can only be independent. Thus, it follows that if $\vert \text{Det}(\boldsymbol{A}) \vert > 0$, the columns of $\boldsymbol{A}$ are linearly independent.
 
 $\square$
 
