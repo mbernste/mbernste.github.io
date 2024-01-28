@@ -78,6 +78,8 @@ The proofs of each of these implications are described below:
 
 **11 $\implies$ 1**: By Theorem XXXX in the Appendix to this post.
 
+**12 $\iff$ 1**: By Theorem XXXX in the Appendix to this post.
+
 
 Reconsidering the definition of an invertible matrix
 ----------------------------------------------------
@@ -91,10 +93,23 @@ This follows Statement 1 of the invertible matrix theorem. However, in light of 
 Appendix
 --------
 
+<span style="color:#0060C6">**Theorem XXXX**:</span>
+
+**Proof:**
+
 Though not proven formally, it is evident that elementary row matrices are invertible.  That is, you can always "undo" the transformation imposed by an elementary row matrix (e.g. for an elementary row matrix that swaps rows, you can always swap them back). Furthermore, since the product of invertible matrices is also invertible, $(\boldsymbol{E}_1\dots\boldsymbol{E}_k)$ is invertible. Thus,
 
 $$\begin{align*} & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)\boldsymbol{A} = \boldsymbol{I} \\ \implies & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)^{-1} (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)\boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1}\boldsymbol{I} \\ \implies & \boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \boldsymbol{I} \\ \implies & \boldsymbol{A} = \boldsymbol{I}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \\ \implies & \boldsymbol{A}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k) = \boldsymbol{I}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k) \end{align*}$$ 
 
 Hence, $\boldsymbol{C} := (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)$ is the matrix for which $\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$ and is thus $\boldsymbol{A}$'s inverse.
+
+$\square$
+
+<span style="color:#0060C6">**Theorem XXXX**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, $\vert \text{Det}(\boldsymbol)\vert > 0 \iff $ there exists a matrix $\boldsymbol{A}^{-1}$, such that $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{I}$</span>
+
+**Proof:**
+
+
+
 
 
