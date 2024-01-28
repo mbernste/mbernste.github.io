@@ -391,7 +391,7 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 10:** Tbe determinant of matrix is linear with respect to the row vectors of the matrix.</span>
+<span style="color:#0060C6">**Theorem 10:** The determinant of a matrix is linear with respect to the row vectors of the matrix.</span>
 
 **Proof:**
 
