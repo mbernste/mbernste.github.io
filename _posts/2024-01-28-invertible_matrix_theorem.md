@@ -52,6 +52,11 @@ In different texts, the invertible matrix theorem can be written somewhat differ
 
 To prove the invertible matrix theorem, we will prove the following implications between these statements. Notice that there is a path from every statement to every other statement through these implications. Given two statements $X$ and $Y$ from from the invertible matrix theorem it holds that "$X$ if and only if $Y$".
 
+**1 $\implies$ 2**: This was proven by [Theorem 4 from my post on invertible matrices](https://mbernste.github.io/posts/inverse_matrices/).
+
+**1 $\implies$ 8**: This was proven by [Theorems 2 and 3 from my post on invertible matrices](https://mbernste.github.io/posts/inverse_matrices/)
+
+**2 $\iff$ 7**:  
 
 
 Reconsidering the definition of an invertible matrix
