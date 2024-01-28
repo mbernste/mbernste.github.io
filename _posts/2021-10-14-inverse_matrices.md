@@ -154,7 +154,7 @@ $\square$
 
 **Proof:**
 
-By Theorem 1, we know that if $\boldsymbo{A}$ is invertible, then the only solution to $\boldsymbol{Ax} = \boldsymbol{0}$ is $\boldsymbol{x} := \boldsymbol{0}$. This implies that, 
+By Theorem 1, we know that if $\boldsymbol{A}$ is invertible, then the only solution to $\boldsymbol{Ax} = \boldsymbol{0}$ is $\boldsymbol{x} := \boldsymbol{0}$. This implies that, 
 
 $$\boldsymbol{a}_{*,1}x_1 + \dots + \boldsymbol{a}_{*,n}x_n = \boldsymbol{0}$$
 
