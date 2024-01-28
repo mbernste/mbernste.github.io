@@ -98,7 +98,7 @@ Before defining the general Lebesgue integral, we first create a more narrow def
 
 <span style="color:#0060C6">**Definition 9:** Given a measure space $(F, \mathcal{F}, \mu)$ and measurable space $(H, \mathcal{H})$ where $H \subseteq \mathbb{R}$, and a measurable simple function</span>
 
-<center><span style="color:#0060C6">$$f : F \rightarrow H$$</span></center>
+<center><span style="color:#0060C6">$$g : F \rightarrow H$$</span></center>
 
 <span style="color:#0060C6">with codomain</span>
 
@@ -112,9 +112,9 @@ Before defining the general Lebesgue integral, we first create a more narrow def
 
 <center><span style="color:#0060C6">$$A_1, A_2, \dots, A_n \in \mathcal{F}$$</span></center>
 
-<span style="color:#0060C6">where $A_i := f^{-1}(\{ h_1 \} )$, the **Lebesgue integral of this simple function** is defined as</span> 
+<span style="color:#0060C6">where $A_i := g^{-1}(\{ h_1 \} )$, the **Lebesgue integral of this simple function** is defined as</span> 
 
-<center><span style="color:#0060C6">$$\int_F f \ d\mu := \sum_{i=1}h_i \mu(A_i)$$</span></center>
+<center><span style="color:#0060C6">$$\int_F g \ d\mu := \sum_{i=1}h_i \mu(A_i)$$</span></center>
 
 Let's parse this definition. First, notice we are considering a *measurable* simple function $g$ -- that is, the codomain of $g$, $H$, has a $\sigma$-algebra, $\mathcal{H}$ defined for it. This $\sigma$-algebra is somewhat trivial since, $H$ is finite and countable (by the definition of a simple function) and each element of $H$ gets its own singleton-set in $\mathcal{H}$.  The pre-image of each of these singleton-set $\{h_i\}$, $A_i$, has a measure $\mu(A_i)$.  
 
