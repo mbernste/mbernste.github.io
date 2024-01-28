@@ -118,7 +118,7 @@ $\square$
 
 **Proof:**
 
-Let $\boldsymbol{x}$, $\boldsymbol{b} \in \mathbb{R}^n$.  Then, there exists a vector, $\boldsymbol{x} \in \mathbb{R}^n$ such that
+Let $\boldsymbol{b} \in \mathbb{R}^n$.  Then, there exists a vector, $\boldsymbol{x} \in \mathbb{R}^n$ such that
 $$\boldsymbol{Ax} = \boldsymbol{b}$$
 This solution is precisely 
 
