@@ -18,11 +18,16 @@ The invertible matrix theorem is stated as follows:
 
 <center><span style="color:#0060C6">3. The rows of $\boldsymbol{A}$ are linearly independent</span></center>
 
-<center><span style="color:#0060C6">4. The rank of $\boldsymbol{A}$ is $n$</span></center>
+<center><span style="color:#0060C6">4. $\boldsymbo{A}^T$  is an invertible matrix</span></center>
 
-<center><span style="color:#0060C6">5. The linear transformation $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is one-to-one and onto.</span></center>
+<center><span style="color:#0060C6">5. The rank of $\boldsymbol{A}$ is $n$</span></center>
 
-<center><span style="color:#0060C6">6. The equation.</span></center>
+<center><span style="color:#0060C6">6. The linear transformation $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is one-to-one and onto.</span></center>
+
+<center><span style="color:#0060C6">7. The equation $\boldsymbol{Ax} = \boldsymbol{0}$ has only the trivial solution $\boldsymbol{x} = \boldsymbol{0}$</span></center>
+
+<center><span style="color:#0060C6">8. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{A}\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m = \boldsymbol{I}$</span></center>
+
 
 
 <span style="color:#0060C6">is a **simple function** if there exists a finite sequence of sets $A_1, A_2, \dots, A_n \in \mathcal{F}$ and a finite sequence of numbers $h_1, h_2, \dots, h_n \in \mathbb{R}$ such that $g$ can be expressed as</span>
