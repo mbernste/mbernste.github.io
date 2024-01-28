@@ -107,11 +107,16 @@ Hence, $\boldsymbol{C} := (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)$ is the matr
 
 $\square$
 
-<span style="color:#0060C6">**Theorem XXXX**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, $\vert \text{Det}(\boldsymbol)\vert > 0 \iff $ there exists a matrix $\boldsymbol{A}^{-1}$, such that $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{I}$</span>
+<span style="color:#0060C6">**Theorem XXXX**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, if there exists an inverse matrix $\boldsymbol{A}^{-1} \in \mathbb{R}^{n \times n}$ such that $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{A}^{-1}\boldsymbol{A} = \boldsymbol{I}$, then this implies that $\vert \text{Det}(\boldsymbol) \vert > 0</span>
 
 **Proof:**
 
+We will use a proof by contradiction. Assume for the sake of contradiction that $\vert \text{Det}(\boldsymbol{A})\vert = 0$. Then we see that
 
+$$\begin{algin*} \boldsymbol{A}{A}^{-1} = \boldsymbol{I} \\ \implies & \text{Det}(\boldsymbol{A}{A}^{-1}) = \text{Det}() \\ \implies & \text{Det}(\boldsymbol{A}) \text{Det}(\boldsymbol{A}^{-1}) &= \text{Det}(\boldsymbol{I}) \\ \implies & 0 \text{Det}(\boldsymbol{A}^{-1}) &= 1 \\ \implies & 0 = 1 \end{align*}$$
 
+Clearly zero does not equal one. Thus, our assumption is wrong. It must be the case that if $\boldsymbol{A}\boldsymbol{A}^{-1} = \boldsymbol{I}$, then this implies that $\vert \text{Det}(\boldsymbol) \vert > 0$. This proof can be repeated trivially flipping the order of $\boldsymbol{A}$ and $\boldsymbol{A}^{-1}$ in the matrix product. 
+
+$\square$
 
 
