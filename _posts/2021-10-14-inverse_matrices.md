@@ -49,7 +49,7 @@ Thus, since matrix multiplication encodes a composition of the matrices' linear 
 
 A singular matrix "collapses" or "compresses" vectors into an intrinsically lower dimensional space whereas an invertible matrix preserves their [intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/).
 
-This follows from the fact that a matrix is invertible if and only if its columns are linearly independent (Thoerem 4 in the Appendix). Recall a set of $n$ [linearly independent vectors](https://mbernste.github.io/posts/linear_independence/) $$S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$$ spans a space with an intrinsic dimensionality of $n$ because in order to specify any vector $\boldsymbol{b}$ in the vector space, one must specify the coefficients $c_1, \dots, c_n$ such that 
+This follows from the fact that a matrix is invertible if and only if its columns are linearly independent (Thoerem 4 in the Appendix proves that the columns of an invertible matrix are linearly independent. See my post on [the invertible matrix theorem](https://mbernste.github.io/posts/invertible_matrix_theorem/) of a proof that any square matrix with linearly independent columns is invertible). Recall a set of $n$ [linearly independent vectors](https://mbernste.github.io/posts/linear_independence/) $$S := \{ \boldsymbol{x}_1, \dots, \boldsymbol{x}_n \}$$ spans a space with an intrinsic dimensionality of $n$ because in order to specify any vector $\boldsymbol{b}$ in the vector space, one must specify the coefficients $c_1, \dots, c_n$ such that 
 
 $$\boldsymbol{b} = c_1\boldsymbol{x}_1 + \dots + c_n\boldsymbol{x}_n$$ 
 
@@ -150,11 +150,11 @@ which implies that $\boldsymbol{x} = \boldsymbol{x}'$. This contradicts our orig
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 4 (Column vectors of invertible matrices are linearly independent):** Given an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, $\boldsymbol{A}$, its columns are linearly independent. </span>
+<span style="color:#0060C6">**Theorem 4 (Column vectors of invertible matrices are linearly independent):** Given an invertible matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, its columns are linearly independent. </span>
 
 **Proof:**
 
-If $\boldsymbol{A}$ is invertible, then the only solution to
+To prove this, we will show that if $\boldsymbol{A}$ is invertible, then the only solution to
 $$\boldsymbol{a}_{*,1}x_1 + \dots + \boldsymbol{a}_{*,n}x_n = \boldsymbol{0}$$
 is $\boldsymbol{x} := \boldsymbol{0}$, which is the condition for linear independence.
 
