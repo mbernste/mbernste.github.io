@@ -60,15 +60,15 @@ The proofs of each of these implications are described below:
 
 **1 $\implies$ 12**: By Theorem 2 in the Appendix to this post.
 
-**2 $\implies$ 8**: By Theorem XXXX in the Appendix to this post.
+**2 $\implies$ 8**: By Theorem 3 in the Appendix to this post.
 
 **2 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the column rank of a matrix is defined to be the maximum number of linearly independent vectors that span the column space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the column rank of a matrix equals the row rank and we refer to either as simply the "rank".
 
-**2 $\iff$ 4**: Theorem XXXX in the Appendix to this post.
+**2 $\iff$ 4**: Theorem 4 in the Appendix to this post.
 
 **3 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the row rank of a matrix is defined to be the maximum number of linearly independent vectors that span the row space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the row rank of a matrix equals the column rank and we refer to either as simply the "rank".
 
-**3 $\iff$ 5**: Theorem XXXX in the Appendix to this post.
+**3 $\iff$ 5**: Theorem 5 in the Appendix to this post.
 
 **6 $\iff$ 7**: By [Theorem 3 (Rank-Nullity Theorem) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/).
 
@@ -78,9 +78,9 @@ The proofs of each of these implications are described below:
 
 **10 $\iff$ 11**: By [the discussion presented in my post on row reduction](https://mbernste.github.io/posts/row_reduction/).
 
-**11 $\implies$ 1**: By Theorem XXXX in the Appendix to this post.
+**11 $\implies$ 1**: By Theorem 6 in the Appendix to this post.
 
-**12 $\iff$ 1**: By Theorem XXXX in the Appendix to this post.
+**12 $\iff$ 1**: By Theorem 7 in the Appendix to this post.
 
 
 Reconsidering the definition of an invertible matrix
@@ -107,11 +107,13 @@ Clearly zero does not equal one. Thus, our assumption is wrong. It must be the c
 
 $\square$
 
-<span style="color:#0060C6">**Theorem XXXX**:</span>
+<span style="color:#0060C6">**Theorem XXXX**: If there exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$, then there exists a square matrix $\boldsymbol{C} \in \mathbb{R}^{n \times n}$ such that $\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$ </span>
 
 **Proof:**
 
-Though not proven formally, it is evident that elementary row matrices are invertible.  That is, you can always "undo" the transformation imposed by an elementary row matrix (e.g. for an elementary row matrix that swaps rows, you can always swap them back). Furthermore, since the product of invertible matrices is also invertible, $(\boldsymbol{E}_1\dots\boldsymbol{E}_k)$ is invertible. Thus,
+As evident by the premise of the theorem, if $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$, then clearly $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m$ is the matrix $\boldsymbol{C}$ for which $\boldsymbol{CA} = \boldsymbol{I}$. So all there is left to prove is that it is also the case that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m$ is the matrix $\boldsymbol{C}$ for which $\boldsymbol{AC} = \boldsymbol{I}$. 
+
+First, though not proven formally, it is evident that elementary row matrices are invertible.  That is, you can always "undo" the transformation imposed by an elementary row matrix (e.g. for an elementary row matrix that swaps rows, you can always swap them back). Furthermore, since the product of invertible matrices is also invertible, $(\boldsymbol{E}_1\dots\boldsymbol{E}_k)$ is invertible. Thus,
 
 $$\begin{align*} & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)\boldsymbol{A} = \boldsymbol{I} \\ \implies & (\boldsymbol{E}_1\dots\boldsymbol{E}_k)^{-1} (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)\boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1}\boldsymbol{I} \\ \implies & \boldsymbol{A} = (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \boldsymbol{I} \\ \implies & \boldsymbol{A} = \boldsymbol{I}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1} \\ \implies & \boldsymbol{A}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k) = \boldsymbol{I}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k)^{-1}(\boldsymbol{E}_1 \dots \boldsymbol{E}_k) \end{align*}$$ 
 
