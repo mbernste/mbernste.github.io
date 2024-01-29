@@ -42,7 +42,7 @@ The invertible matrix theorem is stated as follows:
 
 <span style="color:#0060C6">9. The equation $\boldsymbol{Ax} = \boldsymbol{0}$ has only the trivial solution $\boldsymbol{x} = \boldsymbol{0}$</span>
 
-<span style="color:#0060C6">10. It is possible to use the row reduction algorithm to transform $\boldsymbol{A}$ into $\boldsymbol{I}$</span>
+<span style="color:#0060C6">10. It is possible to use the [row reduction algorithm](https://mbernste.github.io/posts/row_reduction/) to transform $\boldsymbol{A}$ into $\boldsymbol{I}$</span>
 
 <span style="color:#0060C6">11. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$</span>
 
