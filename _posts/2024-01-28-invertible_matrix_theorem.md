@@ -109,7 +109,7 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 3**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n} whose columns are linearly independent, its columns span all of $\mathbb{R}^n$</span>
+<span style="color:#0060C6">**Theorem 3**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ whose columns are linearly independent, its columns span all of $\mathbb{R}^n$</span>
 
 **Proof:**
 
