@@ -8,12 +8,12 @@ tags:
   - linear algebra
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+_Throughout my blog posts on linear algebra, we have proven statements of the form "A matrix has property X if and only if it is an invertible matrix"_. In this post we bring, all of these statements into a single location and form a set of statements called the "invertible matrix theorem". Each statement in the invertible matrix theorem proves that the matrix is invertible and implies all of the rest of the statements._
 
 Introduction
 ------------
 
-Throughout many of my prior linear algebra posts, we have seen theorems of the form "A matrix has property X if and only if it is an invertible matrix". In this post, we will bring these theorems into one place and form a set of equivalent statements that all can be used to define an invertible matrix. These statements form what is called the **invertible matrix theorem**. 
+Throughout many of my prior linear algebra posts, we have seen theorems of the form "A matrix has property X if and only if it is an invertible matrix". In this post, we will bring these theorems into one location and form a set of equivalent statements that all can be used to define an invertible matrix. These statements form what is called the **invertible matrix theorem**. 
 
 Importantly, any single one of the statements listed in the invertible matrix theorem imply all of the rest of the statements and really, any single statement can be used as the fundamental definition of an invertible matrix. Thus, this theorem not only provides a [multi-angled perspective](https://mbernste.github.io/posts/understanding_3d/) into the nature of invertible matrices, it is also practically useful because if one has some matrix, $\boldsymbol{A}$, then one needs only to prove a single one of the statements in the invertible matrix theorem in order to learn that _all of the remaining statements_ of the invertible matrix theorem are also true of the matrix. 
 
