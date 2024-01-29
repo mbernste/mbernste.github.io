@@ -70,6 +70,8 @@ That is, $e$ is the value for $a$ that satisfies the following equation:
 
 $$1 = \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
+Said another way, $e$ is the base of the exponential function whose rate of change changes in unison with the value of the function itself.
+
 It turns out that that $e$ can be expressed as a limit that enables us to compute numerical approximation to this value:
 
 $$e = \lim_{n \rightarrow \infty} \left(1 + \frac{1}{n}\right)^n$$
