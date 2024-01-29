@@ -120,7 +120,7 @@ We will apply a proof by contradiction. Let us assume that there exists a vector
 
 $$\boldsymbol{A}':= \begin{bmatrix} \boldsymbol{a}_{∗, 1} & \dots & \boldsymbol{a}_{∗, n} & \boldsymbol{b} \end{bmatrix}$$
 
-Because all of the columns of this new matrix are linearly independent, its column rank is $n+1. However, the matrix still only has $n$ rows and thus, the maximum possible row rank of this matrix is $n$. This is in contradiction to [Theorem 2 (row rank equals column rank) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), which states that the row rank is equal to the column rank. Thus, it must be the case that our assumption is wrong. There does not exist a vector $\boldsymbol{b} \in \mathbb{R}^n$ that lies outside $\boldsymbol{A}$’s column space. Thus, $\boldsymbol{A}$’s column space is all of $\mathbb{R}^n$.
+Because all of the columns of this new matrix are linearly independent, its column rank is $n+1$. However, the matrix still only has $n$ rows and thus, the maximum possible row rank of this matrix is $n$. This is in contradiction to [Theorem 2 (row rank equals column rank) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), which states that the row rank is equal to the column rank. Thus, it must be the case that our assumption is wrong. There does not exist a vector $\boldsymbol{b} \in \mathbb{R}^n$ that lies outside $\boldsymbol{A}$’s column space. Thus, $\boldsymbol{A}$’s column space is all of $\mathbb{R}^n$.
 
 Let us prove the $\impliedby$ direction: If $\boldsymbol{A}$'s columns span all of $\mathbb{R}^n$, then they are linearly independent. 
 
