@@ -73,6 +73,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Row reduction with elementary matrices](https://mbernste.github.io/posts/row_reduction)  
 [Deriving the formula for the determinant](https://mbernste.github.io/posts/determinantsformula/)  
 [What determinants tell us about linear transformations](https://mbernste.github.io/posts/determinants/)  
+[The invertible matrix theorem](https://mbernste.github.io/posts/invertible_matrix_theorem/)  
 
 ## The calculus of variations
 
