@@ -50,7 +50,7 @@ The invertible matrix theorem is stated as follows:
 
 In different texts, the invertible matrix theorem can be written somewhat differently with some texts including some statements that others don't. The _essence_ of the invertible matrix theorem is that there are many seemingly different statements that all define an invertible matrix. Any of these statements imply all of the rest.
 
-To prove the invertible matrix theorem, we will prove the following implications between these statements. Notice that there is a path from every statement to every other statement through these implications. Given two statements $X$ and $Y$ from from the invertible matrix theorem it holds that "$X$ if and only if $Y$". 
+To prove the invertible matrix theorem, we will prove the following implications between these statements. Notice that there is a path from every statement to every other statement through these implications. Given two statements $X$ and $Y$ from from the invertible matrix theorem it holds that "$X$ if and only if $Y$". Note, that the specific implications proven here are somewhat arbitrary; other texts might prove a different set of direct implications. The important point is that there exists an "implication path" between every statement and every other statement.
 
 The proofs of each of these implications are described below:
 
@@ -68,7 +68,7 @@ The proofs of each of these implications are described below:
 
 **3 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the row rank of a matrix is defined to be the maximum number of linearly independent vectors that span the row space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the row rank of a matrix equals the column rank and we refer to either as simply the "rank".
 
-**3 $\iff$ 5**: Theorem 5 in the Appendix to this post.
+**3 $\iff$ 5**: This follows by the same logic described in Theorem 3 in the Appendix to this post.
 
 **6 $\iff$ 7**: By [Theorem 3 (Rank-Nullity Theorem) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/).
 
@@ -78,9 +78,9 @@ The proofs of each of these implications are described below:
 
 **10 $\iff$ 11**: By [the discussion presented in my post on row reduction](https://mbernste.github.io/posts/row_reduction/).
 
-**11 $\implies$ 1**: By Theorem 6 in the Appendix to this post.
+**11 $\implies$ 1**: By Theorem 5 in the Appendix to this post.
 
-**12 $\implies$ 2**: By Theorem 7 in the Appendix to this post.
+**12 $\implies$ 2**: By Theorem 6 in the Appendix to this post.
 
 
 Reconsidering the definition of an invertible matrix
@@ -109,9 +109,15 @@ $\square$
 
 
 
-<span style="color:#0060C6">**Theorem 3**: </span>
+<span style="color:#0060C6">**Theorem 3**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n} whose columns are linearly independent, its columns span all of $\mathbb{R}^n$</span>
 
 **Proof:**
+
+We will apply a proof by contradiction. Let us assume that there exists a vector $\boldsymbol{b} \in \mathbb{R}^n$ that does not lie in the column space of $\boldsymbol{A}$. This would imply that we could form a matrix by "appending" $\boldsymbol{b}$ to $\boldsymbol{A}$ by making $\boldsymbol{b}$ the last column of $\boldsymbol{A}$:
+
+$$\boldsymbol{A}' := \begin{bmatrix}\boldsymbol{a}_{*,1} & \dots & \boldsymbol{a}_{*,n} & \boldsymbol{b} \end{bmatrix}$$
+
+Because all of the columns of this new matrix are linearly independent, its column rank is $n+1$. However, the matrix still only has $n$ rows and thus, the maximum row rank of this matrix is $n$. However, this is in contradiction to [Theorem 2 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), which states that the row rank is equal to the column rank. Thus, it must be the case that our assumption is wrong. There does not exist a vector $\boldsymbol{b} \in \mathbb{R}^n$ that lies outside the span of $\boldsymbol{A}$'s column space. Thus, $\boldsymbol{A}$'s column space is all of $\mathbb{R}^n$.  
 
 $\square$
 
@@ -123,14 +129,7 @@ $\square$
 $\square$
 
 
-<span style="color:#0060C6">**Theorem 5**: </span>
-
-**Proof:**
-
-$\square$
-
-
-<span style="color:#0060C6">**Theorem 6**: If there exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$, then there exists a square matrix $\boldsymbol{C} \in \mathbb{R}^{n \times n}$ such that $\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$ </span>
+<span style="color:#0060C6">**Theorem 5**: If there exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$, then there exists a square matrix $\boldsymbol{C} \in \mathbb{R}^{n \times n}$ such that $\boldsymbol{AC} = \boldsymbol{CA} = \boldsymbol{I}$ </span>
 
 **Proof:**
 
@@ -145,7 +144,7 @@ Thus, $\boldsymbol{C} := (\boldsymbol{E}_1 \dots \boldsymbol{E}_k)$ is the matri
 $\square$
 
 
-<span style="color:#0060C6">**Theorem 7**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, if $\vert \text{Det}(\boldsymbol{A}) \vert > 0$, this implies that the columns are linearly independent.</span>
+<span style="color:#0060C6">**Theorem 6**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$, if $\vert \text{Det}(\boldsymbol{A}) \vert > 0$, this implies that the columns are linearly independent.</span>
 
 **Proof:**
 
