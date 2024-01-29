@@ -64,9 +64,9 @@ The proofs of each of these implications are described below:
 
 **2 $\implies$ 8**: By Theorem 4 in the Appendix to this post.
 
-**2 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the column rank of a matrix is defined to be the maximum number of linearly independent vectors that span the column space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the column rank of a matrix equals the row rank and we refer to either as simply the "rank".
+**2 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the column rank of a matrix is defined to be the maximum number of linearly independent vectors that span the column space of the matrix. By [Theorem 2  (row rank equals column rank) from this same post](https://mbernste.github.io/posts/matrixspaces/) the column rank of a matrix equals the row rank and we refer to either as simply the "rank".
 
-**3 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the row rank of a matrix is defined to be the maximum number of linearly independent vectors that span the row space of the matrix. By [Theorem 2 from this same post](https://mbernste.github.io/posts/matrixspaces/) the row rank of a matrix equals the column rank and we refer to either as simply the "rank".
+**3 $\iff$ 7**: By [Definition 3 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the row rank of a matrix is defined to be the maximum number of linearly independent vectors that span the row space of the matrix. By [Theorem 2 (row rank equals column rank) from this same post](https://mbernste.github.io/posts/matrixspaces/) the row rank of a matrix equals the column rank and we refer to either as simply the "rank".
 
 **3 $\iff$ 5**: This follows by the same logic described in Theorem 3 in the Appendix to this post.
 
@@ -117,7 +117,7 @@ We will apply a proof by contradiction. Let us assume that there exists a vector
 
 $$\boldsymbol{A}' := \begin{bmatrix}\boldsymbol{a}_{*,1} & \dots & \boldsymbol{a}_{*,n} & \boldsymbol{b} \end{bmatrix}$$
 
-Because all of the columns of this new matrix are linearly independent, its column rank is $n+1$. However, the matrix still only has $n$ rows and thus, the maximum row rank of this matrix is $n$. However, this is in contradiction to [Theorem 2 from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), which states that the row rank is equal to the column rank. Thus, it must be the case that our assumption is wrong. There does not exist a vector $\boldsymbol{b} \in \mathbb{R}^n$ that lies outside the span of $\boldsymbol{A}$'s column space. Thus, $\boldsymbol{A}$'s column space is all of $\mathbb{R}^n$.  
+Because all of the columns of this new matrix are linearly independent, its column rank is $n+1$. However, the matrix still only has $n$ rows and thus, the maximum row rank of this matrix is $n$. However, this is in contradiction to [Theorem 2  (row rank equals column rank) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), which states that the row rank is equal to the column rank. Thus, it must be the case that our assumption is wrong. There does not exist a vector $\boldsymbol{b} \in \mathbb{R}^n$ that lies outside the span of $\boldsymbol{A}$'s column space. Thus, $\boldsymbol{A}$'s column space is all of $\mathbb{R}^n$.  
 
 $\square$
 
