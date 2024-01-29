@@ -65,7 +65,7 @@ The proofs of each of these implications are described below:
 
 **1 $\implies$ 12**: By Theorem 2 in the Appendix to this post.
 
-**2 $\iff$ 4**: Theorem 3 in the Appendix to this post.
+**2 $\iff$ 4**: By Theorem 3 in the Appendix to this post. 
 
 **2 $\implies$ 8**: By Theorem 4 in the Appendix to this post.
 
@@ -112,19 +112,21 @@ Clearly zero does not equal one. Thus, our assumption is wrong. It must be the c
 
 $\square$
 
+<span style="color:#0060C6">**Theorem 3**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^n$, the columns of $\boldsymbol{A}$ are linearly independent if and only if they span all of $\mathbb{R}^n$.</span>
 
+Let us prove the $\implies$ direction: If $\boldsymbol{A}$'s columns are linearly independent, then they span all of $\mathbb{R}^n$. 
 
-<span style="color:#0060C6">**Theorem 3**: Given a square matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ whose columns are linearly independent, its columns span all of $\mathbb{R}^n$</span>
+We will apply a proof by contradiction. Let us assume that there exists a vector $\boldsymbol{b} \in \mathbb{R}^n$ that does not lie in the column space of $\boldsymbol{A}$. This would imply that we could form a matrix by “appending” $\boldsymbol{b}$ to $\boldsymbol{A}$ by making $\boldsymbol{b}$ the last column of $\boldsymbol{A}:
 
-**Proof:**
+$$\boldsymbol{A}′:= \begin{bmatrix} \boldsymbol{a}_{∗,1} & \dots & \boldsymbol{a}_{∗,n} & \boldsymbol{b}]$$
 
-We will apply a proof by contradiction. Let us assume that there exists a vector $\boldsymbol{b} \in \mathbb{R}^n$ that does not lie in the column space of $\boldsymbol{A}$. This would imply that we could form a matrix by "appending" $\boldsymbol{b}$ to $\boldsymbol{A}$ by making $\boldsymbol{b}$ the last column of $\boldsymbol{A}$:
+Because all of the columns of this new matrix are linearly independent, its column rank is $n+1. However, the matrix still only has $n$ rows and thus, the maximum possible row rank of this matrix is $n$. This is in contradiction to [Theorem 2 (row rank equals column rank) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), which states that the row rank is equal to the column rank. Thus, it must be the case that our assumption is wrong. There does not exist a vector $\boldsymbol{b} \in \mathbb{R}^n$ that lies outside $\boldsymbol{A}$’s column space. Thus, $\boldsymbol{A}’s column space is all of $\mathbb{R}^n$.
 
-$$\boldsymbol{A}' := \begin{bmatrix}\boldsymbol{a}_{*,1} & \dots & \boldsymbol{a}_{*,n} & \boldsymbol{b} \end{bmatrix}$$
+Let us prove the $\impliedby$ direction: If $\boldsymbol{A}$'s columns span all of $\mathbb{R}^n$, then they are linearly independent. 
 
-Because all of the columns of this new matrix are linearly independent, its column rank is $n+1$. However, the matrix still only has $n$ rows and thus, the maximum row rank of this matrix is $n$. However, this is in contradiction to [Theorem 2  (row rank equals column rank) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), which states that the row rank is equal to the column rank. Thus, it must be the case that our assumption is wrong. There does not exist a vector $\boldsymbol{b} \in \mathbb{R}^n$ that lies outside the span of $\boldsymbol{A}$'s column space. Thus, $\boldsymbol{A}$'s column space is all of $\mathbb{R}^n$.  
+We will use the [Steinitz Exchange Lemma](https://en.wikipedia.org/wiki/Steinitz_exchange_lemma). The Steinitz Exchange Lemma states the following: Given a vector space $\mathcal{V}$ and two finite sets of vectors $U$ and $W$ such that $U$ is linearly independent and $W$ spans $\mathcal{V}$, it must be the case that $\vert U \vert \leq \vert W \vert$. 
 
-$\square$
+Now, for the sake of contradiction, let us assume that $\boldsymbol{A}$'s columns are not linearly independent. This implies that there exists at least one column in $\boldsymbol{A}$ that can be formed by the remaining vectors and the column space of $\boldsymbol{A}$ would still span $\boldsymbol{A}$. Let $S$ be the set of columns of $\boldsymbol{A}$ after removing such a vector where $\vert S \vert = n-1$. Now, let  $I := \lelf\{ \boldsymbol{e}_1, \dots, \boldsymbol{e}_n \right\}$ be the set of standard basis vectors in $\mathbb{R}^n$ where $\vert I \vert = n$. Note $I$ is a set of linearly independent vectors and $S$ spans $\mathbb{R}^n$; however, $\vert I \vert > \vert S \vert$. This contradicts the Steinitz Exchange Lemma. Thus, it must be the case that the columns of $\boldsymbol{A}$ are independent.
 
 
 <span style="color:#0060C6">**Theorem 4**: Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ whose columns are linearly independent, the linear transformation defined as $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is onto and one-to-one.</span>
