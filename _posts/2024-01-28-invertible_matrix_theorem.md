@@ -44,7 +44,7 @@ The invertible matrix theorem is stated as follows:
 
 <span style="color:#0060C6">10. It is possible to use the [row reduction algorithm](https://mbernste.github.io/posts/row_reduction/) to transform $\boldsymbol{A}$ into $\boldsymbol{I}$</span>
 
-<span style="color:#0060C6">11. There exists a sequence of elementary matrices $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$</span>
+<span style="color:#0060C6">11. There exists a sequence of [elementary matrices](https://mbernste.github.io/posts/row_reduction/) $\boldsymbol{E}_1, \boldsymbol{E}_2, \dots, \boldsymbol{E}_m$ such that $\boldsymbol{E}_1\boldsymbol{E}_2 \dots \boldsymbol{E}_m\boldsymbol{A} = \boldsymbol{I}$</span>
 
 <span style="color:#0060C6">12. $\vert \text{Det}(\boldsymbol{A}) \vert > 0$</span>
 
