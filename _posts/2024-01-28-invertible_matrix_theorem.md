@@ -122,9 +122,28 @@ Because all of the columns of this new matrix are linearly independent, its colu
 $\square$
 
 
-<span style="color:#0060C6">**Theorem 4**: </span>
+<span style="color:#0060C6">**Theorem 4**: Given a matrix $\boldsymbol{A} \in \mathbb{R}^{n \times n}$ whose columns are linearly independent, the linear transformation defined as $T(\boldsymbol{x}) := \boldsymbol{Ax}$ is onto and one-to-one.</span>
 
 **Proof:**
+
+We first prove that $T(\boldsymbol{x})$ is onto. To do so, we must prove that every vector in $\mathbb{R}^n$ is in the range of $T(\boldsymbol{x})$. Recall from our [previous discussion on column spaces](https://mbernste.github.io/posts/matrixspaces/), that the range of $T(\boldsymbol{x})$ is the columns space of $\boldsymbol{A}$. By Theorem 3 above, since the columns of $\boldsymbol{A}$ are linearly independent, the column space spans all of $\boldsymbol{R}^n$. Thus, $T(x)$ is capable of mapping vectors to _every_ vector in $\mathbb{R}^n$ and is thus onto.
+
+Now we prove that $T(\boldsymbol{x})$ is one-to-one. First, because the columns of $\boldsymbol{A}$ are linearly independent, then by [Theorem 2  (row rank equals column rank) from my post on spaces induced by matrices](https://mbernste.github.io/posts/matrixspaces/), the rank of $\boldsymbol{A}$ is $n$. By the [Theorem 3 (Rank-Nullity Theorem) from my post on spaces induced by matrices] the nullity of $\boldsymbol{A}$ is 0. This means that the only vector in $\boldsymbol{A}$'s null space is the zero vector $\boldsymbol{0}$. This means that the only solution to $T(\boldsymbol{x}) = 0$ is $\boldsymbol{x} := \boldsymbol{0}$. 
+
+With this in mind, we employ a nearly identical proof to that used in [Theorem 3 (Invertible matrices characterize one-to-one functions) from my post on invertible matrices](https://mbernste.github.io/posts/inverse_matrices/). For the sake of contradiction assume that there exists two vectors $\boldsymbol{x}$ and $\boldsymbol{x}'$ such that $\boldsymbol{x} \neq \boldsymbol{x}'$ and that 
+
+ $$T(\boldsymbol{x}) = \boldsymbol{Ax} = \boldsymbol{b}$$
+ and
+ $$T(\boldsymbol{x}) = \boldsymbol{Ax}' = \boldsymbol{b}$$
+ where $b \neq \boldsymbol{0}$.  Then,
+
+ $$\begin{align*} \boldsymbol{Ax} - \boldsymbol{Ax}' &= \boldsymbol{0} \\ \implies \boldsymbol{A}(\boldsymbol{x} - \boldsymbol{x}') = \boldsymbol{0}\end{align*}$$
+ 
+ By Theorem 1, it must hold that 
+ 
+ $$\boldsymbol{x} - \boldsymbol{x}' = \boldsymbol{0}$$
+ 
+which implies that $\boldsymbol{x} = \boldsymbol{x}'$. This contradicts our original assumption. Therefore, it must hold that there does not exist two vectors $\boldsymbol{x}$ and $\boldsymbol{x}'$ that map to the same vector via the  matrix $\boldsymbol{A}$.  Therefore, $T(\boldsymbol{x})$ is a one-to-one function.
 
 $\square$
 
