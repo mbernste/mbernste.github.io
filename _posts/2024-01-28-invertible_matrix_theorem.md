@@ -52,8 +52,7 @@ In different texts, the invertible matrix theorem can be written somewhat differ
 
 To prove the invertible matrix theorem, we will prove the following implications between these statements:
 
-invertible_matrix_theorem_implications.png
-
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/invertible_matrix_theorem_implications.png" alt="drawing" width="400"/></center>
 
 
 Notice that there is a path from every statement to every other statement through these implications. Given two statements $X$ and $Y$ from from the invertible matrix theorem it holds that "$X$ if and only if $Y$". Note, that the specific implications proven here are somewhat arbitrary; other texts might prove a different set of direct implications. The important point is that there exists an "implication path" between every statement and every other statement.
