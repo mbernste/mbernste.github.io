@@ -50,7 +50,13 @@ The invertible matrix theorem is stated as follows:
 
 In different texts, the invertible matrix theorem can be written somewhat differently with some texts including some statements that others don't. The _essence_ of the invertible matrix theorem is that there are many seemingly different statements that all define an invertible matrix. Any of these statements imply all of the rest.
 
-To prove the invertible matrix theorem, we will prove the following implications between these statements. Notice that there is a path from every statement to every other statement through these implications. Given two statements $X$ and $Y$ from from the invertible matrix theorem it holds that "$X$ if and only if $Y$". Note, that the specific implications proven here are somewhat arbitrary; other texts might prove a different set of direct implications. The important point is that there exists an "implication path" between every statement and every other statement.
+To prove the invertible matrix theorem, we will prove the following implications between these statements:
+
+invertible_matrix_theorem_implications.png
+
+
+
+Notice that there is a path from every statement to every other statement through these implications. Given two statements $X$ and $Y$ from from the invertible matrix theorem it holds that "$X$ if and only if $Y$". Note, that the specific implications proven here are somewhat arbitrary; other texts might prove a different set of direct implications. The important point is that there exists an "implication path" between every statement and every other statement.
 
 The proofs of each of these implications are described below:
 
