@@ -158,7 +158,7 @@ Below we illustrate this theorem with two examples:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/row_space_null_space_orthogonal_examples.png" alt="drawing" width="800"/></center>
 
-On the left, we have a matrix whose rows span a hyperplane in $\mathbb{R}^3$, which is of dimension 2. The null space is thus a line, which has dimension 1. In contrast, on the left we have a matrix whose rows span a line in $\mathbb{R}^3$, which is of dimension 1. The null space here is a hyperplane that is orthogonal to this line. In both examples, the dimensionality of the row space and null space sum to 3, which is the number of columns of both matrices!
+On the left, we have a matrix whose rows span a hyperplane in $\mathbb{R}^3$, which is of dimension 2. The null space is thus a line, which has dimension 1. In contrast, on the right we have a matrix whose rows span a line in $\mathbb{R}^3$, which is of dimension 1. The null space here is a hyperplane that is orthogonal to this line. In both examples, the dimensionality of the row space and null space sum to 3, which is the number of columns of both matrices!
 
 Summarizing the relationships between matrix spaces
 ---------------------------------------------------
