@@ -72,11 +72,11 @@ The **row space** of a matrix is the vector space spanned by its row-vectors:
 
 <span style="color:#0060C6">**Definition 2 (row space):** Given a matrix $\boldsymbol{A}$, the **column space** of $\boldsymbol{A}$, is the vector space that spans the row-vectors of $\boldsymbol{A}$</span>
 
-To understand the row space of a matrix $\boldsymbol{A}$, we will consider the matrix from Perspectives -- that is, $\boldsymbol{A}$ as a list of row vectors. For example:
+To understand the row space of a matrix $\boldsymbol{A}$, we will consider the matrix from Perspective 2 -- that is, we will view $\boldsymbol{A}$ as a list of row vectors. For example:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_vectors.png" alt="drawing" width="600"/></center>
 
-The row space is then the vector space that is spanned by these vectors. We see that in example, the row space is a hyperplane:
+The row space is then the vector space that is spanned by these vectors. We see that in the example above, the row space is a hyperplane:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_visualize_row_space.png" alt="drawing" width="350"/></center>
 
@@ -134,7 +134,7 @@ It turns out that intrinsic dimensionality of the row space and column space are
 
 <span style="color:#0060C6">**Theorem 2 (row rank equals column rank):** Given a matrix $\boldsymbol{A} \in \mathbb{R}^{m \times n}$, its row rank equals its column rank.</span>
 
-Because of the row rank and column rank are equal, the can simply talk about the **rank** of a matrix without the need to delineate whether we mean the row rank or the column rank. 
+Because of the row rank and column rank are equal, one can simply talk about the **rank** of a matrix without the need to delineate whether we mean the row rank or the column rank. 
 
 Moreover, because the row rank equals the column rank of a matrix, a matrix of shape $m \times n$ can _at most_ have a rank that is the minimum of $m$ and $n$. For example, a matrix with 3 rows and 5 columns can _at most_ be of rank 3 (but it might be less!). In fact, we observed this phenomenon in our previous example matrix, which has a rank of 2:
 
