@@ -36,6 +36,8 @@ $$\boldsymbol{x}'_i := f(\boldsymbol{x})$$
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/globe_projections_by_Daniel_R_Strebe.png" alt="drawing" width="600"/></center>
 
+These images were created by [Daniel R. Strebe and were pulled from Wikipedia](https://en.wikipedia.org/wiki/List_of_map_projections). 
+
 &nbsp;
 
 
