@@ -28,7 +28,9 @@ The task of dimensionality reduction is to find a function $f$ that maps our vec
 
 $$f : \mathbb{R}^d \rightarrow \mathbb{R}^{d'}$$
 
-For visualization purposes, if $d > 3$ we cannot easily visualize our data as a scatterplot to see the global structure between datapoints. Thus, it is common to set $d'$ to either 2 or 3 thus mapping each datapoint $\boldsymbol{x}_i$ to a new, 2 or 3 dimensional data point $x'_i$ that can be visualized in a scatterplot.
+For visualization purposes, if $d > 3$ we cannot easily visualize our data as a scatterplot to see the global structure between datapoints. Thus, it is common to set $d'$ to either 2 or 3 thus mapping each datapoint $\boldsymbol{x}_i$ to a new, 2 or 3 dimensional data point $x'_i$ that can be visualized in a scatterplot. That is,
+
+$$\boldsymbol{x}'_i := f(\boldsymbol{x})$$
 
 &nbsp;
 
