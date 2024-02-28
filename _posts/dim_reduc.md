@@ -1,4 +1,12 @@
-
+---
+title: 'Interpreting data visualizations based on dimensionality reduction requires a new mindset'
+date: 2024-02-28
+permalink: /posts/dim_reduc/
+tags:
+  - tutorial
+  - data science
+  - visualization
+---
 
 Introduction
 ------------
