@@ -42,6 +42,8 @@ For visualization purposes, if $d > 3$ we cannot easily visualize our data as a 
 
 $$\boldsymbol{x}'_i := f(\boldsymbol{x})$$
 
+It is worth now considering when dimensionality reduction might work versus when we might have problems. In a [previous blog post](https://mbernste.github.io/posts/intrinsic_dimensionality/), I  discussed the notion of "intrinsic dimensionality". 
+
 &nbsp;
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/globe_projections_by_Daniel_R_Strebe.png" alt="drawing" width="600"/></center>
