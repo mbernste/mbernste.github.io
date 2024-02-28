@@ -32,7 +32,7 @@ Scatterplots as a method for visualizing structure
 Dimensionality reduction entails a loss of information
 ------------------------------------------------------
 
-Before moving forward, let's formalize what we mean by the "dimensionality" of data. For the purposes of our discussion, we will refer to data as being "n$ dimensionality if that data can be represented as a set of coordinate vectors in $\mathbb{R}^d$. That is, the dataset can be represented as $\boldsymbol{x}_1, \dots \boldsymbol{x}_n \in \mathbb{R}^d$. Collectively, we can represent the data as a matrix $\boldsymbol{X}^{n \times d}$ where each row represents a datapoint. This description thus covers all tabular data. 
+Before moving forward, let's formalize what we mean by the "dimensionality" of data. For the purposes of our discussion, we will refer to data as being $d$-dimensional if that data can be represented as a set of coordinate vectors in $\mathbb{R}^d$. That is, the dataset can be represented as $\boldsymbol{x}_1, \dots \boldsymbol{x}_n \in \mathbb{R}^d$. Collectively, we can represent the data as a matrix $\boldsymbol{X}^{n \times d}$ where each row represents a datapoint. This description thus covers all tabular data. 
 
 The task of dimensionality reduction is to find a function $f$ that maps our vectors in $\mathbb{R}^d$ to a new space $\mathbb{R}^{d'}$ where $d' < d$:
 
