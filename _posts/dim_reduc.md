@@ -1,5 +1,5 @@
 ---
-title: 'Interpreting data visualizations based on dimensionality reduction requires a new mindset'
+title: 'Assessing the utility of data visualizations based on dimensionality reduction'
 date: 2024-02-28
 permalink: /posts/dim_reduc/
 tags:
