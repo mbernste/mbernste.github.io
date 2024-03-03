@@ -11,8 +11,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [True understanding is "seeing" in 3D](https://mbernste.github.io/posts/understanding_3d/)  
 [Intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/)  
 [The overloaded equals sign](https://mbernste.github.io/posts/equality_definition/)  
-[The binomial theorem](https://mbernste.github.io/posts/binomial_theorem/)  
-[Assessing the utility of data visualizations based on dimensionality reduction](https://mbernste.github.io/posts/dim_reduc/)  
+[The binomial theorem](https://mbernste.github.io/posts/binomial_theorem/)   
 
 ## Computational biology
 
@@ -20,6 +19,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Median-ratio normalization for bulk RNA-seq data](https://mbernste.github.io/posts/median_ratio_norm/)  
 [On cell types and cell states](https://mbernste.github.io/posts/cell_types_cell_states/)   
 [Three strategies for cataloging cell types](https://mbernste.github.io/posts/cell_type_cataloging/)  
+[Assessing the utility of data visualizations based on dimensionality reduction](https://mbernste.github.io/posts/dim_reduc/)  
 
 ## Deep learning
 
