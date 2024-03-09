@@ -196,16 +196,18 @@ $$\forall x, \ \lim_{n \rightarrow \infty} \vert f_n(x) - f(x) \vert = 0$$
 
 $\square$
 
-<span style="color:#0060C6">**Theorem 2 (Riesz Representation Theorem):**</span>
+<span style="color:#0060C6">**Theorem 2: The Riesz representation theorem holds for **</span>
 
 **Proof:**
 
-The Riesz representation theorem makes a statement about continuous linear functionals on Hilbert spaces. We first show that evaluation functionals are [linear](https://mbernste.github.io/posts/matrices_linear_transformations/).  Let $f, g \in \mathcal{H}$. Then, 
+The Riesz representation theorem makes a statement about continuous linear functionals on Hilbert spaces. To prove that this holds for RKHSs, we must show that each evaluation functional on an RKHS are [linear](https://mbernste.github.io/posts/matrices_linear_transformations/) and continuous. We first show linearity: Let $f, g \in \mathcal{H}$. Then, 
 
 $$\begin{align*}\delta_x(f + g) &= (f+g)(x) \\ &= f(x) + g(x) = \delta_x(f) + \delta_x(g)\end{align*}$$
 
 Now let $c \in \mathcal{F}$ be a scalar. Then,  
 
 $$\begin{align*}\delta_x(cf) &= cf(x) \\ &= c\delta_x(f)\end{align*}$$
+
+The continuity of the evaluation functionals on an RKHS is true by the definition of an RKHS.
 
 $\square$
