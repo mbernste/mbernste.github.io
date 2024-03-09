@@ -85,7 +85,7 @@ This is proven by the [Riesz representation theorem](https://en.wikipedia.org/wi
 
 <span style="color:#0060C6">**Theorem 1 (Riesz representation theorem - abbreviated):** Given a Hilbert space $(\mathcal{H}, \mathcal{F}, \langle ., . \rangle)$ where $\mathcal{H}$ is the set of vectors, $\mathcal{F}$ are a set of scalars, $\langle ., . \rangle$ is an inner product on $\mathcal{H}$, and $\forall f \in \mathcal{H}$, $f$ is a function $f : \mathcal{X} \rightarrow \mathbb{R}$, where $\mathcal{X}$ is some set. Let $\ell$ be a continous linear functional $\ell: \mathcal{H} \rightarrow \mathcal{X}$, then there exists a unique function $f_{\ell} \in \mathcal{H}$ such that $\forall f \in \mathcal{H}, \ \ell{f} = \langle f_{\ell}, f\rangle$.</span>
 
-The Riesz representation theorem is not explicitly a statement about RKHSs, but we note that it does hold for RKHSs, which we prove in Theorem 2 in the appendix to this post. 
+The Riesz representation theorem is not explicitly a statement about RKHSs, but we note that it does hold for RKHSs. We prove this Theorem 2 in the appendix to this post. 
 
 What this theorem says is that we can reproduce the action of $\delta_x$ by taking an inner product with some fixed function $k_x$ in our Hilbert space. This is called the **reproducing property** of a RKHS!  Here's a schematic to illustrate this property:
 
@@ -204,7 +204,7 @@ The Riesz representation theorem makes a statement about continuous linear funct
 
 $$\begin{align*}\delta_x(f + g) &= (f+g)(x) \\ &= f(x) + g(x) = \delta_x(f) + \delta_x(g)\end{align*}$$
 
-Now let $c \in \mathcal{F}$ be a scalar. Then,  
+The second statement holds based on the fact that $\mathcal{H}$ is a [vector space](https://mbernste.github.io/posts/vector_spaces/) so we add these functions together. Now let $c \in \mathcal{F}$ be a scalar. Then,  
 
 $$\begin{align*}\delta_x(cf) &= cf(x) \\ &= c\delta_x(f)\end{align*}$$
 
