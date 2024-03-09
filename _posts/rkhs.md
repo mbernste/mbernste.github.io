@@ -56,7 +56,7 @@ This is a very simple definition. The evaluational functional $\delta_x$ simply 
 
 Finally, we can restate the fundametal property of an RKSH that differentiates it from an arbitrary Hilbert space of functions: for any given $x \in \mathcal{X}$ the evaluation functional $\delta_x$ is continuous. We can now write out the full definition for an RKHS below:
 
-<span style="color:#0060C6">**Definition 1 (Reproducing kernel Hilbert space):** Given a Hilbert space $(\mathcal{H}, \mathcal{F}, \langle ., . \rangle)$ where $\mathcal{H}$ is the set of vectors, $$\mathcal{F}$$ are a set of scalars, $\langle ., . \rangle$ is an inner product on $\mathcal{H}$, and $\forall f \in \mathcal{H}$, $f$ is a function $f : \mathcal{X} \rightarrow \mathbb{R}$, where $\mathcal{X}$ is some set, $(\mathcal{H}, \mathcal{F}, \langle ., . \rangle)$ is a **reproducing kernel Hilbert space** if given any $x \in \mathcal{X}$, the evaluation functional for $x$, $\delta_x(f) := f(x)$ (where $f \in \mathcal{H}$), is continuous.</span>
+<span style="color:#0060C6">**Definition 1 (Reproducing kernel Hilbert space):** Given a Hilbert space $(\mathcal{H}, \mathcal{F}, \langle ., . \rangle)$ where $\mathcal{H}$ is the set of vectors, $\mathcal{F}$ are a set of scalars, $\langle ., . \rangle$ is an inner product on $\mathcal{H}$, and $\forall f \in \mathcal{H}$, $f$ is a function $f : \mathcal{X} \rightarrow \mathbb{R}$, where $\mathcal{X}$ is some set, $(\mathcal{H}, \mathcal{F}, \langle ., . \rangle)$ is a **reproducing kernel Hilbert space** if given any $x \in \mathcal{X}$, the evaluation functional for $x$, $\delta_x(f) := f(x)$ (where $f \in \mathcal{H}$), is continuous.</span>
 
 Let's illustrate this definition schematically. Here we are illustrating the evaluation functional for some fixed $x$ (note the smoothness of $\delta_x$):
 
@@ -77,11 +77,17 @@ The reproducing kernel
 
 Strangely, you may have noticed that in our definition of a RKHS there is no mention of any object called a "kernel" let alone a "reproducing kernel". So what exactly is the "reproducing kernel" in a "reproducing kernel Hilbert space"?
 
-As we'll see, the "kernel" will arise from an interesting property that RKHS's possess: you can "reproduce" any evaluation functional using inner products in the Hilbert space.  Specifically, for any given $x \in \mathcal{X}$, there exists some function $k_x \in \mathcal{H}$ where the following holds (Proven in the Riesz Representation Theorem -- see Theorem 2 in the Appendix to this blog post):
+As we'll see, the "kernel" will arise from an interesting property that RKHS's possess: you can "reproduce" any evaluation functional using inner products in the Hilbert space.  Specifically, for any given $x \in \mathcal{X}$, there exists some function $k_x \in \mathcal{H}$ where the following holds:
 
 $$\delta_x(f) = f(x) = \langle f, k_x \rangle$$
 
-What this says is that we can reproduce the action of $\delta_x$ by taking an inner product with some fixed function $k_x$ in our Hilbert space. This is called the **reproducing property** of a RKHS!  Here's a schematic to illustrate this property:
+This is proven by the [Riesz representation theorem](https://en.wikipedia.org/wiki/Riesz_representation_theorem). We will not provide a proof for this theorem here, but we will state an abbreviated statement that it proves:
+
+<span style="color:#0060C6">**Theorem 1 (Riesz representation theorem - abbreviated):** Given a Hilbert space $(\mathcal{H}, \mathcal{F}, \langle ., . \rangle)$ where $\mathcal{H}$ is the set of vectors, $\mathcal{F}$ are a set of scalars, $\langle ., . \rangle$ is an inner product on $\mathcal{H}$, and $\forall f \in \mathcal{H}$, $f$ is a function $f : \mathcal{X} \rightarrow \mathbb{R}$, where $\mathcal{X}$ is some set. Let $\ell$ be a continous linear functional $\ell: \mathcal{H} \rightarrow \mathcal{X}$, then there exists a unique function $f_{\ell} \in \mathcal{H}$ such that $\forall f \in \mathcal{H}, \ \ell{f} = \langle f_{\ell}, f\rangle$.</span>
+
+The Riesz representation theorem is not explicitly a statement about RKHSs, but we note that it does hold for RKHSs, which we prove in Theorem 2 in the appendix to this post. 
+
+What this theorem says is that we can reproduce the action of $\delta_x$ by taking an inner product with some fixed function $k_x$ in our Hilbert space. This is called the **reproducing property** of a RKHS!  Here's a schematic to illustrate this property:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ReproducingPropertyRKHS.png" alt="drawing" width="500"/></center>
 
@@ -193,6 +199,13 @@ $\square$
 <span style="color:#0060C6">**Theorem 2 (Riesz Representation Theorem):**</span>
 
 **Proof:**
-  
-Choose a vector $f \in \text{ker}(\delta_x)^{\perp}$ where $\text{ker}$ is the kernel (i.e., null space) of the $\delta_x$. Furthermore, let this be a unit vector. That is, $\vert\vertf\vert\vert = 1$. Now, let's define a vector $k_x := \delta_x(f)f$. 
 
+The Riesz representation theorem makes a statement about continuous linear functionals on Hilbert spaces. We first show that evaluation functionals are [linear](https://mbernste.github.io/posts/matrices_linear_transformations/).  Let $f, g \in \mathcal{H}$. Then, 
+
+$$\begin{align*}\delta_x(f + g) &= (f+g)(x) \\ &= f(x) + g(x) = \delta_x(f) + \delta_x(g)\end{align*}$$
+
+Now let $c \in \mathcal{F}$ be a scalar. Then,  
+
+$$\begin{align*}\delta_x(cf) &= cf(x) \\ &= c\delta_x(f)\end{align*}$$
+
+$\square$
