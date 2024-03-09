@@ -204,7 +204,7 @@ The Riesz representation theorem makes a statement about continuous linear funct
 
 $$\begin{align*}\delta_x(f + g) &= (f+g)(x) \\ &= f(x) + g(x) = \delta_x(f) + \delta_x(g)\end{align*}$$
 
-The second statement holds based on the fact that $\mathcal{H}$ is a [vector space](https://mbernste.github.io/posts/vector_spaces/) so we add these functions together. Now let $c \in \mathcal{F}$ be a scalar. Then,  
+Now let $c \in \mathcal{F}$ be a scalar. Then,  
 
 $$\begin{align*}\delta_x(cf) &= cf(x) \\ &= c\delta_x(f)\end{align*}$$
 
