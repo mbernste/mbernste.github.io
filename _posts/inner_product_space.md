@@ -13,7 +13,7 @@ THIS POST IS CURRENTLY UNDER CONSTRUCTION
 Introduction
 ------------
 
-The basic definition of a [vector space](https://mbernste.github.io/posts/vector_spaces/) does not capture all of the behavior that we inuitively associate with the more familiar Euclidean vector spaces. For example, in this basic definition, there is no notion of how similar two vectors are. Rather, a vector space only describes how vectors are added together and scaled.  The notion of how similar two vectors are is captured by an additional mathematical structure that one can define on a vector space called an **inner product**.   
+The [basic definition of a vector space](https://mbernste.github.io/posts/vector_spaces/) does not capture all of the behavior that we inuitively associate with the more familiar Euclidean vector spaces. For example, in the basic definition of a vector space, there is no notion of how similar two vectors are. Rather, a vector space only describes how vectors are added together and scaled.  The notion of how similar two vectors are is captured by an additional mathematical structure that one can define on a vector space called an **inner product**.   
 
 One common inner-product on coordiante vector spaces is the **dot product**, which is taught in introductory linear algebra classes.  Given two vectors $$\boldsymbol{u}, \boldsymbol{v} \in \mathbb{R}^n$$, the dot product is defined as:
 
