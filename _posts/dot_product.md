@@ -34,8 +34,8 @@ The least abstract way of viewing a dot product is as a weighted sum of variable
 
 Whenever you find a dot product, it often helps to think about the operation as a sum of variables where each variable is first multiplied by a weight before summed. Which vector describes the "weights" and which the "variables" depends on the context. This perspective is often helpful in machine learning contexts where "weights" are often mutable model parameters and "variables" are fixed pieces of data.
 
-The dot product describes a geometric relationship
---------------------------------------------------
+The dot product describes a geometric relationship between Euclidean vectors
+----------------------------------------------------------------------------
 
 The dot product uses the relationship between the directions in which the two vectors point.  More specifically, if the two vectors point in a similar direction, the magnitude of the dot product increases.  If they point in drastically different directions, the dot product decreases.  Now, the question becomes: what do we mean by "point in a similar direction?" More specifically, what do we mean by "similar"? The dot product asserts that the angle between the two vectors measures how similarly they point.   The smaller the angle, the larger will be the dot product.  
 
@@ -52,13 +52,36 @@ $$\begin{align*}\boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \text{proj}(\b
 
 If the two vectors are orthogonal, then the projection of either vector onto the other will be zero and thus the dot product will be zero.  In contrast, if two vectors point in the same direction, then the projection of the smaller vector onto the larger vector is simply the smaller vector so we multiply the magnitude of the smaller vector by the magnitude of the larger vector (i.e. simply multiply their norms).
 
-Given this geometric interpretation of the dot product, we can see that taking the dot product of some vector $\bold{a}$ and a \textit{unit vector} $\bold{b}$, finds the length of the projection of $\bold{a}$ along the axis defined by $\boldsymbol{b}$:
+Given this geometric interpretation of the dot product, we can see that taking the dot product of some vector $\boldsymbol{a}$ and a \textit{unit vector} $\boldsymbol{b}$, finds the length of the projection of $\boldsymbol{a}$ along the axis defined by $\boldsymbol{b}$:
 
 $$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \boldsymbol{a} \vert\vert \text{proj}(\bold{b}, \bold{a}) \vert\vert \\ &= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert \vert && \text{because $\norm{\bold{a}} = 1$} \end{align*}$$
 
 Thus, whenever one of the vectors in a dot product is a unit vector, the operation can always be viewed as the length of the projection along the axis defined by the unit vector.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/dot_product_projection.png" alt="drawing" width="400"/></center>
+
+The dot product is analogous to the product on scalars
+------------------------------------------------------
+
+One way to understand the dot product is as an operation on vectors that is analogous to multiplication between scalars.  Given two scalars, $x, y \in \mathbb{R}$, it is obvious that the more we increase the magnitude (i.e. absolute value) of either $x$ or $y$, the more that the magnitude of their product will grow.  The dot product on vectors behaves similarly.  Given two vectors, $\boldsymbol{a}$ and $\boldsymbol{b}$, if we increase the norm of either of the vectors, the magnitude of the dot product increases.  We see this clearly expressed in the $\vert\vert \boldsymbol{a} \vert\vert \vert\vert \boldsymbol{b} \vert\vert $ term of the geometric definition of the dot product:
+
+$$\boldsymbol{a} \cdot \boldsymbol{b} =\vert\vert \boldsymbol{a}\vert\vert \vert\vert  \boldsymbol{b}\vert\vert   \cos \theta$$
+
+However, unlike multiplication between scalars, the dot product between vectors also takes into account the direction in which the two vectors point. The dot product asserts that if the two vectors point in a similar direction, the magnitude of the dot product increases.  If they point in drastically different directions, the dot product decreases.  
+
+One feature of multiplication between scalars is that if $x$ and $y$ have opposite signs then $xy < 0$ (for example, $-2 \times 3 = -6$).  Is this feature shared with the dot product? In a way, yes! But we first need to express the concept of ``opposite signs" between two vectors? Note, that if the angle between the vectors $\boldsymbol{a}$ and $\boldsymbol{b}$ is obtuse, then their dot product will be negative:
+
+$$\begin{align*} -\frac{\pi}{2} > \theta_{\boldsymbol{a}, \boldsymbol{b}} >- \frac{3\pi}{2} \implies & \cos  \theta_{\boldsymbol{a}, \boldsymbol{b}}  < 0 \\ \implies  & \vert\vert \boldsymbol{a}\vert\vert \vert\vert\boldsymbol{b} \vert\vert \cos  \theta_{\boldsymbol{a}, \boldsymbol{b}} < 0 \\ \implies & \boldsymbol{a} \cdot \boldsymbol{b} < 0 \end{align*}$$
+
+Thus, two vectors ``have opposite signs", in context of thinking about the dot product, if the angle between them is greater than $\pi / 2$ and less than $3\pi/4$. 
+
+Please note, this is just an _analogy_; a way to think about the dot product as sharing certain familiar characteristics with multiplication between numbers.
+
+The dot product as a notion of similarity
+-----------------------------------------
+
+
+
 
 Appendix
 --------
