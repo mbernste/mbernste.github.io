@@ -21,8 +21,8 @@ The **dot product** is a fundamental operation on two Euclidean vectors that cap
 
 There are three perspectives I find useful for thinking about the dot products. Ordered from the least abstract to the most abstract, these perspectives are:
 1. The dot product succinctly describes a weighted sum
-2. The dot product describes a geometric relationship between two Euclidean vectors
-3. The dot product is an analogy to the product between scalars (i.e., normal multiplication between numbers)
+2. The dot product describes a a geometric relationship between two Euclidean vectors
+3. The dot product is an analogy to multiplication between scalars (i.e., plain old multiplication between numbers)
 4. The dot describes a notion of similarity between two Euclidean vectors
 
 These perspectives are described in the remaining sections of this post.
@@ -48,7 +48,7 @@ If $\theta := 0$, then the two vectors point in the same direction.  In this cas
 Another way to understand how this works is to look at the projection of one vector onto the other.  That is, given two vectors $\boldsymbol{a}$, $\boldsymbol{b}$, the dot product between these vectors computes the product of the magnitudes of $\boldsymbol{a}$ and $\boldsymbol{b}$ along the direction that the two vectors share (Figure~\ref{fig:projection_2}). Said differently, the dot product $\boldsymbol{a} \cdot \boldsymbol{b}$ can be viewed as the magnitude of the projection of one of the vectors onto the other vector multiplied by the magnitude of the vector being projected upon.  That is,
 
 $$\begin{align*}\boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \text{proj}(\boldsymbol{a}, \boldsymbol{b}) \vert\vert  \vert\vert\boldsymbol{b} \vert\vert \\
-&= \norm{\text{proj}(\boldsymbol{b}, \boldsymbol{a})} \norm{\boldsymbol{a}}  \end{align*}$$
+&= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert\vert \vert\vert \boldsymbol{a} \vert\vert  \end{align*}$$
 
 If the two vectors are orthogonal, then the projection of either vector onto the other will be zero and thus the dot product will be zero.  In contrast, if two vectors point in the same direction, then the projection of the smaller vector onto the larger vector is simply the smaller vector so we multiply the magnitude of the smaller vector by the magnitude of the larger vector (i.e. simply multiply their norms).
 
