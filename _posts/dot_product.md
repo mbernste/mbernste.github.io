@@ -45,7 +45,7 @@ $$\boldsymbol{a} \cdot \boldsymbol{b} = \vert\vert \boldsymbol{a} \vert\vert \ve
 
 If $\theta := 0$, then the two vectors point in the same direction.  In this case, $\cos \theta = 1$ and the dot product reduces to simply computing the product of the two vectors' magnitudes. If $\theta = \pi / 2$, then the two vectors point in perpendicular directions (i.e. maximally different directions).  We see that $\cos \pi/2 = 0$ and the dot product between the two vectors is zero.
 
-Another way to understand how this works is to look at the projection of one vector onto the other.  That is, given two vectors $\boldsymbol{a}$, $\boldsymbol{b}$, the dot product between these vectors computes the product of the magnitudes of $\boldsymbol{a}$ and $\boldsymbol{b}$ along the direction that the two vectors share (Figure~\ref{fig:projection_2}). Said differently, the dot product $\boldsymbol{a} \cdot \boldsymbol{b}$ can be viewed as the magnitude of the projection of one of the vectors onto the other vector multiplied by the magnitude of the vector being projected upon.  That is,
+Another way to understand how this works is to look at the projection of one vector onto the other.  That is, given two vectors $\boldsymbol{a}$, $\boldsymbol{b}$, the dot product between these vectors computes the product of the magnitudes of $\boldsymbol{a}$ and $\boldsymbol{b}$ along the direction that the two vectors share. Said differently, the dot product $\boldsymbol{a} \cdot \boldsymbol{b}$ can be viewed as the magnitude of the projection of one of the vectors onto the other vector multiplied by the magnitude of the vector being projected upon.  That is,
 
 $$\begin{align*}\boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \text{proj}(\boldsymbol{a}, \boldsymbol{b}) \vert\vert  \vert\vert\boldsymbol{b} \vert\vert \\
 &= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert\vert \vert\vert \boldsymbol{a} \vert\vert  \end{align*}$$
@@ -54,7 +54,7 @@ If the two vectors are orthogonal, then the projection of either vector onto the
 
 Given this geometric interpretation of the dot product, we can see that taking the dot product of some vector $\boldsymbol{a}$ and a \textit{unit vector} $\boldsymbol{b}$, finds the length of the projection of $\boldsymbol{a}$ along the axis defined by $\boldsymbol{b}$:
 
-$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \boldsymbol{a} \vert\vert \text{proj}(\bold{b}, \bold{a}) \vert\vert \\ &= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert \vert && \text{because $\norm{\bold{a}} = 1$} \end{align*}$$
+$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \boldsymbol{a} \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert\vert \\ &= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert \vert && \text{because $\vert \vert \boldsymbol{a} \vert\vert = 1$} \end{align*}$$
 
 Thus, whenever one of the vectors in a dot product is a unit vector, the operation can always be viewed as the length of the projection along the axis defined by the unit vector.
 
