@@ -70,7 +70,7 @@ $$\boldsymbol{a} \cdot \boldsymbol{b} =\vert\vert \boldsymbol{a}\vert\vert \vert
 
 However, unlike multiplication between scalars, the dot product between vectors also takes into account the direction in which the two vectors point. The dot product asserts that if the two vectors point in a similar direction, the magnitude of the dot product increases.  If they point in drastically different directions, the dot product decreases.  
 
-One feature of multiplication between scalars is that if $x$ and $y$ have opposite signs then $xy < 0$ (for example, $-2 \times 3 = -6$).  Is this feature shared with the dot product? In a way, yes! But we first need to express the concept of ``opposite signs" between two vectors? Note, that if the angle between the vectors $\boldsymbol{a}$ and $\boldsymbol{b}$ is obtuse, then their dot product will be negative:
+One feature of multiplication between scalars is that if $x$ and $y$ have opposite signs then $xy < 0$ (for example, $-2 \times 3 = -6$).  Is this feature shared with the dot product? In a way, yes! But we first need to express the concept of ``opposite signs" between two vectors. To do that, note that if the angle between the vectors $\boldsymbol{a}$ and $\boldsymbol{b}$ is obtuse, then their dot product will be negative:
 
 $$\begin{align*} -\frac{\pi}{2} > \theta_{\boldsymbol{a}, \boldsymbol{b}} >- \frac{3\pi}{2} \implies & \cos  \theta_{\boldsymbol{a}, \boldsymbol{b}}  < 0 \\ \implies  & \vert\vert \boldsymbol{a}\vert\vert \vert\vert\boldsymbol{b} \vert\vert \cos  \theta_{\boldsymbol{a}, \boldsymbol{b}} < 0 \\ \implies & \boldsymbol{a} \cdot \boldsymbol{b} < 0 \end{align*}$$
 
