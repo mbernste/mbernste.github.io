@@ -32,7 +32,7 @@ The dot product as a weighted sum
 
 The least abstract way of viewing a dot product is as a weighted sum of variables. Lets say we have a vector of variables storing some kind of data $\boldsymbol{x}$.  Let's say we have a vector of weights $\boldsymbol{w}$ and we want to sum the variables in $\boldsymbol{x}$ where each element $x_i$ in $\boldsymbol{x}$ is multiplied by its weight $w_i$ in $\boldsymbol{w}$.  This operation is stated succinctly as $\boldsymbol{w} \cdot \boldsymbol{x}$.
 
-Whenever you find a dot product, it often helps to think about the operation as a sum of variables where each variable is first multiplied by a weight before summed. Which vector describes the "weights" and which the "variables" depends on the context.
+Whenever you find a dot product, it often helps to think about the operation as a sum of variables where each variable is first multiplied by a weight before summed. Which vector describes the "weights" and which the "variables" depends on the context. This perspective is often helpful in machine learning contexts where "weights" are often mutable model parameters and "variables" are fixed pieces of data.
 
 The dot product describes a geometric relationship
 --------------------------------------------------
@@ -57,3 +57,38 @@ Given this geometric interpretation of the dot product, we can see that taking t
 $$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \boldsymbol{a} \vert\vert \text{proj}(\bold{b}, \bold{a}) \vert\vert \\ &= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert \vert && \text{because $\norm{\bold{a}} = 1$} \end{align*}$$
 
 Thus, whenever one of the vectors in a dot product is a unit vector, the operation can always be viewed as the length of the projection along the axis defined by the unit vector.
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/dot_product_projection.png" alt="drawing" width="400"/></center>
+
+Appendix
+--------
+
+Given $\theta$ is the angle between the two vectors, $\bold{v}$ and $\bold{w}$, the following definition for the dot product between $\bold{v}$ and $\bold{w}$ is equivalent to Definition 1: $\bold{v} \cdot \bold{w} = \norm{\bold{v}} \norm{\bold{w}} \cos \theta$
+
+**Proof:**
+
+Let $\bold{a}$ and $\bold{b}$ be two vectors in a $d$-dimensional coordinate space and let $\bold{e}_1, \bold{e}_2, \dots, \bold{e}_d$ be the standard basis vectors of the space.  Then, 
+\begin{align*}
+\bold{a} &= \sum_{i=1}^d {a_i \bold{e}_i} \\
+\bold{b} &= \sum_{i=1}^d {b_i \bold{e}_i} \\
+\end{align*}
+First, we note that by the definition of a standard basis, the vectors $\bold{e}_1, \bold{e}_2, \dots, \bold{e}_d$ are all orthonormal to each other.  That is,
+\begin{align*}
+\bold{e}_i \cdot \bold{e}_i = 1 & \text{ \ \ \      they are all unit vectors} \\
+i \neq j \implies \bold{e}_i \cdot \bold{e}_j = 0 & \text{ \ \ \       they are all orthogonal to each other}  
+\end{align*}
+Next, by the geometric definition of the dot product,
+\begin{align*}
+\bold{a} \cdot \bold{e}_i &= \norm{\bold{a}} \norm{\bold{e}_i} \cos \theta_{\bold{a},\bold{e}_i} \\
+&=  \norm{\bold{a}} \cos \theta_{\bold{a},\bold{e}_i} \\
+&= a_i &&\text{see Figure~\ref{fig:projection_2}}
+\end{align*}
+We see that $a_i$ is the component of $\bold{a}$ in the direction of the base-vector $\bold{e}_i$.  Finally,
+\begin{align*}
+\bold{a} \cdot \bold{b} &= \bold{a} \cdot \left( \sum_{i=1}^d b_i \bold{e}_i \right) \\
+&=  \sum_{i=1}^d (\bold{a} \cdot b_i \bold{e}_i) && \text{axiom 1 of inner product} \\
+&= \sum_{i=1}^d b_i (\bold{e}_i \cdot \bold{a}) && \text{axiom 3 of inner product} \\
+&= \sum_{i=1}^d b_i (\bold{a} \cdot \bold{e}_i) && \text{axiom 2 of inner product} \\
+&= \sum_{i=1}^d b_i a_i
+\end{align*}
+This is the algebraic definition of the dot product.
