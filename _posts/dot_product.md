@@ -19,7 +19,8 @@ The **dot product** is a fundamental operation on two Euclidean vectors that cap
 
 <span style="color:#0060C6">**Definition 1 (dot product):** Given vectors $\boldsymbol{v}, \boldsymbol{u} \in \mathbb{R}^n, the **dot product** between these vectors is defined as, $\boldsymbol{v} \cdot \boldsymbol{u} := \sum_{i=1}^n v_i u_i$</span>
 
-There are three perspectives I find useful for thinking about the dot products. Ordered from the least abstract to the most abstract, these perspectives are:
+Despite the simplicity of its definition, the dot product can be understood from a number of [different perspectives](https://mbernste.github.io/posts/understanding_3d/).  Here are four perspectives I find useful for thinking about the dot products. Ordered from the least abstract to the most abstract, these perspectives are:
+
 1. The dot product succinctly describes a weighted sum
 2. The dot product describes a a geometric relationship between two Euclidean vectors
 3. The dot product is an analogy to multiplication between scalars (i.e., plain old multiplication between numbers)
