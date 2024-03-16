@@ -15,7 +15,7 @@ Introduction
 
 The [basic definition of a vector space](https://mbernste.github.io/posts/vector_spaces/) does not capture all of the behavior that we inuitively associate with the more familiar Euclidean vector spaces. For example, in the basic definition of a vector space, there is no notion of how similar two vectors are. Rather, a vector space only describes how vectors are added together and scaled.  The notion of how similar two vectors are is captured by an additional mathematical structure that one can define on a vector space called an **inner product**.   
 
-One common inner-product on coordiante vector spaces is the **dot product**, which is taught in introductory linear algebra classes.  Given two vectors $$\boldsymbol{u}, \boldsymbol{v} \in \mathbb{R}^n$$, the dot product is defined as:
+One common inner-product on coordinate vector spaces is the **dot product**, which is taught in introductory linear algebra classes.  Given two vectors $$\boldsymbol{u}, \boldsymbol{v} \in \mathbb{R}^n$$, the dot product is defined as:
 
 $$\boldsymbol{u} \dot \boldsymbol{v} := \sum_{i=1}^n u_iv_i$$
 
@@ -35,10 +35,10 @@ In the remainder of this post, we discuss the key properties of inner products a
 Properties
 ----------
 
-1. **Linearity:**
+1. **Linearity:** Theorem 1 in the Appendix to this post shows that left-linearity holds for the inner product.  Since the inner product is symmetric, then it follows that linearity holds for both arguments.  Thus, we see that the inner product is a bi-linear function that maps pairs of vectors in the vector space to the field of scalars.
 
+Given an inner product space $(\mathcal{V}, \mathcal{F}, \langle ., . \rangle)$, vectors $\bold{v}, \bold{u}, \bold{w} \in \mathcal{V}$, and $\alpha \in \mathcal{F}$, the following holds:
 
-
-
+$$\begin{align*} \langle \bold{v}, \bold{w} + \bold{u} \rangle &= \langle \bold{v}, \bold{w} \rangle + \langle \bold{v}, \bold{u} \rangle \\ \langle \bold{v}, \alpha \bold{w} \rangle &= \alpha \langle \bold{v}, \bold{w} \rangle \end{align*}$$
 
 
