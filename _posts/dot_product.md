@@ -41,7 +41,7 @@ The dot product uses the relationship between the directions in which the two ve
 
 To show how this works, we note that the dot product between two vectors $\boldsymbol{a}$ and $\boldsymbol{b}$, can be computed using the angle between them as follows (see Theorem 1 in the Appendix to this post):
 
-$$\boldsymbol{a} \cdot \boldsymbol{b} = \vert\vert \boldsymbol{a} \vert\vert \vert\vert \boldsymbol{b} \cos \theta$$
+$$\boldsymbol{a} \cdot \boldsymbol{b} = \vert\vert \boldsymbol{a} \vert\vert \vert\vert \boldsymbol{b} \vert\vert \cos \theta$$
 
 If $\theta := 0$, then the two vectors point in the same direction.  In this case, $\cos \theta = 1$ and the dot product reduces to simply computing the product of the two vectors' magnitudes. If $\theta = \pi / 2$, then the two vectors point in perpendicular directions (i.e. maximally different directions).  We see that $\cos \pi/2 = 0$ and the dot product between the two vectors is zero.
 
