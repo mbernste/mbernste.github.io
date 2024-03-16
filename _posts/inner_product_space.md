@@ -37,8 +37,8 @@ Properties
 
 1. **Linearity:** Theorem 1 in the Appendix to this post shows that left-linearity holds for the inner product.  Since the inner product is symmetric, then it follows that linearity holds for both arguments.  Thus, we see that the inner product is a bi-linear function that maps pairs of vectors in the vector space to the field of scalars.
 
-Given an inner product space $(\mathcal{V}, \mathcal{F}, \langle ., . \rangle)$, vectors $\bold{v}, \bold{u}, \bold{w} \in \mathcal{V}$, and $\alpha \in \mathcal{F}$, the following holds:
+Given an inner product space $(\mathcal{V}, \mathcal{F}, \langle ., . \rangle)$, vectors $\boldsymbol{v}, \boldsymbol{u}, \boldsymbol{w} \in \mathcal{V}$, and $\alpha \in \mathcal{F}$, the following holds:
 
-$$\begin{align*} \langle \bold{v}, \bold{w} + \bold{u} \rangle &= \langle \bold{v}, \bold{w} \rangle + \langle \bold{v}, \bold{u} \rangle \\ \langle \bold{v}, \alpha \bold{w} \rangle &= \alpha \langle \bold{v}, \bold{w} \rangle \end{align*}$$
+$$\begin{align*} \langle \boldsymbol{v}, \boldsymbol{w} + \boldsymbol{u} \rangle &= \langle \boldsymbol{v}, \boldsymbol{w} \rangle + \langle \boldsymbol{v}, \boldsymbol{u} \rangle \\ \langle \boldsymbol{v}, \alpha \boldsymbol{w} \rangle &= \alpha \langle \boldsymbol{v}, \boldsymbol{w} \rangle \end{align*}$$
 
 
