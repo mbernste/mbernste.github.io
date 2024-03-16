@@ -45,15 +45,14 @@ $$\boldsymbol{a} \cdot \boldsymbol{b} = \norm{\boldsymbol{a}} \norm{\boldsymbol{
 
 If $\theta := 0$, then the two vectors point in the same direction.  In this case, $\cos \theta = 1$ and the dot product reduces to simply computing the product of the two vectors' magnitudes. If $\theta = \pi / 2$, then the two vectors point in perpendicular directions (i.e. maximally different directions).  We see that $\cos \pi/2 = 0$ and the dot product between the two vectors is zero.
 
-Another way to understand how this works is to look at the projection of one vector onto the other.  That is, given two vectors $\bold{a}$, $\bold{b}$, the dot product between these vectors computes the product of the magnitudes of $\bold{a}$ and $\bold{b}$ along the direction that the two vectors share (Figure~\ref{fig:projection_2}). Said differently, the dot product $\bold{a} \cdot \bold{b}$ can be viewed as the magnitude of the projection of one of the vectors onto the other vector multiplied by the magnitude of the vector being projected upon.  That is,
-\begin{align*}\bold{a} \cdot \bold{b} &= \norm{\text{proj}(\bold{a}, \bold{b})} \norm{\bold{b}} \\
-&= \norm{\text{proj}(\bold{b}, \bold{a})} \norm{\bold{a}} 
+Another way to understand how this works is to look at the projection of one vector onto the other.  That is, given two vectors $\boldsymbol{a}$, $\boldsymbol{b}$, the dot product between these vectors computes the product of the magnitudes of $\boldsymbol{a}$ and $\boldsymbol{b}$ along the direction that the two vectors share (Figure~\ref{fig:projection_2}). Said differently, the dot product $\boldsymbol{a} \cdot \boldsymbol{b}$ can be viewed as the magnitude of the projection of one of the vectors onto the other vector multiplied by the magnitude of the vector being projected upon.  That is,
+\begin{align*}\boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \text{proj}(\boldsymbol{a}, \boldsymbol{b}) \vert\vert  \vert\vert\boldsymbol{b} \vert\vert \\
+&= \norm{\text{proj}(\boldsymbol{b}, \boldsymbol{a})} \norm{\boldsymbol{a}} 
 \end{align*}
 If the two vectors are orthogonal, then the projection of either vector onto the other will be zero and thus the dot product will be zero.  In contrast, if two vectors point in the same direction, then the projection of the smaller vector onto the larger vector is simply the smaller vector so we multiply the magnitude of the smaller vector by the magnitude of the larger vector (i.e. simply multiply their norms).
 
-Given this geometric interpretation of the dot product, we can see that taking the dot product of some vector $\bold{a}$ and a \textit{unit vector} $\bold{b}$, finds the length of the projection of $\bold{a}$ along the axis defined by $\bold{b}$:
-\begin{align*}
-\bold{a} \cdot \bold{b} &= \norm{\bold{a}}\norm{\text{proj}(\bold{b}, \bold{a})}\\
-&=  \norm{\text{proj}(\bold{b}, \bold{a})} && \text{because $\norm{\bold{a}} = 1$}
-\end{align*}
+Given this geometric interpretation of the dot product, we can see that taking the dot product of some vector $\bold{a}$ and a \textit{unit vector} $\bold{b}$, finds the length of the projection of $\bold{a}$ along the axis defined by $\boldsymbol{b}$:
+
+$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \boldsymbol{a} \vert\vert \text{proj}(\bold{b}, \bold{a}) \vert\vert \\ &= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert \vert && \text{because $\norm{\bold{a}} = 1$} \end{align*}$$
+
 Thus, whenever one of the vectors in a dot product is a unit vector, the operation can always be viewed as the length of the projection along the axis defined by the unit vector.
