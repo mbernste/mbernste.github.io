@@ -32,7 +32,7 @@ The dot product as a weighted sum
 
 The least abstract way of viewing a dot product is as a weighted sum of variables. Lets say we have a vector of variables storing some kind of data $\boldsymbol{x}$.  Let's say we have a vector of weights $\boldsymbol{w}$ and we want to sum the variables in $\boldsymbol{x}$ where each element $x_i$ in $\boldsymbol{x}$ is multiplied by its weight $w_i$ in $\boldsymbol{w}$.  This operation is stated succinctly as $\boldsymbol{w} \cdot \boldsymbol{x}$.
 
-Whenever you find a dot product, it often helps to think about the operation as a sum of variables where each variable is multiplied by a weight.
+Whenever you find a dot product, it often helps to think about the operation as a sum of variables where each variable is first multiplied by a weight before summed. Which vector describes the "weights" and which the "variables" depends on the context.
 
 The dot product describes a geometric relationship
 --------------------------------------------------
