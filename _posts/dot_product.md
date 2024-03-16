@@ -53,7 +53,7 @@ $$\begin{align*}\boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \text{proj}(\b
 
 If the two vectors are orthogonal, then the projection of either vector onto the other will be zero and thus the dot product will be zero.  In contrast, if two vectors point in the same direction, then the projection of the smaller vector onto the larger vector is simply the smaller vector so we multiply the magnitude of the smaller vector by the magnitude of the larger vector (i.e. simply multiply their norms).
 
-Given this geometric interpretation of the dot product, we can see that taking the dot product of some vector $\boldsymbol{a}$ and a \textit{unit vector} $\boldsymbol{b}$, finds the length of the projection of $\boldsymbol{a}$ along the axis defined by $\boldsymbol{b}$:
+Given this geometric interpretation of the dot product, we can see that taking the dot product of some vector $\boldsymbol{a}$ and a [unit vector](https://mbernste.github.io/posts/normed_vector_space/) $\boldsymbol{b}$, finds the length of the projection of $\boldsymbol{a}$ along the axis defined by $\boldsymbol{b}$:
 
 $$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \boldsymbol{a} \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert\vert \\ &= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert \vert && \text{because $\vert \vert \boldsymbol{a} \vert\vert = 1$} \end{align*}$$
 
