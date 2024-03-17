@@ -1,6 +1,6 @@
 ---
 title: 'Dot product'
-date: 2021-10-27
+date: 2024-03-16
 permalink: /posts/dot_product/
 tags:
   - tutorial
