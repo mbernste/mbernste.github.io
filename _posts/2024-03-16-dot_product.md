@@ -59,7 +59,7 @@ $$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \boldsymbol{a
 
 Thus, whenever one of the vectors in a dot product is a unit vector, the operation can always be viewed as the length of the projection along the axis defined by the unit vector.
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/dot_product_projection.png" alt="drawing" width="400"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/dot_product_projection.png" alt="drawing" width="300"/></center>
 
 The dot product is analogous to the product on scalars
 ------------------------------------------------------
