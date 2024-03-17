@@ -95,30 +95,26 @@ If we think of the projection of one vector onto another as the amount of "direc
 Appendix
 --------
 
-<span style="color:#0060C6">Given $\theta$ is the angle between the two vectors, $\boldsymbol{v}$ and $\boldsymbol{w}$, the following definition for the dot product between $\boldsymbol{v}$ and $\boldsymbol{w}$ is equivalent to Definition 1: $\boldsymbol{v} \cdot \boldsymbol{w} = \vert\vert \boldsymbol{v} \vert\vert \vert\vert \boldsymbol{w} \vert\vert \cos \theta$.</span>
+<span style="color:#0060C6">**Theorem 1:** Given $\theta$ is the angle between the two vectors, $\boldsymbol{v}$ and $\boldsymbol{w}$, the following definition for the dot product between $\boldsymbol{v}$ and $\boldsymbol{w}$ is equivalent to Definition 1: $\boldsymbol{v} \cdot \boldsymbol{w} = \vert\vert \boldsymbol{v} \vert\vert \vert\vert \boldsymbol{w} \vert\vert \cos \theta$.</span>
 
 **Proof:**
 
-Let $\bold{a}$ and $\bold{b}$ be two vectors in a $d$-dimensional coordinate space and let $\bold{e}_1, \bold{e}_2, \dots, \bold{e}_d$ be the standard basis vectors of the space.  Then, 
+Let $\boldsymbol{a}$ and $\boldsymbol{b}$ be two vectors in a $d$-dimensional coordinate space and let $\boldsymbol{e}_1, \boldsymbol{e}_2, \dots, \boldsymbol{e}_d$ be the standard basis vectors of the space.  Then, 
 
 $$\begin{align*}\boldsymbol{a} &= \sum_{i=1}^d {a_i \boldsymbol{e}_i} \\ \boldsymbol{b} &= \sum_{i=1}^d {b_i \boldsymbol{e}_i} \\ \end{align*}$$
 
-First, we note that by the definition of a standard basis, the vectors $\bold{e}_1, \bold{e}_2, \dots, \bold{e}_d$ are all orthonormal to each other.  That is,
+First, we note that by the definition of a standard basis, the vectors $\boldsymbol{e}_1, \boldsymbol{e}_2, \dots, \boldsymbol{e}_d$ are all orthonormal to each other.  That is,
 
 $$\begin{align*}\boldsymbol{e}_i \cdot \boldsymbol{e}_i = 1 & \text{They are all unit vectors} \\ i \neq j \implies \boldsymbol{e}_i \cdot \boldsymbol{e}_j = 0 & \text{They are all orthogonal to each other}  \end{align*}$$
 
 Next, by the geometric definition of the dot product,
 
-$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{e}_i &= \vert\vert \bold{a} \vert\vert \vert\vert \bold{e}_i \vert\vert \cos \theta_{\bold{a},\bold{e}_i} \\ &=  \vert\vert \boldsymbol{a} \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &= a_i \end{align*}$$
+$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{e}_i &= \vert\vert \bold{a} \vert\vert \vert\vert \bold{e}_i \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &=  \vert\vert \boldsymbol{a} \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &= a_i \end{align*}$$
 
 where $a_i$ is the component of $\boldsymbol {a}$ in the direction of the base-vector $\boldsymbol{e}_i$.  Finally,
 
-\begin{align*}
-\bold{a} \cdot \bold{b} &= \bold{a} \cdot \left( \sum_{i=1}^d b_i \bold{e}_i \right) \\
-&=  \sum_{i=1}^d (\bold{a} \cdot b_i \bold{e}_i) && \text{axiom 1 of inner product} \\
-&= \sum_{i=1}^d b_i (\bold{e}_i \cdot \bold{a}) && \text{axiom 3 of inner product} \\
-&= \sum_{i=1}^d b_i (\bold{a} \cdot \bold{e}_i) && \text{axiom 2 of inner product} \\
-&= \sum_{i=1}^d b_i a_i
-\end{align*}
+$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{b} &= \boldsymbol{a} \cdot \left( \sum_{i=1}^d b_i \boldsymbol{e}_i \right) \\ &=  \sum_{i=1}^d (\boldsymbol{a} \cdot b_i \boldsymbol{e}_i) && \text{axiom 1 of inner product} \\ &= \sum_{i=1}^d b_i (\boldsymbol{e}_i \cdot \boldsymbol{a}) && \text{axiom 3 of inner product} \\ &= \sum_{i=1}^d b_i (\boldsymbol{a} \cdot \boldsymbol{e}_i) && \text{axiom 2 of inner product} \\ &= \sum_{i=1}^d b_i a_i \end{align*}$$
 
 This is the algebraic definition of the dot product.
+
+$\square$
