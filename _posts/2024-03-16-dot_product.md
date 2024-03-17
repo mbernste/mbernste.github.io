@@ -105,11 +105,11 @@ $$\begin{align*}\boldsymbol{a} &= \sum_{i=1}^d {a_i \boldsymbol{e}_i} \\ \boldsy
 
 First, we note that by the definition of a standard basis, the vectors $\boldsymbol{e}_1, \boldsymbol{e}_2, \dots, \boldsymbol{e}_d$ are all orthonormal to each other.  That is,
 
-$$\begin{align*}\boldsymbol{e}_i \cdot \boldsymbol{e}_i = 1 & \text{They are all unit vectors} \\ i \neq j \implies \boldsymbol{e}_i \cdot \boldsymbol{e}_j = 0 & \text{They are all orthogonal to each other}  \end{align*}$$
+$$\begin{align*}\boldsymbol{e}_i \cdot \boldsymbol{e}_i = 1 & \ \ \ \text{They are all unit vectors} \\ i \neq j \implies \boldsymbol{e}_i \cdot \boldsymbol{e}_j = 0 & \ \ \ \text{They are all orthogonal to each other}  \end{align*}$$
 
 Next, by the geometric definition of the dot product,
 
-$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{e}_i &= \vert\vert \bold{a} \vert\vert \vert\vert \bold{e}_i \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &=  \vert\vert \boldsymbol{a} \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &= a_i \end{align*}$$
+$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{e}_i &= \vert\vert \boldsymbol{a} \vert\vert \vert\vert \boldsymbol{e}_i \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &=  \vert\vert \boldsymbol{a} \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &= a_i \end{align*}$$
 
 where $a_i$ is the component of $\boldsymbol {a}$ in the direction of the base-vector $\boldsymbol{e}_i$.  Finally,
 
