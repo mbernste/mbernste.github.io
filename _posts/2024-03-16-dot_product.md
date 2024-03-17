@@ -99,22 +99,5 @@ Appendix
 
 **Proof:**
 
-Let $\boldsymbol{a}$ and $\boldsymbol{b}$ be two vectors in a $d$-dimensional coordinate space and let $\boldsymbol{e}_1, \boldsymbol{e}_2, \dots, \boldsymbol{e}_d$ be the standard basis vectors of the space.  Then, 
-
-$$\begin{align*}\boldsymbol{a} &= \sum_{i=1}^d {a_i \boldsymbol{e}_i} \\ \boldsymbol{b} &= \sum_{i=1}^d {b_i \boldsymbol{e}_i} \\ \end{align*}$$
-
-First, we note that by the definition of a standard basis, the vectors $\boldsymbol{e}_1, \boldsymbol{e}_2, \dots, \boldsymbol{e}_d$ are all orthonormal to each other.  That is,
-
-$$\begin{align*}\boldsymbol{e}_i \cdot \boldsymbol{e}_i = 1 & \ \ \ \text{They are all unit vectors} \\ i \neq j \implies \boldsymbol{e}_i \cdot \boldsymbol{e}_j = 0 & \ \ \ \text{They are all orthogonal to each other}  \end{align*}$$
-
-Next, we see that
-
-$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{e}_i &= \vert\vert \boldsymbol{a} \vert\vert \vert\vert \boldsymbol{e}_i \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &=  \vert\vert \boldsymbol{a} \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &= a_i \end{align*}$$
-
-where $a_i$ is the component of $\boldsymbol {a}$ in the direction of the base-vector $\boldsymbol{e}_i$.  Finally,
-
-$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{b} &= \boldsymbol{a} \cdot \left( \sum_{i=1}^d b_i \boldsymbol{e}_i \right) \\ &=  \sum_{i=1}^d (\boldsymbol{a} \cdot b_i \boldsymbol{e}_i) && \text{axiom 1 of inner product} \\ &= \sum_{i=1}^d b_i (\boldsymbol{e}_i \cdot \boldsymbol{a}) && \text{axiom 3 of inner product} \\ &= \sum_{i=1}^d b_i (\boldsymbol{a} \cdot \boldsymbol{e}_i) && \text{axiom 2 of inner product} \\ &= \sum_{i=1}^d b_i a_i \end{align*}$$
-
-This is the algebraic definition of the dot product.
 
 $\square$
