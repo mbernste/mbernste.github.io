@@ -85,12 +85,17 @@ Please note, this is just an _analogy_ -- that is, a way to think about the dot 
 The dot product as a notion of similarity
 -----------------------------------------
 
-Lastly, the dot product between two vectors can be thought about as a notion of similarity between two vectors. For this perspective, we will get a little bit more philosophical. Recall that the dot product between two vectors can be written in terms of the projection of one vector onto another:
+Lastly, the dot product between two vectors can be thought about as a notion of similarity between two vectors. Recall that the dot product between two vectors can be written in terms of the projection of one vector onto another:
 
 $$\begin{align*}\boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \text{proj}(\boldsymbol{a}, \boldsymbol{b}) \vert\vert  \vert\vert\boldsymbol{b} \vert\vert \\
 &= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert\vert \vert\vert \boldsymbol{a} \vert\vert  \end{align*}$$
 
-If we think of the projection of one vector onto another as the amount of "directionality" that they share, then the dot product can be understood as the magnitude of one vector multiplied by its shared directionality with the other. It doesn't matter which vector we project onto the other, the final result will be the same either way. Note, that if the vectors are perpendicular to one another, then they share no directionality and thus, the dot product is zero. In essence, these vectors share nothing in common. No matter how large either vector is, because they don't share any directionality, their dot product is zero.
+If we think of the magnitude of the projection of one vector onto another as the amount of "directionality" that the two vectors share, then the dot product can be understood as performing the following calculation:
+
+1. Calculate the amount of "directionality" shared between them -- that is, the length of the projection of one vector onto the other.
+2. Multiply this shared 
+
+the magnitude of one vector multiplied by its shared directionality with the other. (Note, it doesn't matter which vector we project onto the other, the final result will be the same either way.) If the vectors are perpendicular to one another, then they share no directionality and thus, the dot product is zero. In essence, these vectors share nothing in common -- they are pointing in completely different directions! No matter how large either vector is, because they don't share any directionality, their dot product is zero. In this context, what is the interpretation of a negative dot product? I like to think about it as follows: a negative dot product indicates that the two vectors _do_ share some directionality, just with opposite trends. That is, they share a projection along the same line, but they point in opposite directions along that line. 
 
 Appendix
 --------
