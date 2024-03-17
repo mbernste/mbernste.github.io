@@ -17,7 +17,7 @@ Introduction
 
 The **dot product** is a fundamental operation on two Euclidean vectors that captures a notion of similarity between the vectors. It is defined as follows:
 
-<span style="color:#0060C6">**Definition 1 (dot product):** Given vectors $\boldsymbol{v}, \boldsymbol{u} \in \mathbb{R}^n, the **dot product** between these vectors is defined as, $\boldsymbol{v} \cdot \boldsymbol{u} := \sum_{i=1}^n v_i u_i$</span>
+<span style="color:#0060C6">**Definition 1 (dot product):** Given vectors $\boldsymbol{v}, \boldsymbol{u} \in \mathbb{R}^n$, the **dot product** between these vectors is defined as, $\boldsymbol{v} \cdot \boldsymbol{u} := \sum_{i=1}^n v_i u_i$</span>
 
 Despite the simplicity of its definition, the dot product can be understood from a number of [different perspectives](https://mbernste.github.io/posts/understanding_3d/).  Here are four perspectives I find useful for thinking about the dot products. Ordered from the least abstract to the most abstract, these perspectives are:
 
@@ -107,7 +107,7 @@ First, we note that by the definition of a standard basis, the vectors $\boldsym
 
 $$\begin{align*}\boldsymbol{e}_i \cdot \boldsymbol{e}_i = 1 & \ \ \ \text{They are all unit vectors} \\ i \neq j \implies \boldsymbol{e}_i \cdot \boldsymbol{e}_j = 0 & \ \ \ \text{They are all orthogonal to each other}  \end{align*}$$
 
-Next, by the geometric definition of the dot product,
+Next, we see that
 
 $$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{e}_i &= \vert\vert \boldsymbol{a} \vert\vert \vert\vert \boldsymbol{e}_i \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &=  \vert\vert \boldsymbol{a} \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &= a_i \end{align*}$$
 
