@@ -80,18 +80,22 @@ This is visualized below:
 
 Thus, two vectors ``have opposite signs", in context of thinking about the dot product, if the angle between them is greater than $\pi / 2$ and less than $3\pi/4$. 
 
-Please note, this is just an _analogy_; a way to think about the dot product as sharing certain familiar characteristics with multiplication between numbers.
+Please note, this is just an _analogy_ -- that is, a way to think about the dot product as sharing certain familiar characteristics with multiplication between numbers.
 
 The dot product as a notion of similarity
 -----------------------------------------
 
+Lastly, the dot product between two vectors can be thought about as a notion of similarity between two vectors. For this perspective, we will get a little bit more philosophical. Recall that the dot product between two vectors can be written in terms of the projection of one vector onto another:
 
+$$\begin{align*}\boldsymbol{a} \cdot \boldsymbol{b} &= \vert\vert \text{proj}(\boldsymbol{a}, \boldsymbol{b}) \vert\vert  \vert\vert\boldsymbol{b} \vert\vert \\
+&= \vert\vert \text{proj}(\boldsymbol{b}, \boldsymbol{a}) \vert\vert \vert\vert \boldsymbol{a} \vert\vert  \end{align*}$$
 
+If we think of the projection of one vector onto another as the amount of "directionality" that they share, then the dot product can be understood as the magnitude of one vector multiplied by its shared directionality with the other. It doesn't matter which vector we project onto the other, the final result will be the same either way. Note, that if the vectors are perpendicular to one another, then they share no directionality and thus, the dot product is zero. In essence, these vectors share nothing in common. No matter how large either vector is, because they don't share any directionality, their dot product is zero.
 
 Appendix
 --------
 
-<span style="color:#0060C6">Given $\theta$ is the angle between the two vectors, $\bold{v}$ and $\bold{w}$, the following definition for the dot product between $\bold{v}$ and $\bold{w}$ is equivalent to Definition 1: $\bold{v} \cdot \bold{w} = \norm{\bold{v}} \norm{\bold{w}} \cos \theta$.</span>
+<span style="color:#0060C6">Given $\theta$ is the angle between the two vectors, $\boldsymbol{v}$ and $\boldsymbol{w}$, the following definition for the dot product between $\boldsymbol{v}$ and $\boldsymbol{w}$ is equivalent to Definition 1: $\boldsymbol{v} \cdot \boldsymbol{w} = \vert\vert \boldsymbol{v} \vert\vert \vert\vert \boldsymbol{w} \vert\vert \cos \theta$.</span>
 
 **Proof:**
 
@@ -101,20 +105,13 @@ $$\begin{align*}\boldsymbol{a} &= \sum_{i=1}^d {a_i \boldsymbol{e}_i} \\ \boldsy
 
 First, we note that by the definition of a standard basis, the vectors $\bold{e}_1, \bold{e}_2, \dots, \bold{e}_d$ are all orthonormal to each other.  That is,
 
-\begin{align*}
-\bold{e}_i \cdot \bold{e}_i = 1 & \text{ \ \ \      they are all unit vectors} \\
-i \neq j \implies \bold{e}_i \cdot \bold{e}_j = 0 & \text{ \ \ \       they are all orthogonal to each other}  
-\end{align*}
+$$\begin{align*}\boldsymbol{e}_i \cdot \boldsymbol{e}_i = 1 & \text{They are all unit vectors} \\ i \neq j \implies \boldsymbol{e}_i \cdot \boldsymbol{e}_j = 0 & \text{They are all orthogonal to each other}  \end{align*}$$
 
 Next, by the geometric definition of the dot product,
 
-\begin{align*}
-\bold{a} \cdot \bold{e}_i &= \norm{\bold{a}} \norm{\bold{e}_i} \cos \theta_{\bold{a},\bold{e}_i} \\
-&=  \norm{\bold{a}} \cos \theta_{\bold{a},\bold{e}_i} \\
-&= a_i &&\text{see Figure~\ref{fig:projection_2}}
-\end{align*}
+$$\begin{align*} \boldsymbol{a} \cdot \boldsymbol{e}_i &= \vert\vert \bold{a} \vert\vert \vert\vert \bold{e}_i \vert\vert \cos \theta_{\bold{a},\bold{e}_i} \\ &=  \vert\vert \boldsymbol{a} \vert\vert \cos \theta_{\boldsymbol{a},\boldsymbol{e}_i} \\ &= a_i \end{align*}$$
 
-We see that $a_i$ is the component of $\bold{a}$ in the direction of the base-vector $\bold{e}_i$.  Finally,
+where $a_i$ is the component of $\boldsymbol {a}$ in the direction of the base-vector $\boldsymbol{e}_i$.  Finally,
 
 \begin{align*}
 \bold{a} \cdot \bold{b} &= \bold{a} \cdot \left( \sum_{i=1}^d b_i \bold{e}_i \right) \\
