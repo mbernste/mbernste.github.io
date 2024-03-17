@@ -74,6 +74,10 @@ One feature of multiplication between scalars is that if $x$ and $y$ have opposi
 
 $$\begin{align*} -\frac{\pi}{2} > \theta_{\boldsymbol{a}, \boldsymbol{b}} >- \frac{3\pi}{2} \implies & \cos  \theta_{\boldsymbol{a}, \boldsymbol{b}}  < 0 \\ \implies  & \vert\vert \boldsymbol{a}\vert\vert \vert\vert\boldsymbol{b} \vert\vert \cos  \theta_{\boldsymbol{a}, \boldsymbol{b}} < 0 \\ \implies & \boldsymbol{a} \cdot \boldsymbol{b} < 0 \end{align*}$$
 
+This is visualized below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/dot_product_acute_obtuse.png" alt="drawing" width="700"/></center>
+
 Thus, two vectors ``have opposite signs", in context of thinking about the dot product, if the angle between them is greater than $\pi / 2$ and less than $3\pi/4$. 
 
 Please note, this is just an _analogy_; a way to think about the dot product as sharing certain familiar characteristics with multiplication between numbers.
