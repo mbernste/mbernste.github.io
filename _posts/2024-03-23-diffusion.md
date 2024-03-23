@@ -50,7 +50,7 @@ More specifically, for each step, $t$, in the forward diffusion process, we will
 
 $$\boldsymbol{x}_{t+1} \sim q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$$
 
-To remove the noise, we can sample from the posterior distribution, $q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1})$. One idea to derive this distribution would be to use [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
+To remove the noise, we can sample from the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. One idea to derive this distribution would be to use [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t+1})}{q(\boldsymbol{x}_t)}$$
 
