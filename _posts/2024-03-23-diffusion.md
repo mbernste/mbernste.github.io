@@ -32,7 +32,7 @@ High-level overview of denoising diffusion models
 
 Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of items of interest. These items might be images, text documents, or protein sequences. Let $boldsymbol{x}$ be a feature vector representing one such item. Then, diffusion models can be understood as a probability distrubtion $p(\boldsymbol{x})$. Once we have this distribution in hand, we can sample items $\boldsymbol{x}$ from this distribution. Thus, in the case of image generation, we can view the process of generating an image as _sampling_ from a distribution:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="800"/></center>
 
 The way in which diffusion models define $p(\boldsymbol{x})$ uses a 
 
