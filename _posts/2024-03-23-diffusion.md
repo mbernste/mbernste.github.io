@@ -46,6 +46,19 @@ The central goal of a diffusion model is to learn how to reverse this diffusion 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse.png" alt="drawing" width="800"/></center>
 
+More specifically, for each step, $t$, in the forward diffusion process, we will add noise by sampling the next object $boldsymbol{x}_{t+1}$ from a Gaussian that is centered near $\boldsymbol{x}_{t}$. That is,
+
+$$\boldsymbol{x}_{t+1} \sim q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$$
+
+To remove the noise, our goal be to find the posterior distribution, $q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1})$. One idea to derive this distribution would be to use [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
+
+$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t+1})}{q(\boldsymbol{x}_t)}$$
+
+Unfortunately, as is the case in many scenarios where one wishes to apply Bayes Theorem, the exact form of this posterior is intractable to compute. That is because, for any timestep $t$, in order to compute $q(\boldsymbol{x}_t)$.
+
+
+
+
 
 
 
