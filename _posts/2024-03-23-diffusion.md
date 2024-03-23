@@ -44,7 +44,7 @@ First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), 
 
 The central goal of a diffusion model is to learn how to reverse this diffusion process -- that is, to remove the noise at each time step:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward.png" alt="drawing" width="800"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse.png" alt="drawing" width="800"/></center>
 
 
 
