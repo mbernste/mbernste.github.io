@@ -82,13 +82,12 @@ Thus, our central task will be to learn the distributions $p_{\theta}(\boldsymbo
 
 <br>
 
-Note that the marginal distribution $p(\boldsymbol{x})$ defined by the diffusion model would be the marginal distribution over all of the intermediate, noisy versions $\boldsymbol{x}$. That is, if we let $\boldsymbol{x}_0 := \boldsymbol{x}$ (i.e., we assume that $\boldsymbol{x}$ is end result of reversing a diffusion process), then 
+Note that the marginal distribution $p_{\theta}(\boldsymbol{x})$ defined by the diffusion model would be the marginal distribution over all of the intermediate, noisy versions $\boldsymbol{x}$. That is, if we let $\boldsymbol{x}_0 := \boldsymbol{x}$ (i.e., we assume that $\boldsymbol{x}$ is end result of reversing a diffusion process), then 
 
-$$\begin{align*}p(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p(\boldsymbol{x}_T) \prod_{t=1}^T p(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \end{align*}$$
+$$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p(\boldsymbol{x}_T) \prod_{t=1}^T p(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \end{align*}$$
 
-This distribution is never used explicitly, but we can sample from it via the learned, reverse diffusion process that we just described. 
 
-In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t}$ and p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/) for fitting $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$ (i.e., finding $\theta$).
+In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t}$ and p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$ via each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$ while simultaneously maximizing the marginal distribution $p_{\theta}(\boldsymbol{x})$.
 
 The forward and reverse models
 ------------------------------
