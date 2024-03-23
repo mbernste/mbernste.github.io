@@ -111,7 +111,7 @@ as shorthand for the above statements. For a fair coin-toss, we would likely say
 Continuous random variables
 -----
 
-Above, we described how the measure theoretic definition for probability encompasses discrete random variables. how does it encompass continuous random variables? 
+Above, we described how the measure theoretic definition for probability encompasses discrete random variables. How does it encompass continuous random variables? 
 
 A continuous random variable $X$, maps elements from $\Omega$ to the full set of real number $\mathbb{R}$  That is, $H := \mathbb{R}$. The trick now is figuring how to construct a useful sigma-algebra $\mathcal{H}$ over $\mathbb{R}$ such that the preimage of any element of $\mathcal{H}$ is an event in $E$. Naively, one might try to assign non-zero probability to every real-number. However, because the real numbers are [uncountable](https://en.wikipedia.org/wiki/Uncountable_set), any attempt to assign each real number's element in $\mathcal{H}$ a non-zero probability would cause $P\left(X^{-1}(\mathcal{H})\right)$ to blow up to infinity, which contradicts the definition for a probability space! 
 
