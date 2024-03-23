@@ -66,6 +66,10 @@ This integral is not tractable. As we do in [variational inference](https://mber
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_approximate.png" alt="drawing" width="800"/></center>
 
+Thus, our central task will be to learn the distributions $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ from training data. Once, we have this distribution in hand, we can generate objects by first sampling white noise $\boldsymbol{x}_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}_{t-1}$ from the learned $p_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$. At the end of this process we will have "transformed" random white noise into an object!
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_frog.png" alt="drawing" width="800"/></center>
+
 
 The forward and reverse models
 ------------------------------
