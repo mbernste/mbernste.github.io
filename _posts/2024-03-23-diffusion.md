@@ -40,7 +40,7 @@ For diffusion models, the exact form of $p(\boldsymbol{x})$ is actually never ex
 
 Reversing a diffusion process? What does that mean? And how does that lead to a distribution over things like images? Let's dig in.
 
-First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffuction process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. If $\boldsymbol{x}$ is an image, this diffusion process would look like the following:
+First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffuction process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. If $\boldsymbol{x}$ is an image of my dog Korra, this diffusion process would look like the following:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward.png" alt="drawing" width="800"/></center>
 
