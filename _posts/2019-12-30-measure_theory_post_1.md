@@ -79,11 +79,10 @@ Okay, we've spent a while thinking about representing objects and pieces of an o
 <center><span style="color:#0060C6">$$\mu : \mathcal{F} \rightarrow \mathbb{R}$$</span></center>
 
 <span style="color:#0060C6">is a **measure** if the following properties hold for $\mu$:</span>
-1. <span style="color:#0060C6">Nonnegative: $\forall A \in \mathcal{F}, \mu(A) \geq 0$</span>
-2. <span style="color:#0060C6">Empty set has zero measure:</span> 
+1\. <span style="color:#0060C6">Nonnegative: $\forall A \in \mathcal{F}, \mu(A) \geq 0$</span>
+2\. <span style="color:#0060C6">Empty set has zero measure:</span> 
 <center><span style="color:#0060C6">$$\mu(\emptyset)= 0$$</span></center>
-{:start="3"}
-3. <span style="color:#0060C6">Countable additivity: Given $A, B \in \mathcal{F}$ where $A \cap B = \emptyset$,</span>
+3\. <span style="color:#0060C6">Countable additivity: Given $A, B \in \mathcal{F}$ where $A \cap B = \emptyset$,</span>
   <center><span style="color:#0060C6">$$\mu(A \cup B) = \mu(A) + \mu(B)$$</span></center>
 The first part of the definition requires that a "size" (i.e. measure) cannot be negative. That's intuitive. The second part says that the "null piece" (i.e. nothing) has a size of zero.  Finally, the third part says that the sum of the sizes of two pieces of an object must equal the size of the two pieces glued together.
 
