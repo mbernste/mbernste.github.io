@@ -86,8 +86,8 @@ Okay, we've spent a while thinking about representing objects and pieces of an o
 
 <center><span style="color:#0060C6">$$\mu(\emptyset)= 0$$</span></center>
 
-3\. <span style="color:#0060C6">Countable additivity: Given $A, B \in \mathcal{F}$ where $A \cap B = \emptyset$,</span>
-  <center><span style="color:#0060C6">$$\mu(A \cup B) = \mu(A) + \mu(B)$$</span></center>
+3\. <span style="color:#0060C6">Countable additivity: Given a countably infinite sequence of sets $A_1, A_2, \dots \in \mathcal{F}$ where for any pair of sets $A_i \cap A_j = \emptyset$,</span>
+  <center><span style="color:#0060C6">$$\mu(\bigcup_{i=1}^\infty A_i) = \sum_{i=1}^\infty \mu(A_i)$$</span></center>
   
 The first part of the definition requires that a "size" (i.e. measure) cannot be negative. That's intuitive. The second part says that the "null piece" (i.e. nothing) has a size of zero.  Finally, the third part says that the sum of the sizes of two pieces of an object must equal the size of the two pieces glued together.
 
