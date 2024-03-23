@@ -46,7 +46,7 @@ The central goal of a diffusion model is to learn how to reverse this diffusion 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse.png" alt="drawing" width="800"/></center>
 
-More specifically, for each step, $t$, in the forward diffusion process, we will add noise by sampling the next object $boldsymbol{x}_{t+1}$ from a Gaussian that is centered near $\boldsymbol{x}_{t}$. (Note, we will rigorously this distribution in the next section. For now, one can just think of the process of sampling from this distribution as adding noise to $\boldsymbol{x}_t$).  That is,
+More specifically, for each step, $t$, in the forward diffusion process, we will add noise by sampling the next object $boldsymbol{x}\_{t+1}$ from a Gaussian that is centered near $\boldsymbol{x}\_{t}$. (Note, we will rigorously this distribution in the next section. For now, one can just think of the process of sampling from this distribution as adding noise to $\boldsymbol{x}\_t$).  That is,
 
 $$\boldsymbol{x}_{t+1} \sim q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$$
 
@@ -60,11 +60,11 @@ This is depicted below:
 
 Unfortunately, as is the case in many scenarios where one wishes to apply Bayes Theorem, the exact form of this posterior is intractable to compute. That is because, for any timestep $t$, in order to compute $q(\boldsymbol{x}_t)$, we have to marginalize over all of the time steps prior to $t$:
 
-$$\begin{align*}q(\boldsymbol{x}_t) &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, 
-dots, \boldsymbol{x}_0) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \\ &= \prod_{i={0}^{t-1} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \end{align*}$$
+$$\begin{align*}q(\boldsymbol{x}_t) &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, dots, \boldsymbol{x}_0) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \\ &= \prod_{i={0}^{t-1} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \end{align*}$$
 
-This integral is not tractable. As we do in [variational inference](https://mbernste.github.io/posts/variational_inference/), we will instead _approximate_ $q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1})$ with surrogate distribution $p_{\theta}(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1})$ where $\theta$ are learnable parameters that will be used to fit the distribution as close to $q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1})$ as possible. 
+This integral is not tractable. As we do in [variational inference](https://mbernste.github.io/posts/variational_inference/), we will instead _approximate_ $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ with surrogate distribution $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ where $\theta$ are learnable parameters that will be used to fit the distribution as close to $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ as possible. 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_approximate.png" alt="drawing" width="800"/></center>
 
 
 The forward and reverse models
