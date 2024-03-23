@@ -36,7 +36,7 @@ Much of my understanding of this material came from the following resources:
 High-level overview of denoising diffusion models
 -------------------------------------------------
 
-Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of objects of interest. These objects might be images, text documents, or protein sequences. Let $boldsymbol{x}$ be a vector representing one such object. Then, diffusion models can be understood as a probability distribution $p(\boldsymbol{x})$. Once we have this distribution in hand, we can sample objects from this distribution. In the case of image generation, we can view the process of generating an image as _sampling_ from a distribution:
+Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of objects of interest. These objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, diffusion models can be understood as a probability distribution $p(\boldsymbol{x})$. Once we have this distribution in hand, we can sample objects from this distribution. In the case of image generation, we can view the process of generating an image as _sampling_ from a distribution:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="800"/></center>
 
