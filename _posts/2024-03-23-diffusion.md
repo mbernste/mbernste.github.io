@@ -30,14 +30,18 @@ Because of these models' incredible performance, I was curious to understand the
 High-level overview of denoising diffusion models
 -------------------------------------------------
 
-Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of items of interest. These items might be images, text documents, [protein 
+Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of items of interest. These items might be images, text documents, or protein sequences. Let $boldsymbol{x}$ be a feature vector representing one such item. Then, diffusion models can be understood as a probability distrubtion $p(\boldsymbol{x})$. Once we have this distribution in hand, we can sample items $\boldsymbol{x}$ from this distribution. Thus, in the case of image generation, we can view the process of generating an image as _sampling_ from a distribution:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="500"/></center>
+
+The way in which diffusion models define $p(\boldsymbol{x})$ uses a 
 
 
-Let $x_t \sim N(\mu, 1)$ and $x_{t+1} \sim N(a x_t, \beta_1)$. Then 
 
 Theoretical derivation of the learning and sampling algorithms
 --------------------------------------------------------------
 
+Let $x_t \sim N(\mu, 1)$ and $x_{t+1} \sim N(a x_t, \beta_1)$. Then 
 
 Diffusion models as hierarchical variational autoencoders
 ---------------------------------------------------------
@@ -46,3 +50,7 @@ Diffusion models as hierarchical variational autoencoders
 
 Applying a diffusion model on MNIST
 -----------------------------------
+
+
+Appendix
+--------
