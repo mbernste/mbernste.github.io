@@ -67,7 +67,9 @@ Unfortunately, as is the case in many scenarios where one wishes to apply Bayes 
 
 $$\begin{align*} q(\boldsymbol{x}_t) &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, \dots, \boldsymbol{x}_0) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \\ &= \int q(\boldsymbol{x}_T) q(\boldsymbol{x}_0)\prod_{i=1}^{t-1} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \end{align*}$$
 
-This marginalization includes defining a distribution $q(\boldsymbol{x}_0)$, which is a distribution over images. Unfortunately, we don't know what this is -- that is the whole purpose of developing a diffusion model! As we do in [variational inference](https://mbernste.github.io/posts/variational_inference/), we will instead _approximate_ $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ with surrogate distribution $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ where $\theta$ are learnable parameters that will be used to fit the distribution as close to $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ as possible. 
+This marginalization requires that we define a distribution $q(\boldsymbol{x}_0)$, which is a distribution over noiseless objects (e.g., a distribution over noiseless images). Unfortunately, we don't know what this is -- that is our whole purpose of developing a diffusion model! As it will turn out, we will not ever need to define $q(\boldsymbol{x}_0)$.
+
+Now, as we do in [variational inference](https://mbernste.github.io/posts/variational_inference/), we will instead _approximate_ $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ with a surrogate distribution $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ where $\theta$ are learnable parameters that will be used to fit the distribution as close to $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ as possible. As we will see in the next section, $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ can incorporate a neural network so that it can be quite a complex distribution. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_approximate.png" alt="drawing" width="800"/></center>
 
@@ -81,7 +83,6 @@ Note that the marginal distribution $p(\boldsymbol{x})$ defined by the diffusion
 This distribution is never modeled explicitly; rather, it is defined implicitly through a learned "reverse diffusion" procession.
 
 In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t}$ and p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/) for fitting $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$ (i.e., finding $\theta$).
-
 
 The forward and reverse models
 ------------------------------
