@@ -36,14 +36,15 @@ Like all probabilistic generative models, diffusion models can be understood as 
 
 <br>
 
-For diffusion models, the exact form of $p(\boldsymbol{x})$ is actually never explicitly defined; rather, $p(\boldsymbol{x})$ emerges through an attempt at reversing a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). 
-
-Reversing a diffusion process? What does that mean? And how does that lead to a distribution over things like images? Let's dig in.
+For diffusion models, the exact form of $p(\boldsymbol{x})$ is actually never explicitly defined; rather, $p(\boldsymbol{x})$ emerges through an attempt at reversing a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). Reversing a diffusion process? What does that mean? Let's dig in.
 
 First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffuction process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. If $\boldsymbol{x}$ is an image of my dog Korra, this diffusion process would look like the following:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward.png" alt="drawing" width="800"/></center>
 
+The central goal of a diffusion model is to learn how to reverse this diffusion process -- that is, to remove the noise at each time step:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward.png" alt="drawing" width="800"/></center>
 
 
 
