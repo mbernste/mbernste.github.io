@@ -27,6 +27,11 @@ Diffusion models are also being explored in biomedical research. For example, th
 
 Because of these models' incredible performance, I was curious to understand they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. In this post, I will step through an explanation into the theory behind diffusion models. We will start by presenting a high-level overview of how diffusion models work. We will then derive the learning and sampling algorithms from first principles. We will then compare and contrast this model with the more familiar variational autoencoder. Lastly, we will implement a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
 
+Much of my understanding of this material came from the following resources:
+* [These lecture notes](https://www.davidinouye.com/course/ece57000-fall-2022/lectures/diffusion-models.pdf) by David I. Inouye
+* [This blog post](https://paramhanji.github.io/posts/2021/06/ddpm/) by Param Hanji
+* [This blog post](https://angusturner.github.io/generative_models/2021/06/29/diffusion-probabilistic-models-I.html) by Angus Turner
+
 High-level overview of denoising diffusion models
 -------------------------------------------------
 
@@ -54,7 +59,7 @@ To remove the noise, we can sample from the posterior distribution, $q(\boldsymb
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t+1})}{q(\boldsymbol{x}_t)}$$
 
-This is depicted below:
+This process of removing noise by iteratively sampling from the posteriors is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_exact.png" alt="drawing" width="800"/></center>
 
@@ -84,10 +89,8 @@ The forward and reverse models
 
 
 
-
-
-Theoretical derivation of the learning and sampling algorithms
---------------------------------------------------------------
+Deriving of the learning and sampling algorithms
+------------------------------------------------
 
 Let $x_t \sim N(\mu, 1)$ and $x_{t+1} \sim N(a x_t, \beta_1)$. Then 
 
