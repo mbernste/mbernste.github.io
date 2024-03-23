@@ -46,7 +46,7 @@ The central goal of a diffusion model is to learn how to reverse this diffusion 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse.png" alt="drawing" width="800"/></center>
 
-More specifically, for each step, $t$, in the forward diffusion process, we will add noise by sampling the next object $boldsymbol{x}\_{t+1}$ from a Gaussian that is centered near $\boldsymbol{x}\_{t}$. (Note, we will rigorously this distribution in the next section. For now, one can just think of the process of sampling from this distribution as adding noise to $\boldsymbol{x}\_t$).  That is,
+More specifically, for each step, $t$, in the forward diffusion process, we will add noise by sampling the next object $boldsymbol{x}_{t+1}$ from a Gaussian that is centered near $\boldsymbol{x}_{t}$. (Note, we will rigorously this distribution in the next section. For now, one can just think of the process of sampling from this distribution as adding noise to $\boldsymbol{x}_t$).  That is,
 
 $$\boldsymbol{x}_{t+1} \sim q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$$
 
