@@ -98,11 +98,7 @@ At each timestep $t$, we seek to add Gaussian noise to $\boldsymbol{x}\_t$ in or
 
 $$\begin{align*}\epsilon &\sim N(0, 1) \\ \boldsymbol{x}_{t+1} &:= \sqrt{1-\beta}\boldsymbol{x}_t + \beta\epsilon \end{align*}$$
 
-That is, we sample noise, $\epsilon$, from a standard normal distribution, multiply it by a variance term $\beta$, and then add it to a scaled version of $\boldsymbol{x}\_t$. This is the equivalent of sampleing $\boldsymbol{x}\_{t+1}$ from
-
-$$\boldsymbol{x}_{t+1} \sim N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$$
-
-where $N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ is a normal distribution with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$. Note that $\beta \boldsymbol{I}$ is a diagonal matrix, and thus the noise is independent across each each dimension. 
+That is, we sample noise, $\epsilon$, from a standard normal distribution, multiply it by a variance term $\beta$, and then add it to a scaled version of $\boldsymbol{x}\_t$. This is the equivalent of sampleing $\boldsymbol{x}\_{t+1}$ from $$\boldsymbol{x}_{t+1} \sim N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$$ where $N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ is a normal distribution with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$. Note that $\beta \boldsymbol{I}$ is a diagonal matrix, and thus the noise is independent across each each dimension. 
 
 Thus, we see that $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ is defined as
 
