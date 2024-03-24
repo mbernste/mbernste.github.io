@@ -86,7 +86,6 @@ Note that the marginal distribution $p_{\theta}(\boldsymbol{x})$ defined by the 
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p(\boldsymbol{x}_T) \prod_{t=1}^T p(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \end{align*}$$
 
-
 In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t}$ and $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$ via each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$ while simultaneously maximizing the marginal distribution $p_{\theta}(\boldsymbol{x})$ of our training data. 
 
 
@@ -107,13 +106,29 @@ Thus, we see that $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ is defined as
 
 $$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) \:= N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$$
 
-Here $N\left( . ; \boldsymbol{\mu}, \beta \boldsymbol{\Sigma}\right)$ represents the density function for a normal distribution with mean $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$.
+Here $N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ represents the normal density function over $\boldsymbol{x}_{t+1}$ with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$.
 
 ### Variance schedules
 
 Note, that $\beta$ determines the amount of variance that is added at each timestep. This may be constant across all timesteps, or one may choose a **variance schedule** such that each timestep, $t$, has a unique variance $\beta_t$. 
 
 ### The scaling term 
+
+### Properties of the forward process
+
+The form of the forward, conditional distributions, $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ admits the following properties that will be convenient to the process of deriving the learning algorithm:
+
+* **$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ has a closed form:** Specifically, we can derive the distribution of the object at any timestep $t$ along the forward process conditioned on the noiseless, original object $\boldsymbol{x}_0$. That distribution is:
+
+$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := $$
+
+See Derivation 1 in the Appendix to this blog post. Said differently, this derivation means that we can generate an object at _any_ timestep $t$ along the diffusion process by sampling from the above distribution. This is depicted schematically below:
+
+
+* **$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$ has a closed form:** Previously, showed that the condition distribution, $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ was intractible to compute. However, it turns out that if instead of _only_ conditioning on the next timestep, but we also condition on the original, noiseless object, $\boldsymbol{x}_0$, we _can_ derive the conditional distribution. That distribution is:
+
+  
+
 
 The reverse model
 -----------------
