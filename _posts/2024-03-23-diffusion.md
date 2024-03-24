@@ -76,7 +76,7 @@ Now, as we do in [variational inference](https://mbernste.github.io/posts/variat
 
 <br>
 
-Thus, our central task will be to learn the distributions $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ from training data. Once, we have this distribution in hand, we can generate objects by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from the learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$. At the end of this process we will have "transformed" random white noise into an object!
+Thus, our central task will be to learn the $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ distributions from training data. Once, we have this distribution in hand, we can generate objects by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from the learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$. At the end of this process we will have "transformed" random white noise into an object!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_frog.png" alt="drawing" width="800"/></center>
 
@@ -87,7 +87,7 @@ Note that the marginal distribution $p_{\theta}(\boldsymbol{x})$ defined by the 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p(\boldsymbol{x}_T) \prod_{t=1}^T p(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \end{align*}$$
 
 
-In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}\_t}$ and $p_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$ via each $p\_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}\_t}$ while simultaneously maximizing the marginal distribution $p\_{\theta}(\boldsymbol{x})$ of our training data. 
+In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}\_t}$ and $p_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$ via each $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$ while simultaneously maximizing the marginal distribution $p\_{\theta}(\boldsymbol{x})$ of our training data. 
 
 
 The forward and reverse models
