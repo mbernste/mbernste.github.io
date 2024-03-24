@@ -90,8 +90,8 @@ $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \bol
 In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}\_t}$ and $p_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$ via each $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$ while simultaneously maximizing the marginal distribution $p\_{\theta}(\boldsymbol{x})$ of our training data. 
 
 
-The forward and reverse models
-------------------------------
+The forward model
+-----------------
 
 At each timestep $t$, we seek to add Gaussian noise to $\boldsymbol{x}\_t$ in order to produce $\boldsymbol{x}\_{t+1}$. Specifically, for some $\beta \in [0,1]$, we produce $\boldsymbol{x}\_{t+1}$ from $\boldsymbol{x}\_t$ via:
 
@@ -109,15 +109,24 @@ $$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) \:= N\left(\boldsymbol{x}_{t+1};
 
 Here $N\left( . ; \boldsymbol{\mu}, \beta \boldsymbol{\Sigma}\right)$ represents the density function for a normal distribution with mean $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Sigma}$.
 
-Deriving of the learning and sampling algorithms
-------------------------------------------------
+### Variance schedules
+
+Note, that $\beta$ determines the amount of variance that is added at each timestep. This may be constant across all timesteps, or one may choose a **variance schedule** such that each timestep, $t$, has a unique variance $\beta_t$. 
+
+### The scaling term 
+
+The reverse model
+-----------------
+
+Fitting diffusion models via variational inference
+--------------------------------------------------
 
 
 
 Let $x_t \sim N(\mu, 1)$ and $x_{t+1} \sim N(a x_t, \beta_1)$. Then 
 
-Diffusion models as hierarchical variational autoencoders
----------------------------------------------------------
+Viewing diffusion models as hierarchical variational autoencoders
+-----------------------------------------------------------------
 
 
 
