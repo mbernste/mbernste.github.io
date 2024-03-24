@@ -89,11 +89,25 @@ $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \bol
 
 In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t}$ and p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$ via each $p\_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}\_t}$ while simultaneously maximizing the marginal distribution $p\_{\theta}(\boldsymbol{x})$ of our training data. 
 
+
 The forward and reverse models
 ------------------------------
 
+At each timestep $t$, we seek to add Gaussian noise to $\boldsymbol{x}_t$ in order to produce $\boldsymbol{x}_{t+1}$. Specifically, for some $\beta \in [0,1]$, we produce $\boldsymbol{x}_{t+1}$ from $\boldsymbol{x}_t$ via:
 
+$$\begin{align*}\epsilon &\sim N(0, 1) \\ \boldsymbol{x}_{t+1} &:= \sqrt{1-\beta}\boldsymbol{x}_t + \beta\epsilon \end{align*}$$
 
+That is, we sample noise, $\epsilon$, from a standard normal distribution, multiply it by a variance term $\beta$, and then add it to a scaled version of $\boldsymbol{x}_t$. This is the equivalent of sampleing $\boldsymbol{x}_{t+1}$ from
+
+$$\boldsymbol{x}_{t+1} \sim N(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I})$$
+
+where $N(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I})$ is a normal distribution with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$. Note that $\beta \boldsymbol{I}$ is a diagonal matrix, and thus the noise is independent across each each dimension. 
+
+Thus, we see that $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ is defined as
+
+$$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) \:= N(\boldsymbol{x}_{t+1}; \sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I})$$
+
+Here $N(.; \boldsymbol{\mu}, \boldsymbol{\Epsilon})$ represents the density function for a normal distribution with mean $\boldsymbol{\mu}$ and covariance matrix $\boldsymbol{\Epsilon}$.
 
 Deriving of the learning and sampling algorithms
 ------------------------------------------------
