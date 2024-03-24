@@ -87,7 +87,7 @@ Note that the marginal distribution $p_{\theta}(\boldsymbol{x})$ defined by the 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p(\boldsymbol{x}_T) \prod_{t=1}^T p(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \end{align*}$$
 
 
-In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}\_t}$ and p_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$ via each $p\_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}\_t}$ while simultaneously maximizing the marginal distribution $p\_{\theta}(\boldsymbol{x})$ of our training data. 
+In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}\_t}$ and $p_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t}$ via each $p\_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}\_t}$ while simultaneously maximizing the marginal distribution $p\_{\theta}(\boldsymbol{x})$ of our training data. 
 
 
 The forward and reverse models
