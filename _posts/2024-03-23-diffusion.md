@@ -56,13 +56,17 @@ More specifically, for each step, $t$, in the forward diffusion process, we will
 
 $$\boldsymbol{x}_{t+1} \sim q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$$
 
-To remove the noise, we can sample from the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. One idea to derive this distribution would be to use [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
-
-$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t+1})}{q(\boldsymbol{x}_t)}$$
-
-This process of removing noise by iteratively sampling from the posteriors is depicted below:
+Now, the central idea behind diffusion models is that if we knew the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, then we can "undo" each diffusion step and recover our objects from pure noise. This process of removing noise by iteratively sampling from these posteriors is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_exact.png" alt="drawing" width="800"/></center>
+
+If we can reverse this diffusion process accurately, then we see that we have a way of sampling from our desired distribution over objects, $p(\boldsymbol{x})$! That is, because the diffusion process, in the limit, transforms an object, $\boldsymbol{x}$ into pure noise, if we know how to remove noise (via the posteriors), then we can sample objects by first sampling pure noise and then iteratively removing noise via reverse diffusion. This process is depicted below:
+
+
+
+Now, the question is, how do we derive this posterior distribution? One idea is to use [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
+
+$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t+1})}{q(\boldsymbol{x}_t)}$$
 
 Unfortunately, as is the case in many scenarios where one wishes to apply Bayes Theorem, the exact form of this posterior is intractable to compute. That is because, for any timestep $t$, in order to compute $q(\boldsymbol{x}_t)$, we have to marginalize over all of the time steps prior to $t$:
 
