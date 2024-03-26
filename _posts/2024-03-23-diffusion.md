@@ -42,29 +42,33 @@ Like all probabilistic generative models, diffusion models can be understood as 
 
 <br>
 
-For diffusion models, the exact form of $p(\boldsymbol{x})$ is actually never explicitly defined; rather, $p(\boldsymbol{x})$ emerges through an attempt at reversing a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). Reversing a diffusion process? What does that mean? Let's dig in.
+Let's let $q(\boldsymbol{x})$ be the true distribution over our objects. We wish to find a distribution, $p(\boldsymbol{x})$, that is as close to $q(\boldsymbol{x})$ as possible. In diffusion models, we fit $p(\boldsymbol{x})$ to $q(\boldsymbol{x})$ in what at first may appear to be roundabout manner: specifically, we fit $p(\boldsymbol{x})$ to $q(\boldsymbol{x})$ by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). Reversing a diffusion process? What does that mean? And how does it lead to a distribution $p(\boldsymbol{x})$ that approximates $q(\boldsymbol{x})$? Let's dig in. 
 
-First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffuction process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. If $\boldsymbol{x}$ is an image of my dog Korra, this diffusion process would look like the following:
+First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffusion process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. If $\boldsymbol{x}$ is an image of my dog Korra, this diffusion process would look like the following:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward.png" alt="drawing" width="800"/></center>
 
-The central goal of a diffusion model is to learn how to reverse this diffusion process -- that is, to remove the noise at each time step:
+Here we emphasize that $\boldsymbol{x}$ is a sample from $q(\boldsymbol{x})$ -- that is, it is a sample from the "real world" distribution of objects. In the example above, it is sampled from the real distribution of images that we wish to model. Once we obtain an image (i.e. a sample from $q(\boldsymbol{x})$, we corrupt it by adding noise to it iteratively.
+
+As we will show in the next sections, it turns out that if we can learn to how to reverse this diffusion process -- that is, to remove the noise at each time step, then we can derive an approximation of $q(\boldsymbol{x})$. This process of removing noise is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse.png" alt="drawing" width="800"/></center>
 
-More specifically, for each step, $t$, in the forward diffusion process, we will add noise by sampling the next object $\boldsymbol{x}\_{t+1}$ from a Gaussian that is centered near $\boldsymbol{x}\_{t}$. (Note, we will rigorously this distribution in the next section. For now, one can just think of the process of sampling from this distribution as adding noise to $\boldsymbol{x}\_t$).  That is,
+Stated more rigorously, for each step, $t$, in the forward diffusion process, we will add noise, $\epsilon$, sampled from a standard normal distribution, to the current object, $\boldsymbol{x}\_t$, in order to form the next, noisier object $\boldsymbol{x}\_{t+1}$:
 
-$$\boldsymbol{x}_{t+1} \sim q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$$
+$$\begin{align*}\epsilon &\sim N(\boldsymbol{0}, \boldsymbol{1}) \\ \boldsymbol{x}\_{t+1} &:= c_1\boldsymbol{x}_t + c_2\epsilon\end{align*}$$
 
-Now, the central idea behind diffusion models is that if we knew the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, then we can "undo" each diffusion step and recover our objects from pure noise. This process of removing noise by iteratively sampling from these posteriors is depicted below:
+where $c_1$ and $c_2$ are two scalars (to be defined in more detail later in the post). We can view this process of formulating $\boldsymbol{x}\_{t+1}$ by adding noise to $\boldsymbol{x}_t$ as a process in which we _sample_ $\boldsymbol{x}_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. Moreover, this conditional distribution is a normal distribution:
+
+$$\begin{align*}\boldsymbol{x}_{t+1} &\sim q(\boldsymbol{x} \mid \boldsymbol{x}_t) \\ &\sim N(c_1\boldsymbol{x}, c_2^2 \boldsymbol{I})\end{align*}$$
+
+For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1}, \boldsymbol{x}_t)$ to refer to this conditional distribution.
+
+As we alluded to previously, it turns out that we can approximate $q(\boldsymbol{x})$ by learning to reverse this diffusion process, which we can do by learning the posterior distributions $q(\boldsymbol{x}\_t \mid q(\boldsymbol{x}\_{t+1})$. That is, If we knew the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, then we can "undo" each diffusion step and recover our sharp object from noise. This process of removing noise by iteratively sampling from these posteriors is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_exact.png" alt="drawing" width="800"/></center>
 
-If we can reverse this diffusion process accurately, then we see that we have a way of sampling from our desired distribution over objects, $p(\boldsymbol{x})$! That is, because the diffusion process, in the limit, transforms an object, $\boldsymbol{x}$ into pure noise, if we know how to remove noise (via the posteriors), then we can sample objects by first sampling pure noise and then iteratively removing noise via reverse diffusion. This process is depicted below:
-
-
-
-Now, the question is, how do we derive this posterior distribution? One idea is to use [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
+Now, the question is, how do we derive these posterior distributions? One idea is to use [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t+1})}{q(\boldsymbol{x}_t)}$$
 
