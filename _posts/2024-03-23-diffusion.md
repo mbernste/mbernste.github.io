@@ -95,6 +95,12 @@ Note that the marginal distribution $p_{\theta}(\boldsymbol{x})$ defined by the 
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p(\boldsymbol{x}_T) \prod_{t=1}^T p(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \end{align*}$$
 
+Now, how exactly does this framework ensure that $p_{\theta}(\boldsymbol{x})$ matches the true distribution $q(\boldsymbol{x})$? A rigorous answer to this question lies in the connection of diffusion models to [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}))$; however, in the meantime, we can gain some intuition by taking another look at the posterior distribution
+
+$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t+1})}{q(\boldsymbol{x}_t)}$$
+
+Again, notice how this distribution requires knowing $q(\boldsymbol{x})$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}_T$ to a "sharp", noiseless object $\boldsymbol{x}_0$, we need to know the true distribution $q(\boldsymbol{x})$. That is, we need to know what real objects look like! The very act of learning to approximate $q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1})$ using a surrogate distribution $p_{\theta}(\boldsymbol{x}_{t} \mid \boldsymbol{x}_{t+1})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x})$! 
+
 ### Matching $p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ to $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ via variational inference
 
 Recall, in [variational inference](https://mbernste.github.io/posts/variational_inference/), our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$. We do so my minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
