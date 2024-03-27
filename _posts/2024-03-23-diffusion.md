@@ -25,13 +25,10 @@ At the time of this writing, diffusion models are state-of-the-art models used f
 
 Diffusion models are also being explored in biomedical research. For example, the [Chroma](https://www.nature.com/articles/s41586-023-06728-8) model, developed by [Generate: Biomedicines](https://generatebiomedicines.com/), uses diffusion as part of their method for generating novel, functional protein sequences. 
 
-Because of these models' incredible performance in image generation, and their burgeoning use-cases in computational biology, I was curious to understand how they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. In this post, I will step through an explanation into the theory behind diffusion models. We will start by presenting a high-level overview of how diffusion models work. We will then derive the learning and sampling algorithms from first principles. We will then compare and contrast this model with the more familiar variational autoencoder. Lastly, we will implement a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
+Because of these models' incredible performance in image generation, and their burgeoning use-cases in computational biology, I was curious to understand how they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. In this post, I will step through my newfound understanding of diffusion models regarding both their mathematical theory and practical implementation. Hopefully this explanation will serve others who are learning this material as well. Please let me know if you find any errors! 
 
-Much of my understanding of this material came from the following resources:
-* [These lecture notes](https://www.davidinouye.com/course/ece57000-fall-2022/lectures/diffusion-models.pdf) by David I. Inouye
-* [This blog post](https://paramhanji.github.io/posts/2021/06/ddpm/) by Param Hanji
-* [This blog post](https://angusturner.github.io/generative_models/2021/06/29/diffusion-probabilistic-models-I.html) by Angus Turner
-* [This lecture](https://www.youtube.com/watch?v=687zEGODmHA&t=1212s&ab_channel=MachineLearningatBerkeley) at UC, Berkeley
+We will start by presenting a high-level overview into the basic framework of diffusion models as learning to reverse a diffusion process. We will then derive the learning and sampling algorithms from first principles. Next, we will connect these models to other modeling techniques -- namely, variational autoencoders and score-matching algorithms. Finally, we will implement a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
+
 
 High-level overview of denoising diffusion models
 -------------------------------------------------
@@ -42,7 +39,10 @@ Like all probabilistic generative models, diffusion models can be understood as 
 
 <br>
 
-Let's let $q(\boldsymbol{x})$ be the true distribution over our objects. We wish to find a distribution, $p(\boldsymbol{x})$, that is as close to $q(\boldsymbol{x})$ as possible. In diffusion models, we fit $p(\boldsymbol{x})$ to $q(\boldsymbol{x})$ in an _implicit manner_: specifically, we fit $p(\boldsymbol{x})$ to $q(\boldsymbol{x})$ by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). Reversing a diffusion process? What does that mean? And how does it lead to a distribution $p(\boldsymbol{x})$ that approximates $q(\boldsymbol{x})$? Let's dig in. 
+Let's let $q(\boldsymbol{x})$ be the true distribution over our objects. We wish to find a distribution, $p(\boldsymbol{x})$, that is similar to $q(\boldsymbol{x})$. Whereas in [variational autoencoders](), we explicitly find 
+
+
+In diffusion models, we fit $p(\boldsymbol{x})$ to $q(\boldsymbol{x})$ in an _implicit_ manner: specifically, we fit $p(\boldsymbol{x})$ to $q(\boldsymbol{x})$ by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). Reversing a diffusion process? What does that mean? And how does it lead to a distribution $p(\boldsymbol{x})$ that approximates $q(\boldsymbol{x})$? Let's dig in. 
 
 First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffusion process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. If $\boldsymbol{x}$ is an image of my dog Korra, this diffusion process would look like the following:
 
@@ -96,6 +96,14 @@ $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \bol
 
 In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}\_t)$ and $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ via each $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ while simultaneously maximizing the marginal distribution $p\_{\theta}(\boldsymbol{x})$ of our training data. 
 
+Learning the reverse diffusion process via variational inference
+----------------------------------------------------------------
+
+Viewing diffusion models as score matching models
+-------------------------------------------------
+
+Viewing diffusion models as hierarchical variational autoencoders
+-----------------------------------------------------------------
 
 The forward model
 -----------------
@@ -131,26 +139,22 @@ See Derivation 1 in the Appendix to this blog post. Said differently, this deriv
 
 * **$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$ has a closed form:** Previously, showed that the condition distribution, $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ was intractible to compute. However, it turns out that if instead of _only_ conditioning on the next timestep, but we also condition on the original, noiseless object, $\boldsymbol{x}_0$, we _can_ derive the conditional distribution. That distribution is:
 
-  
-
-
 The reverse model
 -----------------
 
-Fitting diffusion models via variational inference
---------------------------------------------------
-
-
-
-Let $x_t \sim N(\mu, 1)$ and $x_{t+1} \sim N(a x_t, \beta_1)$. Then 
-
-Viewing diffusion models as hierarchical variational autoencoders
------------------------------------------------------------------
-
-
-
 Applying a diffusion model on MNIST
 -----------------------------------
+
+Resources
+---------
+
+Much of my understanding of this material came from the following resources:
+
+* [These lecture notes](https://www.davidinouye.com/course/ece57000-fall-2022/lectures/diffusion-models.pdf) by David I. Inouye
+* [This blog post](https://paramhanji.github.io/posts/2021/06/ddpm/) by Param Hanji
+* [This blog post](https://angusturner.github.io/generative_models/2021/06/29/diffusion-probabilistic-models-I.html) by Angus Turner
+* [This lecture](https://www.youtube.com/watch?v=687zEGODmHA&t=1212s&ab_channel=MachineLearningatBerkeley) at UC, Berkeley
+
 
 
 Appendix
