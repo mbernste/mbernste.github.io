@@ -27,22 +27,23 @@ Diffusion models are also being explored in biomedical research. For example, th
 
 Because of these models' incredible performance in image generation, and their burgeoning use-cases in computational biology, I was curious to understand how they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. In this post, I will step through my newfound understanding of diffusion models regarding both their mathematical theory and practical implementation. Hopefully this explanation will serve others who are learning this material as well. Please let me know if you find any errors! 
 
-We will start by presenting a high-level overview into the basic framework of diffusion models as learning to reverse a diffusion process. We will then derive the learning and sampling algorithms from first principles. Next, we will connect these models to other modeling techniques -- namely, variational autoencoders and score-matching algorithms. Finally, we will implement a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
-
-
-High-level overview of denoising diffusion models
--------------------------------------------------
-
-Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of objects of interest. These objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, diffusion models can be understood as a probability distribution $p(\boldsymbol{x})$. Once we have this distribution in hand, we can sample objects from this distribution. In the case of image generation, we can view the process of generating an image as _sampling_ from a distribution:
+Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of objects of interest. These objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, diffusion models can be understood as a probability distribution $p(\boldsymbol{x})$ over our objects of interest. Once we have this distribution in hand, we can sample objects from this distribution. In the case of image generation, we can view the process of generating an image as _sampling_ from a distribution:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="800"/></center>
 
-<br>
+I have found [three different perspectives](https://mbernste.github.io/posts/understanding_3d/) from which one can understand how diffusion models both represent and learn a distribution,  $p(\boldsymbol{x})$:
 
-Let's let $q(\boldsymbol{x})$ be the true distribution over our objects. We wish to find a distribution, $p(\boldsymbol{x})$, that is similar to $q(\boldsymbol{x})$. Whereas in [variational autoencoders](), we explicitly find 
+1. As a model that learns how to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process#:~:text=In%20probability%20theory%20and%20statistics,many%20real%2Dlife%20stochastic%20systems.)
+2. As a hierarchical [variational autoencoder](https://mbernste.github.io/posts/vae/)
+3. As a [score matching model](https://yang-song.net/blog/2021/score/)
+
+In this blog post, I will present my understanding of diffusion models through these three perspectives. We will conclude by implementing a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
 
 
-In diffusion models, we fit $p(\boldsymbol{x})$ to $q(\boldsymbol{x})$ in an _implicit_ manner: specifically, we fit $p(\boldsymbol{x})$ to $q(\boldsymbol{x})$ by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). Reversing a diffusion process? What does that mean? And how does it lead to a distribution $p(\boldsymbol{x})$ that approximates $q(\boldsymbol{x})$? Let's dig in. 
+Perspective 1: Diffusion models as learning to reverse a diffusion process
+--------------------------------------------------------------------------
+
+Let's let $q(\boldsymbol{x})$ be the true distribution over our objects. We wish to develop a method that samples from a distribution, $p(\boldsymbol{x})$, that is similar to $q(\boldsymbol{x})$. In diffusion models, we do this in an _implicit_ manner: specifically, by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). 
 
 First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffusion process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. If $\boldsymbol{x}$ is an image of my dog Korra, this diffusion process would look like the following:
 
@@ -64,7 +65,7 @@ $$\begin{align*}\boldsymbol{x}_{t+1} &\sim q(\boldsymbol{x} \mid \boldsymbol{x}_
 
 For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1}, \boldsymbol{x}_t)$ to refer to this conditional distribution.
 
-As we alluded to previously, it turns out that we can approximate $q(\boldsymbol{x})$ by learning to reverse this diffusion process, which we can do by learning the posterior distributions $q(\boldsymbol{x}\_t \mid q(\boldsymbol{x}\_{t+1})$. That is, If we knew the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, then we can "undo" each diffusion step and recover our sharp object from noise. This process of removing noise by iteratively sampling from these posteriors is depicted below:
+One perspective from which to understand diffusion models is as a model that reverses this diffusion process, which we can do by learning the posterior distributions $q(\boldsymbol{x}\_t \mid q(\boldsymbol{x}\_{t+1})$. That is, If we knew the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, then we can "undo" each diffusion step and recover our sharp object from noise. This process of removing noise by iteratively sampling from these posteriors is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_exact.png" alt="drawing" width="800"/></center>
 
@@ -94,17 +95,21 @@ Note that the marginal distribution $p_{\theta}(\boldsymbol{x})$ defined by the 
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p(\boldsymbol{x}_T) \prod_{t=1}^T p(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \end{align*}$$
 
-In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}\_t)$ and $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ via each $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ while simultaneously maximizing the marginal distribution $p\_{\theta}(\boldsymbol{x})$ of our training data. 
+### Matching $p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ to $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ via variational inference
 
+Recall, in [variational inference](https://mbernste.github.io/posts/variational_inference/), our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$. We do so my minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
 
-The forward model
------------------
+$$p := \text{arg min}_p KL(q \vert\vert p)$$
+
+_Note, here we use $p$ to denote the approximate distribution and $q$ to denote the exact distribution. This is to match the common notation used in the literatur on diffusion models, though in my prior [blog post on variational inference](https://mbernste.github.io/posts/variational_inference/), I use $q$ to denote the approximate distribution and $p$ to denote the exact distribution. My apologies for this confusion!_
+
+### The forward model
 
 At each timestep $t$, we seek to add Gaussian noise to $\boldsymbol{x}\_t$ in order to produce $\boldsymbol{x}\_{t+1}$. Specifically, for some $\beta \in [0,1]$, we produce $\boldsymbol{x}\_{t+1}$ from $\boldsymbol{x}\_t$ via:
 
 $$\begin{align*}\epsilon &\sim N(0, 1) \\ \boldsymbol{x}_{t+1} &:= \sqrt{1-\beta}\boldsymbol{x}_t + \beta\epsilon \end{align*}$$
 
-That is, we sample noise, $\epsilon$, from a standard normal distribution, multiply it by a variance term $\beta$, and then add it to a scaled version of $\boldsymbol{x}\_t$. This is the equivalent of sampleing $\boldsymbol{x}\_{t+1}$ from $$\boldsymbol{x}_{t+1} \sim N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$$ where $N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ is a normal distribution with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$. Note that $\beta \boldsymbol{I}$ is a diagonal matrix, and thus the noise is independent across each each dimension. 
+That is, we sample noise, $\epsilon$, from a standard normal distribution, multiply it by a variance term $\beta$, and then add it to a scaled version of $\boldsymbol{x}\_t$. This is the equivalent of sampling $\boldsymbol{x}\_{t+1}$ from $$\boldsymbol{x}_{t+1} \sim N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$$ where $N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ is a normal distribution with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$. Note that $\beta \boldsymbol{I}$ is a diagonal matrix, and thus the noise is independent across each each dimension. 
 
 Thus, we see that $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ is defined as
 
@@ -131,17 +136,16 @@ See Derivation 1 in the Appendix to this blog post. Said differently, this deriv
 
 * **$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$ has a closed form:** Previously, showed that the condition distribution, $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ was intractible to compute. However, it turns out that if instead of _only_ conditioning on the next timestep, but we also condition on the original, noiseless object, $\boldsymbol{x}_0$, we _can_ derive the conditional distribution. That distribution is:
 
-The reverse model
------------------
+### The reverse model
 
-Learning the reverse diffusion process via variational inference
-----------------------------------------------------------------
+### Deriving the objective function
+
+Viewing diffusion models as hierarchical variational autoencoders
+-----------------------------------------------------------------
 
 Viewing diffusion models as score matching models
 -------------------------------------------------
 
-Viewing diffusion models as hierarchical variational autoencoders
------------------------------------------------------------------
 
 Applying a diffusion model on MNIST
 -----------------------------------
