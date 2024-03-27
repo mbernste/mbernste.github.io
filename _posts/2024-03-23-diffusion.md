@@ -96,14 +96,6 @@ $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \bol
 
 In the next sections, we will more rigorously define the distributions $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}\_t)$ and $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. We will then derive the learning algorithm, based on [variational inference](https://mbernste.github.io/posts/variational_inference/), for fitting finding $\theta$ such that we will approximate the posteriors $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ via each $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ while simultaneously maximizing the marginal distribution $p\_{\theta}(\boldsymbol{x})$ of our training data. 
 
-Learning the reverse diffusion process via variational inference
-----------------------------------------------------------------
-
-Viewing diffusion models as score matching models
--------------------------------------------------
-
-Viewing diffusion models as hierarchical variational autoencoders
------------------------------------------------------------------
 
 The forward model
 -----------------
@@ -141,6 +133,15 @@ See Derivation 1 in the Appendix to this blog post. Said differently, this deriv
 
 The reverse model
 -----------------
+
+Learning the reverse diffusion process via variational inference
+----------------------------------------------------------------
+
+Viewing diffusion models as score matching models
+-------------------------------------------------
+
+Viewing diffusion models as hierarchical variational autoencoders
+-----------------------------------------------------------------
 
 Applying a diffusion model on MNIST
 -----------------------------------
