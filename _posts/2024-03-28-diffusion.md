@@ -209,7 +209,10 @@ Much of my understanding of this material came from the following resources:
 * [This blog post](https://angusturner.github.io/generative_models/2021/06/29/diffusion-probabilistic-models-I.html) by Angus Turner
 * [This lecture](https://www.youtube.com/watch?v=687zEGODmHA&t=1212s&ab_channel=MachineLearningatBerkeley) at UC, Berkeley
 
-
-
 Appendix
 --------
+
+** Derivation 1:
+
+$$\begin{align*} KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) &= E_q\left[ \log \frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)}{p_\theta (\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \end{align*} $$
+
