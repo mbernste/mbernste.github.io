@@ -1,6 +1,6 @@
 ---
 title: 'Denoising Diffusion Probabilistic Models'
-date: 2024-03-23
+date: 2024-03-28
 permalink: /posts/diffusion/
 tags:
   - tutorial
@@ -108,7 +108,7 @@ To fit each $p_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ to each
 
 $$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 
-_Note, here we use $p$ to denote the approximate distribution and $q$ to denote the exact distribution. This is to match the common notation used in the literatur on diffusion models, though in my prior [blog post on variational inference](https://mbernste.github.io/posts/variational_inference/), I use $q$ to denote the approximate distribution and $p$ to denote the exact distribution. My apologies for this confusion!_
+<span style="color:#cf8421">_Note, here we use $p$ to denote the approximate distribution and $q$ to denote the exact distribution. This is to match the common notation used in the literatur on diffusion models, though in my prior [blog post on variational inference](https://mbernste.github.io/posts/variational_inference/), I use $q$ to denote the approximate distribution and $p$ to denote the exact distribution. My apologies for this confusion!_</span>
 
 In our case, we wish to learn the reverse diffusion process from the forward diffusion process, so we start with the following objective function:
 
