@@ -159,10 +159,10 @@ Why use a different value of $\beta_t$ at each time step? Empirically, XXXXXXXXX
 Now, what is the purpose of the scaling term $c_1 := \sqrt{1-\beta_t}$? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
 
 
-Properties of the forward process
----------------------------------
+Convenient properties of the forward model
+------------------------------------------
 
-The form of the forward, conditional distributions, $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ admits the following properties that will be convenient to the process of deriving the learning algorithm:
+The form of the forward, conditional distributions, $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ admits the following properties that will be convenient to the process of deriving the closed form equation of the ELBO:
 
 * **$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ has a closed form:** Specifically, we can derive the distribution of the object at any timestep $t$ along the forward process conditioned on the noiseless, original object $\boldsymbol{x}_0$ (See Derivation XXX in the Appendix to this post): $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := $$ Said differently, this derivation means that we can generate an object at _any_ timestep $t$ along the diffusion process by sampling from the above distribution. This is depicted schematically below:
 
