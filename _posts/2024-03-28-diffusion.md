@@ -159,16 +159,6 @@ Why use a different value of $\beta_t$ at each time step? Empirically, XXXXXXXXX
 Now, what is the purpose of the scaling term $c_1 := \sqrt{1-\beta_t}$? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
 
 
-
-
-Variance schedules
-------------------
-
-In diffusion models, it is common to pre-define a function that returns $\beta_t$ at timestep $t$. This is called a **variance schedule**. For example, a linear variance schedule simply returns a $\beta_t$ linearly with $t$.
-
-The scaling term 
-----------------
-
 Properties of the forward process
 ---------------------------------
 
