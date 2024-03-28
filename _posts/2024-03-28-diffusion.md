@@ -118,17 +118,21 @@ $$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 
 In our case, we wish to learn the reverse diffusion process from the forward diffusion process, so we start with the following objective function:
 
-$$\theta := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0))$$
+$$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0))$$
 
 where $\boldsymbol{x}_{1:T} := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$.
 
 Notice, we are conditioning on the noiseless object $\boldsymbol{x}_0$. Our goal is not to model the distribution over noiseless objects directly; rather, we are _only_ modeling the diffusion process itself -- that is, the process used to generate each intermediate noisy object $\boldsymbol{x}_1,  \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$, but not the noiseless object $\boldsymbol{x}_0$. 
 
-Now, it turns out that this objective function will seek to fit each $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. To see why this is, recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). In the case of diffusion models, this ELBO looks as follows (See Derivation 1 in the Appendix to this post):
+Now, we will show that this objective function will seek to fit each $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. First, recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). In the case of diffusion models, this ELBO looks as follows (See Derivation 1 in the Appendix to this post):
 
-$$ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) = \log p_\theta(\boldsymbol{x}) - \underbrace{E_q\left[ \right]}_{\text{ELBO}}$$
+$$ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) = \log p_\theta(\boldsymbol{x}) - \underbrace{E_q\left[ \log\frac{p_\theta (\bodsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}}$$
 
-Here we see that to minimize the KL-divergence, we can maximize the ELBO. Moreover, it turns out that this ELBO can be further manipulated into the following form (See Derivation 2 in the Appendix to this post):
+Here we see that to minimize the KL-divergence, we can maximize the ELBO. That is, we seek:
+
+$$\begin{align*}\hat{\theta} &:= \text{arg min}_\theta \ \text{ELBO}(\theta) \\ &= E_q\left[ \log\frac{p_\theta (\bodsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]\end{align*}$$
+
+Moreover, it turns out that this ELBO can be further manipulated into the following form (See Derivation 2 in the Appendix to this post):
 
 
 Notice, that the middle terms are matching X to Y! This is exactly akin to attempting to learn how to reverse diffusion. In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x})$, which will enable us to derive a closed form equation for the ELBO that we can optimize via gradient ascent.
@@ -138,7 +142,7 @@ The forward model
 
 As stated previously, the forward model is defined as
 
-$$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := &\sim N\left(\boldsymbol{x}_{t+1} ; c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)$$
+$$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := \sim N\left(\boldsymbol{x}_{t+1} ; c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)$$
 
 where $c_1$ and $c_2$ are constants. Let us know define these constants. First, let us define values $\beta_1, \beta_2, \dots, \beta_T \in [0, 1]$ be values between zero and one corresponding to each timestep. Then, the forward model at timestep $t$ is defined as:
 
@@ -168,10 +172,10 @@ Convenient properties of the forward model
 
 The form of the forward, conditional distributions, $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ admits the following properties that will be convenient to the process of deriving the closed form equation of the ELBO and the optimization algorithm for optimizing the ELBO:
 
-* **$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ has a closed form:** Specifically, we can derive the distribution of the object at any timestep $t$ along the forward process conditioned on the noiseless, original object $\boldsymbol{x}_0$ (See Derivation XXX in the Appendix to this post): $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := $$ Said differently, this derivation means that we can generate an object at _any_ timestep $t$ along the diffusion process by sampling from the above distribution. This is depicted schematically below:
+* **$q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_0)$ has a closed form:** Specifically, we can derive the distribution of the object at any timestep $t$ along the forward process conditioned on the noiseless, original object $\boldsymbol{x}\_0$ (See Derivation XXX in the Appendix to this post): $$q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_0) := $$ Said differently, this derivation means that we can generate an object at _any_ timestep $t$ along the diffusion process by sampling from the above distribution. This is depicted schematically below:
 
 
-* **$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$ has a closed form:** Previously, showed that the condition distribution, $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ was intractible to compute. However, it turns out that if instead of only conditioning on the next timestep, we also condition on the original, noiseless object, $\boldsymbol{x}_0$, we _can_ derive a closed form for this posterior distribution (See Derivation XXXXX in the Appendix to this post): XXXXXXXX This makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ requires knowing about $q(\boldsymbol{x})$, which is the distribution over noiseless objects -- that is, in order to turn noise into an object, we need to know what objects look like. However, if we condition on $\boldsymbol{x}_0$, this means we are assuming we _know_ what $\boldsymbol{x}_0$ looks like and the modified posterior, $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$, needs only to take into account subtraction of noise towards this noiseless object. 
+* **$q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$ has a closed form:** Previously, showed that the condition distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ was intractible to compute. However, it turns out that if instead of only conditioning on the next timestep, we also condition on the original, noiseless object, $\boldsymbol{x}\_0$, we _can_ derive a closed form for this posterior distribution (See Derivation XXXXX in the Appendix to this post): XXXXXXXX This makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ requires knowing about $q(\boldsymbol{x})$, which is the distribution over noiseless objects -- that is, in order to turn noise into an object, we need to know what objects look like. However, if we condition on $\boldsymbol{x}\_0$, this means we are assuming we _know_ what $\boldsymbol{x}\_0$ looks like and the modified posterior, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, needs only to take into account subtraction of noise towards this noiseless object. 
 
 The reverse model
 -----------------
