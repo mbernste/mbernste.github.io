@@ -95,7 +95,7 @@ Note that the marginal distribution $p_{\theta}(\boldsymbol{x})$ defined by the 
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \end{align*}$$
 
-Now, how exactly does this framework ensure that $p_{\theta}(\boldsymbol{x})$ matches the true distribution $q(\boldsymbol{x})$? A rigorous answer to this question lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}))$; however, in the meantime, we can gain some less-rigorous intuition by taking another look at the posterior distribution
+Now, how exactly does this framework ensure that $p_{\theta}(\boldsymbol{x})$ matches the true distribution $q(\boldsymbol{x})$? A rigorous answer to this question lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}))$; however, in the meantime, we can gain some intuition by taking another look at the posterior distribution
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t})}{q(\boldsymbol{x}_{t+1})}$$
 
@@ -117,14 +117,14 @@ where $\boldsymbol{x}_{1:T} := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \bolds
 
 Notice, we are conditioning on the noiseless object $\boldsymbol{x}_0$. Our goal is not to model the distribution over noiseless objects directly; rather, we are _only_ modeling the diffusion process itself -- that is, the process used to generate each intermediate noisy object $\boldsymbol{x}_1,  \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$, but not the noiseless object $\boldsymbol{x}_0$. 
 
-Now, as we described in [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/), minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). In the case of diffusion models,
+Now, it turns out that this objective function will seek to fit each $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. To see why this is, recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). In the case of diffusion models, this ELBO looks as follows (See Derivation 1 in the Appendix to this post):
 
-It turns out that this ELBO can be further manipulated into the following form:
+$$ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) = \log p_\theta(\boldsymbol{x}) - \underbrace{E_q\left[ \right]}_{\text{ELBO}}$$
+
+Here we see that to minimize the KL-divergence, we can maximize the ELBO. Moreover, it turns out that this ELBO can be further manipulated into the following form (See Derivation 2 in the Appendix to this post):
 
 
-Notice, that the middle terms are matching X to Y! This is exactly akin to attempting to learn how to reverse diffusion.
-
-See Derivation 1 in the Appendix to this blog post for a derivation of this equation. In the next sections, we will more rigorously define the forward mode $$$$
+Notice, that the middle terms are matching X to Y! This is exactly akin to attempting to learn how to reverse diffusion. In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x})$, which will enable us to derive a closed form equation for the ELBO that we can optimize via gradient ascent.
 
 ### The forward model
 
