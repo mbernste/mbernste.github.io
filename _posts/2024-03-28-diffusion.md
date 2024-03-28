@@ -155,14 +155,10 @@ Properties of the forward process
 
 The form of the forward, conditional distributions, $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ admits the following properties that will be convenient to the process of deriving the learning algorithm:
 
-* **$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ has a closed form:** Specifically, we can derive the distribution of the object at any timestep $t$ along the forward process conditioned on the noiseless, original object $\boldsymbol{x}_0$. That distribution is:
-
-$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := $$
-
-See Derivation 1 in the Appendix to this blog post. Said differently, this derivation means that we can generate an object at _any_ timestep $t$ along the diffusion process by sampling from the above distribution. This is depicted schematically below:
+* **$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ has a closed form:** Specifically, we can derive the distribution of the object at any timestep $t$ along the forward process conditioned on the noiseless, original object $\boldsymbol{x}_0$ (See Derivation XXX in the Appendix to this post): $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := $$ Said differently, this derivation means that we can generate an object at _any_ timestep $t$ along the diffusion process by sampling from the above distribution. This is depicted schematically below:
 
 
-* **$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$ has a closed form:** Previously, showed that the condition distribution, $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ was intractible to compute. However, it turns out that if instead of _only_ conditioning on the next timestep, but we also condition on the original, noiseless object, $\boldsymbol{x}_0$, we _can_ derive the conditional distribution. That distribution is:
+* **$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$ has a closed form:** Previously, showed that the condition distribution, $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ was intractible to compute. However, it turns out that if instead of _only_ conditioning on the next timestep, but we also condition on the original, noiseless object, $\boldsymbol{x}_0$, we _can_ derive the conditional distribution (See Derivation XXXXX in the Appendix to this post):
 
 The reverse model
 -----------------
