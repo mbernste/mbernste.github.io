@@ -118,7 +118,7 @@ $$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 
 In our case, we wish to learn the reverse diffusion process from the forward diffusion process, so we start with the following objective function:
 
-$$\theta := \text{arg min}_\theta KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0))$$
+$$\theta := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0))$$
 
 where $\boldsymbol{x}_{1:T} := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$.
 
