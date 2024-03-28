@@ -93,7 +93,7 @@ Now, as we do in [variational inference](https://mbernste.github.io/posts/variat
 
 Thus, our central task will be to learn each $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ distribution from a set of training data. Once, we have these distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sample $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object!
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_frog.png" alt="drawing" width="800"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
 
 <br>
 
