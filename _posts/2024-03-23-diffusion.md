@@ -59,13 +59,13 @@ Stated more rigorously, for each step, $t$, in the forward diffusion process, we
 
 $$\begin{align*}\epsilon &\sim N(\boldsymbol{0}, \boldsymbol{1}) \\ \boldsymbol{x}\_{t+1} &:= c_1\boldsymbol{x}_t + c_2\epsilon\end{align*}$$
 
-where $c_1$ and $c_2$ are two scalars (to be defined in more detail later in the post). We can view this process of formulating $\boldsymbol{x}\_{t+1}$ by adding noise to $\boldsymbol{x}_t$ as a process in which we _sample_ $\boldsymbol{x}_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. Moreover, this conditional distribution is a normal distribution:
+where $c_1$ and $c_2$ are two scalars (to be defined in more detail later in the post). We can view this process of formulating $\boldsymbol{x}\_{t+1}$ by adding noise to $\boldsymbol{x}\_t$ as a process in which we _sample_ $\boldsymbol{x}\_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. Moreover, this conditional distribution is a normal distribution:
 
-$$\begin{align*}\boldsymbol{x}_{t+1} &\sim q(\boldsymbol{x} \mid \boldsymbol{x}_t) \\ &\sim N(c_1\boldsymbol{x}, c_2^2 \boldsymbol{I})\end{align*}$$
+$$\begin{align*}\boldsymbol{x}_{t+1} &\sim q(\boldsymbol{x} \mid \boldsymbol{x}_t) \\ &\sim N\left(c_1\boldsymbol{x}, c_2^2 \boldsymbol{I}\right)\end{align*}$$
 
 For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1}, \boldsymbol{x}_t)$ to refer to this conditional distribution.
 
-One perspective from which to understand diffusion models is as a model that reverses this diffusion process, which we can do by learning the posterior distributions $q(\boldsymbol{x}\_t \mid q(\boldsymbol{x}\_{t+1})$. That is, If we knew the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, then we can "undo" each diffusion step and recover our sharp object from noise. This process of removing noise by iteratively sampling from these posteriors is depicted below:
+One perspective from which to understand diffusion models is as a model that reverses this diffusion process, which we can do by learning the posterior distributions $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. That is, if we knew the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, then we could "undo" each diffusion step and recover our "sharp", noiseless object from the noise. This process of removing noise by iteratively sampling from these posteriors is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_exact.png" alt="drawing" width="800"/></center>
 
@@ -73,11 +73,11 @@ Now, the question is, how do we derive these posterior distributions? One idea i
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t})}{q(\boldsymbol{x}_{t+1})}$$
 
-Unfortunately, as is the case in many scenarios where one wishes to apply Bayes Theorem, the exact form of this posterior is intractable to compute. That is because, for any timestep $t$, in order to compute $q(\boldsymbol{x}_t)$, we have to marginalize over all of the time steps prior to $t$:
+Unfortunately, this posterior is intractable to compute. To see why this is intractible, we first note that in order to compute $q(\boldsymbol{x}_t)$, we have to marginalize over all of the time steps prior to $t$:
 
 $$\begin{align*} q(\boldsymbol{x}_t) &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, \dots, \boldsymbol{x}_0) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \\ &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_0)\prod_{i=1}^{t} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \end{align*}$$
 
-This marginalization requires that we define a distribution $q(\boldsymbol{x}_0)$, which is a distribution over noiseless objects (e.g., a distribution over noiseless images). Unfortunately, we don't know what this is -- that is our whole purpose of developing a diffusion model! As it will turn out, we will not ever need to define $q(\boldsymbol{x}_0)$.
+Notice that this marginalization requires that we define a distribution $q(\boldsymbol{x}_0)$, which is a distribution over noiseless objects (e.g., a distribution over noiseless images). Unfortunately, we don't know what this is -- that is our whole purpose of developing a diffusion model! As it will turn out, we will not ever need to define $q(\boldsymbol{x}_0)$.
 
 Now, as we do in [variational inference](https://mbernste.github.io/posts/variational_inference/), we will instead _approximate_ $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ with a surrogate distribution $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ where $\theta$ are learnable parameters that will be used to fit the distribution as close to $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ as possible. As we will see in the next section, $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ can incorporate a neural network so that it can be quite a complex distribution. 
 
