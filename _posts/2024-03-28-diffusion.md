@@ -130,22 +130,41 @@ Notice, that the middle terms are matching X to Y! This is exactly akin to attem
 The forward model
 -----------------
 
-At each timestep $t$, we seek to add Gaussian noise to $\boldsymbol{x}\_t$ in order to produce $\boldsymbol{x}\_{t+1}$. Specifically, for some $\beta \in [0,1]$, we produce $\boldsymbol{x}\_{t+1}$ from $\boldsymbol{x}\_t$ via:
+As stated previously, the forward model is defined as
 
-$$\begin{align*}\epsilon &\sim N(0, 1) \\ \boldsymbol{x}_{t+1} &:= \sqrt{1-\beta}\boldsymbol{x}_t + \beta\epsilon \end{align*}$$
+$$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := &\sim N\left(\boldsymbol{x}_{t+1} ; c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)\end{align*}$$
 
-That is, we sample noise, $\epsilon$, from a standard normal distribution, multiply it by a variance term $\beta$, and then add it to a scaled version of $\boldsymbol{x}\_t$. This is the equivalent of sampling $\boldsymbol{x}\_{t+1}$ from $$\boldsymbol{x}_{t+1} \sim N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$$ where $N\left(\sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ is a normal distribution with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$. Note that $\beta \boldsymbol{I}$ is a diagonal matrix, and thus the noise is independent across each each dimension. 
+where $c_1$ and $c_2$ are constants. Let us know define these constants. First, let us define values $\beta_1, \beta_2, \dots, \beta_T \in [0, 1]$ be values between zero and one corresponding to each timestep. Then, the forward model at timestep $t$ is defined as:
 
-Thus, we see that $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ is defined as
+$$\begin{align*}q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta_t}\boldsymbol{x}_t, \beta_t \boldsymbol{I}\right)$$
 
-$$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) \:= N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$$
+where  $N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ represents the normal density function over $\boldsymbol{x}_{t+1}$ with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$.
 
-Here $N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ represents the normal density function over $\boldsymbol{x}_{t+1}$ with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$.
+Thus, we see that for timestep $t$, the constants $c_1$ and $c_2$ are simply:
+
+$$\begin{align*}c_1 &:= \sqrt{1-\beta_t} \\ c_2 &:= \beta_t\end{align*}$$
+
+Here we see that $c_2 := \beta_t$ sets the variance of the noise at timestep $t$. In diffusion models, it is common to predefine a function $g(t)$ that returns $\beta_t$ at each timestep. This function is called the **variance schedule**. For example, one might use a linear variance schedule defined as:
+
+$$\beta_t := (t/T) * K$$ 
+
+where $K \leq 1$ is some small constant. XXXXX et al. suggest using a XXXXXX variance schedule defined as:
+
+These two variance schedules are depicted below:
+
+
+
+Why use a different value of $\beta_t$ at each time step? Empirically, XXXXXXXXXXX.
+
+Now, what is the purpose of the scaling term $c_1 := \sqrt{1-\beta_t}$? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
+
+
+
 
 Variance schedules
 ------------------
 
-Note, that $\beta$ determines the amount of variance that is added at each timestep. This may be constant across all timesteps, or one may choose a **variance schedule** such that each timestep, $t$, has a unique variance $\beta_t$. 
+In diffusion models, it is common to pre-define a function that returns $\beta_t$ at timestep $t$. This is called a **variance schedule**. For example, a linear variance schedule simply returns a $\beta_t$ linearly with $t$.
 
 The scaling term 
 ----------------
