@@ -31,6 +31,8 @@ Like all probabilistic generative models, diffusion models can be understood as 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="800"/></center>
 
+<br>
+
 I have found [three different perspectives](https://mbernste.github.io/posts/understanding_3d/) from which one can understand how diffusion models both represent and learn a distribution,  $p(\boldsymbol{x})$:
 
 1. As a model that learns how to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process#:~:text=In%20probability%20theory%20and%20statistics,many%20real%2Dlife%20stochastic%20systems.)
@@ -56,6 +58,8 @@ Here we emphasize that $\boldsymbol{x}$ is a sample from $q(\boldsymbol{x})$ -- 
 As we will show in the next sections, it turns out that if we can learn to how to reverse this diffusion process -- that is, to remove the noise at each time step, then we can derive an approximation of $q(\boldsymbol{x})$. This process of removing noise is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse.png" alt="drawing" width="800"/></center>
+
+<br>
 
 Stated more rigorously, for each step, $t$, in the forward diffusion process, we will add noise, $\epsilon$, sampled from a standard normal distribution, to the current object, $\boldsymbol{x}\_t$, in order to form the next, noisier object $\boldsymbol{x}\_{t+1}$:
 
