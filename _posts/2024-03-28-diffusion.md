@@ -132,13 +132,11 @@ The forward model
 
 As stated previously, the forward model is defined as
 
-$$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := &\sim N\left(\boldsymbol{x}_{t+1} ; c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)\end{align*}$$
+$$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := &\sim N\left(\boldsymbol{x}_{t+1} ; c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)$$
 
 where $c_1$ and $c_2$ are constants. Let us know define these constants. First, let us define values $\beta_1, \beta_2, \dots, \beta_T \in [0, 1]$ be values between zero and one corresponding to each timestep. Then, the forward model at timestep $t$ is defined as:
 
-$$\begin{align*}q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta_t}\boldsymbol{x}_t, \beta_t \boldsymbol{I}\right)$$
-
-where  $N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ represents the normal density function over $\boldsymbol{x}_{t+1}$ with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$.
+$$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta_t}\boldsymbol{x}_t, \beta_t \boldsymbol{I}\right)$$
 
 Thus, we see that for timestep $t$, the constants $c_1$ and $c_2$ are simply:
 
