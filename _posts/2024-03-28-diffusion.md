@@ -108,7 +108,7 @@ To fit each $p_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ to each
 
 $$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 
-<span style="color:#cf8421">_Note, here we use $p$ to denote the approximate distribution and $q$ to denote the exact distribution. This notation is in accordance with the literature, though in my prior [blog post on variational inference](https://mbernste.github.io/posts/variational_inference/) I use $q$ to denote the approximate distribution and $p$ to denote the exact distribution. My apologies for this confusion!_</span>
+<span style="color:#cf8421">_Note, in accordance with the literature, we use $p$ to denote the approximate distribution and $q$ to denote the exact distribution. However, in my prior [blog post on variational inference](https://mbernste.github.io/posts/variational_inference/), I use $q$ to denote the approximate distribution and $p$ to denote the exact distribution. My apologies for this confusion!_</span>
 
 In our case, we wish to learn the reverse diffusion process from the forward diffusion process, so we start with the following objective function:
 
