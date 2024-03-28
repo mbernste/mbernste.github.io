@@ -51,7 +51,7 @@ First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), 
 
 <br>
 
-Here we emphasize that $\boldsymbol{x}$ is a sample from $q(\boldsymbol{x})$ -- that is, it is a sample from the "real world" distribution of objects. In the example above, it is sampled from the real distribution of images that we wish to model. Once we obtain an image (i.e. a sample from $q(\boldsymbol{x})$, we corrupt it by adding noise to it iteratively. If the total number of timesteps $T$ is large enough, then the corrupted image approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$.
+Here we emphasize that $\boldsymbol{x}$ is a sample from $q(\boldsymbol{x})$ -- that is, it is a sample from the "real world" distribution of objects. In the example above, it is sampled from the real distribution of images that we wish to model. Once we obtain an image (i.e. a sample from $q(\boldsymbol{x})$), we corrupt it by adding noise to it iteratively. If the total number of timesteps $T$ is large enough, then the corrupted image approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$.
 
 As we will show in the next sections, it turns out that if we can learn to how to reverse this diffusion process -- that is, to remove the noise at each time step, then we can derive an approximation of $q(\boldsymbol{x})$. This process of removing noise is depicted below:
 
