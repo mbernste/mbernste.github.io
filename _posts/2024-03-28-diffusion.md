@@ -172,11 +172,11 @@ The form of the forward, conditional distributions, $q(\boldsymbol{x}_{t+1} \mid
 The reverse model
 -----------------
 
-Deriving the closed form objective function
--------------------------------------------
+Deriving a closed form of the ELBO
+-----------------------------------
 
-Optimizing the objective function via stochastic gradient ascent
-----------------------------------------------------------------
+Optimizing the ELBO via stochastic gradient ascent
+--------------------------------------------------
 
 The sampling algorithm
 ----------------------
