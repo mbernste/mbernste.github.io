@@ -65,7 +65,7 @@ where $c_1$ and $c_2$ are two scalars (to be defined in more detail later in the
 
 $$\boldsymbol{x}_{t+1} \sim N\left(c_1\boldsymbol{x}, c_2^2 \boldsymbol{I}\right)$$
 
-For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1}, \boldsymbol{x}_t)$ to refer to this conditional distribution.
+For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ to refer to this conditional distribution.
 
 One perspective from which to understand diffusion models is as a model that reverses this diffusion process, which we can do by learning the posterior distributions $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. That is, if we knew the posterior distribution, $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, then we could "undo" each diffusion step and recover our "sharp", noiseless object from the noise. This process of removing noise by iteratively sampling from these posteriors is depicted below:
 
