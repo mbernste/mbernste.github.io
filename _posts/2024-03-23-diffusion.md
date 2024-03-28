@@ -163,10 +163,10 @@ See Derivation 1 in the Appendix to this blog post. Said differently, this deriv
 
 ### Deriving the objective function
 
-Viewing diffusion models as hierarchical variational autoencoders
+Perspective 2: Diffusion models as hierarchical variational autoencoders
 -----------------------------------------------------------------
 
-Viewing diffusion models as score matching models
+Perspective 3: Diffusion models as score matching models
 -------------------------------------------------
 
 
