@@ -59,11 +59,11 @@ As we will show in the next sections, it turns out that if we can learn to how t
 
 Stated more rigorously, for each step, $t$, in the forward diffusion process, we will add noise, $\epsilon$, sampled from a standard normal distribution, to the current object, $\boldsymbol{x}\_t$, in order to form the next, noisier object $\boldsymbol{x}\_{t+1}$:
 
-$$\begin{align*}\epsilon &\sim N(\boldsymbol{0}, \boldsymbol{1}) \\ \boldsymbol{x}\_{t+1} &:= c_1\boldsymbol{x}_t + c_2\epsilon\end{align*}$$
+$$\begin{align*}\epsilon &\sim N(\boldsymbol{0}, \boldsymbol{1}) \\ \boldsymbol{x}_{t+1} &:= c_1\boldsymbol{x}_t + c_2\epsilon\end{align*}$$
 
 where $c_1$ and $c_2$ are two scalars (to be defined in more detail later in the post). We can view this process of formulating $\boldsymbol{x}\_{t+1}$ by adding noise to $\boldsymbol{x}\_t$ as a process in which we _sample_ $\boldsymbol{x}\_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. Moreover, this conditional distribution is a normal distribution:
 
-$$\begin{align*}\boldsymbol{x}_{t+1} &\sim q(\boldsymbol{x} \mid \boldsymbol{x}_t) \\ &\sim N\left(c_1\boldsymbol{x}, c_2^2 \boldsymbol{I}\right)\end{align*}$$
+$$\boldsymbol{x}_{t+1} \sim N\left(c_1\boldsymbol{x}, c_2^2 \boldsymbol{I}\right)$$
 
 For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1}, \boldsymbol{x}_t)$ to refer to this conditional distribution.
 
