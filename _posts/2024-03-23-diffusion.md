@@ -101,21 +101,21 @@ $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \
 
 Again, notice how this distribution requires knowing $q(\boldsymbol{x})$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know the true distribution $q(\boldsymbol{x})$. That is, we need to know what real objects look like! Thus, the very act of learning to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x})$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ _must_ learn about $q(\boldsymbol{x})$ in order to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$.
 
-### Matching $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ via variational inference
+### Fitting $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ via variational inference
 
 To fit each $p_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ to each $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, diffusion models use [variational inference](https://mbernste.github.io/posts/variational_inference/). Recall, in variational inference, our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$ by minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
 
-$$p := \text{arg min}_p KL(q \ \vert\vert \ p)$$
+$$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 
 _Note, here we use $p$ to denote the approximate distribution and $q$ to denote the exact distribution. This is to match the common notation used in the literatur on diffusion models, though in my prior [blog post on variational inference](https://mbernste.github.io/posts/variational_inference/), I use $q$ to denote the approximate distribution and $p$ to denote the exact distribution. My apologies for this confusion!_
 
-In our case, we wish to learn the reverse diffusion process from the forward diffusion process, so our objective function is
+In our case, we wish to learn the reverse diffusion process from the forward diffusion process, so we start with the following objective function:
 
-$$\theta := \text{arg min}_\theta KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0))\end{align*}$$
+$$\theta := \text{arg min}_\theta KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0))$$
 
 where $\boldsymbol{x}_{1:T} := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$.
 
-Notice, we are conditioning on the noiseless object $\boldsymbol{x}_0$. Our goal is not to model the distribution over noiseless objects directly; rather, we are _only_ modeling the diffusion process itself -- that is, the process used to generate each intermediate object $\boldsymbol{x}_1,  \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$. 
+Notice, we are conditioning on the noiseless object $\boldsymbol{x}_0$. Our goal is not to model the distribution over noiseless objects directly; rather, we are _only_ modeling the diffusion process itself -- that is, the process used to generate each intermediate noisy object $\boldsymbol{x}_1,  \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$, but not the noiseless object $\boldsymbol{x}_0$. 
 
 Now, as we described in [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/), minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). In the case of diffusion models,
 
