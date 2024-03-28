@@ -163,8 +163,14 @@ The form of the forward, conditional distributions, $q(\boldsymbol{x}_{t+1} \mid
 The reverse model
 -----------------
 
-Deriving the objective function
--------------------------------
+Deriving the closed form objective function
+-------------------------------------------
+
+Optimizing the objective function via stochastic gradient ascent
+----------------------------------------------------------------
+
+The sampling algorithm
+----------------------
 
 Perspective 2: Diffusion models as hierarchical variational autoencoders
 -----------------------------------------------------------------
