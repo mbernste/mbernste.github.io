@@ -101,7 +101,8 @@ $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \
 
 Again, notice how this distribution requires knowing $q(\boldsymbol{x})$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know the true distribution $q(\boldsymbol{x})$. That is, we need to know what real objects look like! Thus, the very act of learning to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x})$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ _must_ learn about $q(\boldsymbol{x})$ in order to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$.
 
-### Fitting $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ via variational inference
+Fitting $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ via variational inference
+----------------------------------------------------------------------------------------------------------
 
 To fit each $p_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ to each $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$, diffusion models use [variational inference](https://mbernste.github.io/posts/variational_inference/). Recall, in variational inference, our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$ by minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
 
@@ -126,7 +127,8 @@ Here we see that to minimize the KL-divergence, we can maximize the ELBO. Moreov
 
 Notice, that the middle terms are matching X to Y! This is exactly akin to attempting to learn how to reverse diffusion. In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x})$, which will enable us to derive a closed form equation for the ELBO that we can optimize via gradient ascent.
 
-### The forward model
+The forward model
+-----------------
 
 At each timestep $t$, we seek to add Gaussian noise to $\boldsymbol{x}\_t$ in order to produce $\boldsymbol{x}\_{t+1}$. Specifically, for some $\beta \in [0,1]$, we produce $\boldsymbol{x}\_{t+1}$ from $\boldsymbol{x}\_t$ via:
 
@@ -140,13 +142,16 @@ $$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) \:= N\left(\boldsymbol{x}_{t+1};
 
 Here $N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta}\boldsymbol{x}_t, \beta \boldsymbol{I}\right)$ represents the normal density function over $\boldsymbol{x}_{t+1}$ with mean $\sqrt{1-\beta}\boldsymbol{x}_t$ and covariance matrix $\beta \boldsymbol{I}$.
 
-### Variance schedules
+Variance schedules
+------------------
 
 Note, that $\beta$ determines the amount of variance that is added at each timestep. This may be constant across all timesteps, or one may choose a **variance schedule** such that each timestep, $t$, has a unique variance $\beta_t$. 
 
-### The scaling term 
+The scaling term 
+----------------
 
-### Properties of the forward process
+Properties of the forward process
+---------------------------------
 
 The form of the forward, conditional distributions, $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ admits the following properties that will be convenient to the process of deriving the learning algorithm:
 
@@ -159,9 +164,11 @@ See Derivation 1 in the Appendix to this blog post. Said differently, this deriv
 
 * **$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$ has a closed form:** Previously, showed that the condition distribution, $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ was intractible to compute. However, it turns out that if instead of _only_ conditioning on the next timestep, but we also condition on the original, noiseless object, $\boldsymbol{x}_0$, we _can_ derive the conditional distribution. That distribution is:
 
-### The reverse model
+The reverse model
+-----------------
 
-### Deriving the objective function
+Deriving the objective function
+-------------------------------
 
 Perspective 2: Diffusion models as hierarchical variational autoencoders
 -----------------------------------------------------------------
