@@ -130,7 +130,7 @@ $$ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\bo
 
 Here we see that to minimize the KL-divergence, we can maximize the ELBO. That is, we seek:
 
-$$\begin{align*}\hat{\theta} &:= \text{arg min}_\theta \ \text{ELBO}(\theta) \\ &= E_q\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]\end{align*}$$
+$$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ &= E_q\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]\end{align*}$$
 
 Moreover, it turns out that this ELBO can be further manipulated into the following form (See Derivation 2 in the Appendix to this post):
 
@@ -216,5 +216,5 @@ Appendix
 
 ** Derivation 1:
 
-$$\begin{align*} KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) &= E_q\left[ \log \frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)}{p_\theta (\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_q \left[\frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)}{\frac{p_\theta ( \boldsymbol{x}_{0:T}) }{p_\theta (\boldsymbol{x}_0)} } \right]\end{align*} $$
+$$\begin{align*} KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) &= E_q\left[ \log \frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)}{p_\theta (\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_q \left[\frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)}{\frac{p_\theta ( \boldsymbol{x}_{0:T}) }{p_\theta (\boldsymbol{x}_0)} } \right] \\ &= E_q \left[ \log p_\theta (\boldsymbol{x}_0) \frac{q(\boldsymbol{x}_{1:T}\mid \boldsymbol{x}_0)}{p_\theta (\boldsymbol{x}_{0:T})} \right] \end{align*} $$
 
