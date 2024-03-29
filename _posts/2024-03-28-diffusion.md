@@ -152,11 +152,11 @@ Thus, we see that for timestep $t$, the constants $c_1$ and $c_2$ are simply:
 
 $$\begin{align*}c_1 &:= \sqrt{1-\beta_t} \\ c_2 &:= \beta_t\end{align*}$$
 
-Here we see that $c_2 := \beta_t$ sets the variance of the noise at timestep $t$. In diffusion models, it is common to predefine a function $g(t)$ that returns $\beta_t$ at each timestep. This function is called the **variance schedule**. For example, one might use a linear variance schedule defined as:
+Here we see that $c_2 := \beta_t$ sets the variance of the noise at timestep $t$. In diffusion models, it is common to predefine a function that returns $\beta_t$ at each timestep. This function is called the **variance schedule**. For example, one might use a linear variance schedule defined as:
 
-$$\beta_t := (t/T) * K$$ 
+$$\beta_t := (\text{max} - \text{min})(t/T) + \text{min}$$ 
 
-where $K \leq 1$ is some small constant. XXXXX et al. suggest using a XXXXXX variance schedule defined as:
+where $\text{max}, $\text{min} \in [0,1]$ and $\text{min} < \text{max}$ are two small constants. The function above will interpolate linearly between $\text{min}$ and $\text{max}$. XXXXX et al. suggest using a XXXXXX variance schedule defined as:
 
 These two variance schedules are depicted below:
 
