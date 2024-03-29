@@ -1,5 +1,5 @@
 ---
-title: 'Denoising Diffusion Probabilistic Models'
+title: 'Denoising diffusion probabilistic models'
 date: 2024-03-28
 permalink: /posts/diffusion/
 tags:
