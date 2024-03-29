@@ -156,7 +156,7 @@ Here we see that $c_2 := \beta_t$ sets the variance of the noise at timestep $t$
 
 $$\beta_t := (\text{max} - \text{min})(t/T) + \text{min}$$ 
 
-where $\text{max}, $\text{min} \in [0,1]$ and $\text{min} < \text{max}$ are two small constants. The function above will interpolate linearly between $\text{min}$ and $\text{max}$. XXXXX et al. suggest using a XXXXXX variance schedule defined as:
+where $\text{max}, \text{min} \in [0,1]$ and $\text{min} < \text{max}$ are two small constants. The function above will compute a sequence of $\beta_1, \dots, \beta_T$ that interpolate linearly between $\text{min}$ and $\text{max}$. XXXXX et al. suggest using a XXXXXX variance schedule defined as:
 
 These two variance schedules are depicted below:
 
