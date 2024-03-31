@@ -24,9 +24,7 @@ tensor([[[1, 1, 1, 1],
 Now, let's pad two zeros to the top, bottom, left, and right of each image:
 
 ```
-X = F.pad(torch.tensor(
-         [[[1, 1, 1, 1],[1, 1, 1, 1]],
-         [[1, 1, 1, 1],[1, 1, 1, 1]] ]), (2,2,2,2), mode='constant', value=0)
+X = F.pad(X, (2,2,2,2), mode='constant', value=0)
 X
 ```
 
