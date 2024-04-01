@@ -205,10 +205,11 @@ Applying a diffusion model on MNIST
 
 **Using a U-Net with ResNet blocks to predict the noise**
 
-For the noise-model, I used a U-Net. As a reference, I used [this implementation (https://github.com/usuyama/pytorch-unet)](https://github.com/usuyama/pytorch-unet) on GitHub with some modifications. Specifically, my implementation uses [ResNet]()-like blocks that includes a skip-connection between convolutional layers. In addition, unlike a standard ResNet, this U-Net must take as input a representation of the time-step. Code for my U-Net implementation are found in the Appendix to this blog post and on [Google Colab]().
+For the noise-model, I used a U-Net. As a reference, I used this implementation, [(https://github.com/usuyama/pytorch-unet)](https://github.com/usuyama/pytorch-unet), on GitHub with some modifications. Specifically, my implementation uses [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network)-like blocks that includes a skip-connection between convolutional layers. In addition, unlike a standard ResNet, this U-Net must take as input a representation of the time-step. Code for my U-Net implementation are found in the Appendix to this blog post and on [Google Colab]().
+
+**Example outputs from the model**
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_MNIST_reverse_diffusion_5.png" alt="drawing" width="800"/></center>
-
 
 Resources
 ---------
