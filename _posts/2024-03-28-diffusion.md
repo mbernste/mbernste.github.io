@@ -223,9 +223,13 @@ For the noise-model, I used a U-Net. As a reference, I used this implementation,
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_MNIST_reverse_diffusion_5.png" alt="drawing" width="800"/></center>
 
+<br>
+
 Here is a sample of hand-selected digits output by the model:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_MNIST_all_digits.png" alt="drawing" width="800"/></center>
+
+<br>
 
 Note, the model also outputs many nonsensical images. While this may not be desirable, I find it interesting that the model has honed in on patterns that are "digit-like". These not-quite digits almost look like symbols from an alien language:
 
