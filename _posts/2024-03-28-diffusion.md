@@ -308,6 +308,8 @@ $$\begin{align*} KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert 
 
 **U-Net implementation**
 
+Below is the Python code implementing the U-Net used in the diffusion model for generating MNIST digits:
+
 ```
 class UNetDownBlock(nn.Module):
   def __init__(
