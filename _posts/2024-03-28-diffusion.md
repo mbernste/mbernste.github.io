@@ -93,15 +93,15 @@ Now, as we do in [variational inference](https://mbernste.github.io/posts/variat
 
 Thus, our central task will be to learn each $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ distribution from a set of training data. More specifically, we wish to approximate the full diffusion process, but formulated in terms of posterior probabilities.
 
-More specifically, our goal will be to approximate the full diffusion process given by joint distribution over all intermediate noisy objects,
+More specifically, our goal will be to approximate the full diffusion process given by joint distribution over all intermediate noisy objects:
 
 $$q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t-1})$$
 
-but instead factored according to posterior probabilities that will be estimated:
+using a distribution that is factored by the posterior distributions:
 
-$$p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = N(\boldsymbol{x}; \boldsymbol{0}, \boldsymbol{I})\prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
+$$p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
 
-where $\boldsymbol{x}_{0:T} = \boldsymbol{x}_0, \boldsymbol{x}_1, \dots, \boldsymbol{x}_T$. Said differently, we will attempt to approximate $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$, expressed as forward diffusion steps, with a distribution p_\theta(\boldsymbol{x}\_{1:T} \mid \mid \boldsymbol{x}_0), expressed as reverse diffusion steps.
+where $\boldsymbol{x}\_{0:T} = \boldsymbol{x}\_0, \boldsymbol{x}\_1, \dots, \boldsymbol{x}\_T$. Said differently, we will attempt to approximate $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, factored by forward diffusion steps, with a distribution, p_\theta(\boldsymbol{x}\_{1:T} \mid \mid \boldsymbol{x}\_0), factored by reverse diffusion steps.
 
 Once, we have these distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object!
 
