@@ -101,7 +101,7 @@ using a distribution that is factored by the posterior distributions:
 
 $$p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
 
-where $\boldsymbol{x}\_{0:T} = \boldsymbol{x}\_0, \boldsymbol{x}\_1, \dots, \boldsymbol{x}\_T$. Said differently, we will attempt to approximate $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which is factored by forward diffusion steps, with a distribution an approximate distribution, $p_\theta(\boldsymbol{x}\_{1:T} \mid \mid \boldsymbol{x}\_0)$, that is factored by reverse diffusion steps. From this approximation, we will obtain our approximate posterior distributions given by each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$.
+where $\boldsymbol{x}\_{0:T} = \boldsymbol{x}\_0, \boldsymbol{x}\_1, \dots, \boldsymbol{x}\_T$. Said differently, we will attempt to approximate $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which is factored by forward diffusion steps, with a distribution an approximate distribution, $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, that is factored by reverse diffusion steps. From this approximation, we will obtain our approximate posterior distributions given by each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$.
 
 Once, we have these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object!
 
