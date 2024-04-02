@@ -201,18 +201,18 @@ Perspective 3: Diffusion models as score matching models
 Applying a diffusion model on MNIST
 -----------------------------------
 
-To implement a simple diffusion model on MNIST, I used the following two GitHub repositories as guides:
+In this section, we will walk through a relatively simple implementation of a diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database)  of hand-written digits. I used the following two GitHub repositories as guides:
 
-* [https://github.com/cloneofsimo/minDiffusion]
-* [https://github.com/bot66/MNISTDiffusion/tree/main]
+* [https://github.com/cloneofsimo/minDiffusion](https://github.com/cloneofsimo/minDiffusion)
+* [https://github.com/bot66/MNISTDiffusion/tree/main](https://github.com/cloneofsimo/minDiffusion)
 
 My goal was to create a minimal model (both minimal in complexity and size) that would generate realistic digits. In the following sections, I will detail each component and show some of the model's outputs!
-
-**Representing the timestep using a time-embedding**
 
 **Using a U-Net with ResNet blocks to predict the noise**
 
 For the noise-model, I used a U-Net. As a reference, I used this implementation, [(https://github.com/usuyama/pytorch-unet)](https://github.com/usuyama/pytorch-unet), on GitHub with some modifications. Specifically, my implementation uses [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network)-like blocks that includes a skip-connection between convolutional layers. In addition, unlike a standard ResNet, this U-Net must take as input a representation of the time-step. Code for my U-Net implementation are found in the Appendix to this blog post and on [Google Colab]().
+
+**Representing the timestep using a time-embedding**
 
 **The training loop**
 
