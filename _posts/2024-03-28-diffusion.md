@@ -201,11 +201,13 @@ Perspective 3: Diffusion models as score matching models
 Applying a diffusion model on MNIST
 -----------------------------------
 
-In this section, we will walk through a relatively simple implementation of a diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database)  of hand-written digits. I used the following two GitHub repositories as guides:
+In this section, we will walk through a relatively simple implementation of a diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database)  of hand-written digits. I used the following GitHub repositories as guides:
 
+* [https://github.com/hojonathanho/diffusion](https://github.com/hojonathanho/diffusion)
 * [https://github.com/cloneofsimo/minDiffusion](https://github.com/cloneofsimo/minDiffusion)
 * [https://github.com/bot66/MNISTDiffusion/tree/main](https://github.com/cloneofsimo/minDiffusion)
-* [https://github.com/usuyama/pytorch-unet](https://github.com/usuyama/pytorch-unet)]
+* [https://github.com/usuyama/pytorch-unet](https://github.com/usuyama/pytorch-unet)
+
 
 My goal was to implement a small model (both small in complexity and size) that would generate realistic digits. In the following sections, I will detail each component and show some of the model's outputs. All code implementing the model can be found on [Google Colab]().
 
@@ -216,7 +218,42 @@ For the noise-model, I used a [U-Net](https://en.wikipedia.org/wiki/U-Net) with 
 
 Code for my U-Net implementation are found in the Appendix to this blog post as well as on [Google Colab]().
 
+**Timesteps and variance schedule**
+
 **Representing the timestep using a time-embedding**
+
+As we discussed, the noise model conditions on the timestep, $t$. Thus, we need a way for the neural network to 
+represent the timestep. [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) borrowed an idea from
+the transformer model original conceived by [Vaswani _et al._ (2023)](https://arxiv.org/pdf/1706.03762.pdf). 
+Specifically, each timestep is mapped to a specific _embedding_ vector and this vector is added, element-wise to 
+certain layers of the neural network. 
+
+Below is an adaptation of the time embedding function by Ho, Jain, and Abbel from their GitHub repository,
+[https://github.com/hojonathanho/diffusion](https://github.com/hojonathanho/diffusion). This code was adapted from TensorFlow to PyTorch:
+
+```
+def get_timestep_embedding(timesteps, embedding_dim):
+  """
+  Translated from Tensorflow to PyTorch by the original Diffusion implementation
+  by Ho et al. in https://github.com/hojonathanho/diffusion
+  """
+  assert len(timesteps.shape) == 1  # and timesteps.dtype == torch.int32
+
+  half_dim = embedding_dim // 2
+  emb = np.log(10000) / (half_dim - 1)
+  emb = torch.exp(torch.arange(half_dim, dtype=torch.float32) * -emb)
+  emb = timesteps[:, None].to(torch.float32) * emb[None, :]
+  emb = torch.cat([torch.sin(emb), torch.cos(emb)], dim=1)
+  if embedding_dim % 2 == 1:  # zero pad
+    emb = torch.nn.functional.pad(emb, (0, 1))
+  assert emb.shape == (timesteps.shape[0], embedding_dim)
+  return emb
+```
+
+ This code is adapted from TensorFlow to PyTorch. The function accepts two integers: the number of timesteps (i.e., $T$) and the embedding dimension. Similar to Ho, Jain, and Abbeel, I used 1,000 timesteps. In my model, the largest feature vector associated with each pixel (corresponding to the number of channels in the convolutional layer at the very bottom of the U-Net) is 60, so the embedding dimension would be 60. A heatmap depicting these embeddings is shown below:
+
+
+
 
 **The training loop**
 
