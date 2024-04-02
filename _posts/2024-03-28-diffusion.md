@@ -136,9 +136,9 @@ $$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{1:T} \mid \bolds
 
 where $\boldsymbol{x}_{1:T} := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$.
 
-Notice, we are conditioning on the noiseless object $\boldsymbol{x}_0$. Our goal is not to model the distribution over noiseless objects directly; rather, we are _only_ modeling the diffusion process itself -- that is, the process used to generate each intermediate noisy object $\boldsymbol{x}_1,  \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$, but not the noiseless object $\boldsymbol{x}_0$. 
+Notice, we are conditioning on the noiseless object $\boldsymbol{x}_0$ because, as we stated previously, the goal is not to model the distribution over noiseless objects directly; rather, we are _only_ modeling the diffusion process itself -- that is, the process used to generate each intermediate noisy object $\boldsymbol{x}_1,  \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$, but not the noiseless object $\boldsymbol{x}_0$. 
 
-Now, we will show that this objective function will seek to fit each $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. First, recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). In the case of diffusion models, this ELBO looks as follows (See Derivation 1 in the Appendix to this post):
+Now, let's derive a more intuitive form of this objective function. Recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). In the case of diffusion models, this ELBO looks as follows (See Derivation 1 in the Appendix to this post):
 
 $$ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) = \log p_\theta(\boldsymbol{x}) - \underbrace{E_q\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}}$$
 
@@ -149,7 +149,7 @@ $$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ 
 Moreover, it turns out that this ELBO can be further manipulated into the following form (See Derivation 2 in the Appendix to this post):
 
 
-Notice, that the middle terms are matching X to Y! This is exactly akin to attempting to learn how to reverse diffusion. In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x})$, which will enable us to derive a closed form equation for the ELBO that we can optimize via gradient ascent.
+In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x})$, which will enable us to derive a closed form equation for the ELBO that we can optimize via gradient ascent.
 
 The forward model
 -----------------
