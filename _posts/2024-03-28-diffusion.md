@@ -252,7 +252,7 @@ def get_timestep_embedding(timesteps, embedding_dim):
 
  This code is adapted from TensorFlow to PyTorch. The function accepts two integers: the number of timesteps (i.e., $T$) and the embedding dimension. Similar to Ho, Jain, and Abbeel, I used 1,000 timesteps. In my model, the largest feature vector associated with each pixel (corresponding to the number of channels in the convolutional layer at the very bottom of the U-Net) is 60, so the embedding dimension would be 60. A heatmap depicting these embeddings is shown below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_time_embedding_example.png" alt="drawing" width="450"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_time_embedding_example.png" alt="drawing" width="600"/></center>
 
 **The training loop**
 
