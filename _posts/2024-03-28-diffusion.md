@@ -261,6 +261,8 @@ def get_timestep_embedding(timesteps, embedding_dim):
 
 **Example outputs from the model**
 
+Once we've trained the model and implemented the sampling algorithm, we can generate new MNIST digits! Below, is an example of the model generating a "5". As we examine the image across timesteps, we see it succesfully transform noise into a clear image!
+
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_MNIST_reverse_diffusion_5.png" alt="drawing" width="650"/></center>
 
 <br>
