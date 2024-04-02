@@ -205,12 +205,16 @@ In this section, we will walk through a relatively simple implementation of a di
 
 * [https://github.com/cloneofsimo/minDiffusion](https://github.com/cloneofsimo/minDiffusion)
 * [https://github.com/bot66/MNISTDiffusion/tree/main](https://github.com/cloneofsimo/minDiffusion)
+* [https://github.com/usuyama/pytorch-unet](https://github.com/usuyama/pytorch-unet)]
 
-My goal was to create a minimal model (both minimal in complexity and size) that would generate realistic digits. In the following sections, I will detail each component and show some of the model's outputs!
+My goal was to create a minimal model (both minimal in complexity and size) that would generate realistic digits. In the following sections, I will detail each component and show some of the model's outputs! All code implementing the model can be found on [Google Colab]().
 
 **Using a U-Net with ResNet blocks to predict the noise**
 
-For the noise-model, I used a U-Net. As a reference, I used this implementation, [(https://github.com/usuyama/pytorch-unet)](https://github.com/usuyama/pytorch-unet), on GitHub with some modifications. Specifically, my implementation uses [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network)-like blocks that includes a skip-connection between convolutional layers. In addition, unlike a standard ResNet, this U-Net must take as input a representation of the time-step. Code for my U-Net implementation are found in the Appendix to this blog post and on [Google Colab]().
+For the noise-model, I used a U-Net with [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network)-like [convolutional](https://en.wikipedia.org/wiki/Convolutional_neural_network) blocks -- that is, convolutional layers with skip-connection between them. In addition, unlike a standard ResNet, this U-Net must take as input a representation of the time-step. In a similar manner to the implementations shown in the GitHub projects above, I use a fully connected [multilayer perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron) to first encode the time-embedding before adding it to the inputs of the up-sampling blocks of the U-Net. This architecture is depicted below:
+
+
+Code for my U-Net implementation are found in the Appendix to this blog post as well as on [Google Colab]().
 
 **Representing the timestep using a time-embedding**
 
