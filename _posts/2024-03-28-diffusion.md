@@ -211,7 +211,7 @@ My goal was to implement a small model (both small in complexity and size) that 
 
 **Using a U-Net with ResNet blocks to predict the noise**
 
-For the noise-model, I used a U-Net with [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network)-like [convolutional](https://en.wikipedia.org/wiki/Convolutional_neural_network) blocks -- that is, convolutional layers with skip-connection between them. In addition, unlike a standard ResNet, this U-Net must take as input a representation of the time-step. In a similar manner to the implementations shown in the GitHub projects above, I use a fully connected [multilayer perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron) to first encode the time-embedding before adding it to the inputs of the up-sampling blocks of the U-Net. This architecture is depicted below:
+For the noise-model, I used a [U-Net](https://en.wikipedia.org/wiki/U-Net) with [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network)-like [convolutional](https://en.wikipedia.org/wiki/Convolutional_neural_network) blocks -- that is, convolutional layers with skip-connection between them. In addition, unlike a standard U-Net, this U-Net must take as input a representation of the time-step. In a similar manner to the implementations shown in the GitHub projects above, I use a fully connected [multilayer perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron) to first encode the time-embedding before adding it to the inputs of the up-sampling blocks of the U-Net. This architecture is depicted below:
 
 
 Code for my U-Net implementation are found in the Appendix to this blog post as well as on [Google Colab]().
