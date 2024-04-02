@@ -91,8 +91,6 @@ Now, as we do in [variational inference](https://mbernste.github.io/posts/variat
 
 <br>
 
-Thus, our central task will be to learn each $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ distribution from a set of training data. More specifically, we wish to approximate the full diffusion process, but formulated in terms of posterior probabilities.
-
 More specifically, our goal will be to approximate the full diffusion process given by joint distribution over all intermediate noisy objects:
 
 $$q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t-1})$$
