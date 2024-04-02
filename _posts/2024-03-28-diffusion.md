@@ -225,7 +225,7 @@ Code for my U-Net implementation are found in the Appendix to this blog post as 
 As we discussed, the noise model conditions on the timestep, $t$. Thus, we need a way for the neural network to 
 represent the timestep. [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) borrowed an idea from
 the transformer model original conceived by [Vaswani _et al._ (2023)](https://arxiv.org/pdf/1706.03762.pdf). 
-Specifically, each timestep is mapped to a specific _embedding_ vector and this vector is added, element-wise to 
+Specifically, each timestep is mapped to a specific, sinusoidal _embedding_ vector and this vector is added, element-wise to 
 certain layers of the neural network. 
 
 Below is an adaptation of the time embedding function by Ho, Jain, and Abbel from their GitHub repository,
