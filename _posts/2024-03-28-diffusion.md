@@ -221,7 +221,7 @@ For the noise-model, I used a U-Net. As a reference, I used this implementation,
 
 **Example outputs from the model**
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_MNIST_reverse_diffusion_5.png" alt="drawing" width="800"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_MNIST_reverse_diffusion_5.png" alt="drawing" width="650"/></center>
 
 <br>
 
