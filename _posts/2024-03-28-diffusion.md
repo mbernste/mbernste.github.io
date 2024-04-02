@@ -201,6 +201,13 @@ Perspective 3: Diffusion models as score matching models
 Applying a diffusion model on MNIST
 -----------------------------------
 
+To implement a simple diffusion model on MNIST, I used the following two GitHub repositories as guides:
+
+* [https://github.com/cloneofsimo/minDiffusion]
+* [https://github.com/bot66/MNISTDiffusion/tree/main]
+
+My goal was to create a minimal model (both minimal in complexity and size) that would generate realistic digits. In the following sections, I will detail each component and show some of the model's outputs!
+
 **Representing the timestep using a time-embedding**
 
 **Using a U-Net with ResNet blocks to predict the noise**
