@@ -461,7 +461,7 @@ class UNet(nn.Module):
     self.down3 = UNetDownBlock(10, 20, normgroups=2)
     self.down4 = UNetDownBlock(20, 40, normgroups=4)
 
-    # Convolution at bottom layer
+    # Convolutional layer at the bottom of the U-Net
     self.bottom_conv = nn.Conv2d(
         40, 40, kernel_size=3, padding=1
     )
@@ -474,7 +474,8 @@ class UNet(nn.Module):
     self.up3 = UNetUpBlock(14, 5, 14, normgroups=1) # down1 channels + up2 channels
     self.up4 = UNetUpBlock(6, 5, 6, normgroups=1) # input channels + up3 channels
 
-    # Convolution at bottom layer
+    # Final convolution to produce output. This layer injects negative
+    # values into the output.
     self.final_conv = nn.Conv2d(
         5, 1, kernel_size=3, padding=1
     )
@@ -486,8 +487,8 @@ class UNet(nn.Module):
       x: Input tensor representing an image
       t_embed: The time-embedding vector for the current timestep
     """
-    # Pad the input so that it is 32x32, to enable downsampling to
-    # 16x16, to 8x8, and finally to 4x4 at the bottom of the "U"
+    # Pad the input so that it is 32x32. This enables downsampling to
+    # 16x16, then to 8x8, and finally to 4x4 at the bottom of the "U"
     x = F.pad(x, (2,2,2,2), 'constant', 0)
 
     # Down-blocks of the U-Net compress the image down to a smaller
@@ -497,13 +498,15 @@ class UNet(nn.Module):
     x_d3 = self.down3(x_d2)
     x_d4 = self.down4(x_d3)
 
-    # Bottom layers perform final transformation on compressed representation
+    # Bottom layer perform final transformation on compressed representation
+    # before re-inflation
     x_bottom = self.bottom_conv(x_d4)
     x_bottom = self.bottom_groupnorm(x_d4)
     x_bottom = self.bottom_relu(x_d4)
 
-    # Up-blocks re-inflate to the original image size while taking as inputs
-    # in the down-sampling steps
+    # Up-blocks re-inflate the compressed representation back to the original
+    # image size while taking as input various representations produced in the
+    # down-sampling steps
     x_u1 = self.up1(x_bottom, x_d3, t_emb)
     x_u2 = self.up2(x_u1, x_d2, t_emb)
     x_u3 = self.up3(x_u2, x_d1, t_emb)
@@ -512,7 +515,7 @@ class UNet(nn.Module):
     # Final convolutional layer. Introduces negative values.
     x_u4 = self.final_conv(x_u4)
 
-    # Remove initial pads
+    # Remove initial pads to produce a 28x28 MNIST digit
     x_u4 = x_u4[:,:,2:-2,2:-2]
 
     return x_u4
