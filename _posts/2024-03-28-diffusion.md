@@ -124,7 +124,7 @@ Again, notice how this distribution requires knowing $q(\boldsymbol{x})$. This m
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 --------------------------------------------------------------------------------------------------
 
-To fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ diffusion models use [variational inference](https://mbernste.github.io/posts/variational_inference/). Recall, in variational inference, our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$ by minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
+Diffusion models use [variational inference](https://mbernste.github.io/posts/variational_inference/) to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$. Recall, in variational inference, our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$ by minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
 
 $$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 
