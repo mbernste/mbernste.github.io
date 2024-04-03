@@ -221,7 +221,7 @@ In this section, we will walk through a relatively simple implementation of a di
 * [https://github.com/usuyama/pytorch-unet](https://github.com/usuyama/pytorch-unet)
 
 
-My goal was to implement a small model (both small in complexity and size) that would generate realistic digits. In the following sections, I will detail each component and show some of the model's outputs. All code implementing the model can be found on [Google Colab]().
+My goal was to implement a small model (both small in complexity and size) that would generate realistic digits. In the following sections, I will detail each component and show some of the model's outputs. All code implementing the model can be found on [Google Colab](https://colab.research.google.com/drive/14ue6jpN7yEM9c11qERpXra8G88ss__99?usp=sharing).
 
 **Using a U-Net with ResNet blocks to predict the noise**
 
