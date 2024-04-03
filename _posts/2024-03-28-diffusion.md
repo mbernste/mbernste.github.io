@@ -288,9 +288,21 @@ Appendix
 
 $$\begin{align*} KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) &= E_q\left[ \log \frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)}{p_\theta (\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_q \left[\frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)}{\frac{p_\theta ( \boldsymbol{x}_{0:T}) }{p_\theta (\boldsymbol{x}_0)} } \right] \\ &= E_q \left[ \log p_\theta (\boldsymbol{x}_0) \frac{q(\boldsymbol{x}_{1:T}\mid \boldsymbol{x}_0)}{p_\theta (\boldsymbol{x}_{0:T})} \right] \\ &= E_q\left[\log p_\theta (\boldsymbol{x}_0) \right] + E_q\left[ \frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) }{p_\theta (\boldsymbol{x}_{0:T})} \right] \\ &= \log p_\theta (\boldsymbol{x}_0) + E_q\left[ \frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) }{p_\theta (\boldsymbol{x}_{0:T})} \right] \\ &= \log p_\theta (\boldsymbol{x}_0) - \underbrace{E_q\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}}\end{align*} $$
 
-**U-Net implementation:**
+**Implementation of diffusion model for generating MNIST digits:**
 
-Below is the Python code implementing the U-Net used in the diffusion model for generating MNIST digits:
+In this section, we will walk through all of the code used to implement a diffusion model. We will start with importing the required packages:
+
+```
+import numpy as np
+from matplotlib import pyplot as plt
+import seaborn as sns
+import torch
+import torch.optim as optim
+import torch.nn.functional as F
+import torch.nn as nn
+```
+
+Next, we implement the U-Net neural network, which implements the noise model -- that is, the model used to predict the noise in an image that has undergone diffusion. To implement the U-Net, we define three subclasses: a `UNetDownBlock` class, which represents a set of layers on the downward portion of the U-Net, a `UNetUpBlock` class, which represents a set of layers on the upward portion of the U-Net, and a `UNet` class, which represents the full neural network:
 
 ```
 class UNetDownBlock(nn.Module):
@@ -502,10 +514,7 @@ class UNet(nn.Module):
 
     return x_u4
 ```
-
-**Code for the timestep embedding:**
-
-Below is an adaptation of the time embedding function by Ho, Jain, and Abbel from their GitHub repository,
+Next, we will implement a function that will generate the timestep embeddings. Below is an adaptation of the time embedding function by Ho, Jain, and Abbel from their GitHub repository,
 [https://github.com/hojonathanho/diffusion](https://github.com/hojonathanho/diffusion). This code was adapted from TensorFlow to PyTorch:
 
 ```
@@ -527,9 +536,10 @@ def get_timestep_embedding(timesteps, embedding_dim):
   return emb
 ```
 
-This code is adapted from TensorFlow to PyTorch. The function accepts two integers: the number of timesteps (i.e., $T$) and the embedding dimension. Similar to Ho, Jain, and Abbeel, I used 1,000 timesteps. In my model, the largest feature vector associated with each pixel (corresponding to the number of channels in the convolutional layer at the very bottom of the U-Net) is 60, so the embedding dimension would be 60. 
+This code is adapted from TensorFlow to PyTorch. The function accepts two integers: the number of timesteps (i.e., $T$) and the embedding dimension. Similar to Ho, Jain, and Abbeel, I used 1,000 timesteps (as we will see in the code that follows). In my model, the largest feature vector associated with each pixel (corresponding to the number of channels in the convolutional layer at the very bottom of the U-Net) is 60, so the embedding dimension would be 60. 
 
-**Code for creating the variance schedule:**
+
+Next, we will write a function that will produce the variance schedule. Given a minimum variance, maximum variance, and number of timesteps, it will create a linear interpolation between the max and min over the given number of timesteps:
 
 ```
 def linear_variance_schedule(min: float, max: float, T: int):
@@ -544,11 +554,8 @@ def linear_variance_schedule(min: float, max: float, T: int):
   return betas
 ```
 
-**Code for training the model:**
+Now that we have defined our UNet model and functions for generating timestep embeddings and the variance schedule, let's begin to construct and train the model. We will start by setting our parameters for the training process. We train the model for 300 epochs using a minibatch size of 128. We use a linear variance schedule starting spanning from a minimal variance of 1e-4 to a maximum variance of 0.02 as per [https://github.com/cloneofsimo/minDiffusion](https://github.com/cloneofsimo/minDiffusion). Specifically, the variables for storing these parameters are shown below:
 
-Below I present code for training the model that will use the `UNet` class and the `get_timestep_embedding` described above. We train the model for 300 epochs using a minibatch size of 128. We use a linear variance schedule starting spanning from a minimal variance of 1e-4 to a maximum variance of 0.02 as per [https://github.com/cloneofsimo/minDiffusion](https://github.com/cloneofsimo/minDiffusion).
-
-Also note, this implementation _centers_ the pixel values around zero. That is, the raw MNIST data provides pixel values spanning from 0 to 1; however, this code centers the data so that it spans -1 to 1 and is centered at zero. Again, this is implemented by [https://github.com/cloneofsimo/minDiffusion](https://github.com/cloneofsimo/minDiffusion).
 
 ```
 # Parameters
@@ -558,7 +565,13 @@ LEARNING_RATE = 1e-4
 BATCH_SIZE = 128
 MIN_VARIANCE = 1e-4
 MAX_VARIANCE = 0.02
+DEVICE = 'cuda'
+```
 
+Next, let's load the data. We will use PyTorch's built-in functionality for loading the MNIST digits data. Note, this implementation _centers_ the pixel values around zero (via the provided `transforms.Normalize((0.5), (0.5))` transformation to the `DataLoader`). That is, the raw MNIST data provides pixel values spanning from 0 to 1; however, this code centers the data so that it spans -1 to 1 and is centered at zero. This follows the implementation provided by [https://github.com/cloneofsimo/minDiffusion](https://github.com/cloneofsimo/minDiffusion).
+
+
+```
 # Load dataset
 dataset = MNIST(
   "./data",
@@ -575,7 +588,11 @@ dataloader = DataLoader(
   shuffle=True,
   num_workers=1
 )
+```
 
+Finally, let's put this all together and train a mdoel. The code instantiates the variance schedule, time embeddings, and UNet model and then implements the training loop. The code is heavily commented for pedagogical purposes:
+
+```
 # Compute variance schedule
 betas = linear_variance_schedule(MIN_VARIANCE, MAX_VARIANCE, T).to(device)
 
