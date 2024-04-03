@@ -277,6 +277,105 @@ Recall that at every iteration of the training loop, we sample some objects in t
 
 **The training loop**
 
+```
+# Parameters
+EPOCHS = 250
+T = 1000
+LEARNING_RATE = 1e-4
+BATCH_SIZE = 128
+
+# Load dataset
+dataset = MNIST(
+  "./data",
+  train=True,
+  download=True,
+  transform=transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5), (0.5))
+  ])
+)
+dataloader = DataLoader(
+  dataset,
+  batch_size=BATCH_SIZE,
+  shuffle=True,
+  num_workers=1
+)
+
+# Compute variance schedule
+betas = linear_variance_schedule(1e-4, 0.02, T).to(device)
+
+# Compute constants based on variance schedule
+alphas = 1 - betas
+onemalphas = 1 - alphas
+alpha_bar = torch.exp(torch.cumsum(torch.log(alphas), dim=0))
+sqrt_alphabar = torch.sqrt(alpha_bar)
+onemalphabar = 1-alpha_bar
+sqrt_1malphabar = torch.sqrt(1-alpha_bar)
+
+# Instantiate the noise model, loss function, and optimizer 
+noise_model = UNet().to(device)
+optimizer = optim.Adam(noise_model.parameters(), lr=LEARNING_RATE)
+mse_loss = nn.MSELoss().to(device)
+
+# Generate timestep embeddings. Note, the embedding dimension is hardcoded
+# and based on the number of channels at the bottom layer of the U-Net
+# noise model
+time_embeddings = get_timestep_embedding(
+  torch.arange(0,T),
+  embedding_dim=60 
+).to(device)
+
+# The training loop
+epoch_losses = []
+for epoch in range(EPOCHS):
+  loss_sum = 0
+  n_batchs = 0
+  for b_i, (X_batch, _) in enumerate(dataloader):
+    n_batchs += 1
+
+    # Move batch to device
+    X_batch = X_batch.to(device)
+
+    # Sample noise for each pixel and image in this batch
+    # B x M x N matrix
+    eps = torch.randn_like(X_batch).to(device)
+
+    # Get a random timepoint for each item in this batch
+    # B x 1 matrix
+    ts = torch.randint(
+        1, T+1, size=(X_batch.shape[0],)
+    ).to(device)
+
+    # Grab the time-embeddings for each of these sampled timesteps
+    # B x D matrix where B is batch size and D is time embedding
+    # dimension
+    t_embs = time_embeddings[ts-1].to(device)
+
+    # Compute X_batch after adding noise via the diffusion process for each of
+    # the items in the batch (at the sampled per-item timepoints, `ts`)
+    # B x M x N matrix
+    sqrt_alphabar_ts = sqrt_alphabar[ts-1]
+    sqrt_1malphabar_ts = sqrt_1malphabar[ts-1]
+    X_t = sqrt_alphabar_ts[:, None, None, None] * X_batch \
+      +  sqrt_1malphabar_ts[:, None, None, None] * eps
+
+    # Predict the noise from our sample using the UNet
+    # B x M x N matrix
+    pred_eps = noise_model(X_t, t_embs)
+
+    # Compute the loss between the real noise and predicted noise
+    loss = mse_loss(eps, pred_eps)
+    loss_sum += float(loss)
+
+    # Update the weights in the U-Net via a step of gradient descent
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+  print(f"Epoch: {epoch}. Mean loss: {loss_sum/n_batchs}")
+  epoch_losses.append(loss_sum/n_batchs)
+```
+
 **Sampling from the model**
 
 
