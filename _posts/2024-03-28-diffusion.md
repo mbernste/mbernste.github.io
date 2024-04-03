@@ -293,7 +293,7 @@ $$\begin{align*} KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert 
 
 **Implementation of a diffusion model for generating MNIST digits:**
 
-In this section, we will walk through all of the code used to implement a diffusion model. We will start with importing the required packages:
+In this section, we will walk through all of the code used to implement a diffusion model. The full code can be run on [Google Colab](https://colab.research.google.com/drive/14ue6jpN7yEM9c11qERpXra8G88ss__99?usp=sharing). We will start with importing the required packages:
 
 ```
 import numpy as np
@@ -674,4 +674,56 @@ for epoch in range(EPOCHS):
 
 After this process finishes (it took a little over an hour in Google Colab running on an NVIDIA T4 GPU), we will have a trained model that we can use to generate new MNIST digits. To generate a new MNIST digit, we will need to sample noise and then run the reverse diffusion process using our trained model. A function for generating images from our trained model is shown below:
 
+```
+def sample_from_model(T=999, show_img_mod=None, cmap='viridis'):
+  # Initialize the image to white noise
+  X_t = torch.randn(1, 1, 28, 28).to(DEVICE)
+
+  # This samples accordingly to Algorithm 2. It is exactly the same logic.
+  for t in range(T, -1, -1):
+    
+    # Sample noise
+    if t > 1:
+      Z = torch.randn(1, 1, 28, 28).to(DEVICE)
+    else:
+      Z = torch.zeros(1, 1, 28, 28).to(DEVICE)
+
+    # Get current time embedding
+    t_emb = time_embeddings[t][None,:]
+
+    # Predict the noise from the current image
+    pred_eps = noise_model(X_t, t_emb)
+
+    # Compute constants
+    one_over_sqrt_alpha_t = 1 / torch.sqrt(alphas[t])
+    pred_noise_scale = betas[t] / sqrt_1malphabar[t]
+    sqrt_beta_t = torch.sqrt(betas[t])
+
+    # Generate next image in the Markov chain
+    X_t = (one_over_sqrt_alpha_t * (X_t - (pred_eps * pred_noise_scale))) \
+      + (sqrt_beta_t * Z)
+
+    # Show current image
+    if show_img_mod is not None:
+      if t % show_img_mod == 0:
+        print(f"t = {t}")
+        plt.imshow(
+          (X_t.detach().cpu().numpy().squeeze() + 1.) / 2.,
+          cmap=cmap
+        )
+        plt.xticks([])
+        plt.yticks([])
+        plt.show()
+    if t ==0:
+      print(f"t = {t}")
+      plt.imshow(
+        (X_t.detach().cpu().numpy().squeeze() + 1.) / 2.,
+        cmap=cmap
+      )
+      plt.xticks([])
+      plt.yticks([])
+      plt.show()
+
+  return X_t
+```
 
