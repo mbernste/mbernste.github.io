@@ -239,7 +239,7 @@ As we discussed, the noise model conditions on the timestep, $t$. Thus, we need 
 represent the timestep. [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) borrowed an idea from
 the transformer model original conceived by [Vaswani _et al._ (2023)](https://arxiv.org/pdf/1706.03762.pdf). 
 Specifically, each timestep is mapped to a specific, sinusoidal _embedding_ vector and this vector is added, element-wise to 
-certain layers of the neural network. A heatmap depicting these embeddings is shown below:
+certain layers of the neural network. The code for generating these embeddings is presented in the Appendix to this post. A heatmap depicting these embeddings is shown below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_time_embedding_example.png" alt="drawing" width="600"/></center>
 
@@ -251,7 +251,7 @@ Recall that at every iteration of the training loop, we sample some objects in t
 
 **Example outputs from the model**
 
-Once we've trained the model and implemented the sampling algorithm, we can generate new MNIST digits! Below, is an example of the model generating a "5". As we examine the image across timesteps, we see it succesfully transform noise into a clear image!
+Once we've trained the model and implemented the sampling algorithm, we can generate new MNIST digits! (See Appendix for the code used to generate new images). Below, is an example of the model generating a "5". As we examine the image across timesteps, we see it succesfully transform noise into a clear image!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_MNIST_reverse_diffusion_5.png" alt="drawing" width="650"/></center>
 
