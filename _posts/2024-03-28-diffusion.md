@@ -536,10 +536,9 @@ def get_timestep_embedding(timesteps, embedding_dim):
   return emb
 ```
 
-This code is adapted from TensorFlow to PyTorch. The function accepts two integers: the number of timesteps (i.e., $T$) and the embedding dimension. Similar to Ho, Jain, and Abbeel, I used 1,000 timesteps (as we will see in the code that follows). In my model, the largest feature vector associated with each pixel (corresponding to the number of channels in the convolutional layer at the very bottom of the U-Net) is 60, so the embedding dimension would be 60. 
+This code is adapted from TensorFlow to PyTorch. The function accepts two integers: the number of timesteps (i.e., $T$) and the embedding dimension. Similar to Ho, Jain, and Abbeel, I used 1,000 timesteps (as we will see in the code that follows). In my model, the largest feature vector associated with each pixel (corresponding to the number of channels in the convolutional layer at the very bottom of the U-Net) is 60, so the embedding dimension would be 60. This function returns a matrix with number of rows equal to the $T$ and number of columns equal to the number of dimensions in the embedding.
 
-
-Next, we will write a function that will produce the variance schedule. Given a minimum variance, maximum variance, and number of timesteps, it will create a linear interpolation between the max and min over the given number of timesteps:
+Next, we will write a function that will produce a linear variance schedule. Given a minimum variance, maximum variance, and number of timesteps, it will create a linear interpolation between the max and min over the given number of timesteps:
 
 ```
 def linear_variance_schedule(min: float, max: float, T: int):
@@ -590,7 +589,7 @@ dataloader = DataLoader(
 )
 ```
 
-Finally, let's put this all together and train a mdoel. The code instantiates the variance schedule, time embeddings, and UNet model and then implements the training loop. The code is heavily commented for pedagogical purposes:
+Finally, let's put this all together and train a mdoel. The code below instantiates the variance schedule, time embeddings, and UNet model and then implements the training loop. The code is heavily commented for pedagogical purposes:
 
 ```
 # Compute variance schedule
@@ -669,3 +668,7 @@ for epoch in range(EPOCHS):
   print(f"Epoch: {epoch}. Mean loss: {loss_sum/n_batchs}")
   epoch_losses.append(loss_sum/n_batchs)
 ```
+
+After this process finishes (it took a little over an hour in Google Colab running on an NVIDIA T4 GPU), we will have a trained model that we can use to generate new MNIST digits. To generate a new MNIST digit, we will need to sample noise and then run the reverse diffusion process using our trained model. A function for generating images from our trained model is shown below:
+
+
