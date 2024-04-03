@@ -527,12 +527,18 @@ This code is adapted from TensorFlow to PyTorch. The function accepts two intege
 
 **Code for training the model:**
 
+Below I present code for training the model that will use the `UNet` class and the `get_timestep_embedding` described above. We train the model for 300 epochs using a minibatch size of 128. We use a linear variance schedule starting spanning from a minimal variance of 1e-4 to a maximum variance of 0.02 as per [https://github.com/cloneofsimo/minDiffusion](https://github.com/cloneofsimo/minDiffusion).
+
+Also note, this implementation _centers_ the pixel values around zero. That is, the raw MNIST data provides pixel values spanning from 0 to 1; however, this code centers the data so that it spans -1 to 1 and is centered at zero. Again, this is implemented by [https://github.com/cloneofsimo/minDiffusion](https://github.com/cloneofsimo/minDiffusion).
+
 ```
 # Parameters
-EPOCHS = 250
+EPOCHS = 300
 T = 1000
 LEARNING_RATE = 1e-4
 BATCH_SIZE = 128
+MIN_VARIANCE = 1e-4
+MAX_VARIANCE = 0.02
 
 # Load dataset
 dataset = MNIST(
@@ -541,7 +547,7 @@ dataset = MNIST(
   download=True,
   transform=transforms.Compose([
     transforms.ToTensor(),
-    transforms.Normalize((0.5), (0.5))
+    transforms.Normalize((0.5), (0.5)) # By subtracting 0.5, we center the data
   ])
 )
 dataloader = DataLoader(
@@ -552,7 +558,7 @@ dataloader = DataLoader(
 )
 
 # Compute variance schedule
-betas = linear_variance_schedule(1e-4, 0.02, T).to(device)
+betas = linear_variance_schedule(MIN_VARIANCE, MAX_VARIANCE, T).to(device)
 
 # Compute constants based on variance schedule
 alphas = 1 - betas
@@ -587,7 +593,9 @@ for epoch in range(EPOCHS):
     X_batch = X_batch.to(device)
 
     # Sample noise for each pixel and image in this batch
-    # B x M x N matrix
+    # B x M x N matrix where B is minibatch size, M is number
+    # of rows in each image and N is number of columns in the
+    # each image
     eps = torch.randn_like(X_batch).to(device)
 
     # Get a random timepoint for each item in this batch
@@ -597,7 +605,7 @@ for epoch in range(EPOCHS):
     ).to(device)
 
     # Grab the time-embeddings for each of these sampled timesteps
-    # B x D matrix where B is batch size and D is time embedding
+    # B x D matrix where B is minibatch size and D is time embedding
     # dimension
     t_embs = time_embeddings[ts-1].to(device)
 
