@@ -291,7 +291,7 @@ $$\begin{align*} KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert 
 **Derivation 2 (Reformulating the ELBO):**
 
 
-**Implementation of diffusion model for generating MNIST digits:**
+**Implementation of a diffusion model for generating MNIST digits:**
 
 In this section, we will walk through all of the code used to implement a diffusion model. We will start with importing the required packages:
 
