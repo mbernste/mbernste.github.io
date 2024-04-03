@@ -269,6 +269,8 @@ def get_timestep_embedding(timesteps, embedding_dim):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_time_embedding_example.png" alt="drawing" width="600"/></center>
 
+<br>
+
 Recall that at every iteration of the training loop, we sample some objects in the training set (a minibatch) and sample a timestep for each object. Below, we depict a single timestep embedding for a given timestep $t$. The U-Net implementation takes this time embedding, passes it through a feed-forward neural network, re-shapes the vector into a tensor, and then adds it to the input of the up-sampling blocks. This process is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_unet_for_MNIST_w_timeembedding.png" alt="drawing" width="800"/></center>
