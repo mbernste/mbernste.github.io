@@ -229,7 +229,7 @@ For the noise-model, I used a [U-Net](https://en.wikipedia.org/wiki/U-Net) with 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_unet_for_MNIST.png" alt="drawing" width="800"/></center>
 
-
+<br>
 
 Code for my U-Net implementation are found in the Appendix to this blog post as well as on [Google Colab]().
 
