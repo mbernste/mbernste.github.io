@@ -249,6 +249,8 @@ Recall that at every iteration of the training loop, we sample some objects in t
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_unet_for_MNIST_w_timeembedding.png" alt="drawing" width="800"/></center>
 
+<br>
+
 **Example outputs from the model**
 
 Once we've trained the model and implemented the sampling algorithm, we can generate new MNIST digits! (See Appendix for the code used to generate new images). Below, is an example of the model generating a "5". As we examine the image across timesteps, we see it succesfully transform noise into a clear image!
@@ -266,6 +268,8 @@ Here is a sample of hand-selected digits output by the model:
 Note, the model also outputs many nonsensical images. While this may not be desirable, I find it interesting that the model has honed in on patterns that are "digit-like". These not-quite digits almost look like symbols from an alien language:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_MNIST_examples_weird_symbols.png" alt="drawing" width="450"/></center>
+
+<br>
 
 Resources
 ---------
@@ -524,6 +528,21 @@ def get_timestep_embedding(timesteps, embedding_dim):
 ```
 
 This code is adapted from TensorFlow to PyTorch. The function accepts two integers: the number of timesteps (i.e., $T$) and the embedding dimension. Similar to Ho, Jain, and Abbeel, I used 1,000 timesteps. In my model, the largest feature vector associated with each pixel (corresponding to the number of channels in the convolutional layer at the very bottom of the U-Net) is 60, so the embedding dimension would be 60. 
+
+**Code for creating the variance schedule:**
+
+```
+def linear_variance_schedule(min: float, max: float, T: int):
+  """
+  min: minimum value for beta
+  max: maximum value for beta
+  T: number of timesteps
+  """
+  betas = torch.arange(0, T) / T
+  betas *= max - min
+  betas += min
+  return betas
+```
 
 **Code for training the model:**
 
