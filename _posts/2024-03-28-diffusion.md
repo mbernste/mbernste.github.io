@@ -233,39 +233,13 @@ For the noise-model, I used a [U-Net](https://en.wikipedia.org/wiki/U-Net) with 
 
 Code for my U-Net implementation are found in the Appendix to this blog post as well as on [Google Colab]().
 
-**Timesteps and variance schedule**
-
 **Representing the timestep using a time-embedding**
 
 As we discussed, the noise model conditions on the timestep, $t$. Thus, we need a way for the neural network to 
 represent the timestep. [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) borrowed an idea from
 the transformer model original conceived by [Vaswani _et al._ (2023)](https://arxiv.org/pdf/1706.03762.pdf). 
 Specifically, each timestep is mapped to a specific, sinusoidal _embedding_ vector and this vector is added, element-wise to 
-certain layers of the neural network. 
-
-Below is an adaptation of the time embedding function by Ho, Jain, and Abbel from their GitHub repository,
-[https://github.com/hojonathanho/diffusion](https://github.com/hojonathanho/diffusion). This code was adapted from TensorFlow to PyTorch:
-
-```
-def get_timestep_embedding(timesteps, embedding_dim):
-  """
-  Translated from Tensorflow to PyTorch by the original Diffusion implementation
-  by Ho et al. in https://github.com/hojonathanho/diffusion
-  """
-  assert len(timesteps.shape) == 1  # and timesteps.dtype == torch.int32
-
-  half_dim = embedding_dim // 2
-  emb = np.log(10000) / (half_dim - 1)
-  emb = torch.exp(torch.arange(half_dim, dtype=torch.float32) * -emb)
-  emb = timesteps[:, None].to(torch.float32) * emb[None, :]
-  emb = torch.cat([torch.sin(emb), torch.cos(emb)], dim=1)
-  if embedding_dim % 2 == 1:  # zero pad
-    emb = torch.nn.functional.pad(emb, (0, 1))
-  assert emb.shape == (timesteps.shape[0], embedding_dim)
-  return emb
-```
-
- This code is adapted from TensorFlow to PyTorch. The function accepts two integers: the number of timesteps (i.e., $T$) and the embedding dimension. Similar to Ho, Jain, and Abbeel, I used 1,000 timesteps. In my model, the largest feature vector associated with each pixel (corresponding to the number of channels in the convolutional layer at the very bottom of the U-Net) is 60, so the embedding dimension would be 60. A heatmap depicting these embeddings is shown below:
+certain layers of the neural network. A heatmap depicting these embeddings is shown below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_time_embedding_example.png" alt="drawing" width="600"/></center>
 
@@ -274,110 +248,6 @@ def get_timestep_embedding(timesteps, embedding_dim):
 Recall that at every iteration of the training loop, we sample some objects in the training set (a minibatch) and sample a timestep for each object. Below, we depict a single timestep embedding for a given timestep $t$. The U-Net implementation takes this time embedding, passes it through a feed-forward neural network, re-shapes the vector into a tensor, and then adds it to the input of the up-sampling blocks. This process is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_unet_for_MNIST_w_timeembedding.png" alt="drawing" width="800"/></center>
-
-**The training loop**
-
-```
-# Parameters
-EPOCHS = 250
-T = 1000
-LEARNING_RATE = 1e-4
-BATCH_SIZE = 128
-
-# Load dataset
-dataset = MNIST(
-  "./data",
-  train=True,
-  download=True,
-  transform=transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Normalize((0.5), (0.5))
-  ])
-)
-dataloader = DataLoader(
-  dataset,
-  batch_size=BATCH_SIZE,
-  shuffle=True,
-  num_workers=1
-)
-
-# Compute variance schedule
-betas = linear_variance_schedule(1e-4, 0.02, T).to(device)
-
-# Compute constants based on variance schedule
-alphas = 1 - betas
-onemalphas = 1 - alphas
-alpha_bar = torch.exp(torch.cumsum(torch.log(alphas), dim=0))
-sqrt_alphabar = torch.sqrt(alpha_bar)
-onemalphabar = 1-alpha_bar
-sqrt_1malphabar = torch.sqrt(1-alpha_bar)
-
-# Instantiate the noise model, loss function, and optimizer 
-noise_model = UNet().to(device)
-optimizer = optim.Adam(noise_model.parameters(), lr=LEARNING_RATE)
-mse_loss = nn.MSELoss().to(device)
-
-# Generate timestep embeddings. Note, the embedding dimension is hardcoded
-# and based on the number of channels at the bottom layer of the U-Net
-# noise model
-time_embeddings = get_timestep_embedding(
-  torch.arange(0,T),
-  embedding_dim=60 
-).to(device)
-
-# The training loop
-epoch_losses = []
-for epoch in range(EPOCHS):
-  loss_sum = 0
-  n_batchs = 0
-  for b_i, (X_batch, _) in enumerate(dataloader):
-    n_batchs += 1
-
-    # Move batch to device
-    X_batch = X_batch.to(device)
-
-    # Sample noise for each pixel and image in this batch
-    # B x M x N matrix
-    eps = torch.randn_like(X_batch).to(device)
-
-    # Get a random timepoint for each item in this batch
-    # B x 1 matrix
-    ts = torch.randint(
-        1, T+1, size=(X_batch.shape[0],)
-    ).to(device)
-
-    # Grab the time-embeddings for each of these sampled timesteps
-    # B x D matrix where B is batch size and D is time embedding
-    # dimension
-    t_embs = time_embeddings[ts-1].to(device)
-
-    # Compute X_batch after adding noise via the diffusion process for each of
-    # the items in the batch (at the sampled per-item timepoints, `ts`)
-    # B x M x N matrix
-    sqrt_alphabar_ts = sqrt_alphabar[ts-1]
-    sqrt_1malphabar_ts = sqrt_1malphabar[ts-1]
-    X_t = sqrt_alphabar_ts[:, None, None, None] * X_batch \
-      +  sqrt_1malphabar_ts[:, None, None, None] * eps
-
-    # Predict the noise from our sample using the UNet
-    # B x M x N matrix
-    pred_eps = noise_model(X_t, t_embs)
-
-    # Compute the loss between the real noise and predicted noise
-    loss = mse_loss(eps, pred_eps)
-    loss_sum += float(loss)
-
-    # Update the weights in the U-Net via a step of gradient descent
-    optimizer.zero_grad()
-    loss.backward()
-    optimizer.step()
-
-  print(f"Epoch: {epoch}. Mean loss: {loss_sum/n_batchs}")
-  epoch_losses.append(loss_sum/n_batchs)
-```
-
-**Sampling from the model**
-
 
 **Example outputs from the model**
 
@@ -414,7 +284,7 @@ Appendix
 
 $$\begin{align*} KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) &= E_q\left[ \log \frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)}{p_\theta (\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_q \left[\frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)}{\frac{p_\theta ( \boldsymbol{x}_{0:T}) }{p_\theta (\boldsymbol{x}_0)} } \right] \\ &= E_q \left[ \log p_\theta (\boldsymbol{x}_0) \frac{q(\boldsymbol{x}_{1:T}\mid \boldsymbol{x}_0)}{p_\theta (\boldsymbol{x}_{0:T})} \right] \\ &= E_q\left[\log p_\theta (\boldsymbol{x}_0) \right] + E_q\left[ \frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) }{p_\theta (\boldsymbol{x}_{0:T})} \right] \\ &= \log p_\theta (\boldsymbol{x}_0) + E_q\left[ \frac{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) }{p_\theta (\boldsymbol{x}_{0:T})} \right] \\ &= \log p_\theta (\boldsymbol{x}_0) - \underbrace{E_q\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}}\end{align*} $$
 
-**U-Net implementation**
+**U-Net implementation:**
 
 Below is the Python code implementing the U-Net used in the diffusion model for generating MNIST digits:
 
@@ -627,4 +497,131 @@ class UNet(nn.Module):
     x_u4 = x_u4[:,:,2:-2,2:-2]
 
     return x_u4
+```
+
+**Code for the timestep embedding:**
+
+Below is an adaptation of the time embedding function by Ho, Jain, and Abbel from their GitHub repository,
+[https://github.com/hojonathanho/diffusion](https://github.com/hojonathanho/diffusion). This code was adapted from TensorFlow to PyTorch:
+
+```
+def get_timestep_embedding(timesteps, embedding_dim):
+  """
+  Translated from Tensorflow to PyTorch by the original Diffusion implementation
+  by Ho et al. in https://github.com/hojonathanho/diffusion
+  """
+  assert len(timesteps.shape) == 1  # and timesteps.dtype == torch.int32
+
+  half_dim = embedding_dim // 2
+  emb = np.log(10000) / (half_dim - 1)
+  emb = torch.exp(torch.arange(half_dim, dtype=torch.float32) * -emb)
+  emb = timesteps[:, None].to(torch.float32) * emb[None, :]
+  emb = torch.cat([torch.sin(emb), torch.cos(emb)], dim=1)
+  if embedding_dim % 2 == 1:  # zero pad
+    emb = torch.nn.functional.pad(emb, (0, 1))
+  assert emb.shape == (timesteps.shape[0], embedding_dim)
+  return emb
+```
+
+This code is adapted from TensorFlow to PyTorch. The function accepts two integers: the number of timesteps (i.e., $T$) and the embedding dimension. Similar to Ho, Jain, and Abbeel, I used 1,000 timesteps. In my model, the largest feature vector associated with each pixel (corresponding to the number of channels in the convolutional layer at the very bottom of the U-Net) is 60, so the embedding dimension would be 60. 
+
+**Code for training the model:**
+
+```
+# Parameters
+EPOCHS = 250
+T = 1000
+LEARNING_RATE = 1e-4
+BATCH_SIZE = 128
+
+# Load dataset
+dataset = MNIST(
+  "./data",
+  train=True,
+  download=True,
+  transform=transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.5), (0.5))
+  ])
+)
+dataloader = DataLoader(
+  dataset,
+  batch_size=BATCH_SIZE,
+  shuffle=True,
+  num_workers=1
+)
+
+# Compute variance schedule
+betas = linear_variance_schedule(1e-4, 0.02, T).to(device)
+
+# Compute constants based on variance schedule
+alphas = 1 - betas
+onemalphas = 1 - alphas
+alpha_bar = torch.exp(torch.cumsum(torch.log(alphas), dim=0))
+sqrt_alphabar = torch.sqrt(alpha_bar)
+onemalphabar = 1-alpha_bar
+sqrt_1malphabar = torch.sqrt(1-alpha_bar)
+
+# Instantiate the noise model, loss function, and optimizer 
+noise_model = UNet().to(device)
+optimizer = optim.Adam(noise_model.parameters(), lr=LEARNING_RATE)
+mse_loss = nn.MSELoss().to(device)
+
+# Generate timestep embeddings. Note, the embedding dimension is hardcoded
+# and based on the number of channels at the bottom layer of the U-Net
+# noise model
+time_embeddings = get_timestep_embedding(
+  torch.arange(0,T),
+  embedding_dim=60 
+).to(device)
+
+# The training loop
+epoch_losses = []
+for epoch in range(EPOCHS):
+  loss_sum = 0
+  n_batchs = 0
+  for b_i, (X_batch, _) in enumerate(dataloader):
+    n_batchs += 1
+
+    # Move batch to device
+    X_batch = X_batch.to(device)
+
+    # Sample noise for each pixel and image in this batch
+    # B x M x N matrix
+    eps = torch.randn_like(X_batch).to(device)
+
+    # Get a random timepoint for each item in this batch
+    # B x 1 matrix
+    ts = torch.randint(
+        1, T+1, size=(X_batch.shape[0],)
+    ).to(device)
+
+    # Grab the time-embeddings for each of these sampled timesteps
+    # B x D matrix where B is batch size and D is time embedding
+    # dimension
+    t_embs = time_embeddings[ts-1].to(device)
+
+    # Compute X_batch after adding noise via the diffusion process for each of
+    # the items in the batch (at the sampled per-item timepoints, `ts`)
+    # B x M x N matrix
+    sqrt_alphabar_ts = sqrt_alphabar[ts-1]
+    sqrt_1malphabar_ts = sqrt_1malphabar[ts-1]
+    X_t = sqrt_alphabar_ts[:, None, None, None] * X_batch \
+      +  sqrt_1malphabar_ts[:, None, None, None] * eps
+
+    # Predict the noise from our sample using the UNet
+    # B x M x N matrix
+    pred_eps = noise_model(X_t, t_embs)
+
+    # Compute the loss between the real noise and predicted noise
+    loss = mse_loss(eps, pred_eps)
+    loss_sum += float(loss)
+
+    # Update the weights in the U-Net via a step of gradient descent
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+  print(f"Epoch: {epoch}. Mean loss: {loss_sum/n_batchs}")
+  epoch_losses.append(loss_sum/n_batchs)
 ```
