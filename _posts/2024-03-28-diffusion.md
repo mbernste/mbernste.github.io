@@ -111,7 +111,7 @@ Note that the marginal distribution $p_{\theta}(\boldsymbol{x}_0)$ defined by th
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
 
-Now, one may ask the question: how exactly does this framework of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ lead to $p_{\theta}(\boldsymbol{x}\_0)$ matching the true distribution $q(\boldsymbol{x}\_0)$? This question seems especially puzzing due to the fact that both $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ and $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ condition on $\boldsymbol{x}\_0$. Where in this objective  are we directly fitting $p_\theta(\boldsymbol{x}_0)$ to $q(\boldsymbol{x}_0)$? 
+Now, one may ask the question: how exactly does this framework of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ lead to $p_{\theta}(\boldsymbol{x}\_0)$ matching the true distribution $q(\boldsymbol{x}\_0)$? This question seems especially puzzing due to the fact that both $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ and $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ condition on $\boldsymbol{x}\_0$. Where in this objective  are we directly fitting $p_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$? 
 
 A rigorous answer to this question lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}\_0))$; however, in the meantime, we can gain some intuition by taking another look at the posterior distribution
 
@@ -154,7 +154,7 @@ As stated previously, the forward model is defined as
 
 $$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := \sim N\left(\boldsymbol{x}_{t+1} ; c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)$$
 
-where $c_1$ and $c_2$ are constants. Let us know define these constants. First, let us define values $\beta_1, \beta_2, \dots, \beta_T \in [0, 1]$ be values between zero and one corresponding to each timestep. Then, the forward model at timestep $t$ is defined as:
+where $c_1$ and $c_2$ are constants. Let us now define these constants. First, let us define values $\beta_1, \beta_2, \dots, \beta_T \in [0, 1]$ be values between zero and one corresponding to each timestep. Then, the forward model at timestep $t$ is defined as:
 
 $$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := N\left(\boldsymbol{x}_{t+1}; \sqrt{1-\beta_t}\boldsymbol{x}_t, \beta_t \boldsymbol{I}\right)$$
 
