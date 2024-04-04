@@ -170,7 +170,7 @@ where $\text{max}, \text{min} \in [0,1]$ and $\text{min} < \text{max}$ are two s
 
 This begs the question: Why use a different value of $\beta_t$ at each time step? Why not set $\beta_t$ constant across timesteps? Empirically, XXXXXXXXXXX.
 
-Now, what is the purpose of the scaling term $c_1 := \sqrt{1-\beta_t}$? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
+Now that we have a better understanding of the second constant (i.e., $c\_2 := \beta\_t$, which scales the variance), let's turn our attention to the first constant, $c\_1 := \sqrt{1-\beta\_t}$. Why are we scaling the mean with this constant? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
 
 The reverse model
 -----------------
