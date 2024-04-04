@@ -144,9 +144,9 @@ $$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ 
 
 Moreover, it turns out that this ELBO can be further manipulated into the following form (See Derivation 2 in the Appendix to this post):
 
-$$\begin{align*}\text{ELBO}(\theta) &= E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right] \end{align*}$$
+$$\begin{align*}\text{ELBO}(\theta) &= E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right] + \sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} \right]\end{align*}$$
 
-$$+ \sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q}\left[ KL\left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]\right] + E_{\boldsymbol{x}_0 \sim q}\left[ KL\left q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right) \right]$$
+$$+ \sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} \left[ KL\left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right] \right] + E_{\boldsymbol{x}_0 \sim q}\left[ KL\left q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right) \right]$$
 
 And thus our objective is to find $\hat{\theta}$ that solves,
 
