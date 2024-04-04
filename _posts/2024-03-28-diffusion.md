@@ -668,7 +668,7 @@ for epoch in range(EPOCHS):
   epoch_losses.append(loss_sum/n_batchs)
 ```
 
-After this process finishes (it took a little over an hour in Google Colab running on an NVIDIA T4 GPU), we will have a trained model that we can use to generate new MNIST digits. To generate a new MNIST digit, we will need to sample noise and then run the reverse diffusion process using our trained model. A function for generating images from our trained model is shown below:
+After this process finishes (it took a couple of hours to train in Google Colab running on an NVIDIA T4 GPU), we will have a trained model that we can use to generate new MNIST digits. To generate a new MNIST digit, we first sample white noise and then run the reverse diffusion process by iteratively applying our trained model. A function for generating images in this manner is shown below:
 
 ```
 def sample_from_model(T=999, show_img_mod=None, cmap='viridis'):
