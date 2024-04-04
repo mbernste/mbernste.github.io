@@ -166,13 +166,9 @@ Here we see that $c_2 := \beta_t$ sets the variance of the noise at timestep $t$
 
 $$\beta_t := (\text{max} - \text{min})(t/T) + \text{min}$$ 
 
-where $\text{max}, \text{min} \in [0,1]$ and $\text{min} < \text{max}$ are two small constants. The function above will compute a sequence of $\beta_1, \dots, \beta_T$ that interpolate linearly between $\text{min}$ and $\text{max}$. XXXXX et al. suggest using a XXXXXX variance schedule defined as:
+where $\text{max}, \text{min} \in [0,1]$ and $\text{min} < \text{max}$ are two small constants. The function above will compute a sequence of $\beta_1, \dots, \beta_T$ that interpolate linearly between $\text{min}$ and $\text{max}$. Note, that the specific variance schedule one uses is a design choice. Instead of a linear variance schedule, one may opt for another one. For example, [ Nichol and Dhariwal (2021)](https://arxiv.org/pdf/2102.09672.pdf) suggest replacing a linear variance schedule with a cosine variance schedule (which we won't discuss here).
 
-These two variance schedules are depicted below:
-
-
-
-Why use a different value of $\beta_t$ at each time step? Empirically, XXXXXXXXXXX.
+This begs the question: Why use a different value of $\beta_t$ at each time step? Why not set $\beta_t$ constant across timesteps? Empirically, XXXXXXXXXXX.
 
 Now, what is the purpose of the scaling term $c_1 := \sqrt{1-\beta_t}$? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
 
