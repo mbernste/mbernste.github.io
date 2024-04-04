@@ -67,7 +67,7 @@ $$\begin{align*}\epsilon &\sim N(\boldsymbol{0}, \boldsymbol{1}) \\ \boldsymbol{
 
 where $c_1$ and $c_2$ are two scalars (to be defined in more detail later in the post). We can view this process of formulating $\boldsymbol{x}\_{t+1}$ by adding noise to $\boldsymbol{x}\_t$ as a process in which we _sample_ $\boldsymbol{x}\_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. Moreover, this conditional distribution is a normal distribution:
 
-$$\boldsymbol{x}_{t+1} \sim N\left(c_1\boldsymbol{x}, c_2^2 \boldsymbol{I}\right)$$
+$$\boldsymbol{x}_{t+1} \sim N\left(c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)$$
 
 For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ to refer to this conditional distribution.
 
@@ -109,7 +109,7 @@ Once, we have these approximate posterior distributions in hand, we can generate
 
 Note that the marginal distribution $p_{\theta}(\boldsymbol{x})$ defined by the diffusion model would be the marginal distribution over all of the intermediate, noisy versions $\boldsymbol{x}$. That is, if we let $\boldsymbol{x}_0 := \boldsymbol{x}$ (i.e., we assume that $\boldsymbol{x}$ is end result of reversing a diffusion process), then 
 
-$$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \end{align*}$$
+$$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
 
 Now, one may ask the question: how exactly does this framework lead to this marginal distribution $p_{\theta}(\boldsymbol{x})$ matching the true distribution $q(\boldsymbol{x})$? This question seems especially puzzing due to the fact that our goal is to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which conditions on $\boldsymbol{x}\_0$. Where in this objective function are we fitting $p_\theta(\boldsymbol{x})$ to $q(\boldsymbol{x})$? 
 
