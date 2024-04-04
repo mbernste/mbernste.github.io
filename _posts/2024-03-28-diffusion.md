@@ -101,7 +101,7 @@ $$p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T p_\theta(
 
 where $\boldsymbol{x}\_{0:T} = \boldsymbol{x}\_0, \boldsymbol{x}\_1, \dots, \boldsymbol{x}\_T$. Said differently, we will attempt to approximate $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which is factored by forward diffusion steps, with an approximate distribution, $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, that is factored by reverse diffusion steps. From this approximation, we will obtain our approximate posterior distributions given by each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$.
 
-Once, we have these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object!
+Once we have these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
 
@@ -111,9 +111,9 @@ Note that the marginal distribution $p_{\theta}(\boldsymbol{x}_0)$ defined by th
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
 
-Now, one may ask the question: how exactly does this framework lead to this marginal distribution $p_{\theta}(\boldsymbol{x}\_0)$ matching the true distribution $q(\boldsymbol{x}\_0)$? This question seems especially puzzing due to the fact that our goal is to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which conditions on $\boldsymbol{x}\_0$. Where in this objective function are we fitting $p_\theta(\boldsymbol{x}_0)$ to $q(\boldsymbol{x}_0)$? 
+Now, one may ask the question: how exactly does this framework of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ lead to $p_{\theta}(\boldsymbol{x}\_0)$ matching the true distribution $q(\boldsymbol{x}\_0)$? This question seems especially puzzing due to the fact that both $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ and $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ condition on $\boldsymbol{x}\_0$. Where in this objective  are we directly fitting $p_\theta(\boldsymbol{x}_0)$ to $q(\boldsymbol{x}_0)$? 
 
-A rigorous answer to this question lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}))$; however, in the meantime, we can gain some intuition by taking another look at the posterior distribution
+A rigorous answer to this question lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}\_0))$; however, in the meantime, we can gain some intuition by taking another look at the posterior distribution
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t})}{q(\boldsymbol{x}_{t+1})}$$
 
@@ -193,8 +193,8 @@ Said differently, this derivation means that we can generate an object at _any_ 
 $$XXXXXXXX$$
 This makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ requires knowing $q(\boldsymbol{x}\_0)$ -- that is, in order to turn noise into an object, we need to know what real, noiseless objects look like. However, if we condition on $\boldsymbol{x}\_0$, this means we are assuming we _know_ what $\boldsymbol{x}\_0$ looks like and the modified posterior, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, needs only to take into account subtraction of noise towards this noiseless object. 
 
-Optimizing the ELBO via stochastic gradient ascent
---------------------------------------------------
+Training the model by optimizing the ELBO via stochastic gradient ascent
+------------------------------------------------------------------------
 
 The sampling algorithm
 ----------------------
