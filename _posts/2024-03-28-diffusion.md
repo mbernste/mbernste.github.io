@@ -47,15 +47,15 @@ Perspective 1: Diffusion models as learning to reverse a diffusion process
 
 Let's let $q(\boldsymbol{x})$ be the true distribution over our objects. We wish to develop a method that samples from a distribution, $p(\boldsymbol{x})$, that is similar to $q(\boldsymbol{x})$. In diffusion models, we do this in an _implicit_ manner: specifically, by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). 
 
-First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffusion process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. If $\boldsymbol{x}$ is an image of my dog Korra, this diffusion process would look like the following:
+First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffusion process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. For the remainder of the post, $\boldsymbol{x}_0$ will be used to denote a noiseless object sampled from the "real world distribution" of objects. If $\boldsymbol{x}_0$ is an image of my dog Korra, this diffusion process would look like the following:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward.png" alt="drawing" width="800"/></center>
 
 <br>
 
-Here we emphasize that $\boldsymbol{x}$ is a sample from $q(\boldsymbol{x})$ -- that is, it is a sample from the "real world" distribution of objects. In the example above, it is sampled from the real distribution of images that we wish to model. Once we obtain an image (i.e. a sample from $q(\boldsymbol{x})$), we corrupt it by adding noise to it iteratively. If the total number of timesteps $T$ is large enough, then the corrupted image approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$.
+Here we emphasize that $\boldsymbol{x}\_0$ is a sample from $q(\boldsymbol{x}\_0)$ -- again, this is a sample from the "real world" distribution of objects. In the case of images, this is the distribution of images that we wish to model. Once we obtain an image (i.e. a sample from $q(\boldsymbol{x}\_0)$), we corrupt it by adding noise to it iteratively. If the total number of timesteps $T$ is large enough, then the corrupted image approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$.
 
-As we will show in the next sections, it turns out that if we can learn to how to reverse this diffusion process -- that is, to remove the noise at each time step, then we can derive an approximation of $q(\boldsymbol{x})$. This process of removing noise is depicted below:
+As we will show in the next sections, it turns out that if we can learn to how to reverse this diffusion process -- that is, to remove the noise at each time step, then we can derive an approximation of $q(\boldsymbol{x}\_0)$. This process of removing noise is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse.png" alt="drawing" width="800"/></center>
 
@@ -65,7 +65,7 @@ Stated more rigorously, for each step, $t$, in the forward diffusion process, we
 
 $$\begin{align*}\epsilon &\sim N(\boldsymbol{0}, \boldsymbol{1}) \\ \boldsymbol{x}_{t+1} &:= c_1\boldsymbol{x}_t + c_2\epsilon\end{align*}$$
 
-where $c_1$ and $c_2$ are two scalars (to be defined in more detail later in the post). We can view this process of formulating $\boldsymbol{x}\_{t+1}$ by adding noise to $\boldsymbol{x}\_t$ as a process in which we _sample_ $\boldsymbol{x}\_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. Moreover, this conditional distribution is a normal distribution:
+where $c_1$ and $c_2$ are two constants (to be defined in more detail later in the post). We can view this process of formulating $\boldsymbol{x}\_{t+1}$ by adding noise to $\boldsymbol{x}\_t$ as a process in which we _sample_ $\boldsymbol{x}\_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. Moreover, this conditional distribution is a normal distribution:
 
 $$\boldsymbol{x}_{t+1} \sim N\left(c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)$$
 
@@ -99,7 +99,7 @@ We will approximate it using a joint distribution that is instead factored by th
 
 $$p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
 
-where $\boldsymbol{x}\_{0:T} = \boldsymbol{x}\_0, \boldsymbol{x}\_1, \dots, \boldsymbol{x}\_T$. Said differently, we will attempt to approximate $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which is factored by forward diffusion steps, with a distribution an approximate distribution, $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, that is factored by reverse diffusion steps. From this approximation, we will obtain our approximate posterior distributions given by each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$.
+where $\boldsymbol{x}\_{0:T} = \boldsymbol{x}\_0, \boldsymbol{x}\_1, \dots, \boldsymbol{x}\_T$. Said differently, we will attempt to approximate $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which is factored by forward diffusion steps, with an approximate distribution, $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, that is factored by reverse diffusion steps. From this approximation, we will obtain our approximate posterior distributions given by each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$.
 
 Once, we have these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object!
 
@@ -107,22 +107,22 @@ Once, we have these approximate posterior distributions in hand, we can generate
 
 <br>
 
-Note that the marginal distribution $p_{\theta}(\boldsymbol{x})$ defined by the diffusion model would be the marginal distribution over all of the intermediate, noisy versions $\boldsymbol{x}$. That is, if we let $\boldsymbol{x}_0 := \boldsymbol{x}$ (i.e., we assume that $\boldsymbol{x}$ is end result of reversing a diffusion process), then 
+Note that the marginal distribution $p_{\theta}(\boldsymbol{x}_0)$ defined by the diffusion model would be the marginal distribution over all of the intermediate, noisy versions $\boldsymbol{x}_0$ generated by the diffusion process. That is, 
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
 
-Now, one may ask the question: how exactly does this framework lead to this marginal distribution $p_{\theta}(\boldsymbol{x})$ matching the true distribution $q(\boldsymbol{x})$? This question seems especially puzzing due to the fact that our goal is to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which conditions on $\boldsymbol{x}\_0$. Where in this objective function are we fitting $p_\theta(\boldsymbol{x})$ to $q(\boldsymbol{x})$? 
+Now, one may ask the question: how exactly does this framework lead to this marginal distribution $p_{\theta}(\boldsymbol{x}\_0)$ matching the true distribution $q(\boldsymbol{x}\_0)$? This question seems especially puzzing due to the fact that our goal is to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which conditions on $\boldsymbol{x}\_0$. Where in this objective function are we fitting $p_\theta(\boldsymbol{x}_0)$ to $q(\boldsymbol{x}_0)$? 
 
 A rigorous answer to this question lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}))$; however, in the meantime, we can gain some intuition by taking another look at the posterior distribution
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t})}{q(\boldsymbol{x}_{t+1})}$$
 
-Again, notice how this distribution requires knowing $q(\boldsymbol{x})$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know the true distribution $q(\boldsymbol{x})$. That is, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will need to match $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. This very act of learning to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x})$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ _must_ learn about $q(\boldsymbol{x})$ in order to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ effectively.
+Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will need to match $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. This very act of learning to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ effectively.
 
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 --------------------------------------------------------------------------------------------------
 
-Diffusion models use [variational inference](https://mbernste.github.io/posts/variational_inference/) to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$. Recall, in variational inference, our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$ by minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
+Diffusion models use [variational inference](https://mbernste.github.io/posts/variational_inference/) to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$. Recall, in variational inference, our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$ by minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
 
 $$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 
@@ -131,8 +131,6 @@ $$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 In our case, we wish to learn the reverse diffusion process from the forward diffusion process, so we start with the following objective function:
 
 $$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0))$$
-
-where $\boldsymbol{x}_{1:T} := \boldsymbol{x}_1, \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$.
 
 Notice, we are conditioning on the noiseless object $\boldsymbol{x}\_0$ because, as we stated previously, the goal is not to model the distribution over noiseless objects directly; rather, we are _only_ modeling the diffusion process itself -- that is, the process used to generate each intermediate noisy object $\boldsymbol{x}_1,  \boldsymbol{x}_2, \dots, \boldsymbol{x}_T$, but not the noiseless object $\boldsymbol{x}_0$. Through modeling this diffusion process, we indirectly model $q(\boldsymbol{x}_0)$ as will be discussed in later sections.
 
