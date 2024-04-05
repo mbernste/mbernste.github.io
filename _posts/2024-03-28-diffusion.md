@@ -142,14 +142,14 @@ Here we see that to minimize the KL-divergence, we can maximize the ELBO. That i
 
 $$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ &= \text{arg max}_\theta \  E_q\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]\end{align*}$$
 
-Moreover, it turns out that this ELBO can be further manipulated into the following form (See Derivation 2 in the Appendix to this post):
+Moreover, it turns out that this ELBO can be further manipulated into a form that has a term for each step of the diffusion process (See Derivation 2 in the Appendix to this post):
 
-$$\begin{align*}\text{ELBO}(\theta) &= E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \sum_{t=2}^T \underbrace{\left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_t} + \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T}\end{align*}$$
+$$\begin{align*}\text{ELBO}(\theta) &= E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}} + \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T}\end{align*}$$
 
-Here we've broken the ELBO into three categories of terms: 
+These terms are broken into three cagegories: 
 
 1. $L\_0$ is the probability the model gives the data conditioned on the very first diffusion step. In the reverse diffusion process, this is the last step required to transform the noise into the original image. This term is called the **reconstruction term** because it provides high probility if the model can succesfully predict the original noiseless image $\boldsymbol{x}\_0$ from $\boldsymbol{x}\_1$, which is the result of the first iteration of the diffusion process. 
-2. $L\_t$ are terms that measure how well the model is performing reverse diffusion. That is, it asking how well the posterior probabilities specified by the model, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$, match the posterior probabilities $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$. Note, we are $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$, which conditions on $\boldsymbol{x}_0$. This is a bit strange, but XXXXXXXXXX
+2. $L\_1, \dots, L\_{T-1}$ are terms that measure how well the model is performing reverse diffusion. That is, it asking how well the posterior probabilities specified by the model, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$, match the posterior probabilities $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$. Note, we are $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$, which conditions on $\boldsymbol{x}_0$. This is a bit strange, but XXXXXXXXXX
 3. $L_T$ simply measures how well the result of the noisy diffusion process, which theoretically approaches a normal distribution, matches the noise distribution from which we seed the reverse diffusion process, which in our case we define to be a normal distribution. Note, this term does not include the model parameters.
 
 In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t)$, which will enable us to derive an approximation of the closed form of this objective function.
@@ -187,7 +187,7 @@ Deriving the objective function
 
 In this section, we will derive the objective function proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). This objective function can be seen as an approximation of the ELBO. Let's re-state the ELBO here for convenience:
 
-$$\begin{align*}\text{ELBO}(\theta) &= E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \sum_{t=2}^T \underbrace{\left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_t} + \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T}\end{align*}$$
+$$\begin{align*}\text{ELBO}(\theta) &= E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}} + \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T}\end{align*}$$
 
 Let's start with the last term $L_T$. Recall that we define $p\_\theta(\boldsymbol{x}_T)$ to be a standard normal distribution that does not incorporate the model parameters. That is,
 
@@ -195,7 +195,7 @@ $$p_\theta(\boldsymbol{x}_T) := N(\boldsymbol{x}_T; \boldsymbol{0}, \boldsymbol{
 
 Thus we see that the last term, $L_T$, does not depend on the model parameters, we can ignore this term when maximizing the ELBO. Thus, our task will be to find:
 
-$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \sum_{t=2}^T \underbrace{\left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_t}$$
+$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}}$$
 
 Now let's turn to the middle terms, $L_t$, and derived a closed form equation. To do so, we first show that $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}\_0)$ has the following closed form density function (See Derivation XXXXX in the Appendix to this post):
 
