@@ -285,6 +285,8 @@ Note, the model also outputs many nonsensical images. While this may not be desi
 
 <br>
 
+A better model may output fewer of these nonsensical "digits"; however, I think this demonstrates how these generative models can be used for creative tasks. That is, the model succesfully fit "digit-like patterns", which in many cases led the model to produce discernable digits; however, in other cases, it produced nonsensical digits but that still look visually interesting (at least, to me) by assembling these patterns in new, interesting ways. 
+
 Resources
 ---------
 
