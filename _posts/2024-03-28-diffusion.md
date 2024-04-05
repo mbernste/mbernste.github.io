@@ -144,13 +144,19 @@ $$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ 
 
 Moreover, it turns out that this ELBO can be further manipulated into the following form (See Derivation 2 in the Appendix to this post):
 
-$$\begin{align*}\text{ELBO}(\theta) &= E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right] + \sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right] + KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)\end{align*}$$
+$$\begin{align*}\text{ELBO}(\theta) &= E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_t} + \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T}\end{align*}$$
 
-And thus our objective is to find $\hat{\theta}$ that solves,
+Here we've broken the ELBO into three categories of terms: 
 
-$$\begin{align*}\hat{\theta} := \text{arg max}_\theta \ $$
+1. $L\_0$ is the probability the model gives the data conditioned on the very first diffusion step. In the reverse diffusion process, this is the last step required to transform the noise into the original image. This term is called the **reconstruction term** because it provides high probility if the model can succesfully predict the original noiseless image $\boldsymbol{x}\_0$ from $\boldsymbol{x}\_1$, which is the result of the first iteration of the diffusion process. 
+2. $L\_t$ are terms that measure how well the model is performing reverse diffusion. That is, it asking how well the posterior probabilities specified by the model, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$, match the posterior probabilities $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$. Note, we are $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$, which conditions on $\boldsymbol{x}_0$. This is a bit strange, but XXXXXXXXXX
+3. $L_T$ simply measures how well the result of the noisy diffusion process, which theoretically approaches a normal distribution, matches the noise distribution from which we seed the reverse diffusion process, which in our case we define to be a normal distribution. Note, this term does not include the model parameters.
 
-In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t)$, which will enable us to derive a closed form equation for the ELBO that we can optimize via gradient ascent.
+Because the third term, $L_T$ does not depend on the model parameters, we can ignore this term when maximizing the ELBO. Thus, our task will be to find:
+
+$$\begin{align*}\hat{\theta} := \text{arg max}_\theta \ E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]} + \sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]$$
+
+In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t)$, which will enable us to derive an approximation of the closed form of this objective function.
 
 The forward model
 -----------------
@@ -180,8 +186,8 @@ Now that we have a better understanding of the second constant (i.e., $c\_2 := \
 The reverse model
 -----------------
 
-Deriving a closed form of the ELBO
------------------------------------
+Deriving the objective function
+-------------------------------
 
 To derive a closed form equation of the ELBO, we will first derive a few convenient properties of the forward model:
 
