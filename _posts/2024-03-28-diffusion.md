@@ -152,10 +152,6 @@ Here we've broken the ELBO into three categories of terms:
 2. $L\_t$ are terms that measure how well the model is performing reverse diffusion. That is, it asking how well the posterior probabilities specified by the model, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$, match the posterior probabilities $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$. Note, we are $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$, which conditions on $\boldsymbol{x}_0$. This is a bit strange, but XXXXXXXXXX
 3. $L_T$ simply measures how well the result of the noisy diffusion process, which theoretically approaches a normal distribution, matches the noise distribution from which we seed the reverse diffusion process, which in our case we define to be a normal distribution. Note, this term does not include the model parameters.
 
-Because the third term, $L_T$ does not depend on the model parameters, we can ignore this term when maximizing the ELBO. Thus, our task will be to find:
-
-$$\begin{align*} \hat{\theta} := \text{arg max}_\theta \ E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]} + \sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]$$
-
 In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t)$, which will enable us to derive an approximation of the closed form of this objective function.
 
 The forward model
@@ -188,6 +184,17 @@ The reverse model
 
 Deriving the objective function
 -------------------------------
+
+In this section, we will derive the objective function proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). This objective function can be seen as an approximation of the ELBO. Let's re-state the ELBO here for convenience:
+
+
+First, recall that we define $p\_\thet(\boldsymbol{x}_T)$ to be a standard normal distribution that does not incorporate the model parameters. That is,
+
+$$p\_\thet(\boldsymbol{x}_T) := N(\boldsymbol{x}_T; \boldsymbol{0}, \boldsymbol{I})$$
+
+Thus we see that the last term, $L_T$, does not depend on the model parameters, we can ignore this term when maximizing the ELBO. Thus, our task will be to find:
+
+$$\begin{align*} \hat{\theta} := \text{arg max}_\theta \ E_q\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]} + \sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]$$
 
 To derive a closed form equation of the ELBO, we will first derive a few convenient properties of the forward model:
 
