@@ -305,6 +305,9 @@ $$\begin{align*} KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert 
 
 **Derivation 2 (Reformulating the ELBO):**
 
+$$\begin{align*}\text{ELBO}(\theta) &:= E_q\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ &= E_q\left[\log \frac{ p_\theta(\boldsymbol{x}_T) \prod_{t=1}^{T} p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) }{ \prod_{t=1}^{T} q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})} \right]\end{align*}$$
+
+$$XXXX$$
 
 **Implementation of a diffusion model for generating MNIST digits:**
 
