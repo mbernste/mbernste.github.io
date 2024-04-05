@@ -149,10 +149,10 @@ $$\begin{align*}\text{ELBO}(\theta) &= E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{
 These terms are broken into three cagegories: 
 
 1. $L\_0$ is the probability the model gives the data conditioned on the very first diffusion step. In the reverse diffusion process, this is the last step required to transform the noise into the original image. This term is called the **reconstruction term** because it provides high probility if the model can succesfully predict the original noiseless image $\boldsymbol{x}\_0$ from $\boldsymbol{x}\_1$, which is the result of the first iteration of the diffusion process. 
-2. $L\_1, \dots, L\_{T-1}$ are terms that measure how well the model is performing reverse diffusion. That is, it asking how well the posterior probabilities specified by the model, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$, match the posterior probabilities $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$. Note, we are $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_1, \boldsymbol{x}\_0)$, which conditions on $\boldsymbol{x}_0$. This is a bit strange, but XXXXXXXXXX
-3. $L_T$ simply measures how well the result of the noisy diffusion process, which theoretically approaches a normal distribution, matches the noise distribution from which we seed the reverse diffusion process, which in our case we define to be a normal distribution. Note, this term does not include the model parameters.
-
-In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t)$, which will enable us to derive an approximation of the closed form of this objective function.
+2. $L\_1, \dots, L\_{T-1}$ are terms that measure how well the model is performing reverse diffusion. That is, it asking how well the posterior probabilities specified by the model, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$, match the posterior probabilities $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$. 
+3. $L_T$ simply measures how well the result of the noisy diffusion process, which theoretically approaches a normal distribution, matches the noise distribution from which we seed the reverse diffusion process, which in our case, we define to be a normal distribution.
+   
+In the next sections, we will rigorously define the forward model $q(\boldsymbol{x}\_{t+1} \mid \boldsymbol{x}_t)$ and the reverse model $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t)$, which will enable us to derive a closed form expression that approximates this ELBO.
 
 The forward model
 -----------------
