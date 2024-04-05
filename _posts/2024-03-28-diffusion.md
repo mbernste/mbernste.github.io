@@ -190,7 +190,7 @@ In this section, we will derive the objective function proposed by [Ho, Jain, an
 
 First, recall that we define $p\_\theta(\boldsymbol{x}_T)$ to be a standard normal distribution that does not incorporate the model parameters. That is,
 
-$$p\_\theta(\boldsymbol{x}_T) := N(\boldsymbol{x}_T; \boldsymbol{0}, \boldsymbol{I})$$
+$$p_\theta(\boldsymbol{x}_T) := N(\boldsymbol{x}_T; \boldsymbol{0}, \boldsymbol{I})$$
 
 Thus we see that the last term, $L_T$, does not depend on the model parameters, we can ignore this term when maximizing the ELBO. Thus, our task will be to find:
 
@@ -199,7 +199,7 @@ $$\begin{align*} \hat{\theta} := \text{arg max}_\theta \ E_q\left[ \log \frac{ p
 To derive a closed form equation of the ELBO, we will first derive a few convenient properties of the forward model:
 
 * **$q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_0)$ has a closed form:** Specifically, we can derive the distribution of the object at any timestep $t$ along the forward process conditioned on the noiseless, original object $\boldsymbol{x}\_0$ (See Derivation XXX in the Appendix to this post):
-$$q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_0) := $$
+$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := $$
 Said differently, this derivation means that we can generate an object at _any_ timestep $t$ along the diffusion process by sampling from the above distribution. This is depicted schematically below:
 
 
