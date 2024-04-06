@@ -179,11 +179,27 @@ This begs the question: Why use a different value of $\beta_t$ at each time step
 
 Now that we have a better understanding of the second constant (i.e., $c\_2 := \beta\_t$, which scales the variance), let's turn our attention to the first constant, $c\_1 := \sqrt{1-\beta\_t}$. Why are we scaling the mean with this constant? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
 
+
+
+Before we conclude this section, we will also prove a few convenient properties of the forward model that will be useful for deriving the final objective function used to train diffusion models:
+
+\1. **q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) has a closed form.** That is, the distribution over a noisy object at timestep $t$ of the diffusion process has a closed form solution. That solution is specifically the following normal distribution (See Derivation 3 in the Appendix to this post):
+
+This is depicted schematically below:
+
+
+
+\2. **q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) has a closed form.** Note that we previously discussed how the conditional distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ was intractible to compute. However, it turns out that if instead of only conditioning $\boldsymbol{x}\_t$, we also condition on the original, noiseless object, $\boldsymbol{x}\_0$, we _can_ derive a closed form for this posterior distribution. That distribution is a normal distribution (See Derivation 4 in the Appendix to this post):
+
+
+This makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ requires knowing $q(\boldsymbol{x}\_0)$ -- that is, in order to turn noise into an object, we need to know what real, noiseless objects look like. However, if we condition on $\boldsymbol{x}\_0$, this means we are assuming we _know_ what $\boldsymbol{x}\_0$ looks like and the modified posterior, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, needs only to take into account subtraction of noise towards this noiseless object.
+
+
 The reverse model
 -----------------
 
-Deriving the objective function
--------------------------------
+Deriving the objective function and training the model
+------------------------------------------------------
 
 In this section, we will derive the objective function proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). This objective function can be seen as an approximation of the ELBO. Let's re-state the ELBO here for convenience:
 
@@ -197,12 +213,6 @@ Thus we see that the last term, $L_T$, does not depend on the model parameters, 
 
 $$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}}$$
 
-Now let's turn to the middle terms, $L_t$, and derived a closed form equation. To do so, we first show that $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}\_0)$ has the following closed form density function (See Derivation XXXXX in the Appendix to this post):
-
-$$XXXX$$
-
-Note that we previously discussed how the conditional distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ was intractible to compute. However, it turns out that if instead of only conditioning $\boldsymbol{x}\_t$, we also condition on the original, noiseless object, $\boldsymbol{x}\_0$, we _can_ derive a closed form for this posterior distribution. 
-This makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ requires knowing $q(\boldsymbol{x}\_0)$ -- that is, in order to turn noise into an object, we need to know what real, noiseless objects look like. However, if we condition on $\boldsymbol{x}\_0$, this means we are assuming we _know_ what $\boldsymbol{x}\_0$ looks like and the modified posterior, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, needs only to take into account subtraction of noise towards this noiseless object.
 
 
 
@@ -212,7 +222,7 @@ Training the model by optimizing the ELBO via stochastic gradient ascent
 
 Specifically, we can derive the distribution of the object at any timestep $t$ along the forward process conditioned on the noiseless, original object $\boldsymbol{x}\_0$ (See Derivation XXX in the Appendix to this post):
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := $$
-Said differently, this derivation means that we can generate an object at _any_ timestep $t$ along the diffusion process by sampling from the above distribution. This is depicted schematically below:
+
 
 The sampling algorithm
 ----------------------
