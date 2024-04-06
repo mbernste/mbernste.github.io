@@ -311,7 +311,7 @@ $$\begin{align*}\text{ELBO}(\theta) &:= E_{\boldsymbol{x}_{1:T} \mid \boldsymbol
 
 $$= E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right] + \sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right] + KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)$$
 
-**Note 1:** By the Markov property of the forward diffusion process, it holds that $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t-1}) =  q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t-1}, \boldsymbol{x}_0)$.
+**Note 1:** By the [Markov property](https://en.wikipedia.org/wiki/Markov_property#:~:text=In%20probability%20theory%20and%20statistics,is%20independent%20of%20its%20history.) of the forward diffusion process, it holds that $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t-1}) =  q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t-1}, \boldsymbol{x}_0)$.
 
 **Note 2:** Apply Bayes theorem:
 
