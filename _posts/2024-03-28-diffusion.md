@@ -293,6 +293,7 @@ Resources
 Much of my understanding of this material came from the following resources:
 
 * [These lecture notes](https://www.davidinouye.com/course/ece57000-fall-2022/lectures/diffusion-models.pdf) by David I. Inouye
+* [This blog post](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/) by Lilian Weng
 * [This blog post](https://paramhanji.github.io/posts/2021/06/ddpm/) by Param Hanji
 * [This blog post](https://angusturner.github.io/generative_models/2021/06/29/diffusion-probabilistic-models-I.html) by Angus Turner
 * [This YouTube lecture](https://www.youtube.com/watch?v=687zEGODmHA&t=1212s&ab_channel=MachineLearningatBerkeley) at UC, Berkeley
