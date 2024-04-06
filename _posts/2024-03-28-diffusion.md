@@ -187,7 +187,7 @@ Before we conclude this section, we will also prove a few convenient properties 
 
 This is depicted schematically below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_forward_t_cond_0_korra.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_forward_t_cond_0_korra.png" alt="drawing" width="500"/></center>
 
 <br>
 
