@@ -183,7 +183,7 @@ Now that we have a better understanding of the second constant (i.e., $c\_2 := \
 
 Before we conclude this section, we will also prove a few convenient properties of the forward model that will be useful for deriving the final objective function used to train diffusion models:
 
-\1. **q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) has a closed form.** That is, the distribution over a noisy object at timestep $t$ of the diffusion process has a closed form solution. That solution is specifically the following normal distribution (See Derivation 3 in the Appendix to this post):
+\1. **$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ has a closed form.** That is, the distribution over a noisy object at timestep $t$ of the diffusion process has a closed form solution. That solution is specifically the following normal distribution (See Derivation 3 in the Appendix to this post):
 
 This is depicted schematically below:
 
@@ -193,7 +193,7 @@ This is depicted schematically below:
 
 Note that because $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ is simply a normal distribution, this enables us to sample noisy images at any arbitrary timestep $t$ without having to run the full diffusion process for $t$ timesteps. That is, instead of having to sample from $t$ normal distributions, which is what would be required to run the forward diffusion process to timestep $t$, we can instead sample from one distribution. As we will show, this will enable us to speed up the training of the model, which as we will show, requires sampling noisy objects along the the diffusion process.
 
-\2. **q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) has a closed form.** Note that we previously discussed how the conditional distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ was intractible to compute. However, it turns out that if instead of only conditioning $\boldsymbol{x}\_t$, we also condition on the original, noiseless object, $\boldsymbol{x}\_0$, we _can_ derive a closed form for this posterior distribution. That distribution is a normal distribution (See Derivation 4 in the Appendix to this post):
+\2. **$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$ has a closed form.** Note that we previously discussed how the conditional distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ was intractible to compute. However, it turns out that if instead of only conditioning $\boldsymbol{x}\_t$, we also condition on the original, noiseless object, $\boldsymbol{x}\_0$, we _can_ derive a closed form for this posterior distribution. That distribution is a normal distribution (See Derivation 4 in the Appendix to this post):
 
 
 This makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ requires knowing $q(\boldsymbol{x}\_0)$ -- that is, in order to turn noise into an object, we need to know what real, noiseless objects look like. However, if we condition on $\boldsymbol{x}\_0$, this means we are assuming we _know_ what $\boldsymbol{x}\_0$ looks like and the modified posterior, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, needs only to take into account subtraction of noise towards this noiseless object.
