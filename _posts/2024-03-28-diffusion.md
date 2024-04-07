@@ -33,15 +33,7 @@ Like all probabilistic generative models, diffusion models can be understood as 
 
 <br>
 
-I have found [three different perspectives](https://mbernste.github.io/posts/understanding_3d/) from which one can understand how diffusion models both represent and learn a distribution,  $p(\boldsymbol{x})$:
-
-1. As a model that learns how to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process#:~:text=In%20probability%20theory%20and%20statistics,many%20real%2Dlife%20stochastic%20systems.)
-2. As a hierarchical [variational autoencoder](https://mbernste.github.io/posts/vae/)
-3. As a [score matching model](https://yang-song.net/blog/2021/score/)
-
-In this first of three blog posts, I will present my understanding of diffusion models through the first of these perspectives. This will entail deriving 
-
-these three perspectives. We will conclude by implementing a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
+In this post, we will walk through the theory and implementation of diffusion models through the perspective of learning how to reverse a diffusion process. The mathematical derivations are somewhat lengthy and I present them in the Appendix to the post so that they do not distract from the core ideas that are central to understanding these models. We will conclude by implementing a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
 
 
 Diffusion models as learning to reverse a diffusion process
