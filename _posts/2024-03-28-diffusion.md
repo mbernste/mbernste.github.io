@@ -201,8 +201,11 @@ Depicted schematically:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_posterior_tractible_korra.png" alt="drawing" width="400"/></center>
 
+<br>
 
-This makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ requires knowing $q(\boldsymbol{x}\_0)$ -- that is, in order to turn noise into an object, we need to know what real, noiseless objects look like. However, if we condition on $\boldsymbol{x}\_0$, this means we are assuming we _know_ what $\boldsymbol{x}\_0$ looks like and the modified posterior, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, needs only to take into account subtraction of noise towards this noiseless object.
+The mean and variance terms are slightly ugly, but the key thing is that this distribution is a normal distribution and given $\boldsymbol{x}_t$ and $\boldsymbol{x}_0$, we can calculate the mean and variance and sample from it.
+
+The fact that this posterior has a closed form when conditioning on $\boldsymbol{x}\_0$ makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ requires knowing $q(\boldsymbol{x}\_0)$ -- that is, in order to turn noise into an object, we need to know what real, noiseless objects look like. However, if we condition on $\boldsymbol{x}\_0$, this means we are assuming we _know_ what $\boldsymbol{x}\_0$ looks like and the modified posterior, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, needs only to take into account subtraction of noise towards this noiseless object.
 
 The reverse model
 -----------------
