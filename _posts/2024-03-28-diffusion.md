@@ -105,13 +105,6 @@ Note that the marginal distribution $p_{\theta}(\boldsymbol{x}_0)$ defined by th
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
 
-Now, one may ask the question: how exactly does this framework of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ lead to $p_{\theta}(\boldsymbol{x}\_0)$ matching the true distribution $q(\boldsymbol{x}\_0)$? This question seems especially puzzing due to the fact that both $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ and $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ condition on $\boldsymbol{x}\_0$. Where in this objective  are we directly fitting $p_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$? 
-
-A rigorous answer to this question lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}\_0))$; however, in the meantime, we can gain some intuition by taking another look at the posterior distribution
-
-$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t})}{q(\boldsymbol{x}_{t+1})}$$
-
-Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will need to match $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. This very act of learning to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ effectively.
 
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 --------------------------------------------------------------------------------------------------
@@ -222,6 +215,19 @@ $$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q
 
 The sampling algorithm
 ----------------------
+
+The underlying learning principle
+---------------------------------
+
+When I began studying diffusion models, one basic question stuck in my mind: What is the basic learning principle that motivates this goal of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ via variational inference? Said differently, how exactly does this framework of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ lead to $p_{\theta}(\boldsymbol{x}\_0)$ matching the true distribution $q(\boldsymbol{x}\_0)$? 
+
+This question seems especially puzzing due to the fact that both $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ and $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ condition on $\boldsymbol{x}\_0$. Where in this objective  are we directly fitting $p_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$? 
+
+A rigorous answer to this question lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}\_0))$; however, in the meantime, we can gain some intuition by taking another look at the posterior distribution
+
+$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t})}{q(\boldsymbol{x}_{t+1})}$$
+
+Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will need to match $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. This very act of learning to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ effectively.
 
 Applying a diffusion model on MNIST
 -----------------------------------
