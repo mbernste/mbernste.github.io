@@ -344,19 +344,13 @@ for some mean $\boldsymbol{\mu}$. For the next timestep, we have
 
 $$\boldsymbol{x}_{t+1} \sim N(a\boldsymbol{x}_t, \beta \boldsymbol{I})$$
 
-where $a$ is some constant that scales the mean given by $\boldsymbol{x}_t$. We seek a value of $a$ such that $\text{Var}(\boldsymbol{x}_{t+1}) = 1$. To find this value, we use the [law of total variance](https://en.wikipedia.org/wiki/Law_of_total_variance):
+where $a$ is some constant that scales the mean given by $\boldsymbol{x}\_t$. We seek a value of $a$ such that $\text{Var}(\boldsymbol{x}\_{t+1}) = 1$. To find this value, we use the [law of total variance](https://en.wikipedia.org/wiki/Law_of_total_variance):
 
-$$\begin{align*}\text{Var}(\boldsymbol{x}_{t+1}) = E\left[\text{Var}(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t ) \right] + \text{Var}\left( E\left[\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t \right]\right)\end{align*}$$
-
-$$= E[\beta] + \text{Var}(a\boldsymbol{x}_t)$$
-
-$$= \beta + a^2\text{Var}(\boldsymbol{x}_t)$$
-
-$$= \beta + a^2$$
+$$\begin{align*}\text{Var}(\boldsymbol{x}_{t+1}) &= E\left[\text{Var}(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t ) \right] + \text{Var}\left( E\left[\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t \right]\right) \\ &= E[\beta] + \text{Var}(a\boldsymbol{x}_t) \\ &= \beta + a^2\text{Var}(\boldsymbol{x}_t) \\ &= \beta + a^2\text{Var}(\boldsymbol{x}_t) \\ &= \beta + a^2\end{align*}$$
 
 Now, if we fix $\text{Var}(\boldsymbol{x}_t+1) = 1$, it follows that:
 
-$$\begin{align*}&1 = \beta + a^2 \\ \imples &a = \sqrt{1-\beta}\end{align*}$$
+$$\begin{align*}&1 = \beta + a^2 \\ \implies &a = \sqrt{1-\beta}\end{align*}$$
 
 ### Derivation 4 (Closed form of $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$):
 
