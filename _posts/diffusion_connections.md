@@ -11,11 +11,11 @@ In this first of three blog posts, I will present my understanding of diffusion 
 
 these three perspectives. 
 
-Perspective 1: Learning to reverse diffusion
---------------------------------------------
+Perspective 1: As reverse diffusion
+-----------------------------------
 
-Perspective 2: Diffusion models as hierarchical variational autoencoders
-------------------------------------------------------------------------
+Perspective 2: As hierarchical variational autoencoders
+-------------------------------------------------------
 
-Perspective 3: Diffusion models as score matching models
---------------------------------------------------------
+Perspective 3: As score matching models
+---------------------------------------
