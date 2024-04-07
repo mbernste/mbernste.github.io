@@ -377,7 +377,31 @@ via the following transformation of $\epsilon\_{t-1}$ and $\epsilon_{t-2}$:
 
 $$\begin{align*}\boldsymbol{x}_t &= \sqrt{\alpha_t}\boldsymbol{x}_{t-1} + \sqrt{1-\alpha_t}\epsilon_{t-1} \\ &= \sqrt{\alpha_t}\left(\sqrt{\alpha_{t-1}}\boldsymbol{x}_{t-2} + \sqrt{1-\alpha_{t-1}}\epsilon_{t-2}\right) + \sqrt{1-\alpha_t}\epsilon_{t-1} \\ &= \sqrt{\alpha_t}\sqrt{\alpha_{t-1}}\boldsymbol{x}_{t-2} + \sqrt{\alpha_t}\sqrt{1-\alpha_{t-1}} \epsilon_{t-1} + \sqrt{1-\alpha_{t}}\epsilon_t \\ &=\sqrt{\alpha_t}\sqrt{\alpha_{t-1}}\boldsymbol{x}_{t-2} + (\sqrt{\alpha_t}\sqrt{1-\alpha_{t-1}} + \sqrt{1-\alpha_{t}})\epsilon_{t, t-1} \\ &= \sqrt{\alpha_t\alpha_{t-1}}\boldsymbol{x}_{t-2} + (\sqrt{1-\alpha_t \alpha_{t-1}})\epsilon_{t, t-1}\end{align*}$$
 
-$$XXXXX$$
+where $\epsilon_{t, t-1}$ is a sample of $N(\boldsymbol{0}, \boldsymbol{I})$. Here, we used the fact that if we have two random variables $X$ and $Y$ such that,
+
+$$\begin{align*}X &\sim N(0, \sigma_X^2) \\ Y &\sim N(0, \sigma_Y^2) \end{align*}$$
+
+Then it follows that,
+
+$$X + Y \sim N(0,  \sigma_X^2 +  \sigma_Y^2)$$
+
+though we won't prove this fact here.
+
+Now, following the same logic above, we can generate a sample,
+
+$$\boldsymbol{x}_t \sim q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-3})$$
+
+via 
+
+$$\boldsymbol{x}_t = \sqrt{\alpha_t\alpha_{t-1}\alpha_{t-2}}\boldsymbol{x}_{t-3} + (\sqrt{1-\alpha_t \alpha_{t-1} \alpha_{t-2}})\epsilon_{t, t-1, t-2}$$
+
+where $\epsilon_{t, t-1, t-2} \sim N(\boldsymbol{0}, \boldsymbol{I})$. If we follow this pattern all the way down to $t=0$, we see that we can generate a sample,
+
+$$\boldsymbol{x}_t \sim q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$$
+
+via
+
+$$\begin{align*}\boldsymbol{x}_t &= \sqrt{\prod_{i=1}^t \alpha_i}\boldsymbol{x}_0 + (\sqrt{1-\prod_{i=1}^t \alpha_i})\epsilon_{t, t-1, \dots, 0} \\ &= \end{align*}$$
 
 
 ### Implementation of a diffusion model for generating MNIST digits:
