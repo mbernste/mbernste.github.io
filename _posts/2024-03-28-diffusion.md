@@ -1,5 +1,5 @@
 ---
-title: 'Denoising diffusion probabilistic models (Part 1: Reversing diffusion)'
+title: 'Denoising diffusion probabilistic models'
 date: 2024-03-28
 permalink: /posts/diffusion/
 tags:
