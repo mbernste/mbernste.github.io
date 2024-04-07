@@ -23,7 +23,7 @@ At the time of this writing, diffusion models are state-of-the-art models used f
 
 <br>
 
-Diffusion models are also being explored in biomedical research. For example, [RFDiffusion](https://www.nature.com/articles/s41586-023-06415-8) and [Chroma](https://www.nature.com/articles/s41586-023-06728-8) are two methods that use diffusion models to generate novel, functional protein sequences. 
+Diffusion models are also being explored in biomedical research. For example, [RFDiffusion](https://www.nature.com/articles/s41586-023-06415-8) and [Chroma](https://www.nature.com/articles/s41586-023-06728-8) are two methods that use diffusion models to generate novel, functional protein sequences. Diffusion models are [also being explored](https://www.nature.com/articles/s41551-024-01193-8) for synthetic biomedical data generation.
 
 Because of these models' incredible performance in image generation, and their burgeoning use-cases in computational biology, I was curious to understand how they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. In this post, I will step through my newfound understanding of diffusion models regarding both their mathematical theory and practical implementation. Hopefully this explanation will serve others who are learning this material as well. Please let me know if you find any errors! 
 
