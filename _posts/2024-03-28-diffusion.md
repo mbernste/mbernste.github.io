@@ -420,6 +420,16 @@ where $\bar{\alpha_t} := \prod_{i=1}^t \alpha_i$. Thus, we see that,
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) = N\left(\boldsymbol{x}_t; \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0, \left(1-\bar{\alpha}_t \right) \boldsymbol{I}\right)$$
 
+### Derivation 5 (Closed form of $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$)
+
+$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) &= \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, \boldsymbol{x}_0) q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_0)}{q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)} \end{align*}$$
+
+$$\propto q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, \boldsymbol{x}_0) q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_0)$$
+
+**Note 1:** Apply Bayes Theorem
+
+**Note 2:** Throughout this derivation, we will only consider terms that contain $\boldsymbol{x}\_{t-1}$.
+
 ### Implementation of a diffusion model for generating MNIST digits:
 
 In this section, we will walk through all of the code used to implement a diffusion model. The full code can be run on [Google Colab](https://colab.research.google.com/drive/14ue6jpN7yEM9c11qERpXra8G88ss__99?usp=sharing). We will start with importing the required packages:
