@@ -190,6 +190,8 @@ Before we conclude this section, we will also prove a few convenient properties 
 
 1\. **$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ has a closed form.** That is, the distribution over a noisy object at timestep $t$ of the diffusion process has a closed form solution. That solution is specifically the following normal distribution (See Derivation 3 in the Appendix to this post):
 
+$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := N(\boldsymbol{x}_t; \sqrt{\bar{\alpha}_t} \boldsymbol{x}_0, (1-\bar{\alpha}_t)\boldsymbol{I} )$$
+
 This is depicted schematically below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_forward_t_cond_0_korra.png" alt="drawing" width="500"/></center>
