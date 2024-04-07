@@ -252,7 +252,7 @@ My goal was to implement a small model (both small in complexity and size) that 
 
 **Using a U-Net with ResNet blocks to predict the noise**
 
-For the noise-model, I used a [U-Net](https://en.wikipedia.org/wiki/U-Net) with [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network)-like [convolutional](https://en.wikipedia.org/wiki/Convolutional_neural_network) blocks -- that is, convolutional layers with skip-connection between them. In addition, unlike a standard U-Net, this U-Net must take as input a representation of the time-step. In a similar manner to the implementations shown in the GitHub projects above, I use a fully connected [multilayer perceptron](https://en.wikipedia.org/wiki/Multilayer_perceptron) to first encode the time-embedding before adding it to the inputs of the up-sampling blocks of the U-Net. This architecture is depicted below:
+For the noise-model, I used a [U-Net](https://en.wikipedia.org/wiki/U-Net) with [ResNet](https://en.wikipedia.org/wiki/Residual_neural_network)-like [convolutional](https://en.wikipedia.org/wiki/Convolutional_neural_network) blocks -- that is, convolutional layers with skip-connection between them. This architecture is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_unet_for_MNIST.png" alt="drawing" width="800"/></center>
 
@@ -263,10 +263,7 @@ Code for my U-Net implementation are found in the Appendix to this blog post as 
 **Representing the timestep using a time-embedding**
 
 As we discussed, the noise model conditions on the timestep, $t$. Thus, we need a way for the neural network to 
-represent the timestep. [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) borrowed an idea from
-the transformer model original conceived by [Vaswani _et al._ (2023)](https://arxiv.org/pdf/1706.03762.pdf). 
-Specifically, each timestep is mapped to a specific, sinusoidal _embedding_ vector and this vector is added, element-wise to 
-certain layers of the neural network. The code for generating these embeddings is presented in the Appendix to this post. A heatmap depicting these embeddings is shown below:
+take as input, and utilize, the timestep. To do this, [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) borrowed an idea from the [transformer model](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)) original conceived by [Vaswani _et al._ (2023)](https://arxiv.org/pdf/1706.03762.pdf). Specifically, each timestep is mapped to a specific, sinusoidal _embedding_ vector and this vector is added, element-wise to certain layers of the neural network. The code for generating these embeddings is presented in the Appendix to this post. A heatmap depicting these embeddings is shown below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_time_embedding_example.png" alt="drawing" width="600"/></center>
 
@@ -280,25 +277,25 @@ Recall that at every iteration of the training loop, we sample some objects in t
 
 **Example outputs from the model**
 
-Once we've trained the model and implemented the sampling algorithm, we can generate new MNIST digits! (See Appendix for the code used to generate new images). Below, is an example of the model generating a "5". As we examine the image across timesteps, we see it succesfully transform noise into a clear image!
+Once we've trained the model and implemented the sampling algorithm, we can generate new MNIST digits! (See Appendix for the code used to generate new images). Below, is an example of the model generating a "3". As we examine the image across timesteps of the reverse diffusion process, we see it being sucessfully transformed from noise into a clear image!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_MNIST_reverse_diffusion_5.png" alt="drawing" width="650"/></center>
 
 <br>
 
-Here is a sample of hand-selected digits output by the model:
+Here is a sample of hand-selected images of digits output by the model:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_MNIST_all_digits.png" alt="drawing" width="800"/></center>
 
 <br>
 
-Note, the model also outputs many nonsensical images. While this may not be desirable, I find it interesting that the model has honed in on patterns that are "digit-like". These not-quite digits almost look like symbols from an alien language:
+The model also output many nonsensical images. While this may not be desirable, I find it interesting that the model honed in on patterns that are "digit-like". These not-quite digits look like symbols from an alien language:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_MNIST_examples_weird_symbols.png" alt="drawing" width="450"/></center>
 
 <br>
 
-A better model may output fewer of these nonsensical "digits"; however, I think this demonstrates how these generative models can be used for creative tasks. That is, the model succesfully fit "digit-like patterns", which in many cases led the model to produce discernable digits; however, in other cases, it produced nonsensical digits but that still look visually interesting (at least, to me) by assembling these patterns in new, interesting ways. 
+A better model may output fewer of these nonsensical "digits"; however, I think this demonstrates how these generative models can be used for creative tasks. That is, the model succesfully modeled "digit-like patterns", which in some cases led it to producing nonsensical digits that still look visually interesting (well, interesting to me at least). It did this by assembling these digit-like patterns in new, interesting ways. 
 
 Resources
 ---------
