@@ -435,15 +435,15 @@ $$\begin{align*}\exp\left(A + B + C\right) &= \exp\left(A + B\right)\exp\left(C\
 
 **Note 4:** Here we [complete the square](https://en.wikipedia.org/wiki/Completing_the_square) and use the fact that:
 
-$$\begin{align*}& ax^2 + bx + c = 0 \\ \implies & a\left(x+\frac{b}{2a}\right) + \left(c - \frac{b^2}{4a}\right) \end{align*}$$
+$$\begin{align*}& ax^2 + bx + c = 0 \\ \implies & a\left(x+\frac{b}{2a}\right)^2 + \left(c - \frac{b^2}{4a}\right) = 0 \end{align*}$$
 
 In our case, 
 
-$$\begin{align*}a &:= \left(\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}}\right) \\ b &:= \frac{2\sqrt{\alpha_t}\boldsymbol{x}_t }{\beta_t} + \frac{2 \sqrt{\bar{\alpha}_{t-1}}\boldsymbol{x}_0 }{1 - \bar{\alpha}_{t-1}}  \end{align*}$$
+$$\begin{align*}a &:= \frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} \\ b &:= \frac{2\sqrt{\alpha_t}\boldsymbol{x}_t }{\beta_t} + \frac{2 \sqrt{\bar{\alpha}_{t-1}}\boldsymbol{x}_0 }{1 - \bar{\alpha}_{t-1}}  \end{align*}$$
 
 Note that we can disgregard the term, $\left(c - \frac{b^2}{4a}\right)$, since this is a constant with respect to $\boldsymbol{x}_{t-1}$ and it gets "swallowed" by the $\propto$ as described in Note 3.
 
-Moreover, after completing the square, we see that this is the functional form of a normal distribution where we annotate the mean, $\mu$, and reciprocal of the variance $1 / \sigma^2$. 
+Moreover, after completing the square, we see that this is the functional form of a normal distribution where we have annotated the mean, $\mu$, and reciprocal of the variance, $1 / \sigma^2$. 
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
