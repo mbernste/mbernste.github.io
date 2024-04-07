@@ -184,7 +184,7 @@ Note, the specific variance schedule that one uses is a modeling design choice. 
 
 Now that we have a better understanding of the second constant (i.e., $c\_2 := \beta\_t$), which scales the variance, let's turn our attention to the first constant, $c\_1 := \sqrt{1-\beta\_t}$, which scales the mean. Why are we scaling the mean with this constant? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
 
-
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_forward_process_mean_scaling_term_1D.png" alt="drawing" width="800"/></center>
 
 Before we conclude this section, we will also prove a few convenient properties of the forward model that will be useful for deriving the final objective function used to train diffusion models:
 
@@ -195,8 +195,6 @@ $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := N\left(\boldsymbol{x}_t; \sqrt{\b
 where $\alpha_t := 1-\beta$ and $\bar{\alpha}\_t := \prod_{i=1}^t \alpha\_t$ (this notation is used in the original paper by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) and makes the equations going forward easier to read). This is depicted schematically below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_forward_t_cond_0_korra.png" alt="drawing" width="500"/></center>
-
-<br>
 
 Note that because $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ is simply a normal distribution, this enables us to sample noisy images at any arbitrary timestep $t$ without having to run the full diffusion process for $t$ timesteps. That is, instead of having to sample from $t$ normal distributions, which is what would be required to run the forward diffusion process to timestep $t$, we can instead sample from one distribution. As we will show, this will enable us to speed up the training of the model, which as we will show, requires sampling noisy objects along the the diffusion process.
 
