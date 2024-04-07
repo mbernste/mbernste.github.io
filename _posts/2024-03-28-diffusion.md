@@ -241,7 +241,6 @@ There are two [perspectives](https://mbernste.github.io/posts/understanding_3d/)
 1. As maximum-likelihood estimation
 2. As score-matching 
 
-
 A rigorous answer to this question lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/), which we will address later in this blog post (to preview, one can view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}\_0))$; however, in the meantime, we can gain some intuition by taking another look at the posterior distribution
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t})}{q(\boldsymbol{x}_{t+1})}$$
@@ -424,7 +423,7 @@ $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) = N\left(\boldsymbol{x}_t; \sqrt{\ba
 
 $$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) &= \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, \boldsymbol{x}_0) q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_0)}{q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)} && \text{Note 1} \\ &\propto q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, \boldsymbol{x}_0) q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_0) && \text{Note 2} \\ &= N\left(\boldsymbol{x}_t; \sqrt{\alpha_t}\boldsymbol{x}_{t-1}, (1-\alpha_t)\boldsymbol{I} \right) N\left(\boldsymbol{x}_{t-1}; \sqrt{\bar{\alpha}_{t-1}}\boldsymbol{x}_0, (1-\bar{\alpha}_{t-1}) \boldsymbol{I} \right) \\ &\propto \exp \left(-\frac{1}{2} \frac{\left(\boldsymbol{x}_t - \sqrt{\alpha_t}\boldsymbol{x}_{t-1} \right)^2}{1-\alpha_t} \right) \exp \left(-\frac{1}{2} \frac{\left( \boldsymbol{x}_{t-1} - \sqrt{\bar{\alpha}_{t-1}}\boldsymbol{x}_0 \right)^2 }{1-\bar{\alpha}_{t-1}} \right) \\ &= \exp \left(-\frac{1}{2} \left(\frac{\left(\boldsymbol{x}_t - \sqrt{\alpha_t}\boldsymbol{x}_{t-1} \right)^2}{1-\alpha_t} + \frac{ \left(\boldsymbol{x}_{t-1} - \sqrt{\bar{\alpha}_{t-1}}\boldsymbol{x}_0 \right)^2}{1-\bar{\alpha}_{t-1}} \right) \right) \\ &= \exp\left(-\frac{1}{2} \left( \frac{\boldsymbol{x}^2_t - 2\sqrt{\alpha_t}\boldsymbol{x}_t\boldsymbol{x}_{t-1} + \alpha_t \boldsymbol{x}^2_{t-1} }{\beta_t} + \frac{\boldsymbol{x}^2_{t-1} -2\sqrt{\bar{\alpha}_{t-1}}\boldsymbol{x}_0\boldsymbol{x}_{t-1} + \bar{\alpha}_{t-1}\boldsymbol{x}^2_0}{1-\bar{\alpha}_{t-1}} \right) \right) \\ &\propto \exp\left( -\frac{1}{2} \left( \left(\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} \right)\boldsymbol{x}^2_{t-1} - \left(\frac{2 \sqrt{\alpha_t} \boldsymbol{x}_t }{\beta_t} + \frac{2 \sqrt{\bar{\alpha}_{t-1}} \boldsymbol{x}_0 }{1 - \bar{\alpha}_{t-1}}  \right)\boldsymbol{x}_{t-1} \right)\right) && \text{Note 3}\end{align*}$$
 
-$$\propto \exp\left(-\frac{1}{2} \left(\underbrace{ \left(\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}}\right)}_{1 / \sigma^2}\left(\boldsymbol{x}_{t-1} - \underbrace{a}_{\mu} \right)^2  \right) \right)$$
+$$\propto \exp\left(-\frac{1}{2} \left(\underbrace{ \left(\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}}\right)}_{1 / \sigma^2}\left(\boldsymbol{x}_{t-1} - \underbrace{\frac{ \frac{2\sqrt{\alpha_t}\boldsymbol{x}_t }{\beta_t} + \frac{2 \sqrt{\bar{\alpha}_{t-1}}\boldsymbol{x}_0 }{1 - \bar{\alpha}_{t-1}}  }{2\left(\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}}  \right)} }_{\mu} \right)^2  \right) \right)$$
 
 **Note 1:** Apply Bayes Theorem
 
