@@ -219,9 +219,9 @@ The sampling algorithm
 The underlying learning principle
 ---------------------------------
 
-Let's take a step back and address the following basic question: What is the basic [learning (i.e. estimation) principle](https://en.wikipedia.org/wiki/Estimation_theory#:~:text=Estimation%20theory%20is%20a%20branch,distribution%20of%20the%20measured%20data.) that motivates this goal of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ via variational inference? 
+Let's take a step back and address the following basic question: What is the basic [learning principle (i.e. estimation principle)](https://en.wikipedia.org/wiki/Estimation_theory#:~:text=Estimation%20theory%20is%20a%20branch,distribution%20of%20the%20measured%20data.) that motivates this goal of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ by minimizing their KL-divergence? 
 
-This leads to another, related question: How exactly does this framework of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ lead to $p_{\theta}(\boldsymbol{x}\_0)$ matching the true distribution $q(\boldsymbol{x}\_0)$? This question seems especially puzzing due to the fact that both $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ and $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ condition on $\boldsymbol{x}\_0$. Where in this objective  are we directly fitting $p_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$? 
+This leads to another, related question: How exactly does this framework of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ lead $p_{\theta}(\boldsymbol{x}\_0)$ towards matching the true distribution $q(\boldsymbol{x}\_0)$? This question seems especially puzzing due to the fact that both $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ and $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ condition on $\boldsymbol{x}\_0$. Where in this objective  are we directly fitting $p_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$? 
 
 There are two [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which one can understand the motivation behind this objective:
 
