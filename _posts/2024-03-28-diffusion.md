@@ -229,7 +229,7 @@ This leads to another, related question: How exactly does this framework of fitt
 
 There are two [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which one can understand the motivation behind this objective:
 
-1. As maximum-likelihood estimation of a reverse diffusion process
+1. As maximum-likelihood estimation
 2. As score-matching 
 
 
