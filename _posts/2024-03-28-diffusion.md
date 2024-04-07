@@ -182,7 +182,7 @@ This begs the question: Why use a different value of $\beta_t$ at each time step
 
 Note, the specific variance schedule that one uses is a modeling design choice. Instead of a linear variance schedule, one may opt for another one. For example, [Nichol and Dhariwal (2021)](https://arxiv.org/pdf/2102.09672.pdf) suggest replacing a linear variance schedule with a cosine variance schedule (which we won't discuss here).
 
-Now that we have a better understanding of the second constant (i.e., $c\_2 := \beta\_t$), which scales the variance, let's turn our attention to the first constant, $c\_1 := \sqrt{1-\beta\_t}$, which scales the mean. Why are we scaling the mean with this constant? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}\_t$? The reason for this term is that it makes sure that the variance of the noise does not continue to increase, but rather equals one. That is, $\sqrt{1-\beta}$, is precisely the value required to scale the mean of the forward diffusion process distribution, $q(\boldsymbol{x}\_t, \boldsymbol{x}\_{t-1})$ such that the variance is 1. See Derivation 3 in the Appendix to this post for a proof. This property is necessary if we wish the noise to approach a standard normal distribution, which has a variance of one, after $T$ timesteps. Below we depict a forward diffusion process using two strategies: the first does not scale the mean and the second does. Notice that the variance continues to grow when we scale the mean, but it does not when we scale by $\sqrt{1-\beta}$:
+Now that we have a better understanding of the second constant (i.e., $c\_2 := \beta\_t$), which scales the variance, let's turn our attention to the first constant, $c\_1 := \sqrt{1-\beta\_t}$, which scales the mean. Why are we scaling the mean with this constant? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}\_t$? The reason for this term is that it makes sure that the variance of the noise does not continue to increase, but rather equals one. That is, $\sqrt{1-\beta}$, is precisely the value required to scale the mean of the forward diffusion process distribution, $q(\boldsymbol{x}\_t, \boldsymbol{x}\_{t-1})$ such that the variance is 1. See Derivation 3 in the Appendix to this post for a proof. This property is necessary if we wish the noise to approach a standard normal distribution, which has a variance of one, after $T$ timesteps. Below we depict a forward diffusion process on 1-dimensional data using two strategies: the first does not scale the mean and the second does. Notice that the variance continues to grow when we scale the mean, but it does not when we scale by $\sqrt{1-\beta}$:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_forward_process_mean_scaling_term_1D.png" alt="drawing" width="800"/></center>
 
@@ -198,7 +198,7 @@ where $\alpha_t := 1-\beta$ and $\bar{\alpha}\_t := \prod_{i=1}^t \alpha\_t$ (th
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_forward_t_cond_0_korra.png" alt="drawing" width="500"/></center>
 
-Note that because $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ is simply a normal distribution, this enables us to sample noisy images at any arbitrary timestep $t$ without having to run the full diffusion process for $t$ timesteps. That is, instead of having to sample from $t$ normal distributions, which is what would be required to run the forward diffusion process to timestep $t$, we can instead sample from one distribution. As we will show, this will enable us to speed up the training of the model, which as we will show, requires sampling noisy objects along the the diffusion process.
+Note that because $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ is simply a normal distribution, this enables us to sample noisy images at any arbitrary timestep $t$ without having to run the full diffusion process for $t$ timesteps. That is, instead of having to sample from $t$ normal distributions, which is what would be required to run the forward diffusion process to timestep $t$, we can instead sample from one distribution. As we will show, this will enable us to speed up the training of the model.
 
 2\. **$q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$ has a closed form.** Note that we previously discussed how the conditional distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ was intractible to compute. However, it turns out that if instead of only conditioning $\boldsymbol{x}\_t$, we also condition on the original, noiseless object, $\boldsymbol{x}\_0$, we _can_ derive a closed form for this posterior distribution. That distribution is a normal distribution (See Derivation 5 in the Appendix to this post):
 
@@ -334,7 +334,19 @@ $$\begin{align*}E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q} \left[\fra
 **Note 4:**
 $$\begin{align*}E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[\log \frac{p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) }{ q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)} \right] &= E_{\boldsymbol{x}_{t}, \boldsymbol{x}_{t-1} \mid \boldsymbol{x}_0 \sim q}\left[\log \frac{p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) }{ q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)} \right] \\ &= \iint q(\boldsymbol{x}_{t-1}, \boldsymbol{x}_t \mid \boldsymbol{x}_0) \log \frac{p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) }{ q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)} \ d\boldsymbol{x}_{t-1} d\boldsymbol{x}_t \\ &=  \iint q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) \log \frac{p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) }{ q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)} \ d\boldsymbol{x}_{t-1} d\boldsymbol{x}_t \\ &= \int q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) \left[ \int q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)  \log \frac{p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) }{ q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)} \ d\boldsymbol{x}_{t-1} \right] d\boldsymbol{x}_t \\ &= \int q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) KL(q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)) d\boldsymbol{x}_t \\ &= E_{\boldsymbol{x}_t \mid \boldsymbol{x}_0 \sim q} \left[ KL(q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)) \right]\end{align*}$$
 
-### Derivation 3
+### Derivation 3 (Scaling the mean by $\sqrt{1-\beta}$ constrains the variance):
+
+Let,
+
+$$\boldsymbol{x}_t \sim N(\boldsymbol{\mu}, \boldsymbol{I})$$
+
+for some mean $\boldsymbol{\mu}$. For the next timestep, we have
+
+$$\boldsymbol{x}_{t+1} \sim N(a\boldsymbol{x}_t, \beta \boldsymbol{I})$$
+
+where $a$ is some constant that scales the mean given by $\boldsymbol{x}_t$. We seek a value of $a$ such that $\text{Var}(\boldsymbol{x}_{t+1}) = 1$. To find this value, we use the [law of total variance](https://en.wikipedia.org/wiki/Law_of_total_variance):
+
+$$\begin{align*}\text{Var}(\boldsymbol{x}_{t+1}) = E\left[\text{Var}(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t ) \right] + \text{Var}\left( E\left[\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t \right]\right)\end{align*}$$
 
 ### Derivation 4 (Closed form of $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$):
 
