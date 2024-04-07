@@ -401,8 +401,11 @@ $$\boldsymbol{x}_t \sim q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$$
 
 via
 
-$$\begin{align*}\boldsymbol{x}_t &= \sqrt{\prod_{i=1}^t \alpha_i}\boldsymbol{x}_0 + (\sqrt{1-\prod_{i=1}^t \alpha_i})\epsilon_{t, t-1, \dots, 0} \\ &= \end{align*}$$
+$$\begin{align*}\boldsymbol{x}_t &= \sqrt{\prod_{i=1}^t \alpha_i}\boldsymbol{x}_0 + \sqrt{1-\prod_{i=1}^t \alpha_i}\epsilon_{t, t-1, \dots, 0} \\ &= \sqrt{\bar{\alpha_t}}\boldsymbol{x}_0 + \sqrt{\bar{\alpha_t}}\epsilon_{t, t-1, \dots, 0}\end{align*}$$
 
+where $\bar{\alpha_t} := \prod_{i=1}^t \alpha_i$. Thus, we see that,
+
+$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) = N\left(\boldsymbol{x}_t; \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0, \left(1-\bar{\alpha}_t \right) \boldsymbol{I}\right)$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
