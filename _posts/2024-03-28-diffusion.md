@@ -357,19 +357,23 @@ We start with $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t-1})$. Recall it is gi
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}) := N(\boldsymbol{x}_t;  \sqrt{1-\beta_t}\boldsymbol{x}_{t-1}, \beta \boldsymbol{I})$$
 
-This can be expressed via the following reparameterization:
+Because this is a normal distribution, we can generate a sample
+
+$$\boldsymbol{x}_t \sim q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})$$
+
+by first sample $\epsilon\_{t-1}$ from a standard normal, $N(\boldsymbol{0}, \boldsymbol{I})$, and then transforming it into $\boldsymbol{x}\_t$ via, 
 
 $$\begin{align*}\boldsymbol{x}_t &= \sqrt{1-\beta_t}\boldsymbol{x}_{t-1} + \sqrt{\beta_t}\epsilon_{t-1} \\ &= \sqrt{\alpha_t}\boldsymbol{x}_{t-1} + \sqrt{1-\alpha_t}\epsilon_{t-1} \end{align*}$$
 
-where $\alpha_t := 1 - \beta_t$ (which will make the notation easier going forward) and $\epsilon_{t-1} \sim N(\boldsymbol{0}, \boldsymbol{I})$ is a sample from a standard normal distribution. That is, to sample $\boldsymbol{x}\_t$, we can sample $\epsilon\_{t-1}$ from a standard normal distribution, $N(\boldsymbol{0}, \boldsymbol{I})$, and then transform it into a sample from $ N(\boldsymbol{x}\_t;  \sqrt{1-\beta_\t}\boldsymbol{x}\_{t-1}, \beta \boldsymbol{I})$. 
+where $\alpha_t := 1 - \beta_t$ (which will make the notation easier going forward). 
 
-Notice that this transformation uses $\boldsymbol{x}_{t-1}$, which is a sample from  $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t-2})$. From this observation, we see that to sample $\boldsymbol{x}\_t$ from the distribution $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t-2})$, we can generate _two_ samples from a standard normal distribution,
+Notice that this transformation relies on $\boldsymbol{x}\_{t-1}$, which is a sample from  $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t-2})$. From this observation, we realize there is a way to sample $\boldsymbol{x}\_t$ not from $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t-1})$, but rather from $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t-2})$. Specifically, we can generate _two_ samples from a standard normal distribution,
 
 $$\epsilon_{t-1}, \epsilon_{t-2} \sim N(\boldsymbol{0}, \boldsymbol{I})$$
 
-Then, we can generate a sample,
+Then, we can generate a sample 
 
-$$\boldsymbol{x}_t \sim q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})$$
+$$\boldsymbol{x}_t \sim q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-2})$$
 
 via the following transformation of $\epsilon\_{t-1}$ and $\epsilon_{t-2}$:
 
