@@ -223,16 +223,6 @@ Thus we see that the last term, $L_T$, does not depend on the model parameters, 
 $$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}}$$
 
 
-
-
-
-Training the model by optimizing the ELBO via stochastic gradient ascent
-------------------------------------------------------------------------
-
-Specifically, we can derive the distribution of the object at any timestep $t$ along the forward process conditioned on the noiseless, original object $\boldsymbol{x}\_0$ (See Derivation XXX in the Appendix to this post):
-$$q(\boldsymbol{x}_t \mid \boldsymbol{x}_0) := $$
-
-
 The sampling algorithm
 ----------------------
 
