@@ -191,7 +191,7 @@ Note that because $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ is simply a normal
 
 2\. **$q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$ has a closed form.** Note that we previously discussed how the conditional distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ was intractible to compute.
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_posterior_intractible_korra.png" alt="drawing" width="300"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_posterior_intractible_korra.png" alt="drawing" width="275"/></center>
 
 However, it turns out that if instead of only conditioning $\boldsymbol{x}\_t$, we also condition on the original, noiseless object, $\boldsymbol{x}\_0$, we _can_ derive a closed form for this posterior distribution. That distribution is a normal distribution (See Derivation 5 in the Appendix to this post):
 
