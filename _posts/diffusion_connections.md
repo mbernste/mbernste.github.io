@@ -10,3 +10,12 @@ I have found [three different perspectives](https://mbernste.github.io/posts/und
 In this first of three blog posts, I will present my understanding of diffusion models through the first of these perspectives. This will entail deriving 
 
 these three perspectives. 
+
+Perspective 1: Learning to reverse diffusion
+--------------------------------------------
+
+Perspective 2: Diffusion models as hierarchical variational autoencoders
+------------------------------------------------------------------------
+
+Perspective 3: Diffusion models as score matching models
+--------------------------------------------------------
