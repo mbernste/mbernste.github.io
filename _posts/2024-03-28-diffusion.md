@@ -182,7 +182,7 @@ This begs the question: Why use a different value of $\beta_t$ at each time step
 
 Note, the specific variance schedule that one uses is a modeling design choice. Instead of a linear variance schedule, one may opt for another one. For example, [ Nichol and Dhariwal (2021)](https://arxiv.org/pdf/2102.09672.pdf) suggest replacing a linear variance schedule with a cosine variance schedule (which we won't discuss here).
 
-Now that we have a better understanding of the second constant (i.e., $c\_2 := \beta\_t$, which scales the variance), let's turn our attention to the first constant, $c\_1 := \sqrt{1-\beta\_t}$. Why are we scaling the mean with this constant? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
+Now that we have a better understanding of the second constant (i.e., $c\_2 := \beta\_t$), which scales the variance, let's turn our attention to the first constant, $c\_1 := \sqrt{1-\beta\_t}$, which scales the mean. Why are we scaling the mean with this constant? Doesn't it make more sense to simply center the mean of the forward noise distribution at $\boldsymbol{x}_t$?
 
 
 
