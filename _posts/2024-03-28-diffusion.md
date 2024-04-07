@@ -201,7 +201,6 @@ Note that because $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ is simply a normal
 
 This makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ requires knowing $q(\boldsymbol{x}\_0)$ -- that is, in order to turn noise into an object, we need to know what real, noiseless objects look like. However, if we condition on $\boldsymbol{x}\_0$, this means we are assuming we _know_ what $\boldsymbol{x}\_0$ looks like and the modified posterior, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, needs only to take into account subtraction of noise towards this noiseless object.
 
-
 The reverse model
 -----------------
 
@@ -223,13 +222,6 @@ $$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q
 
 The sampling algorithm
 ----------------------
-
-Perspective 2: Diffusion models as hierarchical variational autoencoders
------------------------------------------------------------------
-
-Perspective 3: Diffusion models as score matching models
--------------------------------------------------
-
 
 Applying a diffusion model on MNIST
 -----------------------------------
