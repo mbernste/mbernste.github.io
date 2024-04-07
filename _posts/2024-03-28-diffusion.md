@@ -348,9 +348,19 @@ where $a$ is some constant that scales the mean given by $\boldsymbol{x}_t$. We 
 
 $$\begin{align*}\text{Var}(\boldsymbol{x}_{t+1}) = E\left[\text{Var}(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t ) \right] + \text{Var}\left( E\left[\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t \right]\right)\end{align*}$$
 
+$$= E[\beta] + \text{Var}(a\boldsymbol{x}_t)$$
+
+$$= \beta + a^2\text{Var}(\boldsymbol{x}_t)$$
+
+$$= \beta + a^2$$
+
+Now, if we fix $\text{Var}(\boldsymbol{x}_t+1) = 1$, it follows that:
+
+$$\begin{align*}&1 = \beta + a^2 \\ \imples &a = \sqrt{1-\beta}\end{align*}$$
+
 ### Derivation 4 (Closed form of $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$):
 
-We start with $q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})$. Recall it is given by,
+We start with $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t-1})$. Recall it is given by,
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}) := N(\boldsymbol{x}_t;  \sqrt{1-\beta_t}\boldsymbol{x}_{t-1}, \beta \boldsymbol{I})$$
 
