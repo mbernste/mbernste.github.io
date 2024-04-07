@@ -1,5 +1,5 @@
 ---
-title: 'Theory and implementation of denoising diffusion models'
+title: 'Denoising diffusion probabilistic models (Part 1: Reversing diffusion)'
 date: 2024-03-28
 permalink: /posts/diffusion/
 tags:
@@ -39,11 +39,13 @@ I have found [three different perspectives](https://mbernste.github.io/posts/und
 2. As a hierarchical [variational autoencoder](https://mbernste.github.io/posts/vae/)
 3. As a [score matching model](https://yang-song.net/blog/2021/score/)
 
-In this blog post, I will present my understanding of diffusion models through these three perspectives. We will conclude by implementing a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
+In this first of three blog posts, I will present my understanding of diffusion models through the first of these perspectives. This will entail deriving 
+
+these three perspectives. We will conclude by implementing a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
 
 
-Perspective 1: Diffusion models as learning to reverse a diffusion process
---------------------------------------------------------------------------
+Diffusion models as learning to reverse a diffusion process
+-----------------------------------------------------------
 
 Let's let $q(\boldsymbol{x})$ be the true distribution over our objects. We wish to develop a method that samples from a distribution, $p(\boldsymbol{x})$, that is similar to $q(\boldsymbol{x})$. In diffusion models, we do this in an _implicit_ manner: specifically, by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). 
 
