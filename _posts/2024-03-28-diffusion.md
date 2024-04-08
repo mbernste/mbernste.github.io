@@ -447,7 +447,7 @@ $$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)  = N\left(\bol
 
 **Note 3:** Here we remove terms that do not involve $\boldsymbol{x}\_{t-1}$ by using the following fact: given a term, $f(\boldsymbol{x}\_{t-1})$, and a constant term, $C$, it follows that:
 
-$$\begin{align*}\exp\left(f(\boldsymbol{x}_{t-1}) + C\right) &= \exp\left(\boldsymbol{x}_{t-1}\right)\exp\left(C\right) \\ & \propto \exp\left(\boldsymbol{x}_{t-1}\right)\end{align*}$$
+$$\begin{align*}\exp\left(f(\boldsymbol{x}_{t-1}) + C\right) &= \exp\left(f(\boldsymbol{x}_{t-1})\right)\exp\left(C\right) \\ & \propto \exp\left(f(\boldsymbol{x}_{t-1})\right)\end{align*}$$
 
 **Note 4:** Here we [complete the square](https://en.wikipedia.org/wiki/Completing_the_square) and use the fact that:
 
