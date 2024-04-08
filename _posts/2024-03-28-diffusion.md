@@ -115,14 +115,16 @@ Let's start with some high-level intuition for why this modeling strategy works 
 
 $$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) = \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{q(\boldsymbol{x}_t)}$$
 
-Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will need to match $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. This very act of learning to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ effectively.
+Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will need to match $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$. This very act of learning to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ effectively.
 
 Of course, this is a bit hand-wavey. As we proceed through the remainder of this blog post, we will show one can view the task of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ from two perspectives:
 
 1. As maximum-likelihood estimation
 2. As score-matching
 
-Let's start with maximum likelihood estimation. As we will show in this post, the method we will use to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$. Thus, through this perspective, we are performing _approximate_ maximum likelihood of a specific, parameterized model -- specifically, a denoising model. Note, this is _approximate_ maximum likelihood since we are maximizing the lower bound of the likelihood rather than the likelihood itself. This is depicted schematically below where $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO and $\theta^*$ represents the true maximum of the log-likelihood function (This figure is adapted from [this blog post by Jakub Tomczak](https://jmtomczak.github.io/blog/4/4_VAE.html)): 
+Let's start with maximum likelihood estimation. As we will show in this post, the method we will use to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$ called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). Thus, through this perspective, we are performing _approximate_ maximum likelihood of a specific, parameterized model; that model being a denoising model. 
+
+Note, that maximizing the ELBO is _approximate_ maximum likelihood since we are maximizing the lower bound of the likelihood rather than the likelihood itself. This is depicted schematically below where $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO and $\theta^*$ represents the true maximum of the log-likelihood function (This figure is adapted from [this blog post by Jakub Tomczak](https://jmtomczak.github.io/blog/4/4_VAE.html)): 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ELBO_vs_log_likelihood.png" alt="drawing" width="600"/></center>
 
@@ -134,7 +136,7 @@ Now that we have some high-level understanding as to _why_ diffusion models make
 The forward model
 -----------------
 
-Let us now more rigorously define and examine the forward diffusion process. As stated previously, the forward model is defined as
+As stated previously, the forward model is defined as
 
 $$q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t) := \sim N\left(\boldsymbol{x}_{t+1} ; c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)$$
 
