@@ -68,7 +68,7 @@ $$\boldsymbol{x}_{t+1} \sim N\left(c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\rig
 
 For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ to refer to this conditional distribution.
 
-In a similar manner, we can view the process of _removing_ noise (i.e., reversing the diffusion the process) as sampling from the _posterior distribution_, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. This process of removing noise by iteratively sampling from these posteriors is depicted below:
+In a similar manner, we can view the process of _removing_ noise (i.e., reversing a diffusion step) as sampling from the _posterior_ distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. This process of removing noise by iteratively sampling from these posteriors is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_exact.png" alt="drawing" width="800"/></center>
 
@@ -96,17 +96,16 @@ where $\boldsymbol{x}\_{0:T} = \boldsymbol{x}\_0, \boldsymbol{x}\_1, \dots, \bol
 
 $$p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
 
-From this approximation, we will obtain our approximate posterior distributions given by each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$.
+From this approximation, we will obtain our approximate posterior distributions given by each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$. In short, by fitting $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, we will obtain a set of posterior distributions, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$.
 
 Once we have these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object. More specifically, we will have "sampled" an object!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
 
-
 Theoretical motivation for learning a reverse diffusion process
 ---------------------------------------------------------------
 
-While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may raise the following question: What is the theoretical justification that motivates this framework? Moreover, why are we specifically fitting  $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$? And lastly, if we are interested in generating realistic objects -- that is, samples of $\boldsymbol{x}\_0$ -- then why do these two distributions _condition_ on \boldsymbol{x}\_0?
+While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may be wanting for a more rigorous theoretical justification for this framework. That is, what is the justification for fitting  $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$? And moreover, if we are interested in generating realistic objects -- that is, samples of $\boldsymbol{x}\_0$ -- then why do these two distributions _condition_ on \boldsymbol{x}\_0?
 
 Before getting too rigorous, we can gain some high-level intuition into the motivation behind this framework by taking another look at the posterior distribution:
 
@@ -114,16 +113,16 @@ $$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) = \frac{q(\boldsymbol{x}_t \mid 
 
 Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will need to match $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. This very act of learning to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t} \mid \boldsymbol{x}\_{t+1})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ effectively.
 
-More rigorously, one can view the task of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ from two perspectives:
+Of course, this is a bit hand-wavey. More rigorously, one can view the task of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ from two perspectives:
 
 1. As maximum-likelihood estimation
 2. As score-matching
 
-Let's start with maximum likelihood estimation. Note that the marginal distribution, $p_{\theta}(\boldsymbol{x}_0)$, defined by our diffusion model is the marginal distribution over all of the intermediate, noisy objects, $\boldsymbol{x}_t$, at each time step $t$ of the diffusion process. That is, 
+Let's start with maximum likelihood estimation. Note that the marginal distribution, $p_{\theta}(\boldsymbol{x}_0)$, defined by our diffusion model is the marginal distribution over all of the intermediate, noisy objects, $\boldsymbol{x}_t$, at each time step $t$ of the diffusion process:
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
 
-As we will show in the next section, by fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ we will be implicitly maximizing a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$. Thus, through this perspective, we are performing _approximate_ maximum likelihood of a denoising model (it is approximate since we are maximizing the lower bound of the likelihood rather than the likelihood itself).
+As we will show in the next section, the method we will use to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$. Thus, through this perspective, we are performing _approximate_ maximum likelihood of a specific, parameterized model -- specifically, a denoising model. (Note, this is _approximate_ maximum likelihood since we are maximizing the lower bound of the likelihood rather than the likelihood itself).
 
 Another motivation lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/). While we will not go into depth in this post, one can also view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}\_0))$.
 
