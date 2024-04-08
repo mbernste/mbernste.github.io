@@ -82,13 +82,13 @@ $$\begin{align*} q(\boldsymbol{x}_t) &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsy
 
 Notice that this marginalization requires that we define a distribution $q(\boldsymbol{x}_0)$, which is a distribution over noiseless objects (e.g., a distribution over noiseless images). Unfortunately, we don't know what this is -- that is our whole purpose of developing a diffusion model!
 
-Now, as we do in [variational inference](https://mbernste.github.io/posts/variational_inference/), we will instead _approximate_ $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ with a surrogate distribution $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ where $\theta$ are learnable parameters that will be used to fit the distribution as close to $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ as possible. As we will see in the next section, $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ can incorporate a neural network so that it can be quite a complex distribution. 
+To get around this problem, we will employ a similar strategy as used in [variational inference](https://mbernste.github.io/posts/variational_inference/): We will _approximate_ $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ with a surrogate distribution $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. Here, $\theta$ represent a set of learnable parameters that we will be use to fit these distribution as close to each $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ as possible. As we will see later in the post, $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ can incorporate a neural network so that it can represent a distribution complex enough to sucessfully remove noise. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_approximate.png" alt="drawing" width="800"/></center>
 
 <br>
 
-More specifically, our goal will be to approximate the full diffusion process, which can be represented as a joint distribution over all intermediate noisy objects:
+To be more specific, our goal will be to approximate the full diffusion process, which can be represented as a joint distribution over all intermediate noisy objects:
 
 $$q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t-1})$$
 
@@ -101,6 +101,12 @@ From this approximation, we will obtain our approximate posterior distributions 
 Once we have these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object. More specifically, we will have "sampled" an object!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
+
+Let's come back to the idea that a diffusion model represents a probability distribution over some objects of interest. Here we see  that this distribution defined by our diffusion model, $p_{\theta}(\boldsymbol{x}_0)$, is the marginal distribution over all of the intermediate, noisy objects, $\boldsymbol{x}_t$, at each time step $t$ of the diffusion process:
+
+$$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
+
+Note this integral is hard to calculate; however, despite this fact, we can still sample from the distribution, and that sampling process is performed via the iterative denoising process we just described.
 
 Theoretical motivation for learning a reverse diffusion process
 ---------------------------------------------------------------
@@ -118,11 +124,7 @@ Of course, this is a bit hand-wavey. More rigorously, one can view the task of f
 1. As maximum-likelihood estimation
 2. As score-matching
 
-Let's start with maximum likelihood estimation. Note that the marginal distribution, $p_{\theta}(\boldsymbol{x}_0)$, defined by our diffusion model is the marginal distribution over all of the intermediate, noisy objects, $\boldsymbol{x}_t$, at each time step $t$ of the diffusion process:
-
-$$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
-
-As we will show in the next section, the method we will use to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$. Thus, through this perspective, we are performing _approximate_ maximum likelihood of a specific, parameterized model -- specifically, a denoising model. (Note, this is _approximate_ maximum likelihood since we are maximizing the lower bound of the likelihood rather than the likelihood itself).
+Let's start with maximum likelihood estimation. As we will show in the next section, the method we will use to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$. Thus, through this perspective, we are performing _approximate_ maximum likelihood of a specific, parameterized model -- specifically, a denoising model. (Note, this is _approximate_ maximum likelihood since we are maximizing the lower bound of the likelihood rather than the likelihood itself).
 
 Another motivation lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/). While we will not go into depth in this post, one can also view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}\_0))$.
 
