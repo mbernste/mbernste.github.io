@@ -449,11 +449,11 @@ Moreover, after completing the square, we see that this is the functional form o
 
 **Note 5:**
 
-$$\begin{align*} \sigma^2 := \frac{1}{\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} } \\ &= \frac{1}{ \frac{\alpha_t (1-\bar{\alpha}_{t-1}) + \beta_t }{\beta_t (1-\bar{\alpha}_{t-1})} } \\ &= \frac{\beta_t (1- \bar{\alpha}_{t-1})}{\alpha_t(1-\bar{\alpha}_{t-1}) + (1-\alpha_t)} \\ &= \frac{\beta_t(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t}\end{align*}$$
+$$\begin{align*} \sigma^2 &:= \frac{1}{\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} } \\ &= \frac{1}{ \frac{\alpha_t (1-\bar{\alpha}_{t-1}) + \beta_t }{\beta_t (1-\bar{\alpha}_{t-1})} } \\ &= \frac{\beta_t (1- \bar{\alpha}_{t-1})}{\alpha_t(1-\bar{\alpha}_{t-1}) + (1-\alpha_t)} \\ &= \frac{\beta_t(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t}\end{align*}$$
 
 **Note 6:**
 
-$$\begin{align*}\mu := \frac{\frac{a}{b}\boldsymbol{x}_t + \frac{a}{b}\boldsymbol{x}_0 }{\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}}} \end{align*}$$
+$$\begin{align*}\mu := \frac{\frac{2 \sqrt{\alpha_t}}{\beta_t}\boldsymbol{x}_t + \frac{2 \sqrt{\bar{\alpha}_{t-1}} }{1- \bar{\alpha}_{t-1}}\boldsymbol{x}_0 }{2\left( \frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} \right)} \end{align*}$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
