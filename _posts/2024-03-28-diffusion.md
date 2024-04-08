@@ -108,12 +108,12 @@ $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \bol
 
 Note this integral is hard to calculate; however, despite this fact, we can still sample from the distribution, and that sampling process is performed via the iterative denoising process we just described.
 
-Theoretical motivation for learning a reverse diffusion process
----------------------------------------------------------------
+Intuition and justification
+---------------------------
 
 While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may be wanting for a more rigorous theoretical justification for this framework. That is, what is the justification for fitting  $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$? And moreover, if we are interested in generating realistic objects -- that is, samples of $\boldsymbol{x}\_0$ -- then why do these two distributions _condition_ on \boldsymbol{x}\_0?
 
-Before getting too rigorous, we can gain some high-level intuition into the motivation behind this framework by taking another look at the posterior distribution:
+Let's start with some high-level intuition for why this modeling strategy works by taking another look at the posterior distribution:
 
 $$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) = \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{q(\boldsymbol{x}_t)}$$
 
@@ -124,13 +124,12 @@ Of course, this is a bit hand-wavey. More rigorously, one can view the task of f
 1. As maximum-likelihood estimation
 2. As score-matching
 
-Let's start with maximum likelihood estimation. As we will show in the next section, the method we will use to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$. Thus, through this perspective, we are performing _approximate_ maximum likelihood of a specific, parameterized model -- specifically, a denoising model. (Note, this is _approximate_ maximum likelihood since we are maximizing the lower bound of the likelihood rather than the likelihood itself).
+Let's start with maximum likelihood estimation. As we will show in the next section, the method we will use to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$. Thus, through this perspective, we are performing _approximate_ maximum likelihood of a specific, parameterized model -- specifically, a denoising model. Note, this is _approximate_ maximum likelihood since we are maximizing the lower bound of the likelihood rather than the likelihood itself). This is depicted below:
 
 Another motivation lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/). While we will not go into depth in this post, one can also view diffusion models as models that approximate the _score function_ of the true distribution $q(\boldsymbol{x}\_0))$.
 
-XXXXXXXXX
 
-In the next section, we will more formally lay out how diffusion models fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$.
+Now that we have some high-level understanding as to _why_ diffusion models make sense, let's dig into the specifics of the model and how to train it. That is, in the remainder of this post, let us formally lay out how diffusion models fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$.
 
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 -------------------------------------------------------------------------------------------------------------------
@@ -155,7 +154,12 @@ Here we see that to minimize the KL-divergence, we can maximize the ELBO. That i
 
 $$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ &= \text{arg max}_\theta \  E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]\end{align*}$$
 
-Moreover, it turns out that this ELBO can be further manipulated into a form that has a term for each step of the diffusion process (See Derivation 2 in the Appendix to this post):
+Notice too that by maximizing the ELBO, we are maximizing a lower bound of the log-likelihood, $\log p_\theta(\boldsymbol{x})$. Thus, we can view this act of maximizing the ELBO through two perspectives:
+
+1. We are fitting a reverse diffusion process to a forward one
+2. We are maximizing the lower bound of the log-likelihood
+
+Let's now examine the ELBO more closely. It turns out that this ELBO can be further manipulated into a form that has a term for each step of the diffusion process (See Derivation 2 in the Appendix to this post):
 
 $$\begin{align*}\text{ELBO}(\theta) &= E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1 \mid \boldsymbol{x}_0 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \mid \boldsymbol{x}_0 \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}} + \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T}\end{align*}$$
 
