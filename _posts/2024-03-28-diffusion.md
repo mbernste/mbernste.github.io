@@ -38,17 +38,13 @@ Like all probabilistic generative models, diffusion models can be understood as 
 
 <br>
 
-More specifically, let $q(\boldsymbol{x})$ be the true, "real world" distribution over objects. The task of training a diffusion model is learning a distribution, $p(\boldsymbol{x})$, that is similar to $q(\boldsymbol{x})$. In diffusion models, we do this in an _implicit_ manner: specifically, by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). 
-
-First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffusion process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. For the remainder of the post, $\boldsymbol{x}_0$ will be used to denote a noiseless object sampled from the "real world distribution" of objects. If $\boldsymbol{x}_0$ is an image of my dog Korra, this diffusion process would look like the following:
+In training a diffusion model, we fit $p(\boldsymbol{x})$ in an _implicit manner_ -- specifically, by fitting a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). This diffusion process goes as follows: Given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$ and let $\boldsymbol{x}_0$ be the original object before noise was added to it. For the remainder of the post, $\boldsymbol{x}_0$ will be used to denote a noiseless object sampled from the "real world distribution" of objects. If $\boldsymbol{x}_0$ is an image of my dog Korra, this diffusion process would look like the following:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward.png" alt="drawing" width="800"/></center>
 
 <br>
 
-Here we emphasize that $\boldsymbol{x}\_0$ is a sample from $q(\boldsymbol{x}\_0)$ -- again, this is a sample from the "real world" distribution of objects. In the case of images, this is the distribution of images that we wish to model. Once we obtain an image (i.e. a sample from $q(\boldsymbol{x}\_0)$), we corrupt it by adding noise to it iteratively. If the total number of timesteps $T$ is large enough, then the corrupted image approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$.
-
-As we will show in the next sections, it turns out that if we can learn to how to reverse this diffusion process -- that is, to remove the noise at each time step, then we can derive an approximation of $q(\boldsymbol{x}\_0)$. This process of removing noise is depicted below:
+In the image above, $q(\boldsymbol{x})$ represents the hypothetical "real world" distribution of objects. That is, $\boldsymbol{x}\_0$ is a sample from $q(\boldsymbol{x}\_0)$. In the case of images, this is the distribution of images that we wish to model. Once we obtain an image (i.e. a sample from $q(\boldsymbol{x}\_0)$), we corrupt it by adding noise to it iteratively. If the total number of timesteps $T$ is large enough, then the corrupted image approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$. This process of removing noise is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse.png" alt="drawing" width="800"/></center>
 
@@ -76,7 +72,7 @@ Unfortunately, this posterior is intractable to compute. To see why this is intr
 
 $$\begin{align*} q(\boldsymbol{x}_t) &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, \dots, \boldsymbol{x}_0) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \\ &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_0)\prod_{i=1}^{t} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \end{align*}$$
 
-Notice that this marginalization requires that we define a distribution $q(\boldsymbol{x}_0)$, which is a distribution over noiseless objects (e.g., a distribution over noiseless images). Unfortunately, we don't know what this is -- that is our whole purpose of developing a diffusion model! As it will turn out, we will not ever need to define $q(\boldsymbol{x}_0)$.
+Notice that this marginalization requires that we define a distribution $q(\boldsymbol{x}_0)$, which is a distribution over noiseless objects (e.g., a distribution over noiseless images). Unfortunately, we don't know what this is -- that is our whole purpose of developing a diffusion model!
 
 Now, as we do in [variational inference](https://mbernste.github.io/posts/variational_inference/), we will instead _approximate_ $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ with a surrogate distribution $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ where $\theta$ are learnable parameters that will be used to fit the distribution as close to $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ as possible. As we will see in the next section, $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ can incorporate a neural network so that it can be quite a complex distribution. 
 
@@ -94,16 +90,17 @@ $$p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T p_\theta(
 
 where $\boldsymbol{x}\_{0:T} = \boldsymbol{x}\_0, \boldsymbol{x}\_1, \dots, \boldsymbol{x}\_T$. Said differently, we will attempt to approximate $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, which is factored by forward diffusion steps, with an approximate distribution, $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, that is factored by reverse diffusion steps. From this approximation, we will obtain our approximate posterior distributions given by each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$.
 
-Once we have these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object!
+Once we have these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object. More specifically, we will have "sampled" an object!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
 
 <br>
 
-Note that the marginal distribution $p_{\theta}(\boldsymbol{x}_0)$ defined by the diffusion model would be the marginal distribution over all of the intermediate, noisy versions $\boldsymbol{x}_0$ generated by the diffusion process. That is, 
+Note that the marginal distribution, $p_{\theta}(\boldsymbol{x}_0)$, defined by the diffusion model is the marginal distribution over all of the intermediate, noisy objects, $\boldsymbol{x}_t$, at each time step $t$ of the diffusion process. That is, 
 
 $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
 
+As we will see, by fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ as close to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ as possibe, we will be implicitly maximizing a _lower bound_ of this marginal likelihood function.
 
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 --------------------------------------------------------------------------------------------------
