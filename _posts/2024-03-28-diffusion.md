@@ -32,7 +32,7 @@ In this post, I will step through my newfound understanding of diffusion models 
 Diffusion models as learning to reverse a diffusion process
 -----------------------------------------------------------
 
-Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of objects of interest. These objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, diffusion models can be understood as a probability distribution $q(\boldsymbol{x})$ over our objects of interest. Once we have this distribution in hand, we can sample objects from this distribution. In the case of image generation, we can view the process of generating an image as sampling from a distribution over images:
+Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of objects of interest. These objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, diffusion models can be understood as a probability distribution $p(\boldsymbol{x})$ over our objects of interest. Once we have this distribution in hand, we can sample objects from this distribution. In the case of image generation, we can view the process of generating an image as sampling from a distribution over images:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="800"/></center>
 
@@ -453,6 +453,11 @@ $$\begin{align*} \sigma^2 &:= \frac{1}{\frac{\alpha_t}{\beta_t} + \frac{1}{1-\ba
 **Note 6:**
 
 $$\begin{align*}\mu := \frac{\frac{2 \sqrt{\alpha_t}}{\beta_t}\boldsymbol{x}_t + \frac{2 \sqrt{\bar{\alpha}_{t-1}} }{1- \bar{\alpha}_{t-1}}\boldsymbol{x}_0 }{2\left( \frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} \right)} \end{align*}$$
+
+$$\left( \frac{\sqrt{\alpha_t} }{\beta_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}} }{1 - \bar{\alpha}_{t-1} }\boldsymbol{x}_0 \right) \frac{\beta_t (1-\bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t}$$
+
+$$\frac{\sqrt{\alpha_t} \left( 1 - \bar{\alpha}_{t-1} \right) }{\beta_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_{1-t}}\boldsymbol{x}_0$$
+
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
