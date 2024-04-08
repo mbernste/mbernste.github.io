@@ -425,7 +425,7 @@ $$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) 
 
 $$= \exp \left(-\frac{1}{2} \frac{\left( \boldsymbol{x}_{t-1} - \underbrace{\left( \frac{\sqrt{\alpha_t} \left( 1 - \bar{\alpha}_{t-1} \right) }{\beta_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_{1-t}}\boldsymbol{x}_0 \right)}_{\mu} \right)^2}{\underbrace{ \frac{\beta_t\left(1-\bar{\alpha}_{t-1}\right)}{1-\bar{\alpha}_t}}_{\sigma^2} } \right)$$
 
-This is the form of a normal distribution and thus,
+This is the functional form of the density function of a normal distribution. Thus, we see that,
 
 $$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)  = N\left(\boldsymbol{x}_{t-1}; \frac{\sqrt{\alpha_t} \left( 1 - \bar{\alpha}_{t-1} \right) }{\beta_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_{1-t}}\boldsymbol{x}_0, \frac{\beta_t\left(1-\hat{\alpha}_{t-1}\right)}{1-\hat{\alpha}_t}\boldsymbol{I} \right)$$
 
