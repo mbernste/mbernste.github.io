@@ -58,25 +58,25 @@ The main idea behind diffusion models is that if our model can remove noise succ
 
 In a sense, the model is "sculpting" an object out of noise bit by bit. It is like a sculptor who starts from an amorphous block of granite and slowly chips away at the rock until a form appears!
 
-Now that we have some high-level intuition, let's make this more mathematically rigorous. More rigorously, the forward diffusion process works as follows: For each step, $t$, we will add noise, $\epsilon$, sampled from a standard normal distribution, to the current object, $\boldsymbol{x}\_t$, in order to form the next, noisier object $\boldsymbol{x}\_{t+1}$:
+Now that we have some high-level intuition, let's make this more mathematically rigorous. First, the forward diffusion process works as follows: For each timestep, $t$, we will sample noise, $\epsilon$, from a standard normal distribution, and then add it to  $\boldsymbol{x}\_t$ in order to form the next, noisier object $\boldsymbol{x}\_{t+1}$:
 
 $$\begin{align*}\epsilon &\sim N(\boldsymbol{0}, \boldsymbol{1}) \\ \boldsymbol{x}_{t+1} &:= c_1\boldsymbol{x}_t + c_2\epsilon\end{align*}$$
 
-where $c_1$ and $c_2$ are two constants (to be defined in more detail later in the post). We can view this process of formulating $\boldsymbol{x}\_{t+1}$ by adding noise to $\boldsymbol{x}\_t$ as a process in which we _sample_ $\boldsymbol{x}\_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. Moreover, this conditional distribution is a normal distribution:
+where $c_1$ and $c_2$ are two constants (to be defined in more detail later in the post). We can view this process of formulating adding noise to $\boldsymbol{x}\_t$ to form $\boldsymbol{x}\_{t+1}$ as the act of _sampling_ $\boldsymbol{x}\_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. This conditional distribution is specifically a normal distribution:
 
 $$\boldsymbol{x}_{t+1} \sim N\left(c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)$$
 
-For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ to refer to this conditional distribution.
+We will use the notation $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ to refer to this conditional distribution.
 
-In a similar manner, we can view the process of _removing_ noise (i.e., reversing a diffusion step) as sampling from the _posterior_ distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. This process of removing noise by iteratively sampling from these posteriors is depicted below:
+In a similar manner, we can view the process of _removing_ noise (i.e., reversing a diffusion step) also as sampling. Specifically, we can view it as sampling from the _posterior_ distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. Thus, to reverse the diffusion process, we start from pure noise and iteratively sample from these posterior distributions: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_exact.png" alt="drawing" width="800"/></center>
 
-Now, the question is, how do we derive these posterior distributions? One idea is to use [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
+Now, how do we derive these posterior distributions? One idea is to use [Bayes Theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem):
 
 $$q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t+1}) = \frac{q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)q(\boldsymbol{x}_{t})}{q(\boldsymbol{x}_{t+1})}$$
 
-Unfortunately, this posterior is intractable to compute. To see why this is intractible, we first note that in order to compute $q(\boldsymbol{x}_t)$, we have to marginalize over all of the time steps prior to $t$:
+Unfortunately, this posterior is intractable to compute. Why? First note that in order to compute $q(\boldsymbol{x}_t)$, we have to marginalize over all of the time steps prior to $t$:
 
 $$\begin{align*} q(\boldsymbol{x}_t) &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1}, \dots, \boldsymbol{x}_0) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \\ &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_0)\prod_{i=1}^{t} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0} \end{align*}$$
 
