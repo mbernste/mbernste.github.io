@@ -106,7 +106,7 @@ Once we have these approximate posterior distributions in hand, we can generate 
 Theoretical motivation for learning a reverse diffusion process
 ---------------------------------------------------------------
 
-While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may raise the following question: What is the theoretical justification that motivates this framework? Moreover, why are we specifically fitting  $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$? And lastly, if we are interested in generating realistic objects -- that is, samples of $\boldsymbol{x}_0$ -- then why do these two distributions _condition_ on \boldsymbol{x}_0?
+While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may raise the following question: What is the theoretical justification that motivates this framework? Moreover, why are we specifically fitting  $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$? And lastly, if we are interested in generating realistic objects -- that is, samples of $\boldsymbol{x}\_0$ -- then why do these two distributions _condition_ on \boldsymbol{x}\_0?
 
 Before getting too rigorous, we can gain some high-level intuition into the motivation behind this framework by taking another look at the posterior distribution:
 
@@ -131,10 +131,10 @@ XXXXXXXXX
 
 In the next section, we will more formally lay out how diffusion models fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$.
 
-Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ 
+Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 -------------------------------------------------------------------------------------------------------------------
 
-Diffusion models use a [variational inference](https://mbernste.github.io/posts/variational_inference/)-like scheme to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$. Recall, in variational inference, our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$ by minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
+Diffusion models use [variational inference](https://mbernste.github.io/posts/variational_inference/) to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$. Recall, in variational inference, our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$ by minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
 
 $$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 
