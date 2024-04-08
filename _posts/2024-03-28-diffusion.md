@@ -427,6 +427,10 @@ $$= \exp \left(-\frac{1}{2} \frac{\left( \boldsymbol{x}_{t-1} - \underbrace{\lef
 
 $$\frac{\beta_t\left(1-\hat{\alpha}_{t-1}\right)}{1-\hat{\alpha}_t}$$
 
+This is the form of a normal distribution and thus,
+
+$$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)  = N\left(\boldsymbol{x}_{t-1}; \left( \frac{\sqrt{\alpha_t} \left( 1 - \bar{\alpha}_{t-1} \right) }{\beta_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_{1-t}}\boldsymbol{x}_0 \right), \frac{\beta_t\left(1-\hat{\alpha}_{t-1}\right)}{1-\hat{\alpha}_t}\boldsymbol{I} \right)$$
+
 **Note 1:** Apply Bayes Theorem
 
 **Note 2:** Throughout this derivation, we will only consider terms that contain $\boldsymbol{x}\_{t-1}$.
