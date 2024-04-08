@@ -447,15 +447,19 @@ Note that we can disgregard the term, $\left(c - \frac{b^2}{4a}\right)$, since t
 
 Moreover, after completing the square, we see that this is the functional form of a normal distribution where we have annotated the mean, $\mu$, and reciprocal of the variance, $1 / \sigma^2$. 
 
-**Note 6:**
+**Note 5:**
 
-$$\begin{align*} \sigma^2 = \frac{1}{\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} } \end{align*}$$
+$$\begin{align*} \sigma^2 := \frac{1}{\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} } \end{align*}$$
 
 $$= \frac{1}{ \frac{\alpha_t (1-\bar{\alpha}_{t-1}) + \beta_t }{\beta_t (1-\bar{\alpha}_{t-1})} }$$
 
 $$= \frac{\beta_t (1- \bar{alpha}_{t-1})}{(1-\alpha_t)(1-\bar{\alpha}_{t-1})}$$
 
 $$= \frac{\beta_t(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t}$$
+
+**Note 6:**
+
+$$\begin{align*}\mu := \frac{\frac{a}{b}\boldsymbol{x}_t + \frac{a}{b}\boldsymbol{x}_0 }{\frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}}} \end{align*}$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
