@@ -44,9 +44,9 @@ In training a diffusion model, we fit $p(\boldsymbol{x})$ by fitting a [diffusio
 
 <br>
 
-Here, $q(\boldsymbol{x})$ represents the hypothetical "real world distribution" of objects (which is distinct from the model's distribution $p(\boldsymbol{x})$, though our goal is to train the model so that $p(\boldsymbol{x})$ resembles $q(\boldsymbol{x})$. Furthermore, if the total number of timesteps $T$ is large enough, then the corrupted object approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$. 
+Here, $q(\boldsymbol{x})$ represents the hypothetical "real world distribution" of objects (which is distinct from the model's distribution $p(\boldsymbol{x})$, though our goal is to train the model so that $p(\boldsymbol{x})$ resembles $q(\boldsymbol{x})$). Furthermore, if the total number of timesteps $T$ is large enough, then the corrupted object approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$ -- that is, it approaches pure white noise. 
 
-Now, the goal of training a diffusion model is to learn how to reverse this diffusion process by removing noise iteratively in the reverse order it was added:
+Now, the goal of training a diffusion model is to learn how to reverse this diffusion process by iteratively removing noise in the reverse order it was added:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse.png" alt="drawing" width="800"/></center>
 
