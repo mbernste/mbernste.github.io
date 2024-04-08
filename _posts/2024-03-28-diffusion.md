@@ -32,13 +32,13 @@ In this post, I will step through my newfound understanding of diffusion models 
 Diffusion models as learning to reverse a diffusion process
 -----------------------------------------------------------
 
-Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of objects of interest. These objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, diffusion models can be understood as a probability distribution $p(\boldsymbol{x})$ over our objects of interest. Once we have this distribution in hand, we can sample objects from this distribution. In the case of image generation, we can view the process of generating an image as sampling from a distribution over images:
+Like all probabilistic generative models, diffusion models can be understood as models that specificify a probability distribution over some set of objects of interest. For example, these objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, a diffusion model can be understood as a probability distribution, $p(\boldsymbol{x})$, over these vectors. Once we have this distribution in hand, we can sample objects from this distribution. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="800"/></center>
 
 <br>
 
-Let's let $q(\boldsymbol{x})$ be the true distribution over our objects. We wish to develop a method that samples from a distribution, $p(\boldsymbol{x})$, that is similar to $q(\boldsymbol{x})$. In diffusion models, we do this in an _implicit_ manner: specifically, by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). 
+More specifically, let $q(\boldsymbol{x})$ be the true, "real world" distribution over objects. The task of training a diffusion model is learning a distribution, $p(\boldsymbol{x})$, that is similar to $q(\boldsymbol{x})$. In diffusion models, we do this in an _implicit_ manner: specifically, by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). 
 
 First, given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we will define a diffusion process in which we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$. Note that $\boldsymbol{x}_0$ represents the original object before noise was added to it. For the remainder of the post, $\boldsymbol{x}_0$ will be used to denote a noiseless object sampled from the "real world distribution" of objects. If $\boldsymbol{x}_0$ is an image of my dog Korra, this diffusion process would look like the following:
 
