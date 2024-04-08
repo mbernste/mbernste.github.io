@@ -27,24 +27,24 @@ Diffusion models are also being explored in biomedical research. For example, [R
 
 Because of these models' incredible performance in image generation, and their burgeoning use-cases in computational biology, I was curious to understand how they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. 
 
-In this post, I will step through my newfound understanding of diffusion models regarding both their mathematical theory and practical implementation. Specifically, I will walk through the denoising diffusion probabilistic model (DDPM) as presented by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The mathematical derivations are somewhat lengthy and I present them in the Appendix to the post so that they do not distract from the core ideas behind the model. We will conclude by walking through an implementation of a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits. Hopefully, this explanation will serve others who are learning this material as well. Please let me know if you find any errors! 
+In this post, I will step through my newfound understanding of diffusion models regarding both their mathematical theory and practical implementation. Specifically, I will walk through the denoising diffusion probabilistic model (DDPM) as presented by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The mathematical derivations are somewhat lengthy and I present them in the Appendix to the post so that they do not distract from the core ideas behind the model. We will conclude by walking through an implementation of a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits. Hopefully, this post will serve others who are learning this material as well. Please let me know if you find any errors! 
 
 Diffusion models as learning to reverse a diffusion process
 -----------------------------------------------------------
 
-Like all probabilistic generative models, diffusion models can be understood as models that specificify a probability distribution over some set of objects of interest. For example, these objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, a diffusion model can be understood as a probability distribution, $p(\boldsymbol{x})$, over these vectors. Once we have this distribution in hand, we can sample objects from this distribution. 
+Like all probabilistic generative models, diffusion models can be understood as models that specify a probability distribution, $p(\boldsymbol{x})$, over some set of objects of interest where $\boldsymbol{x}$ is a vector representation of one such object. For example, these objects might be images, text documents, or protein sequences. Generating an image via a diffusion model can be viewed as _sampling_ from $p(\boldsymbol{x})$: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="800"/></center>
 
 <br>
 
-In training a diffusion model, we fit $p(\boldsymbol{x})$ in an _implicit manner_ -- specifically, by fitting a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). This diffusion process goes as follows: Given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let's let $\boldsymbol{x}_t$ be $\boldsymbol{x}$ at time step $t$ and let $\boldsymbol{x}_0$ be the original object before noise was added to it. For the remainder of the post, $\boldsymbol{x}_0$ will be used to denote a noiseless object sampled from the "real world distribution" of objects, which we will denote as $q(\boldsymbol{x})$. If $\boldsymbol{x}_0$ is an image of my dog Korra, this diffusion process would look like the following:
+In training a diffusion model, we fit $p(\boldsymbol{x})$ by fitting a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). This diffusion process goes as follows: Given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let $\boldsymbol{x}_t$ be the object at time step $t$ and let $\boldsymbol{x}_0$ be the original object before noise was added to it.  If $\boldsymbol{x}_0$ is an image of my dog Korra, this diffusion process would look like the following:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward.png" alt="drawing" width="800"/></center>
 
 <br>
 
-If the total number of timesteps $T$ is large enough, then the corrupted image approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$. 
+Here, $q(\boldsymbol{x})$ represents the hypothetical "real world distribution" of objects (which is distinct from the model's distribution $p(\boldsymbol{x})$, though our goal is to train the model so that $p(\boldsymbol{x})$ resembles $q(\boldsymbol{x})$. Furthermore, if the total number of timesteps $T$ is large enough, then the corrupted object approaches a sample from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$. 
 
 Now, the goal of training a diffusion model is to learn how to reverse this diffusion process by removing noise iteratively in the reverse order it was added:
 
