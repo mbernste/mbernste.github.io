@@ -62,13 +62,13 @@ Now that we have some high-level intuition, let's make this more mathematically 
 
 $$\begin{align*}\epsilon &\sim N(\boldsymbol{0}, \boldsymbol{1}) \\ \boldsymbol{x}_{t+1} &:= c_1\boldsymbol{x}_t + c_2\epsilon\end{align*}$$
 
-where $c_1$ and $c_2$ are two constants (to be defined in more detail later in the post). We can view this process of formulating adding noise to $\boldsymbol{x}\_t$ to form $\boldsymbol{x}\_{t+1}$ as the act of _sampling_ $\boldsymbol{x}\_{t+1}$ from a distribution that is conditioned on $\boldsymbol{x}\_t$. This conditional distribution is specifically a normal distribution:
+where $c_1$ and $c_2$ are two constants (to be defined in more detail later in the post). Note that the above process can also be described as sampling from a normal distribution with a mean specified by $\boldsymbol{x}\_t$:
 
 $$\boldsymbol{x}_{t+1} \sim N\left(c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\right)$$
 
-We will use the notation $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ to refer to this conditional distribution.
+Thus, we can view the formation of $\boldsymbol{x}\_{t+1}$ as the act of _sampling_ from a normal distribution that is conditioned on $\boldsymbol{x}\_t$. We will use the notation $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ to refer to this conditional distribution.
 
-In a similar manner, we can view the process of _removing_ noise (i.e., reversing a diffusion step) also as sampling. Specifically, we can view it as sampling from the _posterior_ distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. Thus, to reverse the diffusion process, we start from pure noise and iteratively sample from these posterior distributions: 
+In a similar manner, we can also view the process of removing noise (i.e., reversing a diffusion step) as sampling. Specifically, we can view it as sampling from the _posterior_ distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. To reverse the diffusion process, we start from pure noise and iteratively sample from these posteriors: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_exact.png" alt="drawing" width="800"/></center>
 
