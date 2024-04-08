@@ -52,11 +52,13 @@ Now, the goal of training a diffusion model is to learn how to reverse this diff
 
 <br>
 
-If our model can remove noise succesfully, then we can generate new objects by first sampling noise from $N(\boldsymbol{0}, \boldsymbol{I})$, and then apply our model iteratively, removing noise step-by-step until a new object is formed:
+The main idea behind diffusion models is that if our model can remove noise succesfully, then we have a ready-made method for generating new objects. Specifically, we can generate a new object by first sampling noise from $N(\boldsymbol{0}, \boldsymbol{I})$, and then applying our model iteratively, removing noise step-by-step until a new object is formed:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra_high_level.png.png" alt="drawing" width="800"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra_high_level.png" alt="drawing" width="800"/></center>
 
-Let's make this more mathematically rigorous. The forward diffusion process works as follows: For each step, $t$, in the forward diffusion process, we will add noise, $\epsilon$, sampled from a standard normal distribution, to the current object, $\boldsymbol{x}\_t$, in order to form the next, noisier object $\boldsymbol{x}\_{t+1}$:
+In a sense, the model is "sculpting" an object out of noise bit by bit. It is like a sculptor who starts from an amorphous block of granite and slowly chips away at the rock until a form appears!
+
+Now that we have some high-level intuition, let's make this more mathematically rigorous. More rigorously, the forward diffusion process works as follows: For each step, $t$, we will add noise, $\epsilon$, sampled from a standard normal distribution, to the current object, $\boldsymbol{x}\_t$, in order to form the next, noisier object $\boldsymbol{x}\_{t+1}$:
 
 $$\begin{align*}\epsilon &\sim N(\boldsymbol{0}, \boldsymbol{1}) \\ \boldsymbol{x}_{t+1} &:= c_1\boldsymbol{x}_t + c_2\epsilon\end{align*}$$
 
@@ -66,7 +68,7 @@ $$\boldsymbol{x}_{t+1} \sim N\left(c_1\boldsymbol{x}_t, c_2^2 \boldsymbol{I}\rig
 
 For simplicity, we will use the notation $q(\boldsymbol{x}_{t+1} \mid \boldsymbol{x}_t)$ to refer to this conditional distribution.
 
-In a similar manner, we can view the process of _removing_ noise from an object (i.e., reversing the diffusion the process) as sampling from the posterior distribution, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. This process of removing noise by iteratively sampling from these posteriors is depicted below:
+In a similar manner, we can view the process of _removing_ noise (i.e., reversing the diffusion the process) as sampling from the _posterior distribution_, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. This process of removing noise by iteratively sampling from these posteriors is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_exact.png" alt="drawing" width="800"/></center>
 
