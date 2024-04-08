@@ -34,9 +34,7 @@ Diffusion models as learning to reverse a diffusion process
 
 Like all probabilistic generative models, diffusion models can be understood as models that specify a probability distribution, $p(\boldsymbol{x})$, over some set of objects of interest where $\boldsymbol{x}$ is a vector representation of one such object. For example, these objects might be images, text documents, or protein sequences. Generating an image via a diffusion model can be viewed as _sampling_ from $p(\boldsymbol{x})$: 
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="800"/></center>
-
-<br>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="750"/></center>
 
 In training a diffusion model, we fit $p(\boldsymbol{x})$ by fitting a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). This diffusion process goes as follows: Given a vector $\boldsymbol{x}$ representing an object (e.g., an image), we iteratively add Gaussian noise to $\boldsymbol{x}$ over a series of $T$ timesteps. Let $\boldsymbol{x}_t$ be the object at time step $t$ and let $\boldsymbol{x}_0$ be the original object before noise was added to it.  If $\boldsymbol{x}_0$ is an image of my dog Korra, this diffusion process would look like the following:
 
