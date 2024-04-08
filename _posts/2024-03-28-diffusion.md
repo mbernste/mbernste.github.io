@@ -25,19 +25,18 @@ At the time of this writing, diffusion models are state-of-the-art models used f
 
 Diffusion models are also being explored in biomedical research. For example, [RFDiffusion](https://www.nature.com/articles/s41586-023-06415-8) and [Chroma](https://www.nature.com/articles/s41586-023-06728-8) are two methods that use diffusion models to generate novel, functional protein sequences. Diffusion models are [also being explored](https://www.nature.com/articles/s41551-024-01193-8) for synthetic biomedical data generation.
 
-Because of these models' incredible performance in image generation, and their burgeoning use-cases in computational biology, I was curious to understand how they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. In this post, I will step through my newfound understanding of diffusion models regarding both their mathematical theory and practical implementation. Hopefully this explanation will serve others who are learning this material as well. Please let me know if you find any errors! 
+Because of these models' incredible performance in image generation, and their burgeoning use-cases in computational biology, I was curious to understand how they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. 
 
-Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of objects of interest. These objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, diffusion models can be understood as a probability distribution $p(\boldsymbol{x})$ over our objects of interest. Once we have this distribution in hand, we can sample objects from this distribution. In the case of image generation, we can view the process of generating an image as sampling from a distribution over images:
+In this post, I will step through my newfound understanding of diffusion models regarding both their mathematical theory and practical implementation. Specifically, I will walk through the denoising diffusion probabilistic model (DDPM) as presented by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The mathematical derivations are somewhat lengthy and I present them in the Appendix to the post so that they do not distract from the core ideas behind the model. We will conclude by walking through an implementation of a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits. Hopefully, this explanation will serve others who are learning this material as well. Please let me know if you find any errors! 
+
+Diffusion models as learning to reverse a diffusion process
+-----------------------------------------------------------
+
+Like all probabilistic generative models, diffusion models can be understood as a probability distribution over some set of objects of interest. These objects might be images, text documents, or protein sequences. Let $\boldsymbol{x}$ be a vector representing one such object. Then, diffusion models can be understood as a probability distribution $q(\boldsymbol{x})$ over our objects of interest. Once we have this distribution in hand, we can sample objects from this distribution. In the case of image generation, we can view the process of generating an image as sampling from a distribution over images:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_sampling_images.png" alt="drawing" width="800"/></center>
 
 <br>
-
-In this post, we will walk through the theory and implementation of the diffusion models presented by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The mathematical derivations are somewhat lengthy and I present them in the Appendix to the post so that they do not distract from the core ideas behind these models. We will conclude by walking through an implementation of a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits.
-
-
-Diffusion models as learning to reverse a diffusion process
------------------------------------------------------------
 
 Let's let $q(\boldsymbol{x})$ be the true distribution over our objects. We wish to develop a method that samples from a distribution, $p(\boldsymbol{x})$, that is similar to $q(\boldsymbol{x})$. In diffusion models, we do this in an _implicit_ manner: specifically, by attempting to reverse a [diffusion process](https://en.wikipedia.org/wiki/Diffusion_process). 
 
