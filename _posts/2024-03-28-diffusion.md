@@ -128,8 +128,6 @@ Let's start with maximum likelihood estimation. As we will show in this post, th
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ELBO_vs_log_likelihood.png" alt="drawing" width="600"/></center>
 
-<br>
-
 Another motivation lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/). While we will not go into depth in this blog post (we will merely touch upon it), one can also view diffusion models as models that approximate the _score function_ of the true, real-world distribution $q(\boldsymbol{x}\_0))$.
 
 
