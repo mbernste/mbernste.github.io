@@ -455,6 +455,7 @@ $$= \frac{1}{ \frac{\alpha_t (1-\bar{\alpha}_{t-1}) + \beta_t }{\beta_t (1-\bar{
 
 $$= \frac{\beta_t (1- \bar{alpha}_{t-1})}{(1-\alpha_t)(1-\bar{\alpha}_{t-1})}$$
 
+$$= \frac{\beta_t(1 - \bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t}$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
