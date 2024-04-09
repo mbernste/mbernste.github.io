@@ -130,7 +130,7 @@ Let's start with maximum likelihood estimation. As we will show in this post, th
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ELBO_vs_log_likelihood.png" alt="drawing" width="600"/></center>
 
-Here, $\theta^*$ represents the maximum likelihood estimate of $\theta$ and $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO. If this lower-bound is tight, $\hat{\theta}$ will be close to $\hat{\theta}$. Although in most cases, it is difficult to know with certainty how tight this lower bound is, in practice, this strategy of maximizing the ELBO leads to good results at estimating $\theta^*$.
+Here, $\theta^\*$ represents the maximum likelihood estimate of $\theta$ and $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO. If this lower-bound is tight, $\hat{\theta}$ will be close to $\hat{\theta}$. Although in most cases, it is difficult to know with certainty how tight this lower bound is, in practice, this strategy of maximizing the ELBO leads to good results at estimating $\theta^\*$.
 
 ### As score matching
 
@@ -143,6 +143,10 @@ $s(\boldsymbol{x}) := \nable_{\boldsymbol{x}} \log q(\boldsymbol{x})$
 That is, it is the gradient of the log-density function, $q(\boldsymbol{x})$, with respect to the data. This is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_score.png" alt="drawing" width="300"/></center>
+
+<br>
+
+XXXXXXXXXXX
 
 Now that we have previewed the theoretical foundation behind diffusion models, let's now dig into the specifics of the model and see how diffusion models implement these ideas. 
 
