@@ -122,16 +122,25 @@ Of course, this is a bit hand-wavey. As we proceed through the remainder of this
 1. As maximum-likelihood estimation
 2. As score-matching
 
-Let's start with maximum likelihood estimation. As we will show in this post, the method we will use to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$ called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). Thus, through this perspective, we are performing _approximate_ maximum likelihood of a specific, parameterized model; that model being a denoising model. 
+Although we have not yet dug into the details into how diffusion models are defined and trained, let us take a moment to provide a high-level preview into the two lenses from which we can understand the motivation behind diffusion models. 
 
-Note, that maximizing the ELBO is _approximate_ maximum likelihood since we are maximizing the lower bound of the likelihood rather than the likelihood itself. This is depicted schematically below where $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO and $\theta^*$ represents the true maximum of the log-likelihood function (This figure is adapted from [this blog post by Jakub Tomczak](https://jmtomczak.github.io/blog/4/4_VAE.html)): 
+Let's start with maximum likelihood estimation. As we will show in this post, the very act of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ (i.e., the very act of learning to reverse diffusion), will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$ called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). The ELBO, is a function of the parameters $\theta$ that acts as a lowerbound for the log-likelihood, $p\_{\theta}(\boldsymbol{x})$ (for a more detailed explanation of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/)). This idea is depicted schematically below (this figure is adapted from [this blog post by Jakub Tomczak](https://jmtomczak.github.io/blog/4/4_VAE.html)):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ELBO_vs_log_likelihood.png" alt="drawing" width="600"/></center>
 
-Another motivation lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/). While we will not go into depth in this blog post (we will merely touch upon it), one can also view diffusion models as models that approximate the _score function_ of the true, real-world distribution $q(\boldsymbol{x}\_0))$.
+Here, $\theta^*$ represents the maximum likelihood estimate of $\theta$ and $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO. If this lower-bound is tight, $\hat{\theta}$ will be close to $\hat{\theta}$. Although in most cases, it is difficult to know with certainty how tight this lower bound is, in practice, this strategy of maximizing the ELBO leads to good results at estimating $\theta^*$.
+
+Another motivation behind this idea of learning to reverse diffusion by fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/). While we will not go into depth in this blog post (we will merely touch upon it), it turns out that diffusion models can be understood as models that estimate the _score function_ of the true, real-world distribution $q(\boldsymbol{x}\_0))$.
+
+As a brief review, the _score function_, $s(\boldsymbol{x})$, of the distribution $q(\boldsymbol{x}))$ is simply, 
+
+$s(\boldsymbol{x}) := \nable_{\boldsymbol{x}} \log q(\boldsymbol{x})$
+
+That is, it is the gradient of the log-density function, $q(\boldsymbol{x})$, with respect to the data. This is depicted below:
 
 
-Now that we have some high-level understanding as to _why_ diffusion models make sense, let's dig into the specifics of the model and how to train it. 
+
+Now that we have previewed the theoretical foundation behind diffusion models, let's now dig into the specifics of the model and see how diffusion models implement these ideas. 
 
 The forward model
 -----------------
