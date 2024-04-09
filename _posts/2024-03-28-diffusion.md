@@ -124,11 +124,15 @@ Of course, this is a bit hand-wavey. As we proceed through the remainder of this
 
 Although we have not yet dug into the details into how diffusion models are defined and trained, let us take a moment to provide a high-level preview into the two lenses from which we can understand the motivation behind diffusion models. 
 
+### As maximum-likelihood estimation
+
 Let's start with maximum likelihood estimation. As we will show in this post, the very act of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ (i.e., the very act of learning to reverse diffusion), will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$ called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). The ELBO, is a function of the parameters $\theta$ that acts as a lowerbound for the log-likelihood, $p\_{\theta}(\boldsymbol{x})$ (for a more detailed explanation of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/)). This idea is depicted schematically below (this figure is adapted from [this blog post by Jakub Tomczak](https://jmtomczak.github.io/blog/4/4_VAE.html)):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ELBO_vs_log_likelihood.png" alt="drawing" width="600"/></center>
 
 Here, $\theta^*$ represents the maximum likelihood estimate of $\theta$ and $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO. If this lower-bound is tight, $\hat{\theta}$ will be close to $\hat{\theta}$. Although in most cases, it is difficult to know with certainty how tight this lower bound is, in practice, this strategy of maximizing the ELBO leads to good results at estimating $\theta^*$.
+
+### As score matching
 
 Another motivation behind this idea of learning to reverse diffusion by fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/). While we will not go into depth in this blog post (we will merely touch upon it), it turns out that diffusion models can be understood as models that estimate the _score function_ of the true, real-world distribution $q(\boldsymbol{x}\_0))$.
 
@@ -138,7 +142,7 @@ $s(\boldsymbol{x}) := \nable_{\boldsymbol{x}} \log q(\boldsymbol{x})$
 
 That is, it is the gradient of the log-density function, $q(\boldsymbol{x})$, with respect to the data. This is depicted below:
 
-
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_score.png" alt="drawing" width="300"/></center>
 
 Now that we have previewed the theoretical foundation behind diffusion models, let's now dig into the specifics of the model and see how diffusion models implement these ideas. 
 
