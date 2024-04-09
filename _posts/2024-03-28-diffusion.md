@@ -138,7 +138,7 @@ Another motivation behind this idea of learning to reverse diffusion by fitting 
 
 As a brief review, the _score function_, $s(\boldsymbol{x})$, of the distribution $q(\boldsymbol{x}))$ is simply, 
 
-$s(\boldsymbol{x}) := \nable_{\boldsymbol{x}} \log q(\boldsymbol{x})$
+$s(\boldsymbol{x}) := \nabla_{\boldsymbol{x}} \log q(\boldsymbol{x})$
 
 That is, it is the gradient of the log-density function, $q(\boldsymbol{x})$, with respect to the data. This is depicted below:
 
