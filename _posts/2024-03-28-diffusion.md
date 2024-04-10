@@ -486,12 +486,7 @@ $$\begin{align*} \sigma^2 &:= \frac{1}{\frac{\alpha_t}{\beta_t} + \frac{1}{1-\ba
 
 **Note 6:**
 
-$$\begin{align*}\mu := \frac{\frac{2 \sqrt{\alpha_t}}{\beta_t}\boldsymbol{x}_t + \frac{2 \sqrt{\bar{\alpha}_{t-1}} }{1- \bar{\alpha}_{t-1}}\boldsymbol{x}_0 }{2\left( \frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} \right)} \end{align*}$$
-
-$$\left( \frac{\sqrt{\alpha_t} }{\beta_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}} }{1 - \bar{\alpha}_{t-1} }\boldsymbol{x}_0 \right) \frac{\beta_t (1-\bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t}$$
-
-$$\frac{\sqrt{\alpha_t} \left( 1 - \bar{\alpha}_{t-1} \right) }{\beta_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_t}\boldsymbol{x}_0$$
-
+$$\begin{align*}\mu := \frac{\frac{2 \sqrt{\alpha_t}}{\beta_t}\boldsymbol{x}_t + \frac{2 \sqrt{\bar{\alpha}_{t-1}} }{1- \bar{\alpha}_{t-1}}\boldsymbol{x}_0 }{2\left( \frac{\alpha_t}{\beta_t} + \frac{1}{1-\bar{\alpha}_{t-1}} \right)} \\ &= \left( \frac{\sqrt{\alpha_t} }{\beta_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}} }{1 - \bar{\alpha}_{t-1} }\boldsymbol{x}_0 \right) \frac{\beta_t (1-\bar{\alpha}_{t-1})}{1 - \bar{\alpha}_t} \\ &= \frac{\sqrt{\alpha_t} \left( 1 - \bar{\alpha}_{t-1} \right) }{\beta_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_t}\boldsymbol{x}_0 \end{align*}$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
