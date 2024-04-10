@@ -129,7 +129,7 @@ Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. Thi
 
 ### As maximum-likelihood estimation
 
-Let's start with maximum likelihood estimation. As we will show in this post, the very act of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ (i.e., the very act of learning to reverse diffusion), will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$ called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). The ELBO, is a function of the parameters $\theta$ that acts as a lowerbound for the log-likelihood, $p\_{\theta}(\boldsymbol{x})$ (for a more detailed explanation of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/)). This idea is depicted schematically below (this figure is adapted from [this blog post by Jakub Tomczak](https://jmtomczak.github.io/blog/4/4_VAE.html)):
+As we will show in the remainder of this post, the very act of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ (i.e., the very act of learning to reverse diffusion), will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$ called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). The ELBO, is a function of the parameters $\theta$ that acts as a lowerbound for the log-likelihood, $p\_{\theta}(\boldsymbol{x})$ (for a more detailed explanation of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/)). This idea is depicted schematically below (this figure is adapted from [this blog post by Jakub Tomczak](https://jmtomczak.github.io/blog/4/4_VAE.html)):
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ELBO_vs_log_likelihood.png" alt="drawing" width="600"/></center>
 
@@ -137,7 +137,7 @@ Here, $\theta^\*$ represents the maximum likelihood estimate of $\theta$ and $\h
 
 ### As score matching
 
-Another motivation behind this idea of learning to reverse diffusion by fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ lies in the connection between diffusion models and [score matching models](https://yang-song.net/blog/2021/score/). While we will not go into depth in this blog post (we will merely touch upon it), it turns out that diffusion models can be understood as models that estimate the _score function_ of the true, real-world distribution $q(\boldsymbol{x}\_0))$.
+Another motivation for diffusion models lies in their to [score matching models](https://yang-song.net/blog/2021/score/). While we will not go into great depth in this blog post (we will merely touch upon it), it turns out that diffusion models can be understood as models that estimate the _score function_ of the true, real-world distribution $q(\boldsymbol{x}\_0))$.
 
 As a brief review, the _score function_, $s(\boldsymbol{x})$, of the distribution $q(\boldsymbol{x}))$ is simply, 
 
@@ -151,7 +151,7 @@ That is, it is the gradient of the log-density function, $q(\boldsymbol{x})$, wi
 
 XXXXXXXXXXX
 
-Now that we have previewed the theoretical foundation behind diffusion models, let's now dig into the specifics of the model and see how diffusion models implement these ideas. 
+Now that we have previewed the theoretical foundation behind diffusion models, let's now dig into the specifics of the model and see how diffusion models implement these various strategies of estimation. 
 
 The forward model
 -----------------
@@ -240,14 +240,13 @@ Now, let's derive a more intuitive form of this objective function. Recall from 
 
 $$ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) = \log p_\theta(\boldsymbol{x}) - \underbrace{E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}}$$
 
-Here we see that to minimize the KL-divergence, we can maximize the ELBO. That is, we seek:
+Notice that if maximize the ELBO, we implicitly maximize a lower bound of the log-likelihood, $\log p_\theta(\boldsymbol{x})$. That is, we see that 
+
+$$\begin{align*}\log p_\theta(\boldsymbol{x}) &= KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) + \underbrace{E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}} \end{align*} \\ \geq  \underbrace{E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}} && \text{Because KL-divergence is non-negative}$$
+
+Thus, we seek:
 
 $$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ &= \text{arg max}_\theta \  E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]\end{align*}$$
-
-Notice too that by maximizing the ELBO, we are maximizing a lower bound of the log-likelihood, $\log p_\theta(\boldsymbol{x})$. Thus, we can view this act of maximizing the ELBO through two perspectives:
-
-1. We are fitting a reverse diffusion process to a forward one
-2. We are maximizing the lower bound of the log-likelihood
 
 Let's now examine the ELBO more closely. It turns out that this ELBO can be further manipulated into a form that has a term for each step of the diffusion process (See Derivation 2 in the Appendix to this post):
 
