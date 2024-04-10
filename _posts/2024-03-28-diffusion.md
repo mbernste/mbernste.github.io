@@ -111,18 +111,21 @@ Intuition and justification
 
 While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may be wanting for a more rigorous theoretical justification for this framework. That is, what is the justification for fitting  $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$? And moreover, if we are interested in generating realistic objects -- that is, samples of $\boldsymbol{x}\_0$ -- then why do these two distributions _condition_ on $\boldsymbol{x}\_0$?
 
-Let's start with some high-level intuition for why this modeling strategy works by taking another look at the posterior distribution:
+I've found three [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which to understand the theoretical justification behind these models:
 
-$$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) = \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{q(\boldsymbol{x}_t)}$$
+1. As implicitly learning to fit $q(\boldsymbol{x}\_0)$
+3. As maximum-likelihood estimation
+4. As score-matching
+
+The first of these perspectives is less rigorous, but provides some high-level intuition. The second two are more rigorous. Let's dig int.
+
+### As implicitly learning to fit $q(\boldsymbol{x}\_0)$
+
+We can gain some high-level intuition into why this method of learning to reverse diffusion will lead us to a distribution $p_\theta(\boldsymbol{x}\_0)$ that resembles $q(\boldsymbol{x}\_0)$ by looking again at the posterior distribution:
+
+$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) &= \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{q(\boldsymbol{x}_t)} \\ &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_0)\prod_{i=1}^{t} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0}\end{align*}$$
 
 Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will need to match $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$. This very act of learning to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ effectively.
-
-Of course, this is a bit hand-wavey. As we proceed through the remainder of this blog post, we will show one can view the task of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ from two perspectives:
-
-1. As maximum-likelihood estimation
-2. As score-matching
-
-Although we have not yet dug into the details into how diffusion models are defined and trained, let us take a moment to provide a high-level preview into the two lenses from which we can understand the motivation behind diffusion models. 
 
 ### As maximum-likelihood estimation
 
