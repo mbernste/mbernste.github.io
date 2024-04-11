@@ -162,13 +162,15 @@ However, it turns out that if instead of only conditioning $\boldsymbol{x}\_t$, 
 
 $$q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) = N\left(\boldsymbol{x}_{t-1}; \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{1 - \bar{\alpha}_t}\boldsymbol{x}_0, \frac{\beta_t \left(1 - \bar{\alpha}_{1-t}\right)}{1- \bar{\alpha}_t}\boldsymbol{I}\right)$$
 
+This distribution can be further simplified to (See Derivation XXXXX in the Appendix to this post):
+
+$$XXXXXXXXX$$
+
 Depicted schematically:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_posterior_tractible_korra.png" alt="drawing" width="700"/></center>
 
 <br>
-
-The mean and variance terms are slightly ugly, but the key take away is that this distribution is a normal distribution. This will be very useful later in this post when we derive a closed form approximation of the ELBO.
 
 The fact that this posterior has a closed form when conditioning on $\boldsymbol{x}\_0$ makes intuitive sense: as we talked about previously, the posterior distribution $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ requires knowing $q(\boldsymbol{x}\_0)$ -- that is, in order to turn noise into an object, we need to know what real, noiseless objects look like. However, if we condition on $\boldsymbol{x}\_0$, this means we are assuming we _know_ what $\boldsymbol{x}\_0$ looks like and the modified posterior, $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, needs only to take into account subtraction of noise towards this noiseless object.
 
@@ -221,7 +223,7 @@ $$\begin{align*}L_t := KL\left(N(A; B, C) \ \vert\vert \ N(A; B, C)\right)\end{a
 
 We now use the following fact: Given two normal distributions
 
-$$\begin{algin*}P \:= N() \\ Q \:= N() \end{align*}$$
+$$\begin{align*}P \:= N(\mu_1, \sigma^2_1) \\ Q \:= N(\mu_2, \sigma^2_2) \end{align*}$$
 
 it follows that 
 
@@ -230,7 +232,6 @@ $$KL(P \ \vert\vert Q) = XXXXXXXXXX$$
 Applying this fact to $L_t$, we see that,
 
 $$\begin{align*}L_t := KL\left(N(A; B, C) \ \vert\vert \ N(A; B, C)\right)\end{align*}$$
-
 
 
 The sampling algorithm
