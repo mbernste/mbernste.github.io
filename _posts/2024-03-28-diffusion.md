@@ -106,58 +106,6 @@ $$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \bol
 
 Note this integral is hard to calculate; however, despite this fact, we can still sample from the distribution, and that sampling process is performed via the iterative denoising process we just described.
 
-Intuition and justification
----------------------------
-
-While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may be wanting for a more rigorous theoretical justification for this framework. That is, what is the justification for fitting  $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$? And moreover, if we are interested in generating realistic objects -- that is, samples of $\boldsymbol{x}\_0$ -- then why do these two distributions _condition_ on $\boldsymbol{x}\_0$?
-
-I've found three [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which to understand the theoretical justification behind these models:
-
-1. As implicitly learning to fit $q(\boldsymbol{x}\_0)$
-3. As maximum-likelihood estimation
-4. As score-matching
-
-The first of these perspectives is less rigorous, but provides some high-level intuition. The second two are more rigorous. Let's dig int.
-
-### As implicitly learning to fit $q(\boldsymbol{x}\_0)$
-
-We can gain some high-level intuition into why this method of learning to reverse diffusion will lead us to a distribution $p_\theta(\boldsymbol{x}\_0)$ that resembles $q(\boldsymbol{x}\_0)$ by looking again at the posterior distribution:
-
-$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) &= \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{q(\boldsymbol{x}_t)} \\ &= \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{\int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_0)\prod_{i=1}^{t} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0}}\end{align*}$$
-
-Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will need to match $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$. This very act of learning to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ effectively.
-
-### As maximum-likelihood estimation
-
-As we will show in the remainder of this post, the very act of fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ (i.e., the very act of learning to reverse diffusion), will implicitly maximize a _lower bound_ of $p\_{\theta}(\boldsymbol{x})$ called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). The ELBO, is a function of the parameters $\theta$ that acts as a lowerbound for the log-likelihood, $p\_{\theta}(\boldsymbol{x})$ (for a more detailed explanation of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/)). This idea is depicted schematically below (this figure is adapted from [this blog post by Jakub Tomczak](https://jmtomczak.github.io/blog/4/4_VAE.html)):
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ELBO_vs_log_likelihood.png" alt="drawing" width="600"/></center>
-
-Here, $\theta^\*$ represents the maximum likelihood estimate of $\theta$ and $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO. If this lower-bound is tight, $\hat{\theta}$ will be close to $\hat{\theta}$. Although in most cases, it is difficult to know with certainty how tight this lower bound is, in practice, this strategy of maximizing the ELBO leads to good results at estimating $\theta^\*$.
-
-### As score matching
-
-Another motivation for diffusion models lies in their connection to [score matching models](https://arxiv.org/abs/1907.05600). While we will not go into great depth in this blog post (we will merely touch upon it), as it turns out, we will work out a form of the ELBO that can be viewed as an objective function that estimates the _score function_ of the true, real-world distribution $q(\boldsymbol{x}\_0))$.
-
-As a brief review, the _score function_, $s(\boldsymbol{x})$, of the distribution $q(\boldsymbol{x}))$ is simply, 
-
-$s_q(\boldsymbol{x}) := \nabla_{\boldsymbol{x}} \log q(\boldsymbol{x})$
-
-That is, it is the gradient of the log-density function, $q(\boldsymbol{x})$, with respect to the data. Below, we depict a hypothetical density function, $q(\boldsymbol{x})$, and the [vector field](https://en.wikipedia.org/wiki/Vector_field#:~:text=In%20vector%20calculus%20and%20physics,a%20point%20on%20the%20plane.) generated by $\nabla_{\boldsymbol{x}} \log q(\boldsymbol{x})$ below it:
-
-<br>
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_score.png" alt="drawing" width="300"/></center>
-
-<br>
-
-Stated more succintly, by maximizing the ELBO with respect to $\theta$ (that is, a lower bound of the log-likelihood), we are also implicitly fitting an estimated score function $s\_\theta(\boldsymbol{x})$ to the real score function $s\_q(\boldsymbol{x})$. We will make this connection more explicit later in the blog post.
-
-Finally, it will turn out that we can view the process of reversing the diffusion process to sample from $p\_\theta(\boldsymbo{x}_0)$ as a variant of [sampling via Langevin dynamics] -- a stochastic method that enables one to sample from an arbitrary distribution by following the gradients defined by the score function.
-
-
-Now that we have previewed the theoretical foundation behind diffusion models, let's now dig into the specifics of the model and see how diffusion models implement these various strategies of estimation. 
-
 The forward model
 -----------------
 
@@ -241,13 +189,9 @@ In our case, we wish to learn the reverse diffusion process from the forward dif
 
 $$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0))$$
 
-Now, let's derive a more intuitive form of this objective function. Recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/). In the case of diffusion models, this ELBO looks as follows (See Derivation 1 in the Appendix to this post):
+Now, let's derive a more intuitive form of this objective function. Recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), which is a function of the parameters $\theta$. For a more in-depth discussion of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/). In the case of diffusion models, this ELBO looks as follows (See Derivation 1 in the Appendix to this post):
 
 $$ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) = \log p_\theta(\boldsymbol{x}) - \underbrace{E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}}$$
-
-Notice that if we maximize the ELBO, we implicitly maximize a lower bound of the log-likelihood, $\log p_\theta(\boldsymbol{x})$. That is, we see that 
-
-$$\begin{align*} \log p_\theta(\boldsymbol{x}) &= KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) + \underbrace{E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q} \left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}} \\ &\geq  \underbrace{E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}} && \text{Because KL-divergence is non-negative} \end{align*}$$
 
 Thus, we seek:
 
@@ -284,6 +228,73 @@ $$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q
 The sampling algorithm
 ----------------------
 
+
+Intuition and justification
+---------------------------
+
+While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may be wanting for a more rigorous theoretical justification for this framework. That is, what is the justification for fitting  $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$? And moreover, if we are interested in generating realistic objects -- that is, samples of $\boldsymbol{x}\_0$ -- then why do these two distributions _condition_ on $\boldsymbol{x}\_0$?
+
+I've found four [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which to understand the theoretical justification behind these models:
+
+1. As implicitly learning to fit $q(\boldsymbol{x}\_0)$
+2. As breaking up a difficult problem into many easier problems
+3. As maximum-likelihood estimation
+4. As score-matching
+
+The first of two of these perspectives are less rigorous, but provides some high-level intuition. The second two are more rigorous. Let's dig in.
+
+### As implicitly learning to fit $q(\boldsymbol{x}\_0)$
+
+We can gain some high-level intuition into why this method of learning to reverse diffusion will lead us to a distribution $p_\theta(\boldsymbol{x}\_0)$ that resembles $q(\boldsymbol{x}\_0)$ by looking again at the posterior distribution:
+
+$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) &= \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{q(\boldsymbol{x}_t)} \\ &= \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{\int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_0)\prod_{i=1}^{t} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0}}\end{align*}$$
+
+Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will need to match $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$. This very act of learning to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ effectively.
+
+### As breaking up a difficult problem into many easier problems
+
+Another reason why diffusion models tend to perform better than other methods, such as [variational autoencoders](https://mbernste.github.io/posts/vae/), is that diffusion models break up a difficult problem into a series of easier problems. That is, unlike variational autoencoders, where we train a model to produce an object all at once, in diffusion models, we train the model to produce the object step-by-step. Intuitively, we train a model to "sculpt" an object out of noise in a step-wise fashion rather than generate the object in one fell-swoop. 
+
+This step-wise approach is advantageous because it enables the model to learn features of objects at different levels of resolution. At the end of the reverse diffusion process (i.e., the sampling process), the model identifies broad, vague features of an object within the noise. At later steps of the reverse diffusion process, it fills in smaller details of the object by removing the last remaining noise.
+
+### As maximum-likelihood estimation
+
+Recall our goal was to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ by minimizing their KL-divergence, which as we showed, could be accomplished implicitly by maximizing the ELBO:
+
+$$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ &= \text{arg max}_\theta \  E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]\end{align*}$$
+
+Notice too that if we maximize the ELBO, we not only minimize the KL-divergence, but we also implicitly maximize a lower bound of the log-likelihood, $\log p_\theta(\boldsymbol{x})$. That is, we see that 
+
+$$\begin{align*} \log p_\theta(\boldsymbol{x}) &= KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) + \underbrace{E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q} \left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}} \\ &\geq  \underbrace{E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}} && \text{Because KL-divergence is non-negative} \end{align*}$$
+
+This idea is depicted schematically below (this figure is adapted from [this blog post by Jakub Tomczak](https://jmtomczak.github.io/blog/4/4_VAE.html)):
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ELBO_vs_log_likelihood.png" alt="drawing" width="600"/></center>
+
+Here, $\theta^\*$ represents the maximum likelihood estimate of $\theta$ and $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO. If this lower-bound is tight, $\hat{\theta}$ will be close to $\hat{\theta}$. Although in most cases, it is difficult to know with certainty how tight this lower bound is, in practice, this strategy of maximizing the ELBO leads to good results at estimating $\theta^\*$.
+
+### As score matching
+
+Another motivation for diffusion models lies in their connection to [score matching models](https://arxiv.org/abs/1907.05600). While we will not go into great depth in this blog post (we will merely touch upon it), as it turns out, we will work out a form of the ELBO that can be viewed as an objective function that estimates the _score function_ of the true, real-world distribution $q(\boldsymbol{x}\_0))$.
+
+As a brief review, the _score function_, $s(\boldsymbol{x})$, of the distribution $q(\boldsymbol{x}))$ is simply, 
+
+$s_q(\boldsymbol{x}) := \nabla_{\boldsymbol{x}} \log q(\boldsymbol{x})$
+
+That is, it is the gradient of the log-density function, $q(\boldsymbol{x})$, with respect to the data. Below, we depict a hypothetical density function, $q(\boldsymbol{x})$, and the [vector field](https://en.wikipedia.org/wiki/Vector_field#:~:text=In%20vector%20calculus%20and%20physics,a%20point%20on%20the%20plane.) generated by $\nabla_{\boldsymbol{x}} \log q(\boldsymbol{x})$ below it:
+
+<br>
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_score.png" alt="drawing" width="300"/></center>
+
+<br>
+
+Stated more succintly, by maximizing the ELBO with respect to $\theta$ (that is, a lower bound of the log-likelihood), we are also implicitly fitting an estimated score function $s\_\theta(\boldsymbol{x})$ to the real score function $s\_q(\boldsymbol{x})$. We will make this connection more explicit later in the blog post.
+
+Finally, it will turn out that we can view the process of reversing the diffusion process to sample from $p\_\theta(\boldsymbo{x}_0)$ as a variant of [sampling via Langevin dynamics] -- a stochastic method that enables one to sample from an arbitrary distribution by following the gradients defined by the score function.
+
+
+Now that we have previewed the theoretical foundation behind diffusion models, let's now dig into the specifics of the model and see how diffusion models implement these various strategies of estimation. 
 
 Applying a diffusion model on MNIST
 -----------------------------------
