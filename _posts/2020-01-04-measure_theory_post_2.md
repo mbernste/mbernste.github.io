@@ -10,7 +10,7 @@ tags:
   - tutorial
   - measureable function
   - random variable
----
+    
 
 *In this series of posts, I present my understanding of some basic concepts in measure theory — the mathematical study of objects with “size”— that have enabled me to gain a deeper understanding into the foundations of probability theory.*
 
@@ -83,7 +83,7 @@ This is still pretty abstract, so in the following two sections we will see how 
 Discrete random variables
 -----
 
-Take a random variable $X$ that represents the outcome of the toss of a fair-coin. In this case, $\Omega$ represents all conceivable futures -- that is, the infinite set of ways that the coin could fly, spin, or bounce before coming to rest. 
+Take a random variable $X$ that represents the outcome of the toss of a fair coin. In this case, $\Omega$ represents all conceivable futures -- that is, the infinite set of ways that the coin could fly, spin, or bounce before coming to rest. 
 
 The random variable, $X$, is a function that maps each conceivable future to a value in some set $H$. In our case, $H$ contains the two possible outcomes of the coin toss:
 
