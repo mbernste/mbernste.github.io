@@ -298,9 +298,6 @@ Stated more succintly, by maximizing the ELBO with respect to $\theta$ (that is,
 
 Finally, it will turn out that we can view the process of reversing the diffusion process to sample from $p\_\theta(\boldsymbo{x}_0)$ as a variant of [sampling via Langevin dynamics] -- a stochastic method that enables one to sample from an arbitrary distribution by following the gradients defined by the score function.
 
-
-Now that we have previewed the theoretical foundation behind diffusion models, let's now dig into the specifics of the model and see how diffusion models implement these various strategies of estimation. 
-
 Applying a diffusion model on MNIST
 -----------------------------------
 
