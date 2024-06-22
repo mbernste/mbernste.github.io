@@ -515,6 +515,10 @@ $$\frac{1}{\sqrt{\alpha_t}}\left( \frac{\alpha_t (1-\bar{\alpha}_{t-1}) + \beta_
 
 Note 3
 
+$$\frac{1}{\sqrt{\alpha_t}}\left(\boldsymbol{x}_t - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon\right)$$
+
+Note 4
+
 **Note 1:** Recall from our derivation of $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ that,
 
 $$\begin{align*}&\boldsymbol{x}_t = \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0 + \sqrt{1-\bar{\alpha}_t}\epsilon \\ \implies &\boldsymbol{x}_0 = \frac{\boldsymbol{x}_t - \sqrt{1 - \bar{\alpha}_t}\epsilon}{\sqrt{\bar{\alpha}_t}} \end{align*}$$
@@ -525,7 +529,11 @@ $$\frac{\sqrt{\bar{\alpha}_{t-1}}}{\sqrt{\bar{\alpha}_t}} = \sqrt{\frac{\prod_{i
 
 **Note 3:**
 
-$$\frac{\sqrt{1-\bar{\alpha}_t}}{1-\bar{\alpha}_t} = \frac{\sqrt{1-\bar{\alpha}_t}}{\sqrt{1-\bar{\alpha}_t}} \frac{\sqrt{1-\bar{\alpha}_t}}{1-\bar{\alpha}_t} = \frac{1-\bar{\alpha}_t}{\sqrt{1-\bar{\alpha}_t}(1-\bar{\alpha}_t)} = \frac{1}{\sqrt{1-\bar{\alpha}_t}} $$
+$$\frac{\sqrt{1-\bar{\alpha}_t}}{1-\bar{\alpha}_t} = \frac{\sqrt{1-\bar{\alpha}_t}}{\sqrt{1-\bar{\alpha}_t}} \frac{\sqrt{1-\bar{\alpha}_t}}{1-\bar{\alpha}_t} = \frac{1-\bar{\alpha}_t}{\sqrt{1-\bar{\alpha}_t}(1-\bar{\alpha}_t)} = \frac{1}{\sqrt{1-\bar{\alpha}_t}}$$
+
+**Note 4:**
+
+$$\begin{align*}\frac{\alpha_t(1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t}\end{align*}$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
