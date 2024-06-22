@@ -296,7 +296,7 @@ That is, it is the gradient of the log-density function, $q(\boldsymbol{x})$, wi
 
 Stated more succintly, by maximizing the ELBO with respect to $\theta$ (that is, a lower bound of the log-likelihood), we are also implicitly fitting an estimated score function $s\_\theta(\boldsymbol{x})$ to the real score function $s\_q(\boldsymbol{x})$. We will make this connection more explicit later in the blog post.
 
-Finally, it will turn out that we can view the process of reversing the diffusion process to sample from $p\_\theta(\boldsymbo{x}_0)$ as a variant of [sampling via Langevin dynamics] -- a stochastic method that enables one to sample from an arbitrary distribution by following the gradients defined by the score function.
+Finally, it will turn out that we can view the process of reversing the diffusion process to sample from $p\_\theta(\boldsymbol{x}_0)$ as a variant of [sampling via Langevin dynamics] -- a stochastic method that enables one to sample from an arbitrary distribution by following the gradients defined by the score function.
 
 Applying a diffusion model on MNIST
 -----------------------------------
