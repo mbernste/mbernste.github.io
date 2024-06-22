@@ -513,7 +513,9 @@ $$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) 
 
 $$= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}}{1-\bar{\alpha}_t}\beta_t \left( \frac{1}{\sqrt{\alpha_t}} (\boldsymbol{x}_t - \sqrt{1-\bar{\alpha}_t}\epsilon) \right)$$
 
-**Note 1:** Recall that $\boldsymbol{x}_t$ = \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0 + \sqrt{1-\bar{\alpha}_t}\epsilon$
+$$\frac{\sqrt{\alpha_t} (1-\bar{\alpha}_{t-1}) }{1 - \bar{\alpha}_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{(1-\bar{\alpha}_t) \sqrt{\alpha_t}}\boldsymbol{x}_t$$
+
+**Note 1:** Recall that $\boldsymbol{x}_t = \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0 + \sqrt{1-\bar{\alpha}_t}\epsilon$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
