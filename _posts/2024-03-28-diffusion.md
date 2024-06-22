@@ -533,7 +533,7 @@ $$\frac{\sqrt{1-\bar{\alpha}_t}}{1-\bar{\alpha}_t} = \frac{\sqrt{1-\bar{\alpha}_
 
 **Note 4:**
 
-$$\begin{align*}\frac{\alpha_t(1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t}\end{align*}$$
+$$\begin{align*}\frac{\alpha_t(1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t} \\ = &\frac{\alpha_t - \alpha_t\bar{\alpha}_{t-1} + \beta_t}{1 - \bar{\alpha}_t} \\ = & \frac{1 - \beta_t - \bar{\alpha}_t + \beta_t}{1 - \bar{\alpha}_t} \\ = &\frac{1 - \bar{\alpha}_t}{1 - \bar{\alpha}_t} \\ = &1 \end{align*}$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
