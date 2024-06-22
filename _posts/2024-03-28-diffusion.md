@@ -509,6 +509,8 @@ $$\begin{align*}\mu &:= \frac{\frac{2 \sqrt{\alpha_t}}{\beta_t}\boldsymbol{x}_t 
 
 ### Derivation 6 (Simplification of closed form of $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$)
 
+$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) &= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_t} \end{align*}$$
+
 ### Implementation of a diffusion model for generating MNIST digits:
 
 In this section, we will walk through all of the code used to implement a diffusion model. The full code can be run on [Google Colab](https://colab.research.google.com/drive/14ue6jpN7yEM9c11qERpXra8G88ss__99?usp=sharing). We will start with importing the required packages:
