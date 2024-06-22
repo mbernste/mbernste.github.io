@@ -509,13 +509,13 @@ $$\begin{align*}\mu &:= \frac{\frac{2 \sqrt{\alpha_t}}{\beta_t}\boldsymbol{x}_t 
 
 ### Derivation 6 (Simplification of closed form of $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$)
 
-$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) &= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_t} \boldsymbol{x}_0 \end{align*}$$
+$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) &= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_t} \boldsymbol{x}_0 \\ &= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}}{1-\bar{\alpha}_t}\beta_t \left( \frac{1}{\sqrt{\alpha_t}} (\boldsymbol{x}_t - \sqrt{1-\bar{\alpha}_t}\epsilon) \right) \end{align*}$$$$
 
-$$= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}}{1-\bar{\alpha}_t}\beta_t \left( \frac{1}{\sqrt{\alpha_t}} (\boldsymbol{x}_t - \sqrt{1-\bar{\alpha}_t}\epsilon) \right)$$
+$$\frac{\sqrt{\alpha_t} (1-\bar{\alpha}_{t-1}) }{1 - \bar{\alpha}_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{(1-\bar{\alpha}_t) \sqrt{\alpha_t}}\boldsymbol{x}_t - \frac{\sqrt{1 - \bar{\alpha}_t} \beta_t}{(1-\bar{\alpha}_t)} \epsilon$$
 
-$$\frac{\sqrt{\alpha_t} (1-\bar{\alpha}_{t-1}) }{1 - \bar{\alpha}_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{(1-\bar{\alpha}_t) \sqrt{\alpha_t}}\boldsymbol{x}_t$$
+**Note 1:** 
 
-**Note 1:** Recall that $\boldsymbol{x}_t = \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0 + \sqrt{1-\bar{\alpha}_t}\epsilon$
+$$\begin{align*}&\boldsymbol{x}_t = \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0 + \sqrt{1-\bar{\alpha}_t}\epsilon \\ \implies &\boldsymbol{x}_0 = \frac{\boldsymbol{x}_t - \sqrt{1 - \bar{\alpha}_t}\epsilon}{\sqrt{\bar{\alpha}_t}} \end{align*}$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
