@@ -516,6 +516,10 @@ $$\frac{1}{\sqrt{\alpha_t}}\left( \frac{\alpha_t (1-\bar{\alpha}_{t-1})}{1-\bar{
 
 $$\frac{1}{\sqrt{\alpha_t}}\left( \frac{\alpha_t (1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t}\boldsymbol{x}_t - \frac{\sqrt{1 - \bar{\alpha}_t} \beta_t}{1-\bar{\alpha}_t}\epsilon \right)$$
 
+$$\frac{1}{\sqrt{\alpha_t}}\left( \frac{\alpha_t (1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t}\boldsymbol{x}_t - \frac{\beta_t}{1-\bar{\alpha}_t}\epsilon \right)$$
+
+Note 3
+
 **Note 1:** Recall from our derivation of $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ that,lk
 
 $$\begin{align*}&\boldsymbol{x}_t = \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0 + \sqrt{1-\bar{\alpha}_t}\epsilon \\ \implies &\boldsymbol{x}_0 = \frac{\boldsymbol{x}_t - \sqrt{1 - \bar{\alpha}_t}\epsilon}{\sqrt{\bar{\alpha}_t}} \end{align*}$$
@@ -523,6 +527,10 @@ $$\begin{align*}&\boldsymbol{x}_t = \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0 + \sqr
 **Note 2:**
 
 $$\frac{\sqrt{\bar{\alpha}_{t-1}}}{\sqrt{\bar{\alpha}_t}} = \sqrt{\frac{\prod_{i=1}^{t-1} \alpha_i }{\prod_{i=1}^{t} \alpha_i}} = \frac{1}{\sqrt{\alpha_t}}$$
+
+**Note 3:**
+
+$$\frac{1-\bar{\alpha}_t}{1-\bar{\alpha}_t} = \frac{\sqrt{1-\bar{\alpha}_t}}{\sqrt{1-\bar{\alpha}_t}} \frac{\sqrt{1-\bar{\alpha}_t}}{1-\bar{\alpha}_t} = \frac{1-\bar{\alpha}_t}{\sqrt{1-\bar{\alpha}_t}(1-\bar{\alpha}_t)} = \frac{1}{\sqrt{1-\bar{\alpha}_t}} $$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
