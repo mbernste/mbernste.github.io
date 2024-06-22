@@ -519,6 +519,10 @@ $$\frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t
 
 $$\begin{align*}&\boldsymbol{x}_t = \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0 + \sqrt{1-\bar{\alpha}_t}\epsilon \\ \implies &\boldsymbol{x}_0 = \frac{\boldsymbol{x}_t - \sqrt{1 - \bar{\alpha}_t}\epsilon}{\sqrt{\bar{\alpha}_t}} \end{align*}$$
 
+**Note 2:**
+
+$$\frac{\sqrt{\bar{\alpha}_{t-1}}}{\sqrt{\bar{\alpha}_t}} = \sqrt{\frac{\prod_{i=1}^{t-1} \alpha_i }{\prod_{i=1}^{t} \alpha_i}} = \frac{1}{\sqrt{\alpha_t}}$$
+
 ### Implementation of a diffusion model for generating MNIST digits:
 
 In this section, we will walk through all of the code used to implement a diffusion model. The full code can be run on [Google Colab](https://colab.research.google.com/drive/14ue6jpN7yEM9c11qERpXra8G88ss__99?usp=sharing). We will start with importing the required packages:
