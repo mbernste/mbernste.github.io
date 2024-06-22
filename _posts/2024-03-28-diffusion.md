@@ -509,13 +509,12 @@ $$\begin{align*}\mu &:= \frac{\frac{2 \sqrt{\alpha_t}}{\beta_t}\boldsymbol{x}_t 
 
 ### Derivation 6 (Simplification of closed form of $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$)
 
-$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) &= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_t} \boldsymbol{x}_0 \\ &= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}}{1-\bar{\alpha}_t}\beta_t \left( \frac{\boldsymbol{x}_t - \sqrt{1 - \bar{\alpha}_t}\epsilon}{\sqrt{\bar{\alpha}_t}} \right) && \text{Note 1} \\ &= \frac{\sqrt{\alpha_t} (1-\bar{\alpha}_{t-1}) }{1 - \bar{\alpha}_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{(1-\bar{\alpha}_t) \sqrt{\bar{\alpha}_t}}\boldsymbol{x}_t - \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t \sqrt{1-\bar{\alpha}_t}}{(1-\bar{\alpha}_t)\sqrt{\bar{\alpha}_t}} \epsilon\end{align*}$$
+$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) &= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_t} \boldsymbol{x}_0 \\ &= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}}}{1-\bar{\alpha}_t}\beta_t \left( \frac{\boldsymbol{x}_t - \sqrt{1 - \bar{\alpha}_t}\epsilon}{\sqrt{\bar{\alpha}_t}} \right) && \text{Note 1} \\ &= \frac{\sqrt{\alpha_t} (1-\bar{\alpha}_{t-1}) }{1 - \bar{\alpha}_t} \boldsymbol{x}_t + \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t}{(1-\bar{\alpha}_t) \sqrt{\bar{\alpha}_t}}\boldsymbol{x}_t - \frac{\sqrt{\bar{\alpha}_{t-1}} \beta_t \sqrt{1-\bar{\alpha}_t}}{(1-\bar{\alpha}_t)\sqrt{\bar{\alpha}_t}} \epsilon \\ &= \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\beta_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}\boldsymbol{x}_t - \frac{\sqrt{1-\bar{\alpha}_t} \beta_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}} \epsilon && \text{Note 2}\end{align*}$$
 
-$$\frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\beta_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}}\boldsymbol{x}_t - \frac{\sqrt{1-\bar{\alpha}_t} \beta_t}{(1-\bar{\alpha}_t)\sqrt{\alpha_t}} \epsilon$$ 
 
-Note 2
+$$\frac{1}{\sqrt{\alpha_t}}\left( \frac{\alpha_t (1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\beta_t}{1-\bar{\alpha}_{t}}\boldsymbol{x}_t - \frac{\sqrt{1 - \bar{\alpha}_t} \beta_t}{1-\bar{\alpha}_t}\epsilon \right)$$
 
-$$\frac{1}{\alpha_t}\left( \frac{\alpha_t (1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\boldsymbol{x}_t + \frac{\beta_t}{1-\bar{\alpha}_{t}}\boldsymbol{x}_t - \frac{\sqrt{1 - \bar{\alpha}_t} \beta_t}{1-\bar{\alpha}_t}\epsilon \right)$$
+$$\frac{1}{\sqrt{\alpha_t}}\left( \frac{\alpha_t (1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t}\boldsymbol{x}_t - \frac{\sqrt{1 - \bar{\alpha}_t} \beta_t}{1-\bar{\alpha}_t}\epsilon \right)$$
 
 **Note 1:** Recall from our derivation of $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ that,lk
 
