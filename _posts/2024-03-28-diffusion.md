@@ -177,13 +177,15 @@ Let's now describe the model that we will use to approximate the reverse diffusi
 
 $$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \mu_\theta(\boldsymbol{x}_t, t), \Sigma_\theta(\boldsymbol{x}_t, t))$$
 
-where $\mu\_\theta(\boldsymbol{x}\_t, t)$ and $\Sigma\_\theta(\boldsymbol{x}\_t)$ are two functions that take $\boldsymbol{x}\_t$ and $t$ as input and output the mean and variance respectively. These functions are parameterized by $\theta$. 
+where $\boldsymbol{\mu}\_\theta(\boldsymbol{x}\_t, t)$ and $\boldsymbol{\Sigma}\_\theta(\boldsymbol{x}\_t, t)$ are two functions that take $\boldsymbol{x}\_t$ and $t$ as input and output the mean and variance respectively. These functions are parameterized by $\theta$. 
 
-[Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simplified this model such that the variance is constant. Thus, for the remainder of this post, we will assume the model,
+[Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simplified this model such that the variance is constant at each time step $t$ rather than output by a function (i.e., model). Specifically, they define
 
-$$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \mu_\theta(\boldsymbol{x}_t, t), C)$$
+$$\boldsymbol{\Sigma}\_\theta(\boldsymbol{x}\_t, t) := \sigma_t^2 \boldsymbol{I}$$
 
-where $C$ is a constant value. We will describe this simplification later in the post when we derive the final objective function.
+Thus, the reverse model becomes
+
+$$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \mu_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})$$
 
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 -------------------------------------------------------------------------------------------------------------------
