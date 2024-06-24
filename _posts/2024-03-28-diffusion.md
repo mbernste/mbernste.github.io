@@ -173,6 +173,17 @@ The fact that this posterior has a closed form when conditioning on $\boldsymbol
 The reverse model
 -----------------
 
+Let's now describe the model that we will use to approximate the reverse diffusion steps, $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$. In the most general form, we will define this distribution to be a normal distribution where the mean and variance are defined by two functions of $\boldsymbol{x}_t$:
+
+$$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \mu_\theta(\boldsymbol{x}_t), \Sigma_\theta(\boldsymbol{x}_t))$$
+
+where $\mu_\theta(\boldsymbol{x}_t)$ and $\Sigma_\theta(\boldsymbol{x}_t))$ are two functions of $\boldsymbol{x}_t$ that describe the mean and variance respectively and each is parameterized by $\theta$. 
+
+[Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simplified this model such that the variance is constant. Thus, for the remainder of this post, we will assume the model,
+
+$$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \mu_\theta(\boldsymbol{x}_t), C)$$
+
+where $C$ is a constant variance term. We will describe this simplification later in the post when we derive the final objective function.
 
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 -------------------------------------------------------------------------------------------------------------------
