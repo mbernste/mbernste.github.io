@@ -247,6 +247,10 @@ The sampling algorithm
 ----------------------
 
 
+Quick recap
+-----------
+
+
 Intuition and justification
 ---------------------------
 
