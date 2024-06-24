@@ -181,7 +181,7 @@ where $\boldsymbol{\mu}\_\theta(\boldsymbol{x}\_t, t)$ and $\boldsymbol{\Sigma}\
 
 [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simplified this model such that the variance is constant at each time step $t$ rather than output by a function (i.e., model). Specifically, they define
 
-$$\boldsymbol{\Sigma}\_\theta(\boldsymbol{x}\_t, t) := \sigma_t^2 \boldsymbol{I}$$
+$$\boldsymbol{\Sigma}_\theta(\boldsymbol{x}_t, t) := \sigma_t^2 \boldsymbol{I}$$
 
 Thus, the reverse model becomes
 
