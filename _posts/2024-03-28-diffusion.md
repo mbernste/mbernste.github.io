@@ -187,6 +187,8 @@ Thus, the reverse model becomes
 
 $$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \mu_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})$$
 
+As we will see later in the post, the actual values of $\sigma_t$ at each timestep will not actually need to be explicitly defined because the variance term will be removed from the final objective function used to fit the model. 
+
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 -------------------------------------------------------------------------------------------------------------------
 
