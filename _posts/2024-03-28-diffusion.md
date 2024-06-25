@@ -268,9 +268,9 @@ While this equation could be used to train the model, [Ho, Jain, and Abbeel (202
 
 $$\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right)$$
 
-where $\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t)$ is now the trainable function parameterized by $\theta$ that takes as input the object $\boldsymbol{x}_t$ (which is provided by $\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t)$). By performing this reparameterization, $L_t$ simplifies to
+where $\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t)$ is now the trainable function parameterized by $\theta$ that takes as input the object $\boldsymbol{x}_t$ (which is provided by $\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t)$) and the timestep $t$. By performing this reparameterization, $L_t$ simplifies to
 
-$$XXXXX$$
+$$\frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1-\bar{\alpha}_t)} \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2$$
 
 Here we see that to minimize the objective function, our model, $\epsilon_\theta$, must accurately predict the Gaussian noise $\epsilon_t$ that was added to $\boldsymbol{x}_{t-1}$ to produce $\boldsymbol{x}_t$! In other words, the model is a _noise predictor_. Given a noisy object $\boldsymbol{x}_t$, the goal is to predict what parts of $\boldsymbol{x}_t$ is recently added noise (i.e., noise added within the last timestep) and which parts of $\boldsymbol{x}_t$ is the less noisy object $\boldsymbol{x}_{t-1}$. In the next section, we will discuss how the model $\epsilon_\theta$ will be used to _remove noise_ from each $\boldsymbol{x}_t$ in an iterative fashion to generate a new object $\boldsymbol{x}_0$. However, before we get there, let's finish our discussion of the objective function.
 
