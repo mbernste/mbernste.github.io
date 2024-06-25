@@ -240,7 +240,7 @@ $$\begin{align*}P_1 \:= N(\boldsymbol{\mu}_1, \boldsymbol{\Sigma}_1) \\ P_2 \:= 
 
 it follows that 
 
-$$KL(P_1 \ \vert\vert P_2) = \frac{1}{2}\left( \left(\boldsymbol{\mu}_2 - \boldsymbol{\boldsymbol{\mu}_1}\right)^T \boldsymbol{\Sigma}_2^{-1} \left(\boldsymbol{\mu_2} - \boldsymbol{\mu_1}\right) \text{Trace}\left(\boldsymbol{\Sigma}_2^{-1} \boldsymbol{\Sigma}_1\right) + \log \frac{ \text{Det} \left(\boldsymbol{\Sigma}_2\right)}{\text{Det}\left(\boldsymbol{\Sigma}_1\right)}} - d\right)$$
+$$KL(P_1 \ \vert\vert P_2) = \frac{1}{2}\left( \left(\boldsymbol{\mu}_2 - \boldsymbol{\boldsymbol{\mu}_1}\right)^T \boldsymbol{\Sigma}_2^{-1} \left(\boldsymbol{\mu_2} - \boldsymbol{\mu_1}\right) + \text{Trace}\left(\boldsymbol{\Sigma}_2^{-1} \boldsymbol{\Sigma}_1\right) + \log \frac{ \text{Det} \left(\boldsymbol{\Sigma}_2\right)}{\text{Det}\left(\boldsymbol{\Sigma}_1\right)}} - d\right)$$
 
 where $d$ is the dimensionality of each multivariate Gaussian. We won't prove this fact here (see [this link](https://statproofbook.github.io/P/mvn-kl.html) for a formal proof).
 
