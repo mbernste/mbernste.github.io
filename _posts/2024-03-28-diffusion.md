@@ -187,8 +187,6 @@ Thus, the reverse model becomes
 
 $$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \mu_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})$$
 
-As we will see later in the post, the actual values of $\sigma_t$ at each timestep will not actually need to be explicitly defined because the variance term will be removed from the final objective function used to fit the model. 
-
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 -------------------------------------------------------------------------------------------------------------------
 
@@ -232,13 +230,15 @@ Now, let's turn to the middle terms $L\_1, \dots, L\_{T-1}$. Here we see that th
 
 $$\begin{align*}L_t := KL\left(N(A; B, C) \ \vert\vert \ N(A; B, C)\right)\end{align*}$$
 
-We now use the following fact: Given two normal distributions
+We now use the following fact: Given two multivariate normal distributions
 
-$$\begin{align*}P \:= N(\mu_1, \sigma^2_1) \\ Q \:= N(\mu_2, \sigma^2_2) \end{align*}$$
+$$\begin{align*}P_1 \:= N(\boldsymbol{\mu}_1, \boldsymbol{\Sigma}_1) \\ P_2 \:= N(\boldsymbol{\mu}_2, \boldsymbol{\Sigma}_2) \end{align*}$$
 
 it follows that 
 
-$$KL(P \ \vert\vert Q) = XXXXXXXXXX$$
+$$KL(P_1 \ \vert\vert P_2) = \frac{1}{2}\left( \left(\boldsymbol{\mu}_2 - \boldsymbol{\boldsymbol{\mu}_1}\right)^T \boldsymbol{\Sigma}_2^{-1} \left(\boldsymbol{\mu_2} - \boldsymbol{\mu_1}\right) \text{Trace}\left(\boldsymbol{\Sigma}_2^{-1} \boldsymbol{\Sigma}_1\right) + \log \frac{\text{Det}\left(\boldsymbol{\Sigma}_2\right)}{\text{\text{Det}\left(\boldsymbol{\Sigma}_1\right)}} - d\right)$$
+
+where $d$ is the dimensionality of each multivariate Gaussian. We won't prove this fact here (see [this link](https://statproofbook.github.io/P/mvn-kl.html) for a formal proof).
 
 Applying this fact to $L_t$, we see that,
 
