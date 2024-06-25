@@ -262,14 +262,31 @@ Because the last set of terms are constant with respect to $\theta$, we don't ne
 
 $$L_t := E_{\epsilon_t} \left[ \frac{1}{2\sigma_t^2} \vert\vert\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_0, \epsilon_t)\vert\vert^2 \right]$$
 
-Here we see that to optimize the objective function, we simply must minimize the mean squared error between the mean of $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0)$, given by $\tilde{\boldsymbol{\mu}}(\boldsymbol{x}_0, \epsilon_t)$, and the mean of $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$, given by $\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t)$. 
+Here we see that to optimize the objective function, we simply must minimize the mean squared error between the mean of $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, given by $\tilde{\boldsymbol{\mu}}(\boldsymbol{x}\_0, \epsilon\_t)$, and the mean of $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t)$, given by $\boldsymbol{\mu}\_\theta(\boldsymbol{x}\_t(\boldsymbol{x}\_0, \epsilon\_t), t)$. 
 
 While this equation could be used to train the model, [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) found that a further modification to the objective function improved the stability of training and performance of the model. Specifically, the authors proposed reparameterizing the function $\boldsymbol{\mu}(\boldsymbol{x}_t, t)$ (i.e., the trainable model) as follows:
 
-$$\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t, t) \right)$$
+$$\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right)$$
 
-where $\epsilon_\theta(\boldsymbol{x}_t, t)$ is now the trainable function parameterized by $\theta$. By performing this reparameterization, $L_t$ simplifies to
+where $\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t)$ is now the trainable function parameterized by $\theta$ that takes as input the object $\boldsymbol{x}_t$ (which is provided by $\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t)$). By performing this reparameterization, $L_t$ simplifies to
 
+$$XXXXX$$
+
+Here we see that to minimize the objective function, our model, $\epsilon_\theta$, must accurately predict the Gaussian noise $\epsilon_t$ that was added to $\boldsymbol{x}_{t-1}$ to produce $\boldsymbol{x}_t$! In other words, the model is a _noise predictor_. Given a noisy object $\boldsymbol{x}_t$, the goal is to predict what parts of $\boldsymbol{x}_t$ is recently added noise (i.e., noise added within the last timestep) and which parts of $\boldsymbol{x}_t$ is the less noisy object $\boldsymbol{x}_{t-1}$. In the next section, we will discuss how the model $\epsilon_\theta$ will be used to _remove noise_ from each $\boldsymbol{x}_t$ in an iterative fashion to generate a new object $\boldsymbol{x}_0$. However, before we get there, let's finish our discussion of the objective function.
+
+We are now nearing the final form of the denoising objective function proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The authors simplified $L_t$ by simply removing the constant term in front of the squared error term and found that removing this term did not greatly affect the performance of the model:
+
+$$XXXXX$$
+
+With this $L_t$ in hand, the full objective function becomes:
+
+$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T \left[ XXXXXX \right]}_{L_1, L_2, \dots, L_{T-1}}$$
+
+Finally, let's turn our attention to the first term $L_0$. While [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) propose a model for XXXXXX, in practice this term is simply removed from the objective function. Given enough timesteps (i.e., a large enough value for $T$) this first term will not greatly effect the objective function and for simplicity can be removed. The final objective function is thus simply,
+
+$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{\sum_{t=2}^T \left[ XXXXXX \right]}_{L_1, L_2, \dots, L_{T-1}}$$
+
+Note this objective function is simply a sum of discrete terms. To maximize this function, we can maximize each term independently. The training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) 
 
 The sampling algorithm
 ----------------------
