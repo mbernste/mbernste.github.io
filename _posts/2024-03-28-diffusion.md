@@ -248,9 +248,7 @@ Applying this fact to $L_t$, we see that,
 
 $$\begin{align*}L_t := E_{\boldsymbol{x}_t \sim q} \left[KL\left(N(\boldsymbol{x}_{t-1}; \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_{t}), \tilde{\sigma}_t^2\boldsymbol{I}) \ \vert\vert \ N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})  \right) \right] \end{align*}$$
 
-$$\\ = E_{\boldsymbol{x}_t \sim q} \left[ \frac{1}{2}\left( \left(\boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_t, t)\right)^T \left(\tilde{\sigma}_t^2 \boldsymbol{I}\right)^{-1} \left(\boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_t, t)\right) \right] + XXXXX $$
-
-
+$$= E_{\boldsymbol{x}_t \sim q} \left[ \frac{1}{2}\left( \left(\boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_t, t)\right)^T \left( \tilde{\sigma}_t^2 \boldsymbol{I} \right)^{-1} \left(\boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_t, t) \right) \right) \right] + XXXXX $$
 
 $$+ \text{Trace}\left(\boldsymbol{\Sigma}_2^{-1} \boldsymbol{\Sigma}_1\right) + \log \frac{ \text{Det} \left(\boldsymbol{\Sigma}_2\right) }{\text{Det}\left(\boldsymbol{\Sigma}_1\right)} - d$$
 
