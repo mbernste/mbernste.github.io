@@ -228,7 +228,11 @@ $$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q
 
 Now, let's turn to the middle terms $L\_1, \dots, L\_{T-1}$. Here we see that these terms require calculating KL-divergences from  $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$. Recall from the previous sections that both of these distributions are normal distributions. That is, 
 
-$$\begin{align*}L_t := KL\left(N(A; B, C) \ \vert\vert \ N(A; B, C)\right)\end{align*}$$
+$$\begin{align*}L_t &:= KL\left(q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})\right) \\ &= KL\left(N\left(\boldsymbol{x}_{t-1}; \frac{1}{\sqrt{\alpha_t}} \left(\boldsymbol{x}_t - \frac{\beta_t}{\sqrt{1- \bar{\alpha}_{t}}}\epsilon_t \right) , \frac{\beta_t \left(1 - \bar{\alpha}_{1-t}\right)}{1- \bar{\alpha}_t}\boldsymbol{I}\right) \ \vert\vert \ N(\boldsymbol{x}_t; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})\right) \\ &= KL\left(N(\boldsymbol{x}_{t-1}; \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_{t-1}), \tilde{\sigma}^2\boldsymbol{I}) \ \vert\vert \ N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})  \right)\end{align*}$$
+
+where for ease of notation we define,
+
+$$\begin{align*}\tilde{\boldsymbol{\mu}}(\boldsymbol{x}_{t-1}) &:= \frac{1}{\sqrt{\alpha_t}} \left(\boldsymbol{x}_t - \frac{\beta_t}{\sqrt{1- \bar{\alpha}_{t}}}\epsilon_t \right) \\ \tilde{\sigma}^2 := \frac{\beta_t \left(1 - \bar{\alpha}_{1-t}\right)}{1- \bar{\alpha}_t}\boldsymbol{I}\end{align*}$$
 
 We now use the following fact: Given two multivariate normal distributions
 
@@ -236,7 +240,7 @@ $$\begin{align*}P_1 \:= N(\boldsymbol{\mu}_1, \boldsymbol{\Sigma}_1) \\ P_2 \:= 
 
 it follows that 
 
-$$KL(P_1 \ \vert\vert P_2) = \frac{1}{2}\left( \left(\boldsymbol{\mu}_2 - \boldsymbol{\boldsymbol{\mu}_1}\right)^T \boldsymbol{\Sigma}_2^{-1} \left(\boldsymbol{\mu_2} - \boldsymbol{\mu_1}\right) \text{Trace}\left(\boldsymbol{\Sigma}_2^{-1} \boldsymbol{\Sigma}_1\right) + \log \frac{\text{Det}\left(\boldsymbol{\Sigma}_2\right)}{\text{\text{Det}\left(\boldsymbol{\Sigma}_1\right)}} - d\right)$$
+$$KL(P_1 \ \vert\vert P_2) = \frac{1}{2}\left( \left(\boldsymbol{\mu}_2 - \boldsymbol{\boldsymbol{\mu}_1}\right)^T \boldsymbol{\Sigma}_2^{-1} \left(\boldsymbol{\mu_2} - \boldsymbol{\mu_1}\right) \text{Trace}\left(\boldsymbol{\Sigma}_2^{-1} \boldsymbol{\Sigma}_1\right) + \log \frac{ \text{Det} \left(\boldsymbol{\Sigma}_2\right)}{\text{Det}\left(\boldsymbol{\Sigma}_1\right)}} - d\right)$$
 
 where $d$ is the dimensionality of each multivariate Gaussian. We won't prove this fact here (see [this link](https://statproofbook.github.io/P/mvn-kl.html) for a formal proof).
 
