@@ -242,7 +242,7 @@ Note that the above formulation of $L_t$ is now an expectation of over $\epsilon
 
 $$\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon) := \sqrt{\bar{\alpha}_t}\boldsymbol{x}_0 + \sqrt{1 - \bar{\alpha}_t}\epsilon_t$$
 
-Said differently, everything is now conditioned on three variables, Gaussian noise $\epsilon_t$, the timestep $t$, and the observed, noiseless object, $\boldsymbol{x}_0$. The object $\boldsymbol{x}_t$ is generated via the function $\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon)$.
+Said differently, we now assume that the object $\boldsymbol{x}_t$ is generated via the function $\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t)$ and the expectation described by $L_t$ is now an expectation of a random value whose stochasticity comes from the stochasticity of $\epsilon_t$.
 
 We now use the following fact: Given two multivariate normal distributions
 
