@@ -202,7 +202,9 @@ $$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
 
 In our case, we wish to learn the reverse diffusion process from the forward diffusion process, so we start with the following objective function:
 
-$$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0))$$
+$$\hat{\theta} := \text{arg min}_\theta \ E_{\boldsymbol{x}_0 \sim q} \left[ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) \right]$$
+
+Note that the KL-divergence is nested within an expectation over $\boldsymbol{x}_0$. That is because our goal is to minimize the average KL-divergence when randomly selecting any given noiseless object $\boldsymbol{x}_0$.
 
 Now, let's derive a more intuitive form of this objective function. Recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), which is a function of the parameters $\theta$. For a more in-depth discussion of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/). In the case of diffusion models, this ELBO looks as follows (See Derivation 1 in the Appendix to this post):
 
@@ -297,19 +299,19 @@ Note the objective function we derived in the previous section is simply a sum o
 
 More specifically, the full training algorithm is goes as follows: Until training converges (i.e., the objective function no longer improves), we repeat the following steps:
 
-\1. Sample an item:
+1\. Sample an item:
 
 $$\boldsymbol{x}_0 \sim q(\boldsymbol{x}_0)$$ 
 
 Note that in practice, this would entail sampling an item randomly from our training set. One can also perform minibatch training, where we sample a set of items all at once.
 
-\2. Sample a random timestep, $t$, uniformly at random: 
+2\. Sample a random timestep, $t$, uniformly at random: 
 
-$$t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
+$$t \sim \text{Uniform}(1, \dots, T)$$
 
 If performing minibatch training, one would sample a separate $t$ for each $\boldsymbol{x}_0$ in the minibatch.
 
-\3. Sample Gaussian noise:
+3\. Sample Gaussian noise:
 
 $$\epsilon_t \sim N(\boldsymbol{0}, \boldsymbol{I})$$
 
