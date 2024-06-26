@@ -202,7 +202,7 @@ $$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ 
 
 Let's now examine the ELBO more closely. It turns out that this ELBO can be further manipulated into a form that has a term for each step of the diffusion process (See Derivation 2 in the Appendix to this post):
 
-$$\begin{align*}\text{ELBO}(\theta) &= E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1, \boldsymbol{x}_0 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}} + \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T}\end{align*}$$
+$$\begin{align*}\text{ELBO}(\theta) &= E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1, \boldsymbol{x}_0 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \underbrace{\sum_{t=2}^T  E_{\boldsymbol{x}_t, \boldsymbol{x}_0 \sim q} \left[ KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}} + E_{\boldsymbol{x}_0} \left[ \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T} \right]\end{align*}$$
 
 These terms are broken into three cagegories: 
 
@@ -216,11 +216,11 @@ $$p_\theta(\boldsymbol{x}_T) := N(\boldsymbol{x}_T; \boldsymbol{0}, \boldsymbol{
 
 Thus we see that the last term, $L_T$, does not depend on the model parameters, we can ignore this term when maximizing the ELBO. Thus, our task will be to find:
 
-$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}}$$
+$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T E_{\boldsymbol{x}_t, \boldsymbol{x}_0 \sim q} \left[ KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}}$$
 
 Now, let's turn to the middle terms $L\_1, \dots, L\_{T-1}$. Here we see that these terms require calculating KL-divergences from  $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$. Recall from the previous sections that both of these distributions are normal distributions. That is, 
 
-$$\begin{align*}L_t &:= E_{\boldsymbol{x}_t \sim q} \left[ KL\left(q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})\right) \right] \\ &= E_{\epsilon_t} \left[ KL\left(N\left(\boldsymbol{x}_{t-1}; \frac{1}{\sqrt{\alpha_t}} \left(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1- \bar{\alpha}_{t}}}\epsilon_t \right) , \frac{\beta_t \left(1 - \bar{\alpha}_{1-t}\right)}{1- \bar{\alpha}_t}\boldsymbol{I}\right) \ \vert\vert \ N(\boldsymbol{x}_t; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t), \sigma_t^2\boldsymbol{I})\right) \right] \\ &= E_{\epsilon_t} \left[KL\left(N(\boldsymbol{x}_{t-1}; \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_{0}, \epsilon_t), \tilde{\sigma}_t^2\boldsymbol{I}) \ \vert\vert \ N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t), \sigma_t^2\boldsymbol{I})  \right) \right]\end{align*}$$
+$$\begin{align*}L_t &:= E_{\boldsymbol{x}_t, \boldsymbol{x}_0 \sim q} \left[ KL\left(q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})\right) \right] \\ &= E_{\epsilon_t, \boldsymbol{x}_0} \left[ KL\left(N\left(\boldsymbol{x}_{t-1}; \frac{1}{\sqrt{\alpha_t}} \left(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1- \bar{\alpha}_{t}}}\epsilon_t \right) , \frac{\beta_t \left(1 - \bar{\alpha}_{1-t}\right)}{1- \bar{\alpha}_t}\boldsymbol{I}\right) \ \vert\vert \ N(\boldsymbol{x}_t; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t), \sigma_t^2\boldsymbol{I})\right) \right] \\ &= E_{\epsilon_t, \boldsymbol{x}_0} \left[KL\left(N(\boldsymbol{x}_{t-1}; \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_{0}, \epsilon_t), \tilde{\sigma}_t^2\boldsymbol{I}) \ \vert\vert \ N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t), \sigma_t^2\boldsymbol{I})  \right) \right]\end{align*}$$
 
 where for ease of notation we define,
 
@@ -244,13 +244,13 @@ where $d$ is the dimensionality of each multivariate Gaussian. We won't prove th
 
 Applying this fact to $L_t$, we see that,
 
-$$\begin{align*}L_t &:= E_{\epsilon_t} \left[KL\left(N(\boldsymbol{x}_{t-1}; \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_{0}, \epsilon_t), \tilde{\sigma}_t^2\boldsymbol{I}) \ \vert\vert \ N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t), \sigma_t^2\boldsymbol{I})  \right) \right] \\ &= E_{\epsilon_t} \left[ \frac{1}{2}\left( \left(\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_0, \epsilon_t)\right)^T \left( \sigma_t^2 \boldsymbol{I} \right)^{-1} \left(\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_0, \epsilon_t) \right) \right) \right] + \text{Trace}\left( \left( \sigma^2_t\boldsymbol{I} \right)^{-1} \left(\tilde{\sigma}_t^2 \boldsymbol{I} \right) \right) + \log \frac{ \text{Det} \left( \sigma^2_t\boldsymbol{I} \right) }{\text{Det}\left(\tilde{\sigma}_t^2 \boldsymbol{I}\right)} - d \\ &= E_{\epsilon_t} \left[ \frac{1}{2\sigma_t^2} \vert\vert\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_0, \epsilon_t)\vert\vert^2 \right] +  \underbrace{\text{Trace}\left( \left( \sigma^2_t\boldsymbol{I} \right)^{-1} \left(\tilde{\sigma}_t^2 \boldsymbol{I} \right) \right) + \log \frac{ \text{Det} \left( \sigma^2_t\boldsymbol{I} \right) }{\text{Det}\left(\tilde{\sigma}_t^2 \boldsymbol{I}\right)} - d}_{\text{Constant with respect to } \ \theta} \end{align*}$$
+$$\begin{align*}L_t &:= E_{\epsilon_t, \boldsymbol{x}_0} \left[KL\left(N(\boldsymbol{x}_{t-1}; \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_{0}, \epsilon_t), \tilde{\sigma}_t^2\boldsymbol{I}) \ \vert\vert \ N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t), \sigma_t^2\boldsymbol{I})  \right) \right] \\ &= E_{\epsilon_t, \boldsymbol{x}_0} \left[ \frac{1}{2}\left( \left(\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_0, \epsilon_t)\right)^T \left( \sigma_t^2 \boldsymbol{I} \right)^{-1} \left(\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_0, \epsilon_t) \right) \right) \right] + \text{Trace}\left( \left( \sigma^2_t\boldsymbol{I} \right)^{-1} \left(\tilde{\sigma}_t^2 \boldsymbol{I} \right) \right) + \log \frac{ \text{Det} \left( \sigma^2_t\boldsymbol{I} \right) }{\text{Det}\left(\tilde{\sigma}_t^2 \boldsymbol{I}\right)} - d \\ &= E_{\epsilon_t, \boldsymbol{x}_0} \left[ \frac{1}{2\sigma_t^2} \vert\vert\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_0, \epsilon_t)\vert\vert^2 \right] +  \underbrace{\text{Trace}\left( \left( \sigma^2_t\boldsymbol{I} \right)^{-1} \left(\tilde{\sigma}_t^2 \boldsymbol{I} \right) \right) + \log \frac{ \text{Det} \left( \sigma^2_t\boldsymbol{I} \right) }{\text{Det}\left(\tilde{\sigma}_t^2 \boldsymbol{I}\right)} - d}_{\text{Constant with respect to } \ \theta} \end{align*}$$
 
 Because the last set of terms are constant with respect to $\theta$, we don't need to consider these terms when optimizing our objective function. Thus, we can remove these terms from each $L_t$. Each $L_t$ can thus be defined as,
 
-$$L_t := E_{\epsilon_t} \left[ \frac{1}{2\sigma_t^2} \vert\vert\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_0, \epsilon_t)\vert\vert^2 \right]$$
+$$L_t := E_{\epsilon_t, \boldsymbol{x}_0} \left[ \frac{1}{2\sigma_t^2} \vert\vert\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \tilde{\boldsymbol{\boldsymbol{\mu}}}(\boldsymbol{x}_0, \epsilon_t)\vert\vert^2 \right]$$
 
-Here we see that to optimize the objective function, we simply must minimize the mean squared error between the mean of $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, given by $\tilde{\boldsymbol{\mu}}(\boldsymbol{x}\_0, \epsilon\_t)$, and the mean of $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t)$, given by $\boldsymbol{\mu}\_\theta(\boldsymbol{x}\_t(\boldsymbol{x}\_0, \epsilon\_t), t)$. 
+Here we see that to optimize the objective function, we simply must minimize the mean squared error between the mean of $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$, given by $\tilde{\boldsymbol{\mu}}(\boldsymbol{x}\_0, \epsilon\_t)$, and the mean of $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}_t)$, given by $\boldsymbol{\mu}\_\theta(\boldsymbol{x}\_t(\boldsymbol{x}\_0, \epsilon\_t), t)$. This mean squared error is taken over the Guassian noise $\epsilon\_t$ and noiseless items $\boldsymbol{x}_0$.
 
 While this equation could be used to train the model, [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) found that a further modification to the objective function improved the stability of training and performance of the model. Specifically, the authors proposed reparameterizing the function $\boldsymbol{\mu}(\boldsymbol{x}_t, t)$ (i.e., the trainable model) as follows:
 
@@ -258,7 +258,7 @@ $$\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) := 
 
 where $\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t)$ is now the trainable function parameterized by $\theta$ that takes as input the object $\boldsymbol{x}_t$ (which is provided by $\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t)$) and the timestep $t$. By performing this reparameterization, $L_t$ simplifies to
 
-$$L_t = \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1-\bar{\alpha}_t)} \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2$$
+$$L_t = E_{\epsilon_t, \boldsymbol{x}_0} \left[ \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1-\bar{\alpha}_t)} \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2 \right]$$
 
 See Derivation 7 in the Appendix to this post.
 
@@ -266,42 +266,52 @@ Here we see that to minimize the objective function, our model, $\epsilon\_\thet
 
 If you are still following along, we are now nearing the final form of the denoising objective function proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The authors simplified $L_t$ by simply removing the constant term in front of the squared error term and found that removing this term did not greatly affect the performance of the model:
 
-$$L_t := \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2$$
+$$L_t := E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2 \right]$$
 
 With this $L_t$ in hand, the full objective function becomes:
 
-$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2}_{L_1, L_2, \dots, L_{T-1}}$$
+$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1, \boldsymbol{x}_0 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2}_{L_1, L_2, \dots, L_{T-1}} \right]$$
 
 Finally, let's turn our attention to the first term $L_0$. While [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) propose a model for $p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1)$, my understanding is that in practice this term is simply removed from the objective function due to the fact that given enough timesteps (i.e., a large enough value for $T$) this first term will not greatly effect the objective function and for simplicity can be removed. The final objective function is thus simply,
 
-$$\hat{\theta} := \text{arg max}_\theta \ \sum_{t=2}^T \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2$$
+$$\hat{\theta} := \text{arg max}_\theta \ \sum_{t=2}^T E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2 \right]$$
 
 At the end of all of this, we come to a framework in which we simply train a model $\epsilon_\theta$ that will seek to predict the added noise at each timestep $t$! Hence the term "denoising" in the name "Denoising diffusion probabilistic models". 
 
 The training algorithm
 ----------------------
 
-Note the objective function we derived in the previous section is simply a sum of discrete terms and thus, to maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simply samples timesteps at random and updates $\theta$ according to a single step of [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent). 
+Note the objective function we derived in the previous section is simply a sum of discrete terms and thus, to maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simply  timesteps at random and updates $\theta$ according to a single step of [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent). 
 
 More specifically, the full training algorithm is goes as follows: Until training converges (i.e., the objective function no longer improves), we repeat the following steps:
 
-1\. Sample an item:
+1\. Sample a random timestep, $t'$, uniformly at random: 
 
-$$\boldsymbol{x}_0 \sim q(\boldsymbol{x}_0)$$ 
+$$t' \sim \text{Uniform}(1, \dots, T)$$
 
-Note that in practice, this would entail sampling an item randomly from our training set. One can also perform minibatch training, where we sample a set of items all at once.
+2\. Sample Gaussian noise, $\epsilon'_t$:
 
-2\. Sample a random timestep, $t$, uniformly at random: 
+$$\epsilon'_t \sim N(\boldsymbol{0}, \boldsymbol{I})$$
 
-$$t \sim \text{Uniform}(1, \dots, T)$$
+3\. Sample an item:
 
-If performing minibatch training, one would sample a separate $t$ for each $\boldsymbol{x}_0$ in the minibatch.
+$$\boldsymbol{x}'_0 \sim q(\boldsymbol{x}_0)$$ 
 
-3\. Sample Gaussian noise:
+In practice, this would entail sampling an item randomly from our training set. 
 
-$$\epsilon_t \sim N(\boldsymbol{0}, \boldsymbol{I})$$
+4\. Compute the gradient,
 
-If performing minibatch training, one would sample a separate $\epsilon_t$ for each $\boldsymbol{x}_0$ in the minibatch.
+$$\nabla_\theta \left[ \vert\vert \epsilon'_t - \epsilon_\theta(\boldsymbol{x}'_t(\boldsymbol{x}_0, \epsilon'_t), t') \vert\vert^2 \right]$$
+
+Note, that because we randomly sampled an item, $\boldsymbol{x}'_0$, we are essentially performing stochastic gradient ascent, since in expectation, the above gradient would be equal to the gradient of the objective function we derived in the previous section:
+
+$$\nabla_\theta E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2 \right]$$
+
+5\. Update the parameters according to the gradient. This can be done by taking a "vanilla" gradient step:
+
+$$\theta \leftarrow \theta + \gamma nabla_\theta$$
+
+where $\gamma$ is a weight that sets the update step. One can also use a more advanced variant of gradent ascent such as [Adam](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam).
 
 The sampling algorithm
 ----------------------
@@ -314,32 +324,20 @@ Quick recap
 Intuition and justification for the diffusion objective
 -------------------------------------------------------
 
-While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may be wanting for a more rigorous theoretical motivation for the objective of fitting  $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$ by minimizing the KL-divergence,
+While the core idea of learning a denoising model that reverses a diffusion process and then using that denoising model to produce samples may be intuitive at a high-level, one may be wanting for a more rigorous theoretical motivation for the objective function used to fit these models that entails fitting $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$ by minimizing the KL-divergence,
 
+$$KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})$$
 
+I've found four [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which to understand the theoretical justification for this objective:
 
-I've found four [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which to understand the theoretical justification behind these models:
+1. As implicitly minimizing the KL-divergence between $q(\boldsymbol{x}_0)$ and $p_\theta(\boldsymbol{x}_0)$
+2. As maximum-likelihood estimation
+3. As score-matching
+4. As breaking up a difficult problem into many easier problems
 
-1. As implicitly learning to fit $q(\boldsymbol{x}\_0)$
-2. As breaking up a difficult problem into many easier problems
-3. As maximum-likelihood estimation
-4. As score-matching
+Let's go through each of them.
 
-The first of two of these perspectives are less rigorous, but provides some high-level intuition. The second two are more rigorous. Let's dig in.
-
-### As implicitly learning to fit $q(\boldsymbol{x}\_0)$
-
-We can gain some high-level intuition into why this method of learning to reverse diffusion will lead us to a distribution $p_\theta(\boldsymbol{x}\_0)$ that resembles $q(\boldsymbol{x}\_0)$ by looking again at the posterior distribution:
-
-$$\begin{align*}q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) &= \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{q(\boldsymbol{x}_t)} \\ &= \frac{q(\boldsymbol{x}_t \mid \boldsymbol{x}_{t-1})q(\boldsymbol{x}_{t-1})}{\int_{\boldsymbol{x}_{t-1},\dots,\boldsymbol{x}_0} q(\boldsymbol{x}_0)\prod_{i=1}^{t} q(\boldsymbol{x}_i \mid \boldsymbol{x}_{i-1}) \ d\boldsymbol{x}_{t-1}\dots \boldsymbol{x}_{0}}\end{align*}$$
-
-Again, notice how this distribution requires knowing $q(\boldsymbol{x}\_0)$. This makes intuitive sense: in order to transform pure noise, $\boldsymbol{x}\_T$ to a "sharp", noiseless object $\boldsymbol{x}\_0$, we need to know what real objects look like! Now, in an attempt to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, it follows that $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will need to match $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$. This very act of learning to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ using a surrogate distribution $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ will, in an implicit way, learn about the distribution $q(\boldsymbol{x}\_0)$! Said differently, $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ _must_ learn about $q(\boldsymbol{x}\_0)$ in order to approximate $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ effectively.
-
-### As breaking up a difficult problem into many easier problems
-
-Another reason why diffusion models tend to perform better than other methods, such as [variational autoencoders](https://mbernste.github.io/posts/vae/), is that diffusion models break up a difficult problem into a series of easier problems. That is, unlike variational autoencoders, where we train a model to produce an object all at once, in diffusion models, we train the model to produce the object step-by-step. Intuitively, we train a model to "sculpt" an object out of noise in a step-wise fashion rather than generate the object in one fell-swoop. 
-
-This step-wise approach is advantageous because it enables the model to learn features of objects at different levels of resolution. At the end of the reverse diffusion process (i.e., the sampling process), the model identifies broad, vague features of an object within the noise. At later steps of the reverse diffusion process, it fills in smaller details of the object by removing the last remaining noise.
+## As implicitly minimizing the KL-divergence between $q(\boldsymbol{x}_0)$ and $p_\theta(\boldsymbol{x}_0)$
 
 ### As maximum-likelihood estimation
 
@@ -376,6 +374,12 @@ That is, it is the gradient of the log-density function, $q(\boldsymbol{x})$, wi
 Stated more succintly, by maximizing the ELBO with respect to $\theta$ (that is, a lower bound of the log-likelihood), we are also implicitly fitting an estimated score function $s\_\theta(\boldsymbol{x})$ to the real score function $s\_q(\boldsymbol{x})$. We will make this connection more explicit later in the blog post.
 
 Finally, it will turn out that we can view the process of reversing the diffusion process to sample from $p\_\theta(\boldsymbol{x}_0)$ as a variant of [sampling via Langevin dynamics] -- a stochastic method that enables one to sample from an arbitrary distribution by following the gradients defined by the score function.
+
+### As breaking up a difficult problem into many easier problems
+
+Another, more high-level, reason why diffusion models tend to perform better than other methods, such as [variational autoencoders](https://mbernste.github.io/posts/vae/), is that diffusion models break up a difficult problem into a series of easier problems. That is, unlike variational autoencoders, where we train a model to produce an object all at once, in diffusion models, we train the model to produce the object step-by-step. Intuitively, we train a model to "sculpt" an object out of noise in a step-wise fashion rather than generate the object in one fell-swoop. 
+
+This step-wise approach is advantageous because it enables the model to learn features of objects at different levels of resolution. At the end of the reverse diffusion process (i.e., the sampling process), the model identifies broad, vague features of an object within the noise. At later steps of the reverse diffusion process, it fills in smaller details of the object by removing the last remaining noise.
 
 Applying a diffusion model on MNIST
 -----------------------------------
