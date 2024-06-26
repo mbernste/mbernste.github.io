@@ -292,7 +292,7 @@ At the end of all of this, we come to a framework in which we simply train a mod
 
 Note this objective function is simply a sum of discrete terms and thus, to maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simply samples timesteps at random and updates $\theta$ according to a single step of [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent). More specifically, the full training algorithm is:
 
-$$\begin{align*}\text{Repeat until converged:} \\ \ \ \ \ \text{1.} \boldsymbol{x}_0 \sim q(\boldsymbol{x}_0) \\ \ \ \ \ \text{2.} t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
+$$\begin{align*}\text{Repeat until converged:} \\ $\quad$ \text{1.} \boldsymbol{x}_0 \sim q(\boldsymbol{x}_0) \\ $\quad$ \text{2.} t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
 
 The sampling algorithm
 ----------------------
