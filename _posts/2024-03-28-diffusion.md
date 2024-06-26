@@ -629,6 +629,8 @@ $$\begin{align*}\frac{\alpha_t(1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t
 
 $$\begin{align*}L_t = \frac{1}{\sigma_t^2} \vert\vert \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t ) - \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_0, \epsilon_t) \vert\vert^2\end{align*}$$
 
+$$\frac{1}{2\sigma_t^2} \lvert\lvert \frac{1}{\sqrt{\alpha_t}}\left(\boldsymbol{x}_t - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right) \rvert\rvert^2$$
+
 ### Implementation of a diffusion model for generating MNIST digits:
 
 In this section, we will walk through all of the code used to implement a diffusion model. The full code can be run on [Google Colab](https://colab.research.google.com/drive/14ue6jpN7yEM9c11qERpXra8G88ss__99?usp=sharing). We will start with importing the required packages:
