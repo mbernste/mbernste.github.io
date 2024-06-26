@@ -88,13 +88,13 @@ using a surrogate distribution $p_\theta(\boldsymbol{x}_{0:T})$ that is instead 
 
 $$p_\theta(\boldsymbol{x}_{0:T}) = p_\theta(\boldsymbol{x}_0)\prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
 
-Here, $\theta$ represent a set of learnable parameters that we will be use to fit $p_{\theta}(\boldsymbol{x}_{0:T})$ as close to $q(\boldsymbol{x}_{0:T})$ as possible. As we will see later in the post, these $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ distributions can incorporate a neural network so that they can represent a distribution complex enough to sucessfully remove noise. 
+Here, $\theta$ represent a set of learnable parameters that we will be use to fit $p\_{\theta}(\boldsymbol{x}\_{0:T})$ as close to $q(\boldsymbol{x}\_{0:T})$ as possible. As we will see later in the post, these $p\_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ distributions can incorporate a neural network so that they can represent a distribution complex enough to sucessfully remove noise. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_approximate.png" alt="drawing" width="800"/></center>
 
 <br>
 
-From our approximate joint distribution $p_\theta(\boldsymbol{x}_{0:T})$, we will obtain a sequence of approximate posterior distributions, each given by $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$. With these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object. More specifically, we will have "sampled" an object!
+From our approximate joint distribution $p_\theta(\boldsymbol{x}\_{0:T})$, we will obtain a sequence of approximate posterior distributions, each given by $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. With these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object. More specifically, we will have "sampled" an object!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
 
