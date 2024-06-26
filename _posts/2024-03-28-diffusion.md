@@ -82,7 +82,7 @@ Notice that this marginalization requires that we define a distribution $q(\bold
 
 To get around this problem, we will employ a similar strategy as used in [variational inference](https://mbernste.github.io/posts/variational_inference/): We will _approximate_ the forward diffusion process $q(\boldsymbol{x}_{0:T})$, which is given by,
 
-$$q(\boldsymbol{x}_{0:T}) = q(\boldsymbol{x}_0)\prod_{t=1}^T q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t-1})$$
+$$q(\boldsymbol{x}_{0:T}) = q(\boldsymbol{x}_0)\prod_{t=1}^T q(\boldsymbol{x}_{t} \mid \boldsymbol{x}_{t-1})$$
 
 using a surrogate distribution $p_\theta(\boldsymbol{x}_{0:T})$ that is instead factored by the posterior distributions (i.e., the reverse diffusion steps):
 
@@ -285,19 +285,19 @@ Note the objective function we derived in the previous section is simply a sum o
 
 More specifically, the full training algorithm is goes as follows: Until training converges (i.e., the objective function no longer improves), we repeat the following steps:
 
-\1. Sample an item:
+1\. Sample an item:
 
 $$\boldsymbol{x}_0 \sim q(\boldsymbol{x}_0)$$ 
 
 Note that in practice, this would entail sampling an item randomly from our training set. One can also perform minibatch training, where we sample a set of items all at once.
 
-\2. Sample a random timestep, $t$, uniformly at random: 
+2\. Sample a random timestep, $t$, uniformly at random: 
 
-$$t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
+$$t \sim \text{Uniform}(1, \dots, T)$$
 
 If performing minibatch training, one would sample a separate $t$ for each $\boldsymbol{x}_0$ in the minibatch.
 
-\3. Sample Gaussian noise:
+3\. Sample Gaussian noise:
 
 $$\epsilon_t \sim N(\boldsymbol{0}, \boldsymbol{I})$$
 
