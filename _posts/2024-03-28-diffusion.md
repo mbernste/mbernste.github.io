@@ -270,7 +270,7 @@ $$L_t := E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilo
 
 With this $L_t$ in hand, the full objective function becomes:
 
-$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1, \boldsymbol{x}_0 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2}_{L_1, L_2, \dots, L_{T-1}} \right]$$
+$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1, \boldsymbol{x}_0 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right] }_{L_0} +  \underbrace{\sum_{t=2}^T E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2\right]}_{L_1, L_2, \dots, L_{T-1}} $$
 
 Finally, let's turn our attention to the first term $L_0$. While [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) propose a model for $p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1)$, my understanding is that in practice this term is simply removed from the objective function due to the fact that given enough timesteps (i.e., a large enough value for $T$) this first term will not greatly effect the objective function and for simplicity can be removed. The final objective function is thus simply,
 
@@ -307,11 +307,7 @@ Note, that because we randomly sampled an item, $\boldsymbol{x}'_0$, we are esse
 
 $$\nabla_\theta E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2 \right]$$
 
-5\. Update the parameters according to the gradient. This can be done by taking a "vanilla" gradient step:
-
-$$\theta \leftarrow \theta + \gamma nabla_\theta$$
-
-where $\gamma$ is a weight that sets the update step. One can also use a more advanced variant of gradent ascent such as [Adam](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam).
+5\. Update the parameters according to the gradient. This can be done by taking a "vanilla" gradient step or by using a more advanced variant of gradent ascent such as [Adam](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam).
 
 The sampling algorithm
 ----------------------
