@@ -86,7 +86,7 @@ $$q(\boldsymbol{x}_{0:T}) = q(\boldsymbol{x}_0)\prod_{t=1}^T q(\boldsymbol{x}_{t
 
 using a surrogate distribution $p_\theta(\boldsymbol{x}_{0:T})$ that is instead factored by the posterior distributions (i.e., the reverse diffusion steps):
 
-$$p_\theta(\boldsymbol{x}_{0:T}) = p_\theta(\boldsymbol{x}_0)\prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
+$$p_\theta(\boldsymbol{x}_{0:T}) = p_\theta(\boldsymbol{x}_T)\prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
 
 Here, $\theta$ represent a set of learnable parameters that we will be use to fit $p\_{\theta}(\boldsymbol{x}\_{0:T})$ as close to $q(\boldsymbol{x}\_{0:T})$ as possible. As we will see later in the post, these $p\_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ distributions can incorporate a neural network so that they can represent a distribution complex enough to sucessfully remove noise. 
 
