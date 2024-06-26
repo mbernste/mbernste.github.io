@@ -276,7 +276,7 @@ See Derivation 7 in the Appendix to this post.
 
 Here we see that to minimize the objective function, our model, $\epsilon\_\theta$, must accurately predict the Gaussian noise $\epsilon\_t$ that was added to $\boldsymbol{x}\_{t-1}$ to produce $\boldsymbol{x}\_t$! In other words, the model is a _noise predictor_. Given a noisy object $\boldsymbol{x}\_t$, the goal is to predict what parts of $\boldsymbol{x}\_t$ is recently added noise (i.e., noise added within the last timestep) and which parts of $\boldsymbol{x}\_t$ is the less noisy object $\boldsymbol{x}\_{t-1}$. In the next section, we will discuss how the model $\epsilon_\theta$ will be used to _remove noise_ from each $\boldsymbol{x}\_t$ in an iterative fashion to generate a new object $\boldsymbol{x}\_0$. However, before we get there, let's finish our discussion of the objective function.
 
-We are now nearing the final form of the denoising objective function proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The authors simplified $L_t$ by simply removing the constant term in front of the squared error term and found that removing this term did not greatly affect the performance of the model:
+If you are still following along, we are now nearing the final form of the denoising objective function proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The authors simplified $L_t$ by simply removing the constant term in front of the squared error term and found that removing this term did not greatly affect the performance of the model:
 
 $$L_t := \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2$$
 
@@ -288,7 +288,9 @@ Finally, let's turn our attention to the first term $L_0$. While [Ho, Jain, and 
 
 $$\hat{\theta} := \text{arg max}_\theta \ \sum_{t=2}^T \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2$$
 
-Note this objective function is simply a sum of discrete terms. To maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) goes as follows:
+At the end of all of this, we come to a framework in which we simply train a model $\epsilon_\theta$ that will seek to predict the added noise at each timestep $t$! Hence the term "denoising" in the name "Denoising diffusion probabilistic models". 
+
+Note this objective function is simply a sum of discrete terms and thus, to maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simply samples timesteps at random and updates $\theta$ according to a single step of [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent). More specifically, the full training algorithm is:
 
 $$\begin{align*}\text{Repeat until converged:} \\ \ \ \ \ \text{1.} \boldsymbol{x}_0 \sim q(\boldsymbol{x}_0) \\ \ \ \ \ \text{2.} t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
 
