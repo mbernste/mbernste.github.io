@@ -80,31 +80,23 @@ $$\begin{align*} q(\boldsymbol{x}_t) &= \int_{\boldsymbol{x}_{t-1},\dots,\boldsy
 
 Notice that this marginalization requires that we define a distribution $q(\boldsymbol{x}_0)$, which is a distribution over noiseless objects (e.g., a distribution over noiseless images). Unfortunately, we don't know what this is -- that is our whole purpose of developing a diffusion model!
 
-To get around this problem, we will employ a similar strategy as used in [variational inference](https://mbernste.github.io/posts/variational_inference/): We will _approximate_ $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ with a surrogate distribution $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. Here, $\theta$ represent a set of learnable parameters that we will be use to fit these distribution as close to each $q(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ as possible. As we will see later in the post, $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ can incorporate a neural network so that it can represent a distribution complex enough to sucessfully remove noise. 
+To get around this problem, we will employ a similar strategy as used in [variational inference](https://mbernste.github.io/posts/variational_inference/): We will _approximate_ the forward diffusion process $q(\boldsymbol{x}_{0:T})$, which is given by,
+
+$$q(\boldsymbol{x}_{0:T}) = q(\boldsymbol{x}_0)\prod_{t=1}^T q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t-1})$$
+
+using a surrogate distribution $p_\theta(\boldsymbol{x}_{0:T})$ that is instead factored by the posterior distributions (i.e., the reverse diffusion steps):
+
+$$p_\theta(\boldsymbol{x}_{0:T}) = p_\theta(\boldsymbol{x}_0)\prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
+
+Here, $\theta$ represent a set of learnable parameters that we will be use to fit $p_{\theta}(\boldsymbol{x}_{0:T})$ as close to $q(\boldsymbol{x}_{0:T})$ as possible. As we will see later in the post, these $p_{\theta}(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ distributions can incorporate a neural network so that they can represent a distribution complex enough to sucessfully remove noise. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_approximate.png" alt="drawing" width="800"/></center>
 
 <br>
 
-To be more specific, our goal will be to approximate the full diffusion process, which can be represented as a joint distribution over all intermediate noisy objects:
-
-$$q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t-1})$$
-
-where $\boldsymbol{x}\_{0:T} = \boldsymbol{x}\_0, \boldsymbol{x}\_1, \dots, \boldsymbol{x}\_T$. We will approximate this joint distribution using another joint distribution that is instead factored by the posterior distributions (i.e., the reverse diffusion steps):
-
-$$p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) = \prod_{t=1}^T p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$$
-
-From this approximation, we will obtain our approximate posterior distributions given by each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$. In short, by fitting $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$, we will obtain a set of posterior distributions, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$.
-
-Once we have these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object. More specifically, we will have "sampled" an object!
+From our approximate joint distribution $p_\theta(\boldsymbol{x}_{0:T})$, we will obtain a sequence of approximate posterior distributions, each given by $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$. With these approximate posterior distributions in hand, we can generate an object by first sampling white noise $\boldsymbol{x}\_T$ from a standard normal distribution $N(\boldsymbol{0}, \boldsymbol{I})$, and then iteratively sampling $\boldsymbol{x}\_{t-1}$ from each learned $p\_{\theta}(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_{t})$ distribution. At the end of this process we will have "transformed" the random white noise into an object. More specifically, we will have "sampled" an object!
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
-
-Let's come back to the idea that a diffusion model represents a probability distribution over some objects of interest. Here we see  that this distribution defined by our diffusion model, $p_{\theta}(\boldsymbol{x}_0)$, is the marginal distribution over all of the intermediate, noisy objects, $\boldsymbol{x}_t$, at each time step $t$ of the diffusion process:
-
-$$\begin{align*}p_{\theta}(\boldsymbol{x}) = \int_{\boldsymbol{x}_0, \dots, \boldsymbol{x}_T} p_{\theta}(\boldsymbol{x}_T) \prod_{t=1}^T p_{\theta}(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_{t}) \ d\boldsymbol{x}_0 \dots d\boldsymbol{x}_T\end{align*}$$
-
-Note this integral is hard to calculate; however, despite this fact, we can still sample from the distribution, and that sampling process is performed via the iterative denoising process we just described.
 
 The forward model
 -----------------
@@ -191,32 +183,26 @@ Thus, the reverse model becomes
 
 $$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})$$
 
-Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
--------------------------------------------------------------------------------------------------------------------
+Fitting $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$
+------------------------------------------------------------------------
 
-Diffusion models use [variational inference](https://mbernste.github.io/posts/variational_inference/) to fit $p\_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$. Recall, in variational inference, our goal is to approximate some unknown distribution $q$, with an approximate distribution $p$ by minimizing the [KL-divergence](https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence) from $p$ to $q$:
+Diffusion models employ a similar strategy as used in [variational inference](https://mbernste.github.io/posts/variational_inference/) to fit $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$. Specifically, we will seek to minimize the KL-divergence from $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$:
 
-$$\hat{p} := \text{arg min}_p \ KL(q \ \vert\vert \ p)$$
+$$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})$$
 
-<span style="color:#cf8421">_Note, in accordance with the literature, we use $p$ to denote the approximate distribution and $q$ to denote the exact distribution. However, in my prior [blog post on variational inference](https://mbernste.github.io/posts/variational_inference/), I use $q$ to denote the approximate distribution and $p$ to denote the exact distribution. My apologies for this confusion!_</span>
+A more thorough justification for this objective function and a direct connection to variational inference (and more specifically, [variational autoencoders](https://mbernste.github.io/posts/vae/)) will be made in the later section of this post titled, "Intuition and justification for the diffusion objective".
 
-In our case, we wish to learn the reverse diffusion process from the forward diffusion process, so we start with the following objective function:
+Now, let's derive a more intuitive form of this objective function. Recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing a KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), which is a function of the parameters $\theta$. For a more in-depth discussion of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/). In the case of this objective function, the ELBO is as follows (See Derivation 1 in the Appendix to this post):
 
-$$\hat{\theta} := \text{arg min}_\theta \ E_{\boldsymbol{x}_0 \sim q} \left[ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) \right]$$
-
-Note that the KL-divergence is nested within an expectation over $\boldsymbol{x}_0$. That is because our goal is to minimize the average KL-divergence when randomly selecting any given noiseless object $\boldsymbol{x}_0$.
-
-Now, let's derive a more intuitive form of this objective function. Recall from [our discussion on variational inference](https://mbernste.github.io/posts/variational_inference/) that minimizing this KL-divergence objective can be accomplished by maximizing another quantity called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), which is a function of the parameters $\theta$. For a more in-depth discussion of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/). In the case of diffusion models, this ELBO looks as follows (See Derivation 1 in the Appendix to this post):
-
-$$ KL( q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)) = \log p_\theta(\boldsymbol{x}) - \underbrace{E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}}$$
+$$ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})) = E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0)] - \underbrace{E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}}$$
 
 Thus, we seek:
 
-$$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ &= \text{arg max}_\theta \  E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]\end{align*}$$
+$$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ &= \text{arg max}_\theta \  E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{0:T}) } \right]\end{align*}$$
 
 Let's now examine the ELBO more closely. It turns out that this ELBO can be further manipulated into a form that has a term for each step of the diffusion process (See Derivation 2 in the Appendix to this post):
 
-$$\begin{align*}\text{ELBO}(\theta) &= E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1 \mid \boldsymbol{x}_0 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \mid \boldsymbol{x}_0 \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}} + \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T}\end{align*}$$
+$$\begin{align*}\text{ELBO}(\theta) &= E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log \frac{ p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0)} \right] \\ &= \underbrace{E_{\boldsymbol{x}_1, \boldsymbol{x}_0 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} + \underbrace{\sum_{t=2}^T \left[ E_{\boldsymbol{x}_t \sim q} KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}} + \underbrace{KL\left( q(\boldsymbol{x}_T \mid \boldsymbol{x}_0) \ \vert\vert \  p_\theta(\boldsymbol{x}_T) \right)}_{L_T}\end{align*}$$
 
 These terms are broken into three cagegories: 
 
@@ -299,19 +285,19 @@ Note the objective function we derived in the previous section is simply a sum o
 
 More specifically, the full training algorithm is goes as follows: Until training converges (i.e., the objective function no longer improves), we repeat the following steps:
 
-1\. Sample an item:
+\1. Sample an item:
 
 $$\boldsymbol{x}_0 \sim q(\boldsymbol{x}_0)$$ 
 
 Note that in practice, this would entail sampling an item randomly from our training set. One can also perform minibatch training, where we sample a set of items all at once.
 
-2\. Sample a random timestep, $t$, uniformly at random: 
+\2. Sample a random timestep, $t$, uniformly at random: 
 
-$$t \sim \text{Uniform}(1, \dots, T)$$
+$$t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
 
 If performing minibatch training, one would sample a separate $t$ for each $\boldsymbol{x}_0$ in the minibatch.
 
-3\. Sample Gaussian noise:
+\3. Sample Gaussian noise:
 
 $$\epsilon_t \sim N(\boldsymbol{0}, \boldsymbol{I})$$
 
@@ -325,10 +311,12 @@ Quick recap
 -----------
 
 
-Intuition and justification
----------------------------
+Intuition and justification for the diffusion objective
+-------------------------------------------------------
 
-While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may be wanting for a more rigorous theoretical justification for this framework. That is, what is the justification for fitting  $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$? And moreover, if we are interested in generating realistic objects -- that is, samples of $\boldsymbol{x}\_0$ -- then why do these two distributions _condition_ on $\boldsymbol{x}\_0$?
+While this idea of learning a denoising model that reverses a diffusion process may be intuitive at a high-level, one may be wanting for a more rigorous theoretical motivation for the objective of fitting  $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$ by minimizing the KL-divergence,
+
+
 
 I've found four [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which to understand the theoretical justification behind these models:
 
