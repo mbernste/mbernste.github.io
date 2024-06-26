@@ -606,7 +606,7 @@ $$\begin{align*}\frac{\alpha_t(1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t
 
 **Derivation 7 (Reparameterizing the $L_t$ to predict noise)**
 
-\begin{align*}L_t = \frac{1}{\sigma_t^2} \vert\vert \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t ) - \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_0, \epsilon_t) \vert\vert^2\end{align*}
+$$\begin{align*}L_t = \frac{1}{\sigma_t^2} \vert\vert \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t ) - \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_0, \epsilon_t) \vert\vert^2\end{align*}$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
