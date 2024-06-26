@@ -290,9 +290,30 @@ $$\hat{\theta} := \text{arg max}_\theta \ \sum_{t=2}^T \vert\vert \epsilon_t - \
 
 At the end of all of this, we come to a framework in which we simply train a model $\epsilon_\theta$ that will seek to predict the added noise at each timestep $t$! Hence the term "denoising" in the name "Denoising diffusion probabilistic models". 
 
-Note this objective function is simply a sum of discrete terms and thus, to maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simply samples timesteps at random and updates $\theta$ according to a single step of [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent). More specifically, the full training algorithm is:
+The training algorithm
+----------------------
 
-$$\begin{align*}\text{Repeat until converged:} \\ $\quad$ \text{1.} \boldsymbol{x}_0 \sim q(\boldsymbol{x}_0) \\ $\quad$ \text{2.} t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
+Note the objective function we derived in the previous section is simply a sum of discrete terms and thus, to maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simply samples timesteps at random and updates $\theta$ according to a single step of [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent). 
+
+More specifically, the full training algorithm is goes as follows: Until training converges (i.e., the objective function no longer improves), we repeat the following steps:
+
+\1. Sample an item:
+
+$$\boldsymbol{x}_0 \sim q(\boldsymbol{x}_0)$$ 
+
+Note that in practice, this would entail sampling an item randomly from our training set. One can also perform minibatch training, where we sample a set of items all at once.
+
+\2. Sample a random timestep, $t$, uniformly at random: 
+
+$$t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
+
+If performing minibatch training, one would sample a separate $t$ for each $\boldsymbol{x}_0$ in the minibatch.
+
+\3. Sample Gaussian noise:
+
+$$\epsilon_t \sim N(\boldsymbol{0}, \boldsymbol{I})$$
+
+If performing minibatch training, one would sample a separate $\epsilon_t$ for each $\boldsymbol{x}_0$ in the minibatch.
 
 The sampling algorithm
 ----------------------
