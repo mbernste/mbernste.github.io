@@ -270,23 +270,27 @@ $$\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) := 
 
 where $\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t)$ is now the trainable function parameterized by $\theta$ that takes as input the object $\boldsymbol{x}_t$ (which is provided by $\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t)$) and the timestep $t$. By performing this reparameterization, $L_t$ simplifies to
 
-$$L_t = \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1-\bar{\alpha}_t)} \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2 \ \text{See Derivation 7}$$
+$$L_t = \frac{\beta_t^2}{2\sigma_t^2 \alpha_t (1-\bar{\alpha}_t)} \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2$$
 
-Here we see that to minimize the objective function, our model, $\epsilon_\theta$, must accurately predict the Gaussian noise $\epsilon_t$ that was added to $\boldsymbol{x}_{t-1}$ to produce $\boldsymbol{x}_t$! In other words, the model is a _noise predictor_. Given a noisy object $\boldsymbol{x}_t$, the goal is to predict what parts of $\boldsymbol{x}_t$ is recently added noise (i.e., noise added within the last timestep) and which parts of $\boldsymbol{x}_t$ is the less noisy object $\boldsymbol{x}_{t-1}$. In the next section, we will discuss how the model $\epsilon_\theta$ will be used to _remove noise_ from each $\boldsymbol{x}_t$ in an iterative fashion to generate a new object $\boldsymbol{x}_0$. However, before we get there, let's finish our discussion of the objective function.
+See Derivation 7 in the Appendix to this post.
+
+Here we see that to minimize the objective function, our model, $\epsilon\_\theta$, must accurately predict the Gaussian noise $\epsilon\_t$ that was added to $\boldsymbol{x}\_{t-1}$ to produce $\boldsymbol{x}\_t$! In other words, the model is a _noise predictor_. Given a noisy object $\boldsymbol{x}\_t$, the goal is to predict what parts of $\boldsymbol{x}\_t$ is recently added noise (i.e., noise added within the last timestep) and which parts of $\boldsymbol{x}\_t$ is the less noisy object $\boldsymbol{x}\_{t-1}$. In the next section, we will discuss how the model $\epsilon_\theta$ will be used to _remove noise_ from each $\boldsymbol{x}\_t$ in an iterative fashion to generate a new object $\boldsymbol{x}\_0$. However, before we get there, let's finish our discussion of the objective function.
 
 We are now nearing the final form of the denoising objective function proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The authors simplified $L_t$ by simply removing the constant term in front of the squared error term and found that removing this term did not greatly affect the performance of the model:
 
-$$XXXXX$$
+$$L_t := \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2$$
 
 With this $L_t$ in hand, the full objective function becomes:
 
-$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T \left[ XXXXXX \right]}_{L_1, L_2, \dots, L_{T-1}}$$
+$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2}_{L_1, L_2, \dots, L_{T-1}}$$
 
-Finally, let's turn our attention to the first term $L_0$. While [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) propose a model for XXXXXX, in practice this term is simply removed from the objective function. Given enough timesteps (i.e., a large enough value for $T$) this first term will not greatly effect the objective function and for simplicity can be removed. The final objective function is thus simply,
+Finally, let's turn our attention to the first term $L_0$. While [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) propose a model for $p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1)$, my understanding is that in practice this term is simply removed from the objective function due to the fact that given enough timesteps (i.e., a large enough value for $T$) this first term will not greatly effect the objective function and for simplicity can be removed. The final objective function is thus simply,
 
-$$\hat{\theta} := \text{arg max}_\theta \ \underbrace{\sum_{t=2}^T \left[ XXXXXX \right]}_{L_1, L_2, \dots, L_{T-1}}$$
+$$\hat{\theta} := \text{arg max}_\theta \ \sum_{t=2}^T \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2$$
 
-Note this objective function is simply a sum of discrete terms. To maximize this function, we can maximize each term independently. The training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) 
+Note this objective function is simply a sum of discrete terms. To maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) goes as follows:
+
+$$\begin{align*}\text{Repeat until converged:} \\ \hspace{1cm} \boldsymbol{x}_0 \sim q(\boldsymbol{x}_0) \\ \hspace{1cm} t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
 
 The sampling algorithm
 ----------------------
