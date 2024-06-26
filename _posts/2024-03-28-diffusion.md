@@ -236,7 +236,7 @@ $$\begin{align*}L_t &:= E_{\boldsymbol{x}_t \sim q} \left[ KL\left(q(\boldsymbol
 
 where for ease of notation we define,
 
-$$\begin{align*}\tilde{\boldsymbol{\mu}}(\boldsymbol{x}_{0}, \epsilon_t) &:= \frac{1}{\sqrt{\alpha_t}} \left(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1- \bar{\alpha}_{t}}}\epsilon_t \right) \\ \tilde{\sigma}_t^2 &:= \frac{\beta_t \left(1 - \bar{\alpha}_{1-t}\right)}{1- \bar{\alpha}_t}\boldsymbol{I}\end{align*}$$
+$$\begin{align*}\tilde{\boldsymbol{\mu}}(\boldsymbol{x}_{0}, \epsilon_t) &:= \frac{1}{\sqrt{\alpha_t}} \left(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1- \bar{\alpha}_{t}}}\epsilon_t \right) \\ \tilde{\sigma}_t^2 &:= \frac{\beta_t \left(1 - \bar{\alpha}_{1-t}\right)}{1- \bar{\alpha}_t}\end{align*}$$
 
 Note that the above formulation of $L_t$ is now an expectation of over $\epsilon_t \sim N(\boldsymbol{0}, \boldsymbol{I})$ due to the fact that we have reparameterized $L_t$ based on observing that the previously described closed form of $q(\boldsymbol{x}_t \mid \boldsymbol{x}_0)$ implies that $\boldsymbol{x}_t$ can be sampled by first sampling $\epsilon_t \sim N(\boldsymbol{0}, \boldsymbol{I})$ and then generating $\boldsymbol{x}_t$ by passing $\boldsymbol{x}_0$ and $\epsilon_t$ into the function,
 
