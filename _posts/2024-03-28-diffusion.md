@@ -179,7 +179,7 @@ The reverse model
 
 Let's now describe the model that we will use to approximate the reverse diffusion steps, $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$. In the most general form, we will define this distribution to be a normal distribution where the mean and variance are defined by two functions of $\boldsymbol{x}_t$ and $t$:
 
-$$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \mu_\theta(\boldsymbol{x}_t, t), \Sigma_\theta(\boldsymbol{x}_t, t))$$
+$$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t), \boldsymbol{\Sigma}_\theta(\boldsymbol{x}_t, t))$$
 
 where $\boldsymbol{\mu}\_\theta(\boldsymbol{x}\_t, t)$ and $\boldsymbol{\Sigma}\_\theta(\boldsymbol{x}\_t, t)$ are two functions that take $\boldsymbol{x}\_t$ and $t$ as input and output the mean and variance respectively. These functions are parameterized by $\theta$. 
 
@@ -189,7 +189,7 @@ $$\boldsymbol{\Sigma}_\theta(\boldsymbol{x}_t, t) := \sigma_t^2 \boldsymbol{I}$$
 
 Thus, the reverse model becomes
 
-$$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \mu_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})$$
+$$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})$$
 
 Fitting $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}_0)$ via variational inference
 -------------------------------------------------------------------------------------------------------------------
@@ -290,7 +290,7 @@ $$\hat{\theta} := \text{arg max}_\theta \ \sum_{t=2}^T \vert\vert \epsilon_t - \
 
 Note this objective function is simply a sum of discrete terms. To maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) goes as follows:
 
-$$\begin{align*}\text{Repeat until converged:} \\ \hspace{1cm} \boldsymbol{x}_0 \sim q(\boldsymbol{x}_0) \\ \hspace{1cm} t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
+$$\begin{align*}\text{Repeat until converged:} \\ \ \ \ \ \text{1.} \boldsymbol{x}_0 \sim q(\boldsymbol{x}_0) \\ \ \ \ \ \text{2.} t \sim \text{Uniform}(1, \dots, T)\end{align*}$$
 
 The sampling algorithm
 ----------------------
@@ -600,6 +600,11 @@ $$\frac{\sqrt{1-\bar{\alpha}_t}}{1-\bar{\alpha}_t} = \frac{\sqrt{1-\bar{\alpha}_
 **Note 4:**
 
 $$\begin{align*}\frac{\alpha_t(1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t} &= \frac{\alpha_t - \alpha_t\bar{\alpha}_{t-1} + \beta_t}{1 - \bar{\alpha}_t} \\ &= \frac{1 - \beta_t - \bar{\alpha}_t + \beta_t}{1 - \bar{\alpha}_t} \\ &= \frac{1 - \bar{\alpha}_t}{1 - \bar{\alpha}_t} \\ &= 1 \end{align*}$$
+
+
+**Derivation 7 (Reparameterizing the $L_t$ to predict noise)**
+
+\begin{align*}L_t = \frac{1}{\sigma_t^2} \vert\vert \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t ) - \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_0, \epsilon_t) \vert\vert^2\end{align*}
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
