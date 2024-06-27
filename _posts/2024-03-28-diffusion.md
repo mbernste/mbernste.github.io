@@ -624,7 +624,9 @@ $$E_{\epsilon_t \boldsymbol{x}_0} \left[ \frac{1}{2\sigma_t^2} \lvert\lvert \fra
 
 $$E_{\epsilon_t \boldsymbol{x}_0} \left[ \frac{1}{2\sigma_t^2} \lvert\lvert \frac{1}{\sqrt{\alpha_t}} \left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) + \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_t \right) \vert\vert^2 \right]$$
 
+$$E_{\epsilon_t \boldsymbol{x}_0} \left[ \frac{1}{2\sigma_t^2} \lvert\lvert \frac{1}{\sqrt{\alpha_t}} \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \left( \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \epsilon_t \right)  \vert\vert^2 \right]$$
 
+$$E_{\epsilon_t \boldsymbol{x}_0} \left[ \frac{\beta_t}{2\sigma_t^2 \alpha_t (1-\bar{\alpha}_t)} \lvert\lvert \left( \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \epsilon_t \right)  \vert\vert^2 \right]$$
 
 ### Implementation of a diffusion model for generating MNIST digits:
 
