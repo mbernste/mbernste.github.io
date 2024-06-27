@@ -352,6 +352,8 @@ This idea is depicted schematically below (this figure is adapted from [this blo
 
 Here, $\theta^\*$ represents the maximum likelihood estimate of $\theta$ and $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO. If this lower-bound is tight, $\hat{\theta}$ will be close to $\hat{\theta}$. Although in most cases, it is difficult to know with certainty how tight this lower bound is, in practice, this strategy of maximizing the ELBO leads to good results at estimating $\theta^\*$.
 
+### As training a hierarchical variational autoencoder that uses a parameterless inference model
+
 ### As score matching
 
 Another motivation for diffusion models lies in their connection to [score matching models](https://arxiv.org/abs/1907.05600). While we will not go into great depth in this blog post (we will merely touch upon it), as it turns out, we will work out a form of the ELBO that can be viewed as an objective function that estimates the _score function_ of the true, real-world distribution $q(\boldsymbol{x}\_0))$.
@@ -616,7 +618,7 @@ $$\frac{\sqrt{1-\bar{\alpha}_t}}{1-\bar{\alpha}_t} = \frac{\sqrt{1-\bar{\alpha}_
 $$\begin{align*}\frac{\alpha_t(1-\bar{\alpha}_{t-1}) + \beta_t}{1-\bar{\alpha}_t} &= \frac{\alpha_t - \alpha_t\bar{\alpha}_{t-1} + \beta_t}{1 - \bar{\alpha}_t} \\ &= \frac{1 - \beta_t - \bar{\alpha}_t + \beta_t}{1 - \bar{\alpha}_t} \\ &= \frac{1 - \bar{\alpha}_t}{1 - \bar{\alpha}_t} \\ &= 1 \end{align*}$$
 
 
-**Derivation 7 (Reparameterizing the $L_t$ to predict noise)**
+**Derivation 7 (Reparameterizing $L_t$ as a noise-predictition term)**
 
 $$\begin{align*}L_t &= E_{\epsilon_t \boldsymbol{x}_0} \left[ \frac{1}{\sigma_t^2} \vert\vert \boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t ) - \tilde{\boldsymbol{\mu}}(\boldsymbol{x}_0, \epsilon_t) \vert\vert^2 \right] \\ &= E_{\epsilon_t \boldsymbol{x}_0} \left[ \frac{1}{2\sigma_t^2} \lvert\lvert \frac{1}{\sqrt{\alpha_t}}\left(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right) - \frac{1}{\sqrt{\alpha_t}}\left(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_t \right) \rvert\rvert^2 \right] \\ &= E_{\epsilon_t \boldsymbol{x}_0} \left[ \frac{1}{2\sigma_t^2} \lvert\lvert \frac{1}{\sqrt{\alpha_t}} \left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) + \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_t \right) \vert\vert^2 \right] \\ &= E_{\epsilon_t \boldsymbol{x}_0} \left[ \frac{1}{2\sigma_t^2} \lvert\lvert \frac{1}{\sqrt{\alpha_t}} \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \left( \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \epsilon_t \right)  \vert\vert^2 \right] \\ &= E_{\epsilon_t \boldsymbol{x}_0} \left[ \frac{\beta_t}{2\sigma_t^2 \alpha_t (1-\bar{\alpha}_t)} \lvert\lvert \left( \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) - \epsilon_t \right)  \vert\vert^2 \right]\end{align*}$$
 
