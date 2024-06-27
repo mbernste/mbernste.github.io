@@ -368,6 +368,8 @@ Now, compare this setup to the setup we have described for the diffusion model:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_graphical_model_like_VAE.png" alt="drawing" width="400"/></center>
 
+These figures were adapted from [this blog post](https://angusturner.github.io/generative_models/2021/06/29/diffusion-probabilistic-models-I.html) by Angus Turner.
+
 In the case of a diffusion model, we have an observed item $\boldsymbol{x}_0$ that we iteratively corrupt into $\boldsymbol{x}_T$. In a way, we can view $\boldsymbol{x}_T$ as a latent representation associated with $\boldsymbol{x}_T$ in a similar way that $\boldsymbol{z}$ is a latent representation of $\boldsymbol{x}$ in the VAE. Note that this is a "hierarchical" VAE since we do not associate a single latent variable with each $\boldsymbol{x}_0$, but rather a whole sequence of latent variables $\boldsymbol{x}_1, \dots, \boldsymbol{x}_T$.
 
 Moreover, the training objectives between the traditional VAE and this "hierarchical" VAE are identical. In the case of the traditional VAE, our goal is to minimize the KL-divergence from $p\_\theta(\boldsymbol{z} \mid \boldsymbol{x})$ to $q\_\phi(\boldsymbol{z} \mid \boldsymbol{x})$:
