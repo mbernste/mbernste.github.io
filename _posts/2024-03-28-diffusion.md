@@ -474,7 +474,9 @@ Much of my understanding of this material came from the following resources:
 * [This blog post](https://angusturner.github.io/generative_models/2021/06/29/diffusion-probabilistic-models-I.html) by Angus Turner
 * [This blog post](https://yang-song.net/blog/2021/score/) by Yang Song
 * [This YouTube lecture](https://www.youtube.com/watch?v=687zEGODmHA&t=1212s&ab_channel=MachineLearningatBerkeley) at UC, Berkeley
-* [This YouTube lecture](https://www.youtube.com/watch?v=HoKDTa5jHvg&ab_channel=Outlier) by Dominic Rampas  
+* [This YouTube lecture](https://www.youtube.com/watch?v=HoKDTa5jHvg&ab_channel=Outlier) by Dominic Rampas
+* [This blog post](https://jaketae.github.io/study/elbo/) by Jake Tae
+* [This blog post](https://blog.alexalemi.com/diffusion.html#extra-entropy) by Alexander A. Alemi
 
 Appendix
 --------
