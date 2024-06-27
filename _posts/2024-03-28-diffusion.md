@@ -326,9 +326,9 @@ $$KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})$$
 
 I've found four [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which to understand the theoretical justification for this objective:
 
-1. As implicitly minimizing the KL-divergence between $q(\boldsymbol{x}_0)$ and $p_\theta(\boldsymbol{x}_0)$
+1. As implicitly minimizing the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p_\theta(\boldsymbol{x}\_0)$
 2. As maximum-likelihood estimation
-3. As performing variational inference on a parameterless variational posterior
+3. As training a hierarchical variational autoencoder that uses a parameterless inference model
 4. As score-matching
 5. As breaking up a difficult problem into many easier problems
 
