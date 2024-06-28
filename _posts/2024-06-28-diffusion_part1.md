@@ -1,5 +1,5 @@
 ---
-title: 'Denoising diffusion probabilistic models'
+title: 'Denoising diffusion probabilistic models (Part 1: Definition and derivation)'
 date: 2024-03-28
 permalink: /posts/diffusion/
 tags:
@@ -8,7 +8,6 @@ tags:
   - machine learning
   - probabilistic models
 ---
-
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
