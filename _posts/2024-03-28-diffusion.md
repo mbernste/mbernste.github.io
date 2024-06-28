@@ -98,6 +98,8 @@ From our approximate joint distribution $p_\theta(\boldsymbol{x}\_{0:T})$, we wi
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
 
+As we will show towards the end of the post, the objective function that we will use to fit the full model's joint distribution $p\_{\theta}(\boldsymbol{x}\_{0:T})$ to the forward diffusion process's joint distribution $q(\boldsymbol{x}\_{0:T})$ will implicitly fit each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ to $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$. Thus, we will implictly be learning the posterior distributions of the reverse diffusion process! However, before we get there, in the next few sections we will more rigorously define and discuss the forward diffusion model and reverse diffusion model.
+
 The forward model
 -----------------
 
@@ -186,7 +188,7 @@ $$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}
 Fitting $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$
 ------------------------------------------------------------------------
 
-Diffusion models employ a similar strategy as used in [variational inference](https://mbernste.github.io/posts/variational_inference/) to fit $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$. Specifically, we will seek to minimize the KL-divergence from $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$:
+Similar in spirit to [variational inference](https://mbernste.github.io/posts/variational_inference/), diffusion models will seek to minimize the KL-divergence from $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$ to fit $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$. Specifically,:
 
 $$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}))$$
 
@@ -200,11 +202,11 @@ Notice, the first term, $E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}
 
 $$\hat{\theta} = \text{arg max}_\theta \  E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]$$
 
-We note that this second term is the expectation of the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/) with respect to $\boldsymbol{x}_0 \sim q$. Why is this term called the "evidence lower bound"? As shown in Derivation 2 in the Appendix to this post, we see that the second term shown above is a lower bound for the expected "evidence", a term for the data log-likelihood:
+We note that this second term is the expectation of the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/) with respect to $\boldsymbol{x}_0 \sim q$. Why is this term called the "evidence lower bound"? As shown in Derivation 2 in the Appendix to this post, we see that the second term shown above is a lower bound for the expected log-likelihood, otherwise known as the "evidence":
 
 $$\begin{align*} \log p_\theta(\boldsymbol{x}) &\geq E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ \implies E_{\boldsymbol{x}_0 \sim q}\left[ \log p_\theta(\boldsymbol{x}) \right] &\geq E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ &\geq E_{\boldsymbol{x}_0 \sim q}\left[ \text{ELBO}(\theta) \right] \end{align*}$$
 
-Thus, by maximizing the expectation of the ELBO, we implicitly maximize a lower bound of the expected data log-likelihood. We will discuss this further later in the later section of this post titled, "Intuition and justification for the diffusion objective".
+Thus, by maximizing the expectation of the ELBO with respect to $\theta$, we are implicitly maximizing a lower bound of $\log p_\theta(\boldsymbol{x}_0)$, so we can view this procedure as doing approximate maximum likelihood estimation! We will discuss this idea further later in the later section of this post titled, "Intuition and justification for the diffusion objective".
 
 Let's now examine the ELBO more closely. It turns out that this ELBO can be further manipulated into a form that has a term for each step of the diffusion process (See Derivation 3 in the Appendix to this post):
 
@@ -213,14 +215,14 @@ $$\begin{align*}\text{ELBO}(\theta) &= E_{\boldsymbol{x}_{0:T} \sim q}\left[ \lo
 These terms are broken into three cagegories: 
 
 1. $L\_0$ is the probability the model gives the data conditioned on the very first diffusion step. In the reverse diffusion process, this is the last step required to transform the noise into the original image. This term is called the **reconstruction term** because it provides high probility if the model can succesfully predict the original noiseless image $\boldsymbol{x}\_0$ from $\boldsymbol{x}\_1$, which is the result of the first iteration of the diffusion process. 
-2. $L\_1, \dots, L\_{T-1}$ are terms that measure how well the model is performing reverse diffusion. That is, it asking how well the posterior probabilities specified by the model, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$, match the posterior probabilities $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$. 
-3. $L_T$ simply measures how well the result of the noisy diffusion process, which theoretically approaches a normal distribution, matches the noise distribution from which we seed the reverse diffusion process, which in our case, we define to be a normal distribution.
+2. $L\_1, \dots, L\_{T-1}$ are terms that measure how well the model is performing reverse diffusion. That is, it asking how well the posterior probabilities specified by the model, $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$, are pushing the object closer to $\boldsymbol{x}_0$ according to the probabilities $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t, \boldsymbol{x}\_0)$. 
+3. $L_T$ simply measures how well the result of the forward diffusion process, $q(\boldsymbol{x}\_0)$, which theoretically approaches a standard normal distribution, matches the distribution from which we seed the reverse diffusion process, $p\_\theta(\boldsymbol{x}\_0)$. This objective is explicitly minimized from the outset because we explicitly define $p\_\theta(\boldsymbol{x}\_0)$ to be a standard normal distribution.
 
-By breaking up the ELBO into these terms, we can simplify it into a closed form expression. Let's start with the last term $L_T$. Recall that we define $p\_\theta(\boldsymbol{x}_T)$ to be a standard normal distribution that does not incorporate the model parameters. That is,
+Now we show that by breaking up the ELBO into these discrete terms, we can simplify the whole thing into a closed form expression. Let's start with the last term $L_T$. Recall that we define $p\_\theta(\boldsymbol{x}\_T)$ to be a standard normal distribution that does not incorporate any model parameters. That is,
 
 $$p_\theta(\boldsymbol{x}_T) := N(\boldsymbol{x}_T; \boldsymbol{0}, \boldsymbol{I})$$
 
-Thus we see that the last term, $L_T$, does not depend on the model parameters, we can ignore this term when maximizing the ELBO. Thus, our task will be to find:
+Because it does not incorporate any parameters, we can ignore this term when maximizing the ELBO with respect to $\theta$. Thus, our task will be to find:
 
 $$\hat{\theta} := \text{arg max}_\theta \ \underbrace{E_{\boldsymbol{x}_1 \sim q} \left[ p_\theta(\boldsymbol{x}_0 \mid \boldsymbol{x}_1) \right]}_{L_0} +  \underbrace{\sum_{t=2}^T E_{\boldsymbol{x}_t, \boldsymbol{x}_0 \sim q} \left[ KL \left( q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t, \boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) \right) \right]}_{L_1, L_2, \dots, L_{T-1}}$$
 
@@ -332,13 +334,16 @@ $$KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})$$
 
 I've found four [perspectives](https://mbernste.github.io/posts/understanding_3d/) from which to understand the theoretical justification for this objective:
 
-1. As implicitly minimizing the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p_\theta(\boldsymbol{x}\_0)$
-2. As maximum-likelihood estimation
-3. As training a hierarchical variational autoencoder that uses a parameterless inference model
-4. As score-matching
-5. As breaking up a difficult problem into many easier problems
+1. As implicitly minimizing the KL-divergence between each $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ and $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$
+2. As implicitly minimizing the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p_\theta(\boldsymbol{x}\_0)$
+3. As maximum-likelihood estimation
+4. As training a hierarchical variational autoencoder that uses a parameterless inference model
+5. As score-matching
+6. As breaking up a difficult problem into many easier problems
 
 Let's go through each of them.
+
+### As implicitly minimizing the KL-divergence between each $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ and $p\_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}\_t)$
 
 ### As implicitly minimizing the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p\_\theta(\boldsymbol{x}\_0)$
 
