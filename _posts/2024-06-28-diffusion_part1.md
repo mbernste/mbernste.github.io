@@ -326,7 +326,7 @@ Once we've trained the error-prediction model, $\epsilon\_\theta(\boldsymbol{x}_
 
 $$\boldsymbol{x}_T \sim N(\boldsymbol{0}, \boldsymbol{I})$$
 
-Then, from steps $t = T-1, \dots, 1$, we iteratively sample each $\boldsymbol{x}\_t$ from $p_\theta(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. To do so, recall that $p_\theta(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ is a normal distribution,
+Then, from steps $t = T-1, \dots, 1$, we iteratively sample each $\boldsymbol{x}\_t$ from $p\_\theta(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. To do so, recall that $p_\theta(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ is a normal distribution,
 
 $$\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right)$$
 
@@ -344,6 +344,7 @@ The final step, to sample $\boldsymbol{x}\_0$ from $\boldsymbol{x}\_1$, entails 
 
 $$\boldsymbol{x}_t := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right)$$
 
+In essence, in this final step, we simply output the mean of $p\_\theta(\boldsymbol{x}\_0 \mid \boldsymbol{x}\_1)$.
 
 Applying a diffusion model on MNIST
 -----------------------------------
