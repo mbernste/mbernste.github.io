@@ -191,7 +191,7 @@ To fit $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$, diffusi
 
 $$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}))$$
 
-As we will show [in [Part 2 of this series](https://mbernste.github.io/posts/diffusion_part2/)], this objective function will implicitly fit each $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. Thus, we will implicitly arrive at approximate posterior distributions that we can use to reverse the forward diffusion process.
+As we will show in [Part 2 of this series](https://mbernste.github.io/posts/diffusion_part2/), this objective function will implicitly fit each $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. Thus, we will implicitly arrive at approximate posterior distributions that we can use to reverse the forward diffusion process.
 
 For now, let's attempt to derive a closed form for this objective function. Following Derivation 1 in the Appendix to this post, we can write this KL-divergence as:
 
