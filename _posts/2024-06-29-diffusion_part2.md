@@ -1,5 +1,15 @@
+---
+title: 'Denoising diffusion probabilistic models (Part 2: Theoretical justification)'
+date: 2024-03-29
+permalink: /posts/diffusion/
+tags:
+  - tutorial
+  - deep learning
+  - machine learning
+  - probabilistic models
+---
 
-
+_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
 
 Introduction
