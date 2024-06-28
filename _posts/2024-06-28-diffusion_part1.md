@@ -320,6 +320,28 @@ $$\nabla_\theta E_{\epsilon_{t'}, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_{
 The sampling algorithm
 ----------------------
 
+Once we've trained the error-prediction model, $\epsilon\_\theta(\boldsymbol{x}_0, t)$, we can use it to execute the reverse diffusion process that will generate a new sample from noise. We start by sampling pure noise $\boldsymbol{x}\_T$,
+
+$$\boldsymbol{x}_T \sim N(\boldsymbol{0}, \boldsymbol{I})$$
+
+Then, from steps $t = T-1, \dots, 1$, we iteratively sample each $\boldsymbol{x}\_t$ from $p_\theta(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$. To do so, recall that $p_\theta(\boldsymbol{x}\_t \mid \boldsymbol{x}\_{t+1})$ is a normal distribution,
+
+$$\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right)$$
+
+The variance is defined to be a constant, $\sigma_t^2\boldsymbol{I}$. Thus, to sample from this distribution, we can perform the following steps:
+
+1\. Sample $\boldsymbol{z}$ from a standard normal distribution:
+
+$$\boldsymbol{z} \sim N(\boldsymbol{0}, \boldsymbol{I})$$
+
+2\. Transform $\boldsymbol{z}$ into $\boldsymbol{x}\_t$:
+
+$$\boldsymbol{x}_t := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right) + \sigma_t\boldsymbol{z}$$
+
+The final step, to sample $\boldsymbol{x}\_0$ from $\boldsymbol{x}\_1$, entails removing the predicted noise from $\boldsymbol{x}\_1$ without adding any addition noise. That is,
+
+$$\boldsymbol{x}_t := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right)$$
+
 
 Applying a diffusion model on MNIST
 -----------------------------------
