@@ -198,7 +198,7 @@ For now, let's attempt to derive a closed form for this objective function. Foll
 
 $$ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}) ) = E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0) \right] - E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]$$
 
-Notice, the first term, $E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0) \right]$ does not depend on our parameters $\theta$. The second quantity can be viewed as a function of the parameters $\theta$. Because there is a negative sign in front of the second term, we see that in order to minimize the KL-divergence, we must maximize this second term. Thus, we seek:
+Notice, the first term, $E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0) \right]$, does not depend on our parameters $\theta$. The second term can be viewed as a function of the parameters $\theta$. Because there is a negative sign in front of this second term, we see that in order to minimize the KL-divergence, we must maximize it. Thus, we seek:
 
 $$\hat{\theta} = \text{arg max}_\theta \  E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]$$
 
