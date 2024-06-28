@@ -9,7 +9,7 @@ tags:
   - probabilistic models
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+_Diffusion models are a family of state-of-the-art probabilistic generative models that have achieved ground breaking results in a number of fields ranging from image generation to protein structure design. In Part 1 of this two-part series, I will walk through the denoising diffusion probabilistic model (DDPM) as presented by Ho, Jain, and Abbeel (2020). Specifically, we will walk through the model definition, the derivation of the objective function, and the training and sampling algorithms. We will conclude by walking through an implementation of a simple diffusion model in PyTorch and apply it to the MNIST dataset of hand-written digits._
 
 Introduction
 ------------
@@ -344,7 +344,7 @@ The final step, to sample $\boldsymbol{x}\_0$ from $\boldsymbol{x}\_1$, entails 
 
 $$\boldsymbol{x}_t := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right)$$
 
-In essence, in this final step, we simply output the mean of $p\_\theta(\boldsymbol{x}\_0 \mid \boldsymbol{x}\_1)$.
+In essence, in this final step, we simply output the mean of $p\_\theta(\boldsymbol{x}\_0 \mid \boldsymbol{x}\_1)$, which is also the mode (since it is a Gaussian distribution).
 
 Applying a diffusion model on MNIST
 -----------------------------------
