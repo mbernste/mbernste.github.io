@@ -188,13 +188,13 @@ $$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}
 Fitting $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$
 ------------------------------------------------------------------------
 
-Similar in spirit to [variational inference](https://mbernste.github.io/posts/variational_inference/), diffusion models will seek to minimize the KL-divergence from $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$ to fit $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$. Specifically,:
+To fit $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$, diffusion models will seek to minimize the KL-divergence from $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$:
 
 $$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}))$$
 
-A more thorough justification for this objective function and a direct connection to variational inference (and more specifically, [variational autoencoders](https://mbernste.github.io/posts/vae/)) will be made in the later section of this post titled, "Intuition and justification for the diffusion objective".
+As we will show towards the end of the post in the section titled, "Intuition and justification for the diffusion objective", this objective function will implicitly fit each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ to $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$. Thus, we will implicitly arrive at approximate posterior distributions that we can use to reverse the forward diffusion process.
 
-Now, let's derive a more intuitive form of this objective function. Following Derivation 1 in the Appendix to this post, we can write this KL-divergence as:
+For now, let's attempt to derive a closed form for this objective function. Following Derivation 1 in the Appendix to this post, we can write this KL-divergence as:
 
 $$ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}) ) = E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0) \right] - E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]$$
 
@@ -206,7 +206,7 @@ We note that this second term is the expectation of the [evidence lower bound (E
 
 $$\begin{align*} \log p_\theta(\boldsymbol{x}) &\geq E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ \implies E_{\boldsymbol{x}_0 \sim q}\left[ \log p_\theta(\boldsymbol{x}) \right] &\geq E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ &\geq E_{\boldsymbol{x}_0 \sim q}\left[ \text{ELBO}(\theta) \right] \end{align*}$$
 
-Thus, by maximizing the expectation of the ELBO with respect to $\theta$, we are implicitly maximizing a lower bound of $\log p_\theta(\boldsymbol{x}_0)$, so we can view this procedure as doing approximate maximum likelihood estimation! We will discuss this idea further later in the later section of this post titled, "Intuition and justification for the diffusion objective".
+Thus, by maximizing the expectation of the ELBO with respect to $\theta$, we are implicitly maximizing a lower bound of $\log p_\theta(\boldsymbol{x}_0)$, so we can view this procedure as doing approximate maximum likelihood estimation! We will discuss this idea further in the later section of this post titled, "Intuition and justification for the diffusion objective".
 
 Let's now examine the ELBO more closely. It turns out that this ELBO can be further manipulated into a form that has a term for each step of the diffusion process (See Derivation 3 in the Appendix to this post):
 
@@ -286,49 +286,11 @@ $$\hat{\theta} := \text{arg max}_\theta \ \sum_{t=2}^T E_{\epsilon_t, \boldsymbo
 
 At the end of all of this, we come to a framework in which we simply train a model $\epsilon_\theta$ that will seek to predict the added noise at each timestep $t$! Hence the term "denoising" in the name "Denoising diffusion probabilistic models". 
 
-The training algorithm
-----------------------
-
-Note the objective function we derived in the previous section is simply a sum of discrete terms and thus, to maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simply  timesteps at random and updates $\theta$ according to a single step of [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent). 
-
-More specifically, the full training algorithm is goes as follows: Until training converges (i.e., the objective function no longer improves), we repeat the following steps:
-
-1\. Sample a random timestep, $t'$, uniformly at random: 
-
-$$t' \sim \text{Uniform}(1, \dots, T)$$
-
-2\. Sample Gaussian noise, $\epsilon'_t$:
-
-$$\epsilon'_t \sim N(\boldsymbol{0}, \boldsymbol{I})$$
-
-3\. Sample an item:
-
-$$\boldsymbol{x}'_0 \sim q(\boldsymbol{x}_0)$$ 
-
-In practice, this would entail sampling an item randomly from our training set. 
-
-4\. Compute the gradient,
-
-$$\nabla_\theta \left[ \vert\vert \epsilon'_t - \epsilon_\theta(\boldsymbol{x}'_t(\boldsymbol{x}_0, \epsilon'_t), t') \vert\vert^2 \right]$$
-
-Note, that because we randomly sampled an item, $\boldsymbol{x}'_0$, we are essentially performing stochastic gradient ascent, since in expectation, the above gradient would be equal to the gradient of the objective function we derived in the previous section:
-
-$$\nabla_\theta E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2 \right]$$
-
-5\. Update the parameters according to the gradient. This can be done by taking a "vanilla" gradient step or by using a more advanced variant of gradent ascent such as [Adam](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam).
-
-The sampling algorithm
-----------------------
-
-
-Quick recap
------------
-
 
 Intuition and justification for the diffusion objective
 -------------------------------------------------------
 
-While the core idea of learning a denoising model that reverses a diffusion process and then using that denoising model to produce samples may be intuitive at a high-level, one may be wanting for a more rigorous theoretical motivation for the objective function used to fit these models that entails fitting $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$ by minimizing the KL-divergence,
+While the core idea of learning a denoising model that reverses a diffusion process and then using that denoising model to produce samples may be intuitive at a high-level, one may be wanting for a more rigorous theoretical motivation for the objective function that entails fitting $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$ by minimizing their KL-divergence,
 
 $$KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})$$
 
@@ -411,6 +373,44 @@ Finally, it will turn out that we can view the process of reversing the diffusio
 Another, more high-level, reason why diffusion models tend to perform better than other methods, such as [variational autoencoders](https://mbernste.github.io/posts/vae/), is that diffusion models break up a difficult problem into a series of easier problems. That is, unlike variational autoencoders, where we train a model to produce an object all at once, in diffusion models, we train the model to produce the object step-by-step. Intuitively, we train a model to "sculpt" an object out of noise in a step-wise fashion rather than generate the object in one fell-swoop. 
 
 This step-wise approach is advantageous because it enables the model to learn features of objects at different levels of resolution. At the end of the reverse diffusion process (i.e., the sampling process), the model identifies broad, vague features of an object within the noise. At later steps of the reverse diffusion process, it fills in smaller details of the object by removing the last remaining noise.
+
+The training algorithm
+----------------------
+
+Note the objective function we derived in the previous section is simply a sum of discrete terms and thus, to maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simply  timesteps at random and updates $\theta$ according to a single step of [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent). 
+
+More specifically, the full training algorithm is goes as follows: Until training converges (i.e., the objective function no longer improves), we repeat the following steps:
+
+1\. Sample a random timestep, $t'$, uniformly at random: 
+
+$$t' \sim \text{Uniform}(1, \dots, T)$$
+
+2\. Sample Gaussian noise, $\epsilon'_t$:
+
+$$\epsilon'_t \sim N(\boldsymbol{0}, \boldsymbol{I})$$
+
+3\. Sample an item:
+
+$$\boldsymbol{x}'_0 \sim q(\boldsymbol{x}_0)$$ 
+
+In practice, this would entail sampling an item randomly from our training set. 
+
+4\. Compute the gradient,
+
+$$\nabla_\theta \left[ \vert\vert \epsilon'_t - \epsilon_\theta(\boldsymbol{x}'_t(\boldsymbol{x}_0, \epsilon'_t), t') \vert\vert^2 \right]$$
+
+Note, that because we randomly sampled an item, $\boldsymbol{x}'_0$, we are essentially performing stochastic gradient ascent, since in expectation, the above gradient would be equal to the gradient of the objective function we derived in the previous section:
+
+$$\nabla_\theta E_{\epsilon_t, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_t - \epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \vert\vert^2 \right]$$
+
+5\. Update the parameters according to the gradient. This can be done by taking a "vanilla" gradient step or by using a more advanced variant of gradent ascent such as [Adam](https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam).
+
+The sampling algorithm
+----------------------
+
+
+Quick recap
+-----------
 
 Applying a diffusion model on MNIST
 -----------------------------------
