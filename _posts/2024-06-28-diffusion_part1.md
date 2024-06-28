@@ -1,7 +1,7 @@
 ---
 title: 'Denoising diffusion probabilistic models (Part 1: Definition and derivation)'
 date: 2024-03-28
-permalink: /posts/diffusion/
+permalink: /posts/diffusion_part1/
 tags:
   - tutorial
   - deep learning
