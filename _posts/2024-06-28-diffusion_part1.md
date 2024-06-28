@@ -184,6 +184,8 @@ Thus, the reverse model becomes
 
 $$p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t) := N(\boldsymbol{x}_{t-1}; \boldsymbol{\mu}_\theta(\boldsymbol{x}_t, t), \sigma_t^2\boldsymbol{I})$$
 
+The authors found that setting $\sigma_t := \beta_t$ worked well in practice.
+
 Fitting $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$
 ------------------------------------------------------------------------
 
