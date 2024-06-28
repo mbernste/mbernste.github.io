@@ -98,7 +98,7 @@ From our approximate joint distribution $p_\theta(\boldsymbol{x}\_{0:T})$, we wi
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
 
-As we will show towards the end of the post, the objective function that we will use to fit the full model's joint distribution $p\_{\theta}(\boldsymbol{x}\_{0:T})$ to the forward diffusion process's joint distribution $q(\boldsymbol{x}\_{0:T})$ will implicitly fit each $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ to $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$. Thus, we will implictly be learning the posterior distributions of the reverse diffusion process! However, before we get there, in the next few sections we will more rigorously define and discuss the forward diffusion model and reverse diffusion model.
+As we will show towards the end of the post, the objective function that we will use to fit the full model's joint distribution $p\_{\theta}(\boldsymbol{x}\_{0:T})$ to the forward diffusion process's joint distribution $q(\boldsymbol{x}\_{0:T})$ will implicitly fit each $p_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. Thus, we will implictly be learning the posterior distributions of the reverse diffusion process! However, before we get there, in the next few sections we will more rigorously define and discuss the forward diffusion model and reverse diffusion model.
 
 The forward model
 -----------------
