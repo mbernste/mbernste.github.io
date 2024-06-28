@@ -194,17 +194,17 @@ A more thorough justification for this objective function and a direct connectio
 
 Now, let's derive a more intuitive form of this objective function. Following Derivation 1 in the Appendix to this post, we can write this KL-divergence as:
 
-$$ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}) ) = E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0) \right] - \underbrace{E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]}_{\text{ELBO}}$$
+$$ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}) ) = E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0) \right] - E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]$$
 
-Notice, the first term, $E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0) \right]$ does not depend on our parameters $\theta$. The second quantity, called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), a function of the parameters $\theta$. Because there is a negative sign in front of the ELBO, we see that in order to minimize the KL-divergence, we must maximize the ELBO. Thus, we seek:
+Notice, the first term, $E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0) \right]$ does not depend on our parameters $\theta$. The second quantity, called the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/), a function of the parameters $\theta$. Because there is a negative sign in front of the second term, we see that in order to minimize the KL-divergence, we must maximize this second term. Thus, we seek:
 
-$$\begin{align*}\hat{\theta} &:= \text{arg max}_\theta \ \text{ELBO}(\theta) \\ &= \text{arg max}_\theta \  E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]\end{align*}$$
+$$\hat{\theta} = \text{arg max}_\theta \  E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]$$
 
-Why is this term called the "evidence lower bound"? As shown in Derivation 2 in the Appendix to this post, we see that the ELBO shown above is a lower bound for the data log-likelihood, which is also called the "evidence":
+We note that this second term is the expectation of the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/) with respect to $\boldsymbol{x}_0 \sim q$. Why is this term called the "evidence lower bound"? As shown in Derivation 2 in the Appendix to this post, we see that the second term shown above is a lower bound for the expected "evidence", a term for the data log-likelihood:
 
-$$\begin{align*} \log p_\theta(\boldsymbol{x}) &\geq E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ \implies E_{boldsymbol{x}_0 \sim q}\left[ \log p_\theta(\boldsymbol{x}) \right] &\geq E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ &\geq \text{ELBO}(\theta) \end{align*}$$
+$$\begin{align*} \log p_\theta(\boldsymbol{x}) &\geq E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ \implies E_{\boldsymbol{x}_0 \sim q}\left[ \log p_\theta(\boldsymbol{x}) \right] &\geq E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ &\geq E_{\boldsymbol{x}_0 \sim q}\left[ \text{ELBO}(\theta) \right] \end{align*}$$
 
-For a more in-depth discussion of the ELBO, see [my previous blog post](https://mbernste.github.io/posts/elbo/). 
+Thus, by maximizing the expectation of the ELBO, we implicitly maximize a lower bound of the expected data log-likelihood. We will discuss this further later in the later section of this post titled, "Intuition and justification for the diffusion objective".
 
 Let's now examine the ELBO more closely. It turns out that this ELBO can be further manipulated into a form that has a term for each step of the diffusion process (See Derivation 3 in the Appendix to this post):
 
