@@ -328,7 +328,7 @@ Then, from steps $t = T-1, \dots, 1$, we iteratively sample each $\boldsymbol{x}
 
 $$\boldsymbol{\mu}_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) := \frac{1}{\sqrt{\alpha_t}}\left( \boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t) - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}}\epsilon_\theta(\boldsymbol{x}_t(\boldsymbol{x}_0, \epsilon_t), t) \right)$$
 
-The variance of this normal distribution is defined to be the constant, $\sigma_t^2\boldsymbol{I}$ (where in practice, $\sigma_t$ is set to $\beta_t$. Thus, to sample from this distribution, we can perform the following steps:
+The variance of this normal distribution is defined to be the constant, $\sigma_t^2\boldsymbol{I}$ (where in practice, $\sigma_t$ is set to $\beta_t$). Thus, to sample from this distribution, we can perform the following steps:
 
 1\. Sample $\boldsymbol{z}$ from a standard normal distribution:
 
