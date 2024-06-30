@@ -24,9 +24,9 @@ At the time of this writing, diffusion models are state-of-the-art models used f
 
 Diffusion models are also being explored in biomedical research. For example, [RFDiffusion](https://www.nature.com/articles/s41586-023-06415-8) and [Chroma](https://www.nature.com/articles/s41586-023-06728-8) are two methods that use diffusion models to generate novel protein structures. Diffusion models are [also being explored](https://www.nature.com/articles/s41551-024-01193-8) for synthetic biomedical data generation.
 
-Because of these models' incredible performance in image generation, and their burgeoning use-cases in computational biology, I was curious to understand how they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. In this post, I will step through my newfound understanding of diffusion models regarding both their mathematical theory and practical implementation. 
+Because of these models' incredible performance in image generation, and their burgeoning use-cases in computational biology, I was curious to understand how they work. While I have a relatively good understanding into the theory behind the variational autoencoder, diffusion models presented a bigger challenge as the mathematics is more involved. In this two-part series of posts, I will step through my newfound understanding of diffusion models regarding both their mathematical theory and practical implementation. 
 
-In Part 1 of a two-part series, I will walk through the denoising diffusion probabilistic model (DDPM) as presented by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The mathematical derivations are somewhat lengthy and I present them in the Appendix to the post so that they do not distract from the core ideas behind the model. We will conclude by walking through an implementation of a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits. In [Part 2 of this series](https://mbernste.github.io/posts/diffusion_part2/), we will dig deeper into the justification and intuition behind the objective function used to train diffusion models. Hopefully, these posts will serve others who are learning this material like myself. Please let me know if you find anything wrong! 
+In Part 1 of the series, I will walk through the denoising diffusion probabilistic model (DDPM) as presented by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf). The mathematical derivations are somewhat lengthy and I present them in the Appendix to the post so that they do not distract from the core ideas behind the model. We will conclude by walking through an implementation of a simple diffusion model in [PyTorch](https://pytorch.org/) and apply it to the [MNIST dataset](https://en.wikipedia.org/wiki/MNIST_database) of hand-written digits. In [Part 2 of this series](https://mbernste.github.io/posts/diffusion_part2/), we will dig deeper into the justification and intuition behind the objective function used to train diffusion models. Hopefully, these posts will serve others who are learning this material like myself. Please let me know if you find anything wrong! 
 
 Diffusion models as learning to reverse a diffusion process
 -----------------------------------------------------------
@@ -97,7 +97,7 @@ From our approximate joint distribution $p_\theta(\boldsymbol{x}\_{0:T})$, we wi
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_generation_korra.png" alt="drawing" width="800"/></center>
 
-In [Part 2 of this series](https://mbernste.github.io/posts/diffusion_part2/), we will show how the objective function that we will use to fit the full model's joint distribution $p\_{\theta}(\boldsymbol{x}\_{0:T})$ to the forward diffusion process's joint distribution $q(\boldsymbol{x}\_{0:T})$ will implicitly fit each $p_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. Thus, we will implictly be learning the posterior distributions of the reverse diffusion process! However, before we get there, we will more rigorously define and discuss the forward diffusion model and reverse diffusion model.
+In the next sections, we will more rigorously define and discuss the forward diffusion model and reverse diffusion model.
 
 The forward model
 -----------------
@@ -193,9 +193,7 @@ To fit $p\_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$, diffusi
 
 $$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}))$$
 
-As we will show in [Part 2 of this series](https://mbernste.github.io/posts/diffusion_part2/), this objective function will implicitly fit each $p\_\theta(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$ to $q(\boldsymbol{x}\_{t-1} \mid \boldsymbol{x}\_t)$. Thus, we will implicitly arrive at approximate posterior distributions that we can use to reverse the forward diffusion process.
-
-For now, let's attempt to derive a closed form for this objective function. Following Derivation 1 in the Appendix to this post, we can write this KL-divergence as:
+Let's attempt to derive a closed form for this objective function. Following Derivation 1 in the Appendix to this post, we can write this KL-divergence as:
 
 $$ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}) ) = E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}_0) \right] - E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]$$
 
@@ -203,7 +201,7 @@ Notice, the first term, $E_{\boldsymbol{x}_0 \sim q}\left[ \log q(\boldsymbol{x}
 
 $$\hat{\theta} = \text{arg max}_\theta \  E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]$$
 
-We note that this second term is the expectation of the [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/) with respect to $\boldsymbol{x}_0 \sim q$. Why is this term called the "evidence lower bound"? As shown in Derivation 2 in the Appendix to this post, we see that the second term shown above is a lower bound for the expected log-likelihood, otherwise known as the "evidence":
+We note that this second term is the expectation of an [evidence lower bound (ELBO)](https://mbernste.github.io/posts/elbo/) with respect to $\boldsymbol{x}_0 \sim q$. Why is this term called an "evidence lower bound"? As shown in Derivation 2 in the Appendix to this post, we see that the second term shown above is a lower bound for the expected log-likelihood, otherwise known as the "evidence":
 
 $$\begin{align*} \log p_\theta(\boldsymbol{x}) &\geq E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ \implies E_{\boldsymbol{x}_0 \sim q}\left[ \log p_\theta(\boldsymbol{x}) \right] &\geq E_{\boldsymbol{x}_{0:T} \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right] \\ &\geq E_{\boldsymbol{x}_0 \sim q}\left[ \text{ELBO}(\theta) \right] \end{align*}$$
 
