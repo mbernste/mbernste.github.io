@@ -31,12 +31,11 @@ While the core idea of learning a denoising model that reverses a diffusion proc
 
 In this post we will discuss several [perspectives](https://mbernste.github.io/posts/understanding_3d/) to motivate and understand this objective function. Specifically, we will dive into six different perspectives by view the act of minimizing this objective function as follows:
 
-1. As implicitly minimizing the KL-divergence between each $q(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$ and $p_\theta(\boldsymbol{x}_{t-1} \mid \boldsymbol{x}_t)$
-2. As implicitly minimizing the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p_\theta(\boldsymbol{x}\_0)$
-3. As maximum-likelihood estimation
-4. As training a hierarchical variational autoencoder that uses a parameterless inference model
-5. As score-matching
-6. As breaking up a difficult problem into many easier problems
+1. As implicitly minimizing the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p_\theta(\boldsymbol{x}\_0)$
+2. As maximum-likelihood estimation
+3. As training a hierarchical variational autoencoder that uses a parameterless inference model
+4. As score-matching
+5. As breaking up a difficult problem into many easier problems
 
 Let's go through each of them.
 
