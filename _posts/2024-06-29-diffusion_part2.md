@@ -15,7 +15,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-In [Part 1]() of this series, we introduced the denoising diffusion probabilistic model for modeling and sampling from complex distributions. As a brief review, diffusion models learn how to reverse a diffusion process. Specifically, given a data object $\boldsymbol{x}$, this diffusion process iteratively adds noise to $\boldsymbol{x}$ until it becomes pure white noise. The goal of a diffusion model is to learn to reverse this diffusion process via a model $p_\theta$ parameterized by parameters $\theta$: 
+In [Part 1](https://mbernste.github.io/posts/diffusion_part1/) of this series, we introduced the denoising diffusion probabilistic model for modeling and sampling from complex distributions. As a brief review, diffusion models learn how to reverse a diffusion process. Specifically, given a data object $\boldsymbol{x}$, this diffusion process iteratively adds noise to $\boldsymbol{x}$ until it becomes pure white noise. The goal of a diffusion model is to learn to reverse this diffusion process via a model $p_\theta$ parameterized by parameters $\theta$: 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_example_korra_forward_reverse_distributions_approximate.png" alt="drawing" width="800"/></center>
 
@@ -69,7 +69,7 @@ Here, $\theta^\*$ represents the maximum likelihood estimate of $\theta$ and $\h
 
 One can also view a diffusion model as a sort of strange hierarchical [variational autoencoder (VAE)](https://mbernste.github.io/posts/vae/). As a brief review, recall that in the VAE framework, we assume that every data item/object that we wish to model, $\boldsymbol{x}$, is associated with a latent variable $\boldsymbol{z}$. We specify an inference model, $q\_\phi(\boldsymbol{z} \mid \boldsymbol{x})$, that approximates the posterior distribution $p\_\theta(\boldsymbol{z} \mid \boldsymbol{x})$. Note that $q\_\phi(\boldsymbol{z} \mid \boldsymbol{x})$ is parameterized by a set of parameters $\phi$. One can view $q\_\phi(\boldsymbol{z} \mid \boldsymbol{x})$ as a sort of _encoder_; given a data item $\boldsymbol{x}$, we encode it into a lower-dimensional vector $\boldsymbol{z}$. We also specify a generative model, $p\_\theta(\boldsymbol{x} \mid \boldsymbol{z})$, that given a lower-dimensional, latent vector $\boldsymbol{z}$, we can generate $\boldsymbol{x}$ by sampling. If we have encoded $\boldsymbol{x}$ into $\boldsymbol{z}$, sampling from the distribution $p\_\theta(\boldsymbol{x} \mid \boldsymbol{z})$ will produce objects that resemble the original $\boldsymbol{x}$. Thus $p\_\theta(\boldsymbol{x} \mid \boldsymbol{z})$ can be viewed as a _decoder_. This process is depicted schematically below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_VAE_graphical_model.png" alt="drawing" width="180"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_VAE_graphical_model.png" alt="drawing" width="170"/></center>
 
 <br>
 
@@ -117,3 +117,5 @@ This step-wise approach is advantageous because it enables the model to learn fe
 ## Appendix
 
 ### Derivation 1 (Deriving an upper bound over $KL(q(\boldsymbol{x}\_0) \ \vert\vert \ p\_\theta(\boldsymbol{x}\_0))):
+
+$$\begin{align*}KL(q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})) = E_{\boldsymbol{x}_{0:T} \sim q} \left[ \log \frac{q(\boldsymbol{x}_{0:T})}{p_\theta(\boldsymbol{x}_{0:T})} \right] \end{align*}$$
