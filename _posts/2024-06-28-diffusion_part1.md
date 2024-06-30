@@ -311,7 +311,7 @@ In practice, this would entail sampling an item randomly from our training set.
 
 $$\nabla_\theta \left[ \vert\vert \epsilon'_t - \epsilon_\theta(\boldsymbol{x}'_t(\boldsymbol{x}_0, \epsilon'_t), t') \vert\vert^2 \right]$$
 
-Note, that because we randomly sampled an item, $\boldsymbol{x}'_0$, and Gaussian noise, $\epsilon_{t'}$, we are performing stochastic gradient ascent, since in expectation, the above gradient would be equal to the gradient of the objective function we derived in the previous section:
+Note, that because we randomly sampled an item, $\boldsymbol{x}'\_0$, and Gaussian noise, $\epsilon\_{t'}$, we are performing stochastic gradient ascent, since in expectation, the above gradient would be equal to the gradient of the objective function we derived in the previous section:
 
 $$\nabla_\theta E_{\epsilon_{t'}, \boldsymbol{x}_0} \left[ \vert\vert \epsilon_{t'} - \epsilon_\theta(\boldsymbol{x}_{t'}(\boldsymbol{x}_0, \epsilon_{t'}), {t'}) \vert\vert^2 \right]$$
 
