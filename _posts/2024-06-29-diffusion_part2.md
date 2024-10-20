@@ -31,25 +31,15 @@ While the core idea of learning a denoising model that reverses a diffusion proc
 
 In this post we will answer these questions by discussing several [perspectives](https://mbernste.github.io/posts/understanding_3d/) to motivate and understand the diffusion model objective. Specifically, we will view this objective in the following ways:
 
-1. As implicitly minimizing an upper bound on the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p_\theta(\boldsymbol{x}\_0)$
-2. As maximum-likelihood estimation
+1. As maximum-likelihood estimation
+2. As implicitly minimizing an upper bound on the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p_\theta(\boldsymbol{x}\_0)$
 3. As training a hierarchical variational autoencoder that uses a parameterless inference model
 4. As score-matching
 5. As breaking up a difficult problem into many easier problems
 
 Let's go through each of them.
 
-## 1. As implicitly minimizing an upper bound on the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p\_\theta(\boldsymbol{x}\_0)$
-
-Recall that our ultimate goal goes beyond learning how to reverse a diffusion process; rather, we specifically would like it so that our model's marginal distribution over noiseless objects, $p\_\theta(\boldsymbol{x}\_0)$ is close to the real world's distribution of noiseless objects, $q(\boldsymbol{x}\_0)$. As explained eloquently by Alexander Alemi in [his blog post on this topic](https://blog.alexalemi.com/diffusion.html#extra-entropy), by minimizing the KL-divergence between the full diffusion process joint distributions, $p\_\theta(\boldsymbol{x}\_{0:T})$ and $q(\boldsymbol{x}\_{0:T})$, we will implicitly minimize an upper bound on the KL-divergence from $p\_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$ (See Derivation 1 in the Appendix to this post): 
-
-$$KL(q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})) \geq KL(q(\boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_0)) \geq 0$$
-
-Thus, by minimizing $KL(q(\boldsymbol{x}\_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}\_{0:T}) )$, we are implicitly learning to fit $p\_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}_0)$!
-
-Though this does beg the question, why don't we fit $p\_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$ directly? As we will discuss in Perspective 3, the idea of expanding the model from modeling a distribution over only a random variable representing the data, $\boldsymbol{x}\_0$, to extra random variables involved in a complex generative process, $\boldsymbol{x}\_{1:T}$, can be seen as positing a latent variable model of the observed data. Specifically, it can be viewed as a model that resembles a variational autoencoder. As is the case in much of probabilistic modeling, it is often a fruitful strategy to posit and fit a latent generative process of the observed data. That is just what we are doing here.
-
-## 2. As maximum-likelihood estimation
+## 1. As maximum-likelihood estimation
 
 Recall our goal was to fit $p_\theta(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_{1:T} \mid \boldsymbol{x}\_0)$ by minimizing their KL-divergence, which as we showed, could be accomplished implicitly by maximizing the ELBO:
 
@@ -64,6 +54,16 @@ This idea is depicted schematically below (this figure is adapted from [this blo
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ELBO_vs_log_likelihood.png" alt="drawing" width="600"/></center>
 
 Here, $\theta^\*$ represents the maximum likelihood estimate of $\theta$ and $\hat{\theta}$ represents the value for $\theta$ that maximizes the ELBO. If this lower-bound is tight, $\hat{\theta}$ will be close to $\hat{\theta}$. Although in most cases, it is difficult to know with certainty how tight this lower bound is, in practice, this strategy of maximizing the ELBO leads to good results at estimating $\theta^\*$.
+
+## 2. As implicitly minimizing an upper bound on the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p\_\theta(\boldsymbol{x}\_0)$
+
+Recall that our ultimate goal goes beyond learning how to reverse a diffusion process; rather, we specifically would like it so that our model's marginal distribution over noiseless objects, $p\_\theta(\boldsymbol{x}\_0)$ is close to the real world's distribution of noiseless objects, $q(\boldsymbol{x}\_0)$. As explained eloquently by Alexander Alemi in [his blog post on this topic](https://blog.alexalemi.com/diffusion.html#extra-entropy), by minimizing the KL-divergence between the full diffusion process joint distributions, $p\_\theta(\boldsymbol{x}\_{0:T})$ and $q(\boldsymbol{x}\_{0:T})$, we will implicitly minimize an upper bound on the KL-divergence from $p\_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$ (See Derivation 1 in the Appendix to this post): 
+
+$$KL(q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})) \geq KL(q(\boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_0)) \geq 0$$
+
+Thus, by minimizing $KL(q(\boldsymbol{x}\_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}\_{0:T}) )$, we are implicitly learning to fit $p\_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}_0)$!
+
+Though this does beg the question, why don't we fit $p\_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$ directly? As we will discuss in the next section (Perspective 3), the idea of expanding the model from modeling a distribution over only a random variable representing the data, $\boldsymbol{x}\_0$, to extra random variables involved in a complex generative process, $\boldsymbol{x}\_{1:T}$, can be seen as positing a latent variable model of the observed data. Specifically, it can be viewed as a model that resembles a variational autoencoder. As is the case in much of probabilistic modeling, it is often a fruitful strategy to posit and fit a latent generative process of the observed data. That is just what we are doing here.
 
 ## 3. As training a hierarchical variational autoencoder that uses a parameterless inference model
 
