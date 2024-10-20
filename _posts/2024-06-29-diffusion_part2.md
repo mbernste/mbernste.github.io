@@ -41,7 +41,7 @@ Let's go through each of them.
 
 ## 1. As implicitly minimizing an upper bound on the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p\_\theta(\boldsymbol{x}\_0)$
 
-Recall that our ultimate goal goes beyond learning how to reverse a diffusion process; rather, we specifically would like it so that our model's marginal distribution over noiseless objects, $p\_\theta(\boldsymbol{x}\_0)$ is close to the real world's distribution of noiseless objects, $q(\boldsymbol{x}\_0)$. As explained eloquently by Alexander Alemi in [his blog post on this topic](https://blog.alexalemi.com/diffusion.html#extra-entropy), by minimizing the KL-divergence between the full diffusion process joint distributions, $p\_\theta(\boldsymbol{x}_{0:T})$ and $q(\boldsymbol{x}_{0:T})$, we will implicitly minimize an upper bound on the KL-divergence from $p\_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$ (See Derivation 1 in the Appendix to this post): 
+Recall that our ultimate goal goes beyond learning how to reverse a diffusion process; rather, we specifically would like it so that our model's marginal distribution over noiseless objects, $p\_\theta(\boldsymbol{x}\_0)$ is close to the real world's distribution of noiseless objects, $q(\boldsymbol{x}\_0)$. As explained eloquently by Alexander Alemi in [his blog post on this topic](https://blog.alexalemi.com/diffusion.html#extra-entropy), by minimizing the KL-divergence between the full diffusion process joint distributions, $p\_\theta(\boldsymbol{x}\_{0:T})$ and $q(\boldsymbol{x}\_{0:T})$, we will implicitly minimize an upper bound on the KL-divergence from $p\_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$ (See Derivation 1 in the Appendix to this post): 
 
 $$KL(q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T})) \geq KL(q(\boldsymbol{x}_0) \ \vert\vert \ p_\theta(\boldsymbol{x}_0)) \geq 0$$
 
@@ -85,7 +85,7 @@ Moreover, the training objectives between the traditional VAE and this "hierarch
 
 $$\hat{\theta}, \hat{\phi} := \text{arg max}_{\theta, \phi} \ KL(q_\phi(\boldsymbol{z} \mid \boldsymbol{x}) p_\theta(\boldsymbol{z} \mid \boldsymbol{x}))$$
 
-In the case of the diffusion model,  we seek to minimize the KL-divergence from $p_\theta(\boldsymbol{x}_0, \dots, \boldsymbol{x}_T)$ to $q_(\boldsymbol{x}_0, \dots, \boldsymbol{x}_T)$
+In the case of the diffusion model,  we seek to minimize the KL-divergence from $p_\theta(\boldsymbol{x}\_0, \dots, \boldsymbol{x}\_T)$ to $q_(\boldsymbol{x}_0, \dots, \boldsymbol{x}\_T)$
 
 
 ## 4. As score matching
