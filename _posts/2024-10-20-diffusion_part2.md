@@ -63,7 +63,7 @@ Here, $\theta^\*$ represents the maximum likelihood estimate of $\theta$ and $\h
 
 ## 2. As implicitly minimizing an upper bound on the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p\_\theta(\boldsymbol{x}\_0)$
 
-Recall that our ultimate goal in fitting a denoising diffusion model is to fit a model $p_\theta(\boldsymbol{x}_0)$ that approximates the real-world, unknown distribution $q(\boldsymbol{x}_0)$. As we described in the previous section, $p_\theta(\boldsymbol{x}_0)$ can be obtained by marginalizing over all of the intermediate objects $\boldsymbol{x}\_{1:T}$. 
+Recall that our ultimate goal in fitting a denoising diffusion model is to fit a model $p\_\theta(\boldsymbol{x}\_0)$ that approximates the real-world, unknown distribution $q(\boldsymbol{x}\_0)$. As we described in the previous section, $p\_\theta(\boldsymbol{x}_0)$ can be obtained by marginalizing over all of the intermediate objects $\boldsymbol{x}\_{1:T}$. 
 
 As explained eloquently by Alexander Alemi in [his blog post on this topic](https://blog.alexalemi.com/diffusion.html#extra-entropy), by minimizing the KL-divergence between the full diffusion process's joint distributions, $p\_\theta(\boldsymbol{x}\_{0:T})$ and $q(\boldsymbol{x}\_{0:T})$, we will implicitly minimize an upper bound on the KL-divergence from $p\_\theta(\boldsymbol{x}\_0)$ to $q(\boldsymbol{x}\_0)$ (See Derivation 1 in the Appendix to this post): 
 
