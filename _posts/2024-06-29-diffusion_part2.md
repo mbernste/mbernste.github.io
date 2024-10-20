@@ -27,9 +27,9 @@ To learn this model, we will fit the joint distribution given by the reverse-dif
 
 $$\hat{\theta} := \text{arg min}_\theta \ KL( q(\boldsymbol{x}_{0:T}) \ \vert\vert \ p_\theta(\boldsymbol{x}_{0:T}))$$
 
-While the core idea of learning a denoising model that reverses a diffusion process and then using that denoising model to produce samples may be intuitive at a high-level, one may be wanting for a more rigorous theoretical motivation for the objective function that entails fitting $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$ by minimizing their KL-divergence.
+While the core idea of learning a denoising model that reverses a diffusion process and then using that denoising model to produce samples may be intuitive at a high-level, one may be wanting for a more rigorous theoretical motivation for the objective function that entails fitting $p_\theta(\boldsymbol{x}\_{0:T})$ to $q(\boldsymbol{x}\_{0:T})$ by minimizing their KL-divergence.  That is, recall that the goal in traditional probabilistic modeling is fit a model $p_\theta(\boldsymbol{x}_0)$ that approximates the real-world, unknown distribution $q(\boldsymbol{x}_0)$. How does fitting a model to a reverse a diffusion lead accompish this task? Furthermore, what traditional statistical inference frameworks is this related to?
 
-In this post we will discuss several [perspectives](https://mbernste.github.io/posts/understanding_3d/) to motivate and understand this objective function. Specifically, we will dive into six different perspectives by view the act of minimizing this objective function as follows:
+In this post we will answer these questions by discussing several [perspectives](https://mbernste.github.io/posts/understanding_3d/) to motivate and understand the diffusion model objective. Specifically, we will view this objective in the following ways:
 
 1. As implicitly minimizing an upper bound on the KL-divergence between $q(\boldsymbol{x}\_0)$ and $p_\theta(\boldsymbol{x}\_0)$
 2. As maximum-likelihood estimation
