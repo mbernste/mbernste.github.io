@@ -1,6 +1,6 @@
 ---
 title: 'Denoising diffusion probabilistic models (Part 2: Theoretical justification)'
-date: 2024-06-28
+date: 2024-10-20
 permalink: /posts/diffusion_part2/
 tags:
   - tutorial
