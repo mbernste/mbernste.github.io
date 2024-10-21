@@ -9,8 +9,7 @@ tags:
   - probabilistic models
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
-
+_In [Part 1](https://mbernste.github.io/posts/diffusion_part1/) of this series, we introduced the denoising diffusion probabilistic model for modeling and sampling from complex distributions. We described the diffusion model as a model that can generate new samples by learning how to reverse a diffusion process. In this post, we provide more theoretical justification for the objective function used to fit diffusion models and make connections between the diffusion model and other concepts in statistical inference and probabilistic modeling._
 
 Introduction
 ------------
@@ -89,13 +88,20 @@ Now, compare this setup to the setup we have described for the diffusion model:
 
 These figures were adapted from [this blog post](https://angusturner.github.io/generative_models/2021/06/29/diffusion-probabilistic-models-I.html) by Angus Turner.
 
-In the case of a diffusion model, we have an observed item $\boldsymbol{x}_0$ that we iteratively corrupt into $\boldsymbol{x}_T$. In a way, we can view $\boldsymbol{x}_T$ as a latent representation associated with $\boldsymbol{x}_T$ in a similar way that $\boldsymbol{z}$ is a latent representation of $\boldsymbol{x}$ in the VAE. Note that this is a "hierarchical" VAE since we do not associate a single latent variable with each $\boldsymbol{x}_0$, but rather a whole sequence of latent variables $\boldsymbol{x}_1, \dots, \boldsymbol{x}_T$.
+In the case of a diffusion model, we have an observed item $\boldsymbol{x}_0$ that we iteratively corrupt into $\boldsymbol{x}_T$. In a way, we can view $\boldsymbol{x}_T$ as a latent representation associated with $\boldsymbol{x}_T$ in a similar way that $\boldsymbol{z}$ is a latent representation of $\boldsymbol{x}$ in the VAE. Note that this is a "hierarchical" VAE since we do not associate a single latent variable with each $\boldsymbol{x}_0$, but rather a whole sequence of latent variables $\boldsymbol{x}_1, \dots, \boldsymbol{x}_T$. 
 
-Moreover, the training objectives between the traditional VAE and this "hierarchical" VAE are identical. In the case of the traditional VAE, our goal is to minimize the KL-divergence from $p\_\theta(\boldsymbol{z} \mid \boldsymbol{x})$ to $q\_\phi(\boldsymbol{z} \mid \boldsymbol{x})$:
+Moreover, the training objectives between the traditional VAE and this "hierarchical" VAE are identical. In the case of the traditional VAE, our goal is to minimize the expectation of the KL-divergence from $p\_\theta(\boldsymbol{z} \mid \boldsymbol{x})$ to $q\_\phi(\boldsymbol{z} \mid \boldsymbol{x})$, which we do so by maximizing the expectation of the ELBO:
 
-$$\hat{\theta}, \hat{\phi} := \text{arg max}_{\theta, \phi} \ KL(q_\phi(\boldsymbol{z} \mid \boldsymbol{x}) p_\theta(\boldsymbol{z} \mid \boldsymbol{x}))$$
+$$\text{ELBO}_{\text{VAE}}(\phi, \theta) := E_{z \mid x \sim q_\phi} \left[ \log \frac{p_\theta( \boldsymbol{x}, \boldsymbol{z})}{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})} \right]$$
 
-In the case of the diffusion model,  we seek to minimize the KL-divergence from $p_\theta(\boldsymbol{x}\_0, \dots, \boldsymbol{x}\_T)$ to $q_(\boldsymbol{x}_0, \dots, \boldsymbol{x}\_T)$
+In the case of the diffusion model, we seek to minimize the KL-divergence from $p_\theta(\boldsymbol{x}\_0, \dots, \boldsymbol{x}\_T)$ to $q_(\boldsymbol{x}_0, \dots, \boldsymbol{x}\_T)$, which can be maximized by optimizing the expectation of the following ELBO:
+
+$$\text{ELBO}_{\text{Diffusion}}(\theta) := E_{\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0 \sim q}\left[ \log\frac{p_\theta (\boldsymbol{x}_{0:T}) }{q(\boldsymbol{x}_{1:T} \mid \boldsymbol{x}_0) } \right]$$
+
+While the analogy between VAEs and denoising diffusion models is helpful for drawing connections between ideas and gaining intuition, the analogy breaks down in a few key areas:
+
+1. The "encoder" model in the diffusion model, $q_(\boldsymbol{x}_0, \dots, \boldsymbol{x}\_T)$, has no parameters. Rather, it is simple diffusion process that adds noise progressively to $\boldsymbol{x}$ until it turns into pure noise. This stands in stark contrast the encoder model in a VAE, $q_\phi(\boldsymbol{z} \mid \boldsymbol{x})$, which outputs a meaningful latent variable $\boldsymbol{z}$ that can be interpreted as a latent representation of $\boldsymbol{x}$. Said differently, the "latent representation" output by the "encoder" in a diffusion model is rather meaningless -- it's just noise! The term "encoder" does not really describe the forward diffusion process given by $q$. On the other hand, in VAEs, the latent representation is meaningful and represents an embedding of $\boldsymbol{x}$ in an alternative vector space.
+2. In a VAE, we optimize the ELBO with respect to, $\phi$, the parameters of $q$, which can be interpreted as doing [variational inference](https://mbernste.github.io/posts/variational_inference/) to approximate the posterior over $\boldsymbol{z}$ conditioned on $\boldsymbol{x}$. In a diffusion model, $q$ has no parameters and thus, our optimization of the ELBO cannot be truly interpreted as doing variational inference. Rather, because we only optimize with respect to $\theta$, we can only interpret the optimization procedure as performing approximate maximum likelihood that maximizes a lower bound of $\log p_\theta(\boldsymbol{x})$.
 
 ## 4. As breaking up a difficult problem into many easier problems
 
