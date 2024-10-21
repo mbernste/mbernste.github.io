@@ -35,7 +35,7 @@ In this post we will answer these questions by discussing several [perspectives]
 3. As training a hierarchical variational autoencoder that uses a parameterless inference model
 4. As breaking up a difficult problem into many easier problems
 
-A 5th perspective that motivates the loss function lies in its connection with [score matching models](https://arxiv.org/abs/1907.05600); however, this merits a longer conversation that merits its own post.  
+A 5th perspective that motivates the loss function lies in its connection with [score matching models](https://arxiv.org/abs/1907.05600); however, this merits a longer conversation that should be provided its own post. Stay tuned!
 
 
 ## 1. As maximum-likelihood estimation
