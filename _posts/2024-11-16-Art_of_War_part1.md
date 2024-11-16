@@ -11,7 +11,7 @@ _I am currently reading Sun Tzu's Art of War and, as cliche as it sounds, am fin
 Introduction
 ------------
 
-I am currently reading Sun Tzu's _Art of War_ and, as cliche as it sounds, am finding much wisdom in it. I have been taking notes during my reading and I thought I'd share them in this post. As a brief background, _The Art of War_ is a treatis on military conflict and strategic assessment written by a Chinese general somewhere around 500 B.C. It is an enduring text because the wisdom that it contains generalizes far beyond military conflict. A small sample of the themes in the book include the scientific discipline of nagivating conflict, strategic advantage through information, and the ingredients of powerful leadership. In this post, I'll cover the first two "chapters" of the book. I'll write Sun Tzu's original text in bold. My commentary on each point will follow.
+I am currently reading Sun Tzu's _Art of War_ and, as cliche as it sounds, am finding much wisdom in it. I have been taking notes during my reading and I thought I'd share them in this post. As a brief background, _The Art of War_ is a treatis on military conflict and strategic assessment written by a Chinese general somewhere around 500 B.C. It is an enduring text because the wisdom that it contains generalizes far beyond military conflict. A small sample of the themes in the book include the scientific discipline of nagivating conflict, strategic advantage through information, and the ingredients of powerful leadership. In this post, I'll cover the first two "chapters" of the book. I'll write Sun Tzu's original text in bold (as translated by Thomas Cleary). My commentary on each point will follow.
 
 
 Book 1: Strategic Assessments
