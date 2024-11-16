@@ -6,7 +6,7 @@ tags:
   - book review
 ---
 
-_I am currently reading Sun Tzu's Art of War and, as cliche as it sounds, am finding much wisdom in it. I have been taking notes during my reading and I thought I'd share them in this post._
+_I am currently reading Sun Tzu's Art of War and, as cliche as it sounds, am finding much wisdom in it. I have been taking notes during my reading and I thought I'd share them in this post. Here I cover Books 1 and 2._
 
 Introduction
 ------------
