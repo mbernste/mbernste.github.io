@@ -1,6 +1,6 @@
 ---
 title: 'Notes on The Art of War by Sun Tzu (Books 1 and 2)'
-date: 2024-11-26
+date: 2024-11-16
 permalink: /posts/art_of_war_part1/
 tags:
   - book review
