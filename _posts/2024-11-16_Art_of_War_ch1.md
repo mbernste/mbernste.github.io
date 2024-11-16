@@ -6,6 +6,8 @@ tags:
   - Book review
 ---
 
+_TODO THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+
 ## Book 1: Strategic Assessments
 
 **Military action is important to the nation – it is the ground of death and life, the path of survival and destruction so it is imperative to examine.**
