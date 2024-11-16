@@ -3,12 +3,13 @@ title: 'Notes on The Art of War by Sun Tzu (Books 1 and 2)'
 date: 2024-11-26
 permalink: /posts/art_of_war_part1/
 tags:
-  - Book review
+  - book review
 ---
 
-_TODO THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-## Book 1: Strategic Assessments
+Book 1: Strategic Assessments
+-----------------------------
 
 **Military action is important to the nation – it is the ground of death and life, the path of survival and destruction so it is imperative to examine.**
 
