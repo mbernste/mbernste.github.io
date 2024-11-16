@@ -33,7 +33,7 @@ Lastly, a key aspect to good leadership is that of instilling courage (“withou
 **The terrain is to be assessed in terms of distance, difficulty or ease of travel, dimension, and safety.**
 
 * Sun Tzu further breaks down the concept of “terrain” and assesses it in terms of four characteristics. Again, this emphasizes this theme of scientific examination into the rules of conflict.
-The terrain plays a huge role in modern military operations. Both the Soviet Union and the United States failed to achieve their objectives in their respective occupations of Afghanistan. A huge reason for this is the complex terrain, which was known thoroughly by the locals, but was foreign to the occupying forces. 
+* The terrain plays a huge role in modern military operations. Both the Soviet Union and the United States failed to achieve their objectives in their respective occupations of Afghanistan. A huge reason for this is the complex terrain, which was known thoroughly by the locals, but was foreign to the occupying forces. 
 
 **Leadership is a matter of intelligence, trustworthiness, humaneness, courage, and sternness.**
 
@@ -45,63 +45,63 @@ The terrain plays a huge role in modern military operations. Both the Soviet Uni
 
 **Therefore use these assessments for comparison, to find out what the conditions are. That is to say, which political leadership has the Way? Which general has ability? Who has the better climate and terrain? Whose discipline is effective? Whose troops are stronger? Whose officers and soldiers are better trained? Whose system of rewards and punishments is clearer? This is how you can know who will win.**
 
-Sun Tzu lays out a formula for assessing who has the advantage in a conflict, which again emphasizes how the rules of conflict can be broken apart and studied scientifically.
-Interestingly, Sun Tzu suggests that one can know the victor before any conflict occurs. The statement, “This is how you can know who will win” is extremely certain. He does not say “who will probably win.” He says, “who will win.” This is another key theme that will pervade throughout the book: one should use information to assess the situation, arrive at a point of clarity, and strike decisively!
+* Sun Tzu lays out a formula for assessing who has the advantage in a conflict, which again emphasizes how the rules of conflict can be broken apart and studied scientifically.
+* Interestingly, Sun Tzu suggests that one can know the victor before any conflict occurs. The statement, “This is how you can know who will win” is extremely certain. He does not say “who will probably win.” He says, “who will win.” This is another key theme that will pervade throughout the book: one should use information to assess the situation, arrive at a point of clarity, and strike decisively!
 
-Assess the advantages in taking advice, then structure your forces accordingly, to supplement extraordinary tactics. Forces are to be structured strategically, based on what is advantageous.
+**Assess the advantages in taking advice, then structure your forces accordingly, to supplement extraordinary tactics. Forces are to be structured strategically, based on what is advantageous.**
 
-I interpret this piece to mean that one should structure their resources (“forces”) based on the intelligence they receive. One should adapt their strategy to the circumstances. Again, Sun Tzu emphasizes the use of information to gain an advantage.
+* I interpret this piece to mean that one should structure their resources (“forces”) based on the intelligence they receive. One should adapt their strategy to the circumstances. Again, Sun Tzu emphasizes the use of information to gain an advantage.
 
-A military operation involves deception. Even though you are competent, appear to be incompetent. Though effective, appear to be ineffective. 
+**A military operation involves deception. Even though you are competent, appear to be incompetent. Though effective, appear to be ineffective.**
 
-In any conflict, you should not telegraph your abilities to your opponent. This holds in military conflict, but generalizes to conflict as a whole. There are two reasons for this. First, if you telegraph your capabilities, your opponent can use that information to gain the advantage. Second, if you act incompetent, but are actually competent, and your opponent buys this lie, then they will attack when they have the disadvantage. You can thus bait them into a fight they cannot win.
+* In any conflict, you should not telegraph your abilities to your opponent. This holds in military conflict, but generalizes to conflict as a whole. There are two reasons for this. First, if you telegraph your capabilities, your opponent can use that information to gain the advantage. Second, if you act incompetent, but are actually competent, and your opponent buys this lie, then they will attack when they have the disadvantage. You can thus bait them into a fight they cannot win.
 
-When you are going to attack nearby, make it look as if you are going to go a long way; when you are going to attack far away, make it look as if you are going just a short distance.
+**When you are going to attack nearby, make it look as if you are going to go a long way; when you are going to attack far away, make it look as if you are going just a short distance.**
 
-This point emphasizes the importance of destabilizing the information that your opponent receives. Because of how critical information assessment is to gaining an advantage in conflict, it follows that an effective strategy for gaining an advantage is to spoil the information received by your opponent.
-In athletic competition, deception is commonly employed. In baseball, the pitcher throws different types of pitches (e.g., fast balls or curve balls) to throw off the batter. In basketball, the pump fake is very literally the act of “making it look as if you are going to go a long way” when actually going “nearby”. In amateur wrestling, there are many moves that require deceiving your opponent into thinking you are making one move, but really are going for another. Examples abound.
+* This point emphasizes the importance of destabilizing the information that your opponent receives. Because of how critical information assessment is to gaining an advantage in conflict, it follows that an effective strategy for gaining an advantage is to spoil the information received by your opponent.
+* In athletic competition, deception is commonly employed. In baseball, the pitcher throws different types of pitches (e.g., fast balls or curve balls) to throw off the batter. In basketball, the pump fake is very literally the act of “making it look as if you are going to go a long way” when actually going “nearby”. In amateur wrestling, there are many moves that require deceiving your opponent into thinking you are making one move, but really are going for another. Examples abound.
 
-Draw them in with the prospect of gain, take them by confusion.
+**Draw them in with the prospect of gain, take them by confusion.**
 
-Here again, Sun Tzu emphasizes the use of deception, but goes a bit further. Rather than simply deceiving your opponent with false information, here he emphasizes using your opponents emotions against them. That is, you should use your opponent’s greed against them. That is, to bait them. 
+* Here again, Sun Tzu emphasizes the use of deception, but goes a bit further. Rather than simply deceiving your opponent with false information, here he emphasizes using your opponents emotions against them. That is, you should use your opponent’s greed against them. That is, to bait them. 
 The phrase, “take them by confusion” emphasizes the critical point in time when your opponent realizes that their reality is false. It is in that critical moment of time that you have an advantage and need to strike decisively.
 
-When they are fulfilled, be prepared against them; when they are strong, avoid them.
+**When they are fulfilled, be prepared against them; when they are strong, avoid them.**
 
-Don’t start a fight you can’t finish
-Here Sun Tzu emphasizes the criticality of assessing when you do or don’t have the advantage. If you don’t have the advantage, then you must avoid conflict and work tirelessly to gain the advantage for at that point you are vulnerable.
+* Don’t start a fight you can’t finish
+* Here Sun Tzu emphasizes the criticality of assessing when you do or don’t have the advantage. If you don’t have the advantage, then you must avoid conflict and work tirelessly to gain the advantage for at that point you are vulnerable.
 
-Use anger to throw them into disarray.
+**Use anger to throw them into disarray.**
 
-In a previous point, Sun Tzu suggested using your opponent’s greed against them (“Draw them in with the prospect of gain”) Here he suggests also using their anger against them. Altogether, he emphasizes a comprehensive strategy of not just deceiving your opponents with false information (“a military operation involves deception”), but also toying with their emotions. 
+* In a previous point, Sun Tzu suggested using your opponent’s greed against them (“Draw them in with the prospect of gain”) Here he suggests also using their anger against them. Altogether, he emphasizes a comprehensive strategy of not just deceiving your opponents with false information (“a military operation involves deception”), but also toying with their emotions. 
 Our tendency to get carried away by emotion is an inherent vulnerability within all people. Just as we should take advantage of this vulnerability in others, so too must we guard against it within ourselves. That is, we should seek to regulate our emotional responses and assess situations logically. The more you are carried away by emotion, the worse your decision making will be, and a clever, more rational opponent will use this to gain an advantage over you.
 
-Use humility to make them haughty.
+**Use humility to make them haughty.**
 
-Again, this follows the theme of using your opponents emotions against them
-A haughty opponent is likely to be more careless and less prepared. This advice pairs well with the previous advice, “Even though you are competent, appear to be incompetent”.
+* Again, this follows the theme of using your opponents emotions against them
+* A haughty opponent is likely to be more careless and less prepared. This advice pairs well with the previous advice, “Even though you are competent, appear to be incompetent”.
 Overall the three emotions that Sun Tzu says can be used against your opponent are greed, anger, and arrogance. Consequently, if you possess these emotions yourself, you are vulnerable!
 
-Tire them by flight.
+**Tire them by flight.**
 
-For me, the book title, “The Art of War”, suggested that it will be about fighting and force, but in fact, it is all about gaining an advantage over your opponent before you actually fight the battle. So far in the book, Sun Tzu has taught us that this advantage can be gained by 1) Good leadership and internal organization, 2) Gathering and assessment of intelligence, 3) Information warfare and deception, 4) manipulating your opponent’s emotions and now, 4) wearing your opponent down by being faster than them!
+* For me, the book title, “The Art of War”, suggested that it will be about fighting and force, but in fact, it is all about gaining an advantage over your opponent before you actually fight the battle. So far in the book, Sun Tzu has taught us that this advantage can be gained by 1) Good leadership and internal organization, 2) Gathering and assessment of intelligence, 3) Information warfare and deception, 4) manipulating your opponent’s emotions and now, 4) wearing your opponent down by being faster than them!
 
 **Cause division among them.**
 
 * This plays into the theme of emotional warfare – that is, toying with your enemies emotions. Whereas prior advice was directed at the individual (e.g., anger is felt individually), here the emotional warfare is directed at the interpersonal. That is, to destroy the opponent’s structural unity by breaking down the relationships between people. 
-This follows logically from an earlier piece of advice on The Way. That is, Sun Tzu taught that “The Way means inducing the people to have the same aim as the leadership, so that they will share death and life, without fear of danger.” The logical consequence is that one should seek to destroy The Way among one’s opponents. 
+* This follows logically from an earlier piece of advice on The Way. That is, Sun Tzu taught that “The Way means inducing the people to have the same aim as the leadership, so that they will share death and life, without fear of danger.” The logical consequence is that one should seek to destroy The Way among one’s opponents. 
 
 **Attack when they are unprepared, make your move when they do not expect it.**
 
-Essentially this boils down to using the “element of surprise.” The use of surprise attacks is a somewhat well-known, tired trope, but here is given a much richer context by Sun Tzu’s other advice. The use of surprise is another example of assessing your opponent’s mentality and using it against them.
+* Essentially this boils down to using the “element of surprise.” The use of surprise attacks is a somewhat well-known, tired trope, but here is given a much richer context by Sun Tzu’s other advice. The use of surprise is another example of assessing your opponent’s mentality and using it against them.
 
-The formation and procedure used by the military should not be divulged beforehand
+**The formation and procedure used by the military should not be divulged beforehand**
 
-This harkens to the prior advice of not divulging one’s capabilities, “Even though you are competent, appear to be incompetent. Though effective, appear to be ineffective”. Here, this is extended not just to capabilities, but to tactics as well. Don’t reveal your hand.
+* This harkens to the prior advice of not divulging one’s capabilities, “Even though you are competent, appear to be incompetent. Though effective, appear to be ineffective”. Here, this is extended not just to capabilities, but to tactics as well. Don’t reveal your hand.
 
-The one who figures on victory at headquarters before even doing battle is the one who has the most strategic factors on his side. The one who figures on inability to prevail at headquarters before doing battle is the one who has the least strategic factors on his side. The one with many strategic factors in his favor wins, the one with few strategic factors in his favor loses – how much the more so for one with no strategic factors in his favor. Observing the matter this way, I can see who will win and who will lose.
+**The one who figures on victory at headquarters before even doing battle is the one who has the most strategic factors on his side. The one who figures on inability to prevail at headquarters before doing battle is the one who has the least strategic factors on his side. The one with many strategic factors in his favor wins, the one with few strategic factors in his favor loses – how much the more so for one with no strategic factors in his favor. Observing the matter this way, I can see who will win and who will lose.**
 
-This final concluding piece emphasizes not only the importance of gaining the strategic advantage before the fighting starts, but also on the mere fact that it is actually possible to discern who will win and lose. Conflict is a science, and through mastery of that science, one can learn when to fight and when not to fight.
+* This final concluding piece emphasizes not only the importance of gaining the strategic advantage before the fighting starts, but also on the mere fact that it is actually possible to discern who will win and lose. Conflict is a science, and through mastery of that science, one can learn when to fight and when not to fight.
 
 
 
