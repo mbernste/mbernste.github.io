@@ -196,7 +196,7 @@ Book 2: Doing Battle
 
 **Hence, we know that the leader of the army is in charge of the lives of the people and the safety of the nation.**
 
-This is a re-emphasis on a leader’s responsibility to not only achieve their target goal, but to also tend to the well being of their people. It can be also be interpreted as a re-echo of a common theme I see woven throughout the book: consideration for the wider society.
+* This is a re-emphasis on a leader’s responsibility to not only achieve their target goal, but to also tend to the well being of their people. It can be also be interpreted as a re-echo of a common theme I see woven throughout the book: consideration for the wider society.
 
 
 
