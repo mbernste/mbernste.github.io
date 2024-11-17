@@ -180,10 +180,9 @@ Book 2: Doing Battle
 
 **Change their colors, use them mixed in with your own. Treat the soldiers well, take care of them.**
 
-* Turning one's enemies into allies is a better strategy than defeating them. One should seek persuasion rather than conflict.
+* Turning one's enemies into allies is a better strategy than defeating them. There is this repeated core idea of achieving victory, but avoiding violence. One should seek persuasion rather than conflict.
 * After turning enemies into allies one should must also treat them well. One should avoid holding grudges. 
 * Sun Tzu’s use of the term “mixed in with your own” seems to suggest the importance of enabling these enemies-turned-allies to retain their original identity. Sun Tzu does not seem to be saying that they should be “converted” or transformed into one's own identity nor should they be separated from one's own group. 
-* Another theme echoed here is this core idea of achieving victory by avoiding violence. This can be accomplished through persuasion rather than force.
 
 **This is called overcoming your opponent and increasing your strength to boot.**
 
