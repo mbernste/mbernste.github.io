@@ -115,6 +115,89 @@ Overall the three emotions that Sun Tzu says can be used against your opponent a
 * This final concluding piece emphasizes not only the importance of gaining the strategic advantage before the fighting starts, but also on the mere fact that it is actually possible to discern who will win and lose. Conflict is a science, and through mastery of that science, one can learn when to fight and when not to fight.
 
 
+Book 2: Doing Battle
+---------------------
+
+When you do battle, even if you are winning, if you continue for a long time it will dull your forces and blunt your edge; if you besiege a citadel, your strength will be exhausted. If you keep your armies out in the field for a long time, your supplies will be insufficient.
+
+A central theme of this second chapter is the notion that one should avoid a long and drawn out conflict. This ties into the themes of the first chapter around using strategic planning prior to conflict in that if you successfully prepare for the conflict, and through that preparation learn that you have the advantage, then the conflict itself should not last long because you have prepared a strategy and can execute it quickly. 
+
+When your forces are dulled, your edge is blunted, your strength is exhausted, and your supplies are gone, then others will take advantage of your debility and rise up. Then even if you have wise advisers you cannot make things turn out well in the end. 
+
+Not only should one consider the current conflict at hand, but should always keep in mind the conflicts yet to come. If you waste your resources on the current problem, you will be ill prepared for the next problem. This also touches the idea of “pacing oneself”. When running a long distance race, one needs to conserve their energy for the later miles. So too, when facing a problem, one should consider the future problems that will demand future resources. Said more succinctly, one should always remain future minded.
+A further generalization of this advice is to not be too narrowly focused on the problem at hand, but rather, one should stay aware of their surroundings and keep an eye on other issues that may crop up. If your full concentration is on the current problem, then other problems can catch you unaware. Said more succinctly, one should always remain aware of their surroundings. 
+Sun Tzu mentions “wise advisors” here, which harkens to the prior theme of using information effectively. Here Sun Tzu says that if you have exhausted your resources, no amount of planning will help you! Thus, in order to use information effectively and form a strategy you need to make sure you have the resources to execute that strategy.
+
+Therefore I have heard of military operations that were clumsy but swift, but I have never seen one that was skillful and lasted a long time. It is never beneficial to a nation to have a military operation continue for a long time.
+
+One can translate this advice into a mathematical axiom: if conflict is long and drawn out, then it is not effective. This axiom provides a nice rule of thumb for ruling out certain strategies: any strategy that will require a long, drawn out conflict is not a viable option.
+It is interesting how even in this modern day, governments have not learned this lesson! The United States wasted so many precious resources – lives, money, and time – on its operation in Afghanistan. When we invaded Afghanistan, we did not adequately ensure that the conflict would be swift and effective. We had no end state in mind! Because of this, most would consider our decades long war in Afghanistan a failure.
+
+Therefore, those who are not thoroughly aware of the disadvantages in the use of arms cannot be thoroughly aware of the advantages in the use of arms.
+
+I interpret this to mean that one should understand that engaging in a conflict risks that conflict becoming a quagmire. Without understanding this risk, one has not adequately prepared and does not truly have a sound strategy to be effective. The United States did not prepare adequately for this outcome when they invaded Afghanistan.
+A more general interpretation of this advice is that if one does not know the disadvantages of the use of force, then fundamentally, one cannot yield force effectively because they do not understand its true nature. The use of force is a dangerous and serious affair. A lack of respect for it shows a general lack of understanding of it and thus, an amateurish mentality. 
+
+Those who use the military skillfully do not raise troops twice and do not provide food three times.
+
+If you have a problem, deal with it once and deal with it thoroughly.
+This ties into Sun Tzu’s prior advice on planning strategically. You should plan a strategy that completely solves your problem. You don’t want your incompletely solved problem to keep cropping up over and over again because you failed to deal with it the first time.
+More generally, don’t “half ass” your work. Finish it completely and finish it well.
+
+By taking equipment from your own country but feeding off the enemy you can be sufficient in both arms and provisions.
+
+I interpret “feeding off the enemy” to mean taking food provisions from the enemy so that you don’t have to bring them yourself. There is an element of ruthlessness to this advice. When it comes to a fight, you should not hold back from taking what you need from your opponent. To win you must be ruthless. You cannot hold back. This relates to the prior advice, “Those who use the military effectively do not raise troops twice.” Deal with the enemy once and ruthlessly.
+There is a lesson here in regards to planning; one should not make unnecessary preparations. Here, Sun Tzu is saying that you should not prepare food because you can simply take food from your enemy when you defeat them. It is an unnecessary preparation. Thus, one should discern between resources one needs versus resources that can be acquired later. Energy shouldn’t be expended on unnecessary preparations.
+There is an adage in software engineering attributed to Donal Knuth: “Premature optimization is the root of all evil”. Sun Tzu teaches a similar lesson here: prematurely optimizing (i.e., preparing resources that are not yet needed) is an ineffective allocation of energy and should be avoided at all costs.
+Relying on feeding your troops with your enemy’s provisions implies that you will defeat them. Thus, Sun Tzu is so certain of victory that he is willing to risk starvation. This ties in to prior advice on strategic assessment prior to conflict and the importance of knowing whether you have the advantage, “Therefore use these assessments for comparison, to find out what the conditions are…This is how you can know who will win”. That is, if you prepare adequately and know that you will win, you can depend on that victory for your next steps (e.g., to “feed off the enemy”).
+
+When a country is impoverished by military operations, it is because of transporting supplies to a distant place. Transport supplies to a distant place, and the populace will be impoverished.
+
+Here again, Sun Tzu emphasizes building a proper organizational foundation before starting a conflict. Generalizing this beyond conflict: it is critical to set up the proper logistics and organization foundation before embarking on any challenge. 
+
+Those who are near the army sell at high prices. Because of high prices the wealth of the common people is exhausted.
+
+A theme highlighted here is that of unintended consequences. Here, Sun Tzu warns of the unintended economic consequences that result from war. 
+This point reveals Sun Tzu’s compassion for common people. He is not only focused on the success of the military campaign, but also on the well being of the country as a whole. We too should always keep in mind the consequences our actions have on others. We should not be too focused on our goals that we neglect the well being of others.
+
+When resources are exhausted, then levies are made under pressure. When power and resources are exhausted, then the homeland is drained. The common people are deprived of seventy percent of their budget, while the government’s expenses for equipment amount to sixty percent of its budget.
+
+Two recurring themes are echoed in this point. First, we see Sun Tzu’s analytical and quantitative approach towards strategic assessment. Second, we see again his emphasis on looking out for the well-being of society and considering unintended consequences of one’s actions on others.
+
+Therefore a wise general strives to feed off the enemy. Each pound of food taken from the enemy is equivalent to twenty pounds you provide by yourself.
+
+Again, Sun Tzu here is taking a quantitative approach to strategic assessment. He very literally quantifies the benefit of “feeding off the enemy” versus preparing provisions.
+
+So what kills the enemy is anger, what gets the enemy’s goods is reward.
+In prior points (e.g., “Use anger to throw them into disarray”), Sun Tzu had stressed the importance of manipulating the enemy’s emotions and using their impulsive, emotional responses against them. Here, in contrast, he emphasizes utilizing the emotions of one’s own troops and direct reports. 
+Emotions are an extremely powerful force and should be leveraged to one’s strategic advantage whether that be leveraging the emotions of the opposition or of one’s allies.
+
+Therefore in a chariot battle, reward the first to capture at least ten chariots.
+
+Sun Tzu emphasizes the importance of using reward to motivate. Interestingly, he does not mention the use of punishment. The emphasis on using reward instead of punishment is, in fact, a fairly recent development in both parenting and in training animals. Scientifically, it has been shown that reward is more effective than punishment  in inducing a target behavior. It is interesting to see Sun Tzu identify this truth so long ago.
+We again see Sun Tzu’s theme of using quantitative analysis (“ten chariots”).
+
+Change their colors, use them mixed in with your own. Treat the soldiers well, take care of them.
+
+Turning one's enemies into allies is a better strategy than defeating them. Going even further, after turning them into allies one should “treat the soldiers well”, thus emphasizing the importance of leaving the past in the past and not holding grudges.
+Sun Tzu’s use of the term “mixed in with your own” seems to suggest the importance of enabling these enemies-turned-allies to retain their original identity. Sun Tzu does not seem to be saying that they should be “converted” or transformed into one's own identity nor should they be separated from one's own group. Rather, they should be integrated into the group while retaining their original identity. 
+Another theme echoed here is this core idea of achieving victory by avoiding violence. This can be accomplished through persuasion rather than force.
+
+This is called overcoming your opponent and increasing your strength to boot.
+
+Turning one's enemies into allies is a way to not only claim victory, but also to strengthen one’s position simultaneously. In contrast, a direct conflict requires resources and will inevitably weaken you.
+
+So the important thing in a military operation is victory, not persistence.
+
+Victory must be achieved quickly and decisively. A long drawn out campaign will lead to defeat
+An alternative interpretation is that what matters is not effort, but outcome. It does not matter how hard you try, it only matters whether or not you succeed. I believe a common trap that many people fall victim to is that what matters most is hard work. Sadly, that isn’t true. 
+
+Hence, we know that the leader of the army is in charge of the lives of the people and the safety of the nation.
+
+This is a re-emphasis on a leader’s responsibility to not only achieve their target goal, but to also tend to the well being of their people. It is a re-echo of a common theme throughout the book: consideration for the wider society.
+
+
+
 
 
 
