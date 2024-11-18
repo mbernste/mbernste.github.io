@@ -12,7 +12,6 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/)  
 [The overloaded equals sign](https://mbernste.github.io/posts/equality_definition/)  
 [The binomial theorem](https://mbernste.github.io/posts/binomial_theorem/)   
-[Notes on the _Art of War_ by Sun Tzu (Books 1 and 2)](https://mbernste.github.io/posts/art_of_war_part1/)  
 
 ## Computational biology
 
@@ -83,6 +82,9 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [Functionals and functional derivatives](https://mbernste.github.io/posts/functionals/) 
 
+## Book reviews
+
+[Notes on the _Art of War_ by Sun Tzu (Books 1 and 2)](https://mbernste.github.io/posts/art_of_war_part1/)  
 
 
 
