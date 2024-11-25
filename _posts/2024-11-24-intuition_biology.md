@@ -22,7 +22,7 @@ Visual depictions of cells by David S. Goodsell
 
 <br>
 
-What struck me most by Goodsell's pictures is how dense cells really are. They are absolutely packed with molecules. This is a far cry from the image I had previously that 
+What struck me most by Goodsell's pictures is how dense cells really are. They are absolutely packed with molecules. This is a far cry from the image I had held previously in my mind of cells as a "little bags of water" where the biomolecules were relatively uncrowded.
 
 A second thing that struck me was the fascinating interplay between order and chaos that exists within cells. As an example, see this illustration by Goodsell depicting the coronovirus lifecycle (Acknowledgement: David S. Goodsell, RCSB Protein Data Bank; doi: 10.2210/rcsb_pdb/goodsell-gallery-023. Integrative illustration for coronavirus outreach (2020) PLoS Biol 18: e3000815 doi: 10.1371/journal.pbio.3000815):
 
