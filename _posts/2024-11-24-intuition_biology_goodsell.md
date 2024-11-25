@@ -53,14 +53,18 @@ Connections to network biology
 
 If you work in computational biology, there is little doubt that you have been exposed to concepts found in [network biology](https://en.wikipedia.org/wiki/Biological_network). A common way to describe the biochemical processes that occur in cells is to depict and model these processes mathematically as networks or graphs. For example, protein-protein interaction networks are networks in which proteins form the nodes of the graph and an edge between two proteins indicates that those two proteins interact or bind with one another. Such protein interaction networks form [signaling pathways](https://en.wikipedia.org/wiki/List_of_signalling_pathways) in which the information flow through a cell is mediated by cascading interactions between proteins (and other molecules). For example, the [KEGG Database]() is a well known database of curated cellular pathways that is routinely used in computational biology work. For example, below is a depiction of the [NF-kB signalling pathway](), which is a key signalling pathway used to modulate immune cell function:
 
-Now, if cells are so crowded, how exactly does the orderly structure of a signalling pathways and networks emerge at all from the chaotic environment of the cell? How do two interacting proteins/molecules "find" one another at a high enough frequency? If all these molecules are constantly bumping into eachother, won't we get spurious interactions between molecules? In short, how can we model cells with networks at all?
+Now, if cells are so crowded, how exactly does the orderly structure of a signalling pathways and networks emerge at all from the chaotic environment of the cell? If all these molecules are constantly bumping into eachother, won't we get spurious interactions between molecules? How do two interacting proteins/molecules "find" one another at a high enough frequency? In short, how can we model cells using networks at all?
 
 To answer these questions, it helped me to realize two fundamental properties about the biophysics and chemistry that occurs within cells:
 
-1. Despite being so packed molecules move extremely fast inside cells
-2. Chemical interactions between biomolecules are hyper specific
+1. Chemical interactions between biomolecules are hyper specific
+2. Cells are highly compartmentalized
+3. Despite being so packed molecules move extremely fast inside cells
 
-To provide some intuition, let's look at the numbers. Proteins diffuse through water at a speed of XXXXX. That is pretty fast! Now, because cells are so crowded, proteins move a lot more slowly, but they are still moving around quite a lot. It takes about 10 seconds for a protein to move the distance of a [HeLa cell's]() length. Because _all_ proteins are moving at this speed, we can deduce that every 10 seconds the spatial arangement of proteins in a cell are highly rearranged (subject to the tight compartmentalization imposed by organelles and other structures). This offers a lot of opportunity for proteins to randomly bump into their binding partners.
+Now, let's address the first question: if proteins and other biomolecules are so packed within the cell and constantly bumping into one another, wouldn't we expect many abberant interactions between molecules? This was my intuition, at first, however, it's important to realize that proteins are hyper-specific in regards to what they will interact with.  Because of this, the vast, vast majority of physical interactions between proteins don't result in any chemical reaction at all. 
+
+To provide some intuition, let's look at the numbers. Proteins diffuse through water at a speed of XXXXX. That is pretty fast! Now, because cells are so crowded, proteins move a lot more slowly, but they are still moving around quite a lot. It takes about 10 seconds for a protein to move the distance of a [HeLa cell's]() length. Because _all_ proteins are moving at this speed, we can deduce that every 10 seconds the spatial arangement of proteins in a cell are highly rearranged (subject to the tight compartmentalization imposed by organelles and other structures). This offers a lot of opportunity for proteins to randomly bump into their binding partners, thus carrying out biochemistry and information propagation within cells.
+
 
 
 
