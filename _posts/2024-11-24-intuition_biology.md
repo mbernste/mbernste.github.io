@@ -14,12 +14,11 @@ In This blog post, I will collect some of these works and provide a little bit o
 Visual depictions of cells by David S. Goodsell
 -----------------------------------------------
 
-[David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell) is a structural biologist at the Scripps Research Institute and Rutgers University and is well known for his scientifically accurate depictions of cells and the molecules that they are comprised of. Below is an example illustration of his that depicts a model cell:
+[David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell) is a structural biologist at the Scripps Research Institute and Rutgers University and is well known for his scientifically accurate depictions of cells and the molecules that they are comprised of. Below is an example illustration of his that depicts a model cell (Acknowledgement: Martina Maritan, Ludovic Autin, David S. Goodsell, Scripps Research and RCSB Protein Data Bank. doi: 10.2210/rcsb_pdb/goodsell-gallery-040):
 
-<center><img src="https://cdn.rcsb.org/pdb101/goodsell/tif/model-of-a-mycoplasma-cell.tif" alt="drawing" width="700"/></center>
+<center><img src="https://cdn.rcsb.org/pdb101/goodsell/tif/model-of-a-mycoplasma-cell.tif" alt="drawing" width="400"/></center>
 
-Acknowledgement: Martina Maritan, Ludovic Autin, David S. Goodsell, Scripps Research and RCSB Protein Data Bank. doi: 10.2210/rcsb_pdb/goodsell-gallery-040
-
+What struck me most by Goodsell's pictures is how dense cells are. They are absolutely packed with molecules. 
 
 
 Waddington's Landscape
@@ -28,7 +27,7 @@ Waddington's Landscape
 Figure 2 from _NF-κB dynamics in the language of immune cells_ by Mohammad Aqdas and Myong-Hee Sung
 ---------------------------------------------------------------------------------------------------
 
-<center><img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8202/9811507/860594bd95b0/nihms-1849858-f0002.jpg" alt="drawing" width="700"/></center>
+<center><img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8202/9811507/860594bd95b0/nihms-1849858-f0002.jpg" alt="drawing" width="600"/></center>
 
 Acknowledgement: Mohammad Aqdas and Myong-Hee Sung (2022). doi: 10.1016/j.it.2022.11.005
 
