@@ -15,6 +15,14 @@ As a computer scientist working in biomedical research, I have had to develop my
 
 In the first post of this series, I will discuss the conceptual revelations I had that were induced by the work of [David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell). Dr. Goodsell is a structural biologist at the Scripps Research Institute and Rutgers University and is well known for his scientifically accurate depictions of cells and the molecules that they are comprised of. His work is both educational and beautiful and helped expand my understanding of biology.
 
+More specifically, in this post, I will discuss two ideas communicated in his work:
+
+1. Cells are absolutely packed with biomolecules
+2. There is a fascinating interplay of order and chaos in the cell
+
+Finally, I will attempt to connect this second insight to concepts found in [network biology](https://en.wikipedia.org/wiki/Biological_network), by attempting to answer the following question: If cells are so packed and chaotic, how can we model them with networks?
+
+
 Cells are absolutely packed
 ---------------------------
 
