@@ -25,8 +25,8 @@ Acknowledgement: Martina Maritan, Ludovic Autin, David S. Goodsell, Scripps Rese
 Waddington's Landscape
 ----------------------
 
-Cellular dynamics
------------------
+Figure 2 from _NF-κB dynamics in the language of immune cells_ by Mohammad Aqdas and Myong-Hee Sung
+---------------------------------------------------------------------------------------------------
 
 <center><img src="https://cdn.ncbi.nlm.nih.gov/pmc/blobs/8202/9811507/860594bd95b0/nihms-1849858-f0002.jpg" alt="drawing" width="700"/></center>
 
