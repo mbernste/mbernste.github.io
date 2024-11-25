@@ -38,9 +38,6 @@ Acknowledgement: Bingbongboing as found on [Wikipedia](https://en.wikipedia.org/
 
 Though images like this are effective for teaching the different organelles found in cells, they imply that cells are empty (at least that was my impression). This was a misconception that I had held for a good portion of my computational biology journey.
 
-The interplay of order and chaos
---------------------------------
-
 A second thing that struck me was the fascinating interplay between order and chaos that exists within cells. As an example, see this illustration by Goodsell depicting the coronovirus lifecycle:
 
 <center><img src="https://cdn.rcsb.org/pdb101/goodsell/png-800/coronavirus-life-cycle.png" alt="drawing" width="400"/></center>
@@ -48,8 +45,8 @@ Acknowledgement: David S. Goodsell, RCSB Protein Data Bank; doi: 10.2210/rcsb_pd
 
 Notice that despite the messy distribution of proteins and other biomolecules, clear structures form (membranes, gradients, etc.). In the above picture we see, emerging from the chaos, the insidious formation of new viruses! 
 
-Connections to network biology
-------------------------------
+How order emerges from the chaos: connections to network biology
+----------------------------------------------------------------
 
 If you work in computational biology, there is little doubt that you have been exposed to concepts found in [network biology](https://en.wikipedia.org/wiki/Biological_network). A common way to describe the biochemical processes that occur in cells is to depict and model these processes mathematically as networks or graphs. For example, protein-protein interaction networks are networks in which proteins form the nodes of the graph and an edge between two proteins indicates that those two proteins interact or bind with one another. Such protein interaction networks form [signaling pathways](https://en.wikipedia.org/wiki/List_of_signalling_pathways) in which the information flow through a cell is mediated by cascading interactions between proteins and other molecules. For example, below is a depiction of the [TNF-alpha signalling pathway](https://www.wikipathways.org/pathways/WP231.html), which is a signalling pathway used to modulate immune cell function:
 
