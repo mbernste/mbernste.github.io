@@ -1,5 +1,5 @@
 ---
-title: 'Intuiting biology: Order and chaos in the crowded cell as depicted in the works of David S. Goodsell'
+title: 'Intuiting biology (Part 1: Order and chaos in the crowded cell)'
 date: 2024-11-24
 permalink: /posts/intuit_biology_goodsell/
 tags:
