@@ -38,9 +38,6 @@ Acknowledgement: Bingbongboing as found on [Wikipedia](https://en.wikipedia.org/
 
 Though images like this are effective for teaching the different organelles found in cells, they imply that cells are empty (at least that was my impression). This was a misconception that I had held for a good portion of my computational biology journey.
 
-Intuiting the physical motion of molecules in cells
----------------------------------------------------
-
 The interplay of order and chaos
 --------------------------------
 
@@ -54,7 +51,14 @@ Notice that despite the messy distribution of proteins and other biomolecules, c
 Connections to network biology
 ------------------------------
 
-Now, if you work in computational biology, there is little doubt that you have been exposed to concepts found in [network biology](https://en.wikipedia.org/wiki/Biological_network). A common way to describe the biochemical processes that occur in cells is to depict and model these processes mathematically as networks or graphs. For example, protein-protein interaction networks are networks in which proteins form the nodes of the graph and an edge between two proteins indicates that those two proteins interact or bind with one another. Such protein interaction networks form [signaling pathways](https://en.wikipedia.org/wiki/List_of_signalling_pathways) in which the information flow through a cell is mediated by cascading interactions between proteins (and other molecules). 
+If you work in computational biology, there is little doubt that you have been exposed to concepts found in [network biology](https://en.wikipedia.org/wiki/Biological_network). A common way to describe the biochemical processes that occur in cells is to depict and model these processes mathematically as networks or graphs. For example, protein-protein interaction networks are networks in which proteins form the nodes of the graph and an edge between two proteins indicates that those two proteins interact or bind with one another. Such protein interaction networks form [signaling pathways](https://en.wikipedia.org/wiki/List_of_signalling_pathways) in which the information flow through a cell is mediated by cascading interactions between proteins (and other molecules). For example, the [KEGG Database]() is a well known database of curated cellular pathways that is routinely used in computational biology work. For example, below is a depiction of the [NF-kB signalling pathway](), which is a key signalling pathway used to modulate immune cell function:
+
+
+Now, if cells are so crowded, how exactly does any order emerge at all from the chaotic environment of the cell? To answer this question, let us dig deeper into the physical motion and interactions of molecules within the cell. To more deeply intuit the processes that occur within cells, it helped me to realize two facts about the biophysics of cells:
+
+1. Despite being so packed molecules move extremely fast inside cells
+2. Chemical interactions between biomolecules are hyper specific
+
 
 
 
