@@ -22,6 +22,8 @@ What struck me most by Goodsell's pictures is how dense cells really are. They a
 
 A second thing that struck me was the strange and almost alien interplay between order and chaos that exists within cells. As an example, see this illustration by Goodsell depicting the coronovirus lifecycle (Acknowledgement: David S. Goodsell, RCSB Protein Data Bank; doi: 10.2210/rcsb_pdb/goodsell-gallery-023. Integrative illustration for coronavirus outreach (2020) PLoS Biol 18: e3000815 doi: 10.1371/journal.pbio.3000815):
 
+<center><img src="https://cdn.rcsb.org/pdb101/goodsell/png-800/coronavirus-life-cycle.png" alt="drawing" width="400"/></center>
+
 Notice that despite the messy distribution of proteins and other biomolecules, clear structures form. In the above picture we see, emerging from the chaos, the sinister formation of new viruses! 
 
 
