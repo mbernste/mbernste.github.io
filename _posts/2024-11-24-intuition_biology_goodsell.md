@@ -20,24 +20,28 @@ In the first post of this series, I will discuss my conceptual revelations induc
 Cells are absolutely packed
 ---------------------------
 
-What struck me most from Goodsell's work is how densely packed cells really are. Below is an example illustration that depicts the density of the cell (Acknowledgement: Martina Maritan, Ludovic Autin, David S. Goodsell, Scripps Research and RCSB Protein Data Bank. doi: 10.2210/rcsb_pdb/goodsell-gallery-040):
+What struck me most from Goodsell's work is how densely packed cells really are. Below is an example illustration that depicts the density of the cell:
 
 <center><img src="https://cdn.rcsb.org/pdb101/goodsell/tif/model-of-a-mycoplasma-cell.tif" alt="drawing" width="400"/></center>
+Acknowledgement: Martina Maritan, Ludovic Autin, David S. Goodsell, Scripps Research and RCSB Protein Data Bank. doi: 10.2210/rcsb_pdb/goodsell-gallery-040
 
-<br>
+This is a far cry from the image I had previously held of cells as a little "uncrowded bags of water". I believe this incorrect mental model was fomented in my mind by images like the following that are meant to teach the organelles found in the cell:
 
-This is a far cry from the image I had held previously in my mind of cells as a "little bags of water" where the biomolecules were relatively uncrowded. The mental model of the cell as an "uncrowded bag of water", I believe is fomented by images like the following that depict the structure of organelles in the cell:
+<center><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cell-organelles-labeled.png" alt="drawing" width="400"/></center>
+Acknowledgement: Bingbongboing - https://centoshelp.org/mario/ as found on Wikipedia
+
+Images like this one really 
 
 
 The interplay of order and chaos
 --------------------------------
 
-A second thing that struck me was the fascinating interplay between order and chaos that exists within cells. As an example, see this illustration by Goodsell depicting the coronovirus lifecycle (Acknowledgement: David S. Goodsell, RCSB Protein Data Bank; doi: 10.2210/rcsb_pdb/goodsell-gallery-023. Integrative illustration for coronavirus outreach (2020) PLoS Biol 18: e3000815 doi: 10.1371/journal.pbio.3000815):
+A second thing that struck me was the fascinating interplay between order and chaos that exists within cells. As an example, see this illustration by Goodsell depicting the coronovirus lifecycle:
 
 <center><img src="https://cdn.rcsb.org/pdb101/goodsell/png-800/coronavirus-life-cycle.png" alt="drawing" width="400"/></center>
-
-<br>
+Acknowledgement: David S. Goodsell, RCSB Protein Data Bank; doi: 10.2210/rcsb_pdb/goodsell-gallery-023. Integrative illustration for coronavirus outreach (2020) PLoS Biol 18: e3000815 doi: 10.1371/journal.pbio.3000815
 
 Notice that despite the messy distribution of proteins and other biomolecules, clear structures form. In the above picture we see, emerging from the chaos, the sinister formation of new viruses! 
+
 
 
