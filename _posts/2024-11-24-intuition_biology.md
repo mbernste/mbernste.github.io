@@ -43,6 +43,9 @@ _NF-κB dynamics in the language of immune cells_ by Mohammad Aqdas and Myong-He
 
 Acknowledgement: Mohammad Aqdas and Myong-Hee Sung (2022). doi: 10.1016/j.it.2022.11.005
 
+A promiscuous, combinatorial model of ligand-receptor binding
+-------------------------------------------------------------
+
 
 Neural cellular automata
 ------------------------
