@@ -30,8 +30,7 @@ This is a far cry from the image I had previously held of cells as a little "unc
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cell-organelles-labeled.png" alt="drawing" width="400"/></center>
 Acknowledgement: Bingbongboing - https://centoshelp.org/mario/ as found on Wikipedia
 
-Images like this one really 
-
+Though images like this are effective for teaching the different organelles found in cells, they imply that cells are empty (at least that was my impression), when they are actually anything but empty!
 
 The interplay of order and chaos
 --------------------------------
