@@ -58,7 +58,7 @@ Acknowledgement: Agrawal A, et al. (2024) WikiPathways 2024: next generation pat
 
 Now, if cells are so crowded, how exactly does the orderly structure of a signalling pathways and networks emerge at all from the chaotic environment of the cell? If all these molecules are constantly bumping into eachother, won't we get spurious interactions between molecules? Moreover, how do two interacting proteins/molecules "find" one another at a high enough frequency? In short, how can we model cells using networks at all?
 
-To answer these questions, it helped me to realize four fundamental properties about the biophysics and chemistry that occurs within cells:
+To answer these questions, it helped me to learn four fundamental properties about the biophysics and chemistry that occurs within cells:
 
 1. Chemical interactions between biomolecules are hyper specific
 2. Many chemical reactions require enzymatic catalysis
