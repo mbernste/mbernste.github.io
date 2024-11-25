@@ -1,5 +1,3 @@
-
-
 ---
 title: 'Resources for helping intuit biological systems'
 date: 2021-03-03
