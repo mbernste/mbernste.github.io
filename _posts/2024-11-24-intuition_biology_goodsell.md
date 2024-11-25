@@ -71,10 +71,11 @@ To provide some intuition, let's look at the numbers. Proteins diffuse through w
 
 Putting this all together a picture begins to emerge: 
 
-1. The cell is tightly packed with proteins and other biomolecules
-2. These molecules are rapidly moving and bumping into one another; however, the vast majority of these collisions don't result in any chemical reaction
-   
+* The cell is tightly packed with proteins and other biomolecules
+* These molecules are rapidly moving and bumping into one another; however, the vast majority of these collisions don't result in any chemical reaction due to their hyperspecificy, compartmentalization, and requirements for catalysis
+* However, because of how fast the molecules are moving these hyper specific interactions occur on a regular basis and carry out the biomolecular functions required to sustain life   
 
+In essence, we find the cell to be a tightly regulated "machine" and networks are a natural mathematical structure to model this machine and make its complexity ammenable to the human mind.
 
 
 
