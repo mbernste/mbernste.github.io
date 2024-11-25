@@ -18,7 +18,11 @@ Visual depictions of cells by David S. Goodsell
 
 <center><img src="https://cdn.rcsb.org/pdb101/goodsell/tif/model-of-a-mycoplasma-cell.tif" alt="drawing" width="400"/></center>
 
-What struck me most by Goodsell's pictures is how dense cells are. They are absolutely packed with molecules. 
+What struck me most by Goodsell's pictures is how dense cells really are. They are absolutely packed with molecules. This is a far cry from the image I had previously that 
+
+A second thing that struck me was the strange and almost alien interplay between order and chaos that exists within cells. As an example, see this illustration by Goodsell depicting the coronovirus lifecycle (Acknowledgement: David S. Goodsell, RCSB Protein Data Bank; doi: 10.2210/rcsb_pdb/goodsell-gallery-023. Integrative illustration for coronavirus outreach (2020) PLoS Biol 18: e3000815 doi: 10.1371/journal.pbio.3000815):
+
+Notice that despite the chaotic distribution of proteins and other biomolecules, structures start to form. In the above picture we see, emerging from the chaos, the sinister formation of new viruses! 
 
 
 Waddington's Landscape
