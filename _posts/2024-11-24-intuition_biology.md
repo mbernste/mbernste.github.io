@@ -9,6 +9,7 @@ tags:
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
 Introduction
+------------
 
 As a computer scientist working in biomedical research, I have had to develop my biology knowledge on the fly. Over the course of this effort, there have been certain concepts, articles, figures, and other bodies of work that provided notable step-functions in my ability to "intuit" biological systems. (I place "intuit" in quotes because my use of this word is being quite stretched -- biology is staggeringly complex and whatever understanding of biology I may have, it falls far short of "intuition", but I digress). In short, I found these works enlightening.
 
