@@ -67,8 +67,13 @@ To answer these questions, it helped me to learn four fundamental properties abo
 
 Now, let's address the first question: if proteins and other biomolecules are so packed within the cell and constantly bumping into one another, wouldn't we expect many abberant interactions between molecules? This was my intuition at least. However, it's important to realize that proteins are hyper-specific in regards to what they will interact with.  Because of this, the vast, vast majority of physical interactions between proteins don't result in any chemical reaction at all. Moreover, most chemical reactions in a cell require enzymatic catalysis to occur. That is, even if two molecules bump into one another that _could_ react, they often won't. 
 
-To provide some intuition, let's look at the numbers. Proteins diffuse through water at a speed of XXXXX. That is pretty fast! Now, because cells are so crowded, proteins move a lot more slowly, but they are still moving around quite a lot. It takes about 10 seconds for a protein to move the distance of a [HeLa cell's]() length. Because _all_ proteins are moving at this speed, we can deduce that every 10 seconds the spatial arangement of proteins in a cell are highly rearranged (subject to the tight compartmentalization imposed by organelles and other structures). This offers a lot of opportunity for proteins to randomly bump into their binding partners, thus carrying out biochemistry and information propagation within cells.
+To provide some intuition, let's look at the numbers. Proteins diffuse through water at a speed of XXXXX. That is pretty fast! Now, because cells are so crowded, proteins move a lot more slowly, but they are still moving around quite a lot. It takes about 10 seconds for a protein to move the distance of a [HeLa cell's]() length (note, the motion of proteins in the cell is random and follows [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion)). Because _all_ proteins are moving at this speed, we can deduce that every 10 seconds each protein will be in a completely new location within the cell and thus the cell will be highly rearranged (subject to the tight compartmentalization imposed by organelles and other structures). This offers a lot of opportunity for interacting proteins to "find" one another in the chaos.
 
+Putting this all together a picture begins to emerge: 
+
+1. The cell is tightly packed with proteins and other biomolecules
+2. These molecules are rapidly moving and bumping into one another; however, the vast majority of these collisions don't result in any chemical reaction
+   
 
 
 
