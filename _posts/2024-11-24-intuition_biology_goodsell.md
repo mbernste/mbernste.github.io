@@ -20,7 +20,7 @@ More specifically, in this post, I will discuss two ideas communicated in his wo
 1. Cells are absolutely packed with biomolecules
 2. There is a fascinating interplay of order and chaos in the cell
 
-Finally, I will attempt to connect this second insight to concepts found in [network biology](https://en.wikipedia.org/wiki/Biological_network), by attempting to answer the following question: If cells are so packed and chaotic, how can we model them with networks?
+Finally, I will attempt to connect these ideas to concepts found in [network biology](https://en.wikipedia.org/wiki/Biological_network), by attempting to answer the following question: If cells are so packed and chaotic, how is it that we can model them mathematically with networks?
 
 
 Cells are absolutely packed
