@@ -1,6 +1,6 @@
 ---
 title: 'Resources for helping intuit biological systems'
-date: 2021-03-03
+date: 2024-11-24
 permalink: /posts/intuit_biology/
 tags:
   - biology
