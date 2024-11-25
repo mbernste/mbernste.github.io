@@ -6,9 +6,9 @@ tags:
   - biology
 ---
 
-As a computer scientist working in biomedical research, I have had to develop my biology knowledge on the fly. Over the course of this effort, there have been certain concepts, articles, figures, and other bodies of work that provided notable step-functions in my ability to "intuit" biological systems. I place "intuit" in quotes because my use of this word is being quite stretched -- biology is staggeringly complex and whatever understanding of biology I may have, it falls far short of "intuition". Perhaps, more accurately, these bodies of work helped me _feel_ that I now better intuit biological systems. In short, I found these works enlightening.
+As a computer scientist working in biomedical research, I have had to develop my biology knowledge on the fly. Over the course of this effort, there have been certain concepts, articles, figures, and other bodies of work that provided notable step-functions in my ability to "intuit" biological systems. (I place "intuit" in quotes because my use of this word is being quite stretched -- biology is staggeringly complex and whatever understanding of biology I may have, it falls far short of "intuition", but I digress). In short, I found these works enlightening.
 
-In This blog post, I will collect some of these works and provide a little bit of commentary describing why I found these works so helpful. I hope the centralization of these resources serves others like myself!
+In This blog post, I will collect some of these works and provide a little bit of commentary describing why I found these works so helpful. The resources I collected here require an introductory level of understanding of molecular biology to appreciate (i.e., what may be found in undergraduate coursework) and provided me new mental models and paradigms for thinking about biology. I hope the centralization of these resources serves others like myself!
 
 
 Visual depictions of cells by David S. Goodsell
