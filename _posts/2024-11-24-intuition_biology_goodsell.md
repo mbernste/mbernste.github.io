@@ -52,14 +52,12 @@ If you work in computational biology, there is little doubt that you have been e
 <center><img src="https://www.wikipathways.org/wikipathways-assets/pathways/WP231/WP231.png" alt="drawing" width="1500"/></center>
 Acknowledgement: Agrawal A, et al. (2024) WikiPathways 2024: next generation pathway database. NAR.
 
-Now, if cells are so crowded, how exactly does the orderly structure of a signalling pathways and networks emerge at all from the chaotic environment of the cell? If all these molecules are constantly bumping into eachother, won't we get spurious interactions between molecules? Moreover, how do two interacting proteins/molecules "find" one another at a high enough frequency? In short, how can we model cells using networks at all?
+Now, if cells are so crowded, how exactly does the orderly structure of a signalling pathways and networks emerge at all from the chaotic environment of the cell? Learning the following four facts helped explain, to some extent, how the network model can be used to describe cellular processes:
 
-As far as I know, there are four fundamental properties about the biophysics and chemistry that occurs within cells that leads to the network model:
-
-1. Chemical interactions between biomolecules are hyper specific
-2. Many chemical reactions require enzymatic catalysis
-3. Cells are highly compartmentalized
-4. Molecules move extremely fast inside cells
+1. Molecules move extremely fast inside cells
+2. Proteins are hyper-specific in regards to what they will bind to
+3. Many chemical reactions require enzymatic catalysis to occur
+4. Cells are highly compartmentalized
 
 Now, let's address the first question: if proteins and other biomolecules are so packed within the cell and constantly bumping into one another, wouldn't we expect many abberant interactions between molecules? This was my intuition at least; however, that intuition is wrong. 
 
