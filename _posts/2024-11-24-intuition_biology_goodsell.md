@@ -13,7 +13,7 @@ Introduction
 
 As a computer scientist working in biomedical research, I have had to develop my biology knowledge on the fly. Over the course of this effort, there have been certain concepts, articles, figures, and other bodies of work that provided notable step-functions in my ability to "intuit" biological systems. (I place "intuit" in quotes because my use of this word is quite stretched -- biology is staggeringly complex and whatever understanding of biology I may have, it falls far short of intuition, but I digress). In this series of blog posts, I will collect some of these works and provide a little bit of commentary describing why I found these works so helpful. I hope the centralization of these resources serves others who are on a similar journey as I am!
 
-In the first post of this series, I will attempt to tie two seemingly contradictory ideas together:
+In the first post of this series, I will attempt to tie two seemingly contradictory ideas together through the work of [David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell):
 
 1. Cells are densely packed, chaotic places
 2. We can describe cellular processes with [graphs/networks](https://en.wikipedia.org/wiki/Biological_network)
