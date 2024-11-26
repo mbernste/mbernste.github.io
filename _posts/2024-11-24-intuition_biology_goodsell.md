@@ -18,7 +18,9 @@ In the first post of this series, I will attempt to tie two seemingly contradict
 1. Cells are densely packed, chaotic places
 2. We can describe cellular processes with [graphs/networks](https://en.wikipedia.org/wiki/Biological_network)
 
-I will begin by discussing some of the insights and insights and intuition I gained through the work of [David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell). Dr. Goodsell is a structural biologist at the Scripps Research Institute and Rutgers University and is well known for his scientifically accurate depictions of cells and the molecules that they are comprised of. [His work](https://ccsb.scripps.edu/goodsell/) is both educational and beautiful and helped expand my understanding of biology.
+I will begin by discussing the visual depictions of cells by [David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell). Dr. Goodsell is a structural biologist at the Scripps Research Institute and Rutgers University and is well known for his scientifically accurate depictions of cells and the molecules that they are comprised of. [His work](https://ccsb.scripps.edu/goodsell/) is both educational and beautiful and helped expand my understanding of biology.
+
+As I will discuss, Dr. Goodsell's work highlights how densely packed, and seemingly chaotic the environments within cells are. The packed, chaotic nature of these environments seems to contradict the fact that biologists routinely describe cells using the clean, mathematical language of networks and graphs. In this post, I will attempt to renconcile these two ideas. 
 
 Cells are absolutely packed
 ---------------------------
@@ -52,12 +54,12 @@ Acknowledgement: Agrawal A, et al. (2024) WikiPathways 2024: next generation pat
 
 Now, if cells are so crowded, how exactly does the orderly structure of a signalling pathways and networks emerge at all from the chaotic environment of the cell? If all these molecules are constantly bumping into eachother, won't we get spurious interactions between molecules? Moreover, how do two interacting proteins/molecules "find" one another at a high enough frequency? In short, how can we model cells using networks at all?
 
-To answer these questions, it helped me to learn four fundamental properties about the biophysics and chemistry that occurs within cells:
+As far as I know, there are four fundamental properties about the biophysics and chemistry that occurs within cells that leads to the network model:
 
 1. Chemical interactions between biomolecules are hyper specific
 2. Many chemical reactions require enzymatic catalysis
 3. Cells are highly compartmentalized
-4. Despite being so packed molecules move extremely fast inside cells
+4. Molecules move extremely fast inside cells
 
 Now, let's address the first question: if proteins and other biomolecules are so packed within the cell and constantly bumping into one another, wouldn't we expect many abberant interactions between molecules? This was my intuition at least. However, it's important to realize that proteins are hyper-specific in regards to what they will interact with.  Because of this, the vast, vast majority of physical interactions between proteins don't result in any chemical reaction at all. Moreover, most chemical reactions in a cell require enzymatic catalysis to occur. That is, even if two molecules bump into one another that _could_ react, they often won't. 
 
