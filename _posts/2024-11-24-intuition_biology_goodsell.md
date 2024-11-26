@@ -63,17 +63,23 @@ As far as I know, there are four fundamental properties about the biophysics and
 
 Now, let's address the first question: if proteins and other biomolecules are so packed within the cell and constantly bumping into one another, wouldn't we expect many abberant interactions between molecules? This was my intuition at least; however, that intuition is wrong. 
 
-First, proteins are hyper-specific in regards to what they will interact with. Because of this, the vast, vast majority of physical interactions between proteins don't result in any chemical reaction at all. Second, most chemical reactions in a cell have a very high activation energy and thus, will rarely occur on their own without something to catalyze their reaction. That is, even if two molecules bump into one another that _could_, in theory, react together, they often won't unless a third molecule is there to catalyze that reaction. From this, we realize that the vast majority of objects colliding into one another won't actually result in a chemical reaction. I imagine a bunch of billiard balls bouncing harmlessly off one another.
+First, proteins are hyper-specific in regards to what they will interact with. Most proteins have a very "tight" binding pocket that will only bind to a very specific target. For example, XXXXXXXX:
+
+
+Because of this, the vast, vast majority of physical interactions between proteins don't result in any binding and/or chemical reaction at all. 
+
+Second, most chemical reactions in a cell have a very high activation energy and thus, will rarely occur on their own without something to catalyze their reaction. That is, even if two molecules bump into one another that _could_, in theory, react together, they often won't unless a third molecule is there to catalyze that reaction. From this, we realize that the vast majority of objects colliding into one another won't actually result in a chemical reaction. I imagine a bunch of billiard balls bouncing harmlessly off one another.
+
 
 To provide some intuition, let's look at the numbers. Proteins diffuse through water at a speed of XXXXX. That is pretty fast! Now, because cells are so crowded, proteins move a lot more slowly, but they are still moving around quite a lot. It takes about 10 seconds for a protein to move the distance of a [HeLa cell's]() length (note, the motion of proteins in the cell is random and follows [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion)). Because _all_ proteins are moving at this speed, we can deduce that every 10 seconds each protein will be in a completely new location within the cell and thus the cell will be highly rearranged (subject to the tight compartmentalization imposed by organelles and other structures). This offers a lot of opportunity for interacting proteins to "find" one another in the chaos.
 
 Putting this all together a picture begins to emerge: 
 
 * The cell is tightly packed with proteins and other biomolecules
-* These molecules are rapidly moving and bumping into one another; however, the vast majority of these collisions don't result in any chemical reaction due to their hyperspecificy, compartmentalization, and requirements for catalysis
+* These molecules are rapidly moving and bumping into one another; however, the vast majority of these collisions don't result in any binding and/or chemical reaction due to their hyperspecificy, compartmentalization, and requirements for catalysis
 * However, because of how fast the molecules are moving these hyper specific interactions occur on a regular basis and carry out the biomolecular functions required to sustain life   
 
-In essence, we find the cell to be a tightly regulated "machine" and networks are a natural mathematical structure to model this machine and make its complexity ammenable to the human mind.
+In essence, we find the cell to be a tightly regulated "machine" and networks are a natural mathematical structure to model this machine.
 
 Related Reading
 ---------------
