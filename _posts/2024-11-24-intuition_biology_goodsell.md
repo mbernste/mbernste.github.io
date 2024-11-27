@@ -50,7 +50,7 @@ How order emerges from the chaos: connections to network biology
 If you work in computational biology, there is little doubt that you have been exposed to concepts found in [network biology](https://en.wikipedia.org/wiki/Biological_network). A common way to describe the biochemical processes that occur in cells is to depict and model these processes mathematically as networks or graphs. For example, protein-protein interaction networks are networks in which proteins form the nodes of the graph and an edge between two proteins indicates that those two proteins interact or bind with one another. Such protein interaction networks form [signaling pathways](https://en.wikipedia.org/wiki/List_of_signalling_pathways) in which the information flow through a cell is mediated by cascading interactions between proteins and other molecules. For example, below is a depiction of the [TNF-alpha signalling pathway](https://www.wikipathways.org/pathways/WP231.html), which is a signalling pathway used to modulate immune cell function:
 
 <center><img src="https://www.wikipathways.org/wikipathways-assets/pathways/WP231/WP231.png" alt="drawing" width="1500"/></center>
-Acknowledgement: Agrawal A, et al. (2024) WikiPathways 2024: next generation pathway database. NAR.
+<center><sup><span style="color:#b8b4b4">Acknowledgement: Agrawal A, et al. (2024) WikiPathways 2024: next generation pathway database. NAR.</span></sup></center>
 
 What I find so fascinating is that despite the cells being so crowded, the network model has proved to still be a powerful model for describing cellular functions. Why is this exactly? As far as I understand, there are two "competing" phenomenon that are occuring within the cell that leads to the network model:
 
