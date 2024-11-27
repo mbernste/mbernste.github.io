@@ -16,7 +16,7 @@ As a computer scientist working in biomedical research, I have had to develop my
 In the first post of this series, I will attempt to tie two seemingly contradictory ideas together:
 
 1. Cells are densely packed, chaotic places
-2. We can describe cellular processes with [graphs/networks](https://en.wikipedia.org/wiki/Biological_network)
+2. We can describe cellular processes with the clean language of [graphs/networks](https://en.wikipedia.org/wiki/Biological_network)
 
 I will begin by discussing the visual depictions of cells by [David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell). Dr. Goodsell is a structural biologist at the Scripps Research Institute and Rutgers University and is well known for his scientifically accurate depictions of cells and the molecules that they are comprised of. [His work](https://ccsb.scripps.edu/goodsell/) is both educational and beautiful and helped expand my understanding of biology.
 
@@ -28,19 +28,19 @@ Cells are absolutely packed
 What struck me most from Dr. Goodsell's work is how densely packed cells really are. Below is an example illustration that depicts the density of the cell:
 
 <center><img src="https://cdn.rcsb.org/pdb101/goodsell/tif/model-of-a-mycoplasma-cell.tif" alt="drawing" width="400"/></center>
-Acknowledgement: Martina Maritan, Ludovic Autin, David S. Goodsell, Scripps Research and RCSB Protein Data Bank. doi: 10.2210/rcsb_pdb/goodsell-gallery-040
+<center><sup><span style="color:#b8b4b4">Acknowledgement: Martina Maritan, Ludovic Autin, David S. Goodsell, Scripps Research and RCSB Protein Data Bank. doi: 10.2210/rcsb_pdb/goodsell-gallery-040</span></sup></center>
 
 This is a far cry from the image I had previously held of cells as a little, uncrowded "bags of water". I believe this incorrect mental model was fomented in my mind by images like the following that are meant to teach the organelles found in the cell:
 
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cell-organelles-labeled.png" alt="drawing" width="400"/></center>
-<center><sup><span style="color:#b8b4b4">Acknowledgement: Bingbongboing as found on [Wikipedia](https://en.wikipedia.org/wiki/Cellular_compartment#/media/File:Cell-organelles-labeled.png)</span></sup></center>
+<center><sup><span style="color:#b8b4b4">Acknowledgement: Bingbongboing as found on Wikipedia (https://en.wikipedia.org/wiki/Cellular_compartment#/media/File:Cell-organelles-labeled.png)</span></sup></center>
 
 Though images like this are effective for teaching the different organelles found in cells, they imply that cells are empty (at least that was my impression). This was a misconception that I had held for a good portion of my computational biology journey.
 
 A second thing that struck me was the interplay between order and chaos that exists within cells. As an example, see this illustration by Goodsell depicting the coronovirus lifecycle:
 
 <center><img src="https://cdn.rcsb.org/pdb101/goodsell/png-800/coronavirus-life-cycle.png" alt="drawing" width="400"/></center>
-Acknowledgement: David S. Goodsell, RCSB Protein Data Bank; doi: 10.2210/rcsb_pdb/goodsell-gallery-023. Integrative illustration for coronavirus outreach (2020) PLoS Biol 18: e3000815 doi: 10.1371/journal.pbio.3000815
+<center><sup><span style="color:#b8b4b4">Acknowledgement: David S. Goodsell, RCSB Protein Data Bank; doi: 10.2210/rcsb_pdb/goodsell-gallery-023. Integrative illustration for coronavirus outreach (2020) PLoS Biol 18: e3000815 doi: 10.1371/journal.pbio.3000815</span></sup></center>
 
 Notice that despite the messy distribution of proteins and other biomolecules, clear structures form (membranes, gradients, etc.). In the above picture we see, emerging from the chaos, the insidious formation of new viruses! 
 
