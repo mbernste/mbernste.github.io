@@ -20,7 +20,7 @@ In the first post of this series, I will attempt to tie two seemingly contradict
 
 I will begin by discussing the visual depictions of cells by [David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell). Dr. Goodsell is a structural biologist at the Scripps Research Institute and Rutgers University and is well known for his scientifically accurate depictions of cells and the molecules that they are comprised of. [His work](https://ccsb.scripps.edu/goodsell/) is both educational and beautiful and helped expand my understanding of biology.
 
-As I will discuss, Dr. Goodsell's work highlights how densely packed, and seemingly chaotic the environments within cells are. The packed, chaotic nature of these environments seems to contradict the fact that biologists routinely describe cells using the clean, mathematical language of networks and graphs as used in the subfied of [](). In this post, I will attempt to connect and renconcile these two perspectives of the cell. 
+As I will discuss, Dr. Goodsell's work highlights how densely packed, and seemingly chaotic the environments within cells are. The packed, chaotic nature of these environments seems to contradict the fact that biologists routinely describe cells using the clean, mathematical language of networks and graphs as used in the subfied of [Network Biology](https://en.wikipedia.org/wiki/Biological_network). In this post, I will attempt to connect and renconcile these two perspectives of the cell. 
 
 Cells are absolutely packed
 ---------------------------
