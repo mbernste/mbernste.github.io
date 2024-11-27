@@ -11,16 +11,16 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-As a computer scientist working in biomedical research, I have had to develop my biology knowledge on the fly. Over the course of this effort, there have been certain concepts, articles, figures, and other bodies of work that provided notable step-functions in my ability to "intuit" biological systems. (my use of the word "intuit" is quite strained here, but I digress). In this series of blog posts, I will collect some of these works and provide a little bit of commentary describing why I found these works so helpful. I hope the centralization of these resources serves others who are on a similar journey as I am!
+As a computer scientist working in biomedical research, I have had to develop my biology knowledge on the fly. Over the course of this effort, there have been certain concepts, articles, figures, and other bodies of work that provided notable step-functions in my ability to "intuit" biological systems. (my use of the word "intuit" is quite strained here, but I digress). In this series of blog posts, I will collect some of these works and attempt to connect them together conceptually. I hope this series serves others who are on a similar journey as I am!
 
-In the first post of this series, I will attempt to tie two seemingly contradictory ideas together through the work of [David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell):
+In the first post of this series, I will attempt to tie two seemingly contradictory ideas together:
 
 1. Cells are densely packed, chaotic places
 2. We can describe cellular processes with [graphs/networks](https://en.wikipedia.org/wiki/Biological_network)
 
 I will begin by discussing the visual depictions of cells by [David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell). Dr. Goodsell is a structural biologist at the Scripps Research Institute and Rutgers University and is well known for his scientifically accurate depictions of cells and the molecules that they are comprised of. [His work](https://ccsb.scripps.edu/goodsell/) is both educational and beautiful and helped expand my understanding of biology.
 
-As I will discuss, Dr. Goodsell's work highlights how densely packed, and seemingly chaotic the environments within cells are. The packed, chaotic nature of these environments seems to contradict the fact that biologists routinely describe cells using the clean, mathematical language of networks and graphs. In this post, I will attempt to renconcile these two ideas. 
+As I will discuss, Dr. Goodsell's work highlights how densely packed, and seemingly chaotic the environments within cells are. The packed, chaotic nature of these environments seems to contradict the fact that biologists routinely describe cells using the clean, mathematical language of networks and graphs as used in the subfied of [](). In this post, I will attempt to connect and renconcile these two perspectives of the cell. 
 
 Cells are absolutely packed
 ---------------------------
@@ -52,36 +52,23 @@ If you work in computational biology, there is little doubt that you have been e
 <center><img src="https://www.wikipathways.org/wikipathways-assets/pathways/WP231/WP231.png" alt="drawing" width="1500"/></center>
 Acknowledgement: Agrawal A, et al. (2024) WikiPathways 2024: next generation pathway database. NAR.
 
-Now, if cells are so crowded, how exactly does the orderly structure of a signalling pathways and networks emerge at all from the chaotic environment of the cell? Learning the following four facts helped explain, to some extent, how the network model can be used to describe cellular processes:
+What I find so fascinating is that despite the cells being so crowded, the network model has proved to still be a powerful model for describing cellular functions. Why is this exactly? As far as I understand, there are two "competing" phenomenon that are occuring within the cell that leads to the network model:
 
 1. Molecules move extremely fast inside cells
-2. Proteins are hyper-specific in regards to what they will bind to
-3. Many chemical reactions require enzymatic catalysis to occur
-4. Cells are highly compartmentalized
+2. Chemical reactions/binding will rarely occur between two biomolecules
 
-Now, let's address the first question: if proteins and other biomolecules are so packed within the cell and constantly bumping into one another, wouldn't we expect many abberant interactions between molecules? This was my intuition at least; however, that intuition is wrong. 
+First, despite the cell being so crowded, molecules move extremely fast within the cell. Our intuition, based on the macroscale in which we live, breaks down at at the subcellular scale. To try to grow some new intuition, let's look at the numbers. Proteins diffuse through water at a speed of XXXXX, which is extremely fast!
 
-First, proteins are hyper-specific in regards to what they will interact with. Most proteins have a very "tight" binding pocket that will only bind to a very specific target. For example, XXXXXXXX:
+In fact, in general, one can expect [**every biomolecule to collide with _very other_ biomolecule in a single _e. coli_ bacterium once per second**](https://book.bionumbers.org/how-many-reactions-do-enzymes-carry-out-each-second/)! Extrapolating this beyond _e. coli_, one can expect that if there are two proteins that _can_ bind in the cell, they inevitably _will_ bind within a very short amount of time. Thus, the deterministic picture portrayed by a network diagram is actually fairly accurate! 
 
+Now, with this in mind, wouldn't one expect many aberrant reactions and/or electrostatic binding? The answer is "no" for two main reasons: First, when considering small molecules in the cell, most chemical reactions have a very high activation energy and require a catalyst, such as an enzyme, to occur. Thus, though small molecules are colliding with eachother constantly, they are unlikely to interact. Second, when considering proteins (i.e., larger biomolecules), the targets that proteins bind to are [hyperspecific](). Thus, the specific pairs of molecules that actually react/bind with one another is an _extremely_ small fraction when considering all possible pairs of proteins. 
 
-Because of this, the vast, vast majority of physical interactions between proteins don't result in any binding and/or chemical reaction at all. 
-
-Second, most chemical reactions in a cell have a very high activation energy and thus, will rarely occur on their own without something to catalyze their reaction. That is, even if two molecules bump into one another that _could_, in theory, react together, they often won't unless a third molecule is there to catalyze that reaction. From this, we realize that the vast majority of objects colliding into one another won't actually result in a chemical reaction. I imagine a bunch of billiard balls bouncing harmlessly off one another.
-
-
-To provide some intuition, let's look at the numbers. Proteins diffuse through water at a speed of XXXXX. That is pretty fast! Now, because cells are so crowded, proteins move a lot more slowly, but they are still moving around quite a lot. It takes about 10 seconds for a protein to move the distance of a [HeLa cell's]() length (note, the motion of proteins in the cell is random and follows [Brownian motion](https://en.wikipedia.org/wiki/Brownian_motion)). Because _all_ proteins are moving at this speed, we can deduce that every 10 seconds each protein will be in a completely new location within the cell and thus the cell will be highly rearranged (subject to the tight compartmentalization imposed by organelles and other structures). This offers a lot of opportunity for interacting proteins to "find" one another in the chaos.
-
-Putting this all together a picture begins to emerge: 
-
-* The cell is tightly packed with proteins and other biomolecules
-* These molecules are rapidly moving and bumping into one another; however, the vast majority of these collisions don't result in any binding and/or chemical reaction due to their hyperspecificy, compartmentalization, and requirements for catalysis
-* However, because of how fast the molecules are moving these hyper specific interactions occur on a regular basis and carry out the biomolecular functions required to sustain life   
-
-In essence, we find the cell to be a tightly regulated "machine" and networks are a natural mathematical structure to model this machine.
+Putting this all together: molecules move extremely fast in the cell and will meet every other molecule in the cell within a short amount of time; however, the pairs of molecules that actually react when they meet is extremely small. From this picture, we gain a sense for why the network model is a reasonable model for describing cellular processes!
 
 Related Reading
 ---------------
 * [David S. Goodsell's homepage](https://ccsb.scripps.edu/goodsell/)
+* [_Cell Biology by the Numbers_ by ](https://book.bionumbers.org)
 * [This blog post by Ken Shirriff](http://www.righto.com/2011/07/cells-are-very-fast-and-crowded-places.html)
 
 
