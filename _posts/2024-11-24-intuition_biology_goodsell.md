@@ -6,17 +6,17 @@ tags:
   - biology
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
+_Cells are crowded spaces packed with biomolecules colliding and interacting with one another. Despite this chaotic environment, biologists routinely describe intracellular functions using the clean mathematical language of networks. In this post I will attempt to reconcile these two seemingly contradictory perspectives of the cell. This post will serve as a first part in a series of blog posts I hope to write where I will collect and connect some of the works that have helped me better "intuit" biology as a person coming to biology from the field of computer science._  
 
 Introduction
 ------------
 
-As a computer scientist working in biomedical research, I have had to develop my biology knowledge on the fly. Over the course of this effort, there have been certain concepts, articles, figures, and other bodies of work that provided notable step-functions in my ability to "intuit" biological systems. (my use of the word "intuit" is quite strained here, but I digress). In this series of blog posts, I will collect some of these works and attempt to connect them together conceptually. I hope this series serves others who are on a similar journey as I am!
+As a computer scientist working in biomedical research, I have had to develop my biology knowledge on the fly. Over the course of this effort, there have been certain concepts, articles, and other bodies of work that led to notable step-functions in my ability to "intuit" biological systems. (Given the staggering complexity of biology, my use of the word "intuit" is quite strained here, but I digress). In this series of blog posts, I will collect some of these works and attempt to connect them together conceptually. I hope this series serves others who are on a similar journey as I am!
 
 In the first post of this series, I will attempt to tie two seemingly contradictory ideas together:
 
 1. Cells are densely packed, chaotic places
-2. We can describe cellular processes with the clean language of [graphs/networks](https://en.wikipedia.org/wiki/Biological_network)
+2. We can describe cellular processes using the clean language of [graphs/networks](https://en.wikipedia.org/wiki/Biological_network)
 
 I will begin by discussing the visual depictions of cells by [David S. Goodsell](https://en.wikipedia.org/wiki/David_Goodsell). Dr. Goodsell is a structural biologist at the Scripps Research Institute and Rutgers University and is well known for his scientifically accurate depictions of cells and the molecules that they are comprised of. [His work](https://ccsb.scripps.edu/goodsell/) is both educational and beautiful and helped expand my understanding of biology.
 
