@@ -33,7 +33,7 @@ Acknowledgement: Martina Maritan, Ludovic Autin, David S. Goodsell, Scripps Rese
 This is a far cry from the image I had previously held of cells as a little, uncrowded "bags of water". I believe this incorrect mental model was fomented in my mind by images like the following that are meant to teach the organelles found in the cell:
 
 <center><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Cell-organelles-labeled.png" alt="drawing" width="400"/></center>
-Acknowledgement: Bingbongboing as found on [Wikipedia](https://en.wikipedia.org/wiki/Cellular_compartment#/media/File:Cell-organelles-labeled.png)
+<sup><span style="color:#b8b4b4">Acknowledgement: Bingbongboing as found on [Wikipedia](https://en.wikipedia.org/wiki/Cellular_compartment#/media/File:Cell-organelles-labeled.png)</span></sup>
 
 Though images like this are effective for teaching the different organelles found in cells, they imply that cells are empty (at least that was my impression). This was a misconception that I had held for a good portion of my computational biology journey.
 
