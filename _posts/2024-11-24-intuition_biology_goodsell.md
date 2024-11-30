@@ -27,7 +27,7 @@ Cells are absolutely packed
 
 What struck me most from Dr. Goodsell's work is how densely packed cells really are. Below is an example illustration that depicts the density of the cell:
 
-<center><img src="https://cdn.rcsb.org/pdb101/goodsell/tif/vascular-endothelial-growth-factor-vegf-signaling.tif" alt="drawing" width="400"/></center>
+<center><img src="https://cdn.rcsb.org/pdb101/goodsell/tif/vascular-endothelial-growth-factor-vegf-signaling.tif" alt="drawing" width="1000"/></center>
 <center><sup><span style="color:#b8b4b4">Acknowledgement: Illustration by David S. Goodsell, RCSB Protein Data Bank. doi: 10.2210/rcsb_pdb/goodsell-gallery-041</span></sup></center>
 
 This is a far cry from the image I had previously held of cells as a little, uncrowded "bags of water". I believe this incorrect mental model was fomented in my mind by images like the following that are meant to teach the organelles found in the cell:
