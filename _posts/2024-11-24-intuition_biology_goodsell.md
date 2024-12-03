@@ -56,7 +56,7 @@ Despite the cells being so crowded, the network model has proved to still be a p
 
 As far as I understand, there are two "competing" phenomenon that are occuring within the cell that leads to the network model:
 
-1. Molecules move extremely fast inside cells
+1. Molecules move extremely fast inside cells leading to many opportunities for interaction
 2. Chemical reactions/binding will rarely occur between two biomolecules
 
 First, despite the cell being so crowded, molecules move extremely fast within the cell and this gives them a lot of opportunity to meet one another. Our intuition, based on the macroscale in which we live, breaks down at at the subcellular scale. To try to grow some new intuition, let's look at the numbers. 
