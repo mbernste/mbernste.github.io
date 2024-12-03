@@ -52,7 +52,9 @@ If you work in computational biology, there is little doubt that you have been e
 <center><img src="https://www.wikipathways.org/wikipathways-assets/pathways/WP231/WP231.png" alt="drawing" width="1500"/></center>
 <center><sup><span style="color:#b8b4b4">Acknowledgement: Agrawal A, et al. (2024) WikiPathways 2024: next generation pathway database. NAR.</span></sup></center>
 
-What I find so fascinating is that despite the cells being so crowded, the network model has proved to still be a powerful model for describing cellular functions. Why is this exactly? As far as I understand, there are two "competing" phenomenon that are occuring within the cell that leads to the network model:
+Despite the cells being so crowded, the network model has proved to still be a powerful model for describing cellular functions. Why is this exactly? 
+
+As far as I understand, there are two "competing" phenomenon that are occuring within the cell that leads to the network model:
 
 1. Molecules move extremely fast inside cells
 2. Chemical reactions/binding will rarely occur between two biomolecules
@@ -65,7 +67,7 @@ This rearrangement is even more extreme for small molecules. In fact, in an _e. 
 
 Thus, if we have two biomolecules in the cell that _can_ bind/interact (including proteins), we can deduce that they inevitably _will_ interact within a fairly short span of time (again, subject to their compartmentalization within the cell). Thus, as far as I understand, the deterministic picture portrayed by a network diagram is actually fairly accurate! 
 
-Now, with this in mind, wouldn't one expect many aberrant reactions and/or electrostatic binding? The answer is "no" for two main reasons: First, when considering small molecules in the cell, most chemical reactions have a very high [activation energy](https://en.wikipedia.org/wiki/Activation_energy) and require a [catalyst](https://en.wikipedia.org/wiki/Catalysis), such as an [enzyme](https://en.wikipedia.org/wiki/Enzyme), to occur. Thus, though small molecules are colliding with eachother constantly, they are unlikely to interact. Second, when considering proteins (i.e., larger biomolecules), the targets that proteins bind to are [hyperspecific](https://elifesciences.org/articles/60924). Thus, the specific pairs (or combinations) of molecules that actually react/bind with one another is an _extremely_ small fraction of all possible pairs/combinations. 
+Now, with this in mind, wouldn't one expect many aberrant reactions and/or electrostatic binding? The answer is "no" for two main reasons: First, when considering small molecules in the cell, most chemical reactions have a very high [activation energy](https://en.wikipedia.org/wiki/Activation_energy) and require a [catalyst](https://en.wikipedia.org/wiki/Catalysis), such as an [enzyme](https://en.wikipedia.org/wiki/Enzyme), to occur. Thus, though small molecules are colliding with eachother constantly, they are unlikely to interact. Second, when considering proteins (i.e., larger biomolecules), the targets that proteins bind to are [hyperspecific](https://elifesciences.org/articles/60924). Thus, the specific pairs (or combinations) of proteins that actually interact with one another is an _extremely_ small fraction of all possible pairs/combinations. 
 
 Putting this all together at a (very) high-level: molecules move extremely fast in the cell and will (roughly) meet every other molecule in the cell within a short amount of time; however, the pairs of molecules that actually react when they meet is extremely small. From this picture, we gain a sense for why the network model is a reasonable model for describing cellular processes despite how packed and chaotic they are!
 
