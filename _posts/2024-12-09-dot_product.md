@@ -8,8 +8,6 @@ tags:
   - linear algebra
 ---
 
-THIS POST IS CURRENTLY UNDER CONSTRUCTION
-
 _The dot product is a fundamental operation on two Euclidean vectors that captures a notion of similarity between the vectors. In this post, we'll define the dot product and offer a number of angles for which to intuit the idea captured by this fundamental operation._
 
 Introduction
