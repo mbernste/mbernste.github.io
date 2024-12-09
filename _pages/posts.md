@@ -33,19 +33,13 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 
 [The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)  
 
-## Probabilistic models
+## Probabilistic modeling
 
-[Gaussian mixture models](https://mbernste.github.io/posts/gmm_em/)  
-
-## Algorithms for statistical inference
-
+[The evidence lower bound](https://mbernste.github.io/posts/elbo/)
 [Expectation-maximization: theory and intuition](https://mbernste.github.io/posts/em/)  
 [Variational inference](https://mbernste.github.io/posts/variational_inference/)  
 [Blackbox variational inference via the reparameterization gradient](https://mbernste.github.io/posts/reparameterization_vi/)  
-
-## Quantities related to probabilistic models
-
-[The evidence lower bound](https://mbernste.github.io/posts/elbo/)
+[Gaussian mixture models](https://mbernste.github.io/posts/gmm_em/)  
 
 ## Probability
 
