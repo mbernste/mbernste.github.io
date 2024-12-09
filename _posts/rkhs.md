@@ -125,15 +125,15 @@ The reproducing kernel
 
 Strangely, you may have noticed that in our definition of a RKHS there is no mention of any object called a "kernel" let alone a "reproducing kernel". So what exactly is the "reproducing kernel" in a "reproducing kernel Hilbert space"?
 
-As we'll see, the "kernel" will arise from an interesting property that RKHS's possess: you can "reproduce" any evaluation functional using inner products in the Hilbert space.  Specifically, for any given $x \in \mathcal{X}$, there exists some function $k_x \in \mathcal{H}$ where the following holds:
+The "kernel" arises from a fundamental property that RKHS's possess: you can "reproduce" any evaluation functional using inner products in the Hilbert space.  Specifically, for any given $x \in \mathcal{X}$, there exists some function $k_x \in \mathcal{H}$ where the following holds:
 
 $$\delta_x(f) = f(x) = \langle f, k_x \rangle$$
 
-This is proven by the [Riesz representation theorem](https://en.wikipedia.org/wiki/Riesz_representation_theorem). We will not provide a proof for this theorem here, but we will state an abbreviated statement that it proves:
+This fact is described by the [Riesz representation theorem](https://en.wikipedia.org/wiki/Riesz_representation_theorem). We will not provide a proof for this theorem here; rather, we'll state an abbreviated version:
 
 <span style="color:#0060C6">**Theorem 1 (Riesz representation theorem - abbreviated):** Given a Hilbert space $(\mathcal{H}, \mathcal{F}, \langle ., . \rangle)$ where $\mathcal{H}$ is the set of vectors, $\mathcal{F}$ are a set of scalars, $\langle ., . \rangle$ is an inner product on $\mathcal{H}$, and $\forall f \in \mathcal{H}$, $f$ is a function $f : \mathcal{X} \rightarrow \mathbb{R}$, where $\mathcal{X}$ is some set. Let $\ell$ be a continous linear functional $\ell: \mathcal{H} \rightarrow \mathcal{X}$, then there exists a unique function $f_{\ell} \in \mathcal{H}$ such that $\forall f \in \mathcal{H}, \ \ell{f} = \langle f_{\ell}, f\rangle$.</span>
 
-The Riesz representation theorem is not explicitly a statement about RKHSs, but we note that it does hold for RKHSs. We prove this Theorem 2 in the appendix to this post. 
+The Riesz representation theorem is not explicitly a statement about RKHSs, but it does hold for RKHSs. We prove this in Theorem 2 in the appendix to this post. 
 
 What this theorem says is that we can reproduce the action of $\delta_x$ by taking an inner product with some fixed function $k_x$ in our Hilbert space. This is called the **reproducing property** of a RKHS!  Here's a schematic to illustrate this property:
 
@@ -168,7 +168,19 @@ The kernel trick
 
 So far, all of this has been very abstract; we have assumed we have Hilbert space that satisfies the axioms in the definition for a RKHS and showed that we can derive a kernel function from this RKHS.  Unfortunately, nothing we have discussed mentions how one can actually derive a kernel function.  That is, how does one find an appropriate function $\phi$ that magically maps each $x \in \mathcal{X}$ to its $k_x$ in an RKHS that satisfies the reproducing property for $\delta_x$?
 
-It turns out that one does not actually need to derive the $\phi$ function explicitly. It turns out that **_any_ positive-definite function $K: \mathcal{X} \times \mathcal{X} \rightarrow \mathbb{R}$ is a reproducing kernel for _some_ RKHS** (This is proven by the Moore-Aronszajn theorem -- see Theorem 3 in the Appendix to this blog). In other words, there is a one-to-one mapping between positive definite functions and RKHS's.
+It turns out that one does not actually need to derive the $\phi$ function explicitly. It turns out that one needs only find a function $K: \mathcal{X} \times \mathcal{X} \rightarrow \mathbb{R}$ that satisfies a certain property and this will _automatically_ be a kernel funmction for _some_ RKHS. This is great! It means that we don't need to actually define the RKHS itself, rather, we simply need to find a kernel function, $K$, that satisfies a particular property.
+
+What property is this? **Positve-definiteness.** This is stated in the Moore-Aronszajn theorem:
+
+<span style="color:#0060C6">**Theorem 2 (Moore-Aronszajn theorem):** Let $K$ be a symmetric, positive definite function on a set $\mathcal{X}$. Then there exists a unique RKHS of functions on $\mathcal{X{$  for which $K$ is the reproducing kernel.</span>
+
+Before moving forward, let's define what we mean by a "symmetric positive-definite function". First, let's start with **symmetric function**. A multivariate function is symmetric, if the order of its arguments doesn't matter:
+
+<span style="color:#0060C6">**Definition 3 (positive-definite function):**Let $K$ be a multivariate function, with $n$ arguments, $x_1, \dots, x_n$. $K$ is symmetric if its value is the same no matter the ordering of $x_1, \dots, x_n$. That is, for any two permutations $\sigma_1$ and $\sigma_2$, it holds that $K(x_\sigma_1(1), \dots, \sigma_1(n)) = K(x_\sigma_2(1), \dots, \sigma_2(n))$</span>
+
+Now, here is the definition for a **symmetric, positive-definite function**:
+
+<span style="color:#0060C6">**Definition 4 (symmetric, positive-definite function):**Let $K$ be a symmetric bivariate function.</span>
 
 Thus, the mapping by $\phi$ happens implicitly! This convenient property is called the **kernel trick**; one does not need to actually map objects in $\mathcal{X}$ to $\mathcal{H}$. Rather, one only needs a positive definite function $K$, often representing "similarities" between objects in $\mathcal{X}$, and this function is implicity mapping the objects into the RKHS with no need to explicitly deal with the RKHS at all! 
 
