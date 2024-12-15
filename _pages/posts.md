@@ -29,6 +29,14 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Denoising diffusion probabilistic models (Part 1: Definition and derivation)](https://mbernste.github.io/posts/diffusion_part1/)    
 [Denoising diffusion probabilistic models (Part 2: Theoretical justification)](https://mbernste.github.io/posts/diffusion_part2/)
 
+## Kernel methods
+
+[Reproducing kernel Hilbert spaces and the kernel trick](https://mbernste.github.io/posts/rkhs/)  
+
+## The calculus of variations
+
+[Functionals and functional derivatives](https://mbernste.github.io/posts/functionals/) 
+
 ## Graphs
 
 [The graph Laplacian](https://mbernste.github.io/posts/laplacian_matrix/)  
@@ -73,10 +81,6 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Deriving the formula for the determinant](https://mbernste.github.io/posts/determinantsformula/)  
 [What determinants tell us about linear transformations](https://mbernste.github.io/posts/determinants/)  
 [The invertible matrix theorem](https://mbernste.github.io/posts/invertible_matrix_theorem/)  
-
-## The calculus of variations
-
-[Functionals and functional derivatives](https://mbernste.github.io/posts/functionals/) 
 
 ## Book reviews
 
