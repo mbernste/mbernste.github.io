@@ -80,11 +80,16 @@ See Proof 1 in the Appendix to this post proving that this limit satisfies the a
 
 We see that $e$, in a sense, defines the "base" exponential function -- by "base" I mean the exponential function whose rate of change is itself (i.e., whose multiplying constant is 1).
 
-Why $e$ is ubiquitous: all exponential functions can be expressed in a more natural way with $e$
-------------------------------------------------------------------------------------------------
+All exponential functions can be expressed in a more intuitive way with $e$
+---------------------------------------------------------------------------
 
 The next natural question is, why do we care about $e$? What makes $e$ helpful? And why do we see so many exponential functions and logarithms involving $e$?
 
+First, let's say we have some exponential function $a^x$. As we showed above, the derivative of $a^x$ is proportional to $a^x$ with some constant of proportionality $K$. However, given the value for $a$, we don't actually know $K$ (one would need to calculate it). Is there some way to express $a^x$ that involves the term $K$? Yes! And that is given by:
+
+$$a^x = Ke^x$$
+
+Because every value for $a$ is associated with a unique constant $K$, we can express all exponential functions as $K e^x$ instead of $a^x$. Because this new form involves $K$, one can argue that it is much more informative than $a^x$; It describes the exponential function whose rate of change is equal to $K$ times the value of that exponential function!
 
 Appendix
 --------
