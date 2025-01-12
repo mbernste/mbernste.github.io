@@ -14,7 +14,7 @@ _For me, Euler's number $e := 2.71828\dots$ was a somewhat mysterious number tha
 Introduction
 ------------
 
-For me, Euler's number $e = 2.71828\dots$ was a somewhat mysterious number that I sort of took for granted. Sadly, it was only very recently that I finally felt like I truly understood this constant. Sure, I knew some _facts_ about $e$, but I didn't really understand its _essence_. For example, I knew that,
+For me, Euler's number $e = 2.71828\dots$ was a somewhat mysterious number that I sort of took for granted. Sadly, it was only very recently that I finally felt like I truly understood this constant. Sure, I knew certain _facts_ about $e$, but I didn't really understand its _essence_. For example, I knew that,
 
 $$\frac{de^x}{dx} = e^x$$
 
