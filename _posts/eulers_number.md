@@ -1,6 +1,6 @@
 ---
 title: "Demystifying Euler's number"
-date: 2023-10-17
+date: 2025-01-11
 permalink: /posts/eulers_number/
 tags:
   - tutorial
@@ -9,12 +9,12 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-_For me, Euler's number $e := 2.71828\dots$ was a somewhat mysterious number that I sort of took for granted. Thanks to an excellent explanation by [Grant Sanderson](Grant Sanderson)'s [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I now better understand this constant.  In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on Sanderson's explanation._
+_For me, Euler's number $e := 2.71828\dots$ was a somewhat mysterious number that I took for granted. Thanks to an excellent explanation by [Grant Sanderson](Grant Sanderson)'s [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I now better understand this constant.  In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on Sanderson's explanation._
 
 Introduction
 ------------
 
-For me, Euler's number $e = 2.71828\dots$ was a somewhat mysterious number that I sort of took for granted. Sadly, it was only very recently that I finally felt like I truly understood this constant. Sure, I knew certain _facts_ about $e$, but I didn't really understand its _essence_. For example, I knew that,
+For me, Euler's number $e = 2.71828\dots$ was a somewhat mysterious number that I took for granted. Sadly, it was only very recently that I finally felt like I truly understood this constant. Sure, I knew certain _facts_ about $e$, but I didn't really understand its _essence_. For example, I knew that,
 
 $$\frac{de^x}{dx} = e^x$$
 
@@ -87,11 +87,18 @@ All exponential functions can be expressed in a more intuitive way with $e$
 
 The next natural question is, why do we care about $e$? And why do we see so many exponential functions and logarithms involving $e$?
 
-To answer this, let's first say we have some exponential function $a^x$. As we showed above, the derivative of $a^x$ is proportional to $a^x$ with some constant of proportionality $K$. However, given the value for $a$, we don't actually know $K$ (one would need to calculate it). Is there some way to express $a^x$ that involves the term $K$? Yes! And that is given by:
+To answer this, let's first say we have some exponential function $a^x$. As we showed above, the derivative of $a^x$ is proportional to $a^x$ with some constant of proportionality given by $k(a)$. Knowing this constant of proportionality would be quite informative: it tells us exactly how quickly the exponential is growing. 
 
-$$a^x = Ke^x$$
+Unfortunately, the specific value, $k(a)$, is not easy to compute directly from $a$. Recall it is given by,
 
-Because every value for $a$ is associated with a unique constant $K$, we can express all exponential functions as $K e^x$ instead of $a^x$. Because this new form involves $K$, one can argue that it is much more informative than $a^x$; It describes the exponential function whose rate of change is equal to $K$ times the value of that exponential function!
+$$k(a) := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$ 
+
+Is there some way to express $a^x$ in a way that involves $k(a)$? Yes! And that is given by:
+
+$$a^x = k(a) e^x$$
+
+Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$ This value makes the exponential easier to interpret: the rate of change at $x$ is given by $k(a)$.
+
 
 Appendix
 --------
