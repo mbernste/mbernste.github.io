@@ -97,7 +97,7 @@ Is there some way to express $a^x$ in a way that involves $k(a)$? Yes! And that 
 
 $$a^x = k(a) e^x$$
 
-Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$ This value makes the exponential easier to interpret: the rate of change at $x$ is given by $k(a)$.
+Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$. This value makes the exponential easier to interpret: whenever you confront an exponential function, $f(x) := K e^x$, the rate of change of $f(x)$ at $x$ is given by $K$.
 
 
 Appendix
