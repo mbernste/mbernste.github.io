@@ -9,12 +9,12 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-_For me, Euler's number $e := 2.71828\dots$ was a somewhat mysterious number that I took for granted. Thanks to an excellent explanation by [Grant Sanderson](Grant Sanderson)'s [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I now better understand this constant.  In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on Sanderson's explanation._
+_Euler's number $e := 2.71828\dots$ has, to me, always been a semi-mysterious number. While I understood many facts about $e$, I never felt I ever truly understood what it really was -- it's core essence so to speak. Thanks to an excellent explanation by [Grant Sanderson](Grant Sanderson)'s [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I now better understand this constant.  In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on Sanderson's explanation._
 
 Introduction
 ------------
 
-For me, Euler's number $e = 2.71828\dots$ was a somewhat mysterious number that I took for granted. Sadly, it was only very recently that I finally felt like I truly understood this constant. Sure, I knew certain _facts_ about $e$, but I didn't really understand its _essence_. For example, I knew that,
+Euler's number $e := 2.71828\dots$ has, to me, always been a semi-mysterious number. While I understood many facts about $e$, I never felt I ever truly understood what it really was -- it's core essence so to speak. Sadly, it was only very recently that I finally felt like I truly understood this constant. Sure, I knew certain _facts_ about $e$, but I didn't really understand its _essence_. For example, I knew that,
 
 $$\frac{de^x}{dx} = e^x$$
 
@@ -26,7 +26,7 @@ but these facts were not satisfactory to me because they didn't explain exactly 
 
 With the help of [Grant Sanderson](Grant Sanderson)'s excellent [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I feel now that I have a much better understanding for it's essence. In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on Sanderson's explanation.
 
-To spoil the punchline, Euler's constant is, in a sense, a number that describes all exponential functions -- that is, functions of the form $f(x) := a^x$. Because of this, all exponential functions of the form $a^x$ can be written in a "canonical" way using $e$ that is more arguably more informative and "natural" (hence "natural" logarithm) than $a^x$. Let's dig in.
+To spoil the punchline, Euler's constant is, in a sense, a number that describes all exponential functions -- that is, functions of the form $f(x) := a^x$. Because of this, all exponential functions of the form $a^x$ can be written in a "canonical" way using $e$ that is more arguably more informative than $a^x$. Let's dig in.
 
 The essence of exponential functions
 ------------------------------------
