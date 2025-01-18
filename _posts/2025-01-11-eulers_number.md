@@ -127,23 +127,23 @@ $$\begin{align*}$f(0) &= e^0 = 1 \\ f'(x) &= f(x) \end{align*}$$
 
 Note that $f'(x) = f(x)$ is a first-order differential equation and $f(0) = 1$ is an initial condition. Thus, given an arbitrary value for $x$, we can solve for $f(x)$ by solving this [initial value problem](https://en.wikipedia.org/wiki/Initial_value_problem#:~:text=In%20multivariable%20calculus%2C%20an%20initial,given%20point%20in%20the%20domain.). We can do so using the [Euler Method](https://en.wikipedia.org/wiki/Euler_method).
 
-In order to solve for $f(x)$, we will solve Euler's method for increments of $\delta t := x/n$ for some number of increments $n$. 
+In order to solve for $f(x)$, we will solve Euler's method for increments of $\Delta t := x/n$ for some number of increments $n$. 
 
-Then, for something value $t$, we can approximate $f(t + \delta t)$ via
+Then, for something value $t$, we can approximate $f(t + \Delta t)$ via
 
-$$f(t + \delta t) \approx f(t) + \delta t f'(t) $$
+$$f(t + \Delta t) \approx f(t) + \Delta t f'(t) $$
 
 Because $f'(t) = f(t)$, we have
 
-$$\begin{align*}f(t + \delta t) &\approx f(t) + \delta t f'(t)  \\ &= f(t) + \delta t f(t) \\ &= f(t)(1 + \delta t) \end{align*}$$
+$$\begin{align*}f(t + \Delta t) &\approx f(t) + \Delta t f'(t)  \\ &= f(t) + \Delta t f(t) \\ &= f(t)(1 + \Delta t) \end{align*}$$
 
-Using this formula, we can solve for $f(x)$ by starting at $t = 0$ and stepping towards $f(x) at increments of $\delta t := \frac{x}{n}$. First,
+Using this formula, we can solve for $f(x)$ by starting at $t = 0$ and stepping towards $f(x) at increments of $\Delta t := \frac{x}{n}$. First,
 
-$$\begin{align*}f(0 + \delta t) &\approx f(0) (1 + \delta t) \\  &= 1 + \frac{x}{n}\end{align*}$$
+$$\begin{align*}f(0 + \Delta t) &\approx f(0) (1 + \Delta t) \\  &= 1 + \frac{x}{n}\end{align*}$$
 
 Taking the next step, we have
 
-$$\begin{align*} f\left(\frac{x}{n} + \delta t\right) &\approx f\left(\frac{x}{n} \right) (1 + \delta t) \\  &= \left(1 + \frac{x}{n}\right) \left(1 + \frac{x}{n}\right) \\ &= \left(1 + \frac{x}{n}\right)^2 \end{align*}$$
+$$\begin{align*} f\left(\frac{x}{n} + \Delta t\right) &\approx f\left(\frac{x}{n} \right) (1 + \delta t) \\  &= \left(1 + \frac{x}{n}\right) \left(1 + \frac{x}{n}\right) \\ &= \left(1 + \frac{x}{n}\right)^2 \end{align*}$$
 
 Extrapolating this all the way to $n$ increments, we see that
 
