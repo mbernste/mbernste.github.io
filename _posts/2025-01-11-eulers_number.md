@@ -118,6 +118,6 @@ $$f'(x) = \frac{df(x)}{dx}$$
 
 We know the following facts about $f(x)$: 
 
-$$\begin{align*}$f(0) &= e^0 = 1 \\ f'(x) = f(x) \end{align*}$$
+$$\begin{align*}$f(0) &= e^0 = 1 \\ f'(x) &= f(x) \end{align*}$$
 
 Note that $f'(x) = f(x)$ is a first-order differential equation and $f(0) = 1$ is an initial condition. Thus, given an arbitrary value for $x$, we can solve for $f(x)$ by solving this [initial value problem](https://en.wikipedia.org/wiki/Initial_value_problem#:~:text=In%20multivariable%20calculus%2C%20an%20initial,given%20point%20in%20the%20domain.). We can do so using the [Euler Method](https://en.wikipedia.org/wiki/Euler_method).
