@@ -65,12 +65,12 @@ This is a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form) that re
 $\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x} = \begin{bmatrix}a_{1,1}x_1x_1\end{bmatrix}$
 
 
-6\. $\boldsymbol{D}\boldsymbol{X}\boldsymbol{D}$
+6\. $\boldsymbol{D}\boldsymbol{A}\boldsymbol{D}'$
 ------------------------------------------------
 
-Given a square diagonal matrix $\boldsymbol{D}$ and a square matrix $\boldsymbol{X}$, this formula will compute the matrix where each element $i$, $j$ is given by $x_{i,j}d_{i,i}d_{j,j}$. That is:
+Let $\boldsymbol{D}$ and $\boldsymbol{D}'$ be two square diagonal matrices. Let $\boldsymbol{A}$ be an arbitrary square matrix. The formular $\boldsymbol{D}\boldsymbol{A}\boldsymbol{D}'$ will compute the matrix where each element $i$, $j$ is given by $a_{i,j}d_{i,i}{d'}_{j,j}$. That is:
 
-$$\boldsymbol{D}\boldsymbol{X}\boldsymbol{D} = \begin{bmatrix}x_{1,1}d_{1,1}d_{1,1} & x_{1,2}d_{1,1}d_{2,2} & \dots  & x_{1,n}d_{1,1}d_{n,n} \\  x_{2,1}d_{2,2}d_{1,1} & x_{2,2}d_{2,2}d_{2,2} & \dots  & x_{2,n}d_{2,2}d_{n,n} \\ \vdots & \vdots & \ddots & \vdots \\  x_{n,1}d_{n,n}d_{1,1} & x_{n,2}d_{n,n}d_{2,2} & \dots  & x_{n,n}d_{n,n}d_{n,n} \end{bmatrix}$$
+$$\boldsymbol{D}\boldsymbol{A}\boldsymbol{D}' = \begin{bmatrix}a_{1,1}d_{1,1}{d'}_{1,1} & a_{1,2}d_{1,1}{d'}_{2,2} & \dots  & a_{1,n}d_{1,1}{d'}_{n,n} \\  a_{2,1}d_{2,2}{d'}_{1,1} & x_{2,2}d_{2,2}d_{2,2} & \dots  & a_{2,n}d_{2,2}{d'}_{n,n} \\ \vdots & \vdots & \ddots & \vdots \\  a_{n,1}d_{n,n}{d'}_{1,1} & a_{n,2}d_{n,n}{d'}_{2,2} & \dots  & a_{n,n}d_{n,n}{d'}_{n,n} \end{bmatrix}$$
 
    
 
