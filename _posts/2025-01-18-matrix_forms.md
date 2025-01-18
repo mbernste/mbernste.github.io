@@ -55,7 +55,7 @@ $$\boldsymbol{x}\boldsymbol{y}^T = \begin{bmatrix}x_1y_1 & x_1y_2 & \dots & x_1y
 
 5. $\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x}$
 
-This is a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form) and forms the matrix:
+This is a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form) that reduces a scalar computed by the following formula:
 
 $\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x} = \begin{bmatrix}a_{1,1}x_1x_1\end{bmatrix}$
 
