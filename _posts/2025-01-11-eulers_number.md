@@ -127,9 +127,9 @@ $$\begin{align*}$f(0) &= e^0 = 1 \\ f'(x) &= f(x) \end{align*}$$
 
 Note that $f'(x) = f(x)$ is a first-order differential equation and $f(0) = 1$ is an initial condition. Thus, given an arbitrary value for $x$, we can solve for $f(x)$ by solving this [initial value problem](https://en.wikipedia.org/wiki/Initial_value_problem#:~:text=In%20multivariable%20calculus%2C%20an%20initial,given%20point%20in%20the%20domain.). We can do so using the [Euler Method](https://en.wikipedia.org/wiki/Euler_method).
 
-In order to solve for $f(x)$, we will solve Euler's method for increments of $\Delta t := x/n$ for some number of increments $n$. 
+In order to solve for $f(x)$, we will use Euler's method with increments of $\Delta t := x/n$ for some number of increments $n$. 
 
-Then, for something value $t$, we can approximate $f(t + \Delta t)$ via
+We first note that for an arbitrary value of $t$, we can approximate $f(t + \Delta t)$ via
 
 $$f(t + \Delta t) \approx f(t) + \Delta t f'(t) $$
 
@@ -137,21 +137,21 @@ Because $f'(t) = f(t)$, we have
 
 $$\begin{align*}f(t + \Delta t) &\approx f(t) + \Delta t f'(t)  \\ &= f(t) + \Delta t f(t) \\ &= f(t)(1 + \Delta t) \end{align*}$$
 
-Using this formula, we can solve for $f(x)$ by starting at $t = 0$ and stepping towards $f(x) at increments of $\Delta t := \frac{x}{n}$. First,
+Using this formula, we can solve for $f(x)$ by starting at $t := 0$ and stepping towards $f(x) at increments of $\Delta t := \frac{x}{n}$ using the equation above. For the first step where $t := 0$, we have
 
 $$\begin{align*}f(0 + \Delta t) &\approx f(0) (1 + \Delta t) \\  &= 1 + \frac{x}{n}\end{align*}$$
 
-Taking the next step, we have
+Taking the second step, we have
 
 $$\begin{align*} f\left(\frac{x}{n} + \Delta t\right) &\approx f\left(\frac{x}{n} \right) (1 + \delta t) \\  &= \left(1 + \frac{x}{n}\right) \left(1 + \frac{x}{n}\right) \\ &= \left(1 + \frac{x}{n}\right)^2 \end{align*}$$
 
-Extrapolating this all the way to $n$ increments, we see that
+Extrapolating this all the way to $n$ steps, arriving at $f(x)$, we see that
 
 $$\begin{align*}f(x) &= f\left( n\frac{x}{n} \right) \\ &= f\left( (n-1)\frac{x}{n} + \frac{x}{n} \right) \\ &=  \left( 1 + \frac{x}{n} \right)^{n-1} \left( 1 + \frac{x}{n} \right) \\ &=  \left( 1 + \frac{x}{n} \right)^{n}  \end{align*}$$
 
-Plugging in, $x = 1$, we see that
+Finally, to derive $e$ itself, we plug in $x = 1$ and see that
 
-$$f(1) = e \approx \left( 1 + \frac{1}{n} \right)^{n}$$
+$$f(1) = e^1 = e \approx \left( 1 + \frac{1}{n} \right)^{n}$$
 
 Note that, as $n \rightarrow \infty$, this formula will converge on the true value of $e$ and thus,
 
