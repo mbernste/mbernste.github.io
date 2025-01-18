@@ -99,6 +99,11 @@ $$a^x = k(a) e^x$$
 
 Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$. This value makes the exponential easier to interpret: whenever you come upon an exponential function, $f(x) := K e^x$, the rate of change of $f(x)$ at $x$ is given by $K$.
 
+Connection to compound interest
+-------------------------------
+
+
+
 Appendix
 --------
 
