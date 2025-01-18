@@ -33,13 +33,15 @@ $$\begin{align*}||\boldsymbol{x}||^2 &= \left(\sqrt{\sum_{i=1}^n x_i^2}\right)^2
 
 Thus, if you ever see an equation like $\boldsymbol{x}^T\boldsymbol{x} = 1$, this is saying that the square of $\boldsymbol{x}$'s norm is 1, which means that the norm itself is one. This equation is simply saying that $\boldsymbol{x}$ is a unit vector!
 
-3. $\boldsymbol{x}\boldsymbol{y}^T$
+3\. $\boldsymbol{x}\boldsymbol{y}^T$
+------------------------------------
 
 While this looks like Form 1, it is quite different. It computes a full matrix of size $n \times n$ where element $i$, $j$ is $x_iy_j$. This operation is called the [outer product](https://en.wikipedia.org/wiki/Outer_product):
 
 $$\boldsymbol{x}\boldsymbol{y}^T = \begin{bmatrix}x_1y_1 & x_1y_2 & \dots & x_1y_n \\ x_2y_1 & x_2y_2 & \dots & x_2y_n \\ \vdots & \vdots & \ddots & \vdots \\ x_ny_1 & x_ny_2 & \dots & x_ny_n \end{bmatrix}$$
 
-4. $$\boldsymbol{Ax}$$
+4\. $\boldsymbol{Ax}$
+--------------------
 
 This is standard [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/). As we discussed in a [prior post](https://mbernste.github.io/posts/matrix_vector_mult/), there are three main ways to veiw this operation:
 
@@ -55,15 +57,16 @@ $$\boldsymbol{A}\boldsymbol{x} := x_1\boldsymbol{a}_{*,1} + x_2\boldsymbol{a}_{*
 
 $$\boldsymbol{Ax} = T(\boldsymbol{x})$$
 
-5. $\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x}$
+5\. $\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x}$
+--------------------------------------------------
 
 This is a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form) that reduces a scalar computed by the following formula:
 
 $\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x} = \begin{bmatrix}a_{1,1}x_1x_1\end{bmatrix}$
 
 
-
-7. $\boldsymbol{D}\boldsymbol{X}\boldsymbol{D}$
+6\. $\boldsymbol{D}\boldsymbol{X}\boldsymbol{D}$
+------------------------------------------------
 
 Given a square diagonal matrix $\boldsymbol{D}$ and a square matrix $\boldsymbol{X}$, this formula will compute the matrix where each element $i$, $j$ is given by $x_{i,j}d_{i,i}d_{j,j}$. That is:
 
