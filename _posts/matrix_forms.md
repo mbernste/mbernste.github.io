@@ -13,7 +13,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Equations that include matrices and vectors can be challenging to interpret intuitively; however, there are certain forms and patterns that commonly arise. Understanding these subpatterns of matrix forms within equations helps to interpret the full equation. In this post, we will catalogue and discuss some of these matrix forms.
+Equations that include matrices and vectors can be challenging to interpret intuitively; however, there are certain forms and patterns that commonly arise. Understanding these subpatterns of matrix forms within equations helps to interpret the full equation. In this post, we will catalogue and discuss some of these matrix forms. This post is designed to form a sort of "reference manual" for quickly reviewing common matrix forms.
 
 1. $\boldsymbol{x}^T\boldsymbol{y}$
 
@@ -33,7 +33,9 @@ Thus, if you ever see an equation like $\boldsymbol{x}^T\boldsymbol{x} = 1$, thi
 
 3. $\boldsymbol{x}\boldsymbol{y}^T$
 
-While this looks like Form 1, it is quite different. It actually computes a full matrix of size $n \times n$ where element $i$, $j$ is $x_iy_j$. 
+While this looks like Form 1, it is quite different. It computes a full matrix of size $n \times n$ where element $i$, $j$ is $x_iy_j$. This operation is called the [out product](https://en.wikipedia.org/wiki/Outer_product):
+
+$$\boldsymbol{x}\boldsymbol{y}^T = \begin{bmatrix}x_1y_1 & x_1y_2 & \dots & x_1y_n \\ x_2y_1 & x_2y_2 & \dots & x_2y_n \\ \vdots & \vdots & \ddots & \vdots \\ x_ny_1 & x_ny_2 & \dots & x_ny_n \end{bmatrix}$$
 
 4. $\boldsymbol{D}\boldsymbol{X}\boldsymbol{D}$
 
