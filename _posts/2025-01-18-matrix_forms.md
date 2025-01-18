@@ -43,17 +43,17 @@ $$\boldsymbol{x}\boldsymbol{y}^T = \begin{bmatrix}x_1y_1 & x_1y_2 & \dots & x_1y
 
 This is standard [matrix-vector multiplication](https://mbernste.github.io/posts/matrix_vector_mult/). As we discussed in a [prior post](https://mbernste.github.io/posts/matrix_vector_mult/), there are three main ways to veiw this operation:
 
-a. As a "vector-generating" process that can be broken as follows:
+* As a row-wise vector-generating process:
+  
+$$\boldsymbol{Ax} = \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\ \boldsymbol{a}_{2,*}  \cdot \boldsymbol{x} \\ \vdots \\ \boldsymbol{a}_{m,*}  \cdot \boldsymbol{x} \\ \end{bmatrix}$$
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_process.png" alt="drawing" width="600"/></center>
+* As taking a linear combination of the rows of $\boldsymbol{A}$ using the values of $\boldsymbol{x}$ as weights:
 
-b. As taking a linear combination of the rows of $\boldsymbol{A}$ using the values of $\boldsymbol{x}$ as weights:
+$$\boldsymbol{A}\boldsymbol{x} := x_1\boldsymbol{a}_{*,1} + x_2\boldsymbol{a}_{*,2} + \dots +  x_n\boldsymbol{a}_{*,n}$$
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="600"/></center>
+* As [transforming](https://mbernste.github.io/posts/matrices_linear_transformations/)  the vector $\boldsymbol{x}$ via a linear transformation characterized by the matrix $\boldsymbol{A}$, denoted $T_{\boldsymbol{A}}$
 
-c. As [transforming](https://mbernste.github.io/posts/matrices_linear_transformations/)  the vector $\boldsymbol{x}$ via a linear transformation characterized by the matrix $\boldsymbol{A}$: 
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_as_function.png" alt="drawing" width="500"/></center>
+$$\boldsymbol{Ax} = T_{\boldsymbol{A}}(x)$$
 
 5. $\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x}$
 
