@@ -29,15 +29,15 @@ This is standard [matrix-vector multiplication](https://mbernste.github.io/posts
 
 a. As a "vector-generating" process that can be broken as follows:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_process.png" alt="drawing" width="700"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_process.png" alt="drawing" width="600"/></center>
 
 b. As taking a linear combination of the rows of $\boldsymbol{A}$ using the values of $\boldsymbol{x}$ as weights:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="700"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_vec_mult_as_lin_comb.png" alt="drawing" width="600"/></center>
 
 c. As [transforming](https://mbernste.github.io/posts/matrices_linear_transformations/)  the vector $\boldsymbol{x}$ via a linear transformation characterized by the matrix $\boldsymbol{A}$: 
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_as_function.png" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/matrix_as_function.png" alt="drawing" width="500"/></center>
 
 4. $\boldsymbol{x}^T\boldsymbol{x}$
 
