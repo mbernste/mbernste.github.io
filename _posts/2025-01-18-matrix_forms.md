@@ -53,7 +53,15 @@ While this looks like Form 1, it is quite different. It computes a full matrix o
 
 $$\boldsymbol{x}\boldsymbol{y}^T = \begin{bmatrix}x_1y_1 & x_1y_2 & \dots & x_1y_n \\ x_2y_1 & x_2y_2 & \dots & x_2y_n \\ \vdots & \vdots & \ddots & \vdots \\ x_ny_1 & x_ny_2 & \dots & x_ny_n \end{bmatrix}$$
 
-5. $\boldsymbol{D}\boldsymbol{X}\boldsymbol{D}$
+5. $\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x}$
+
+This is a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form) and forms the matrix:
+
+$\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x} = \begin{bmatrix}a_{1,1}x_1x_1\end{bmatrix}$
+
+
+
+7. $\boldsymbol{D}\boldsymbol{X}\boldsymbol{D}$
 
 Given a square diagonal matrix $\boldsymbol{D}$ and a square matrix $\boldsymbol{X}$, this formula will compute the matrix where each element $i$, $j$ is given by $x_{i,j}d_{i,i}d_{j,j}$. That is:
 
