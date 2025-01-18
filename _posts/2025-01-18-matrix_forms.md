@@ -62,8 +62,9 @@ $$\boldsymbol{Ax} = T(\boldsymbol{x})$$
 
 This is a [quadratic form](https://en.wikipedia.org/wiki/Quadratic_form) that reduces a scalar computed by the following formula:
 
-$\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x} = \begin{bmatrix}a_{1,1}x_1x_1\end{bmatrix}$
+$\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x} = \sum_{i=1}^n\sum_{j=1}^n a_{i,j}x_ix_j$
 
+This is a quadratic form because it specifies an equation in which all possible pairs of elements in $\boldsymbol{x}$ are multiplied together. Moreover, each pair is scaled by a specific value in $\boldsymbol{A}$. When $i = j$, the form will have a squared term, $\a_{i,i}x_i^2$, and thus, this is a quadratic equation.
 
 6\. $\boldsymbol{D}\boldsymbol{A}\boldsymbol{D}'$
 ------------------------------------------------
