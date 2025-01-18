@@ -51,9 +51,9 @@ $$\boldsymbol{Ax} = \begin{bmatrix} \boldsymbol{a}_{1,*} \cdot \boldsymbol{x} \\
 
 $$\boldsymbol{A}\boldsymbol{x} := x_1\boldsymbol{a}_{*,1} + x_2\boldsymbol{a}_{*,2} + \dots +  x_n\boldsymbol{a}_{*,n}$$
 
-* As [transforming](https://mbernste.github.io/posts/matrices_linear_transformations/)  the vector $\boldsymbol{x}$ via a linear transformation characterized by the matrix $\boldsymbol{A}$, denoted $T_{\boldsymbol{A}}$
+* As [transforming](https://mbernste.github.io/posts/matrices_linear_transformations/)  the vector $\boldsymbol{x}$ via a linear transformation characterized by the matrix $\boldsymbol{A}$, denoted $T$:
 
-$$\boldsymbol{Ax} = T_{\boldsymbol{A}}(x)$$
+$$\boldsymbol{Ax} = T(\boldsymbol{x})$$
 
 5. $\boldsymbol{x}^T\boldsymbol{A}\boldsymbol{x}$
 
