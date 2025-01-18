@@ -151,11 +151,11 @@ $$\begin{align*}f(x) &= f\left( n\frac{x}{n} \right) \\ &= f\left( (n-1)\frac{x}
 
 Plugging in, $x = 1$, we see that
 
-$$f(1) = e \approx \left( 1 + \frac{x}{n} \right)^{n}$$
+$$f(1) = e \approx \left( 1 + \frac{1}{n} \right)^{n}$$
 
 Note that, as $n \rightarrow \infty$, this formula will converge on the true value of $e$ and thus,
 
-$$e = \lim_{n \rightarrow \infty} \left( 1 + \frac{x}{n} \right)^{n}$$
+$$e = \lim_{n \rightarrow \infty} \left( 1 + \frac{1}{n} \right)^{n}$$
 
 $\square$
 
