@@ -37,7 +37,10 @@ While this looks like Form 1, it is quite different. It actually computes a full
 
 4. $\boldsymbol{D}\boldsymbol{X}\boldsymbol{D}$
 
-Given a square diagonal matrix $\boldsymbol{D}$ and a square matrix $\boldsymbol{X}$, this formula will compute the matrix where each element $i$, $j$ is given by $x_{i,j}d_{i,i}d_{j,j}$.
+Given a square diagonal matrix $\boldsymbol{D}$ and a square matrix $\boldsymbol{X}$, this formula will compute the matrix where each element $i$, $j$ is given by $x_{i,j}d_{i,i}d_{j,j}$. That is:
+
+$$\boldsymbol{D}\boldsymbol{X}\boldsymbol{D} = \begin{bmatrix}x_{1,1}d_{1,1}d_{1,1} & x_{1,2}d_{1,1}d_{2,2} & \dots  & x_{1,n}d_{1,1}d_{n,n} \\  x_{2,1}d_{2,2}d_{1,1} & x_{2,2}d_{2,2}d_{2,2} & \dots  & x_{2,n}d_{2,2}d_{n,n} \\ \vdots & \vdots & \ddots & \vdots \\  x_{n,1}d_{n,n}d_{1,1} & x_{n,2}d_{n,n}d_{2,2} & \dots  & x_{n,n}d_{n,n}d_{n,n} \end{bmatrix}$$
+
    
 
 
