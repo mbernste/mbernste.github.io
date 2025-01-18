@@ -49,7 +49,7 @@ Thus, if you ever see an equation like $\boldsymbol{x}^T\boldsymbol{x} = 1$, thi
 
 4. $\boldsymbol{x}\boldsymbol{y}^T$
 
-While this looks like Form 1, it is quite different. It computes a full matrix of size $n \times n$ where element $i$, $j$ is $x_iy_j$. This operation is called the [out product](https://en.wikipedia.org/wiki/Outer_product):
+While this looks like Form 1, it is quite different. It computes a full matrix of size $n \times n$ where element $i$, $j$ is $x_iy_j$. This operation is called the [outer product](https://en.wikipedia.org/wiki/Outer_product):
 
 $$\boldsymbol{x}\boldsymbol{y}^T = \begin{bmatrix}x_1y_1 & x_1y_2 & \dots & x_1y_n \\ x_2y_1 & x_2y_2 & \dots & x_2y_n \\ \vdots & \vdots & \ddots & \vdots \\ x_ny_1 & x_ny_2 & \dots & x_ny_n \end{bmatrix}$$
 
