@@ -99,7 +99,25 @@ $$a^x = k(a) e^x$$
 
 Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$. This value makes the exponential easier to interpret: whenever you come upon an exponential function, $f(x) := K e^x$, the rate of change of $f(x)$ at $x$ is given by $K$.
 
-
 Appendix
 --------
 
+<span style="color:#0060C6">**Theorem 1 (Value of $e$):** The value for $e$ is given by the following limit:</span>
+
+<center><span style="color:#0060C6">$$e = \lim_{n \rightarrow \infty} \left(1 + \frac{1}{n}\right)^n$$</span></center>
+
+**Proof:**
+
+Let
+
+$$f(x) := e^{x}$$
+
+and
+
+$$f'(x) = \frac{df(x)}{dx}$$
+
+We know the following facts about $f(x)$: 
+
+$$\begin{align*}$f(0) &= e^0 = 1 \\ f'(x) = f(x) \end{align*}$$
+
+Note that $f'(x) = f(x)$ is a first-order differential equation and $f(0) = 1$ is an initial condition. Thus, given an arbitrary value for $x$, we can solve for $f(x)$ by solving this [initial value problem](https://en.wikipedia.org/wiki/Initial_value_problem#:~:text=In%20multivariable%20calculus%2C%20an%20initial,given%20point%20in%20the%20domain.). We can do so using the [Euler Method](https://en.wikipedia.org/wiki/Euler_method).
