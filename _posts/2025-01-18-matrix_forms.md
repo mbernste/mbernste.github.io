@@ -13,7 +13,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Equations that include matrices and vectors can be challenging to interpret intuitively; however, there are certain forms and patterns that commonly arise. Understanding these patterns within equations helps to interpret the full equation. In this post, we will catalogue and discuss some of these matrix forms. This post is designed to form a sort of "reference manual" for quickly reviewing common matrix forms.
+Equations that include matrices and vectors can be challenging to interpret intuitively; however, there are certain forms and patterns that commonly arise. Understanding these patterns within equations helps to interpret the full equation. In this post, we will catalogue and discuss some of these matrix forms. This post is designed to form a sort of "reference manual" for quickly reviewing common matrix forms. I hope to add new common matrix forms to this blog post as I confront them in my self-teaching and professional work.
 
 1\. $\boldsymbol{x}^T\boldsymbol{y}$
 ------------------------------------
