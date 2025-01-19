@@ -120,7 +120,7 @@ $$\text{Total} := P(1-\frac{r}{n})^n$$
 
 If we compound the interest _every possible instant_, resulting in continuous compound intersest, we will end up with
 
-$$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P(1-\frac{r}{n})^n \\ &= P \lim_{n \rightarrow \infty} (1-\frac{r}{n})^n \\ &= Pe^r\end{align*}$$
+$$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^n \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^n \\ &= Pe^r\end{align*}$$
 
 
 Appendix
