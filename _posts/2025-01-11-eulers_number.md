@@ -110,18 +110,6 @@ Say we have $P$ dollars, as principal, that we lend out at an interest rate $r$ 
 
 $$\begin{align*}\text{Total} &:= P + rP \\ &= P(1+r)  \end{align*}$$
 
-Let's generalize this formula slightly and consider the total we would earn after $t$ units of time. Let's start with $t = 2$. Let's let $P_1$ be the interest earned after the first unit of time:
-
-$$\begin{align*}P_1 := P(1+r)  \end{align*}$$
-
-We can calculate the total by treating $P_1$ as the "principal" starting after the first unit of time and plugging in $P_1$:
-
-$$\begin{align*}P_2 &:= P_1 + \frac{1}{2}P_1 \\ &= P_1\left(1+\frac{r}{2}\right)  \\ &= \left(P + \frac{1}{2}P \\ &= P\left(1+\frac{r}{2}\right)\right)\left(1+\frac{r}{2}\right) \\ &= P\left(1+ \frac{r}{2}\right)^{2}  \end{align*}$$
-
-
-
-$$XXXXXXXXXXXXXXXXXXXXXX$$
-
 However, because the interest wasn't paid out until the end of the perscribed time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. We can derive the total amount of money we have left as follows:
 
 Let $P_1$ be the money we have after interest compounds the first time. It compounds at a rate of $r / 2$ because we compounded it at half the time interval (i.e., the first half of time):
@@ -140,9 +128,21 @@ We can play this game again and now instead of compounding twice, it compounds t
 
 $$\text{Total} := P(1-\frac{r}{n})^n$$
 
-If we compound the interest _every possible instant_, resulting in continuous compound interest, we will end up with
+Before we move on, let's generalize this formula slightly and consider the total we would earn after $t$ units of time and derive a formula that takes into account $t$. The derivation will be similar to how we derived the formula above that takes into account the number of times interest compounds per unit of time, $n$. We'll start by considering $t = 2$. Let's let $P_1$ be the interest earned after $t = 1$:
 
-$$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^n \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^n \\ &= Pe^r && \text{Theorem 1} \end{align*}$$
+$$\begin{align*}P_1 := P(1-\frac{r}{n})^n  \end{align*}$$
+
+Similar to before, we can calculate the total by treating $P_1$ as the "principal" starting after the first unit of time and plugging in $P_1$:
+
+$$\begin{align*}\text{Total} &:= P_1 (1-\frac{r}{n})^n \\ &= P P(1-\frac{r}{n})^n P(1-\frac{r}{n})^n = PP(1-\frac{r}{n})^{2n}\end{align*}$$
+
+We can perform this derivation for any value of $t$ and we would find that 
+
+$$\text{Total} := P(1-\frac{r}{n})^{nt}$$
+
+Now that we've generalized our formula to take into account $t$, let's now ask the question: what if we compound the interest _every possible instant of time_ -- that is, the interest compounds an infinite number of times where $n \rightarrow infty$. The formula we get is the follows:
+
+$$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^{tn} \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^{nt} \\ &= Pe^{rt} && \text{Theorem 1} \end{align*}$$
 
 Further Reading
 ---------------
