@@ -137,7 +137,7 @@ Because $f'(t) = f(t)$, we have
 
 $$\begin{align*}f(t + \Delta t) &\approx f(t) + \Delta t f'(t)  \\ &= f(t) + \Delta t f(t) \\ &= f(t)(1 + \Delta t) \end{align*}$$
 
-Using this formula, we can solve for $f(x)$ by starting at $t := 0$ and stepping towards $f(x) at increments of $\Delta t := \frac{x}{n}$ using the equation above. For the first step where $t := 0$, we have
+Using this formula, we can solve for $f(x)$ by starting at $t := 0$ and stepping towards $f(x)$ at increments of $\Delta t := \frac{x}{n}$ using the equation above. For the first step, where $t := 0$, we have
 
 $$\begin{align*}f(0 + \Delta t) &\approx f(0) (1 + \Delta t) \\  &= 1 + \frac{x}{n}\end{align*}$$
 
