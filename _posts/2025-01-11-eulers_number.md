@@ -106,13 +106,23 @@ Connection to compound interest
 
 Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced math courses. Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions.
 
-Say we have $P$ dollars that we lend out at an interest rate $r$ over some unit of time $t$ (e.g., one year). After $t$, we would have the following amount of money:
+Say we have $P$ dollars, as principal, that we lend out at an interest rate $r$ over some unit of time $t$ (e.g., one year). After this amount of time, we would have the following amount of money:
 
 $$\begin{align*}\text{Total} &:= P + rP \\ &= P(1+r)  \end{align*}$$
 
-However, because the interest wasn't paid out until the end of the perscribed time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. The total we would end up with would be:
+However, because the interest wasn't paid out until the end of the perscribed time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. We can derive the total amount of money we have left as follows:
 
-$$\begin{align*}\text{Total} &:= P + \frac{r}{2}P + \frac{r}{2}(P + \frac{r}{2}P)  \\ &= P(1+\frac{1}{2})^2  \end{align*}$$
+Let $P_1$ be the money we have after interest compounds the first time. It compounds at a rate of $r / 2$ because we compounded it at half the time interval (i.e., the first half of time):
+
+$$\begin{align*}P_1 &:= P + \frac{1}{2}P \\ &= P\left(1+\frac{r}{2}\right)  \end{align*}$$
+
+We can calculate $P_2$, by treating $P_1$ the "principal" and compounding again at the rate of $r / 2$ (because we compounded it at half the time interval -- i.e., the second half of time):
+
+$$\begin{align*}P_2 &:= P_1 + \frac{1}{2}P_1 \\ &= P_1\left(1+\frac{r}{2}\right)  \end{align*}$$
+
+Plugging in $P_1$, we get the final total as:
+
+$$\begin{align*}text{Total} &:= P_2\left(1+\frac{r}{2}\right) \\ &= \left(P + \frac{1}{2}P \\ &= P\left(1+\frac{r}{2}\right)\right)\left(1+\frac{r}{2}\right)  \\ &= P\left(1+ \frac{r}{2}\right)^{2}   \end{align*}$$
 
 We can play this game again and now instead of compounding twice, it compounds three times. In fact, we can increase the number of times that the money compounds to any arbitrary number, $n$, and we will find that the total we end up with at the end will be:
 
