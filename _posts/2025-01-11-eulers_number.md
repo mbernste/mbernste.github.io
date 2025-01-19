@@ -112,7 +112,7 @@ $$\begin{align*}\text{Total} &:=  1 + r \\ &= 1 + 1 \\ &= 2\end{align*}$$
 
 However, because the interest wasn't paid out until the end of the perscribed unit of time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then after 6 months, if our interest rate is 100%, the $1 earns $0.50. That $0.50 can now be lent out for the remaining six months and earn an additional $0.25 (at 100% interest, but half the unit of time). The total interest earned would now be $1.25 ($1 from the original $1 and $0.25 from the $0.50):
 
-$$\text{Total} :=  \underset{(1 + \frac{r}{2})}{\text{First compounding}} \underset{(1 + \frac{r}{2})}{\text{Second compounding}}$$
+$$\text{Total} :=  \underset{ \text{First compounding}}{(1 + \frac{r}{2})}  \underset{ \text{Second compounding}}{(1 + \frac{r}{2})}$$
 
 
 We can play this game again and now instead of compounding twice, it compounds three times (once every four months). Now, after 4 months, the $1 would earn $0.33. That $0.33 has the opportunity to earn for the rest of the year and so on and so forth. 
