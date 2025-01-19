@@ -104,7 +104,15 @@ Because every value for $a$ is associated with a unique constant $k(a)$, we can 
 Connection to compound interest
 -------------------------------
 
-Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to compound interest. In fact, $e$ is often introduced to students in this way as well and only discussed in relation to exponential functions in more advanced math courses. Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions.
+Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced math courses. Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions.
+
+Say we have one dollar and we lend that dollar out at 100% interest over some unit of time (e.g., one year). After that time passes, that $1 earns an additional $1. However, because the interest wasn't paid out until the end of the perscribed unit of time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then after 6 months the $1 earns $0.50. That $0.50 can now be lent out for the remaining six months and earn an additional $0.25 (at 100% interest, but half the unit of time). The total interest earned would now be $1.25 ($1 from the original $1 and $0.25 from the $0.50).
+
+Stated mathematically,
+
+$$I = (1 + \frac{1}{2})^2$$
+
+
 
 
 Appendix
