@@ -104,6 +104,7 @@ Because every value for $a$ is associated with a unique constant $k(a)$, we can 
 Connection to compound interest
 -------------------------------
 
+Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to compound interest. In fact, $e$ is often introduced to students in this way as well and only discussed in relation to exponential functions in more advanced math courses. Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions.
 
 
 Appendix
