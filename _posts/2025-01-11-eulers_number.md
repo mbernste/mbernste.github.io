@@ -126,21 +126,21 @@ $$\begin{align*}text{Total} &:= P_2\left(1+\frac{r}{2}\right) \\ &= \left(P + \f
 
 We can play this game again and now instead of compounding twice, it compounds three times. In fact, we can increase the number of times that the money compounds to any arbitrary number, $n$, and we will find that the total we end up with at the end will be:
 
-$$\text{Total} := P(1-\frac{r}{n})^n$$
+$$\text{Total} := P\left(1-\frac{r}{n}\right)^n$$
 
 Before we move on, let's generalize this formula slightly and consider the total we would earn after $t$ units of time and derive a formula that takes into account $t$. The derivation will be similar to how we derived the formula above that takes into account the number of times interest compounds per unit of time, $n$. We'll start by considering $t = 2$. Let's let $P_1$ be the interest earned after $t = 1$:
 
-$$\begin{align*}P_1 := P(1-\frac{r}{n})^n  \end{align*}$$
+$$\begin{align*}P_1 := P\left(1-\frac{r}{n}\right)^n  \end{align*}$$
 
 Similar to before, we can calculate the total by treating $P_1$ as the "principal" starting after the first unit of time and plugging in $P_1$:
 
-$$\begin{align*}\text{Total} &:= P_1 (1-\frac{r}{n})^n \\ &= P P(1-\frac{r}{n})^n P(1-\frac{r}{n})^n = PP(1-\frac{r}{n})^{2n}\end{align*}$$
+$$\begin{align*}\text{Total} &:= P_1 (1-\frac{r}{n})^n \\ &= P(1-\frac{r}{n})^n (1-\frac{r}{n})^n = P(1-\frac{r}{n})^{2n}\end{align*}$$
 
 We can perform this derivation for any value of $t$ and we would find that 
 
-$$\text{Total} := P(1-\frac{r}{n})^{nt}$$
+$$\text{Total} := P\left(1-\frac{r}{n}\right)^{nt}$$
 
-Now that we've generalized our formula to take into account $t$, let's now ask the question: what if we compound the interest _every possible instant of time_ -- that is, the interest compounds an infinite number of times where $n \rightarrow infty$. The formula we get is the follows:
+Now that we've generalized our formula to take into account $t$, let's now ask the question: What if we compound the interest _every possible instant of time -- that is, $n \rightarrow infty$? The formula we get is the following:
 
 $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^{tn} \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^{nt} \\ &= Pe^{rt} && \text{Theorem 1} \end{align*}$$
 
