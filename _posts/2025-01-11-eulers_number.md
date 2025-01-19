@@ -128,10 +128,14 @@ We can play this game again and now instead of compounding twice, it compounds t
 
 $$\text{Total} := P(1-\frac{r}{n})^n$$
 
-If we compound the interest _every possible instant_, resulting in continuous compound intersest, we will end up with
+If we compound the interest _every possible instant_, resulting in continuous compound interest, we will end up with
 
 $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^n \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^n \\ &= Pe^r && \text{Theorem 1} \end{align*}$$
 
+Further Reading
+---------------
+* [This YouTube video by 3Blue2](https://www.youtube.com/watch?v=m2MIpDrF7Es)
+* [This article by Better Explained](https://betterexplained.com/articles/an-intuitive-guide-to-exponential-functions-e/)
 
 Appendix
 --------
