@@ -140,7 +140,7 @@ We can perform this derivation for any value of $t$ and we would find that
 
 $$\text{Total} := P\left(1-\frac{r}{n}\right)^{nt}$$
 
-Now that we've generalized our formula to take into account $t$, let's now ask the question: What if we compound the interest _every possible instant of time -- that is, $n \rightarrow infty$? The formula we get is the following:
+Now that we've generalized our formula to take into account $t$, let's now ask the question: What if we compound the interest _every possible instant --? That is, instead of compounding $n$ times, it compounds an infinite number of times: every possible instant. We can derive this formula by taking the limit of the above formula as $n$ approaches infinity:
 
 $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^{tn} \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^{nt} \\ &= Pe^{rt} && \text{Theorem 1} \end{align*}$$
 
