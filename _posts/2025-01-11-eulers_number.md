@@ -106,45 +106,21 @@ Connection to compound interest
 
 Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced math courses. Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions.
 
-Say we have one dollar and we lend that dollar out at an interest rate $r$ over some unit of time (e.g., one year). After that time passes, that $1 earns an additional $r$ -- if $r$ is 1 (i.e., 100% interest), then we would end up with a total amount of money of $2:
+Say we have $P$ dollars that we lend out at an interest rate $r$ over some unit of time $t$ (e.g., one year). After $t$, we would have the following amount of money:
 
-$$\begin{align*}\text{Total} &:=  1 + r \\ &= 1 + 1 \\ &= 2\end{align*}$$
+$$\begin{align*}\text{Total} &:= P + rP \\ &= P(1+r)  \end{align*}$$
 
-However, because the interest wasn't paid out until the end of the perscribed unit of time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then after 6 months, if our interest rate is 100%, the $1 earns $0.50. That $0.50 can now be lent out for the remaining six months and earn an additional $0.25 (at 100% interest, but half the unit of time). The total interest earned would now be $1.25 ($1 from the original $1 and $0.25 from the $0.50):
+However, because the interest wasn't paid out until the end of the perscribed time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. The total we would end up with would be:
 
-$$\begin{align*}\text{Total} &:=  \underset{\text{Value after second payment}} { \underset{\text{Value after first payment}{\left(1 + \frac{1}{r} \right)} } \left(1 + \frac{r}{2} \right) } \end{align*}$$
+$$\begin{align*}\text{Total} &:= P + \frac{r}{2}P + \frac{r}{2}(P + \frac{r}{2}P)  \\ &= P(1+\frac{1}{2})^2  \end{align*}$$
 
-That is, in the first payment, we would have $(1 + \frac{r}{2})$
+We can play this game again and now instead of compounding twice, it compounds three times. In fact, we can increase the number of times that the money compounds to any arbitrary number, $n$, and we will find that the total we end up with at the end will be:
 
+$$\text{Total} := P(1-\frac{r}{n})^n$$
 
-We can play this game again and now instead of compounding twice, it compounds three times (once every four months). Now, after 4 months, the $1 would earn $0.33. That $0.33 has the opportunity to earn for the rest of the year and so on and so forth. 
+If we compound the interest _every possible instant_, resulting in continuous compound intersest, we will end up with
 
-Stated mathematically, if we start with $1, we have an interest rate $r$, and we compound once, the total money at the end would simply be:
-
-$$\text{Total} :=  1 + r$$
-
-If we compound twice, we would end up with:
-
-$$\text{Total} :=  (1 + \frac{r}{2})^2$$
-
-If we compound three times, we would end up with:
-
-$$\text{Total} :=  (1 + \frac{r}{n})^n$$
-
-If we compound an infinite number of times (i.e., every possible instant of time), the total we would end up with would be given by:
-
-$$\text{Total} :=  \lim_{n \rightarrow \infty} (1 + \frac{r}{n})^n$$
-
-If the interest rate is 100% (which is 1 as a ratio to the value lent), then the total we end up with is  
-
-$$\text{Total} :=  \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^n$$
-
-This is $e$! 
-
-In the context of our discussion regarding the derivative of exponential functions, this makes intuitive sense. 
-
-
-
+$$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P(1-\frac{r}{n})^n \\ &= P \lim_{n \rightarrow \infty} (1-\frac{r}{n})^n \\ &= Pe^r\end{align*}$$
 
 
 Appendix
