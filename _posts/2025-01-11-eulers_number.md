@@ -106,9 +106,21 @@ Connection to compound interest
 
 Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced treatments of the topic. Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions.
 
-Say we have $P$ dollars, as principal, that we lend out at an interest rate $r$ over some unit of time $t$ (e.g., one year). After this amount of time, we would have the following amount of money:
+Say we have $P$ dollars, as principal, that we lend out at an interest rate $r$ over some unit of time (e.g., one year). After this amount of time, we would have the following amount of money:
 
 $$\begin{align*}\text{Total} &:= P + rP \\ &= P(1+r)  \end{align*}$$
+
+Let's generalize this formula slightly and consider the total we would earn after $t$ units of time. Let's start with $t = 2$. Let's let $P_1$ be the interest earned after the first unit of time:
+
+$$\begin{align*}P_1 := P(1+r)  \end{align*}$$
+
+We can calculate the total by treating $P_1$ as the "principal" starting after the first unit of time and plugging in $P_1$:
+
+$$\begin{align*}P_2 &:= P_1 + \frac{1}{2}P_1 \\ &= P_1\left(1+\frac{r}{2}\right)  \\ &= \left(P + \frac{1}{2}P \\ &= P\left(1+\frac{r}{2}\right)\right)\left(1+\frac{r}{2}\right) \\ &= P\left(1+ \frac{r}{2}\right)^{2}  \end{align*}$$
+
+
+
+$$XXXXXXXXXXXXXXXXXXXXXX$$
 
 However, because the interest wasn't paid out until the end of the perscribed time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. We can derive the total amount of money we have left as follows:
 
@@ -116,7 +128,7 @@ Let $P_1$ be the money we have after interest compounds the first time. It compo
 
 $$\begin{align*}P_1 &:= P + \frac{1}{2}P \\ &= P\left(1+\frac{r}{2}\right)  \end{align*}$$
 
-We can calculate $P_2$, by treating $P_1$ as the "principal" starting just after the interest compounds the first time from which it will earn at a rate of $r / 2$ (because it compounds over the second half of time):
+We can calculate the total now by treating $P_1$ as the "principal" starting just after the interest compounds the first time from which it will earn at a rate of $r / 2$ (because it compounds over the second half of time):
 
 $$\begin{align*}P_2 &:= P_1 + \frac{1}{2}P_1 \\ &= P_1\left(1+\frac{r}{2}\right)  \end{align*}$$
 
