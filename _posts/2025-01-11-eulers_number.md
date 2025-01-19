@@ -104,7 +104,7 @@ Because every value for $a$ is associated with a unique constant $k(a)$, we can 
 Connection to compound interest
 -------------------------------
 
-Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced math courses. Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions.
+Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced treatments of the topic. Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions.
 
 Say we have $P$ dollars, as principal, that we lend out at an interest rate $r$ over some unit of time $t$ (e.g., one year). After this amount of time, we would have the following amount of money:
 
@@ -130,7 +130,7 @@ $$\text{Total} := P(1-\frac{r}{n})^n$$
 
 If we compound the interest _every possible instant_, resulting in continuous compound intersest, we will end up with
 
-$$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^n \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^n \\ &= Pe^r\end{align*}$$
+$$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^n \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^n \\ &= Pe^r && \text{Theorem 1} \end{align*}$$
 
 
 Appendix
