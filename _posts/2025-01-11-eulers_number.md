@@ -108,7 +108,7 @@ Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wik
 
 Say we have one dollar and we lend that dollar out at an interest rate $r$ over some unit of time (e.g., one year). After that time passes, that $1 earns an additional $r$ -- if $r$ is 1 (i.e., 100% interest), then we would end up with a total amount of money of $2:
 
-$$\begin{algin*}\text{Total} &:=  1 + r \\ &= 1 + 1 \\ &= 2\end{align*}$$
+$$\begin{align*}\text{Total} &:=  1 + r \\ &= 1 + 1 \\ &= 2\end{align*}$$
 
 However, because the interest wasn't paid out until the end of the perscribed unit of time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then after 6 months, if our interest rate is 100%, the $1 earns $0.50. That $0.50 can now be lent out for the remaining six months and earn an additional $0.25 (at 100% interest, but half the unit of time). The total interest earned would now be $1.25 ($1 from the original $1 and $0.25 from the $0.50):
 
