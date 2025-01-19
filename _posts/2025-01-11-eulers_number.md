@@ -106,11 +106,36 @@ Connection to compound interest
 
 Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced math courses. Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions.
 
-Say we have one dollar and we lend that dollar out at 100% interest over some unit of time (e.g., one year). After that time passes, that $1 earns an additional $1. However, because the interest wasn't paid out until the end of the perscribed unit of time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then after 6 months the $1 earns $0.50. That $0.50 can now be lent out for the remaining six months and earn an additional $0.25 (at 100% interest, but half the unit of time). The total interest earned would now be $1.25 ($1 from the original $1 and $0.25 from the $0.50).
+Say we have one dollar and we lend that dollar out at 100% interest over some unit of time (e.g., one year). After that time passes, that $1 earns an additional $1. However, because the interest wasn't paid out until the end of the perscribed unit of time, the interest itself was not given the opportunity to earn money.
 
-Stated mathematically,
+Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then after 6 months the $1 earns $0.50. That $0.50 can now be lent out for the remaining six months and earn an additional $0.25 (at 100% interest, but half the unit of time). The total interest earned would now be $1.25 ($1 from the original $1 and $0.25 from the $0.50). 
 
-$$I = (1 + \frac{1}{2})^2$$
+We can play this game again and now instead of compounding twice, it compounds three times (once every four months). Now, after 4 months, the $1 would earn $0.33. That $0.33 has the opportunity to earn for the rest of the year and so on and so forth. 
+
+Stated mathematically, if we start with $1, we have an interest rate $r$, and we compound once, the total money at the end would simply be:
+
+$$\text{Total} :=  1 + r$$
+
+If we compound twice, we would end up with:
+
+$$\text{Total} :=  (1 + \frac{r}{2})^2$$
+
+If we compound three times, we would end up with:
+
+$$\text{Total} :=  (1 + \frac{r}{n})^n$$
+
+If we compound an infinite number of times (i.e., every possible instant of time), the total we would end up with would be given by:
+
+$$\text{Total} :=  \lim_{n \rightarrow \infty} (1 + \frac{r}{n})^n$$
+
+If the interest rate is 100% (which is 1 as a ratio to the value lent), then the total we end up with is  
+
+$$\text{Total} :=  \lim_{n \rightarrow \infty} (1 + \frac{1}{n})^n$$
+
+This is $e$! 
+
+In the context of our discussion regarding the derivative of exponential functions, this makes intuitive sense. 
+
 
 
 
