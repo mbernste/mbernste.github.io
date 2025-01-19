@@ -93,9 +93,11 @@ Unfortunately, the specific value, $k(a)$, is not easy to compute directly from 
 
 $$k(a) := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$ 
 
-Is there some way to express $a^x$ in a way that involves $k(a)$? Yes! And that is given by (See Theorem 2 in the Appendix to this post):
+Is there some way to express $a^x$ in a way that involves $k(a)$? Yes! And that is given by:
 
 $$a^x = k(a) e^x$$
+
+See Theorem 2 in the Appendix to this post.
 
 Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$. This value makes the exponential easier to interpret: whenever you come upon an exponential function, $f(x) := K e^x$, the rate of change of $f(x)$ at $x$ is given by $K$.
 
