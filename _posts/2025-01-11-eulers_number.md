@@ -116,7 +116,7 @@ Let $P_1$ be the money we have after interest compounds the first time. It compo
 
 $$\begin{align*}P_1 &:= P + \frac{1}{2}P \\ &= P\left(1+\frac{r}{2}\right)  \end{align*}$$
 
-We can calculate $P_2$, by treating $P_1$ the "principal" and compounding again at the rate of $r / 2$ (because we compounded it at half the time interval -- i.e., the second half of time):
+We can calculate $P_2$, by treating $P_1$ as the "principal" starting just after the interest compounds the first time from which it will earn at a rate of $r / 2$ (because it compounds over the second half of time):
 
 $$\begin{align*}P_2 &:= P_1 + \frac{1}{2}P_1 \\ &= P_1\left(1+\frac{r}{2}\right)  \end{align*}$$
 
