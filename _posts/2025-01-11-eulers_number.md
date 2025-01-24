@@ -157,6 +157,9 @@ This formula is an exponential function! That is, it is an exponential function 
 
 ### Relating continous compound interest to exponentials
 
+Let's conclude by relating the equation for continuous interest, $\text{Total} = Pe^x$, back to the idea that $e^x$ is the function whose derivative is simply $e^x$. 
+
+
 
 Further Reading
 ---------------
