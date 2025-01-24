@@ -126,7 +126,7 @@ $$\begin{align*}P_2 &:= P_1 + \frac{1}{2}P_1 \\ &= P_1\left(1+\frac{r}{2}\right)
 
 Plugging in $P_1$, we get the final total as:
 
-$$\begin{align*} text{Total} &:= P_2\left( 1+\frac{r}{2} \right) \\ &= P\left(1+\frac{r}{2}\right)\right)\left(1+\frac{r}{2}\right)  \\ &= P\left(1+ \frac{r}{2}\right)^{2} \end{align*}$$
+$$\begin{align*} text{Total} &:= P_2\left( 1+\frac{r}{2} \right) \\ &= P\left(1+\frac{r}{2}\right)\left(1+\frac{r}{2}\right)  \\ &= P\left(1+ \frac{r}{2}\right)^{2} \end{align*}$$
 
 We can play this game again and now instead of compounding twice, it compounds three times. In fact, we can increase the number of times that the money compounds to any arbitrary number, $n$, and we will find that the total we end up with at the end will be:
 
@@ -138,7 +138,7 @@ $$\begin{align*}P_1 := P\left(1-\frac{r}{n}\right)^n  \end{align*}$$
 
 Similar to before, we can calculate the total by treating $P_1$ as the "principal" starting after the first unit of time and plugging in $P_1$:
 
-$$\begin{align*}\text{Total} &:= P_1 (1-\frac{r}{n})^n \\ &= P(1-\frac{r}{n})^n (1-\frac{r}{n})^n = P(1-\frac{r}{n})^{2n}\end{align*}$$
+$$\begin{align*}\text{Total} &:= P_1 \left(1-\frac{r}{n}\right)^n \\ &= P\left(1-\frac{r}{n}\right)^n \left(1-\frac{r}{n}\right)^n \\ &= P\left(1-\frac{r}{n}\right)^{2n}\end{align*}$$
 
 We can perform this derivation for any value of $t$ and we would find that 
 
