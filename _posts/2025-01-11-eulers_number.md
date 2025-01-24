@@ -153,7 +153,7 @@ If we assume that the rate, $r$, is fixed, then we can create a variable $x := r
 
 $$\text{Total} = Pe^x$$
 
-This formula is an exponential function! That is, it is an exponential function with respect to the _scaled_ time where the scaling is determined by the rate. Moreover, we see that earning interest at a rate of, say, 10% over 2 years is equivalent to earning 5% over one year.
+This formula is an exponential function! That is, it is an exponential function with respect to the _scaled_ time where the scaling is determined by the rate. Said differently, one can think of $x$ as the number of units of time where each unit is the time it takes to earn 100% of the principal (i.e., double the money). 
 
 ### Relating continous compound interest to exponentials
 
