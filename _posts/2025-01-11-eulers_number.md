@@ -126,7 +126,7 @@ $$\begin{align*}P_2 &:= P_1 + \frac{1}{2}P_1 \\ &= P_1\left(1+\frac{r}{2}\right)
 
 Plugging in $P_1$, we get the final total as:
 
-$$\begin{align*} text{Total} &:= P_2\left( 1+\frac{r}{2} \right) \\ &= P\left(1+\frac{r}{2}\right)\left(1+\frac{r}{2}\right)  \\ &= P\left(1+ \frac{r}{2}\right)^{2} \end{align*}$$
+$$\begin{align*} \text{Total} &:= P_2\left( 1+\frac{r}{2} \right) \\ &= P\left(1+\frac{r}{2}\right)\left(1+\frac{r}{2}\right)  \\ &= P\left(1+ \frac{r}{2}\right)^{2} \end{align*}$$
 
 We can play this game again and now instead of compounding twice, it compounds three times. In fact, we can increase the number of times that the money compounds to any arbitrary number, $n$, and we will find that the total we end up with at the end will be:
 
@@ -148,7 +148,12 @@ Now that we've generalized our formula to take into account $t$, let's now ask t
 
 $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^{tn} \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^{nt} \\ &= Pe^{rt} && \text{Theorem 1} \end{align*}$$
 
-Interestingly, this formula is an exponential function!
+
+If we assume that the rate $r$ is fixed, then we can create a variable $x := rt$ that is a function only of the time $t$. The equation then becomes:
+
+$$\text{Total} = Pe^x$$
+
+This formula is an exponential function! That is, it is an exponential function with respect to the _scaled_ time where the scaling is determined by the rate. Moreover, we see that earning interest at a rate of, say, 10% over 2 years is equivalent to earning 5% over one year.
 
 ### Relating continous compound interest to exponentials
 
