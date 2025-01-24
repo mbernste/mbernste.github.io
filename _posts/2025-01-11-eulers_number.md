@@ -149,7 +149,7 @@ Now that we've generalized our formula to take into account $t$, let's now ask t
 $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^{tn} \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^{nt} \\ &= Pe^{rt} && \text{Theorem 1} \end{align*}$$
 
 
-If we assume that the rate $r$ is fixed, then we can create a variable $x := rt$ that is a function only of the time $t$. The equation then becomes:
+If we assume that the rate, $r$, is fixed, then we can create a variable $x := rt$ that is a function only of time, $t$. The equation then becomes:
 
 $$\text{Total} = Pe^x$$
 
