@@ -60,7 +60,7 @@ $$k(a) := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
 ### Defining Euler's number
 
-Given our newfound understanding of exponential functions as functions whose derivative is proportional to themselves, a natural question that follows is: What exponential function, $a^x$, yields a constant of 1? That is, for what value of $a$ do we have $k(a) = 1$?. It may not surprise you to learn that it's Euler's number! 
+Given our newfound understanding of exponential functions as functions whose derivative is proportional to themselves, a natural question that follows is: What exponential function, $a^x$, yields a constant of 1? That is, for what value of $a$ do we have $k(a) = 1$? It may not surprise you to learn that it's Euler's number! 
 
 That is, $e$ is the value for $a$ that satisfies the following equation:
 
