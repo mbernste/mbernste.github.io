@@ -93,13 +93,7 @@ This fact about $e$ -- that it is the base of the exponential function whose der
 
 The answer is that $e$ can be used to describe _all_ exponential functions in a more intuitive and "natural" way. Thus, _any_ equation that relates to exponential functions will likely involve $e$!
 
-To see why, say we have some exponential function $a^x$. As we showed above, the derivative of $a^x$ is proportional to $a^x$ with some constant of proportionality given by $k(a)$. Knowing this constant of proportionality would be quite informative: it tells us exactly how quickly the exponential is growing. 
-
-Unfortunately, the specific value, $k(a)$, is not easy to compute directly from $a$. Recall it is given by,
-
-$$k(a) := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$ 
-
-Is there some way to express $a^x$ in a way that involves $k(a)$? Yes! It is simply
+To see why, say we have some exponential function $a^x$. As we showed above, the derivative of $a^x$ is proportional to $a^x$ with some constant of proportionality given by $k(a)$. This value, $k(a)$ would need to be computed. Is there a way to express $a^x$ using $k(a)$ so that this value is obvious from the expression? Yes! It is simply,
 
 $$a^x = e^{k(a) x}$$
 
