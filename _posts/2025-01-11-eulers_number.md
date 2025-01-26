@@ -162,7 +162,7 @@ Now that we've generalized our formula to take into account $t$, let's now ask t
 
 $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^{tn} \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^{nt} \\ &= Pe^{rt} && \text{Theorem 1} \end{align*}$$
 
-The last line becomes evident from Theorem 1 in the Appendix to this post.
+This is simply an exponential function $e^{rt}$ scaled by $P$!
 
 Connecting exponential functions and continuously compounded interest through calculus
 --------------------------------------------------------------------------------------
@@ -185,7 +185,6 @@ $$\begin{align*} \frac{dF(t)}{dt} &:= \frac{dPe^{rt}}{dt} \\ &=rPe^{rt} \\ &= r 
 This only works because of the fact that $\frac{de^x}{dx} = e^x$! This can all be stated succinctly in the following diagram:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Eulers_number_concept_map.png" alt="drawing" width="800"/></center>
-
 
 
 
