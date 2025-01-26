@@ -109,7 +109,7 @@ $$a^x = e^{\log a^x} = e^{x \log a}$$
 
 Here we see that $a^x$ has been re-written as $e^{x \log a}$ where $\log a$ is simply a constant. Moreover, this cosntant, $\log a$, is really just $k(a)$. We know this because if we take the derivative of $e^{x \log a}$, we get
 
-$$\begin{align*}\frac{d a^x}{dx} &= \frac{d e^{x \log a}}{dx} \\ &= (\log a) e^{x \log a} = (\log a) a^x   \end{align*}$$
+$$\begin{align*}\frac{d a^x}{dx} &= \frac{d e^{x \log a}}{dx} \\ &= (\log a) e^{x \log a} && \text{Chain rule} \\ &= (\log a) a^x   \end{align*}$$
 
 That is, $\log a$ is that very constant of proportionality that we defined $k(a)$ to be!
 
