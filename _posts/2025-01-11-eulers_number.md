@@ -78,7 +78,7 @@ $$f(x) = e^x = \lim_{n \rightarrow \infty} (1 + \frac{x}{n})^n$$
 
 See Theorem 1 in the Appendix to this post for the complete derivation.
 
-Plugging in $x := 1$, we find that $e$ can be expressed as a limit that enables us to compute numerical approximation to this value:
+Plugging in $x := 1$, we find that $e$ can be expressed as a limit that enables us to compute numerical approximations of its value:
 
 $$e = \lim_{n \rightarrow \infty} \left(1 + \frac{1}{n}\right)^n$$
 
