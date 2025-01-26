@@ -120,9 +120,7 @@ $$\begin{align*}\text{Total} &:= P + rP \\ &= P(1+r)  \end{align*}$$
 
 Note that because the interest wasn't paid out until the end of the perscribed time, the interest itself was not given the opportunity to earn any money. One way to fix this would be to have that interest "compound" -- that is, be paid out at set increments and added to the principal. 
 
-Let's now say that interest compounds every half unit of time (e.g., every six months instead of every year). Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. We can derive the total amount of money we have left as follows:
-
-Let $P_1$ be the money we have after interest compounds the first time. It compounds at a rate of $r / 2$ because we compounded it at half the time interval (i.e., the first half of time):
+Let's now say that interest compounds every half unit of time (e.g., every six months instead of every year). Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. We can derive the total amount of money we have left as follows: Let $P_1$ be the money we have after interest compounds the first time. It compounds at a rate of $r / 2$ because we compounded it at half the time interval (i.e., the first half of time):
 
 $$\begin{align*}P_1 &:= P + \frac{1}{2}P \\ &= P\left(1+\frac{r}{2}\right)  \end{align*}$$
 
