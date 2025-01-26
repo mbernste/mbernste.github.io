@@ -175,7 +175,11 @@ And indeed we see that if $F(t) := Pe^{rt}$, then we can apply the [chain rule](
 
 $$\begin{align*} \frac{dF(t)}{dt} &:= \frac{dPe^{rt}}{dt} \\ &=rPe^{rt} \\ &= r F(t) \end{align*}$
 
-This only works because of the fact that $\frac{de^x}{dx} = e^x$!
+This only works because of the fact that $\frac{de^x}{dx} = e^x$! This can all be stated succinctly in the following diagram:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Eulers_number_concept_map.png" alt="drawing" width="500"/></center>
+
+
 
 
 Further Reading
