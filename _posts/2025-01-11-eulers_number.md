@@ -110,8 +110,8 @@ See Theorem 2 in the Appendix to this post.
 Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$. Arguably, this form makes the exponential easier to interpret and to work with algebraically: Whenever you come upon an exponential function, $f(x) := K e^x$, the rate of change of $f(x)$ at $x$ is simply the value of this function scaled by the constant $K$. 
 
 
-$e$ can be derived from continously compounded interest
--------------------------------------------------------
+$e$ arises in a formula for continously compounded interest
+-----------------------------------------------------------
 
 Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced treatments of the topic. 
 
