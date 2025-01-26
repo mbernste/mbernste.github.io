@@ -113,17 +113,15 @@ Because every value for $a$ is associated with a unique constant $k(a)$, we can 
 $e$ arises in a formula for continously compounded interest
 -----------------------------------------------------------
 
-Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced treatments of the topic. 
-
-Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions. We'll break apart this explanation into two sections: In the first, we'll derive the formula for continous compound interest, which involves $e$. In the second, we'll tie this formula intuitively back to our discussion of $e$ as being a constant that "describes" all exponential functions.
-
-### A formula for continuous compound interest
+Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced treatments of the topic. Let us now approach $e$ from the perspective of compound interest. We will later connect it from this perspective back to exponential functions. 
 
 Say we have $P$ dollars, as principal, that we lend out at an interest rate $r$ over some unit of time (e.g., one year). After this amount of time, we would have the following amount of money:
 
 $$\begin{align*}\text{Total} &:= P + rP \\ &= P(1+r)  \end{align*}$$
 
-However, because the interest wasn't paid out until the end of the perscribed time, the interest itself was not given the opportunity to earn money. Let's now say that interest is paid out every half unit of time (e.g., every six months instead of every year). Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. We can derive the total amount of money we have left as follows:
+Note that because the interest wasn't paid out until the end of the perscribed time, the interest itself was not given the opportunity to earn any money. One way to fix this would be to have that interest "compound" -- that is, be paid out at set increments and added to the principal. 
+
+Let's now say that interest compounds every half unit of time (e.g., every six months instead of every year). Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. We can derive the total amount of money we have left as follows:
 
 Let $P_1$ be the money we have after interest compounds the first time. It compounds at a rate of $r / 2$ because we compounded it at half the time interval (i.e., the first half of time):
 
@@ -159,16 +157,46 @@ $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n
 
 The last line becomes evident from Theorem 1 in the Appendix to this post.
 
-Connecting exponential functions and continuously compounded interest
----------------------------------------------------------------------
+Connecting exponential functions and continuously compounded interest through calculus
+--------------------------------------------------------------------------------------
 
 So far, we have derived $e$ from two alternative perspectives:
 
 1. As being the base of the exponential function whose derivative is itself
 2. As a constant used in a formula to compute continuously compounding interest
 
-How do these two perspectives relate to one another?
+These two perspectives can be connected to eachother by thinking about compound interest through the lense of calculus. 
 
+Let $F(t)$ be a function that tells us how much money we have during the duration of a loan whose interest is continously compounding. Furthermore, let's pretend for a moment that we don't know the equation $F(t) := Pe^{rt}$. 
+
+One idea would be to define $F(t)$ as a Reimann sum,
+
+$$F(t) := \sum_{\Delta t_i} f(t_i*) \Delta t_i$$
+
+where 
+
+$$\begin{align*}\Delta t_i &:= $t_i - t_{i-1}$ \text{is a duration of time} \\ t_i* &\in [t_i,  t_{i-1}] \text{is a timepoint between} t_i \text{and} t_{i-1} \end{align*}$$
+
+
+$f(x)$ is some function that tells us how much money we have at timepoint $x$
+
+
+
+From the previous section, $F(t)$ is given by
+
+$$F(t) := Pe^{rt}$$
+
+Let's say we didn't know this equation, but we wanted to derive an equation by considering the integral:
+
+$$F(t) := \lim_{} $$
+
+$$F(t) := \int_0^t f(x) dx = \lim_{|| \Delta t || \rightarrow 0} \sum_{i=1}^n f(t&)$$
+
+Note that this is an integral because we 
+
+At any given instant in time, how much interest did $Pe^{rt}$ pay out? We can calculate this with calculus:
+
+$$d$$
 
 Further Reading
 ---------------
