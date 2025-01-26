@@ -111,7 +111,7 @@ Because every value for $a$ is associated with a unique constant $k(a)$, we can 
 
 Arguably, this form makes the exponential easier to interpret: Whenever you come upon an exponential function, $f(x) := e^{Kx}$, the rate of change of $f(x)$ at $x$ is simply the value of this function scaled by the constant $K$. 
 
-In a loose analogy, $e$ is to exponential curves as $\pi$ is to circles. Where $\pi$ is a constant that describes all circles, $e$ describes all exponential functions. Specifically, $e$ describes the sort of "origin exponential function" -- that is, the exponential function from which all other exponential functions can be described in reference to.
+In a very loose analogy, $e$ is to exponential curves as $\pi$ is to circles. Where $\pi$ is a constant that describes all circles, $e$ describes all exponential functions. Specifically, $e$ describes the sort of "origin exponential function" -- that is, the exponential function from which all other exponential functions can be described in reference to.
 
 $e$ arises in a formula for continously compounded interest
 -----------------------------------------------------------
