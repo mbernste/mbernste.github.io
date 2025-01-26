@@ -17,7 +17,7 @@ Introduction
 Euler's number $e := 2.71828\dots$ has, to me, always been a semi-mysterious number. While I understood many facts about $e$, I never felt I ever truly understood what it really was -- it's core essence so to speak. I believe that part of the reason for my confusion is that $e$ is often taught coming from two seemingly different perspectives. Specifically, $e$ is introduced in one of two ways: 
 
 1. As a constant that arises from deriving the formula for [continuously compounded interest](https://en.wikipedia.org/wiki/Compound_interest#Continuous_compounding)
-2. As the constant base of an [exponential function](https://en.wikipedia.org/wiki/Exponential_function), $f(x) := e^x$, such that the derivative of this function is itself. That is, $\frac{de^x}{dx} = e^x$.
+2. As the constant base of an [exponential function](https://en.wikipedia.org/wiki/Exponential_function), $e^x$, such that the derivative of this function is itself. That is, $\frac{de^x}{dx} = e^x$.
 
 For a long time, I had trouble seeing how these two perspectives of $e$ were related to one another. In context of my [prior blog post on "seeing concepts in 3D"](https://mbernste.github.io/posts/understanding_3d/), I didn't have a "3D image" in my mind for how these two different "2D projections" of $e$ formed a cohesive concept.
 
