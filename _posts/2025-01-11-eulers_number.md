@@ -165,17 +165,46 @@ So far, we have derived $e$ from two alternative perspectives:
 1. As being the base of the exponential function whose derivative is itself
 2. As a constant used in a formula to compute continuously compounding interest
 
-These two perspectives can be connected to eachother by thinking about compound interest through the lense of calculus. 
+Let's finally discuss how these two ideas are connected. Let $F(t)$ be a function that tells us how much money we have during the duration of a loan whose interest is continously compounding. Furthermore, let's pretend for a moment that we don't know the equation $F(t) := Pe^{rt}$.
+
+Intuitively, if interest is compounding continuously, then the growth of $F(t)$ at any particular timepoint $t$ should be proportional to $F(t)$ and should be given by dictated by the interest rate. That is, we would expect it to hold that if our interest rate is $r$, then the instantaneous growth of $F(t)$ at $t$ should be given by
+
+$$\frac{dF(t)}{dt} = r F(t)$$
+
+If the interest rate $r$ is 100% (i.e., $r = 1$), then we would expect
+
+$$\frac{dF(t)}{dt} = F(t)$$
+
+And indeed the form of $F(t)$ for which this property holds is simply $e^t$, which we know from our discussion of exponential functions!
+
+Another way to think about this is to think about the integral 
+
+
+
 
 Let $F(t)$ be a function that tells us how much money we have during the duration of a loan whose interest is continously compounding. Furthermore, let's pretend for a moment that we don't know the equation $F(t) := Pe^{rt}$. 
 
-One idea would be to define $F(t)$ as a Reimann sum,
+One idea would be to break apart the duration of time $t$ into $n$ increments of time where the money compounds and define $F(t)$ as a sum that adds up the interest earned at each of these $n$ increments of time. That is, we'll let
 
 $$F(t) := \sum_{\Delta t_i} f(t_i*) \Delta t_i$$
 
 where 
 
-$$\begin{align*}\Delta t_i &:= $t_i - t_{i-1}$ \text{is a duration of time} \\ t_i* &\in [t_i,  t_{i-1}] \text{is a timepoint between} t_i \text{and} t_{i-1} \end{align*}$$
+* $\Delta t_i &:= t_i - t_{i-1}$ is a duration of time}
+* $t_i* &\in [t_i,  t_{i-1}]$ is a timepoint between $t_i$ and $t_{i-1}$
+* $f(t_i*)$ is a function such that the quantity $f(t_i*) \Delta t_i$  tells us how much we earned in the time interval for which the timepoint $t_i*$ falls (i.e., the interval $\Delta t_i$).
+
+This equation is depicted schematically below:
+
+
+Each pink rectangle represents the total amount of money 
+
+Depicted schematically, the total money earned, $F(t)$, would be the sum of the areas of the pink rectangles in the image below:
+
+
+
+
+
 
 
 $f(x)$ is some function that tells us how much money we have at timepoint $x$
@@ -257,24 +286,3 @@ Note that, as $n \rightarrow \infty$, this formula will converge on the true val
 $$e = \lim_{n \rightarrow \infty} \left( 1 + \frac{1}{n} \right)^{n}$$
 
 $\square$
-
-
-
-
-
-Then at the halfway point, when the interest compounds for the first time, the $P$ dollars would earn $\frac{r}{2}P$ and this $\frac{r}{2}P$ could then earn interest for the remaining half of time. We can derive the total amount of money we have left as follows:
-
-Let $P_1$ be the money we have after interest compounds the first time. It compounds at a rate of $r / 2$ because we compounded it at half the time interval (i.e., the first half of time):
-
-$$\begin{align*}P_1 &:= P + \frac{1}{2}P \\ &= P\left(1+\frac{r}{2}\right)  \end{align*}$$
-
-We can calculate the total now by treating $P_1$ as the "principal" starting just after the interest compounds the first time from which it will earn at a rate of $r / 2$ (because it compounds over the second half of time):
-
-$$\begin{align*}P_2 &:= P_1 + \frac{1}{2}P_1 \\ &= P_1\left(1+\frac{r}{2}\right)  \end{align*}$$
-
-Plugging in $P_1$, we get the final total as:
-
-$$\begin{align*} \text{Total} &:= P_2\left( 1+\frac{r}{2} \right) \\ &= P\left(1+\frac{r}{2}\right)\left(1+\frac{r}{2}\right)  \\ &= P\left(1+ \frac{r}{2}\right)^{2} \end{align*}$$
-
-We can play this game again and now instead of compounding twice, it compounds three times. In fact, we can increase the number of times that the money compounds to any arbitrary number, $n$, and we will find that the total we end up with at the end will be:
-
