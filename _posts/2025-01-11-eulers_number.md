@@ -164,8 +164,8 @@ $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n
 
 This is simply an exponential function $e^{rt}$ scaled by $P$!
 
-Connecting exponential functions and continuously compounded interest through calculus
---------------------------------------------------------------------------------------
+Connecting exponential functions and continuously compounded
+------------------------------------------------------------
 
 So far, we have derived $e$ from two alternative perspectives:
 
@@ -174,7 +174,7 @@ So far, we have derived $e$ from two alternative perspectives:
 
 Let's finally discuss how these two ideas are connected. Let $F(t)$ be a function that tells us how much money we have during the duration of a loan whose interest is continously compounding. Furthermore, let's pretend for a moment that we don't know the equation $F(t) := Pe^{rt}$.
 
-Intuitively, if interest is compounding continuously, then the growth of $F(t)$ at any particular timepoint $t$ should be proportional to $F(t)$ and should be given by dictated by the interest rate. That is, we would expect it to hold that if our interest rate is $r$, then the instantaneous growth of $F(t)$ at $t$ should be given by the interest rate multiplied by however much money we currently have (which is given by $F(t)$). Stated mathematically,
+Intuitively, if interest is compounding continuously, then the instantaneous growth of $F(t)$ at $t$ should be given by the interest rate multiplied by however much money we currently have, which is given by $F(t)$. Stated mathematically,
 
 $$\frac{dF(t)}{dt} = r F(t)$$
 
