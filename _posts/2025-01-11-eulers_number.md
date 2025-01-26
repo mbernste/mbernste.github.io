@@ -1,5 +1,5 @@
 ---
-title: "Demystifying Euler's number (Part 1: exponential functions)"
+title: "Demystifying Euler's number"
 date: 2025-01-11
 permalink: /posts/eulers_number/
 tags:
