@@ -1,13 +1,11 @@
 ---
 title: "Demystifying Euler's number"
-date: 2025-01-11
+date: 2025-01-26
 permalink: /posts/eulers_number/
 tags:
   - tutorial
   - mathematics
 ---
-
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
 _Euler's number $e := 2.71828\dots$ has, to me, always been a semi-mysterious number. While I understood many facts about $e$, I never felt I ever truly understood what it really was -- it's core essence so to speak. I believe that part of the reason for my confusion is that $e$ is often taught coming from two seemingly different perspectives: Either it is introduced in the context of compound interest or it is introduced in the context of calculus as being the base of the exponential function whose derivative is itself. Thanks to an excellent explanation by [Grant Sanderson](Grant Sanderson)'s [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I now better understand this constant and how these two perspectives relate to one another.  In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on Sanderson's explanation._
 
@@ -101,14 +99,23 @@ Unfortunately, the specific value, $k(a)$, is not easy to compute directly from 
 
 $$k(a) := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$ 
 
-Is there some way to express $a^x$ in a way that involves $k(a)$? Yes! And that is given by:
+Is there some way to express $a^x$ in a way that involves $k(a)$? Yes! It is simply
 
-$$a^x = k(a) e^x$$
+$$a^x = e^{k(a) x}$$
 
-See Theorem 2 in the Appendix to this post.
+To see why, first note that 
 
-Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$. Arguably, this form makes the exponential easier to interpret and to work with algebraically: Whenever you come upon an exponential function, $f(x) := K e^x$, the rate of change of $f(x)$ at $x$ is simply the value of this function scaled by the constant $K$. 
+$$a^x = e^{\log a^x} = e^{x \log a}$$
 
+Here we see that $a^x$ has been re-written as $e^{x \log a}$ where $\log a$ is simply a constant. Moreover, this cosntant, $\log a$, is really just $k(a)$. We know this because if we take the derivative of $e^{x \log a}$, we get
+
+$$\begin{align*}\frac{d a^x}{dx} &= \frac{d e^{x \log a}}{dx} \\ &= (\log a) e^{x \log a} = (\log a) a^x   \end{align*}$$
+
+That is, $\log a$ is that very constant of proportionality that we defined $k(a)$ to be!
+
+Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$. That is, by using $e^{k(a) x}$ instead of $a^x$. 
+
+Arguably, this form makes the exponential easier to interpret: Whenever you come upon an exponential function, $f(x) := e^{Kx}$, the rate of change of $f(x)$ at $x$ is simply the value of this function scaled by the constant $K$. 
 
 $e$ arises in a formula for continously compounded interest
 -----------------------------------------------------------
@@ -184,7 +191,7 @@ This only works because of the fact that $\frac{de^x}{dx} = e^x$! This can all b
 
 Further Reading
 ---------------
-* [This YouTube video by 3Blue2](https://www.youtube.com/watch?v=m2MIpDrF7Es)
+* [This YouTube video by 3Blue1Brown](https://www.youtube.com/watch?v=m2MIpDrF7Es)
 * [This article by Better Explained](https://betterexplained.com/articles/an-intuitive-guide-to-exponential-functions-e/)
 
 Appendix
