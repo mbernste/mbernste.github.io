@@ -164,17 +164,17 @@ $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n
 
 This is simply an exponential function $e^{rt}$ scaled by $P$!
 
-Connecting exponential functions and continuously compounded
-------------------------------------------------------------
+Connecting the dots
+-------------------
 
 So far, we have derived $e$ from two alternative perspectives:
 
 1. As being the base of the exponential function whose derivative is itself
 2. As a constant used in a formula to compute continuously compounding interest
 
-Let's finally discuss how these two ideas are connected. Let $F(t)$ be a function that tells us how much money we have during the duration of a loan whose interest is continously compounding. Furthermore, let's pretend for a moment that we don't know the equation $F(t) := Pe^{rt}$.
+Let's wrap up this discussion by describing explicitly how these two ideas are connected. Let $F(t)$ be a function that tells us how much money we have during the duration of a loan whose interest is continously compounding. Furthermore, let's pretend for a moment that we don't know the equation $F(t) := Pe^{rt}$.
 
-Intuitively, if interest is compounding continuously, then the instantaneous growth of $F(t)$ at $t$ should be given by the interest rate multiplied by however much money we currently have, which is given by $F(t)$. Stated mathematically,
+Intuitively, if interest is compounding continuously, then the instantaneous growth of $F(t)$ at $t$ should be given by the interest rate multiplied by however much money we currently have, which is given by $F(t)$. That is, we would naturally expect the instantaneous growth rate of our money to be $rF(t)$. Stated mathematically,
 
 $$\frac{dF(t)}{dt} = r F(t)$$
 
@@ -182,7 +182,7 @@ And indeed we see that if $F(t) := Pe^{rt}$, then we can apply the [chain rule](
 
 $$\begin{align*} \frac{dF(t)}{dt} &:= \frac{dPe^{rt}}{dt} \\ &=rPe^{rt} \\ &= r F(t) \end{align*}$$
 
-This only works because of the fact that $\frac{de^x}{dx} = e^x$! This can all be stated succinctly in the following diagram:
+This only works because of the fact that $\frac{de^x}{dx} = e^x$! The full picture is illustrated in the following diagram:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/Eulers_number_concept_map.png" alt="drawing" width="800"/></center>
 
