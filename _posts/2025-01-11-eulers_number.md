@@ -167,65 +167,16 @@ So far, we have derived $e$ from two alternative perspectives:
 
 Let's finally discuss how these two ideas are connected. Let $F(t)$ be a function that tells us how much money we have during the duration of a loan whose interest is continously compounding. Furthermore, let's pretend for a moment that we don't know the equation $F(t) := Pe^{rt}$.
 
-Intuitively, if interest is compounding continuously, then the growth of $F(t)$ at any particular timepoint $t$ should be proportional to $F(t)$ and should be given by dictated by the interest rate. That is, we would expect it to hold that if our interest rate is $r$, then the instantaneous growth of $F(t)$ at $t$ should be given by
+Intuitively, if interest is compounding continuously, then the growth of $F(t)$ at any particular timepoint $t$ should be proportional to $F(t)$ and should be given by dictated by the interest rate. That is, we would expect it to hold that if our interest rate is $r$, then the instantaneous growth of $F(t)$ at $t$ should be given by the interest rate multiplied by however much money we currently have. Stated mathematically,
 
 $$\frac{dF(t)}{dt} = r F(t)$$
 
-If the interest rate $r$ is 100% (i.e., $r = 1$), then we would expect
+And indeed we see that if $F(t) := Pe^{rt}$, then we can apply the [chain rule](https://en.wikipedia.org/wiki/Chain_rule) to find that
 
-$$\frac{dF(t)}{dt} = F(t)$$
+$$\begin{align*} \frac{dF(t)}{dt} &:= \frac{dPe^{rt}}{dt} \\ &=rPe^{rt} \\ &= r F(t) \end{align*}$
 
-And indeed the form of $F(t)$ for which this property holds is simply $e^t$, which we know from our discussion of exponential functions!
+This only works because of the fact that $\frac{de^x}{dx} = e^x$!
 
-Another way to think about this is to think about the integral 
-
-
-
-
-Let $F(t)$ be a function that tells us how much money we have during the duration of a loan whose interest is continously compounding. Furthermore, let's pretend for a moment that we don't know the equation $F(t) := Pe^{rt}$. 
-
-One idea would be to break apart the duration of time $t$ into $n$ increments of time where the money compounds and define $F(t)$ as a sum that adds up the interest earned at each of these $n$ increments of time. That is, we'll let
-
-$$F(t) := \sum_{\Delta t_i} f(t_i*) \Delta t_i$$
-
-where 
-
-* $\Delta t_i &:= t_i - t_{i-1}$ is a duration of time}
-* $t_i* &\in [t_i,  t_{i-1}]$ is a timepoint between $t_i$ and $t_{i-1}$
-* $f(t_i*)$ is a function such that the quantity $f(t_i*) \Delta t_i$  tells us how much we earned in the time interval for which the timepoint $t_i*$ falls (i.e., the interval $\Delta t_i$).
-
-This equation is depicted schematically below:
-
-
-Each pink rectangle represents the total amount of money 
-
-Depicted schematically, the total money earned, $F(t)$, would be the sum of the areas of the pink rectangles in the image below:
-
-
-
-
-
-
-
-$f(x)$ is some function that tells us how much money we have at timepoint $x$
-
-
-
-From the previous section, $F(t)$ is given by
-
-$$F(t) := Pe^{rt}$$
-
-Let's say we didn't know this equation, but we wanted to derive an equation by considering the integral:
-
-$$F(t) := \lim_{} $$
-
-$$F(t) := \int_0^t f(x) dx = \lim_{|| \Delta t || \rightarrow 0} \sum_{i=1}^n f(t&)$$
-
-Note that this is an integral because we 
-
-At any given instant in time, how much interest did $Pe^{rt}$ pay out? We can calculate this with calculus:
-
-$$d$$
 
 Further Reading
 ---------------
