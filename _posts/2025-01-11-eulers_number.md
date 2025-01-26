@@ -99,15 +99,13 @@ To see why, first note that
 
 $$a^x = e^{\log a^x} = e^{x \log a}$$
 
-Here we see that $a^x$ has been re-written as $e^{x \log a}$ where $\log a$ is simply a constant. Moreover, this constant, $\log a$, is really just $k(a)$. We know this because if we take the derivative of $e^{x \log a}$, we get
+Here we see that $a^x$ has been re-written as $e^{x \log a}$ where $\log a$ is simply a constant. It turns out that this constant, $\log a$, is really just $k(a)$. We know this because if we take the derivative of $e^{x \log a}$, we get
 
 $$\begin{align*}\frac{d a^x}{dx} &= \frac{d e^{x \log a}}{dx} \\ &= (\log a) e^{x \log a} && \text{Chain rule} \\ &= (\log a) a^x   \end{align*}$$
 
 That is, $\log a$ is that very constant of proportionality that we defined $k(a)$ to be!
 
-Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$. That is, by using $e^{k(a) x}$ instead of $a^x$. 
-
-Arguably, this form makes the exponential easier to interpret: Whenever you come upon an exponential function, $f(x) := e^{Kx}$, the rate of change of $f(x)$ at $x$ is simply the value of this function scaled by the constant $K$. 
+Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$. That is, by using $e^{k(a) x}$ instead of $a^x$. Arguably, this form makes the exponential easier to interpret: Whenever you come upon an exponential function, $f(x) := e^{Kx}$, the rate of change of $f(x)$ at $x$ is simply the value of this function scaled by the constant $K$. 
 
 In a very loose analogy, $e$ is to exponential curves as $\pi$ is to circles. Where $\pi$ is a constant that describes all circles, $e$ describes all exponential functions. Specifically, $e$ describes the sort of "origin exponential function" -- that is, the exponential function from which all other exponential functions can be described in reference to.
 
