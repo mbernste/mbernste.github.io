@@ -25,8 +25,8 @@ With the help of [Grant Sanderson](Grant Sanderson)'s excellent [3Blue1Brown vid
 
 To spoil the punchline, Euler's constant, at its most abstract and fundamental level, is a number that describes all [exponential function](https://en.wikipedia.org/wiki/Exponential_function) -- that is, functions of the form $f(x) := a^x$. With this most fundamental understanding, we can tie together the two aforementioned perspectives of $e$. 
 
-The essence of exponential functions: Their derivative is proportional to their value
--------------------------------------------------------------------------------------
+$e$ describes the essence of exponential functions
+--------------------------------------------------
 
 At its most abstract and fundamental level, $e$ is a number that can be used to naturally represent all exponential functions. To arive at this understanding, let's first discuss what it means for a function to be an exponential function.
 
@@ -60,33 +60,42 @@ Moreover, we see that this constant is determined by the value of $a$ -- that is
 
 $$k(a) := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$ 
 
-Defining Euler's number
------------------------
+### Defining Euler's number
 
-Given our newfound understanding of exponential functions as functions whose derivative is proportional to themselves, a natural question that follows is: What exponential function, $a^x$, yields a constant of 1? That is, for what value of $a$ do we have $k(a) = 1$?. It's Euler's number! 
-
-That is, Euler's number is the base of the exponential function for which the derivative of that exponential function is the exponential function itself:
-
-$$\frac{de^x}{dx} = e^x$$
+Given our newfound understanding of exponential functions as functions whose derivative is proportional to themselves, a natural question that follows is: What exponential function, $a^x$, yields a constant of 1? That is, for what value of $a$ do we have $k(a) = 1$?. It may not surprise you to learn that it's Euler's number! 
 
 That is, $e$ is the value for $a$ that satisfies the following equation:
 
 $$1 = k(a) = \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
-It turns out that that $e$ can be expressed as a limit that enables us to compute numerical approximation to this value (See Theorem 1 in the Appendix to this post):
+Said differently, Euler's number is the base of the exponential function for which the derivative of that exponential function is the exponential function itself:
 
-$$e = \lim_{n \rightarrow \infty} \left(1 + \frac{1}{n}\right)^n$$
-
-With this formula, we can calculate ever close approximations to $e$ by simply plugging in larger and larger values for $n$. If we do so, we find that $e \approx 2.71828$.
+$$\frac{de^x}{dx} = e^x$$
 
 In a sense, $e$ defines the "base" exponential function; By "base" I mean the exponential function whose rate of change is itself (i.e., whose constant of proportionality is 1).
 
-All exponential functions can be expressed in a more intuitive way with $e$
----------------------------------------------------------------------------
+Of course, this fact does not actually tell us how to actually calculate $e$'s value. To calculate $e$'s value, we need to derive an alternative formula for $f(x) := e^x$ that does not contain $e$ and then plug $x := 1$ into this formula. 
 
-The next natural question is, why do we care about $e$? And why do we see so many exponential functions and logarithms involving $e$?
+We do so by first noting that $f'(x) = f(x)$ is a first-order differential equation. Coupling this differential equation with the fact that $f(0) = e^0 = 1$, we realize this is an [initial value problem](https://en.wikipedia.org/wiki/Initial_value_problem#:~:text=In%20multivariable%20calculus%2C%20an%20initial,given%20point%20in%20the%20domain.) that be solved using the [Euler Method](https://en.wikipedia.org/wiki/Euler_method). If we do so, we find that 
 
-To answer this, let's first say we have some exponential function $a^x$. As we showed above, the derivative of $a^x$ is proportional to $a^x$ with some constant of proportionality given by $k(a)$. Knowing this constant of proportionality would be quite informative: it tells us exactly how quickly the exponential is growing. 
+$$f(x) = e^x = \lim_{n \rightarrow \infty} (1 + \frac{x}{n})^n$$
+
+See Theorem 1 in the Appendix to this post for the complete derivation.
+
+Plugging in $x := 1$, we find that $e$ can be expressed as a limit that enables us to compute numerical approximation to this value:
+
+$$e = \lim_{n \rightarrow \infty} \left(1 + \frac{1}{n}\right)^n$$
+
+We can calculate ever closer approximations to $e$ by simply plugging in larger and larger values for $n$. If we do so, we find that $e \approx 2.71828$.
+
+
+### All exponential functions can be expressed in a more intuitive way with $e$
+
+This fact about $e$ -- that it is the base of the exponential function whose derivative is itself -- does not quite explain why $e$ is so ubiquitous. Why do we see so many equations involving $e$?
+
+The answer is that $e$ can be used to describe _all_ exponential functions in a more intuitive and "natural" way. Thus, _any_ equation that relates to exponential functions will likely involve $e$!
+
+To see why, say we have some exponential function $a^x$. As we showed above, the derivative of $a^x$ is proportional to $a^x$ with some constant of proportionality given by $k(a)$. Knowing this constant of proportionality would be quite informative: it tells us exactly how quickly the exponential is growing. 
 
 Unfortunately, the specific value, $k(a)$, is not easy to compute directly from $a$. Recall it is given by,
 
@@ -98,19 +107,13 @@ $$a^x = k(a) e^x$$
 
 See Theorem 2 in the Appendix to this post.
 
-Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$. This value makes the exponential easier to interpret: whenever you come upon an exponential function, $f(x) := K e^x$, the rate of change of $f(x)$ at $x$ is given by $K$.
+Because every value for $a$ is associated with a unique constant $k(a)$, we can express all exponential functions using the constant $k(a)$ instead of $a$ via $k(a) e^x$. Arguably, this form makes the exponential easier to interpret and to work with algebraically: Whenever you come upon an exponential function, $f(x) := K e^x$, the rate of change of $f(x)$ at $x$ is simply the value of this function scaled by the constant $K$. 
 
 
+$e$ can be derived from continously compounded interest
+-------------------------------------------------------
 
-Connection to compound interest
--------------------------------
-
-Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced treatments of the topic. Specifically, we can derive $e$ by first deriving the formula for compound interest and then taking the limit as the interest is compounded continuously.
-
-I personally have not seen an explanation that ties these two perspectives together. There is a missing conceptual link that I would like to fill in:
-
-
-
+Euler's number was actually discovered first by [Jacob Bernoulli](https://en.wikipedia.org/wiki/Jacob_Bernoulli) as it relates to [compound interest](https://en.wikipedia.org/wiki/Compound_interest). In fact, $e$ is often introduced to students in this way and it's only discussed in relation to exponential functions in more advanced treatments of the topic. 
 
 Let us now approach $e$ from the perspective of compound interest and connect it from this perspective back to exponential functions. We'll break apart this explanation into two sections: In the first, we'll derive the formula for continous compound interest, which involves $e$. In the second, we'll tie this formula intuitively back to our discussion of $e$ as being a constant that "describes" all exponential functions.
 
@@ -154,17 +157,17 @@ Now that we've generalized our formula to take into account $t$, let's now ask t
 
 $$\begin{align*}\text{Total} &:= \lim_{n \rightarrow \infty} P\left(1-\frac{r}{n}\right)^{tn} \\ &= P \lim_{n \rightarrow \infty} \left(1-\frac{r}{n}\right)^{nt} \\ &= Pe^{rt} && \text{Theorem 1} \end{align*}$$
 
+The last line becomes evident from Theorem 1 in the Appendix to this post.
 
-If we assume that the rate, $r$, is fixed, then we can create a variable $x := rt$ that is a function only of time, $t$. The equation then becomes:
+Connecting exponential functions and continuously compounded interest
+---------------------------------------------------------------------
 
-$$\text{Total} = Pe^x$$
+So far, we have derived $e$ from two alternative perspectives:
 
-This formula is an exponential function! That is, it is an exponential function with respect to the _scaled_ time where the scaling is determined by the rate. Said differently, one can think of $x$ as the number of units of time where each unit is the time it takes to earn 100% of the principal (i.e., double the money). 
+1. As being the base of the exponential function whose derivative is itself
+2. As a constant used in a formula to compute continuously compounding interest
 
-### Relating continous compound interest to exponentials
-
-Let's conclude by relating the equation for continuous interest, $\text{Total} = Pe^x$, back to the idea that $e^x$ is the function whose derivative is simply $e^x$. 
-
+How do these two perspectives relate to one another?
 
 
 Further Reading
