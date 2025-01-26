@@ -19,14 +19,16 @@ Euler's number $e := 2.71828\dots$ has, to me, always been a semi-mysterious num
 1. As a constant that arises from deriving the formula for [continuously compounded interest](https://en.wikipedia.org/wiki/Compound_interest#Continuous_compounding)
 2. As the constant base of an [exponential function](https://en.wikipedia.org/wiki/Exponential_function), $e^x$, such that the derivative of this function is itself. That is, $\frac{de^x}{dx} = e^x$.
 
-For a long time, I had trouble seeing how these two perspectives of $e$ were related to one another. In context of my [prior blog post on "seeing concepts in 3D"](https://mbernste.github.io/posts/understanding_3d/), I didn't have a "3D image" in my mind for how these two different "2D projections" of $e$ formed a cohesive concept.
+For a long time, I had trouble seeing how these two perspectives of $e$ were related to one another. Moreover, I didn't have an understanding for why $e$ appears so often in equations across science and mathematics. In context of my [prior blog post on "seeing concepts in 3D"](https://mbernste.github.io/posts/understanding_3d/), I didn't have a "3D image" in my mind for how these two different "2D projections" of $e$ formed a cohesive "3D" concept.
 
 With the help of [Grant Sanderson](Grant Sanderson)'s excellent [3Blue1Brown video](https://www.youtube.com/watch?v=m2MIpDrF7Es), I feel now that I have a much better understanding for it's essence. In this blog post, I will attempt to describe, in my own words, my understanding of Euler's number and expound on his explanation by attempting to tie together the two aforementioned perspectives of $e$.
 
 To spoil the punchline, Euler's constant, at its most abstract and fundamental level, is a number that describes all [exponential function](https://en.wikipedia.org/wiki/Exponential_function) -- that is, functions of the form $f(x) := a^x$. With this most fundamental understanding, we can tie together the two aforementioned perspectives of $e$. 
 
-The essence of exponential functions: their derivative is proportional to their value
+The essence of exponential functions: Their derivative is proportional to their value
 -------------------------------------------------------------------------------------
+
+At its most abstract and fundamental level, $e$ is a number that can be used to naturally represent all exponential functions. To arive at this understanding, let's first discuss what it means for a function to be an exponential function.
 
 To review, exponential functions are functions of the form:
 
@@ -36,17 +38,17 @@ for some constant $a$. Exponential functions do not only grow, but their _growth
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/exponential.png" alt="drawing" width="400"/></center>
 
-In fact, the key characteristic of exponential functions -- the very characteristic _defines_ exponential functions -- is that their growth grows linearly with the function itself. Stated more rigorously, **an exponential's derivative _is proportional_ to the value of the function itself.** That is:
+The key characteristic of exponential functions -- the very characteristic that _defines_ exponential functions -- is that their growth grows linearly with the value of the function itself. Stated more rigorously, **an exponential's derivative _is proportional_ to the value of the function itself.** That is:
 
 $$\frac{da^x}{dx} = Ka^x$$
 
 where $K$ is some constant that is determined by $a$. 
 
-That is, no matter what value for $x$ for which we are evaluating the derivative, the derivative of $a^x$ is simply $a^x$ itself multiplied by some constant $K$. Intuitively, this makes sense just by looking at the exponential function curve: the bigger is $a^x$ the steeper the rate of change:
+That is, for all values of $x$, the derivative of $a^x$ is simply $a^x$ itself multiplied by some constant $K$. One can gain intuition for this fact by simply observing the function's curve; The bigger is $a^x$ the steeper is the rate of change:
 
  <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/exponential_proportional_to_value.png" alt="drawing" width="400"/></center>
 
-This fact can be proven mathematically. Let's start with the definition of the derivative of $a^x$:
+Let's prove this fact more rigorously by starting with the definition of the derivative of $a^x$:
 
 $$\begin{align*}\frac{da^x}{dx} &= \lim_{h \rightarrow 0} \frac{a^{x+h} - a^x}{h} \\ &= \lim_{h \rightarrow 0} \frac{a^xa^h - a^x}{h} \\ &= a^x \underbrace{\lim_{h \rightarrow 0} \frac{a^h - 1}{h}}_{K} \end{align*}$$
 
@@ -54,14 +56,14 @@ Note, that the derivative of $a^x$ is simply $a^x$ scaled by a constant:
 
 $$K := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$
 
-Moreover, we see that this constant is determined by the value of $a$ -- that is, it is a function of $a$. Thus, we can write this constant as:
+Moreover, we see that this constant is determined by the value of $a$ -- that is, it is a function of $a$. We can make the dependence of $K$ on $a$ by write this constant as a function of $a$:
 
 $$k(a) := \lim_{h \rightarrow 0} \frac{a^{h} - 1}{h}$$ 
 
 Defining Euler's number
 -----------------------
 
-Now, the natural question that follows from this observation of exponential functions is: what exponential function, $a^x$, yields a constant of 1? That is, for what value of $a$ do we have $k(a) = 1$?. It's Euler's number! 
+Given our newfound understanding of exponential functions as functions whose derivative is proportional to themselves, a natural question that follows is: What exponential function, $a^x$, yields a constant of 1? That is, for what value of $a$ do we have $k(a) = 1$?. It's Euler's number! 
 
 That is, Euler's number is the base of the exponential function for which the derivative of that exponential function is the exponential function itself:
 
