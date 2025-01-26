@@ -91,7 +91,7 @@ This fact about $e$ -- that it is the base of the exponential function whose der
 
 The answer is that $e$ can be used to describe _all_ exponential functions in a more intuitive and "natural" way. Thus, _any_ equation that relates to exponential functions will likely involve $e$! It is sort of similar to how any equation that involves rotations or circles will usually involve $\pi$.
 
-To see why, say we have some exponential function $a^x$. As we showed above, the derivative of $a^x$ is proportional to $a^x$ with some constant of proportionality given by $k(a)$. This value, $k(a)$ would need to be computed. Is there a way to express $a^x$ using $k(a)$ so that this value is obvious from the expression? Yes! It is simply,
+To see why, say we have some exponential function $a^x$. As we showed above, the derivative of $a^x$ is proportional to $a^x$ with some constant of proportionality given by $k(a)$. This value, $k(a)$, would need to be computed. Is there a way to express $a^x$ using $k(a)$ so that this value is obvious from the expression? Yes! It is simply,
 
 $$a^x = e^{k(a) x}$$
 
