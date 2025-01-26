@@ -12,6 +12,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Intrinsic dimensionality](https://mbernste.github.io/posts/intrinsic_dimensionality/)  
 [The overloaded equals sign](https://mbernste.github.io/posts/equality_definition/)  
 [The binomial theorem](https://mbernste.github.io/posts/binomial_theorem/)   
+[Demystifying Euler’s number](https://mbernste.github.io/posts/eulers_number/)  
 
 ## Computational biology
 
