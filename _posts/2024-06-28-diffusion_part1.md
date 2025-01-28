@@ -291,7 +291,7 @@ The training algorithm
 
 Note the objective function we derived in the previous section is simply a sum of discrete terms and thus, to maximize this function, we can maximize each term independently. The final training algorithm proposed by [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) simply  timesteps at random and updates $\theta$ according to a single step of [gradient ascent](https://en.wikipedia.org/wiki/Gradient_descent). 
 
-More specifically, the full training algorithm is goes as follows: Until training converges (i.e., the objective function no longer improves), we repeat the following steps:
+More specifically, the full training algorithm is as follows: Until training converges (i.e., the objective function no longer improves), we repeat the following steps:
 
 1\. Sample a random timestep, $t'$, uniformly at random: 
 
@@ -404,8 +404,8 @@ The model also output many nonsensical images. While this may not be desirable, 
 
 A better model may output fewer of these nonsensical "digits"; however, I think this demonstrates how these generative models can be used for creative tasks. That is, the model succesfully modeled "digit-like patterns", which in some cases led it to producing nonsensical digits that still look visually interesting (well, interesting to me at least). It did this by assembling these digit-like patterns in new, interesting ways. 
 
-Resources
----------
+Further Reading
+---------------
 
 Much of my understanding of this material came from the following resources:
 
