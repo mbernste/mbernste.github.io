@@ -1,7 +1,7 @@
 ---
-title: "Transformers re-illustrated"
+title: "Self-Attention"
 date: 2023-10-17
-permalink: /posts/transformers/
+permalink: /posts/selfattention/
 tags:
   - tutorial
   - machine learning
@@ -15,20 +15,23 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Transformers are a neural network architecture that have transformed the machine learning field (pun intended) as they are the key technology behind a number of breakthrough machine learning models such as [OpenAI](https://openai.com/)'s [ChatGPT](https://chat.openai.com/) and [Google Translate](https://translate.google.com/). 
+Transformers are a neural network architecture that have transformed the machine learning field (pun intended) as they are the key technology behind the meteoric rise of large language models like [OpenAI](https://openai.com/)'s [ChatGPT](https://chat.openai.com/). 
 
-A recent blog post, [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer), by Jay Alammar, provides an amazing explanation of transformers and attention. It was from this blog that I came to my understanding of these models. In this blog post, I will expound upon this foundation and provide an alternative explanation of transformers using slightly different diagrams that articulate my own mental model of how they work. Lastly, we will implement a small transformer in [PyTorch](https://pytorch.org/) to classify [T cell receptors (TCR)](https://en.wikipedia.org/wiki/T-cell_receptor) sequences as either originating from a tumor or healthy tissue. This example will provide a basic demonstration of an application of transformers in computational biology.
+A recent blog post, [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer), by Jay Alammar, provides an amazing explanation of transformers and self-attention. It was from this blog that I came to my understanding of these models. In this post, I will expound upon this foundation and provide an alternative explanation of transformers using different diagrams that articulate my own mental model of how they work. I will focus specifically on the self-attention layer of the transformer, as these are the crucial mechanism that gives transformers their power. Lastly, we will implement a small neural network in [PyTorch](https://pytorch.org/) that uses self-attention to classify [T cell receptors (TCR)](https://en.wikipedia.org/wiki/T-cell_receptor) sequences as either originating from a tumor or healthy tissue. 
 
-Inputs and outputs of a transformer layer
------------------------------------------
+A note on terminology: Transformers and self-attention
+------------------------------------------------------
 
-At their core, a transformer is a layer of a neural network that performs a mapping between sequences of vectors. That is, the transformer accepts a sequence and then outputs a vector embedding of that sequence.  For example, the input sequence may be a sequence of words, like a sentence, or a DNA sequence. Each element, or **token**, of the input sequence (e.g., a word in the case of a sentence) is represented as a vector. If we are considering the first layer, then these input vectors are **feature vectors** associated with each word. Interestingly, the length of the input sequence to the transformer layer does not need to be fixed, but can be variable! This is a powerful feature as it enables a transformer layer to operate on arbitrary-lengthed sequences (this is similar to how a [graph convolutional neural network](https://mbernste.github.io/posts/gcn/) can operate on arbitrary-sized graphs). This process is depicted below:
+Inputs and outputs of the self-attention layer
+----------------------------------------------
+
+At their core, a self-attention layer is a layer of a neural network that performs a mapping between sets of vectors. That is, the transformer accepts a set and then outputs a vector embedding of that set.  For example, the input set may be a sequence of words, like a sentence, or a DNA sequence. Each element, or **token**, of the input set (e.g., a word in the case of a sentence) is represented as a vector. If we are considering the first layer, then these input vectors are **feature vectors** associated with each word. Interestingly, the length of the input set does not need to be fixed, but can be variable! This is a powerful feature as it enables a transformer layer to operate on arbitrary-lengthed sequences (this is similar to how a [graph convolutional neural network](https://mbernste.github.io/posts/gcn/) can operate on arbitrary-sized graphs). This process is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_input_output.png" alt="drawing" width="350"/></center>
 
 <br>
 
-In the next section, we will dig into the mechanics of the transformer layer and discuss how the transformer layer implements a process called **attention** when performing this sequence to sequence mapping. 
+In the next section, we will dig into the mechanics of the self-attention layer. 
 
 Attention
 ---------
