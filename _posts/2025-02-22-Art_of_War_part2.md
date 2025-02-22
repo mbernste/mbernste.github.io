@@ -21,3 +21,18 @@ Book 3: Planning a Siege
 ------------------------
 
 **The general rule for use of the military is that it is better to keep a nation intact than to destroy it. It is better to keep an army intact than to destroy it, better to keep a division intact than to destroy it, better to keep a battalion intact than to destroy it, better to keep a unit intact than to destroy it.**
+
+* Sun Tzu lays out a fundamental principal: Avoid destruction. Not only is this an ethical and moral principal, but a strategically advantageous one as well. 
+
+**If you can keep the opponent’s nation intact, then your own nation will also be intact. So this is best.**
+
+Destruction requires the expenditure of energy and will weaken one's self. Destruction will evoke a violent and commensurate response from one's enemy and thus incurs risk. Destruction also seeds an enemy's anger and may galvanize the enemy.
+
+**This means that killing is not the important thing.**
+
+In a conflict, the most important thing is the outcome, not necessarily the means by which that outcome is achieved. The act of killing, and destruction more generally, is such an extreme and consequential act; it should be treated with the utmost respect.
+
+**Therefore those who win every battle are not really skillful—those who render others’ armies helpless without fighting are the best of all.**
+
+
+
