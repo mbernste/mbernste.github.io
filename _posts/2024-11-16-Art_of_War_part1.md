@@ -173,7 +173,7 @@ Book 2: Doing Battle
 
 **Therefore in a chariot battle, reward the first to capture at least ten chariots.**
 
-* Sun Tzu emphasizes the importance of using reward to motivate. Interestingly, he does not mention the use of punishment. The emphasis on using reward instead of punishment is, in fact, a fairly recent development in both parenting and in training animals. Scientifically, it has been shown that reward is more effective than punishment  in inducing a target behavior. It is interesting to see Sun Tzu identify this truth so long ago.
+* Sun Tzu emphasizes the importance of using reward to motivate. Interestingly, he does not mention the use of punishment. The emphasis on using reward instead of punishment is, in fact, a fairly recent development in both parenting and animal training. Scientifically, it has been shown that reward is more effective than punishment  in inducing a target behavior. It is interesting to see Sun Tzu identify this truth so long ago.
 * Here is another example of the use of quantitative analysis (he subscribes the reward to be exactly ten chariots).
 
 **Change their colors, use them mixed in with your own. Treat the soldiers well, take care of them.**
