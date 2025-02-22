@@ -29,7 +29,7 @@ Conflict is a discipline and like any discipline, it can be studied scientifical
 **Therefore measure in terms of five things, use these assessments to make comparisons, and thus find out what the conditions are. The five things are the way, the weather, the terrain, the leadership, and discipline.**
 
 * From the outset, Sun Tzu quantifies the core components one needs to gain an advantage in conflict. There are exactly five things: a quantity. 
-This very first suggestion addresses the act of “assessment”. This will remain a key theme throughout the book. To gain an advantage, one must acquire information and process that information. Gathering intelligence and making rational use of it is the key to victory.
+This very first suggestion addresses the act of “assessment”. This will remain a key theme throughout the book. To gain an advantage, one must acquire information and leverage that information. Gathering intelligence and assessing it objectiveluy to gain an advantage is the key to victory.
 
 **The Way means inducing the people to have the same aim as the leadership, so that they will share death and life, without fear of danger.**
 
@@ -43,7 +43,6 @@ Lastly, a key aspect to good leadership is that of instilling courage (“withou
 
 **The terrain is to be assessed in terms of distance, difficulty or ease of travel, dimension, and safety.**
 
-* Sun Tzu further breaks down the concept of “terrain” and assesses it in terms of four characteristics. Again, this emphasizes this theme of scientific examination into the rules of conflict.
 * The terrain plays a huge role in modern military operations. Both the Soviet Union and the United States failed to achieve their objectives in their respective occupations of Afghanistan. A huge reason for this is the complex terrain, which was known thoroughly by the locals, but was foreign to the occupying forces. 
 
 **Leadership is a matter of intelligence, trustworthiness, humaneness, courage, and sternness.**
@@ -56,16 +55,15 @@ Lastly, a key aspect to good leadership is that of instilling courage (“withou
 
 **Therefore use these assessments for comparison, to find out what the conditions are. That is to say, which political leadership has the Way? Which general has ability? Who has the better climate and terrain? Whose discipline is effective? Whose troops are stronger? Whose officers and soldiers are better trained? Whose system of rewards and punishments is clearer? This is how you can know who will win.**
 
-* Sun Tzu lays out a formula for assessing who has the advantage in a conflict, which again emphasizes how the rules of conflict can be broken apart and studied scientifically.
 * Interestingly, Sun Tzu suggests that one can know the victor before any conflict occurs. The statement, “This is how you can know who will win” is extremely certain. He does not say “who will probably win.” He says, “who will win.” This is another key theme that will pervade throughout the book: one should use information to assess the situation, arrive at a point of clarity, and strike decisively!
 
 **Assess the advantages in taking advice, then structure your forces accordingly, to supplement extraordinary tactics. Forces are to be structured strategically, based on what is advantageous.**
 
-* I interpret this piece to mean that one should structure their resources (“forces”) based on the intelligence they receive. One should adapt their strategy to the circumstances. Again, Sun Tzu emphasizes the use of information to gain an advantage.
+* I interpret this point to mean that one should structure their resources (“forces”) based on the intelligence they receive. One should adapt their strategy to the circumstances. Again, Sun Tzu emphasizes the importance of using intelligence to gain an advantage.
 
 **A military operation involves deception. Even though you are competent, appear to be incompetent. Though effective, appear to be ineffective.**
 
-* In any conflict, you should not telegraph your abilities to your opponent. This holds in military conflict, but generalizes to conflict as a whole. There are two reasons for this. First, if you telegraph your capabilities, your opponent can use that information to gain the advantage. Second, if you act incompetent, but are actually competent, and your opponent buys this lie, then they will attack when they have the disadvantage. You can thus bait them into a fight they cannot win.
+* In any conflict, you should not telegraph your capabilities to your opponent. This holds in military conflict, but generalizes to conflict as a whole. There are two reasons for this. First, if you telegraph your capabilities, your opponent can use that information to gain the advantage. Second, if you act incompetent, but are actually competent, and your opponent believes this lie, then they will attack when they have the disadvantage. You can thus bait them into a fight they cannot win.
 
 **When you are going to attack nearby, make it look as if you are going to go a long way; when you are going to attack far away, make it look as if you are going just a short distance.**
 
@@ -74,8 +72,8 @@ Lastly, a key aspect to good leadership is that of instilling courage (“withou
 
 **Draw them in with the prospect of gain, take them by confusion.**
 
-* Here again, Sun Tzu emphasizes the use of deception, but goes a bit further. Rather than simply deceiving your opponent with false information, here he emphasizes using your opponents emotions against them. That is, you should use your opponent’s greed against them. That is, to bait them. 
-The phrase, “take them by confusion” emphasizes the critical point in time when your opponent realizes that their reality is false. It is in that critical moment of time that you have an advantage and need to strike decisively.
+* Here again, Sun Tzu emphasizes the use of deception, but he goes a bit further with this line of thinking. Rather than simply deceiving one's opponent with false information, here he emphasizes leveraging one's opponent's _natural emotional responses_ against them. Here specifically, that emotion is greed; one should use greed to bait one's opponent. 
+The phrase, “take them by confusion” emphasizes the critical point in time when your opponent realizes that their understanding of reality is incorrect. It is in that critical moment of realization, and confusion, that you possess an advantage and should strike decisively.
 
 **When they are fulfilled, be prepared against them; when they are strong, avoid them.**
 
@@ -166,7 +164,7 @@ Book 2: Doing Battle
 
 **Therefore a wise general strives to feed off the enemy. Each pound of food taken from the enemy is equivalent to twenty pounds you provide by yourself.**
 
- Again, Sun Tzu here is taking a quantitative approach to strategic assessment. He very literally quantifies the benefit of “feeding off the enemy” versus preparing provisions.
+ This is a very quantitative  He very literally quantifies the benefit of “feeding off the enemy” versus preparing provisions.
 
 **So what kills the enemy is anger, what gets the enemy’s goods is reward.**
 
@@ -191,7 +189,7 @@ Book 2: Doing Battle
 **So the important thing in a military operation is victory, not persistence.**
 
 * Victory must be achieved quickly and decisively. A long drawn out campaign will lead to defeat
-* An alternative interpretation is that what matters is not effort, but outcome. It does not matter how hard you try, it only matters whether or not you succeed. I believe a common trap that many people fall victim to is that what matters most is hard work. Sadly, that isn’t true. 
+* An alternative interpretation is that what matters is not effort, but outcome. It doesn't matter how much effort you've expended, only the outcome matters. I believe that a common mistake is to overvalue hard work, when what matters more is the outcome. 
 
 **Hence, we know that the leader of the army is in charge of the lives of the people and the safety of the nation.**
 
