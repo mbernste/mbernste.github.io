@@ -26,11 +26,11 @@ Book 3: Planning a Siege
 
 **If you can keep the opponent’s nation intact, then your own nation will also be intact. So this is best.**
 
-Destruction requires the expenditure of energy and will weaken one's self. Destruction will evoke a violent and commensurate response from one's enemy and thus incurs risk. Destruction also seeds an enemy's anger and may galvanize the enemy.
+* Destruction requires the expenditure of energy and will weaken one's self. Destruction will evoke a violent and commensurate response from one's enemy and thus incurs risk. Destruction also seeds an enemy's anger and may galvanize the enemy.
 
 **This means that killing is not the important thing.**
 
-In a conflict, the most important thing is the outcome, not necessarily the means by which that outcome is achieved. The act of killing, and destruction more generally, is such an extreme and consequential act; it should be treated with the utmost respect.
+* In a conflict, the most important thing is the outcome, not necessarily the means by which that outcome is achieved. The act of killing, and destruction more generally, is such an extreme and consequential act; it should be treated with the utmost respect.
 
 **Therefore those who win every battle are not really skillful—those who render others’ armies helpless without fighting are the best of all.**
 
