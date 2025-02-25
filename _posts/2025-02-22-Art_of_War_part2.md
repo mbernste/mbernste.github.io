@@ -30,7 +30,7 @@ Book 3: Planning a Siege
 
 **This means that killing is not the important thing.**
 
-* In a conflict, the most important thing is the outcome, not necessarily the means by which that outcome is achieved. The act of killing, and destruction more generally, is such an extreme and consequential act; it should be treated with the utmost respect.
+* In a conflict, the most important thing is the outcome, not necessarily the means by which that outcome is achieved. The act of killing, and destruction more generally, is  an extreme and consequential act; it should be treated with the utmost respect.
 
 **Therefore those who win every battle are not really skillful—those who render others’ armies helpless without fighting are the best of all.**
 
