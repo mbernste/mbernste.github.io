@@ -106,7 +106,7 @@ Note, the ordering of vertices tells us which vertex's function value is subtrac
 
 $$\boldsymbol{g} := \begin{bmatrix}g(e_1) & g(e_2) & \dots & g(e_m)\end{bmatrix}$$
 
-Now, a natural question becomes: given a graph-function $$\boldsymbol{f}$$, how do we construct a matrix operator on $$\boldsymbol{f}$$ that returns $$\boldsymbol{g}$$ as described above?  The answer is the **Incidence matrix** $$K$$.  The rows of $$K$$ correspond to the sorted vertices and the columns correspond to the sorted edges.  For vertex $$v_i$$ and edge $$e_j := (v_k, v_h)$$, the entry $$K_{i,j}$$ is defined as
+Now, a natural question becomes: given a graph-function $$\boldsymbol{f}$$, how do we construct a matrix operator on $$\boldsymbol{f}$$ that returns $$\boldsymbol{g}$$ as described above?  The answer is the **Incidence matrix** $$K$$.  The columns of $$K$$ correspond to the sorted vertices and the rows correspond to the sorted edges.  For vertex $$v_i$$ and edge $$e_j := (v_k, v_h)$$, the entry $$K_{i,j}$$ is defined as
 
 $$K_{i,j} := \begin{cases} 1,& \text{if} \ i == k \ \text{and} \ i > h \\ 1,& \text{if} \ i == h \ \text{and} \ i > k\\ -1,& \text{if} \ i == k \ \text{and} \ i < h \\ -1,& \text{if} \ i == h \ \text{and} \ i < k \\  0, & \text{otherwise}\end{cases}$$
 
