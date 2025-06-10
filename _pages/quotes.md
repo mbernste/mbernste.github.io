@@ -20,9 +20,11 @@ author_profile: true
 
 "I should like to paint portraits which appear after a century to people living then as apparitions. By which I mean that I do not endeavor to achieve this through photographic resemblance, but by means of our impassioned emotions—that is to say using our knowledge and our modern taste for color as a means of arriving at the expression and the intensification of the character." **\~ Van Gogh**
 
-"Life is a winking light in the darkness" **\~ Hayao Miyazaki**
+"Life is a winking light in the darkness." **\~ Hayao Miyazaki**
 
 "The places in-between places they are little countries themselves with their own holidays." **\~ Alberto Rios**
+
+“I wish it need not have happened in my time," said Frodo. "So do I," said Gandalf, "and so do all who live to see such times. But that is not for them to decide. All we have to decide is what to do with the time that is given us.” **\~ J.R.R. Tolkien, The Fellowship of the Ring**
 
 "Let us dedicate ourselves to what the Greeks wrote so many years ago: to tame the savageness of man and make gentle the life of this world." **\~ Bobby Kennedy**
 
