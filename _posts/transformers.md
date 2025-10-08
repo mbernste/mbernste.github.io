@@ -1,5 +1,5 @@
 ---
-title: "Self-Attention"
+title: "Attention"
 date: 2023-10-17
 permalink: /posts/selfattention/
 tags:
@@ -15,12 +15,15 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Transformers are a neural network architecture that have transformed the machine learning field (pun intended) as they are the key technology behind the meteoric rise of large language models like [OpenAI](https://openai.com/)'s [ChatGPT](https://chat.openai.com/). 
+Transformers are a neural network architecture that have powered the development of [large language models](https://en.wikipedia.org/wiki/Large_language_model) and enabled their meteoric rise. The key conceptual advance behind the transformer architecture is a specific neural network mechanism called **self-attention**, which was introduced by Vaswani *et al.* (2017) in their landmark paper, *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)*. At its core, attention is a neural network mechanism that enables a model to decide dynamically how different components of its input relate to one another. For example, if the input to the model is natural language text -- i.e., a sequence of words -- then, self-attention is a mechanism that enables the neural network to decide how different words relate to one another.
 
-A recent blog post, [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer), by Jay Alammar, provides an amazing explanation of transformers and self-attention. It was from this blog that I came to my understanding of these models. In this post, I will expound upon this foundation and provide an alternative explanation of transformers using different diagrams that articulate my own mental model of how they work. I will focus specifically on the self-attention layer of the transformer, as these are the crucial mechanism that gives transformers their power. Lastly, we will implement a small neural network in [PyTorch](https://pytorch.org/) that uses self-attention to classify [T cell receptors (TCR)](https://en.wikipedia.org/wiki/T-cell_receptor) sequences as either originating from a tumor or healthy tissue. 
+For example, take the sentence, "I like sushi because it makes me happy." The self-attention mechanism enables a model to learn relationships between these words. For example, the word "it" in this sentence is referring to "sushi". The words "me" and "I" are both referring to the speaker. The word "happy" is describing the speaker (rather than the sushi).
 
-A note on terminology: Transformers and self-attention
-------------------------------------------------------
+At its core, the idea behind self-attention takes the more general idea of **attention**, which was originally concieved as a sort of add-on  
+
+
+In this post, we will discuss the intuition behind this mechanism and how it enables powerfully scalable models. 
+
 
 Inputs and outputs of the self-attention layer
 ----------------------------------------------
