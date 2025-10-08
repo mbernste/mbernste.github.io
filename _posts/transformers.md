@@ -19,7 +19,7 @@ Transformers are a neural network architecture that have powered the development
 
 For example, take the sentence, "I like sushi because it makes me happy." The self-attention mechanism enables a model to learn relationships between these words. For example, the word "it" in this sentence is referring to "sushi". The words "me" and "I" are both referring to the speaker. The word "happy" is describing the speaker -- that is, the same entity being referred to by "I" and "me". The self-attention layer of a neural network seeks to tease out these relationships as it is trained to perform its task, whether that task be autoregressive langauge generation (which is how LLMs generate responses), machine translation, and even [computer vision tasks](https://en.wikipedia.org/wiki/Computer_vision). 
 
-In this blog post, we will step through the self-attention mechanism and describe how it works both mathematically and intuitively. Much of my understanding of this material came from the excellent blog post, *[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)* by Jay Allamar, which goes beyond self-attention to cover the full transformer. In this post, we will stick to only covering attention. We will start with the predecessor of self-attention, which was introduced by [Bahdanau, Cho, and Bengio (2015)](https://arxiv.org/pdf/1409.0473.pdf) as a mechanism that was sort of "appended" onto a traditional [recurrent neural network](https://en.wikipedia.org/wiki/Recurrent_neural_network) to boost their performance in machine translation. We will describe how Vaswani _et al_. took this concept and used it to construct an entire neural network layer, the "self-attention" layer. 
+In this blog post, we will step through the self-attention mechanism and describe how it works both mathematically and intuitively. Much of my understanding of this material came from the excellent blog post, *[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)* by Jay Allamar, which goes beyond self-attention to cover the full transformer. In this post, we will stick to only covering attention. We will start with the predecessor of self-attention, which was introduced by [Bahdanau, Cho, and Bengio (2015)](https://arxiv.org/pdf/1409.0473.pdf) in the context of machine translation. We will link the ideas from their work to the modern self-attention mechanism that powers transformers today. We will describe how Vaswani _et al_. took this concept and used it to construct an entire neural network layer, the "self-attention" layer. 
 
 
 A Bit of history: Attention in machine translation
@@ -27,7 +27,7 @@ A Bit of history: Attention in machine translation
 
 Though it feels like a much longer time, it was not that long ago that the task of translating between languages was a challenging open problem in computer science and machine learning. 
 
-
+From my understanding, the predecessor of self-attention was introduced by [Bahdanau, Cho, and Bengio (2015)](https://arxiv.org/pdf/1409.0473.pdf) as a mechanism that was sort of "appended" onto a traditional [recurrent neural network](https://en.wikipedia.org/wiki/Recurrent_neural_network) to boost their performance in machine translation.
 
 Inputs and outputs of the self-attention layer
 ----------------------------------------------
