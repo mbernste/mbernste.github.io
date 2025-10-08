@@ -25,7 +25,7 @@ In this blog post, we will step through the self-attention mechanism and describ
 A Bit of history: Attention in machine translation
 --------------------------------------------------
 
-Though it feels like a much longer time, it was not that long ago that the task of translating between languages was a challenging open problem in computer science and machine learning. 
+It was not that long ago that the task of translating between languages was a challenging open problem in computer science and machine learning (though it feels like a very long time ago!). 
 
 From my understanding, the predecessor of self-attention was introduced by [Bahdanau, Cho, and Bengio (2015)](https://arxiv.org/pdf/1409.0473.pdf) as a mechanism that was sort of "appended" onto a traditional [recurrent neural network](https://en.wikipedia.org/wiki/Recurrent_neural_network) to boost their performance in machine translation.
 
