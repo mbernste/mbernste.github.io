@@ -28,8 +28,6 @@ A Bit of history: Attention in machine translation
 Though it feels like a much longer time, it was not that long ago that the task of translating between languages was a challenging open problem in computer science and machine learning. 
 
 
-In this post, we will discuss the intuition behind this mechanism and how it enables powerfully scalable models. 
-
 
 Inputs and outputs of the self-attention layer
 ----------------------------------------------
@@ -40,20 +38,15 @@ At their core, a self-attention layer is a layer of a neural network that perfor
 
 <br>
 
-In the next section, we will dig into the mechanics of the self-attention layer. 
-
-Attention
----------
-
-Transformers were first introduced in the seminal paper, "[Attention Is All You Need](https://arxiv.org/abs/1706.03762)" by Vaswani _et al_. (2017). As the name of this paper suggests, transformers are built upon a mechanism called **attention**. Attention was originally introduced by [Bahdanau, Cho, and Bengio (2015)](https://arxiv.org/pdf/1409.0473.pdf) as a mechanism that was sort of "appended" onto a traditional [recurrent neural network](https://en.wikipedia.org/wiki/Recurrent_neural_network) to boost their performance. Vaswani _et al_. took this concept and used it to construct a novel neural network architecture built only out of attention mechanisms. More specifically, we can break the transformer layer down into two main sublayers: an attention sublayer followed by a fully connected sublayer:
+TODO More specifically, we can break the transformer layer down into two main sublayers: an attention sublayer followed by a fully connected sublayer:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_and_fully_connected.png" alt="drawing" width="350"/></center>
 
 <br>
 
-The idea behind attention is that when we consider the output vector associated with a given token, we intuitively want the model to pay greater "attention" to some input tokens and less attention to others ("attention" used here in the colloquial sense). Attention, in the technical sense, is a neural network architecture that pushes the model to explicitly pay attention to some input tokens and not others.
+The idea behind self-attention is that when we consider the output vector associated with a given token, we intuitively want the model to pay greater "attention" to some input tokens and less attention to others ("attention" used here in the colloquial sense). 
 
-For example, let's say we are generating output vectors for input vectors associated with the following sentence: "I like sushi because it makes me happy." Let us consider the case in which we are generating the output token for "delicious". Intuitively, we know that "delicious" is referring to "sushi". It makes sense that when the model is generating the output token for "delicous" it should consider the word "sushi" more heavily, than say, "because". The word "delicious" is referring directly to "sushi" whereas "because" is a conjunction playing a more complicated role in the sentence joining multiple ideas together. This is depicted in the schematic below:
+For example, let's say we are generating output vectors for input vectors associated with the sentence, "I like sushi because it makes me happy." Let us consider the case in which we are generating the output token for "delicious". Intuitively, we know that "delicious" is referring to "sushi". It makes sense that when the model is generating the output token for "delicous" it should consider the word "sushi" more heavily, than say, "because". The word "delicious" is referring directly to "sushi" whereas "because" is a conjunction playing a more complicated role in the sentence joining multiple ideas together. This is depicted in the schematic below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_sushi_example1.png" alt="drawing" width="600"/></center>
 
@@ -65,12 +58,12 @@ In contrast when generating the output vector for "happy", intuitively, we might
 
 <br>
 
-In summary, when generating each output vector, the attention mechanism considers _all_ of the input vectors and weights them according to how much "attention" to pay them when computing the output vector. We depict this process in the smaller example sentence, "I am hungry", below:
+In summary, when generating each output vector, the self-attention mechanism considers _all_ of the input vectors and weights them according to how much "attention" to pay them when computing the output vector. We depict this process in the smaller example sentence, "I am hungry", below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_input_output_attention.png" alt="drawing" width="800"/></center>
 
-The attention layer
--------------------
+The nuts and bolts of the attention layer
+-----------------------------------------
 
 We will now dig into the details of the attention mechanism by building our understanding step-by-step. We will use the sentence, "I am hungry", going forward. 
 
