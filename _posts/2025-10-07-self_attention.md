@@ -1,6 +1,6 @@
 ---
 title: "Self-Attention"
-date: 2023-10-17
+date: 2025-10-07
 permalink: /posts/selfattention/
 tags:
   - tutorial
