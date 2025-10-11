@@ -1,5 +1,5 @@
 ---
-title: "Self-Attention"
+title: "Self-attention"
 date: 2025-10-07
 permalink: /posts/selfattention/
 tags:
@@ -19,20 +19,20 @@ Self-attention is a neural network mechanism (or layer of a neural network), ori
 
 Self-attention was developed in the context of language modeling and is often introduced as a mechanism for a neural network to identify how different words of a sentence relate to one another. For example, take the sentence, “I like sushi because it makes me happy.” Self-attention may enable the model to explicitly and dynamically recognize that the word “it” in this sentence is referring to “sushi”. Similarly it may enable the model to recognize that the words “me” and “I” are related in that they both are referring to the same entity (i.e., the speaker of the sentence). 
 
-While self-attention is most often explained in the context of transformers and language modeling, the idea is far more general: It is simply a way to explicitly draw relationships between items in a set. 
-
-In this blog post, we will step through the self-attention mechanism and describe how it works both mathematically and intuitively as a way to map relationships. Much of my understanding of this material came from the excellent blog post, *[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)* by Jay Allamar.
+While self-attention is most often explained in the context of transformers and language modeling, the idea is far more general: It is simply a way to explicitly draw relationships between items in a set. In this blog post, we will step through the self-attention mechanism both mathematically and intuitively with a focus on how self-attention is, at its a core, a way to relate items of a set together. 
 
 Inputs and outputs of the self-attention layer
 ----------------------------------------------
 
 At its core, a self-attention layer is a layer of a neural network that transforms an input set of vectors to a set of output vectors. This contrasts with a traditional fully-connected neural layer which transforms a single input vector to an output vector:
 
-In most contexts in which self-attention is employed, the input vectors represent items in a sequence such as words in natural language text or a sequence of neucleic acids in a DNA sequence.  Each element of the input set is often referred to as a **token**. In this post, we will use natural language text as the primary example; however the input set of vectors can extend beyond sequences; nothing in the self-attention layer assumes an ordering over the tokens.
+<br>
 
-Moreover, a powerful feature of the attention layer is that the size of the input set of vectors does not need to be fixed; it can be variable! This enables the self-attention layer to operate on arbitrary-lengthed sequences. This is similar to how a [graph convolutional neural network](https://mbernste.github.io/posts/gcn/) can operate on arbitrary-sized graphs (in fact, self-attention can be viewed as a generalization of graph neural networks). This process is depicted below:
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_input_output.png" alt="drawing" width="700"/></center>
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_input_output.png" alt="drawing" width="350"/></center>
+<br>
+
+In most contexts in which self-attention is employed, the input vectors represent items in a sequence such as words in natural language text or a sequence of neucleic acids in a DNA sequence.  Each element of the input set is often referred to as a **token**. In this post, we will use natural language text as the primary example; however the input set of vectors can extend beyond sequences; nothing in the self-attention layer assumes an ordering over the tokens. Moreover, a powerful feature of the attention layer is that the size of the input set of vectors does not need to be fixed; it can be variable! This enables the self-attention layer to operate on arbitrary-lengthed sequences. This is similar to how a [graph convolutional neural network](https://mbernste.github.io/posts/gcn/) can operate on arbitrary-sized graphs (in fact, self-attention can be viewed as a generalization of graph neural networks).
 
 The idea behind self-attention is that when we consider the output vector associated with a given token, we intuitively want the model to pay greater "attention" to some input tokens and less attention to others ("attention" used here in the colloquial sense). For example, let's say we are generating output vectors for input vectors associated with the sentence, "I like sushi because it makes me happy." Let us consider the case in which we are generating the output token for "delicious". Intuitively, we know that "delicious" is referring to "sushi". It makes sense that when the model is generating the output token for "delicous" it should consider the word "sushi" more heavily, than say, "because". The word "delicious" is referring directly to "sushi" whereas "because" is a conjunction playing a more complicated role in the sentence joining multiple ideas together. This is depicted in the schematic below:
 
@@ -141,6 +141,12 @@ Putting it all together: The transformer layer
 
 Multi-headed attention
 ----------------------
+
+
+Further Reading
+---------------
+
+* Much of my understanding of this material came from the excellent blog post, *[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)* by Jay Allamar.
 
 
 
