@@ -15,38 +15,26 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Transformers are a neural network architecture that have powered the development of [large language models](https://en.wikipedia.org/wiki/Large_language_model) and enabled their meteoric rise. The key conceptual advance behind the transformer architecture is a specific neural network mechanism (or "layer") called **self-attention**, which was introduced by Vaswani *et al.* (2017) in their landmark paper, *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)*. At its core, self-attention is a neural network mechanism that enables a model to decide dynamically how different components of its input relate to one another. For example, if the input to the model is natural language text -- i.e., a sequence of words -- then, self-attention is a mechanism that enables the neural network to decide how different words relate to one another. 
+Self-attention is a neural network mechanism (or layer of a neural network), originally introduced by Vaswani *et al.* (2017) in their landmark paper, *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)*, that has powered the development of [transformers](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)), and more generally [large language models](https://en.wikipedia.org/wiki/Large_language_model). 
 
-For example, take the sentence, "I like sushi because it makes me happy." The self-attention mechanism enables a model to learn relationships between these words. For example, the word "it" in this sentence is referring to "sushi". The words "me" and "I" are both referring to the speaker. The word "happy" is describing the speaker -- that is, the same entity being referred to by "I" and "me". The self-attention layer of a neural network seeks to tease out these relationships as it is trained to perform its task, whether that task be autoregressive langauge generation (which is how LLMs generate responses), machine translation, and even [computer vision tasks](https://en.wikipedia.org/wiki/Computer_vision). 
+Self-attention was developed in the context of language modeling and is often introduced as a mechanism for a neural network to identify how different words of a sentence relate to one another. For example, take the sentence, “I like sushi because it makes me happy.” Self-attention may enable the model to explicitly and dynamically recognize that the word “it” in this sentence is referring to “sushi”. Similarly it may enable the model to recognize that the words “me” and “I” are related in that they both are referring to the same entity (i.e., the speaker of the sentence). 
 
-In this blog post, we will step through the self-attention mechanism and describe how it works both mathematically and intuitively. Much of my understanding of this material came from the excellent blog post, *[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)* by Jay Allamar, which goes beyond self-attention to cover the full transformer. In this post, we will stick to only covering attention. We will start with the predecessor of self-attention, which was introduced by [Bahdanau, Cho, and Bengio (2015)](https://arxiv.org/pdf/1409.0473.pdf) in the context of machine translation. We will link the ideas from their work to the modern self-attention mechanism that powers transformers today. We will describe how Vaswani _et al_. took this concept and used it to construct an entire neural network layer, the "self-attention" layer. 
+While self-attention is most often explained in the context of transformers and language modeling, the idea is far more general: It is simply a way to explicitly draw relationships between items in a set. 
 
-
-A Bit of history: Attention in machine translation
---------------------------------------------------
-
-It was not that long ago that the task of translating between languages was a challenging open problem in computer science and machine learning (though it feels like a very long time ago!). 
-
-From my understanding, the predecessor of self-attention was introduced by [Bahdanau, Cho, and Bengio (2015)](https://arxiv.org/pdf/1409.0473.pdf) as a mechanism that was sort of "appended" onto a traditional [recurrent neural network](https://en.wikipedia.org/wiki/Recurrent_neural_network) to boost their performance in machine translation.
+In this blog post, we will step through the self-attention mechanism and describe how it works both mathematically and intuitively as a way to map relationships. Much of my understanding of this material came from the excellent blog post, *[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)* by Jay Allamar.
 
 Inputs and outputs of the self-attention layer
 ----------------------------------------------
 
-At their core, a self-attention layer is a layer of a neural network that performs a mapping between sets of vectors. That is, the transformer accepts a set and then outputs a vector embedding of that set.  For example, the input set may be a sequence of words, like a sentence, or a DNA sequence. Each element, or **token**, of the input set (e.g., a word in the case of a sentence) is represented as a vector. If we are considering the first layer, then these input vectors are **feature vectors** associated with each word. Interestingly, the length of the input set does not need to be fixed, but can be variable! This is a powerful feature as it enables a transformer layer to operate on arbitrary-lengthed sequences (this is similar to how a [graph convolutional neural network](https://mbernste.github.io/posts/gcn/) can operate on arbitrary-sized graphs). This process is depicted below:
+At its core, a self-attention layer is a layer of a neural network that transforms an input set of vectors to a set of output vectors. This contrasts with a traditional fully-connected neural layer which transforms a single input vector to an output vector:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_input_output.png" alt="drawing" width="350"/></center>
+In most contexts in which self-attention is employed, the input vectors represent items in a sequence such as words in natural language text or a sequence of neucleic acids in a DNA sequence.  Each element of the input set is often referred to as a **token**. In this post, we will use natural language text as the primary example; however the input set of vectors can extend beyond sequences; nothing in the self-attention layer assumes an ordering over the tokens.
 
-<br>
+Moreover, a powerful feature of the attention layer is that the size of the input set of vectors does not need to be fixed; it can be variable! This enables the self-attention layer to operate on arbitrary-lengthed sequences. This is similar to how a [graph convolutional neural network](https://mbernste.github.io/posts/gcn/) can operate on arbitrary-sized graphs (in fact, self-attention can be viewed as a generalization of graph neural networks). This process is depicted below:
 
-TODO More specifically, we can break the transformer layer down into two main sublayers: an attention sublayer followed by a fully connected sublayer:
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_input_output.png" alt="drawing" width="350"/></center>
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_and_fully_connected.png" alt="drawing" width="350"/></center>
-
-<br>
-
-The idea behind self-attention is that when we consider the output vector associated with a given token, we intuitively want the model to pay greater "attention" to some input tokens and less attention to others ("attention" used here in the colloquial sense). 
-
-For example, let's say we are generating output vectors for input vectors associated with the sentence, "I like sushi because it makes me happy." Let us consider the case in which we are generating the output token for "delicious". Intuitively, we know that "delicious" is referring to "sushi". It makes sense that when the model is generating the output token for "delicous" it should consider the word "sushi" more heavily, than say, "because". The word "delicious" is referring directly to "sushi" whereas "because" is a conjunction playing a more complicated role in the sentence joining multiple ideas together. This is depicted in the schematic below:
+The idea behind self-attention is that when we consider the output vector associated with a given token, we intuitively want the model to pay greater "attention" to some input tokens and less attention to others ("attention" used here in the colloquial sense). For example, let's say we are generating output vectors for input vectors associated with the sentence, "I like sushi because it makes me happy." Let us consider the case in which we are generating the output token for "delicious". Intuitively, we know that "delicious" is referring to "sushi". It makes sense that when the model is generating the output token for "delicous" it should consider the word "sushi" more heavily, than say, "because". The word "delicious" is referring directly to "sushi" whereas "because" is a conjunction playing a more complicated role in the sentence joining multiple ideas together. This is depicted in the schematic below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_sushi_example1.png" alt="drawing" width="600"/></center>
 
@@ -123,12 +111,23 @@ This is depicted in the schematic below for all of the attention weights when ge
 
 The intuition behind this normalization procedure is that the first scaling operation that scales each score by $\sqrt{d}$ normalizes for the number of terms in the summation used to compute the dot product. The softmax then performs a final normalization that forces the sum of the attention weights to equal one!  
 
+
+
 The fully connected layer
 -------------------------
 
 The attention layer is followed by a fully connected layer. This layer is quite simple: we simply take the vectors that were produced by the attention layer and pass them through a fully connected neural network! Thus, we perform a non-linear transformation of these attention-derived vectors. This steps injects more non-linearity into the model so that, when we stack transformer layers together, we can complex functions for computing attention.
 
 In the next section, we will put all of these steps together and show how they can be performed in parallel using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/).
+
+
+<br>
+
+TODO More specifically, we can break the transformer layer down into two main sublayers: an attention sublayer followed by a fully connected sublayer:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_and_fully_connected.png" alt="drawing" width="350"/></center>
+
+<br>
 
 Putting it all together: The transformer layer
 ----------------------------------------------
@@ -143,10 +142,6 @@ Putting it all together: The transformer layer
 Multi-headed attention
 ----------------------
 
-Positional encodings
---------------------
 
-Case study: classifying T cell receptor sequences
--------------------------------------------------
 
 
