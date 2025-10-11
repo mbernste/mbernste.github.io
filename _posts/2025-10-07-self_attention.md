@@ -15,7 +15,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 Introduction
 ------------
 
-Self-attention is a neural network mechanism (or layer of a neural network), originally introduced by Vaswani *et al.* (2017) in their landmark paper, *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)*, that has powered the development of [transformers](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)), and more generally [large language models](https://en.wikipedia.org/wiki/Large_language_model). 
+Self-attention is a neural network mechanism (or layer of a neural network), originally introduced by Vaswani *et al.* (2017) in their landmark paper, *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)*, that has powered the development and meteoric rise of [transformers](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)), and more generally [large language models](https://en.wikipedia.org/wiki/Large_language_model). 
 
 Self-attention was developed in the context of language modeling and is often introduced as a mechanism for a neural network to identify how different words of a sentence relate to one another. For example, take the sentence, “I like sushi because it makes me happy.” Self-attention may enable the model to explicitly and dynamically recognize that the word “it” in this sentence is referring to “sushi”. Similarly it may enable the model to recognize that the words “me” and “I” are related in that they both are referring to the same entity (i.e., the speaker of the sentence). 
 
