@@ -152,7 +152,7 @@ Represented schematically:
 
 Then, the pairwise dot products between the tokens' keys and queries can be computed via matrix multiplication between Q and K:
 
-$$\text{Scores} := KQ^T$$
+$$\text{Scores} := QK^T$$
 
 This produces an $N \times N$ matrix storing all of the pairwise attention scores:
 
@@ -174,7 +174,7 @@ Depicted schematically,
 
 Thus, the final form of the attention layer is,
 
-$$X_{\text{out}} := \text{SoftMax}\left(\frac{KQ^T}{\sqrt{D_{\text{out}}}}\right)V$$
+$$X_{\text{out}} := \text{SoftMax}\left(\frac{QK^T}{\sqrt{D_{\text{out}}}}\right)V$$
 
 The fully connected layer
 -------------------------
@@ -198,7 +198,7 @@ The standard method for which to provide the model information on the order, or 
 
 $$\boldsymbol{x}_i' := \boldsymbol{x}_i + \boldsymbol{p}_i$$
 
-where $\boldsymbol{p}_i$ is the positional encoding vector for position $i$.
+where $\boldsymbol{p}_i$ is the positional encoding vector for position $i$. The end result is that each input token vector contains both information regarding the token as well as the position of that token.
 
 Multi-headed attention
 ----------------------
