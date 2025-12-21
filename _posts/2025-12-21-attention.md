@@ -188,7 +188,11 @@ As described above, the attention layer maps sets of vectors to new sets of vect
 
 However, we mentioned in this very post that one of the most common areas of application for attention is in modeling natural language text, which _is_ intrinsically ordered. Moreover, we expect that a model would benefit from having access to this order. The sentence, "The shark bit the person" has quite a different meaning from the sentence, "The person bit the shark" even though both sentences use the same set of words. 
 
-The standard method for which to provide the model information on the order, or _position_, of input tokens relative to one another is to use **positional encodings**.
+The standard method for which to provide the model information on the order, or _position_, of input tokens relative to one another is to use **positional encodings**. More specifically, we associate with each position, $1, 2, \dots, M$, a vector that encodes that position of dimension $D_{\text{in}}$. Then, that positional encoding vector is _added_ to the given input token vector at that position. That is, the input vector at position $i$, denoted $\boldsymbol{x}_i$, is modified via
+
+$$\boldsymbol{x}_i' := \boldsymbol{x}_i + \boldsymbol{p}_i$$
+
+where $\boldsymbol{p}_i$ is the positional encoding vector for position $i$.
 
 Multi-headed attention
 ----------------------
