@@ -1,7 +1,7 @@
 ---
-title: "Attention"
-date: 2025-10-07
-permalink: /posts/selfattention/
+title: "Understanding Attention"
+date: 2025-12-21
+permalink: /posts/attention/
 tags:
   - tutorial
   - machine learning
