@@ -138,8 +138,11 @@ The query and key vectors are used to form attention weights. These attention we
 Computing attention via matrix multiplication
 ---------------------------------------------
 
-The attention layer can expressed and computed more succintly using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/):
+The attention layer can expressed and computed more succintly using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/). First, let $X \in DxN$ represent the matrix of $N$ token-vectors, each of $D$ dimensions.  Then, the query, key, and value vectors can be computed by multiplying $X$ by $W_Q$, $W_K$, and $W_V$ to form queries, keys, and values that can are then represented as matrices, $Q, K, V \in \mathbb{R}^{d x N} where $d$ is the dimensionality of these vectors (a parameter to the neural network):
 
+$$\begin{align*}Q &:= W_QX \\ K &:= W_KX \\ V := W_VX\end{align*}$$ 
+
+Represented schematically:
 
 <br>
 
