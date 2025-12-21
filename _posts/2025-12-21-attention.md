@@ -170,6 +170,12 @@ Depicted schematically,
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_final_out.png" alt="drawing" width="450"/></center>
 
+<br>
+
+Thus, the final form of the attention layer is,
+
+$$X_{\text{out}} := \text{SoftMax}\left(\frac{KQ^T}{\sqrt{D_{\text{out}}}}\right)V$$
+
 The fully connected layer
 -------------------------
 
