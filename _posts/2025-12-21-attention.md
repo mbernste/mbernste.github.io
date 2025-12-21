@@ -63,7 +63,7 @@ The nuts and bolts of the attention layer
 
 We will now dig into the details of the attention mechanism by building our understanding step-by-step. We will use the example sentence, "I am hungry", going forward. 
 
-In the first step, the model generates a vector associated with each input vector called the **values** (or "value vectors") by multiplying each input vector by a weights matrix $\boldsymbol{W}\_V$. Let's let $\boldsymbol{x}\_\text{I}$, $\boldsymbol{x}\_\text{am}$, $\boldsymbol{x}\_\text{hungry}$ denote our input vectors associated with each token and $\boldsymbol{v}\_\text{I}$, $\boldsymbol{v}\_\text{am}$, $\boldsymbol{v}\_\text{hungry}$ denote the value vectors. Then, the value vectors are generated via:
+Let's let $\boldsymbol{x}\_\text{I}$, $\boldsymbol{x}\_\text{am}$, $\boldsymbol{x}\_\text{hungry} \in \mathbb{R}^D_{\text{in}}$ denote our input vectors (of dimension $D_{\text{in}}$) associated with each token. In the first step, the model generates a vector associated with each input vector called the **values** (or "value vectors") by multiplying each input vector by a weights matrix $\boldsymbol{W}\_V \in mathbb{R}^{D_{\text{in}} \times D_{\text{out}}}$.  and $\boldsymbol{v}\_\text{I}$, $\boldsymbol{v}\_\text{am}$, $\boldsymbol{v}\_\text{hungry}$ denote the value vectors. Then, the value vectors are generated via:
 
 $$\begin{align*}\boldsymbol{v}_\text{I} &:= \boldsymbol{W}_V\boldsymbol{x}_\text{I}  \\ \boldsymbol{v}_\text{am} &:= \boldsymbol{W}_V\boldsymbol{x}_\text{am} \\ \boldsymbol{v}_\text{hungry} &:= \boldsymbol{W}_V\boldsymbol{x}_\text{hungry}\end{align*}$$
 
@@ -138,9 +138,9 @@ The query and key vectors are used to form attention weights. These attention we
 Computing attention via matrix multiplication
 ---------------------------------------------
 
-The attention layer can expressed and computed more succintly using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/). First, let $X \in DxN$ represent the matrix of $N$ token-vectors, each of $D$ dimensions.  Then, the query, key, and value vectors can be computed by multiplying $X$ by $W_Q$, $W_K$, and $W_V$ to form queries, keys, and values that can are then represented as matrices, $Q, K, V \in \mathbb{R}^{d x N} where $d$ is the dimensionality of these vectors (a parameter to the neural network):
+The attention layer can expressed and computed more succintly using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/). First, let $X \in D \times N$ represent the matrix of $N$ token-vectors, each of $D$ dimensions.  Then, the query, key, and value vectors can be computed by multiplying $X$ by $W_Q$, $W_K$, and $W_V$ to form queries, keys, and values that can are then represented as matrices, $Q, K, V \in \mathbb{R}^{d \times N} where $d$ is the dimensionality of these vectors (a parameter to the neural network):
 
-$$\begin{align*}Q &:= W_QX \\ K &:= W_KX \\ V := W_VX\end{align*}$$ 
+$$\begin{align*}Q &:= X^TW_Q \\ K &:= X^TW_K \\ V := X^TW_V\end{align*}$$ 
 
 Represented schematically:
 
@@ -149,6 +149,21 @@ Represented schematically:
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_KQV.png" alt="drawing" width="500"/></center>
 
 <br>
+
+Then, the pairwise dot products between the tokens' keys and queries can be computed via matrix multiplication between Q and K:
+
+$$\text{Scores} := K^TQ$$
+
+This produces an $N \times N$ matrix storing all of the pairwise attention scores:
+
+<br>
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_scores.png" alt="drawing" width="250"/></center>
+
+<br>
+
+
+
 
 The fully connected layer
 -------------------------
