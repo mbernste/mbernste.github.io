@@ -158,7 +158,7 @@ This produces an $N \times N$ matrix storing all of the pairwise attention score
 
 <br>
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_scores.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_scores.png" alt="drawing" width="450"/></center>
 
 <br>
 
@@ -168,14 +168,14 @@ $$X_{\text{out}} := \text{SoftMax}\left( \text{Scores} / \sqrt{D_{\text{out}}}\r
 
 Depicted schematically,
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_final_out.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_final_out.png" alt="drawing" width="450"/></center>
 
 The fully connected layer
 -------------------------
 
 The attention layer is usually followed by a fully connected layer. This layer is quite simple: we simply take the vectors that were produced by the attention layer and pass them through a fully connected neural network that is shared for all tokens. The sequence of an attention layer followed by a fully-connected layer is often referred to as a **transformer layer** as it forms the basis for the [transformer neural network](https://en.wikipedia.org/wiki/Transformer_(deep_learning)), which is an architecture built on attention used for mapping sequences to sequences proposed by Vaswani *et al.* (2017) in *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf).
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_and_fully_connected.png" alt="drawing" width="350"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_and_fully_connected.png" alt="drawing" width="450"/></center>
 
 <br>
 
