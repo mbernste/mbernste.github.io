@@ -198,7 +198,9 @@ The standard method for which to provide the model information on the order, or 
 
 $$\boldsymbol{x}_i' := \boldsymbol{x}_i + \boldsymbol{p}_i$$
 
-where $\boldsymbol{p}_i$ is the positional encoding vector for position $i$. The end result is that each input token vector contains both information regarding the token as well as the position of that token.
+where $\boldsymbol{p}_i$ is the positional encoding vector for position $i$. The end result is that each modified input token vector contains both information regarding the token as well as the position of that token.
+
+
 
 Multi-headed attention
 ----------------------
