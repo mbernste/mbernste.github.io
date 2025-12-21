@@ -170,8 +170,6 @@ Depicted schematically,
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_final_out.png" alt="drawing" width="500"/></center>
 
-
-
 The fully connected layer
 -------------------------
 
@@ -185,6 +183,12 @@ Thus, we perform a non-linear transformation of these attention-derived vectors.
 
 Positional encodings
 --------------------
+
+As described above, the attention layer maps sets of vectors to new sets of vectors in such a way that each vector can "attend to" to some set of other vectors within the set. Noteably, there is nothing explicitly built into the attention layer that specifies any distinction between the order of these input and output vectors. That is, the attention layer operates on _unordered_ sets.
+
+However, we mentioned in this very post that one of the most common areas of application for attention is in modeling natural language text, which _is_ intrinsically ordered. Moreover, we expect that a model would benefit from having access to this order. The sentence, "The shark bit the person" has quite a different meaning from the sentence, "The person bit the shark" even though both sentences use the same set of words. 
+
+The standard method for which to provide the model information on the order, or _position_, of input tokens relative to one another is to use **positional encodings**.
 
 Multi-headed attention
 ----------------------
