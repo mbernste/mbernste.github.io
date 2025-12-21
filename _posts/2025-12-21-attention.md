@@ -174,7 +174,7 @@ Depicted schematically,
 
 Thus, the final form of the attention layer is,
 
-$$X_{\text{out}} := \text{SoftMax}\left(\frac{QK^T}{\sqrt{D_{\text{out}}}}\right)V$$
+$$H := \text{Softmax}\left(\frac{QK^T}{\sqrt{D_{\text{out}}}}\right)V$$
 
 The fully connected layer
 -------------------------
