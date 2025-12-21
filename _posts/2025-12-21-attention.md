@@ -162,6 +162,13 @@ This produces an $N \times N$ matrix storing all of the pairwise attention score
 
 <br>
 
+The final output matrix of $N \times D_{\text{out}}$ transformed token vectors is then computed by taking a linear combination of the value vectors using the normalized scores (i.e., the attention weights). This can also be expressed as a matrix multiplication:
+
+$$X_{\text{out}} := \text{SoftMax}\left( \text{Scores} / \sqrt{D_{\text{out}}}\right)V$$
+
+Depicted schematically,
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_final_out.png" alt="drawing" width="500"/></center>
 
 
 
