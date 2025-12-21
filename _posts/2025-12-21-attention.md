@@ -179,7 +179,7 @@ $$H := \text{Softmax}\left(\frac{QK^T}{\sqrt{D_{\text{out}}}}\right)V$$
 The fully connected layer
 -------------------------
 
-The attention layer is usually followed by a fully connected layer. This layer is quite simple: we simply take the vectors that were produced by the attention layer and pass them through a fully connected neural network that is shared for all tokens. The sequence of an attention layer followed by a fully-connected layer is often referred to as a **transformer layer** as it forms the basis for the [transformer neural network](https://en.wikipedia.org/wiki/Transformer_(deep_learning)), which is an architecture built on attention used for mapping sequences to sequences proposed by Vaswani *et al.* (2017) in *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf).
+The attention layer is usually followed by a fully connected layer. This layer is quite simple: we simply take the vectors that were produced by the attention layer and pass them through a fully connected neural network that is shared for all tokens. The sequence of an attention layer followed by a fully-connected layer is often referred to as a **transformer layer** as it forms the basis for the [transformer neural network](https://en.wikipedia.org/wiki/Transformer_(deep_learning)), which is an architecture built on attention used for mapping sequences to sequences proposed by Vaswani *et al.* (2017) in *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)*.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_and_fully_connected.png" alt="drawing" width="450"/></center>
 
@@ -200,6 +200,13 @@ $$\boldsymbol{x}_i' := \boldsymbol{x}_i + \boldsymbol{p}_i$$
 
 where $\boldsymbol{p}_i$ is the positional encoding vector for position $i$. The end result is that each modified input token vector contains both information regarding the token as well as the position of that token.
 
+These positional encodings can either be learned during training (i.e., each position integer is mapped to a learned encoding vector), or more commonly, can be fixed _a priori_. For example, [Vaswani *et al.* (2017)](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf), use positional encodings built from sine and cosine functions of different frequencies for each dimension. A heatmap of such positional encodings are showing below:
+
+<br>
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_positional_encoding.png" alt="drawing" width="450"/></center>
+
+<br>
 
 
 Multi-headed attention
