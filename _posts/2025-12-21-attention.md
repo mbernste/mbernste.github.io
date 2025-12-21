@@ -146,7 +146,7 @@ Represented schematically:
 
 <br>
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_KQV.png" alt="drawing" width="500"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_KQV.png" alt="drawing" width="650"/></center>
 
 <br>
 
