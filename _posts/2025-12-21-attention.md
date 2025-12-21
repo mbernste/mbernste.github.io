@@ -138,7 +138,14 @@ The query and key vectors are used to form attention weights. These attention we
 Computing attention via matrix multiplication
 ---------------------------------------------
 
-The attention layer can expressed and computed more succintly using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/).
+The attention layer can expressed and computed more succintly using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/):
+
+
+<br>
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_matrix_mult_KQV.png" alt="drawing" width="500"/></center>
+
+<br>
 
 The fully connected layer
 -------------------------
