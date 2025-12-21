@@ -119,7 +119,7 @@ This is depicted in the schematic below for all of the attention weights when ge
 
 The intuition behind this normalization procedure is that the first scaling operation that scales each score by $\sqrt{d}$ normalizes for the number of terms in the summation used to compute the dot product. The softmax then performs a final normalization that forces the sum of the attention weights to equal one!  
 
-In the figures below we put this all together into one cohesive set of figures:
+Putting it all together: Given a set of tokens, associated with input feature vectors, we map each token to a value vector, query vector, and key vector via the matrices $W_V$, $W_Q$, and $W_K$, respectively:
 
 <br>
 
@@ -127,9 +127,18 @@ In the figures below we put this all together into one cohesive set of figures:
 
 <br>
 
+The query and key vectors are used to form attention weights. These attention weights are used to compute a weighted sum of the value-vectors that then form each output token's final vector representation:
+
+<br>
+
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformer_attention_mechanism.png" alt="drawing" width="850"/></center>
 
 <br>
+
+Computing attention via matrix multiplication
+---------------------------------------------
+
+The attention layer can expressed and computed more succintly using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/).
 
 The fully connected layer
 -------------------------
