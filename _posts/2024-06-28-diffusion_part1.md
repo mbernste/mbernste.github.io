@@ -370,7 +370,7 @@ Code for my U-Net implementation are found in the Appendix to this blog post as 
 **Representing the timestep using a time-embedding**
 
 As we discussed, the noise model conditions on the timestep, $t$. Thus, we need a way for the neural network to 
-take as input, and utilize, the timestep. To do this, [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) borrowed an idea from the [transformer model](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)) original conceived by [Vaswani _et al._ (2023)](https://arxiv.org/pdf/1706.03762.pdf). Specifically, each timestep is mapped to a specific, sinusoidal _embedding_ vector and this vector is added, element-wise to certain layers of the neural network. The code for generating these embeddings is presented in the Appendix to this post. A heatmap depicting these embeddings is shown below:
+take as input, and utilize, the timestep. To do this, [Ho, Jain, and Abbeel (2020)](https://arxiv.org/pdf/2006.11239.pdf) borrowed an idea from the [transformer model](https://en.wikipedia.org/wiki/Transformer_(deep_learning_architecture)) original conceived by [Vaswani _et al._ (2017)](https://arxiv.org/pdf/1706.03762.pdf). Specifically, each timestep is mapped to a specific, sinusoidal _embedding_ vector and this vector is added, element-wise to certain layers of the neural network. The code for generating these embeddings is presented in the Appendix to this post. A heatmap depicting these embeddings is shown below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/diffusion_time_embedding_example.png" alt="drawing" width="600"/></center>
 
