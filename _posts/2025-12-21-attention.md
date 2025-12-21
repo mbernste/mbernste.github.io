@@ -138,7 +138,7 @@ The query and key vectors are used to form attention weights. These attention we
 Computing attention via matrix multiplication
 ---------------------------------------------
 
-The attention layer can expressed and computed more succintly using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/). First, let $X \in D \times N$ represent the matrix of $N$ token-vectors, each of $D$ dimensions.  Then, the query, key, and value vectors can be computed by multiplying $X$ by $W_Q$, $W_K$, and $W_V$ to form queries, keys, and values that can are then represented as matrices, $Q, K, V \in \mathbb{R}^{d \times N} where $d$ is the dimensionality of these vectors (a parameter to the neural network):
+The attention layer can expressed and computed more succintly using [matrix multiplication](https://mbernste.github.io/posts/matrix_multiplication/). First, let $X \in \mathbb^{N \times D_{\text{in}}}$ represent the matrix of $N$ token-vectors, each of $D_{\text{in}}$ dimensions.  Then, the query, key, and value vectors can be computed by multiplying $X$ by $W_Q$, $W_K$, and $W_V$ to form queries, keys, and values that can are then represented as matrices, $Q, K, V \in \mathbb{R}^{N \times D_{\text{out}}:
 
 $$\begin{align*}Q &:= X^TW_Q \\ K &:= X^TW_K \\ V := X^TW_V\end{align*}$$ 
 
@@ -152,7 +152,7 @@ Represented schematically:
 
 Then, the pairwise dot products between the tokens' keys and queries can be computed via matrix multiplication between Q and K:
 
-$$\text{Scores} := K^TQ$$
+$$\text{Scores} := KQ^T$$
 
 This produces an $N \times N$ matrix storing all of the pairwise attention scores:
 
