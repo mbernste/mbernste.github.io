@@ -1,5 +1,5 @@
 ---
-title: "Understanding Attention"
+title: "Understanding attention"
 date: 2025-12-21
 permalink: /posts/attention/
 tags:
