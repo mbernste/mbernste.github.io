@@ -231,6 +231,13 @@ Multi-headed attention
 ----------------------
 
 
+What makes attention so powerful?
+---------------------------------
+
+As eluded to in the introduction to this post, the attention layer is widely regarded to be one of the most important breakthroughs that enabled the development of modern AI systems and large language models. But what exactly makes attention so powerful?
+
+Before attention, a very common problem in machine learning systems is that the model would have great difficulty in linking pieces of data in the input together that are relevant for accomplishing the problem at hand.
+
 
 Further Reading
 ---------------
