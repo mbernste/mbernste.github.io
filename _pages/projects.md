@@ -4,7 +4,7 @@ permalink: /projects/
 author_profile: true
 ---
 
-Here are some of the software products to come out of my research:
+Here are some of the research projects I have worked on over the years.
 
 ## Monkeybread
 
