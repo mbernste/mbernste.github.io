@@ -203,6 +203,9 @@ To retrieve a given song, we form a query, which is also a string, and attempt t
 
 This is very similar to the roles that the keys, queries, and values play in the attention layer; however, instead of each query being binary -- we either match a key or we don't -- the queries in the attention layer are "soft" -- that is, a query may somewhat match to multiple keys. This soft matching is carried out by the weighted sum of value vectors. That is, each weight denotes how much the given query matched the key, which is measured via the dot product between the two vectors! 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_kqv_vectors_as_database.png" alt="drawing" width="550"/></center>
+
+
 Positional encodings
 --------------------
 
