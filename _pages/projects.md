@@ -8,10 +8,14 @@ Here are some of the software products to come out of my research:
 
 ## Monkeybread
 
-Explore cellular niches in single-cell resolution spatial transcriptomics data.
+Monkeybread is a Python toolkit that provides broad functionality for
+analyzing and visualizing cellular organization, cellular niches, and intercellular communication
+via ligand-receptor interactions. Monkeybread provides functions for visualization methods and lightweight statistical methods for exploring
+spatial transcriptomics data.
 
 * GitHub: [https://github.com/immunitastx/monkeybread](https://github.com/immunitastx/monkeybread)  
 * Documentation: [https://monkeybread.readthedocs.io/en/latest/](https://monkeybread.readthedocs.io/en/latest/)  
+* Paper: [https://doi.org/10.1101/2023.09.14.557736](https://doi.org/10.1101/2023.09.14.557736)
 
 ## SpatialCorr
 
@@ -48,7 +52,7 @@ however, the data remain largely underutilized, in part, due to the [poor struct
 * Paper: [https://doi.org/10.1093/bioinformatics/btx334](https://doi.org/10.1093/bioinformatics/btx334)
 * Talk: [At ISMB 2018](https://www.youtube.com/watch?v=pVHMq9SdUtc) 
 
-### CHARTS
+## CHARTS
 
 Characterize and compare tumor subpopulations across public single-cell RNA-seq data.
 
@@ -56,7 +60,7 @@ Characterize and compare tumor subpopulations across public single-cell RNA-seq 
 * GitHub: [https://github.com/stewart-lab/CHARTS](https://github.com/stewart-lab/CHARTS)
 * Paper: [https://doi.org/10.1186/s12859-021-04021-x](https://doi.org/10.1186/s12859-021-04021-x)
 
-### Series Finder & Case-Control Finder
+## Series Finder & Case-Control Finder
 
 Build structured datasets of RNA-seq data from the Sequence Read Archive.
 
