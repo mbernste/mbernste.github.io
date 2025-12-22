@@ -19,7 +19,7 @@ Attention is a type of layer in a neural network, originally introduced in its m
 
 Attention was developed in the context of [language modeling](https://en.wikipedia.org/wiki/Large_language_model) and is often introduced as a mechanism for a neural network to identify how different words of a sentence relate to one another. For example, take the sentence, “I like sushi because it makes me happy.” Attention may enable the model to explicitly and dynamically recognize that the word “it” in this sentence is referring to “sushi”. Similarly it may enable the model to recognize that the words “me” and “I” are related in that they both are referring to the same entity (i.e., the speaker of the sentence). 
 
-While attention is most often explained in the context of language modeling, the idea is far more general: It is simply a way to explicitly draw relationships between items in a set. In this blog post, we will step through the attention mechanism both mathematically and intuitively with a focus on how attention is, at its a core, a way to relate items of a set together. We will then present a minimal example of an attention model used in a binary classification task that is not solveable using a naïve [bag of words](https://en.wikipedia.org/wiki/Bag-of-words_model) model. 
+While attention is most often explained in the context of language modeling, the idea is far more general: It is simply a way to explicitly draw relationships between items in a set. In this blog post, we will step through the attention mechanism both mathematically and intuitively with a focus on how attention is, at its a core, a way to relate items of a set together. We will then present a minimal example of a neural network that uses attention to perform binary classification in a task that is not solveable using a naïve [bag of words](https://en.wikipedia.org/wiki/Bag-of-words_model) model. 
 
 Inputs and outputs of the attention layer
 ----------------------------------------------
@@ -195,8 +195,11 @@ A natural question when first learning this topic is: Why are the $Q$, $K$, and 
 To make this analogy concrete, let's say we have a database of music files (say .mp3 files) where each file is associated with a title encoded as a string. Here we'll call the titles "keys" and the sound files "values". Each key is associated with a value. 
 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_database_key_values.png" alt="drawing" width="550"/></center>
+
 To retrieve a given song, we form a query, which is also a string, and attempt to match this query against all the existing titles (keys) in the database. If we find a match, the database will return the corresponding music file.
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_database_retrieval.png" alt="drawing" width="550"/></center>
 
 This is very similar to the roles that the keys, queries, and values play in the attention layer; however, instead of each query being binary -- we either match a key or we don't -- the queries in the attention layer are "soft" -- that is, a query may somewhat match to multiple keys. This soft matching is carried out by the weighted sum of value vectors. That is, each weight denotes how much the given query matched the key, which is measured via the dot product between the two vectors! 
 
