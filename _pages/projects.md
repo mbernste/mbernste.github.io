@@ -17,7 +17,7 @@ spatial transcriptomics data.
 * Documentation: [https://monkeybread.readthedocs.io/en/latest/](https://monkeybread.readthedocs.io/en/latest/)  
 * Paper: [https://doi.org/10.1101/2023.09.14.557736](https://doi.org/10.1101/2023.09.14.557736)
 
-## SpatialCorr: Identifying spatially varying correlation
+## SpatialCorr: A statistical method for identifying spatially varying correlation
 
 Recent advances in spatially resolved transcriptomics technologies enable both the measurement of genome-wide gene expression profiles and their mapping to spatial locations within a tissue. SpatialCorr is a method for identifying sets of genes with spatially varying correlation structure. Given a collection of gene sets pre-defined by a user, SpatialCorr tests for spatially induced differences in the correlation of each gene set within tissue regions, as well as between and among regions.
 
