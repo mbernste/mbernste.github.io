@@ -179,7 +179,7 @@ $$H := \text{Softmax}\left(\frac{QK^T}{\sqrt{D_{\text{out}}}}\right)V$$
 The fully connected layer
 -------------------------
 
-The attention layer is usually followed by a fully connected layer. This layer is quite simple: we simply take the vectors that were produced by the attention layer and pass them through a fully connected neural network that is shared for all tokens. The sequence of an attention layer followed by a fully-connected layer is often referred to as a **transformer layer** as it forms the basis for the [transformer neural network](https://en.wikipedia.org/wiki/Transformer_(deep_learning)), which is an architecture built on attention used for mapping sequences to sequences proposed by Vaswani *et al.* (2017) in *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)*.
+The attention layer is usually followed by a fully connected layer. This layer is quite simple: we simply take the vectors that were produced by the attention layer and pass them through a fully connected neural network -- i.e., a [multilayer perceptron (MLP)](https://en.wikipedia.org/wiki/Multilayer_perceptron) -- that is shared for all tokens. The sequence of an attention layer followed by a fully-connected layer is often referred to as a **transformer layer** as it forms the basis for the [transformer neural network](https://en.wikipedia.org/wiki/Transformer_(deep_learning)), which is an architecture built on attention used for mapping sequences to sequences proposed by Vaswani *et al.* (2017) in *[Attention Is All You Need](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf)*.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/transformers_attention_and_fully_connected.png" alt="drawing" width="550"/></center>
 
@@ -238,6 +238,8 @@ In order to expand the learning capacity of a model, one can also _parallelize_ 
 
 <br>
 
+If the multiheaded attention layer is followed by a fully connected layer, these concatenated vectors would be each fed into the downstream multilayer perceptron.
+
 Multiheaded attention enables an attention layer to learn different kinds of relationships between entities. In text, for example, one head might learn possessive relationships between entities. For example, in the sentence, "Joe's dog ran into Hannah's yard", one head might relate "Joe" and "dog" as well as "Hannah" and "yard". Another head might learn relationships between objects and places. In this sentence the second head might relate "dog" to "yard" because the dog ran into the yard.
 
 
@@ -251,6 +253,36 @@ Before attention, a challenge in machine learning was relating distant pieces of
 Attention has also been applied to computer vision where, for example, it also has been challenging for modeling to relate regions of an image that are far way from eachother. In order for a [convolutional neural network (CNN)](https://en.wikipedia.org/wiki/Convolutional_neural_network) to jointly "see" and operate over two distant regions of an image, the CNN must consist of many layers. This is because the size of the [receptive field](https://en.wikipedia.org/wiki/Receptive_field) of a given neuron in a CNN is determined by the number of layers that precede that neuron in the model's architecture. The [vision transformer](https://en.wikipedia.org/wiki/Vision_transformer) is a neural network architecture that uses attention over image patches to explicitly link regions of the image together no matter how distant they are.
 
 Perhaps most importantly, _attention scales_. As researchers have scaled attention-based models to ever larger sizes, it appears that the models continue to improve. In fact, in recent years, the community has discovererd empirical [scaling laws](https://en.wikipedia.org/wiki/Neural_scaling_law) over training set and model sizes -- that is, as models and datasets grow, performance seems to improve at a predictable pace. At the time of this writing, frontier large language models are built with [_trillions_ of parameters](https://www.cometapi.com/how-many-parameters-does-gpt-5-have/) and trained on nearly the entire internet's worth of data.
+
+Applying attention to a simple classification problem
+-----------------------------------------------------
+
+To demonstrate an implementation of attention, we train a simple attention-based model to perform binary classification on a task that is not solveable using a naïve [bag of words](https://en.wikipedia.org/wiki/Bag-of-words_model) model. All code for this experiment can be found on [Google Colab](https://colab.research.google.com/drive/1wEu844liSYWoPv6MiUpx8IwNwB8FddEM?usp=sharing) and in the Appendix to this blog post.
+
+Specifically, we develop a problem setting in which our task is to classify sentences into one of two categories:
+
+1. Sentences that describe a white car sitting to the left of a black car (positive class)
+2. Sentences that describe a black car sitting to the left of a white car (negative class)
+
+Critically, the dataset consists of pairs of sentences, a positive and negative example, that both share the same set of word frequencies and thus, these sentences are indistinguishable using bag-of-words representations alone. For example, two sentences in this training set are:
+
+* `Within a white frame and black border the white car remains on the left while the black car remains on the right` (Positive)
+* `Within a white frame and black border the black car remains on the left while the white car remains on the right` (Negative)
+
+The training set consists of 528 sentences (264 pairs). The file can be found [here on GitHub](https://github.com/mbernste/blog_posts/blob/main/attention_dataset/training_set3.json).
+
+We train two very simple models on this task:
+1. An attention-based model consisting of four layers, each consisting of attention (just one head) followed by a fully connected layer. To classify a sentence, the attention based model averages the token-representations coming out of the last layer and passes them through one final linear layer that outputs a [logit](https://en.wikipedia.org/wiki/Logit). Both the token embeddings and positional embeddings are learned during training.
+2. A simple multilayer perceptron trained on [bag of words](https://en.wikipedia.org/wiki/Bag-of-words_model) representations of each sentence
+
+The architecture of the attention-based classifier is shown below:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_simple_classifier.png" alt="drawing" width="400"/></center>
+
+When training on 90% of the pairs and testing on the remaining 10%, the attention-based model achieves **96%** whereas the bag-of-words-based model achieves **50%** (as expected, since there is no signal in the word frequencies). 
+
+
+
 
 Further Reading
 ---------------
