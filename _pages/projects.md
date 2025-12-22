@@ -50,7 +50,10 @@ however, the data remain largely underutilized, in part, due to the [poor struct
   * [https://github.com/deweylab/MetaSRA-website-frontend](https://github.com/deweylab/MetaSRA-website-frontend)
   * [https://github.com/deweylab/MetaSRA-API-backend](https://github.com/deweylab/MetaSRA-API-backend)
 * Paper: [https://doi.org/10.1093/bioinformatics/btx334](https://doi.org/10.1093/bioinformatics/btx334)
-* Talk: [At ISMB 2018](https://www.youtube.com/watch?v=pVHMq9SdUtc) 
+* Talk: [At ISMB 2018](https://www.youtube.com/watch?v=pVHMq9SdUtc)
+
+[logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
+![My helpful screenshot]({{ " https://mbernste.github.io/images/MetaSRA_web.png" |  https://mbernste.github.io/images/MetaSRA_web.png }})
 
 ## CHARTS: A web tool for exploring single-cell cancer data
 
@@ -60,7 +63,7 @@ Single-cell RNA-seq (scRNA-seq) enables the profiling of genome-wide gene expres
 * GitHub: [https://github.com/stewart-lab/CHARTS](https://github.com/stewart-lab/CHARTS)
 * Paper: [https://doi.org/10.1186/s12859-021-04021-x](https://doi.org/10.1186/s12859-021-04021-x)
 
-![My helpful screenshot]({{ " https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png" |  https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png }})
+![My helpful screenshot]({{ " https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png" |  https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png }})  
 
 ## Build structured datasets from the Sequence Read Archive
 
