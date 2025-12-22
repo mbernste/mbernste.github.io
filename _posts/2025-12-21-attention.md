@@ -227,8 +227,18 @@ These positional encodings can either be learned during training (i.e., each pos
 <br>
 
 
-Multi-headed attention
+Multiheaded attention
 ----------------------
+
+In order to expand the learning capacity of a model, one can also _parallelize_ attention in each layer using an extension of attention called **multiheaded attention**. In multiheaded attention, one performs the attention operation _multiple times_ using multiple sets of queries, keys, and values. That is, at a given layer, the nerual network learns multiple $W_Q$, $W_K$, and $W_V$ vectors and performs attention multiple times. Each attention mechanism is called a "head" and the full layer is called "multi-headed attention". The final output vectors from multiheaded attention are formed by concatenating the outputs of the indivudal heads as shown below:
+
+<br>
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_multiheaded.png" alt="drawing" width="650"/></center>
+
+<br>
+
+Multiheaded attention enables an attention layer to learn different kinds of relationships between entities. In text, for example, one head might learn possessive relationships between entities. For example, in the sentence, "Joe's dog ran into Hannah's yard", one head might relate "Joe" and "dog" as well as "Hannah" and "yard". Another head might learn relationships between objects and places. In this sentence the second head might relate "dog" to "yard" because the dog ran into the yard.
 
 
 What makes attention so powerful?
@@ -236,9 +246,9 @@ What makes attention so powerful?
 
 As eluded to in the introduction to this post, the attention layer is widely regarded to be one of the most important breakthroughs that enabled the development of modern AI systems and large language models. But what exactly makes attention so powerful?
 
-Before attention, a very common problem in machine learning systems, especially those operating on large bodies of natural language text, is that the model would have great difficulty in linking distant pieces of data in the input together that crucial for accomplishing the task at hand. For example, when trained on long sequences of text, a model may have great difficulty in understanding the relationship between words that were far away from each other in the document. Various models of the time, such as [recurrent neural networks](https://en.wikipedia.org/wiki/Recurrent_neural_network) would often "forget" about text that appeared early in the document. While [long term short term memory networks](https://en.wikipedia.org/wiki/Long_short-term_memory) helped mitigated this problem, they did not fundamentally solve it. Attention provides an extremely elegant solution that explicitly enables a neural network to link words together in a document regardless of their distance. 
+Before attention, a challenge in machine learning was relating distant pieces of input data together whose joint consideration is critical to accomplish the task at hand. For example, when trained on long sequences of text, models would have trouble relating words that were far away from each other in the document. For example, [recurrent neural networks](https://en.wikipedia.org/wiki/Recurrent_neural_network) would often "forget" about text that appeared early in the document. While [long term short term memory networks](https://en.wikipedia.org/wiki/Long_short-term_memory) helped mitigated this problem, they did not fundamentally solve it. Attention provides a solution to this challenge because it  explicitly enables a neural network to relate data together regardless of their distance in the dataset. 
 
-Attention has even helped with this problem in computer vision. For example, in order for a [convolutional neural network (CNN)](https://en.wikipedia.org/wiki/Convolutional_neural_network) to jointly "see" and operate over two distant regions of an image, the CNN must be deep and consist of many layers. This is because the size of the [receptive field](https://en.wikipedia.org/wiki/Receptive_field) of a given neuron in a CNN is determined by the number of layers that precede that neuron in the model's architecture. The [vision transformer](https://en.wikipedia.org/wiki/Vision_transformer) is a neural network architecture that uses attention over image patches to explicitly link regions of the image together no matter how distant they are.
+Attention has also been applied to computer vision where, for example, it also has been challenging for modeling to relate regions of an image that are far way from eachother. In order for a [convolutional neural network (CNN)](https://en.wikipedia.org/wiki/Convolutional_neural_network) to jointly "see" and operate over two distant regions of an image, the CNN must consist of many layers. This is because the size of the [receptive field](https://en.wikipedia.org/wiki/Receptive_field) of a given neuron in a CNN is determined by the number of layers that precede that neuron in the model's architecture. The [vision transformer](https://en.wikipedia.org/wiki/Vision_transformer) is a neural network architecture that uses attention over image patches to explicitly link regions of the image together no matter how distant they are.
 
 Perhaps most importantly, _attention scales_. As researchers have scaled attention-based models to ever larger sizes, it appears that the models continue to improve. In fact, in recent years, the community has discovererd empirical [scaling laws](https://en.wikipedia.org/wiki/Neural_scaling_law) over training set and model sizes -- that is, as models and datasets grow, performance seems to improve at a predictable pace. At the time of this writing, frontier large language models are built with [_trillions_ of parameters](https://www.cometapi.com/how-many-parameters-does-gpt-5-have/) and trained on nearly the entire internet's worth of data.
 
