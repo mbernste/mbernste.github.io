@@ -54,15 +54,17 @@ however, the data remain largely underutilized, in part, due to the [poor struct
 
 ## CHARTS
 
-Characterize and compare tumor subpopulations across public single-cell RNA-seq data.
+Single-cell RNA-seq (scRNA-seq) enables the profiling of genome-wide gene expression at the single-cell level and in so doing facilitates insight into and information about cellular heterogeneity within a tissue. This is especially important in cancer, where tumor and tumor microenvironment heterogeneity directly impact development, maintenance, and progression of disease. CHARacterizing Tumor Subpopulations (CHARTS) is a computational pipeline and web application for analyzing, characterizing, and integrating publicly available scRNA-seq cancer datasets. CHARTS is freely available at [charts.morgridge.org](https://charts.morgridge.org).
 
 * Website: [https://charts.morgridge.org](https://charts.morgridge.org)
 * GitHub: [https://github.com/stewart-lab/CHARTS](https://github.com/stewart-lab/CHARTS)
 * Paper: [https://doi.org/10.1186/s12859-021-04021-x](https://doi.org/10.1186/s12859-021-04021-x)
 
-## Series Finder & Case-Control Finder
+![My helpful screenshot]({{ " https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png" |  https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/CHARTS_schematic.png }})
 
-Build structured datasets of RNA-seq data from the Sequence Read Archive.
+## Build structured datasets from the Sequence Read Archive
+
+Recently, the MetaSRA project standardized these metadata by annotating each sample with terms from biomedical ontologies. In this work, we present a pair of Jupyter notebook-based tools that utilize the MetaSRA for building structured datasets from the SRA in order to facilitate secondary analyses of the SRA’s human RNA-seq data. The first tool, called the Case-Control Finder, finds suitable case and control samples for a given disease or condition where the cases and controls are matched by tissue or cell type.  The second tool, called the Series Finder, finds ordered sets of samples for the purpose of addressing biological questions pertaining to changes over a numerical property such as time. These tools were the result of a three-day-long NCBI-sponsored hackathon in March 2019 held at the University of North Carolina at Chapel Hill.
 
 * GitHub: [https://github.com/mbernste/hypothesis-driven-SRA-queries](https://github.com/mbernste/hypothesis-driven-SRA-queries)
 * Paper: [https://doi.org/10.12688/f1000research.23180.2](https://doi.org/10.12688/f1000research.23180.2)
