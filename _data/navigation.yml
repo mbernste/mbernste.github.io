@@ -6,8 +6,8 @@ main:
   - title: "Blog"
     url: /posts/
     
-  - title: "Software"
-    url: /software/
+  - title: "Projects"
+    url: /projects/
     
   - title: "CV"
     url: http://mbernste.github.io/files/CV.pdf
