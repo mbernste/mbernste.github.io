@@ -6,11 +6,11 @@ main:
   - title: "Blog"
     url: /posts/
     
-  - title: "Projects"
-    url: /projects/
-    
   - title: "CV"
     url: http://mbernste.github.io/files/CV.pdf
+
+  - title: "Projects"
+    url: /projects/
     
   - title: "Art"
     url: /art/
