@@ -198,7 +198,7 @@ To make this analogy concrete, let's say we have a database of music files (say 
 
 To retrieve a given song, we form a query, which is also a string, and attempt to match this query against all the existing titles (keys) in the database. If we find a match, the database will return the corresponding music file.
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_database_retrieval.png" alt="drawing" width="750"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_database_retrieval.png" alt="drawing" width="700"/></center>
 
 This is very similar to the roles that the keys, queries, and values play in the attention layer; however, instead of each query being binary -- we either match a key or we don't -- the queries in the attention layer are "soft" -- that is, a query may _somewhat_ match to _multiple_ keys. This soft matching is carried out by computing dot products between keys and queries and then using these dot products to define weights in a weighted sum of value vectors. That is, each weight denotes how much each query matches each key! 
 
