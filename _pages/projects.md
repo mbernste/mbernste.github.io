@@ -6,14 +6,14 @@ author_profile: true
 
 Here are some of the software products to come out of my research:
 
-### Monkeybread
+## Monkeybread
 
 Explore cellular niches in single-cell resolution spatial transcriptomics data.
 
 * GitHub: [https://github.com/immunitastx/monkeybread](https://github.com/immunitastx/monkeybread)  
 * Documentation: [https://monkeybread.readthedocs.io/en/latest/](https://monkeybread.readthedocs.io/en/latest/)  
 
-### SpatialCorr
+## SpatialCorr
 
 Recent advances in spatially resolved transcriptomics technologies enable both the measurement of genome-wide gene expression profiles and their mapping to spatial locations within a tissue. SpatialCorr is a method for identifying sets of genes with spatially varying correlation structure. Given a collection of gene sets pre-defined by a user, SpatialCorr tests for spatially induced differences in the correlation of each gene set within tissue regions, as well as between and among regions.
 
@@ -24,7 +24,7 @@ Recent advances in spatially resolved transcriptomics technologies enable both t
 [logo]: https://github.com/mbernste/SpatialCorr/raw/main/imgs/Overview_MainFigure_V3-01.png "Logo Title Text 2"
 ![My helpful screenshot]({{ "  https://github.com/mbernste/SpatialCorr/raw/main/imgs/Overview_MainFigure_V3-01.png" |   https://github.com/mbernste/SpatialCorr/raw/main/imgs/Overview_MainFigure_V3-01.png }})
 
-### CellO
+## CellO
 
 Cell type annotation is a fundamental task in the analysis of single-cell RNA-sequencing data. We present [CellO](https://github.com/deweylab/CellO), a machine learning-based tool for annotating human RNA-seq data with the [Cell Ontology](http://www.obofoundry.org/ontology/cl.html). CellO enables accurate and standardized cell type classification by considering the rich hierarchical structure of known cell types. Furthemore, CellO comes pre-trained on a novel, comprehensive dataset of human, healthy, untreated primary samples in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA) which, to the best of our knowledge, is the most diverse curated collection of primary cell data to date. 
 
@@ -35,22 +35,18 @@ Cell type annotation is a fundamental task in the analysis of single-cell RNA-se
 [logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
 ![My helpful screenshot]({{ "  https://mbernste.github.io/images/cell_type_classification.png" |   https://mbernste.github.io/images/cell_type_classification.png }})
 
-### MetaSRA Website
+### MetaSRA
 
-Search for public RNA-seq data within the Sequence Read Archive using biomedical ontologies.
+The NCBI’s [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA) promises great biological insight if one could analyze the data in the aggregate; 
+however, the data remain largely underutilized, in part, due to the [poor structure](https://www.nature.com/articles/sdata201921) of the metadata associated with each sample. We developed the [MetaSRA](http://metasra.biostat.wisc.edu), a novel computational pipeline and associated database for standardizing the metadata associated with samples in the SRA by mapping each sample to biomedical [ontologies](https://en.wikipedia.org/wiki/Ontology_(information_science)).  See describing the MetaSRA from [ISMB 2018](https://www.iscb.org/ismb2018).
 
 * Website: [http://metasra.biostat.wisc.edu](http://metasra.biostat.wisc.edu)
-* GitHub: 
+* GitHub:
+  * [https://github.com/deweylab/MetaSRA-pipeline](https://github.com/deweylab/MetaSRA-pipeline)  
   * [https://github.com/deweylab/MetaSRA-website-frontend](https://github.com/deweylab/MetaSRA-website-frontend)
   * [https://github.com/deweylab/MetaSRA-API-backend](https://github.com/deweylab/MetaSRA-API-backend)
 * Paper: [https://doi.org/10.1093/bioinformatics/btx334](https://doi.org/10.1093/bioinformatics/btx334)
- 
-### MetaSRA Pipeline
-
-Standardize biomedical metadata that are encoded as key-value pairs.
-
-* GitHub: [https://github.com/deweylab/MetaSRA-pipeline](https://github.com/deweylab/MetaSRA-pipeline)
-* Paper: [https://doi.org/10.1093/bioinformatics/btx334](https://doi.org/10.1093/bioinformatics/btx334)
+* Talk: [At ISMB 2018](https://www.youtube.com/watch?v=pVHMq9SdUtc) 
 
 ### CHARTS
 
