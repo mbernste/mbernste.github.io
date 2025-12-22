@@ -281,11 +281,11 @@ The architecture of the attention-based classifier is shown below:
 
 When training on 90% of the pairs and testing on the remaining 10%, the attention-based model achieves **96%** whereas the bag-of-words-based model achieves **50%** (as expected, since there is no signal in the word frequencies). 
 
-We can also investigate the attention scores between words. For example, below are the attention scores in the second layer of the network when given the sentence, "":
+We can also investigate the attention scores between words. For example, below are the attention scores in the second layer of the network when given the sentence, "Listed left to right is a white car then black car":
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_example_scores.png" alt="drawing" width="400"/></center>
 
-Here, element (i,j) denotes how much word i is "attending to" word j -- that is, how much word j's value is being weighted in word i's weighted sum.
+Here, element (i,j) denotes how much word i is "attending to" word j -- that is, how much word j's value is being weighted in word i's weighted sum. It is interesting to note in the above example how the word "left" is attending most to "white". While difficult to ascertain exactly how this is effecting the model's predictions, it intuitively makes sense that the model is relating these key words to one another. 
 
 Further Reading
 ---------------
