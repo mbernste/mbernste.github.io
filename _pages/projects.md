@@ -1,6 +1,6 @@
 ---
 title: "Projects"
-permalink: /software/
+permalink: /projects/
 author_profile: true
 ---
 
@@ -26,18 +26,14 @@ Recent advances in spatially resolved transcriptomics technologies enable both t
 
 ### CellO
 
-Cell type classification of single-cell RNA-seq data against the Cell Ontology.
+Cell type annotation is a fundamental task in the analysis of single-cell RNA-sequencing data. We present [CellO](https://github.com/deweylab/CellO), a machine learning-based tool for annotating human RNA-seq data with the [Cell Ontology](http://www.obofoundry.org/ontology/cl.html). CellO enables accurate and standardized cell type classification by considering the rich hierarchical structure of known cell types. Furthemore, CellO comes pre-trained on a novel, comprehensive dataset of human, healthy, untreated primary samples in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra) (SRA) which, to the best of our knowledge, is the most diverse curated collection of primary cell data to date. 
 
 * GitHub: [https://github.com/deweylab/CellO](https://github.com/deweylab/CellO)
 * Paper: [https://doi.org/10.1016/j.isci.2020.101913](https://doi.org/10.1016/j.isci.2020.101913)
-
-### CellO Viewer
-
-Explore cell type-specific gene expression signatures across the Cell Ontology.
-
 * Website: [https://uwgraphics.github.io/CellOViewer/](https://uwgraphics.github.io/CellOViewer/)
-* GitHub: [https://github.com/uwgraphics/CellOViewer](https://github.com/uwgraphics/CellOViewer)
-* Paper: [https://doi.org/10.1016/j.isci.2020.101913](https://doi.org/10.1016/j.isci.2020.101913)
+ 
+[logo]: https://mbernste.github.io/images/MetaSRA_overview.png "Logo Title Text 2"
+![My helpful screenshot]({{ "  https://mbernste.github.io/images/cell_type_classification.png" |   https://mbernste.github.io/images/cell_type_classification.png }})
 
 ### MetaSRA Website
 
