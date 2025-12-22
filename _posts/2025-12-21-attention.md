@@ -190,7 +190,9 @@ Thus, we perform a non-linear transformation of these attention-derived vectors.
 "Keys", "Queries", "Values"? A note on terminology
 --------------------------------------------------
 
-A natural question when first learning this topic is why the $Q$, $K$, $V$ matrices are referred to as "queries", "keys", and "values". These terms arise from an analogy with simple databases. Say we have a database of music files where each file is associated with a title encoded as a string. Here we'll call the titles "keys" and the sound files "values". Each key is associated with a value. 
+A natural question when first learning this topic is why the $Q$, $K$, and $V$ matrices are referred to as "queries", "keys", and "values". Where do these terms come from? It turns out, these terms were introduced by Vaswani *et al.* (2017) based on analogy they made between the attention layer and database systems. 
+
+To make this analogy concrete, let's say we have a database of music files (say .mp3 files) where each file is associated with a title encoded as a string. Here we'll call the titles "keys" and the sound files "values". Each key is associated with a value. 
 
 
 To retrieve a given song, we form a query, which is also a string, and attempt to match this query against all the existing titles (keys) in the database. If we find a match, the database will return the corresponding music file.
