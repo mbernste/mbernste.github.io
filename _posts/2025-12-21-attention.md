@@ -281,16 +281,35 @@ The architecture of the attention-based classifier is shown below:
 
 When training on 90% of the pairs and testing on the remaining 10%, the attention-based model achieves **96%** whereas the bag-of-words-based model achieves **50%** (as expected, since there is no signal in the word frequencies). 
 
+We can also investigate the attention scores between words. For example, below are the attention scores in the second layer of the network when given the sentence, "":
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_example_scores.png" alt="drawing" width="400"/></center>
+
+Here, element (i,j) denotes how much word i is "attending to" word j -- that is, how much word j's value is being weighted in word i's weighted sum.
+
+Further Reading
+---------------
+
+* Much of my understanding of this material came from the excellent blog post, *[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)* by Jay Allamar.
+
+
 Appendix
 --------
 
-Below are Python functions implementing the tokenizer, batch creator, and data loaders. This is all pre-requisite for setting up the data for training:
+Here, we display all code for training the small attention-based classifier. 
+
+We start with implementations of Python functions for tokenization, batch-padding, and loading the data. 
 
 ```
 import re
 import json
 import numpy as np
 import string
+import math
+import torch
+from torch.utils.data import Dataset, DataLoader
+import torch.nn as nn
+
 
 def tokenize(sentence):
     """
@@ -316,6 +335,7 @@ def tokenize(sentence):
     tokens = sentence.split()
 
     return tokens
+
 
 def build_vocab(sentences, min_freq=1):
     """
@@ -357,8 +377,6 @@ def encode(sentence, token_to_id):
     ]
 
 
-import torch
-
 def pad_batch(encoded_sentences, pad_id):
     """
     Pad a list of encoded sentences to the same length.
@@ -386,9 +404,6 @@ def pad_batch(encoded_sentences, pad_id):
         attention_mask[i, :len(seq)] = True
 
     return input_ids, attention_mask
-
-import torch
-from torch.utils.data import Dataset, DataLoader
 
 
 class SentenceBinaryDataset(Dataset):
@@ -457,9 +472,6 @@ def create_dataloader_attention(
     )
     return dl
 
-import torch
-import torch.nn as nn
-
 
 def train_pair_indices(num_rows, train_frac, seed=None):
     """
@@ -492,11 +504,6 @@ def train_pair_indices(num_rows, train_frac, seed=None):
 Below is the code that implements the small attention-based classifier:
 
 ```
-import math
-import torch
-import torch.nn as nn
-
-
 class SingleHeadSelfAttention(nn.Module):
     """
     Minimal single-head self-attention:
@@ -587,7 +594,6 @@ class AttentionBlock(nn.Module):
         # Feed-forward sublayer
         x = self.ln2(x + self.mlp(x))
         return x
-
 
 
 class TinyAttentionBinaryClassifier(nn.Module):
@@ -751,7 +757,7 @@ def train_attention_classifier(
     return model
 ```
 
-Now, we load the dataset and build the vocabulary:
+Finally, below is the code that ties it all together to load the training data, partition into training and test sets, and train the model:
 
 ```
 # Load data
@@ -803,7 +809,7 @@ attention_model = train_attention_classifier(
 )
 ```
 
-Finally, code to evaluate the model:
+Lastly, below is code to evaluate the model:
 
 ```
 attention_model.eval()
@@ -827,13 +833,6 @@ with torch.no_grad():
 test_acc = test_correct / max(test_total, 1)
 print("Accuracy: ", test_acc)
 ```
-
-
-
-Further Reading
----------------
-
-* Much of my understanding of this material came from the excellent blog post, *[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)* by Jay Allamar.
 
 
 
