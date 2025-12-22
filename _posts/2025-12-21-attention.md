@@ -206,7 +206,7 @@ This is very similar to the roles that the keys, queries, and values play in the
 Positional encodings
 --------------------
 
-As described above, the attention layer maps sets of vectors to new sets of vectors in such a way that each vector can "attend to" to some set of other vectors within the set. Noteably, there is nothing explicitly built into the attention layer that specifies any distinction between the order of these input and output vectors. That is, the attention layer operates on _unordered_ sets.
+As described above, the attention layer maps a set of vectors to a new set of vectors in such a way that each vector can "attend" to some set of other vectors within the set. Noteably, there is nothing explicitly built into the attention layer that specifies any distinction between the order of these input and output vectors. That is, the attention layer operates on _unordered_ sets.
 
 However, we mentioned in this very post that one of the most common areas of application for attention is in modeling natural language text, which _is_ intrinsically ordered. Moreover, we expect that a model would benefit from having access to this order. The sentence, "The shark bit the person" has quite a different meaning from the sentence, "The person bit the shark" even though both sentences use the same set of words. 
 
