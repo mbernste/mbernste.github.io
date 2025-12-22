@@ -15,11 +15,14 @@ Explore cellular niches in single-cell resolution spatial transcriptomics data.
 
 ### SpatialCorr
 
-Identify gene sets with spatially varying correlation structure.
+Recent advances in spatially resolved transcriptomics technologies enable both the measurement of genome-wide gene expression profiles and their mapping to spatial locations within a tissue. SpatialCorr is a method for identifying sets of genes with spatially varying correlation structure. Given a collection of gene sets pre-defined by a user, SpatialCorr tests for spatially induced differences in the correlation of each gene set within tissue regions, as well as between and among regions.
 
 * GitHub: [https://github.com/mbernste/SpatialCorr](https://github.com/mbernste/SpatialCorr)
 * Documentation: [https://spatialcorr.readthedocs.io/en/latest/index.html](https://spatialcorr.readthedocs.io/en/latest/index.html)
 * Paper: [https://doi.org/10.1016/j.crmeth.2022.100369](https://doi.org/10.1016/j.crmeth.2022.100369)
+
+[logo]: https://github.com/mbernste/SpatialCorr/raw/main/imgs/Overview_MainFigure_V3-01.png "Logo Title Text 2"
+![My helpful screenshot]({{ "  https://github.com/mbernste/SpatialCorr/raw/main/imgs/Overview_MainFigure_V3-01.png" |   https://github.com/mbernste/SpatialCorr/raw/main/imgs/Overview_MainFigure_V3-01.png }})
 
 ### CellO
 
