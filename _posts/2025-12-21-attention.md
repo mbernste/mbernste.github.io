@@ -187,6 +187,17 @@ The attention layer is usually followed by a fully connected layer. This layer i
 
 Thus, we perform a non-linear transformation of these attention-derived vectors. This steps injects more non-linearity into the model so that, when we stack transformer layers together, we can form very complex iterations of attention where each subsequent layer is computing attention between the tokens in different ways.
 
+"Keys", "Queries", "Values"? A note on terminology
+--------------------------------------------------
+
+A natural question when first learning this topic is why the $Q$, $K$, $V$ matrices are referred to as "queries", "keys", and "values". These terms arise from an analogy with simple databases. Say we have a database of music files where each file is associated with a title encoded as a string. Here we'll call the titles "keys" and the sound files "values". Each key is associated with a value. 
+
+
+To retrieve a given song, we form a query, which is also a string, and attempt to match this query against all the existing titles (keys) in the database. If we find a match, the database will return the corresponding music file.
+
+
+This is very similar to the roles that the keys, queries, and values play in the attention layer; however, instead of each query being binary -- we either match a key or we don't -- the queries in the attention layer are "soft" -- that is, a query may somewhat match to multiple keys. This soft matching is carried out by the weighted sum of value vectors. That is, each weight denotes how much the given query matched the key, which is measured via the dot product between the two vectors! 
+
 Positional encodings
 --------------------
 
@@ -200,7 +211,7 @@ $$\boldsymbol{x}_i' := \boldsymbol{x}_i + \boldsymbol{p}_i$$
 
 where $\boldsymbol{p}_i$ is the positional encoding vector for position $i$. The end result is that each modified input token vector contains both information regarding the token as well as the position of that token.
 
-These positional encodings can either be learned during training (i.e., each position integer is mapped to a learned encoding vector), or more commonly, can be fixed _a priori_. For example, [Vaswani *et al.* (2017)](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf), use positional encodings built from sine and cosine functions of different frequencies for each dimension. A heatmap of such positional encodings are showing below:
+These positional encodings can either be learned during training (i.e., each position integer is mapped to a learned encoding vector), or more commonly, can be fixed _a priori_. For example, [Vaswani *et al.* (2017)](https://papers.nips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf), use positional encodings built from sine and cosine functions of different frequencies for each dimension. A heatmap of such positional encodings are showing below where the rows are positions and the columns are dimensions of the input token vectors:
 
 <br>
 
@@ -211,6 +222,7 @@ These positional encodings can either be learned during training (i.e., each pos
 
 Multi-headed attention
 ----------------------
+
 
 
 Further Reading
