@@ -29,6 +29,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Variational autoencoders](https://mbernste.github.io/posts/vae/)  
 [Denoising diffusion probabilistic models (Part 1: Definition and derivation)](https://mbernste.github.io/posts/diffusion_part1/)    
 [Denoising diffusion probabilistic models (Part 2: Theoretical justification)](https://mbernste.github.io/posts/diffusion_part2/)
+[Understanding attention](https://mbernste.github.io/posts/attention/)  
 
 ## Kernel methods
 
