@@ -281,6 +281,552 @@ The architecture of the attention-based classifier is shown below:
 
 When training on 90% of the pairs and testing on the remaining 10%, the attention-based model achieves **96%** whereas the bag-of-words-based model achieves **50%** (as expected, since there is no signal in the word frequencies). 
 
+Appendix
+--------
+
+Below are Python functions implementing the tokenizer, batch creator, and data loaders. This is all pre-requisite for setting up the data for training:
+
+```
+import re
+import json
+import numpy as np
+import string
+
+def tokenize(sentence):
+    """
+    Tokenize a sentence by:
+    - lowercasing
+    - separating punctuation into standalone tokens
+    - splitting on whitespace
+
+    Example:
+    "From left to right, the lineup is: a red cone"
+    ->
+    ["from", "left", "to", "right", ",", "the", "lineup", "is", ":", "a", "red", "cone"]
+    """
+    sentence = sentence.lower()
+
+    # Put spaces around punctuation we care about
+    #sentence = re.sub(r"([.,;:()])", r" \1 ", sentence)
+
+    # Remove punctation
+    sentence = sentence.translate(str.maketrans('', '', string.punctuation))
+
+    # Collapse multiple spaces and split
+    tokens = sentence.split()
+
+    return tokens
+
+def build_vocab(sentences, min_freq=1):
+    """
+    Build a token -> index vocabulary from a list of sentences.
+
+    Returns:
+    - token_to_id: dict
+    - id_to_token: list
+    """
+    freq = {}
+
+    for sent in sentences:
+        for tok in tokenize(sent):
+            freq[tok] = freq.get(tok, 0) + 1
+
+    # Special tokens
+    tokens = ["<pad>", "<unk>"]
+
+    # Add real tokens
+    for tok, count in freq.items():
+        if count >= min_freq:
+            tokens.append(tok)
+
+    token_to_id = {tok: i for i, tok in enumerate(tokens)}
+    id_to_token = tokens
+
+    return token_to_id, id_to_token
+
+
+def encode(sentence, token_to_id):
+    """
+    Convert a sentence into a list of token IDs.
+    """
+    unk_id = token_to_id["<unk>"]
+
+    return [
+        token_to_id.get(tok, unk_id)
+        for tok in tokenize(sentence)
+    ]
+
+
+import torch
+
+def pad_batch(encoded_sentences, pad_id):
+    """
+    Pad a list of encoded sentences to the same length.
+
+    Returns:
+    - input_ids: LongTensor (batch_size, max_len)
+    - attention_mask: BoolTensor (batch_size, max_len)
+    """
+    max_len = max(len(s) for s in encoded_sentences)
+    batch_size = len(encoded_sentences)
+
+    input_ids = torch.full(
+        (batch_size, max_len),
+        pad_id,
+        dtype=torch.long
+    )
+
+    attention_mask = torch.zeros(
+        (batch_size, max_len),
+        dtype=torch.bool
+    )
+
+    for i, seq in enumerate(encoded_sentences):
+        input_ids[i, :len(seq)] = torch.tensor(seq)
+        attention_mask[i, :len(seq)] = True
+
+    return input_ids, attention_mask
+
+import torch
+from torch.utils.data import Dataset, DataLoader
+
+
+class SentenceBinaryDataset(Dataset):
+    """
+    Stores (sentence, label) pairs and encodes sentences into token IDs on-the-fly.
+    """
+    def __init__(self, data, token_to_id):
+        """
+        data: list of (sentence: str, label: int) tuples
+        token_to_id: dict mapping tokens -> ids
+        """
+        self.data = data
+        self.token_to_id = token_to_id
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        sentence, label = self.data[idx]
+        token_ids = encode(sentence, self.token_to_id)  # list[int]
+        return token_ids, int(label)
+
+
+def make_collate_fn_attention_model(pad_id: int):
+    """
+    Returns a collate_fn that:
+      - pads sequences in the batch
+      - builds an attention_mask (True for real tokens)
+      - returns tensors ready for the model
+    """
+    def collate_fn(batch):
+        # batch is a list of (token_ids_list, label_int)
+        token_id_lists, labels = zip(*batch)
+
+        input_ids, attention_mask = pad_batch(token_id_lists, pad_id=pad_id)
+        labels = torch.tensor(labels, dtype=torch.float32)  # for BCEWithLogitsLoss
+
+        return {
+            "input_ids": input_ids,               # (B, T) LongTensor
+            "attention_mask": attention_mask,     # (B, T) BoolTensor
+            "labels": labels                      # (B,) FloatTensor
+        }
+
+    return collate_fn
+
+
+def create_dataloader_attention(
+      data,
+      token_to_id,
+      batch_size=32,
+      shuffle=True,
+      num_workers=0
+    ):
+    """
+    Convenience wrapper to create a DataLoader for (sentence, label) data.
+    """
+    pad_id = token_to_id["<pad>"]
+    ds = SentenceBinaryDataset(data, token_to_id)
+    dl = DataLoader(
+        ds,
+        batch_size=batch_size,
+        shuffle=shuffle,
+        num_workers=num_workers,
+        collate_fn=make_collate_fn_attention_model(pad_id),
+        drop_last=False
+    )
+    return dl
+
+import torch
+import torch.nn as nn
+
+
+def train_pair_indices(num_rows, train_frac, seed=None):
+    """
+    Assumes that rows of the dataset are paired as positive, negative examples
+    (e.g., row 0 is a positive example and row 1 is a paired negative example).
+    This function outputs training indices from the dataset ensuring that
+    pairs are either both included or excluded from the training set.
+    """
+    assert num_rows % 2 == 0, "Number of rows must be even (paired rows)."
+
+    num_pairs = num_rows // 2
+    rng = np.random.default_rng(seed)
+
+    # shuffle pair indices
+    pair_ids = rng.permutation(num_pairs)
+
+    # number of training pairs
+    n_train_pairs = int(train_frac * num_pairs)
+
+    train_pairs = pair_ids[:n_train_pairs]
+
+    # convert pair ids -> row indices
+    train_indices = np.concatenate([
+        np.array([2*p, 2*p + 1]) for p in train_pairs
+    ])
+
+    return train_indices
+```
+
+Below is the code that implements the small attention-based classifier:
+
+```
+import math
+import torch
+import torch.nn as nn
+
+
+class SingleHeadSelfAttention(nn.Module):
+    """
+    Minimal single-head self-attention:
+      Q = X Wq, K = X Wk, V = X Wv
+      Attn(X) = softmax(QK^T / sqrt(d)) V
+    """
+    def __init__(self, d_model: int):
+        super().__init__()
+        self.d_model = d_model
+        self.Wq = nn.Linear(d_model, d_model, bias=False)
+        self.Wk = nn.Linear(d_model, d_model, bias=False)
+        self.Wv = nn.Linear(d_model, d_model, bias=False)
+
+    def compute_attention_scores(self, x: torch.Tensor):
+        """
+        x: (B, T, D) -- i.e., batch-size, number of tokens, dimensions
+        """
+        B, T, D = x.shape
+        q = self.Wq(x)
+        k = self.Wk(x)
+
+        # For each sentence in the batch, compute the attention score between
+        # each pair of tokens.
+        #
+        # q: (B, T, D)
+        # k.transpose(-2, -1): (B, D, T)
+        # scores: (B, T, T)
+        #
+        # For a given batch, b, element i,j of scores[b] denotes how much
+        # token i should weight token j when updating the representation of i
+        scores = (q @ k.transpose(-2, -1)) / math.sqrt(D)  # (B, T, T)
+
+        return scores
+
+    def forward(self, x: torch.Tensor, attn_mask: torch.Tensor | None = None):
+        """
+        x: (B, T, D) -- i.e., batch-size, number of tokens, dimensions
+        attn_mask: (B, T) boolean, True for real tokens, False for padding
+        returns: (B, T, D)
+        """
+        # Compute attention scores (B, T, T)
+        scores = self.compute_attention_scores(x)
+
+        # Compute value vectors
+        v = self.Wv(x)
+
+        # Mask out padding tokens
+        # Wherever the mask is False, the scores are replaced with
+        # -inf. When pushed through the softmax function, these then become
+        # zero.
+        if attn_mask is not None:
+            key_mask = attn_mask.unsqueeze(1)  # (B, 1, T)
+            scores = scores.masked_fill(~key_mask, float("-inf"))
+
+        weights = torch.softmax(scores, dim=-1)
+        out = weights @ v
+        return out
+
+
+class AttentionBlock(nn.Module):
+    """
+    A tiny Transformer-like block:
+      - single-head self-attention
+      - residual + layernorm
+      - 2-layer MLP (feed-forward)
+      - residual + layernorm
+
+    Still minimal, but stacking these makes training much more stable than stacking
+    raw attention layers without normalization/residuals.
+    """
+    def __init__(self, d_model: int, mlp_ratio: int = 4):
+        super().__init__()
+        self.attn = SingleHeadSelfAttention(d_model)
+        self.ln1 = nn.LayerNorm(d_model)
+        self.ln2 = nn.LayerNorm(d_model)
+
+        hidden = mlp_ratio * d_model
+        self.mlp = nn.Sequential(
+            nn.Linear(d_model, hidden),
+            nn.ReLU(),
+            nn.Linear(hidden, d_model),
+        )
+
+    def forward(self, x: torch.Tensor, attn_mask: torch.Tensor | None = None):
+        # Attention sublayer
+        x = self.ln1(x + self.attn(x, attn_mask=attn_mask))
+
+        # Feed-forward sublayer
+        x = self.ln2(x + self.mlp(x))
+        return x
+
+
+
+class TinyAttentionBinaryClassifier(nn.Module):
+    """
+    Configurable attention-based binary classifier.
+
+    tokens -> embedding (+ positional embedding)
+          -> N attention blocks (single-head)
+          -> mean pool over tokens (masked)
+          -> linear -> logit
+    """
+    def __init__(
+        self,
+        vocab_size: int,
+        d_model: int = 64,
+        max_len: int = 128,
+        pad_id: int = 0,
+        num_layers: int = 1,
+        mlp_ratio: int = 4
+    ):
+        super().__init__()
+        self.pad_id = pad_id
+        self.max_len = max_len
+
+        # Learnable token embeddings
+        self.token_emb = nn.Embedding(vocab_size, d_model, padding_idx=pad_id)
+
+        # Learnable positional encodings
+        self.pos_emb = nn.Embedding(max_len, d_model)
+
+        # Sequence of self-attention blocks
+        self.blocks = nn.ModuleList(
+            [AttentionBlock(d_model, mlp_ratio=mlp_ratio) for _ in range(num_layers)]
+        )
+
+        # Map the mean of the embeddings from the last layer to a single
+        # logit output
+        self.fc = nn.Linear(d_model, 1)
+
+    def forward(self, input_ids: torch.Tensor, attention_mask: torch.Tensor | None = None):
+        """
+        input_ids: (B, T)
+        attention_mask: (B, T) boolean, True for non-padding tokens
+        returns: logits (B,)
+        """
+        B, T = input_ids.shape
+        if T > self.max_len:
+            raise ValueError(f"Sequence length {T} exceeds max_len={self.max_len}")
+
+        # Token embeddings. Project to (B, T, D)
+        tok = self.token_emb(input_ids)
+
+        # Positional embeddings. Project integers to (B, T, D)
+        pos_ids = torch.arange(T, device=input_ids.device).unsqueeze(0).expand(B, T)
+        pos = self.pos_emb(pos_ids)
+
+        # Final embedding is token embedding plus positional embedding
+        x = tok + pos
+
+        # Pass data through attention blocks
+        for blk in self.blocks:
+            x = blk(x, attn_mask=attention_mask)
+
+        # Mean pooling over last layer's non-padding tokens
+        if attention_mask is None:
+            pooled = x.mean(dim=1)
+        else:
+            mask = attention_mask.unsqueeze(-1).float()  # (B, T, 1)
+            pooled = (x * mask).sum(dim=1) / mask.sum(dim=1).clamp(min=1.0)
+
+        # Map the mean of the embeddings from the last layer to a single
+        # logit output
+        logits = self.fc(pooled).squeeze(-1)
+        return logits
+
+    def compute_attention_scores(self, input_ids):
+        """
+        Compute attention scores at each layer
+        """
+        B, T = input_ids.shape
+
+        # Token embeddings. Project to (B, T, D)
+        tok = self.token_emb(input_ids)
+
+        # Positional embeddings. Project integers to (B, T, D)
+        pos_ids = torch.arange(T, device=input_ids.device).unsqueeze(0).expand(B, T)
+        pos = self.pos_emb(pos_ids)
+
+        # Final embedding is token embedding plus positional embedding
+        x = tok + pos
+
+        # Pass data through attention blocks
+        scores = []
+        for blk in self.blocks:
+            scores.append(blk.attn.compute_attention_scores(x))
+        return scores
+```
+
+Now a function for training the model:
+
+```
+def train_attention_classifier(
+    model,
+    train_loader,
+    epochs=10,
+    lr=1e-3,
+    weight_decay=0.0,
+    device=None,
+):
+    """
+    Super simple binary classification training loop for the attention model.
+
+    Assumes each batch is a dict with:
+      - batch["input_ids"]       LongTensor (B, T)
+      - batch["attention_mask"]  BoolTensor (B, T)
+      - batch["labels"]          FloatTensor (B,) with values 0/1
+
+    Uses BCEWithLogitsLoss (so model should output logits, not probabilities).
+    """
+    if device is None:
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    model = model.to(device)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
+    criterion = nn.BCEWithLogitsLoss()
+
+    for epoch in range(1, epochs + 1):
+        # ---- Train ----
+        model.train()
+        total_loss = 0.0
+        correct = 0
+        total = 0
+
+        for batch in train_loader:
+            input_ids = batch["input_ids"].to(device)
+            attention_mask = batch["attention_mask"].to(device)
+            labels = batch["labels"].to(device)  # float 0/1
+
+            optimizer.zero_grad()
+
+            logits = model(input_ids, attention_mask)  # (B,)
+            loss = criterion(logits, labels)
+
+            loss.backward()
+            optimizer.step()
+
+            total_loss += loss.item() * labels.size(0)
+
+            # Accuracy
+            preds = (torch.sigmoid(logits) >= 0.5).long()
+            correct += (preds == labels.long()).sum().item()
+            total += labels.size(0)
+
+        train_loss = total_loss / max(total, 1)
+        train_acc = correct / max(total, 1)
+
+        print(
+          f"Epoch {epoch:02d}/{epochs} | "
+          f"train loss {train_loss:.4f} acc {train_acc:.3f}"
+        )
+    return model
+```
+
+Now, we load the dataset and build the vocabulary:
+
+```
+# Load data
+with open('./training_set3.json', 'r') as f:
+  dataset_1 = json.load(f)['data']
+
+# Map tokens to IDs
+sentences = [pair[0] for pair in dataset_1]
+token_to_id, id_to_token = build_vocab(sentences)
+print("Number of tokens: ", len(token_to_id))
+
+# Training and test set indices
+train_indices = train_pair_indices(len(dataset_1), 0.8)
+test_indices = [
+    i for i in range(len(dataset_1))
+    if i not in train_indices
+]
+assert len(set(train_indices) & set(test_indices)) == 0
+
+# Partition dataset into training and test
+train_data = [dataset_1[i] for i in train_indices]
+test_data = [dataset_1[i] for i in test_indices]
+print("Number of training samples: ", len(train_data))
+print("Number of test samples: ", len(test_data))
+
+# Data loaders
+train_loader_attention = create_dataloader_attention(
+    train_data, token_to_id, batch_size=32, shuffle=True
+)
+test_loader_attention  = create_dataloader_attention(
+    test_data, token_to_id, batch_size=64, shuffle=False
+)
+
+# Construct model
+attention_model = TinyAttentionBinaryClassifier(
+    vocab_size=len(token_to_id),
+    num_layers=4,
+    d_model=64,
+    max_len=128,
+    pad_id=token_to_id["<pad>"]
+)
+
+# Train model
+attention_model = train_attention_classifier(
+  attention_model,
+  train_loader_attention,
+  epochs=50,
+  lr=1e-4
+)
+```
+
+Finally, code to evaluate the model:
+
+```
+attention_model.eval()
+test_correct = 0
+test_total = 0
+with torch.no_grad():
+    for batch in test_loader_attention:
+        input_ids = batch["input_ids"].to('cpu')
+        attention_mask = batch["attention_mask"].to('cpu')
+        labels = batch["labels"].to('cpu')
+
+        # Generate logits from model
+        logits = attention_model(input_ids, attention_mask)
+
+        # Convert to predictions (i.e., probability >= 0.5)
+        preds = (torch.sigmoid(logits) >= 0.5).long()
+        test_correct += (preds == labels.long()).sum().item()
+        test_total += labels.size(0)
+
+# Compute accuracy
+test_acc = test_correct / max(test_total, 1)
+print("Accuracy: ", test_acc)
+```
 
 
 
