@@ -194,8 +194,7 @@ A natural question when first learning this topic is: Why are the $Q$, $K$, and 
 
 To make this analogy concrete, let's say we have a database of music files (say .mp3 files) where each file is associated with a title encoded as a string. Here we'll call the titles "keys" and the sound files "values". Each key is associated with a value. 
 
-
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_database_key_values.png" alt="drawing" width="550"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/attention_database_key_values.png" alt="drawing" width="350"/></center>
 
 To retrieve a given song, we form a query, which is also a string, and attempt to match this query against all the existing titles (keys) in the database. If we find a match, the database will return the corresponding music file.
 
