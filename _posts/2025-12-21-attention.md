@@ -7,6 +7,7 @@ tags:
   - machine learning
   - deep learning
   - transformers
+  - attention
 ---
 
 _Attention is a type of layer in a neural network that is widely regarded to be one of the most important breakthroughs that enabled the development of modern AI systems and large language models. At its heart, attention is a mechanism for explicitly drawing relationships between items in a set. In natural language processing, the set being processed are words (or tokens) and attention enables the model to relate those words to one another even when those words lie far away from eachother in the body of text. In this blog post, we will step through the attention mechanism both mathematically and intuitively. We then present a minimal example of a neural network that uses attention to perform binary classification in a task that is not solveable using a naïve bag-of-words model._
