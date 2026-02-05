@@ -2,9 +2,11 @@
 
 # Introduction
 
-The practice of using data to rationally guide our decisions and draw objective conclusions about the world has arguably been the driving force that has brought human civilization from a subsistance existance to one characterized by comfort, abundance, and wealth. For good reason, the importance of data-driven reasoning has been deeply instilled in the psychologies of those us who do technical work (whether that be science, engineering, business, or others). 
+The practice of using data to rationally guide our decisions and draw objective conclusions about the world has arguably been the driving force that has brought human civilization from a subsistance existance to one characterized by comfort and abundance (relatively speaking!). For good reason, the importance of data-driven reasoning has been deeply instilled in the psychologies of those us who do technical work (whether that be in science, engineering, business, or beyond). 
 
-The exaltation of data manifests in a pattern that I have seen repeated in many of the teams and organizations I have had the privelege of working with: The importance of developing data-driven **metrics** to measure our progress and track our 
+At the same time, the world has become more complex and the systems that we both build and operate in are more complex such that they no longer fit, in their entirety, within our meager human minds. For this reason, we develop data-driven **metrics** that enable us to summarize and track various aspects of these systems. Examples of such metrics abound: the economy is too complex, so we summarize various aspects of the economy into metrics like GDP. The overall status of a human body's composition is summarized as BMI. XXXXXX
+
+The combination of both our cultural traditions and the blank necessity to understand complex systems that simply defy human cognition lead groups of people to think really really hard about metrics. For the purpose of this blog post, I will define a **metric** to simply be a feature of a system that is measured and tracked over time.
 
 For those of us who do technical or quantitative work (whether that be in business, science, or engineering) it has no doubt been instilled deep within our bones the importance of using data to rationally guide our decisions and conclusions we draw about the world. This cultural tradition, to exalt data, has been passed down to us 
 
