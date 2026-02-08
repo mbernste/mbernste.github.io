@@ -14,19 +14,13 @@ _If you work in a quantitative or technical field, there is little doubt that yo
 Introduction
 ------------
 
-The practice of using data to guide decisions and draw conclusions has arguably been a driving force behind humanity’s transition from subsistence living to a society characterized by relative comfort and abundance. For good reason, the importance of data-driven reasoning is deeply ingrained in the culture of quantitative and technical disciplines. At the same time, the systems we build -- and the systems we operate within -- are far too complex to be fully grasped by the human mind. To understand them, we must measure them. 
+For good reason, the importance of data-driven reasoning is deeply ingrained in the culture of quantitative and technical disciplines. At the same time, the systems we build -- and the systems we operate within -- are far too complex to be fully grasped by the human mind. To understand them, we must measure them. The combined consequences of our secular cultural traditions, and the simple need to understand complex systems, lead technical organizations to fixate on **metrics**. This reliance on metrics is deeply ingrained. Managers repeat quotes like, "You can't manage what you can't measure." Software engineers create dashboards and databases to track metrics. Meetings often begin with an overview of where the project or business stands in terms of the metrics.
 
-The combined consequences of our secular cultural traditions, and the simple need to understand complex systems, lead technical organizations to fixate on **metrics** (a metric defined here to simply be a measured quantity tracked over time). This reliance on metrics is deeply ingrained. Managers repeat quotes like, "You can't manage what you can't measure." Software engineers create dashboards and databases to track metrics. Meetings often begin with an overview of where the project or business stands in terms of the metrics.
+I would by no means be the first to point out that an over-reliance on metrics can lead to poor outcomes. For example, [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law) states, "When a measure becomes a target, it ceases to be a good measure." As Jeff Bezos has observed, organizations often end up managing “the proxy for truth” rather than the thing they actually value.
 
-I would by no means be the first to point out that an over-reliance on metrics can lead to poor outcomes. For example, [Goodhart's Law](https://en.wikipedia.org/wiki/Goodhart%27s_law) states, "When a measure becomes a target, it ceases to be a good measure." [Jeff Bezos](https://en.wikipedia.org/wiki/Jeff_Bezos) did well in articulating the process by which a metric "ceases to be a good measure"; In a [recent podcast interview](https://www.youtube.com/watch?v=8ij964FCQiw), Bezos describes how organizations can target a metric as a _proxy_ for seomthing the organization _actually_ value. Over time, that proxy becomes a poor approximation for that true thing of value:
+In this blog post, I will present a mathematical framework for thinking about metrics that lets us more precisely articulate the kinds of failure modes that an over-reliance on metrics can lead to. 
 
-<div style="font-style: italic; max-width: 500px; padding-left: 15px; border-left: 3px solid #ccc;">One of the things that happens in business is that you develop certain things that you’re managing to. The typical case would be a metric. And that metric isn’t the typical underlying thing. Maybe the metric is something like the number of returns you get per unit sold… And so what happens is a little bit of a kind of inertia sets in where somebody a long time ago invented that metric… and they had a reason why they chose that metric. And then fast forward five years and that metric becomes the proxy for truth… Let’s say that metric is a proxy for customer happiness. That metric is not actually customer happiness; it’s a proxy for customer happiness. The person who invented the metric understood that connection. Five years later… you forget the truth behind why you were watching that metric in the first place. And then the world shifts a little bit. And now that proxy isn’t as valuable as it used to be. Or it’s missing something. ~ Jeff Bezos</div>
 
-<br>
-
-In this blog post, I would like to delve a bit deeper into the ways in which metrics can be used and misused by technical organizations. To do so, I will develop a sort of quasi-mathematical framework for thinking about metrics in way that has brought me clarity. 
-
-To spoil the punchline, I will frame a system as a complex [high-dimensional](https://mbernste.github.io/posts/intrinsic_dimensionality/) object -- the system under consideration might be a business, service, process, or technology. There exists some theoretical "value function" that maps systems to a number that tells us how "good" that system is. We don't necessarily know what that value function looks like, so we develop metrics, which are themselves projections of the high-dimensional systems under consideration onto the real number line. Metrics can then be categorized by both their properties and by their relationship to the true value function. With this framework, we can reason about what makes some metrics more prone to misuse than others. Let's get started.
 
 Systems as high-dimensional objects
 -----------------------------------
@@ -64,19 +58,38 @@ Using this same framework, we can define a **metric** to be some function that p
 
 $$f: \mathcal{X} \rightarrow \mathbb{R}$$
 
-In many cases, an organization is seeking to approximate, or define, the value function $V$. That is, they choose a metric $f$ and this metric serves as a _proxy_ for $V$. This is thus, a more formal way to describe Bezos's description of how organizations use metrics as "proxies" for value.
+Metrics fall into two fundamentally different categories: those that are intended to approximate the value function $V$, and those that are intended purely to explore and describe the structure of $\mathcal{X}$. These two uses impose very different requirements. A value-approximating metric makes an implicit claim about the relationship between $f$ and $V$
+To rely on such a metric, one must understand where this approximation holds. Exploratory metrics, by contrast, make no claim about value at all. I believe that making a clear distinction between these kinds of metrics can bring clarity to discussions around them.
 
-Now, there are many ways in which a given metric $f$ may succeed or fail at approximating $V$:
+### Exploratory metrics: Those that seek to describe $\mathcal{X}$
+
+In many cases, organizations do not seek to necessarily approximate the value function, but instead simply seek to understand will create a _collection_ of metrics, each describing some specific aspect of the system: $f_1, f_2, ..., f_M$. These metrics In this way, one can reduce a complex, high-dimensional system down into the space of a few dimensions:
+
+$$f_1(x), f_2(x), \dots, f_M(x)$$
+
+Here, a collection of metrics serves as a form of [dimensionality reduction](https://mbernste.github.io/posts/dim_reduc/) -- that is, they take a high-dimensional object and compress it down into a lower-dimensional object that is easier to understand.
+
+### Value-approximating metrics: Those that seek to approximate $V$
+
+There are many ways in which a given metric $f$ may succeed or fail at approximating $V$:
 
 * **Proportionality:** In this situation, the metric $f$ is _proportional_ to $V$. That is $V(x) = cf(x)$ for some unknown constant $c$. Because $c$ is unknown, it is impossible to know _exactly_ when one has succeeded at achieving a sufficient value of $V$; however, one can confidently track progress.
 * **Monotonicity:** In this situation, the metric $f$ increases monotonically with $V$. That is, if $f$ increases, then so does $V$; however, it is not clear by how much $V$ increases. In some regimes, $f$ and $V$ may be tightly linked whereas in others there is a vast difference in how much $V$ increases with respect to $f$.
 * **Noisy correlation:** In this situation, $f$ _roughly_ tracks $V$, in that the two are correlated, but there is substantial noise.
-* **Local approximation:** In this situation $f$ tracks $V$ in _some regimes_, but diverges in others. 
+* **Local approximation:** In this situation $f$ tracks $V$ in _some regimes_, but diverges in others.
+
+
+Restating Goodhart's Law with this framework
+--------------------------------------------
+
+One benefit of this formalism is that it lets us state well-known phenomena more precisely. As an example, we can use it to articulate a common failure mode often summarized by Goodhart’s Law. XXXX DISCUSSION OF GRADIENTS. EXAMPLE PLOT AND EXPLANATION XXXXXX
 
 Not all systems admit an accurate value-measuring metric
 --------------------------------------------------------
 
-Sometimes, because the value function is so complex, it is just not possible to develop a metric that tracks it accurately enough to be relied upon. In such cases, it is often wise to admit this outright rather than spending valuable time and energy on finding such an elusive value-measuring metric. The worst thing one can do is to choose a metric that is a poor approximator of real value. Relying on a poor value-approximator is a road to ruin and is exactly what Bezos warns against in his message on "proxies". 
+Sometimes, because the value function is so complex, it is just not possible to develop a metric that tracks it accurately enough to be relied upon. 
+
+In such cases, it is often wise to admit this outright rather than spending valuable time and energy on finding such an elusive value-measuring metric. The worst thing one can do is to choose a metric that is a poor approximator of real value. Relying on a poor value-approximator is a road to ruin and is exactly what Bezos warns against in his message on "proxies". 
 
 **Sometimes, one just has to admit defeat: We can't quantify "good" even though we know it when we see it.**
 
@@ -84,18 +97,17 @@ Sometimes, because the value function is so complex, it is just not possible to 
 
 <br>
 
-This is indeed a challenging situation to find oneself. It means that one cannot rely upon an easy, automated way to assess the state of the system and to make decisions. One may feel lost at sea without a compass! But, I would argue Dear Reader, that it can be navigated!  
+This is indeed a challenging situation to find oneself. It means that one cannot rely upon an easy, automated way to assess the state of the system and to make decisions. One may feel lost at sea without a compass! But, I would argue that it can be navigated!  
 
 
 
 
 CONSTRUCTION
 
-This was articulated clearly by [Lord Kelvin](https://en.wikipedia.org/wiki/Lord_Kelvin) [in 1883](https://en.wikiquote.org/wiki/William_Thomson):
 
-<div style="font-style: italic; max-width: 500px; padding-left: 15px; border-left: 3px solid #ccc;">I often say that when you can measure what you are speaking about, and express it in numbers, you know something about it; but when you cannot measure it, when you cannot express it in numbers, your knowledge is of a meagre and unsatisfactory kind; it may be the beginning of knowledge, but you have scarcely, in your thoughts, advanced to the stage of science, whatever the matter may be. ~ Lord Kelvin</div>
+The practice of using data to guide decisions and draw conclusions has arguably been a driving force behind humanity’s transition from subsistence living to a society characterized by relative comfort and abundance. 
 
-<br>
+
 
 
 
@@ -125,4 +137,18 @@ Here, a collection of metrics serves as a form of [dimensionality reduction](htt
 In many, an organization is seeking to approximate, or define, the value function $V$. That is, they choose a metric $f$ and this metric serves as a _proxy_ for $V$. This is thus, a more formal way to describe Bezos's description of how organizations use metrics as "proxies" for value.
 
 
+frame a system as a complex [high-dimensional](https://mbernste.github.io/posts/intrinsic_dimensionality/) object -- the system under consideration might be a business, service, process, or technology. There exists some theoretical "value function" that maps systems to a number that tells us how "good" that system is. We don't necessarily know what that value function looks like, so we develop metrics, which are themselves projections of the high-dimensional systems under consideration onto the real number line. Metrics can then be categorized by both their properties and by their relationship to the true value function. With this framework, we can reason about what makes some metrics more prone to misuse than others. Let's get started.
 
+This was articulated clearly by [Lord Kelvin](https://en.wikipedia.org/wiki/Lord_Kelvin) [in 1883](https://en.wikiquote.org/wiki/William_Thomson):
+
+<div style="font-style: italic; max-width: 500px; padding-left: 15px; border-left: 3px solid #ccc;">I often say that when you can measure what you are speaking about, and express it in numbers, you know something about it; but when you cannot measure it, when you cannot express it in numbers, your knowledge is of a meagre and unsatisfactory kind; it may be the beginning of knowledge, but you have scarcely, in your thoughts, advanced to the stage of science, whatever the matter may be. ~ Lord Kelvin</div>
+
+<br>
+
+
+
+[Jeff Bezos](https://en.wikipedia.org/wiki/Jeff_Bezos) did well in articulating the process by which a metric "ceases to be a good measure"; In a [recent podcast interview](https://www.youtube.com/watch?v=8ij964FCQiw), Bezos describes how organizations can target a metric as a _proxy_ for seomthing the organization _actually_ value. Over time, that proxy becomes a poor approximation for that true thing of value:
+
+<div style="font-style: italic; max-width: 500px; padding-left: 15px; border-left: 3px solid #ccc;">One of the things that happens in business is that you develop certain things that you’re managing to. The typical case would be a metric. And that metric isn’t the typical underlying thing. Maybe the metric is something like the number of returns you get per unit sold… And so what happens is a little bit of a kind of inertia sets in where somebody a long time ago invented that metric… and they had a reason why they chose that metric. And then fast forward five years and that metric becomes the proxy for truth… Let’s say that metric is a proxy for customer happiness. That metric is not actually customer happiness; it’s a proxy for customer happiness. The person who invented the metric understood that connection. Five years later… you forget the truth behind why you were watching that metric in the first place. And then the world shifts a little bit. And now that proxy isn’t as valuable as it used to be. Or it’s missing something. ~ Jeff Bezos</div>
+
+<br>
