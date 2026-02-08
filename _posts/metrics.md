@@ -67,7 +67,9 @@ In many cases, organizations do not seek to necessarily approximate the value fu
 
 $$f_1(x), f_2(x), \dots, f_M(x)$$
 
-Here, a collection of metrics serves as a form of [dimensionality reduction](https://mbernste.github.io/posts/dim_reduc/) -- that is, they take a high-dimensional object and compress it down into a lower-dimensional object that is easier to understand.
+In this sense, metrics act as a form of [dimensionality reduction]().
+
+Put another way, these metrics behave like the [Seven Blind Mice](https://en.wikipedia.org/wiki/Seven_Blind_Mice) by Ed Young. Each blind mouse is feeling one particular aspect of the elephant. Only by feeling the entire elephant does the seventh mouse understand that the object is an elephant. Likewise, our central goal is to determine the true ["shape"](https://mbernste.github.io/posts/understanding_3d/) of the system.
 
 ### Value-approximating metrics: Those that seek to approximate $V$
 
@@ -97,10 +99,7 @@ In such cases, it is often wise to admit this outright rather than spending valu
 
 <br>
 
-This is indeed a challenging situation to find oneself. It means that one cannot rely upon an easy, automated way to assess the state of the system and to make decisions. One may feel lost at sea without a compass! But, I would argue that it can be navigated!  
-
-
-
+This is indeed a challenging situation to find oneself. It means that one cannot rely upon an easy, automated way to assess the state of the system and to make decisions. One may feel lost at sea without a compass! But, I would argue that it can be navigated! Admitting a system does not admite a reliable value-approximating metric clarifies where rigor must come from. For example, if we know that evaluating $V$ requires human judgment that cannot be automated via a metric, we can allocate resources accordingly such as time for deliberation, mechanisms for review, and processes that explicitly incorporate subjective assessment. In such cases, the failure is not the absence of a metric, but the pretense that one exists. Once the limitations are acknowledged, organizations can plan around them rather than unknowingly optimizing a poor proxy.
 
 CONSTRUCTION
 
