@@ -71,7 +71,7 @@ Here, a collection of metrics serves as a form of [dimensionality reduction](htt
 
 ### Value-approximating metrics: Those that seek to approximate $V$
 
-There are many ways in which a given metric $f$ may succeed or fail at approximating $V$:
+There are many ways in which a given metric $f$ may succeed or fail at approximating $V$. Depending on what scenario one is in, one has a specific challenge that they must 
 
 * **Proportionality:** In this situation, the metric $f$ is _proportional_ to $V$. That is $V(x) = cf(x)$ for some unknown constant $c$. Because $c$ is unknown, it is impossible to know _exactly_ when one has succeeded at achieving a sufficient value of $V$; however, one can confidently track progress.
 * **Monotonicity:** In this situation, the metric $f$ increases monotonically with $V$. That is, if $f$ increases, then so does $V$; however, it is not clear by how much $V$ increases. In some regimes, $f$ and $V$ may be tightly linked whereas in others there is a vast difference in how much $V$ increases with respect to $f$.
