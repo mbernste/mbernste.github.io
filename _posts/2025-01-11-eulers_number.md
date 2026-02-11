@@ -72,7 +72,7 @@ $$\frac{de^x}{dx} = e^x$$
 
 In a sense, $e$ defines the "base" exponential function; By "base" I mean the exponential function whose rate of change is itself (i.e., whose constant of proportionality is 1).
 
-Of course, this fact does not actually tell us how to calculate $e$'s value. To calculate $e$'s value, we need to derive an alternative formula for $f(x) := e^x$ that does not contain $e$ and then plug $x := 1$ into this formula. We do so by first noting that $f'(x) = f(x)$ is a first-order differential equation. Coupling this differential equation with the fact that $f(0) = e^0 = 1$, we realize this is an [initial value problem](https://en.wikipedia.org/wiki/Initial_value_problem#:~:text=In%20multivariable%20calculus%2C%20an%20initial,given%20point%20in%20the%20domain.) that be solved using the [Euler Method](https://en.wikipedia.org/wiki/Euler_method). If we do so, we find that 
+Of course, this fact does not actually tell us how to calculate $e$'s value. To calculate $e$'s value, we need to derive an alternative formula for $f(x) := e^x$ that does not contain $e$ and then plug $x := 1$ into this formula. We do so by first noting that $f'(x) = f(x)$ is a first-order differential equation. Coupling this differential equation with the fact that $f(0) = e^0 = 1$, we realize this is an [initial value problem](https://en.wikipedia.org/wiki/Initial_value_problem#:~:text=In%20multivariable%20calculus%2C%20an%20initial,given%20point%20in%20the%20domain.) that can be solved using the [Euler Method](https://en.wikipedia.org/wiki/Euler_method). If we do so, we find that 
 
 $$f(x) = e^x = \lim_{n \rightarrow \infty} (1 + \frac{x}{n})^n$$
 
