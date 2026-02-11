@@ -13,6 +13,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [The overloaded equals sign](https://mbernste.github.io/posts/equality_definition/)  
 [The binomial theorem](https://mbernste.github.io/posts/binomial_theorem/)   
 [Demystifying Euler’s number](https://mbernste.github.io/posts/eulers_number/)  
+[A framework for making sense of metrics in technical organizations](https://mbernste.github.io/posts/metrics/)  
 
 ## Computational biology
 
