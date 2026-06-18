@@ -112,7 +112,7 @@ Before defining the general Lebesgue integral, we first create a more narrow def
 
 <center><span style="color:#0060C6">$$A_1, A_2, \dots, A_n \in \mathcal{F}$$</span></center>
 
-<span style="color:#0060C6">where $A_i := g^{-1}(\{ h_1 \} )$, the **Lebesgue integral of this simple function** is defined as</span> 
+<span style="color:#0060C6">where $A_i := g^{-1}(\{ h_i \} )$, the **Lebesgue integral of this simple function** is defined as</span> 
 
 <center><span style="color:#0060C6">$$\int_F g \ d\mu := \sum_{i=1}h_i \mu(A_i)$$</span></center>
 
@@ -142,7 +142,7 @@ Since $g$ is always bounded above by $f$, we can arbitrarly make $g$ more fine-g
 
 We also notice here that $f$ *has* to be positive for this all to work out. If $f$ can be negative, then it would be difficult to find a limit of simple-functions that approach $f$.  We need $f$ to be positive so that we can bound ever-fine-grained simple-functions from above by $f$. 
 
-**3. The Lebesgue integral**
+**4. The Lebesgue integral**
 
 At last we come to finally defining the Lebesgue integral. If you have followed along so far, then this last step is relatively easy.  Given that we have a definition for a Lebesgue integral over positive measurable functions, it's not too difficult to concoct a definition for functions that can be negative too -- we simply need to consider the positive and negative parts of the function separately:
 
