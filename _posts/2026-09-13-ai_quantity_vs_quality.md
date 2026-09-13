@@ -24,6 +24,7 @@ If you ask a professional software engineer, or team of engineers, to create a p
 
 Because quality, in most cases, is a relatively stable property of the output of human experts, the dimension most often considered was that of _quantity_. That is, the relationship between effort and quantity was, at a rough pass, linear: The more work I put in, the more stuff I can accomplish. This is illustrated schematically below:
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ai_quantity_only.png" alt="drawing" width="550"/></center>
 
 This mental model now requires revision in the age of AI.
 
