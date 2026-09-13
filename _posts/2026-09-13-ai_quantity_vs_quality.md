@@ -8,7 +8,12 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-_Not only is the rapid increase of AI capabilities changing _how_ I work, it is also changing how I think about work. In this post, I will highlight an important way in which I have changed my mindset when it comes to planning and prioritizing work._
+_Not only is the rapid increase of AI capabilities changing _how_ we work, it is also changing how we think about work. In this post, I will highlight an important way in which I have changed my mindset when it comes to planning and prioritizing work. In the old days (all of 8 months ago at the time of this writing), the key question one needed to answer when it came to planning a project was how much could one produce given the available resource. In the age of AI, the calculus has changed; generating output is extremely cheap. But generating high quality output is still expensive. We now must consider two dimensions rather than one: quantity and quality. Any given project must be defined with respect to both dimensions simultaneously._
+
+Introduction
+------------
+
+
 
 Before AI, when planning a project, the key dimension to be considered was _quantity_
 -------------------------------------------------------------------------------------
@@ -25,7 +30,11 @@ This mental model now requires revision in the age of AI.
 In the age of AI, we now must consider a second dimension: _quality_
 --------------------------------------------------------------------
 
-As of the time of this writing (September 13, 2026), AI models are capable enough to perform _most_ knowledge work at a reasonable level; however, for the vast majority of tasks, models still lack the nuanced judgement and taste that an expert would possess. They miss the point, add features that are not necessary, or make assumptions that are not obvious, but that affect the result. 
+As of the time of this writing (September 13, 2026), AI models are capable enough to perform _most_ knowledge work at a reasonable level; however, for the vast majority of tasks, models still lack the nuanced judgement and taste that an expert would possess. They miss the point, write with [unnatural syntax](https://news.ycombinator.com/item?id=49364658), add features that are not necessary, or make assumptions that are not obvious, but that affect the result. That is, without human guidance, much of what they produce is [slop](https://en.wikipedia.org/wiki/AI_slop). 
+
+Unfortunately, closing the gap between what an AI produces and what an expert deems to be at their acceptable level of quality still takes a lot of effort to close! I find this in my own work. As a machine learning scientist and computational biologist, I am now using AI to create analyses, write reports, and create presentations. In my personal experience, the quality of the output is somewhere in the ballpark range of 75% of what I would produce (outside of sheer of ability to write code and do math). I find that it takes quite a lot of time to tweak the writing, to remove unnecessary features in its code, to clean its figures, etc. 
+
+The calculus now has completely changed. No longer is _quantity_ the dimension along which I plan, but more often than not, it is _quality_. Generating many, many projects at 75% quality is extremely cheap. But closing the quality gap is still quite expensive.
 
 
 
