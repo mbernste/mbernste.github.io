@@ -14,6 +14,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [The binomial theorem](https://mbernste.github.io/posts/binomial_theorem/)   
 [Demystifying Euler’s number](https://mbernste.github.io/posts/eulers_number/)  
 [A framework for making sense of metrics in technical organizations](https://mbernste.github.io/posts/metrics/)  
+[AI makes quantity cheap, but quality is still expensive. The net effect is more human work](https://mbernste.github.io/posts/ai_quantity_quality/)  
 
 ## Computational biology
 
