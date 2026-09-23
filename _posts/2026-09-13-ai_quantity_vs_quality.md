@@ -1,5 +1,5 @@
 ---
-title: "AI makes quantity cheap, but quality is still expensive."
+title: "AI makes quantity cheap, but quality is still expensive"
 date: 2026-09-13
 permalink: /posts/ai_quantity_quality/
 tags:
@@ -29,5 +29,6 @@ Unfortunately, closing the gap between the quality produced by AI and the thresh
 
 The calculus now has completely changed. No longer is _quantity_ the dimension along which I plan, but more often than not, it is _quality_. Generating many, many projects at 75% quality is extremely cheap. But closing the quality gap is still quite expensive.
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ai_quantity_and_quality.png" alt="drawing" width="550"/></center>
 
 
