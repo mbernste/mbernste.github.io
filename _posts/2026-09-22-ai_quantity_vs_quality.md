@@ -6,9 +6,7 @@ tags:
   - ai
 ---
 
-_THIS POST IS CURRENTLY UNDER CONSTRUCTION_
-
-_At the time of this writing (September 22, 2026), the quality gap between AI-generated output and the output produced by human experts has still not closed in most domains (coding and math being clear exceptions). In this post, I argue that although AI has made it extremely cheap to produce work at scale, producing high-quality work remains very difficult. Every unit of AI-generated output still requires human effort to close the remaining quality gap. Because the growth in how much AI can produce is outpacing the rate at which that gap is shrinking, the amount of work that knowledge workers will have to do may only increase!_
+_At the time of this writing (September 22, 2026), the quality gap between AI-generated output and the output produced by human experts has still not closed in most domains (coding and math being clear exceptions). In this post, I make two arguments. First, AI changes how we should plan projects: where project planning was once mostly about how much work could be produced in a given amount of time, we now have to think separately about quantity and quality. AI has made it extremely cheap to produce work at scale, but producing high-quality work remains very difficult. Second, every unit of AI-generated output still requires human effort to close the remaining quality gap. Because the growth in how much AI can produce is outpacing the rate at which that gap is shrinking, the amount of work that knowledge workers will have to do may only increase!_
 
 Before AI, project planning was mostly about quantity
 -----------------------------------------------------
