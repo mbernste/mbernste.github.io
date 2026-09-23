@@ -43,6 +43,8 @@ Moreover, this phenomenon explains why it feels to me like the amount of work we
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ai_quality_quantity_net_effect.png" alt="drawing" width="800"/></center>
 
+<br>
+
 That is, no matter how small this quality gap becomes, as the quantity produced by AI becomes cheaper, the amount of work we humans have will increase anyway! The AIs will continue to generate output and ever increasing rates and we humans will have to close the quality gap in each unit of the fire hose produced by AI.
 
 Of course, I may be completely wrong about this. It may be that a week for now, a frontier AI lab releases a model that closes the quality gap so utterly that there truly is no quality gap to close. Quantity and quality become equally cheap and generated at will. Only time will tell.
