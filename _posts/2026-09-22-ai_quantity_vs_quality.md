@@ -1,5 +1,5 @@
 ---
-title: "As AI makes output cheaper, the work of ensuring quality grows"
+title: "AI makes quantity cheap, but quality is still expensive. The net effect is more human work"
 date: 2026-09-22
 permalink: /posts/ai_quantity_quality/
 tags:
