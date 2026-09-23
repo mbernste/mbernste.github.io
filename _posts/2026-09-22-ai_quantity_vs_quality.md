@@ -8,7 +8,7 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-_At the time of this writing, September 22, 2026, the gap in quality between the output produced by an AI versus a human expert has still not closed in most domains (coding and math being clear exceptions). In this post, I argue that producing high quality work is still difficult even as AI has made it extremely cheap to produce work at high quantity. For every unit of work produced by an AI, a human is needed to close the quality gap. Moreover, because the ability to produce at high quantity outpaces the quality gap, the amount of work that  knowledge workers will have to do will only increase!_
+_At the time of this writing (September 22, 2026), the quality gap between AI-generated output and the output produced by human experts has still not closed in most domains (coding and math being clear exceptions). In this post, I argue that although AI has made it extremely cheap to produce work at scale, producing high-quality work remains very difficult. Every unit of AI-generated output still requires human effort to close the remaining quality gap. Because the growth in how much AI can produce is outpacing the rate at which that gap is shrinking, the amount of work that knowledge workers will have to do may only increase!_
 
 Before AI, project planning was mostly about quantity
 -----------------------------------------------------
