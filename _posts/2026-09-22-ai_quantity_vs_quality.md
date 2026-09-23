@@ -17,7 +17,7 @@ In the old days (all of 8 months ago at the time of this writing), when someone 
 
 Because quality, in most cases, is a relatively stable property of the output of human experts, the dimension most often considered during project planning was that of _quantity_. That is, the relationship between effort and quantity was, at a rough pass, linear: The more work I put in, the more stuff I can accomplish. 
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ai_quantity_only.png" alt="drawing" width="550"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ai_quantity_only.png" alt="drawing" width="800"/></center>
 
 With AI, project planning is also about quality
 -----------------------------------------------
@@ -28,7 +28,7 @@ Unfortunately, closing this quality gap takes a lot of effort! I find this in my
 
 The calculus to how we should approach work has completely changed. No longer is _quantity_ the dimension along which we should plan, but rather, it is _quality_. Generating many projects at 75% quality is extremely cheap. But closing the quality gap is still quite expensive. This is illustrated in the schematic below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ai_quantity_and_quality.png" alt="drawing" width="650"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ai_quantity_and_quality.png" alt="drawing" width="800"/></center>
 
 The act of planning a project has become an optimization problem in two dimensions. Producing a large amount of high quality work is extremely expensive because the amount of effort and time it takes to close the quality gap for each unit of work is high. To make this concrete, one must decide whether to produce:
 
