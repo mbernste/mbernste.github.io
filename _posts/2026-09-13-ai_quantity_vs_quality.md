@@ -8,7 +8,7 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-_At the time of this writing, September 22, 2026, the gap in quality between the output produced by an AI versus a human expert has still not closed in most domains (coding and math being clear exceptions). In this post, I argue that producing high quality work is still difficult even as AI has made it extremely cheap to produce work at high quantity. Because of this, the calculus of planning work has changed. In this new era, we must consider two dimensions rather than one: quantity AND quality. Quantity is cheap. Quality is still expensive._
+_At the time of this writing, September 22, 2026, the gap in quality between the output produced by an AI versus a human expert has still not closed in most domains (coding and math being clear exceptions). In this post, I argue that producing high quality work is still difficult even as AI has made it extremely cheap to produce work at high quantity. Because of this, the calculus of planning work has changed. In this new era, we must consider two dimensions rather than one: quantity AND quality. I argue that when project planning, one should now treat quality as an explicit parameter._
 
 Before AI, when planning a project, the key dimension to be considered was _quantity_
 -------------------------------------------------------------------------------------
