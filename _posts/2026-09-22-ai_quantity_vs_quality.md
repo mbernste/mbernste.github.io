@@ -8,7 +8,7 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-_At the time of this writing, September 22, 2026, the gap in quality between the output produced by an AI versus a human expert has still not closed in most domains (coding and math being clear exceptions). In this post, I argue that producing high quality work is still difficult even as AI has made it extremely cheap to produce work at high quantity. Because of this, the calculus of planning work has changed. In this new era, we must consider two dimensions rather than one: quantity AND quality. Moreover, I argue that because of this phenomenon, so long as there exists a quality gap, the amount of work we human knowledges workers will have to do will actually increase. For every unit of work produced by an AI, a human will have to close the quality gap._
+_At the time of this writing, September 22, 2026, the gap in quality between the output produced by an AI versus a human expert has still not closed in most domains (coding and math being clear exceptions). In this post, I argue that producing high quality work is still difficult even as AI has made it extremely cheap to produce work at high quantity. For every unit of work produced by an AI, a human is needed to close the quality gap. For this _
 
 Before AI, project planning was mostly about quantity
 -----------------------------------------------------
@@ -41,5 +41,5 @@ One must consider two dimensions!
 The quality gap explains why humans have more work to do than ever
 ------------------------------------------------------------------
 
-Moreover, this phenomenon explains why it feels to me like the amount of work we human knowledge workers have to do is higher than ever. For every unit of work produced by an AI, a human has to close the quality gap. No matter how small this quality gap becomes, as the quantity produced by AI becomes cheaper, the amount of work we humans have will increase anyway! The AIs will continue to generate output and ever increasing rates and we humans will have to close the quality gap in each unit of that output. Therefore, I conjecture that so long as AI does not reach human-level quality, humans will play an important role in the economy. 
+Moreover, this phenomenon explains why it feels to me like the amount of work we human knowledge workers have to do is higher than ever. For every unit of work produced by an AI, a human has to close the quality gap. Therefore, there are two competing forces: how much _quantity_ AI can produce and how small the _quantity gap_ remains. I predict that no matter how small this quality gap becomes, as the quantity produced by AI becomes cheaper, the amount of work we humans have will increase anyway! The AIs will continue to generate output and ever increasing rates and we humans will have to close the quality gap in each unit of that ever increasing output.
 
