@@ -8,7 +8,7 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-_At the time of this writing, September 22, 2026, the gap in quality between the output produced by an AI versus a human expert has still not closed in most domains (coding and math being clear exceptions). In this post, I argue that producing high quality work is still difficult even as AI has made it extremely cheap to produce work at high quantity. Because of this, the calculus of planning work has changed. In this new era, we must consider two dimensions rather than one: quantity AND quality. I argue that when project planning, one should now treat quality as an explicit parameter._
+_At the time of this writing, September 22, 2026, the gap in quality between the output produced by an AI versus a human expert has still not closed in most domains (coding and math being clear exceptions). In this post, I argue that producing high quality work is still difficult even as AI has made it extremely cheap to produce work at high quantity. Because of this, the calculus of planning work has changed. In this new era, we must consider two dimensions rather than one: quantity AND quality. Moreover, I argue that because of this phenomenon, so long as there exists a quality gap, the amount of work we human knowledges workers will have to do will actually increase. For every unit of work produced by an AI, a human will have to close the quality gap._
 
 Before AI, project planning was mostly about quantity
 -----------------------------------------------------
@@ -28,9 +28,9 @@ Unfortunately, closing this quality gap takes a lot of effort! I find this in my
 
 The calculus to how we should approach work has completely changed. No longer is _quantity_ the dimension along which we should plan, but rather, it is _quality_. Generating many projects at 75% quality is extremely cheap. But closing the quality gap is still quite expensive. This is illustrated in the schematic below:
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ai_quantity_and_quality.png" alt="drawing" width="550"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/ai_quantity_and_quality.png" alt="drawing" width="650"/></center>
 
-The act of planning a project has become an optimization problem in two dimensions. Producing a large amount of high quality work is extremely expensive because the amount of effort and time it takes to close the quality gap for each unit of work is high. To make this concrete, one must decide whether to produce, with the help of AI:
+The act of planning a project has become an optimization problem in two dimensions. Producing a large amount of high quality work is extremely expensive because the amount of effort and time it takes to close the quality gap for each unit of work is high. To make this concrete, one must decide whether to produce:
 
 * A lot of work at low quality
 * A medium amount of work at medium quality
@@ -41,7 +41,5 @@ One must consider two dimensions!
 The quality gap explains why humans have more work to do than ever
 ------------------------------------------------------------------
 
-Moreover, this phenomenon explains to me why it feels like the amount of work we human knowledge workers have to do is higher than ever. For every 
-
-Moreover, the more low quality work that is produced, the more work it takes to close the quality gap! Therefore, AI has drastically increased the amount of work that humans need to perform.
+Moreover, this phenomenon explains why it feels to me like the amount of work we human knowledge workers have to do is higher than ever. For every unit of work produced by an AI, a human has to close the quality gap. No matter how small this quality gap becomes, as the quantity produced by AI becomes cheaper, the amount of work we humans have will increase anyway! The AIs will continue to generate output and ever increasing rates and we humans will have to close the quality gap in each unit of that output. Therefore, I conjecture that so long as AI does not reach human-level quality, humans will play an important role in the economy. 
 
