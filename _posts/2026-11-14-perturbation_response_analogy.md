@@ -88,7 +88,7 @@ Perturbing cells is the same way. The same "perturbagen" may have subtly differe
 
 The image of the backyard does not capture all of the information that would be necessary to even have a chance at predicting, pixel-for-pixel, the post-perturbation image. For example, perhaps the boy's mother was just about to come out of the house and tell the boy to come in for lunch. The mother is inside the house. There is no information present in the pre-perturbation image that could _ever_ predict this.
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_latent_information.jpeg" alt="drawing" width="800"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_hidden_state.jpeg" alt="drawing" width="800"/></center>
 
 The same goes in molecular measurements. No matter the data modality, whether that be transcriptomics, chromatin-accessibility, proteomics, etc., there is almost certainly going to be _some_ latent information about the state of the cell that determines the cell's response to perturbation that is invisible in the measurement. How much information is hidden, however, remains an open scientific question. 
 
