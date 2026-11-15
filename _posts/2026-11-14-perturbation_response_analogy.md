@@ -66,7 +66,7 @@ In the following sections, I will draw further analogies between the backyard pe
 
 Let's just stick to the frisbee example where the backyards we are perturbing consist simply of a boy and a dog. Each time you "perturb" the yard with a frisbee, you may not quite throw it into the yard the same way each time. Sometimes, you will throw it in such a way that the behavior of the boy and dog is quite different from the time you threw it previously. Sometimes, you may accidentally throw it into the tree!
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/reproducing_backyard_perturbations.jpeg" alt="drawing" width="600"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/reproducing_backyard_perturbations.jpeg" alt="drawing" width="1000"/></center>
 
 <br>
 
