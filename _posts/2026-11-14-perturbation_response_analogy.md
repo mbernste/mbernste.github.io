@@ -121,3 +121,6 @@ TODO
 
 TODO
 
+## Where this analogy breaks down
+
+TODO
