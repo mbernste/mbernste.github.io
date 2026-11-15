@@ -76,7 +76,7 @@ Cellular response to perturbations are, of course, also context-dependent. A T c
 
 ### It is difficult to reproduce the perturbation the same way each time
 
-Let's just stick to the frisbee example where the backyards we are perturbing consist simply of a boy and a dog. Each time you "perturb" the yard with a frisbee, you may not quite throw it into the yard the same way each time. Sometimes, you will throw it in such a way that the behavior of the boy and dog is quite different from the time you threw it previously. Sometimes, you may accidentally throw it into the tree!
+Let's just stick to the frisbee example where the backyards we are perturbing consist simply of a boy and a dog. Each time you "perturb" the yard with a frisbee, you may not quite throw it into the yard the same way each time. Sometimes, you will throw it in such a way that the behavior of the boy and dog is different from the time you threw it previously. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/reproducing_backyard_perturbations.jpeg" alt="drawing" width="1000"/></center>
 
@@ -90,7 +90,7 @@ The image of the backyard does not capture all of the information that would be 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_hidden_state.jpeg" alt="drawing" width="800"/></center>
 
-I surmise an algorithm would predict all of the pixels incorrectly where the mother is located in the image, and would probably predict the pixels incorrectly where the boy and dog are running in too.
+I surmise an algorithm would predict all of the pixels incorrectly where the mother is located in the image. Nonetheless, perhaps at a coarse-level, we can still predict that the boy and dog would be playing after the frisbee is thrown into the yard.
 
 The same goes in molecular measurements. No matter the data modality, whether that be transcriptomics, chromatin-accessibility, proteomics, etc., there is almost certainly going to be _some_ latent information about the state of the cell that determines the cell's response to perturbation that is invisible in the measurement. How much information is hidden, however, remains an open scientific question. 
 
