@@ -115,8 +115,9 @@ How many training examples do you think we may need to perform this task accurat
 
 ## Gene-for-gene accuracy via mean squared error may not be the right metric
 
+TODO
 
 ## Hope is not lost: We need to focus on learning the recurrent patterns that generalize
 
-
+TODO
 
