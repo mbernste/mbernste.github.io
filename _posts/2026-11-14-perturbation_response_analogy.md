@@ -62,10 +62,24 @@ Now I pose the question: How hard is this prediction task? I'd argue, it is pret
 
 In the following sections, I will draw further analogies between the backyard perturbation modeling task and the cell perturbation modeling task to highlight the challenges. 
 
-**It is difficult to reproduce the perturbation the same way each time**
+### It is difficult to reproduce the perturbation the same way each time
 
 Let's just stick to the frisbee example where the backyards we are perturbing consist simply of a boy and a dog. Each time you "perturb" the yard with a frisbee, you may not quite throw it into the yard the same way each time. Sometimes, you will throw it in such a way that the behavior of the boy and dog is quite different from the time you threw it previously. Sometimes, you may accidentally throw it into the tree!
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/reproducing_backyard_perturbations.jpeg" alt="drawing" width="600"/></center>
+
+<br>
+
 Perturbing cells is the same way. The same "perturbagen" may have subtly different properties. It may come from a different manufacturer. Perhaps the concentrations of the perturbagen in its solvent/media is not _quite_ the same as it had been in a previous experiment. 
 
+### Backyard perturbation response is context-dependent
+
+
+### There is latent information that is difficult, if not impossible to predict
+
+
+### Different locations, times of day, and cultures lead to "batch effects"
+
+
+## Hope is not lost: We need to focus on learning the recurrent patterns that generalize
 
