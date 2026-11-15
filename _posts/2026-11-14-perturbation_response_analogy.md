@@ -16,8 +16,7 @@ However, within the last several years, the field of machine learning matured an
 
 A common, general formulation the virtual cell modeling task is that, given a high-dimensional bimolecular measurement, most commonly a gene expression vector, $x$, and a perturbation, $p$, we seek to predict how that measurement will change in response to the perturbation. That is, to predict $x'$, the resultant gene expression profile after $p$ is applied:
 
-
-
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/perturbation_model.png" alt="drawing" width="800"/></center>
 
 For those working in this space, such as myself, I feel great optimism towards this goal, but it is coupled with a healthy dose of scientific humility. On the one hand, many of the pieces seem to be in place: we have powerful learning algorithms, access to enormous computational resources, and the ability to generate high-throughput molecular measurements of perturbed cells. On the other hand, biology is dizzyingly complex, and there is debate in the field around exactly how much data will be required, what modalities will be required, and what variables must be accounted for in order to train accurate, and useful predictive models of how cells respond to perturbations. 
 
