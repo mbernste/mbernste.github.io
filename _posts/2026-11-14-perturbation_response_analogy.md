@@ -10,7 +10,7 @@ _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
 ## Introduction
 
-The dream of creating an _in silico_ model capable of predicting how a biological cell will respond to a provided stimulus is not new. The idea to predict cell behavior with mathematics and computation goes back [at least to the 1950's](https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/) and has continued to exist as a grand ambition in the field of computational biology. As our understanding of molecular biology grew through the decades, and as we learned more about the many thousands of species of molecules that play a role in the molecular biology of the cell, many dreamed of and devised early computational models that sought to simulate the cell at the level of individual molecules (e.g., [E-Cell](https://doi.org/10.1093/bioinformatics/15.1.72) and XXXXXXXX). However, despite our ability to measure cells with ever-increasing resolution, and despite the _drastic_ increases in the amount of data we could generate (and have generated), our ability to generate data has so far exceeded our ability to _model_ it. 
+The dream of creating an _in silico_ model capable of predicting how a biological cell will respond to a provided stimulus is not new. The idea to predict cell behavior with mathematics and computation goes back [at least to the 1950's](https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/) and has continued to exist as a grand ambition in the field of computational biology. As our understanding of molecular biology grew through the decades, and as we learned more about the many thousands of species of molecules that play a role in the molecular biology of the cell, many dreamed of and devised early computational models that sought to simulate the cell at the level of individual molecules (e.g., [E-Cell](https://doi.org/10.1093/bioinformatics/15.1.72) and [this whole cell model](https://pubmed.ncbi.nlm.nih.gov/22817898/)). However, despite our ability to measure cells with ever-increasing resolution, and despite the _drastic_ increases in the amount of data we could generate (and have generated), our ability to generate data has so far exceeded our ability to _model_ it. 
 
 However, within the last several years, the field of machine learning matured and the promise of this technology has grown so large that we cannot help but to pursue the possibility that perhaps _it_ holds the key to true predictive biology. Perhaps, instead of simulating each molecule within the cell, we instead teach a powerful machine learning algorithm how cells respond to stimuli by simply showing it enough training examples. Indeed, this vision is gaining considerable momentum with substantial investment from both industry and philanthropy. A number of companies have been formed with this vision and are pursuing it with vigor, including my own, [Cellular Intelligence](https://www.cellularintelligence.com). Recently, the Department of Energy, Google, and Meta have [invested $1.8 billion](https://biohub.org/news/virtual-biology-initiative-expansion/) towards the goal of training virtual cell models with AI.
 
@@ -88,7 +88,7 @@ Perturbing cells is the same way. The same "perturbagen" may have subtly differe
 
 The image of the backyard does not capture all of the information that would be necessary to even have a chance at predicting, pixel-for-pixel, the post-perturbation image. For example, perhaps the boy's mother was just about to come out of the house and tell the boy to come in for lunch. The mother is inside the house. There is no information present in the pre-perturbation image that could _ever_ predict this. 
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_hidden_state.jpeg" alt="drawing" width="1000"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_hidden_state.jpeg" alt="drawing" width="800"/></center>
 
 I surmise an algorithm would predict all of the pixels incorrectly where the mother is located in the image, and would probably predict the pixels incorrectly where the boy and dog are running in too.
 
@@ -111,7 +111,7 @@ Now, let's put it all together and visualize some backyard perturbation examples
 
 <br>
 
-How many training examples do you think we may need to perform this task accurately on diverse images? Whatever number you think, I surmise, we'd need at least that many for accurate perturbation response modeling.
+How many training examples do you think we may need to perform this task accurately on diverse images? Whatever number you think, I surmise, we'd need at least that many for accurate perturbation response modeling of biological cells.
 
 ## Hope is not lost: We need to focus on learning the recurrent patterns that generalize rather than pixel-for-pixel accuracy
 
