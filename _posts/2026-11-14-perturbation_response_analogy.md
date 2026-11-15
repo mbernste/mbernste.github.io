@@ -111,9 +111,12 @@ Now, let's put it all together and visualize some backyard perturbation examples
 
 <br>
 
-**How many training examples do you think we may need to perform this task accurately on diverse images? Whatever number you think, I surmise, we'd need at least that many for accurate perturbation response modeling of biological cells.**
+How many training examples do you think we may need to perform this task accurately on diverse images? **Whatever number you think, I surmise, we'd need at least that many for accurate perturbation response modeling of biological cells.**
 
-## Hope is not lost: We need to focus on learning the recurrent patterns that generalize rather than pixel-for-pixel accuracy
+## Gene-for-gene accuracy via mean squared error may not be the right metric
+
+
+## Hope is not lost: We need to focus on learning the recurrent patterns that generalize
 
 
 
