@@ -97,8 +97,20 @@ The same goes in molecular measurements. No matter the data modality, whether th
 
 ### Different times of day or weather lead to "batch effects"
 
-### Different locations, climates, and cultures may be out of distribution
+A pervasive issue in "omics" data are systemic "batch effects" that result from subtle system differences in the conditions of the experiment from run-to-run. Batch effects can arise from subtle changes to the instruments used to make the measurements or slight discrepancies between how cells are handled from batch-to-batch. Most of the time, the source of the batch effect is not fully known. The end result are gene expression profiles that tend to cluster in their ambient high-dimensional space according to their batch rather than according to the innate biology that the experiment is designed to probe.
 
-## Hope is not lost: We need to focus on learning the recurrent patterns that generalize
+In our backyard perturbation analogy, perturbations carried out at different times of day, or in different weather conditions, will induce image-wide system effects even if the effect of the perturbation is the same. Evening images will have have different shades of color. Cloudy and rainy images will tend to have muted lighting.
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_batch_weather.jpeg" alt="drawing" width="1000"/></center>
+
+### Putting this all together, it becomes clear how challenging the backyard perturbation prediction task is
+
+Now, let's put it all together and visualize some backyard perturbation examples that combine many of the effects from above. Let's add to this too examples from different climates, locations, and cultures. Immediately you can see the vast space of training data one would likely need to train a model to accurately predict pixel-for-pixel response.
+
+
+
+
+
+## Hope is not lost: We need to focus on learning the recurrent patterns that generalize rather than pixel-for-pixel accuracy
 
 
