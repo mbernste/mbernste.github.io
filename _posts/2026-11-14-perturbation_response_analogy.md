@@ -84,8 +84,6 @@ Let's just stick to the frisbee example where the backyards we are perturbing co
 
 Perturbing cells is the same way. The same "perturbagen" may have subtly different properties. It may come from a different manufacturer. Perhaps the concentrations of the perturbagen in its solvent/media is not _quite_ the same as it had been in a previous experiment. 
 
-
-
 ### There is latent information that is difficult, if not impossible to predict
 
 
@@ -93,4 +91,5 @@ Perturbing cells is the same way. The same "perturbagen" may have subtly differe
 
 
 ## Hope is not lost: We need to focus on learning the recurrent patterns that generalize
+
 
