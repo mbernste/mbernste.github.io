@@ -46,8 +46,6 @@ The backyard perturbation task goes as follows:
 
 An example of a training sample is seen shown below:
 
-<br>
-
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_example.jpg" alt="drawing" width="800"/></center>
 
 <br>
@@ -58,5 +56,6 @@ Not all backyards look like this, however, and a boy and dog may not respond in 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_more_examples.jpg" alt="drawing" width="800"/></center>
 
+<br>
 
 
