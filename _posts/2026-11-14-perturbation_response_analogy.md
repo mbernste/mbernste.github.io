@@ -37,3 +37,11 @@ Gene expression profiles are hard to intuit. They are high-dimensional vectors t
 In fact, I'd argue that this is a problem that so far is limiting progress. Take for example, the recent observation that simple baseline machine learning models may in fact outperform large foundation models in modeling transcriptomics data. To drive the point further, even this observation is contested! The fact that the community cannot even agree on whether one model outperforms another is, I think, less of a problem in applications of machine learning that lie closer to human intuition such as computer vision and language model where a person can literally see or read the objects that are being modeled. 
 
 With this in mind, I propose an analogy of the perturbation modeling task to a more intuitive task that lies in the macro-world in which we live in and see: **"backyard perturbation"**. 
+
+The backyard perturbation task goes as follows:
+
+* **Given:** The image of a scene of a backyard behind a house. Maybe there's a dog in the backyard. Perhaps a kid playing in the backyard.
+* **Perturb the backyard:** Perform some action that "perturbs" the backyard. For example, throw a frisbee in the yard. Have an ice cream struck pull up in front of the house. Etc.
+* **Task:** Predict the image of the backyard 1 minute after the perturbation.
+
+An example of a training sample is seen shown below:
