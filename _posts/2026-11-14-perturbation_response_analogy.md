@@ -54,7 +54,7 @@ Notice how after the frisbee is thrown into the yard, the dog has captured the f
 
 Not all backyards look like this, however, and a boy and dog may not respond in quite this way each time. Below are two more examples, similar to this one.
 
-<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_more_examples.jpg" alt="drawing" width="800"/></center>
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_more_examples.jpg" alt="drawing" width="600"/></center>
 
 <br>
 
