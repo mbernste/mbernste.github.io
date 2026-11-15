@@ -60,7 +60,7 @@ Not all backyards look like this, however, and a boy and dog may not respond in 
 
 Now I pose the question: How hard is this prediction task? I'd argue, it is pretty hard! If the task is to produce the output pixel-for-pixel (e.g., evaluated via the mean squared error), then this is quite daunting. I'd argue that the cell perturbation modeling task is a good deal harder than this.
 
-In the following sections, I will draw further analogies between the backyard perturbation modeling task and the cell perturbation modeling task to highlight the challenges. 
+In the following sections, I will draw further analogies between the backyard perturbation modeling task and the cell perturbation modeling task to highlight some of the key challenges that face this field. 
 
 ### Backyard perturbation response is context-dependent
 
