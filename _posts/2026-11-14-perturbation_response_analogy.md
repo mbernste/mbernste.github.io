@@ -1,5 +1,5 @@
 ---
-title: "An analogy between cell perturbation response prediction and computer vision"
+title: "Backyard perturbation prediction: An analogy for virtual cell modeling"
 date: 2026-11-14
 permalink: /posts/perturbation_response_image_analysis/
 tags:
