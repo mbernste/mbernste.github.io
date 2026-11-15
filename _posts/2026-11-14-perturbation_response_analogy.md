@@ -64,13 +64,11 @@ In the following sections, I will draw further analogies between the backyard pe
 
 ### Backyard perturbation response is context-dependent
 
-The backyard perturbation modeling task is "context-dependent", meaning that the way in which the backyard responds is highly dependent on who is in that backyard and what they are doing! A boy and his dog will respond to the frisbee differently from a pair of grandparents sitting on their patio. 
+The backyard perturbation modeling task is "context-dependent", meaning that the way in which the backyard responds is highly dependent on who is in that backyard and what they are doing! A boy and his dog will respond to the frisbee differently than a pair of grandparents sitting on the patio. Even the boy and dog will respond differently depending on what they were doing and where they started out at the time the frisbee was thrown.
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbaiton_context_dependent.jpeg" alt="drawing" width="800"/></center>
 
 <br>
-
-Even the boy and dog will respond differently depending on what they were doing and where they started out.
 
 Cellular response to perturbations are, of course, also context-dependent. A T cell will respond differently to TGF-beta than a fibroblast will. 
 
