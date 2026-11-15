@@ -103,14 +103,15 @@ In our backyard perturbation analogy, perturbations carried out at different tim
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_batch_weather.jpeg" alt="drawing" width="1000"/></center>
 
-### Pixel-for-pixel accuracy may be the wrong target
+## How many training examples would be needed to train a model to perform well at backyard perturbation prediction?
 
 Now, let's put it all together and visualize some backyard perturbation examples that combine many of the effects from above. Let's add to this too examples from different climates, locations, and cultures. Immediately you can see the vast space of training data one would likely need to train a model to accurately predict pixel-for-pixel response.
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_batch_weather.jpeg" alt="drawing" width="1000"/></center>
 
-How many training examples do you think we may need to perform this task accurately? I surmise, we'd need at least that many for accurate perturbation response modeling.
+<br>
 
-Moreover, I believe this calls into question the general premise of the task at hand. For backyard perturbation response prediction, should we evaluate the model based on how well it predicts the resultant image pixel-for-pixel? I propose that the answer may be "no".   
+How many training examples do you think we may need to perform this task accurately on diverse images? Whatever number you think, I surmise, we'd need at least that many for accurate perturbation response modeling.
 
 ## Hope is not lost: We need to focus on learning the recurrent patterns that generalize rather than pixel-for-pixel accuracy
 
