@@ -58,4 +58,14 @@ Not all backyards look like this, however, and a boy and dog may not respond in 
 
 <br>
 
+Now I pose the question: How hard is this prediction task? I'd argue, it is pretty hard! If the task is to produce the output pixel-for-pixel (e.g., evaluated via the mean squared error), then this is quite daunting. I'd argue that the cell perturbation modeling task is a good deal harder than this.
+
+In the following sections, I will draw further analogies between the backyard perturbation modeling task and the cell perturbation modeling task to highlight the challenges. 
+
+**It is difficult to reproduce the perturbation the same way each time**
+
+Let's just stick to the frisbee example where the backyards we are perturbing consist simply of a boy and a dog. Each time you "perturb" the yard with a frisbee, you may not quite throw it into the yard the same way each time. Sometimes, you will throw it in such a way that the behavior of the boy and dog is quite different from the time you threw it previously. Sometimes, you may accidentally throw it into the tree!
+
+Perturbing cells is the same way. The same "perturbagen" may have subtly different properties. It may come from a different manufacturer. Perhaps the concentrations of the perturbagen in its solvent/media is not _quite_ the same as it had been in a previous experiment. 
+
 
