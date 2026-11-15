@@ -95,8 +95,9 @@ I surmise an algorithm would predict all of the pixels incorrectly where the mot
 The same goes in molecular measurements. No matter the data modality, whether that be transcriptomics, chromatin-accessibility, proteomics, etc., there is almost certainly going to be _some_ latent information about the state of the cell that determines the cell's response to perturbation that is invisible in the measurement. How much information is hidden, however, remains an open scientific question. 
 
 
-### Different locations, times of day, and cultures lead to "batch effects"
+### Different times of day or weather lead to "batch effects"
 
+### Different locations, climates, and cultures may be out of distribution
 
 ## Hope is not lost: We need to focus on learning the recurrent patterns that generalize
 
