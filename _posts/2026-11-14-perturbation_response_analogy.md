@@ -62,6 +62,18 @@ Now I pose the question: How hard is this prediction task? I'd argue, it is pret
 
 In the following sections, I will draw further analogies between the backyard perturbation modeling task and the cell perturbation modeling task to highlight the challenges. 
 
+### Backyard perturbation response is context-dependent
+
+The backyard perturbation modeling task is "context-dependent", meaning that the way in which the backyard responds is highly dependent on who is in that backyard and what they are doing! A boy and his dog will respond to the frisbee differently from a pair of grandparents sitting on their patio. 
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbaiton_context_dependent.jpeg" alt="drawing" width="800"/></center>
+
+<br>
+
+Even the boy and dog will respond differently depending on what they were doing and where they started out.
+
+Cellular response to perturbations are, of course, also context-dependent. A T cell will respond differently to TGF-beta than a fibroblast will. 
+
 ### It is difficult to reproduce the perturbation the same way each time
 
 Let's just stick to the frisbee example where the backyards we are perturbing consist simply of a boy and a dog. Each time you "perturb" the yard with a frisbee, you may not quite throw it into the yard the same way each time. Sometimes, you will throw it in such a way that the behavior of the boy and dog is quite different from the time you threw it previously. Sometimes, you may accidentally throw it into the tree!
@@ -72,7 +84,6 @@ Let's just stick to the frisbee example where the backyards we are perturbing co
 
 Perturbing cells is the same way. The same "perturbagen" may have subtly different properties. It may come from a different manufacturer. Perhaps the concentrations of the perturbagen in its solvent/media is not _quite_ the same as it had been in a previous experiment. 
 
-### Backyard perturbation response is context-dependent
 
 
 ### There is latent information that is difficult, if not impossible to predict
