@@ -113,7 +113,9 @@ How many training examples do you think we may need to perform this task accurat
 
 I do not think this "backyard perturbation" modeling analogy is only useful for explaining the challenges of the cell perturbation modeling task, but also highlights something critical about how we should _approach_ the task. Specifically, I conjecture that evaluating or possibly even training cellular perturbation models on their ability to reconstruct the post-perturbation cell state gene-for-gene (e.g., via [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error)) may not be the optimal approach.
 
-The challenge of truly generalizing to out-of-distribution samples accurately gene-by-gene feels _at least_ as challenging as predicting the image of a perturbed backyard pixel-for-pixel.
+The challenge of truly generalizing to out-of-distribution samples accurately gene-by-gene feels _at least_ as challenging as predicting the image of a perturbed backyard pixel-for-pixel. 
+
+Moreover, minimizing error may not actually be the most useful object
 
 
 ## We should focus on learning the recurrent patterns that generalize
