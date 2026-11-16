@@ -116,7 +116,7 @@ I do not think this "backyard perturbation" modeling analogy is only useful for 
 The challenge of truly generalizing to out-of-distribution samples accurately gene-by-gene feels _at least_ as challenging as predicting the image of a perturbed backyard pixel-for-pixel.
 
 
-## Hope is not lost: We need to focus on learning the recurrent patterns that generalize
+## We should focus on learning the recurrent patterns that generalize
 
 TODO
 
