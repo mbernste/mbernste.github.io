@@ -58,7 +58,7 @@ Not all backyards look like this, however, and a boy and dog may not respond in 
 
 <br>
 
-Now I pose the question: How hard is this prediction task? I'd argue, it is pretty hard! If the task is to produce the output pixel-for-pixel (e.g., evaluated via the mean squared error), then this is quite daunting. I'd argue that the cell perturbation modeling task is a good deal harder than this.
+Now I pose the question: How hard is this prediction task? I'd argue, it is pretty hard! If the task is to produce the output pixel-for-pixel (e.g., evaluated via the [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error)), then this is quite daunting. I'd argue that the cell perturbation modeling task is a good deal harder than this.
 
 In the following sections, I will draw further analogies between the backyard perturbation modeling task and the cell perturbation modeling task to highlight some of the key challenges that face this field. 
 
@@ -70,7 +70,7 @@ The backyard perturbation modeling task is "context-dependent", meaning that the
 
 <br>
 
-Cellular response to perturbations are, of course, also context-dependent. A T cell will respond differently to TGF-beta than a fibroblast will. 
+Cellular response to perturbations are, of course, also context-dependent. A [T cell](https://en.wikipedia.org/wiki/T_cell) will respond differently to [TGF-β](https://en.wikipedia.org/wiki/Transforming_growth_factor_beta) than a [fibroblast](https://en.wikipedia.org/wiki/Fibroblast) will. 
 
 ### It is difficult to reproduce the perturbation the same way each time
 
@@ -111,7 +111,7 @@ How many training examples do you think we may need to perform this task accurat
 
 ## Gene-for-gene accuracy via mean squared error may not be the right metric
 
-I do not think this "backyard perturbation" modeling analogy is only useful for explaining the challenges of the cell perturbation modeling task, but also highlights something critical about how we should _approach_ the task. Specifically, I conjecture that evaluating or possibly even training cellular perturbation models on their ability to reconstruct the post-perturbation cell state gene-for-gene (e.g., via mean squared error) may not be the optimal approach.
+I do not think this "backyard perturbation" modeling analogy is only useful for explaining the challenges of the cell perturbation modeling task, but also highlights something critical about how we should _approach_ the task. Specifically, I conjecture that evaluating or possibly even training cellular perturbation models on their ability to reconstruct the post-perturbation cell state gene-for-gene (e.g., via [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error)) may not be the optimal approach.
 
 The challenge of truly generalizing to out-of-distribution samples accurately gene-by-gene feels _at least_ as challenging as predicting the image of a perturbed backyard pixel-for-pixel.
 
