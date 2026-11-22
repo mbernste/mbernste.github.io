@@ -142,4 +142,6 @@ On one extreme, we can imagine framing the perturbation response prediction task
 
 ## Where this analogy breaks down
 
-Now, there's a clear aspect in which this analogy of predicting the image of a backyard diverges significantly from predicting a gene expression profile: The appearance of an object in an image is invariant to shifts, scale, and rotation. That is, an image taken of a dog from two angles will result in radically different per-pixel values across the image, but will still be a very clear image of a dog. Each individual pixel does not itself encode any meaning, but rather, meaning only forms from the relative pixel values across the image.
+Now, there's a clear aspect in which this analogy of predicting the image of a backyard diverges significantly from predicting a gene expression profile: Each individual pixel does not itself encode any meaning, but rather, meaning only forms from the relative pixel values across the image. An image taken of a dog from two angles will result in radically different per-pixel values across the image, but will still be a very clear image of a dog. 
+
+This stands in contrast to a gene expression profile where each element ("pixel") records the expression level of a specific gene. That gene is meaningful on its own irrespective of the other gene expression measurements. Moreover, one can argue that this fact makes the task of predicting how a cell responds to perturbation _easier_ than predicting an image in the backyard perturbation analogy. 
