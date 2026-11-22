@@ -43,13 +43,13 @@ The backyard perturbation task goes as follows:
 * **Task:** Predict the image of the backyard 1 minute after the perturbation.
 
 
-Maybe the image of a backyard has a dog in it. Perhaps a child as well. The perturbation may entail something like throwing a frisbee into the yard. Perhaps an ice cream truck pulls up to the adjacent street. Etc. An example of a pre-perturbation and post-perturbation image is depicted below:
+Maybe the image of a backyard has a dog in it. Perhaps a child as well. The perturbation may entail something like throwing a frisbee into the yard. Perhaps an ice cream truck pulls up to the adjacent street. Etc. An example of a pre-perturbation and post-perturbation image (where the perturbation is a thrown frisbee) is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_example.jpg" alt="drawing" width="800"/></center>
 
 <br>
 
-Notice how after the frisbee is thrown into the yard, the dog has captured the frisbee. The boy is running after the dog and has dropped the football he was playing with. This is a snapshot of what is occurring as the "backyard" responded to the frisbee being thrown. Our task is to train a machine learning model that, given the image on the left, would have produced the image on the right.
+Notice how after the frisbee is thrown into the yard, the dog has captured the frisbee, the boy is running after the dog, and he has dropped the football he was playing with. All of these changes belong to the post-perturbation "state" of the backyard. Our task is to train a machine learning model that, given the image on the left, will produce as output the image on the right. Image plus perturbation as input, and an image as output.
 
 Not all backyards look like this, however, and a boy and dog may not respond in quite this way each time. Below are two more examples, similar to this one.
 
@@ -57,9 +57,9 @@ Not all backyards look like this, however, and a boy and dog may not respond in 
 
 <br>
 
-Now I pose the question: How hard is this prediction task? I'd argue, it is pretty hard! If the task is to produce the output pixel-for-pixel (e.g., evaluated via the [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error)), then this is quite daunting. I'd argue that the cell perturbation modeling task is a good deal harder than this.
+Now I pose the question: How hard is this prediction task? I'd argue, it is pretty hard! If the task is to produce the output image pixel-for-pixel (e.g., evaluated via the [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error)), then this is quite daunting. I'd argue that the cell perturbation modeling task may be a good deal harder than this.
 
-In the following sections, I will draw further analogies between the backyard perturbation modeling task and the cell perturbation modeling task to highlight some of the key challenges that face this field. 
+In the following sections, I will draw further analogies between the backyard perturbation modeling task and the cell perturbation modeling task to highlight some of the key challenges that face this field and why I think this analogy may actually be a decent fit. 
 
 ### Backyard perturbation response is context-dependent
 
@@ -81,18 +81,17 @@ Let's just stick to the frisbee example where the backyards we are perturbing co
 
 Perturbing cells is the same way. The same "perturbagen" may have subtly different properties. It may come from a different manufacturer. Perhaps the concentrations of the perturbagen in its solvent/media is not _quite_ the same as it had been in a previous experiment. 
 
-### There is latent information that is difficult, if not impossible to predict
+### There is latent information that may lead to impossible-to-predict aspects of response
 
-The image of the backyard does not capture all of the information that would be necessary to even have a chance at predicting, pixel-for-pixel, the post-perturbation image. For example, perhaps the boy's mother was just about to come out of the house and tell the boy to come in for lunch and as the first image was taken, the mother was inside the house and just about ready to emerge. There is no information present in the pre-perturbation image that could _ever_ predict this and therefore I surmise an algorithm would not predict any of the mother's pixels accurately. Nonetheless, perhaps at a coarse-level, we can still predict that the boy and dog would be playing after the frisbee is thrown into the yard.
+The image of the backyard does not capture all of the information that would be necessary to predict, pixel-for-pixel, the post-perturbation image. For example, perhaps the boy's mother was just about to come out of the house and tell the boy to come in for lunch.  As the first image was taken, the mother was inside the house and just about ready to emerge. There is no information present in the pre-perturbation image that could _ever_ help a model predict this, and therefore, I surmise an algorithm would not predict any of the mother's pixels accurately. 
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_hidden_state.jpeg" alt="drawing" width="800"/></center>
 
-The same goes in molecular measurements. No matter the data modality, whether that be transcriptomics, chromatin-accessibility, proteomics, etc., there is almost certainly going to be _some_ latent information about the state of the cell that determines the cell's response to perturbation that is invisible in the measurement. How much information is hidden, however, remains an open scientific question. 
-
+The same goes in molecular measurements of cells. No matter the data modality, whether that be transcriptomics, chromatin-accessibility, proteomics, etc., there is almost certainly going to be _some_ latent information about the state of the cell that determines the cell's response to perturbation that is invisible in the measurement. How much information is hidden, however, remains an open scientific question. 
 
 ### Different times of day or weather lead to "batch effects"
 
-A pervasive issue in "omics" data are systemic "batch effects" that result from subtle system differences in the conditions of the experiment from run-to-run. Batch effects can arise from subtle changes to the instruments used to make the measurements or slight discrepancies between how cells are handled from batch-to-batch. Most of the time, the source of the batch effect is not fully known. The end result are gene expression profiles that tend to cluster in their ambient high-dimensional space according to their batch rather than according to the innate biology that the experiment is designed to probe.
+A pervasive issue in "omics" data are systemic [batch effects](https://pmc.ncbi.nlm.nih.gov/articles/PMC3880143/) that result from subtle differences in the conditions of the experiment from run-to-run. Batch effects can arise from subtle changes to the instruments used to make the measurements or slight discrepancies between how cells are handled from batch-to-batch. Most of the time, the source of the batch effect is not fully known. This results in gene expression profiles that tend to cluster in their ambient high-dimensional space according to their batch rather than according to the innate biology that the experiment is designed to probe.
 
 In our backyard perturbation analogy, perturbations carried out at different times of day, or in different weather conditions, will induce image-wide system effects even if the effect of the perturbation is the same. Evening images will have have different shades of color. Cloudy and rainy images will tend to have muted lighting.
 
