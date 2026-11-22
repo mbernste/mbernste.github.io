@@ -1,6 +1,6 @@
 ---
 title: "Backyard perturbation prediction: An analogy for virtual cell modeling"
-date: 2026-11-14
+date: 2026-11-22
 permalink: /posts/perturbation_response_image_analysis/
 tags:
   - ai
