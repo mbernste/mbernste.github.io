@@ -38,11 +38,12 @@ With this in mind, I propose an analogy of the perturbation modeling task to a m
 
 The backyard perturbation task goes as follows:
 
-* **Given:** The image of a scene of a backyard behind a house. Maybe there's a dog in the backyard. Perhaps a kid playing in the backyard.
-* **Perturb the backyard:** Perform some action that "perturbs" the backyard. For example, throw a frisbee in the yard. Have an ice cream struck pull up in front of the house. Etc.
+* **Given:** The image of a scene of a backyard behind a house. 
+* **Perturb the backyard:** Perform some action that "perturbs" the backyard. 
 * **Task:** Predict the image of the backyard 1 minute after the perturbation.
 
-An example of a training sample is seen shown below:
+
+Maybe the image of a backyard has a dog in it. Perhaps a child as well. The perturbation may entail something like throwing a frisbee into the yard. Perhaps an ice cream truck pulls up to the adjacent street. Etc. An example of a pre-perturbation and post-perturbation image is depicted below:
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_example.jpg" alt="drawing" width="800"/></center>
 
