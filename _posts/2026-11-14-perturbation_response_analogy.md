@@ -137,12 +137,9 @@ With enough training examples, and enough perturbations, one can imagine a model
 
 One last point: This idea of training models to predict "lower-dimensional" phenotypes from high-dimensional genomics data is not new at all. For example, many machine learning methods have been developed to [predict cell type](https://pmc.ncbi.nlm.nih.gov/articles/PMC12065632) based on a cell or sample's gene expression profile. While one can imagine similarly low-dimensional perturbation response prediction tasks, such as [predicting whether or not a cell will die or grow](https://pubmed.ncbi.nlm.nih.gov/29505029/) in response to a perturbation, I wonder whether we should think about this problem as a continuum. 
 
-On one extreme, we can imagine framing the perturbation response prediction task as simple classification for a specific phenotype. On the other extreme, we seek to predict the actual measured expression value post-perturbation for every gene. Perhaps there exist framings somewhere in the middle that predict aspects of cell response that sit somewhere between extremely coarse phenotypes and per-gene response. Perhaps something like the task of predicting how gene "programs" change (e.g., signaling pathways, aspects of metabolism, etc.). 
-
-
-
+On one extreme, we can imagine framing the perturbation response prediction task as simple classification for a specific phenotype. On the other extreme, we seek to predict the actual measured expression value post-perturbation for every gene. Perhaps there exist framings somewhere in the middle that predict aspects of cell response that sit somewhere between extremely coarse phenotypes and per-gene response; something like the task of predicting how gene "programs" change (e.g., signaling pathways, aspects of metabolism, etc.). 
 
 
 ## Where this analogy breaks down
 
-TODO
+Now, there's a clear aspect in which this analogy of predicting the image of a backyard diverges significantly from predicting a gene expression profile: The appearance of an object in an image is invariant to shifts, scale, and rotation. That is, an image taken of a dog from two angles will result in radically different per-pixel values across the image, but will still be a very clear image of a dog. Each individual pixel does not itself encode any meaning, but rather, meaning only forms from the relative pixel values across the image.
