@@ -139,6 +139,9 @@ One last point: This idea of training models to predict "lower-dimensional" phen
 
 On one extreme, we can imagine framing the perturbation response prediction task as simple classification for a specific phenotype. On the other extreme, we seek to predict the actual measured expression value post-perturbation for every gene. Perhaps there exist framings somewhere in the middle that predict aspects of cell response that sit somewhere between extremely coarse phenotypes and per-gene response; something like the task of predicting how gene "programs" change (e.g., signaling pathways, aspects of metabolism, etc.). 
 
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/virtual_cell_dimensionality_of_prediction.png" alt="drawing" width="800"/></center>
+
+Perhaps too, we should focus first on the lower-dimensional, easier tasks before the harder, high-dimensional tasks. I point out that even automating the relatively simple task of cell type classification has arguably not been solved. Despite [dozens and dozens](https://docs.google.com/spreadsheets/d/1DK4ACsXCBlq_EiA_3QOJPELd_HiautGsbTPztAUKp6w/edit?usp=sharing) of machine learning methods for automating cell type classification (including [a method I worked on during my Ph.D.!](https://pmc.ncbi.nlm.nih.gov/articles/PMC7753962/)), the field has yet to firmly adopt these tools due to their inability to fully generalize outside their training sets!
 
 ## Where this analogy breaks down
 
