@@ -8,7 +8,7 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-_As machine learning and AI have come to prominence within the last few years, and as new technologies have come online for perturbing and measuring cells at scale, a renewed effort has emerged to develop virtual cells: computational models capable of predicting how biological cells respond to perturbations._
+_As machine learning and AI have come to prominence within the last few years, and as new technologies have come online for perturbing and measuring cells at scale, a renewed effort has emerged to develop virtual cells: computational models capable of predicting how biological cells respond to perturbations. In this blog post, I will present an analogy of the perturbation modeling task that I feel captures, to some loose degree, the challenge that we face with this task and that I think may even hold some clue on to how to approach it. This analogy frames the cell perturbation modeling task not as predicting the transcriptome of a cell that has been perturbed, but instead, as the task of predicting how the image of a backyard (yes, a backyard behind a house!) would change if you "perturbed" the scene with some kind of action (like throwing a frisbee into the yard). I will drawn an analogy not only between this task and the cell perturbation modeling task, but also an analogy between various aspects of this task. Through this analogy, I will seek to argue for a high-level mindset shift in the field towards our approach to this task._
 
 ## Introduction
 
