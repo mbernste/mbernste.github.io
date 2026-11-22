@@ -111,16 +111,15 @@ How many training examples do you think we may need to perform this task accurat
 
 ## Gene-for-gene accuracy via mean squared error may not be the right metric
 
-I do not think this "backyard perturbation" modeling analogy is only useful for explaining the challenges of the cell perturbation modeling task, but also highlights something critical about how we should _approach_ the task. Specifically, I conjecture that evaluating or possibly even training cellular perturbation models on their ability to reconstruct the post-perturbation cell state gene-for-gene (e.g., via [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error)) may not be the optimal approach.
+I do not think this "backyard perturbation" modeling analogy is only useful for explaining the challenges of the cell perturbation modeling task, but also highlights something important about how we should _approach_ the task. Specifically, I conjecture that evaluating or possibly even training cellular perturbation models on their ability to reconstruct the post-perturbation cell state gene-for-gene (e.g., via [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error)) may not be the optimal approach.
 
 The challenge of truly generalizing to out-of-distribution samples accurately gene-by-gene feels _at least_ as challenging as predicting the image of a perturbed backyard pixel-for-pixel. 
 
-Moreover, minimizing error may not actually be the most useful object
+More importantly, minimizing error may not actually be the most useful objective either. While certainly a machine learning model that could accurately predict every pixel in the post-perturbation image could generalize to any downstream use of these predictions, I argue that there are clear low-dimensional "phenotypes" that may be worth predicting first that may be much easier. 
+
+Take for example, the following two predictions. Which prediction is more accurate?
 
 
-## We should focus on learning the recurrent patterns that generalize
-
-TODO
 
 ## Where this analogy breaks down
 
