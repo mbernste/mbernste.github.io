@@ -133,7 +133,7 @@ I point out too that although the task of predicting the post-perturbation pixel
 2. When only older adults are in the backyard, throwing a frisbee may only induce confusion and interest, but not much response
 3. When throwing a frisbee into a backyard at night, or in inclement weather, the backyard will respond very little
 
-
+With enough training examples, one can image a model could capture very rich patterns of behavior that are universal even with the vast diversity of possible backyards and their per-pixel responses.
 
 ## Where this analogy breaks down
 
