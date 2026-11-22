@@ -117,7 +117,13 @@ The challenge of truly generalizing to out-of-distribution samples accurately ge
 
 More importantly, minimizing error may not actually be the most useful objective either. While certainly a machine learning model that could accurately predict every pixel in the post-perturbation image could generalize to any downstream use of these predictions, I argue that there are clear low-dimensional "phenotypes" that may be worth predicting first that may be much easier. 
 
-Take for example, the following two predictions. Which prediction is more accurate?
+Take for example, the following two predictions. Which prediction is more "accurate"? I would argue that the prediction that shows the dog and boy playing very clearly is a better prediction than the one in which the boy and dog are very blurry even though the blurry prediction would likely score higher on per-pixel accuracy:
+
+<center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/backyard_perturbation_good_semantic_poor_error.jpeg" alt="drawing" width="800"/></center>
+
+<br>
+
+In the above example, the right-hand prediction is predicting the correct "semantic" response of the backyard: Throwing a frisbee into this yard would induce the boy and dog to play.
 
 
 
