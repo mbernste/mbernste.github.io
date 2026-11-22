@@ -123,9 +123,16 @@ Take for example, the following two predictions. Which prediction is more "accur
 
 <br>
 
-In the above example, the right-hand prediction is predicting the correct "semantic" response of the backyard: Throwing a frisbee into this yard would induce the boy and dog to play. Perhaps too with virtual cells we should be thinking about what it means for a prediction to be good beyond simple reconstruction. What are the biological "semantics" that we want to be predicting? In what cases are these semantics not captured by gene-wise error? 
+In the above example, the right-hand prediction is predicting the correct "semantic" response of the backyard: Throwing a frisbee into this yard would induce the boy and dog to play. 
 
-I point out too that although the task of predicting the post-perturbation pixel-by-pixel feels extremely difficult, there are indeed recurrent patterns in these backyard perturbation responses. 
+Perhaps too with virtual cell perturbation models we should be thinking about what it means for a prediction to be good beyond simple reconstruction. What are the biological "semantics" that we want to be predicting? In what cases are these semantics not captured by gene-wise error? 
+
+I point out too that although the task of predicting the post-perturbation pixel-by-pixel feels extremely difficult, there are indeed recurrent patterns in these backyard perturbation responses. I point out a few examples below:
+
+1. When children and pets are in the backyard, it is likely throwing a frisbee into the backyard will induce them to play (a "playing" backyard phenotype)
+2. When only older adults are in the backyard, throwing a frisbee may only induce confusion and interest, but not much response
+3. When throwing a frisbee into a backyard at night, or in inclement weather, the backyard will respond very little
+
 
 
 ## Where this analogy breaks down
