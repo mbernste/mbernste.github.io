@@ -8,7 +8,7 @@ tags:
 
 _THIS POST IS CURRENTLY UNDER CONSTRUCTION_
 
-_As machine learning and AI have come to prominence within the last few years, a renewed effort has _
+_As machine learning and AI have come to prominence within the last few years, and as new technologies have come online for perturbing and measuring cells at scale, a renewed effort has emerged to develop virtual cells: computational models capable of predicting how biological cells respond to perturbations._
 
 ## Introduction
 
