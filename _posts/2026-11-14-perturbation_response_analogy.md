@@ -123,8 +123,9 @@ Take for example, the following two predictions. Which prediction is more "accur
 
 <br>
 
-In the above example, the right-hand prediction is predicting the correct "semantic" response of the backyard: Throwing a frisbee into this yard would induce the boy and dog to play.
+In the above example, the right-hand prediction is predicting the correct "semantic" response of the backyard: Throwing a frisbee into this yard would induce the boy and dog to play. Perhaps too with virtual cells we should be thinking about what it means for a prediction to be good beyond simple reconstruction. What are the biological "semantics" that we want to be predicting? In what cases are these semantics not captured by gene-wise error? 
 
+I point out too that although the task of predicting the post-perturbation pixel-by-pixel feels extremely difficult, there are indeed recurrent patterns in these backyard perturbation responses. 
 
 
 ## Where this analogy breaks down
