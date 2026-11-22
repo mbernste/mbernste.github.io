@@ -151,6 +151,12 @@ Now, there's a clear aspect in which this analogy of predicting the image of a b
 
 This stands in contrast to a gene expression profile where each element ("pixel") records the expression level of a specific gene. That gene is meaningful on its own irrespective of the other gene expression measurements. Moreover, one can argue that this fact makes the task of predicting how a cell responds to perturbation _easier_ than predicting an image in the backyard perturbation analogy. This might be true! We don't fully know yet how difficult the perturbation task is; however, I will point out that there may be more similarity between a gene expression profile and an image than meets the eye.
 
-Many genes, like transcription factors, arguably don't have "firm" meaning without further information about the cell since how they influence cell state downstream is highly dependent on such factors as the epigenetic state of the genome. For example, PAX6 
+Many genes, like transcription factors, arguably don't have "firm" meaning without further information about the cell since how they influence cell state downstream is highly dependent on such factors as the epigenetic state of the genome. For example, PAX6 plays a  role in regulating the organogenesis of such diverse organs as [the brain and the lens in the eye](https://pubmed.ncbi.nlm.nih.gov/26138486/). Understanding the role of PAX6 in development requires understanding expression of other genes. 
+
+At a very high-level, an image is a planar projection of a complex 3D scene in an analogous way that a gene expression profile is a projection of a complex cell state onto a crude, low-dimensional measurement (low-dimensional when considered in the context of the complexity of the underlying cell state!).  
 
 <center><img src="https://raw.githubusercontent.com/mbernste/mbernste.github.io/master/images/cell_perturbation_complex_projection.jpeg" alt="drawing" width="800"/></center>
+
+<br>
+
+All of these points can be debated, and there are likely many, many ways in which the backyard perturbation analogy is not a perfect fit. Nonetheless, despite this, I do wonder whether this framing can help us think more clearly about the cell perturbation modeling task and the challenges that lie before us.
