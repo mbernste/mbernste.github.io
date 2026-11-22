@@ -133,7 +133,9 @@ I point out too that although the task of predicting the post-perturbation pixel
 2. When only older adults are in the backyard, throwing a frisbee may only induce confusion and interest, but not much response
 3. When throwing a frisbee into a backyard at night, or in inclement weather, the backyard will respond very little
 
-With enough training examples, one can image a model could capture very rich patterns of behavior that are universal even with the vast diversity of possible backyards and their per-pixel responses.
+With enough training examples, and enough perturbations, one can imagine a model could capture very rich patterns of behavior that are universal even with the vast diversity of possible backyards and their per-pixel responses. 
+
+One last point: This idea of training models to predict "lower-dimensional" phenotypes from high-dimensional genomics data is not new at all. For example, many machine learning methods have been developed to [predict cell type](https://pmc.ncbi.nlm.nih.gov/articles/PMC12065632) based on a cell or sample's gene expression profile.  
 
 ## Where this analogy breaks down
 
