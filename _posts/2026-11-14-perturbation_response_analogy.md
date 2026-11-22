@@ -137,7 +137,9 @@ With enough training examples, and enough perturbations, one can imagine a model
 
 One last point: This idea of training models to predict "lower-dimensional" phenotypes from high-dimensional genomics data is not new at all. For example, many machine learning methods have been developed to [predict cell type](https://pmc.ncbi.nlm.nih.gov/articles/PMC12065632) based on a cell or sample's gene expression profile. While one can imagine similarly low-dimensional perturbation response prediction tasks, such as [predicting whether or not a cell will die or grow](https://pubmed.ncbi.nlm.nih.gov/29505029/) in response to a perturbation, I wonder whether we should think about this problem as a continuum. 
 
-On one extreme, we can imagine framing the perturbation response prediction task as simple classification for a specific phenotype. On the other extreme, we seek to predict the actual measured expression value post-perturbation for every gene. Perhaps there exist framings somewhere in the middle that predict aspects of cell response that sit somewhere between extremely coarse phenotypes and per-gene response. 
+On one extreme, we can imagine framing the perturbation response prediction task as simple classification for a specific phenotype. On the other extreme, we seek to predict the actual measured expression value post-perturbation for every gene. Perhaps there exist framings somewhere in the middle that predict aspects of cell response that sit somewhere between extremely coarse phenotypes and per-gene response. Perhaps something like the task of predicting how gene "programs" change (e.g., signaling pathways, aspects of metabolism, etc.). 
+
+
 
 
 
