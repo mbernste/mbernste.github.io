@@ -3,7 +3,7 @@ title: "AI makes quantity cheap, but quality is still expensive. The net effect 
 date: 2026-09-22
 permalink: /posts/ai_quantity_quality/
 tags:
-  - ai
+  - AI
 ---
 
 _At the time of this writing (September 22, 2026), the quality gap between AI-generated output and the output produced by human experts has still not closed in most domains (coding and math being clear exceptions). In this post, I make two arguments. First, AI changes how we should plan projects: where project planning was once mostly about how much work could be produced in a given amount of time, we now have to think separately about quantity and quality. AI has made it extremely cheap to produce work at scale, but producing high-quality work remains very difficult. Second, every unit of AI-generated output still requires human effort to close the remaining quality gap. Because the growth in how much AI can produce is outpacing the rate at which that gap is shrinking, the amount of work that knowledge workers will have to do may only increase!_
