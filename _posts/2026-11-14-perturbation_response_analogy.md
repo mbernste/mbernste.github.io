@@ -109,7 +109,7 @@ Now, let's put it all together and visualize some backyard perturbation examples
 
 How many training examples do you think we may need to perform this task accurately on diverse images? **Whatever number you think, I surmise, we'd need at least that many for accurate perturbation response modeling of biological cells.**
 
-## Gene-for-gene accuracy via mean squared error may not be the right metric
+## Gene-for-gene accuracy may not be the right metric
 
 I do not think this "backyard perturbation" modeling analogy is only useful for explaining the challenges of the cell perturbation modeling task, but also highlights something important about how we should _approach_ the task. Specifically, I conjecture that evaluating or possibly even training cellular perturbation models on their ability to reconstruct the post-perturbation cell state gene-for-gene (e.g., via [mean squared error](https://en.wikipedia.org/wiki/Mean_squared_error)) may not be the optimal approach.
 
