@@ -4,6 +4,9 @@ date: 2026-11-22
 permalink: /posts/perturbation_response_image_analysis/
 tags:
   - ai
+  - gene expression
+  - RNA-seq
+  - virtual cell
 ---
 
 _As machine learning and AI have come to prominence, and as new technologies have come online for perturbing and measuring cells at scale, a renewed effort has emerged to develop virtual cells: computational models capable of predicting how biological cells respond to perturbations. In this blog post, I will present an analogy of the perturbation modeling task that I feel captures, to some loose degree, the challenge that we face with this task and that I think may even hold some clue on to how to approach it. This analogy frames the cell perturbation modeling task not as predicting the transcriptome of a cell that has been perturbed, but instead, as the task of predicting how the image of a backyard (yes, a backyard behind a house!) would change if you "perturbed" the scene with some kind of action (like throwing a frisbee into the yard). Please note, the opinions expressed in this article are my own and not reflective of those held by my employer._
