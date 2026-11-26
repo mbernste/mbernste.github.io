@@ -24,6 +24,7 @@ A blog containing tutorials, notes, and insights on topics in math, statistics, 
 [Three strategies for cataloging cell types](https://mbernste.github.io/posts/cell_type_cataloging/)  
 [Assessing the utility of data visualizations based on dimensionality reduction](https://mbernste.github.io/posts/dim_reduc/)  
 [Intuiting biology (Part 1: Order and chaos in the crowded cell)](https://mbernste.github.io/posts/intuit_biology_goodsell/)  
+[Backyard perturbation prediction: An analogy for virtual cell modeling](https://mbernste.github.io/posts/perturbation_response_image_analysis/)  
 
 ## Deep learning
 
